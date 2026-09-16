@@ -66,7 +66,7 @@ local function canAfford(e,rank,key)
  return false
 end
 function A.SetRank(id,rank)
-    local e=A.byID[id];if not e then return false end
+    local e=A.byID[id];if not e or e.displayOnly then return false end
     rank=tonumber(rank);if not rank or rank~=rank then return false end
     rank=math.max(0,math.min(math.floor(rank),A.MaxRank(e)))
     if not A.IsTalent(e) and rank>(HeroFreePickPlans.entries[id]or 0) and UnitLevel('player')<(e.level or 1) then return false end
@@ -95,7 +95,7 @@ function A.RaritySpent(quality)
  return spent
 end
 function A.SetLocalLearned(id,rank)
- local e=A.byID[id];if not e or A.OtherClass(e.class)then return false end
+ local e=A.byID[id];if not e or e.displayOnly or A.OtherClass(e.class)then return false end
  HeroFreePickPlans.previewLearned=HeroFreePickPlans.previewLearned or {}
  rank=math.max(0,math.min(rank,A.MaxRank(e)))
  if rank>0 and not HeroFreePickPlans.previewLearned[id] and not A.IsTalent(e) then

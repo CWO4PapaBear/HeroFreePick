@@ -41,3 +41,7 @@ Tests exercise Lua 5.1 loading, mock UI startup, all 30 talent trees and 122 dep
 ## Repository status
 
 Private repository: `CWO4PapaBear/HeroFreePick`. See `docs/PUBLICATION.md` for the remaining release decisions. No license has been selected yet.
+
+### Talent-origin ability references (0.28.0)
+
+The ability pane includes 144 talent-origin entries recovered from Area 52 client records. Hover for recorded Ability Essence and rarity costs. These entries are read-only pending progression design. Existing native talent nodes remain unchanged. See [the data review](docs/TALENT_ABILITY_REVIEW.md) for alternate record costs and source limitations. Restart the client after installing this version so the new Lua file is loaded.

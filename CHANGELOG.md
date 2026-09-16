@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.28.0 - talent-origin ability references
+
+- Add 144 Area 52 talent-origin abilities to the ability pane and Browse, with recorded Ability Essence and rarity costs.
+- Keep these entries read-only while retaining all 829 native talent nodes and existing learning behavior.
+- Document alternate Area 52 cost records and category fallbacks in docs/TALENT_ABILITY_REVIEW.md.
+- Require a full client restart after installation to load the new catalog file.
+
 ## 0.27.3 — initial repository candidate
 
 - Character Advancement UI with class and specialization tabs, native talent tree art and dependency routes.

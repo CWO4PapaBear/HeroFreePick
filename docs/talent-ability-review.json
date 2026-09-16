@@ -1,0 +1,5439 @@
+{
+  "sourceSha256": "0a6f6311bcd92552a391c5dcf670c3b1896eb3e5a5a0a6da1d0c1e701242666f",
+  "sharedCatalogSha256": "bc121f89f0d31fa6f76457dba5d43c3bad3cdf7a98b64a7c24aa816358b9ef77",
+  "recordSize": 692,
+  "fieldOffsets": {
+    "abilityCost": 56,
+    "talentCost": 60,
+    "qualityString": 64,
+    "qualityCost": 68,
+    "requiredLevel": 104,
+    "categories": [
+      640,
+      644,
+      648
+    ],
+    "categoryOrder": 652
+  },
+  "entries": [
+    {
+      "id": 20000029,
+      "name": "Pyroblast",
+      "class": "Mage",
+      "spec": "Fire",
+      "spell": 11366,
+      "spells": [
+        11366
+      ],
+      "talentEntry": 401,
+      "nativeTalent": 29,
+      "area52Entry": 401,
+      "aliases": [
+        401,
+        3054
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        19
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000032,
+      "name": "Blast Wave",
+      "class": "Mage",
+      "spec": "Fire",
+      "spell": 11113,
+      "spells": [
+        11113
+      ],
+      "talentEntry": 404,
+      "nativeTalent": 32,
+      "area52Entry": 404,
+      "aliases": [
+        404,
+        3057
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000036,
+      "name": "Combustion",
+      "class": "Mage",
+      "spec": "Fire",
+      "spell": 11129,
+      "spells": [
+        11129
+      ],
+      "talentEntry": 408,
+      "nativeTalent": 36,
+      "area52Entry": 408,
+      "aliases": [
+        408,
+        3061
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001735,
+      "name": "Dragon's Breath",
+      "class": "Mage",
+      "spec": "Fire",
+      "spell": 31661,
+      "spells": [
+        31661
+      ],
+      "talentEntry": 862,
+      "nativeTalent": 1735,
+      "area52Entry": 862,
+      "aliases": [
+        862,
+        3515
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001852,
+      "name": "Living Bomb",
+      "class": "Mage",
+      "spec": "Fire",
+      "spell": 44457,
+      "spells": [
+        44457
+      ],
+      "talentEntry": 955,
+      "nativeTalent": 1852,
+      "area52Entry": 955,
+      "aliases": [
+        955,
+        3608
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        19,
+        8
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000069,
+      "name": "Icy Veins",
+      "class": "Mage",
+      "spec": "Frost",
+      "spell": 12472,
+      "spells": [
+        12472
+      ],
+      "talentEntry": 419,
+      "nativeTalent": 69,
+      "area52Entry": 419,
+      "aliases": [
+        419,
+        3072
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000072,
+      "name": "Cold Snap",
+      "class": "Mage",
+      "spec": "Frost",
+      "spell": 11958,
+      "spells": [
+        11958
+      ],
+      "talentEntry": 422,
+      "nativeTalent": 72,
+      "area52Entry": 422,
+      "aliases": [
+        422,
+        3075
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000071,
+      "name": "Ice Barrier",
+      "class": "Mage",
+      "spec": "Frost",
+      "spell": 11426,
+      "spells": [
+        11426
+      ],
+      "talentEntry": 421,
+      "nativeTalent": 71,
+      "area52Entry": 421,
+      "aliases": [
+        421,
+        3074
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001741,
+      "name": "Summon Water Elemental",
+      "class": "Mage",
+      "spec": "Frost",
+      "spell": 31687,
+      "spells": [
+        31687
+      ],
+      "talentEntry": 867,
+      "nativeTalent": 1741,
+      "area52Entry": 867,
+      "aliases": [
+        867,
+        3520
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001857,
+      "name": "Deep Freeze",
+      "class": "Mage",
+      "spec": "Frost",
+      "spell": 44572,
+      "spells": [
+        44572
+      ],
+      "talentEntry": 960,
+      "nativeTalent": 1857,
+      "area52Entry": 960,
+      "aliases": [
+        960,
+        3613
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        29,
+        7
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002211,
+      "name": "Focus Magic",
+      "class": "Mage",
+      "spec": "Arcane",
+      "spell": 54646,
+      "spells": [
+        54646
+      ],
+      "talentEntry": 1100,
+      "nativeTalent": 2211,
+      "area52Entry": 1100,
+      "aliases": [
+        1100,
+        3753
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20000086,
+      "name": "Presence of Mind",
+      "class": "Mage",
+      "spec": "Arcane",
+      "spell": 12043,
+      "spells": [
+        12043
+      ],
+      "talentEntry": 433,
+      "nativeTalent": 86,
+      "area52Entry": 433,
+      "aliases": [
+        433,
+        3086
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000087,
+      "name": "Arcane Power",
+      "class": "Mage",
+      "spec": "Arcane",
+      "spell": 12042,
+      "spells": [
+        12042
+      ],
+      "talentEntry": 434,
+      "nativeTalent": 87,
+      "area52Entry": 434,
+      "aliases": [
+        434,
+        3087
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001729,
+      "name": "Slow",
+      "class": "Mage",
+      "spec": "Arcane",
+      "spell": 31589,
+      "spells": [
+        31589
+      ],
+      "talentEntry": 856,
+      "nativeTalent": 1729,
+      "area52Entry": 856,
+      "aliases": [
+        856,
+        3509
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001847,
+      "name": "Arcane Barrage",
+      "class": "Mage",
+      "spec": "Arcane",
+      "spell": 44425,
+      "spells": [
+        44425
+      ],
+      "talentEntry": 950,
+      "nativeTalent": 1847,
+      "area52Entry": 950,
+      "aliases": [
+        950,
+        3603
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000133,
+      "name": "Sweeping Strikes",
+      "class": "Warrior",
+      "spec": "Arms",
+      "spell": 12328,
+      "spells": [
+        12328
+      ],
+      "talentEntry": 447,
+      "nativeTalent": 133,
+      "area52Entry": 447,
+      "aliases": [
+        447,
+        3100
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000135,
+      "name": "Mortal Strike",
+      "class": "Warrior",
+      "spec": "Arms",
+      "spell": 12294,
+      "spells": [
+        12294
+      ],
+      "talentEntry": 449,
+      "nativeTalent": 135,
+      "area52Entry": 449,
+      "aliases": [
+        449,
+        3102
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001863,
+      "name": "Bladestorm",
+      "class": "Warrior",
+      "spec": "Arms",
+      "spell": 46924,
+      "spells": [
+        46924
+      ],
+      "talentEntry": 965,
+      "nativeTalent": 1863,
+      "area52Entry": 965,
+      "aliases": [
+        965,
+        3618
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20000153,
+      "name": "Last Stand",
+      "class": "Warrior",
+      "spec": "Protection",
+      "spell": 12975,
+      "spells": [
+        12975
+      ],
+      "talentEntry": 464,
+      "nativeTalent": 153,
+      "area52Entry": 464,
+      "aliases": [
+        464,
+        3117
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000152,
+      "name": "Concussion Blow",
+      "class": "Warrior",
+      "spec": "Protection",
+      "spell": 12809,
+      "spells": [
+        12809
+      ],
+      "talentEntry": 463,
+      "nativeTalent": 152,
+      "area52Entry": 463,
+      "aliases": [
+        463,
+        3116
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000148,
+      "name": "Vigilance",
+      "class": "Warrior",
+      "spec": "Protection",
+      "spell": 50720,
+      "spells": [
+        50720
+      ],
+      "talentEntry": 459,
+      "nativeTalent": 148,
+      "area52Entry": 459,
+      "aliases": [
+        459,
+        3112
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4,
+        24
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001666,
+      "name": "Devastate",
+      "class": "Warrior",
+      "spec": "Protection",
+      "spell": 20243,
+      "spells": [
+        20243
+      ],
+      "talentEntry": 806,
+      "nativeTalent": 1666,
+      "area52Entry": 806,
+      "aliases": [
+        806,
+        3459
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        5
+      ],
+      "direct": true,
+      "order": 1000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001872,
+      "name": "Shockwave",
+      "class": "Warrior",
+      "spec": "Protection",
+      "spell": 46968,
+      "spells": [
+        46968
+      ],
+      "talentEntry": 974,
+      "nativeTalent": 1872,
+      "area52Entry": 974,
+      "aliases": [
+        974,
+        3627
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000160,
+      "name": "Piercing Howl",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 12323,
+      "spells": [
+        12323
+      ],
+      "talentEntry": 471,
+      "nativeTalent": 160,
+      "area52Entry": 471,
+      "aliases": [
+        471,
+        3124
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        7,
+        8
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20000165,
+      "name": "Death Wish",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 12292,
+      "spells": [
+        12292
+      ],
+      "talentEntry": 473,
+      "nativeTalent": 165,
+      "area52Entry": 3126,
+      "aliases": [
+        3126
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000167,
+      "name": "Bloodthirst",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 23881,
+      "spells": [
+        23881
+      ],
+      "talentEntry": 475,
+      "nativeTalent": 167,
+      "area52Entry": 475,
+      "aliases": [
+        475,
+        3128
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001868,
+      "name": "Heroic Fury",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 60970,
+      "spells": [
+        60970
+      ],
+      "talentEntry": 970,
+      "nativeTalent": 1868,
+      "area52Entry": 970,
+      "aliases": [
+        970,
+        3623
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12,
+        14
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001659,
+      "name": "Rampage",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 29801,
+      "spells": [
+        29801
+      ],
+      "talentEntry": 800,
+      "nativeTalent": 1659,
+      "area52Entry": 800,
+      "aliases": [
+        800,
+        3453
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001867,
+      "name": "Titan's Grip",
+      "class": "Warrior",
+      "spec": "Fury",
+      "spell": 46917,
+      "spells": [
+        46917
+      ],
+      "talentEntry": 969,
+      "nativeTalent": 1867,
+      "area52Entry": 969,
+      "aliases": [
+        969,
+        3622
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        17
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20000301,
+      "name": "Riposte",
+      "class": "Rogue",
+      "spec": "Combat",
+      "spell": 14251,
+      "spells": [
+        14251
+      ],
+      "talentEntry": 513,
+      "nativeTalent": 301,
+      "area52Entry": 513,
+      "aliases": [
+        513,
+        3166
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000223,
+      "name": "Blade Flurry",
+      "class": "Rogue",
+      "spec": "Combat",
+      "spell": 13877,
+      "spells": [
+        13877
+      ],
+      "talentEntry": 488,
+      "nativeTalent": 223,
+      "area52Entry": 488,
+      "aliases": [
+        488,
+        3141
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000205,
+      "name": "Adrenaline Rush",
+      "class": "Rogue",
+      "spec": "Combat",
+      "spell": 13750,
+      "spells": [
+        13750
+      ],
+      "talentEntry": 484,
+      "nativeTalent": 205,
+      "area52Entry": 484,
+      "aliases": [
+        484,
+        3137
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002076,
+      "name": "Killing Spree",
+      "class": "Rogue",
+      "spec": "Combat",
+      "spell": 51690,
+      "spells": [
+        51690
+      ],
+      "talentEntry": 1054,
+      "nativeTalent": 2076,
+      "area52Entry": 1054,
+      "aliases": [
+        1054,
+        3707
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20000280,
+      "name": "Cold Blood",
+      "class": "Rogue",
+      "spec": "Assassination",
+      "spell": 14177,
+      "spells": [
+        14177
+      ],
+      "talentEntry": 509,
+      "nativeTalent": 280,
+      "area52Entry": 509,
+      "aliases": [
+        509,
+        3162
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001719,
+      "name": "Mutilate",
+      "class": "Rogue",
+      "spec": "Assassination",
+      "spell": 1329,
+      "spells": [
+        1329
+      ],
+      "talentEntry": 847,
+      "nativeTalent": 1719,
+      "area52Entry": 847,
+      "aliases": [
+        847,
+        3500
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002071,
+      "name": "Hunger For Blood",
+      "class": "Rogue",
+      "spec": "Assassination",
+      "spell": 51662,
+      "spells": [
+        51662
+      ],
+      "talentEntry": 1049,
+      "nativeTalent": 2071,
+      "area52Entry": 1049,
+      "aliases": [
+        1049,
+        3702
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000303,
+      "name": "Ghostly Strike",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 14278,
+      "spells": [
+        14278
+      ],
+      "talentEntry": 514,
+      "nativeTalent": 303,
+      "area52Entry": 514,
+      "aliases": [
+        514,
+        3167
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        14
+      ],
+      "direct": true,
+      "order": 1500,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20000284,
+      "name": "Preparation",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 14185,
+      "spells": [
+        14185
+      ],
+      "talentEntry": 512,
+      "nativeTalent": 284,
+      "area52Entry": 512,
+      "aliases": [
+        512,
+        3165
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        12,
+        14
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000681,
+      "name": "Hemorrhage",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 16511,
+      "spells": [
+        16511
+      ],
+      "talentEntry": 591,
+      "nativeTalent": 681,
+      "area52Entry": 591,
+      "aliases": [
+        591,
+        3244
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000381,
+      "name": "Premeditation",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 14183,
+      "spells": [
+        14183
+      ],
+      "talentEntry": 528,
+      "nativeTalent": 381,
+      "area52Entry": 528,
+      "aliases": [
+        528,
+        3181
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001714,
+      "name": "Shadowstep",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 36554,
+      "spells": [
+        36554
+      ],
+      "talentEntry": 844,
+      "nativeTalent": 1714,
+      "area52Entry": 844,
+      "aliases": [
+        844,
+        3497
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        3
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002081,
+      "name": "Shadow Dance",
+      "class": "Rogue",
+      "spec": "Subtlety",
+      "spell": 51713,
+      "spells": [
+        51713
+      ],
+      "talentEntry": 1059,
+      "nativeTalent": 2081,
+      "area52Entry": 1059,
+      "aliases": [
+        1059,
+        3712
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000348,
+      "name": "Inner Focus",
+      "class": "Priest",
+      "spec": "Discipline",
+      "spell": 14751,
+      "spells": [
+        14751
+      ],
+      "talentEntry": 523,
+      "nativeTalent": 348,
+      "area52Entry": 523,
+      "aliases": [
+        523,
+        3176
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        15
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000322,
+      "name": "Power Infusion",
+      "class": "Priest",
+      "spec": "Discipline",
+      "spell": 10060,
+      "spells": [
+        10060
+      ],
+      "talentEntry": 516,
+      "nativeTalent": 322,
+      "area52Entry": 516,
+      "aliases": [
+        516,
+        3169
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        15
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001774,
+      "name": "Pain Suppression",
+      "class": "Priest",
+      "spec": "Discipline",
+      "spell": 33206,
+      "spells": [
+        33206
+      ],
+      "talentEntry": 896,
+      "nativeTalent": 1774,
+      "area52Entry": 896,
+      "aliases": [
+        896,
+        3549
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001897,
+      "name": "Penance",
+      "class": "Priest",
+      "spec": "Discipline",
+      "spell": 47540,
+      "spells": [
+        47540
+      ],
+      "talentEntry": 994,
+      "nativeTalent": 1897,
+      "area52Entry": 994,
+      "aliases": [
+        994,
+        3647
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        10
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000442,
+      "name": "Desperate Prayer",
+      "class": "Priest",
+      "spec": "Holy",
+      "spell": 19236,
+      "spells": [
+        19236
+      ],
+      "talentEntry": 540,
+      "nativeTalent": 442,
+      "area52Entry": 540,
+      "aliases": [
+        540,
+        3193
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001637,
+      "name": "Lightwell",
+      "class": "Priest",
+      "spec": "Holy",
+      "spell": 724,
+      "spells": [
+        724
+      ],
+      "talentEntry": 781,
+      "nativeTalent": 1637,
+      "area52Entry": 781,
+      "aliases": [
+        781,
+        3434
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        30
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001815,
+      "name": "Circle of Healing",
+      "class": "Priest",
+      "spec": "Holy",
+      "spell": 34861,
+      "spells": [
+        34861
+      ],
+      "talentEntry": 933,
+      "nativeTalent": 1815,
+      "area52Entry": 933,
+      "aliases": [
+        933,
+        3586
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        10
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001911,
+      "name": "Guardian Spirit",
+      "class": "Priest",
+      "spec": "Holy",
+      "spell": 47788,
+      "spells": [
+        47788
+      ],
+      "talentEntry": 1006,
+      "nativeTalent": 1911,
+      "area52Entry": 1006,
+      "aliases": [
+        1006,
+        3659
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20000501,
+      "name": "Mind Flay",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 15407,
+      "spells": [
+        15407
+      ],
+      "talentEntry": 550,
+      "nativeTalent": 501,
+      "area52Entry": 550,
+      "aliases": [
+        550,
+        3203
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000541,
+      "name": "Silence",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 15487,
+      "spells": [
+        15487
+      ],
+      "talentEntry": 552,
+      "nativeTalent": 541,
+      "area52Entry": 552,
+      "aliases": [
+        552,
+        3205
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000484,
+      "name": "Vampiric Embrace",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 15286,
+      "spells": [
+        15286
+      ],
+      "talentEntry": 549,
+      "nativeTalent": 484,
+      "area52Entry": 549,
+      "aliases": [
+        549,
+        3202
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4,
+        9
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20000521,
+      "name": "Shadowform",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 15473,
+      "spells": [
+        15473
+      ],
+      "talentEntry": 551,
+      "nativeTalent": 521,
+      "area52Entry": 551,
+      "aliases": [
+        551,
+        3204
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        20
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001908,
+      "name": "Psychic Horror",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 64044,
+      "spells": [
+        64044
+      ],
+      "talentEntry": 1003,
+      "nativeTalent": 1908,
+      "area52Entry": 1003,
+      "aliases": [
+        1003,
+        3656
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001779,
+      "name": "Vampiric Touch",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 34914,
+      "spells": [
+        34914
+      ],
+      "talentEntry": 899,
+      "nativeTalent": 1779,
+      "area52Entry": 899,
+      "aliases": [
+        899,
+        3552
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001910,
+      "name": "Dispersion",
+      "class": "Priest",
+      "spec": "Shadow",
+      "spell": 47585,
+      "spells": [
+        47585
+      ],
+      "talentEntry": 1005,
+      "nativeTalent": 1910,
+      "area52Entry": 1005,
+      "aliases": [
+        1005,
+        3658
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20000573,
+      "name": "Elemental Mastery",
+      "class": "Shaman",
+      "spec": "Elemental",
+      "spell": 16166,
+      "spells": [
+        16166
+      ],
+      "talentEntry": 560,
+      "nativeTalent": 573,
+      "area52Entry": 560,
+      "aliases": [
+        560,
+        3213
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        22
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001687,
+      "name": "Totem of Wrath",
+      "class": "Shaman",
+      "spec": "Elemental",
+      "spell": 30706,
+      "spells": [
+        30706
+      ],
+      "talentEntry": 822,
+      "nativeTalent": 1687,
+      "area52Entry": 3475,
+      "aliases": [
+        3475,
+        34907
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 1,
+      "level": 50,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002053,
+      "name": "Thunderstorm",
+      "class": "Shaman",
+      "spec": "Elemental",
+      "spell": 51490,
+      "spells": [
+        51490
+      ],
+      "talentEntry": 1033,
+      "nativeTalent": 2053,
+      "area52Entry": 1033,
+      "aliases": [
+        1033,
+        3686
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7,
+        18
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000582,
+      "name": "Tidal Force",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 55198,
+      "spells": [
+        55198
+      ],
+      "talentEntry": 564,
+      "nativeTalent": 582,
+      "area52Entry": 564,
+      "aliases": [
+        564,
+        3217
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        13
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000591,
+      "name": "Nature's Swiftness",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 16188,
+      "spells": [
+        16188
+      ],
+      "talentEntry": 571,
+      "nativeTalent": 591,
+      "area52Entry": 571,
+      "aliases": [
+        571,
+        3224
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        13
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000590,
+      "name": "Mana Tide Totem",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 16190,
+      "spells": [
+        16190
+      ],
+      "talentEntry": 570,
+      "nativeTalent": 590,
+      "area52Entry": 570,
+      "aliases": [
+        570,
+        3223
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        15,
+        18
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002084,
+      "name": "Cleanse Spirit",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 51886,
+      "spells": [
+        51886
+      ],
+      "talentEntry": 1061,
+      "nativeTalent": 2084,
+      "area52Entry": 1061,
+      "aliases": [
+        1061,
+        3714
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        11
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001698,
+      "name": "Earth Shield",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 974,
+      "spells": [
+        974
+      ],
+      "talentEntry": 831,
+      "nativeTalent": 1698,
+      "area52Entry": 831,
+      "aliases": [
+        831,
+        3484
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        10,
+        4
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002064,
+      "name": "Riptide",
+      "class": "Shaman",
+      "spec": "Restoration",
+      "spell": 61295,
+      "spells": [
+        61295
+      ],
+      "talentEntry": 1043,
+      "nativeTalent": 2064,
+      "area52Entry": 1043,
+      "aliases": [
+        1043,
+        3696
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        10
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000901,
+      "name": "Stormstrike",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "spell": 17364,
+      "spells": [
+        17364
+      ],
+      "talentEntry": 637,
+      "nativeTalent": 901,
+      "area52Entry": 637,
+      "aliases": [
+        637,
+        3290
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        2
+      ],
+      "direct": true,
+      "order": 100,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002249,
+      "name": "Lava Lash",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "spell": 60103,
+      "spells": [
+        60103
+      ],
+      "talentEntry": 1122,
+      "nativeTalent": 2249,
+      "area52Entry": 1122,
+      "aliases": [
+        1122,
+        3775
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001693,
+      "name": "Shamanistic Rage",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "spell": 30823,
+      "spells": [
+        30823
+      ],
+      "talentEntry": 827,
+      "nativeTalent": 1693,
+      "area52Entry": 827,
+      "aliases": [
+        827,
+        3480
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        18,
+        14
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002058,
+      "name": "Feral Spirit",
+      "class": "Shaman",
+      "spec": "Enhancement",
+      "spell": 51533,
+      "spells": [
+        51533
+      ],
+      "talentEntry": 1038,
+      "nativeTalent": 2058,
+      "area52Entry": 1038,
+      "aliases": [
+        1038,
+        3691
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001162,
+      "name": "Survival Instincts",
+      "class": "Druid",
+      "spec": "Feral",
+      "spell": 61336,
+      "spells": [
+        61336
+      ],
+      "talentEntry": 671,
+      "nativeTalent": 1162,
+      "area52Entry": 671,
+      "aliases": [
+        671,
+        3324
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000804,
+      "name": "Feral Charge",
+      "class": "Druid",
+      "spec": "Feral",
+      "spell": 49377,
+      "spells": [
+        49377
+      ],
+      "talentEntry": 616,
+      "nativeTalent": 804,
+      "area52Entry": 616,
+      "aliases": [
+        616,
+        3269
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        3
+      ],
+      "direct": true,
+      "order": 100,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000809,
+      "name": "Leader of the Pack",
+      "class": "Druid",
+      "spec": "Feral",
+      "spell": 17007,
+      "spells": [
+        17007
+      ],
+      "talentEntry": 620,
+      "nativeTalent": 809,
+      "area52Entry": 620,
+      "aliases": [
+        620,
+        3273
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        17
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001796,
+      "name": "Mangle",
+      "class": "Druid",
+      "spec": "Feral",
+      "spell": 33917,
+      "spells": [
+        33917
+      ],
+      "talentEntry": 915,
+      "nativeTalent": 1796,
+      "area52Entry": 915,
+      "aliases": [
+        915,
+        3568
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        5
+      ],
+      "direct": true,
+      "order": 9,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001927,
+      "name": "Berserk",
+      "class": "Druid",
+      "spec": "Feral",
+      "spell": 50334,
+      "spells": [
+        50334
+      ],
+      "talentEntry": 1022,
+      "nativeTalent": 1927,
+      "area52Entry": 1022,
+      "aliases": [
+        1022,
+        3675
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12,
+        8
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000831,
+      "name": "Nature's Swiftness",
+      "class": "Druid",
+      "spec": "Restoration",
+      "spell": 17116,
+      "spells": [
+        17116
+      ],
+      "talentEntry": 631,
+      "nativeTalent": 831,
+      "area52Entry": 631,
+      "aliases": [
+        631,
+        3284
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        13
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20000844,
+      "name": "Swiftmend",
+      "class": "Druid",
+      "spec": "Restoration",
+      "spell": 18562,
+      "spells": [
+        18562
+      ],
+      "talentEntry": 635,
+      "nativeTalent": 844,
+      "area52Entry": 635,
+      "aliases": [
+        635,
+        3288
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        10
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001791,
+      "name": "Tree of Life",
+      "class": "Druid",
+      "spec": "Restoration",
+      "spell": 65139,
+      "spells": [
+        65139
+      ],
+      "talentEntry": 910,
+      "nativeTalent": 1791,
+      "area52Entry": 910,
+      "aliases": [
+        910,
+        3563
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        20
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001917,
+      "name": "Wild Growth",
+      "class": "Druid",
+      "spec": "Restoration",
+      "spell": 48438,
+      "spells": [
+        48438
+      ],
+      "talentEntry": 1012,
+      "nativeTalent": 1917,
+      "area52Entry": 1012,
+      "aliases": [
+        1012,
+        3665
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        10
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000788,
+      "name": "Insect Swarm",
+      "class": "Druid",
+      "spec": "Balance",
+      "spell": 5570,
+      "spells": [
+        5570
+      ],
+      "talentEntry": 602,
+      "nativeTalent": 788,
+      "area52Entry": 602,
+      "aliases": [
+        602,
+        3255
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000793,
+      "name": "Moonkin Form",
+      "class": "Druid",
+      "spec": "Balance",
+      "spell": 24858,
+      "spells": [
+        24858
+      ],
+      "talentEntry": 606,
+      "nativeTalent": 793,
+      "area52Entry": 606,
+      "aliases": [
+        606,
+        3259
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        20
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001923,
+      "name": "Typhoon",
+      "class": "Druid",
+      "spec": "Balance",
+      "spell": 50516,
+      "spells": [
+        50516
+      ],
+      "talentEntry": 1018,
+      "nativeTalent": 1923,
+      "area52Entry": 1018,
+      "aliases": [
+        1018,
+        3671
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001787,
+      "name": "Force of Nature",
+      "class": "Druid",
+      "spec": "Balance",
+      "spell": 33831,
+      "spells": [
+        33831
+      ],
+      "talentEntry": 906,
+      "nativeTalent": 1787,
+      "area52Entry": 906,
+      "aliases": [
+        906,
+        3559
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001926,
+      "name": "Starfall",
+      "class": "Druid",
+      "spec": "Balance",
+      "spell": 48505,
+      "spells": [
+        48505
+      ],
+      "talentEntry": 1021,
+      "nativeTalent": 1926,
+      "area52Entry": 1021,
+      "aliases": [
+        1021,
+        3674
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        12,
+        8
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20000963,
+      "name": "Shadowburn",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "spell": 17877,
+      "spells": [
+        17877
+      ],
+      "talentEntry": 642,
+      "nativeTalent": 963,
+      "area52Entry": 642,
+      "aliases": [
+        642,
+        3295
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20000968,
+      "name": "Conflagrate",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "spell": 17962,
+      "spells": [
+        17962
+      ],
+      "talentEntry": 647,
+      "nativeTalent": 968,
+      "area52Entry": 647,
+      "aliases": [
+        647,
+        3300
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001676,
+      "name": "Shadowfury",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "spell": 30283,
+      "spells": [
+        30283
+      ],
+      "talentEntry": 814,
+      "nativeTalent": 1676,
+      "area52Entry": 814,
+      "aliases": [
+        814,
+        3467
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001891,
+      "name": "Chaos Bolt",
+      "class": "Warlock",
+      "spec": "Destruction",
+      "spell": 50796,
+      "spells": [
+        50796
+      ],
+      "talentEntry": 989,
+      "nativeTalent": 1891,
+      "area52Entry": 989,
+      "aliases": [
+        989,
+        3642
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001081,
+      "name": "Curse of Exhaustion",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "spell": 18223,
+      "spells": [
+        18223
+      ],
+      "talentEntry": 665,
+      "nativeTalent": 1081,
+      "area52Entry": 665,
+      "aliases": [
+        665,
+        3318
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        5
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001022,
+      "name": "Dark Pact",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "spell": 18220,
+      "spells": [
+        18220
+      ],
+      "talentEntry": 661,
+      "nativeTalent": 1022,
+      "area52Entry": 661,
+      "aliases": [
+        661,
+        3314
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001670,
+      "name": "Unstable Affliction",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "spell": 30108,
+      "spells": [
+        30108
+      ],
+      "talentEntry": 810,
+      "nativeTalent": 1670,
+      "area52Entry": 810,
+      "aliases": [
+        810,
+        3463
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002041,
+      "name": "Haunt",
+      "class": "Warlock",
+      "spec": "Affliction",
+      "spell": 48181,
+      "spells": [
+        48181
+      ],
+      "talentEntry": 1027,
+      "nativeTalent": 2041,
+      "area52Entry": 1027,
+      "aliases": [
+        1027,
+        3680
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001282,
+      "name": "Soul Link",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "spell": 19028,
+      "spells": [
+        19028
+      ],
+      "talentEntry": 689,
+      "nativeTalent": 1282,
+      "area52Entry": 689,
+      "aliases": [
+        689,
+        3342
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001226,
+      "name": "Fel Domination",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "spell": 18708,
+      "spells": [
+        18708
+      ],
+      "talentEntry": 680,
+      "nativeTalent": 1226,
+      "area52Entry": 680,
+      "aliases": [
+        680,
+        3333
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001880,
+      "name": "Demonic Empowerment",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "spell": 47193,
+      "spells": [
+        47193
+      ],
+      "talentEntry": 979,
+      "nativeTalent": 1880,
+      "area52Entry": 979,
+      "aliases": [
+        979,
+        3632
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001672,
+      "name": "Summon Felguard",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "spell": 30146,
+      "spells": [
+        30146
+      ],
+      "talentEntry": 812,
+      "nativeTalent": 1672,
+      "area52Entry": 3465,
+      "aliases": [
+        3465,
+        34906
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 1,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001886,
+      "name": "Metamorphosis",
+      "class": "Warlock",
+      "spec": "Demonology",
+      "spell": 59672,
+      "spells": [
+        59672
+      ],
+      "talentEntry": 984,
+      "nativeTalent": 1886,
+      "area52Entry": 984,
+      "aliases": [
+        984,
+        3637
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        20
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001387,
+      "name": "Intimidation",
+      "class": "Hunter",
+      "spec": "BeastMastery",
+      "spell": 19577,
+      "spells": [
+        19577
+      ],
+      "talentEntry": 721,
+      "nativeTalent": 1387,
+      "area52Entry": 721,
+      "aliases": [
+        721,
+        3374
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001386,
+      "name": "Bestial Wrath",
+      "class": "Hunter",
+      "spec": "BeastMastery",
+      "spell": 19574,
+      "spells": [
+        19574
+      ],
+      "talentEntry": 720,
+      "nativeTalent": 1386,
+      "area52Entry": 720,
+      "aliases": [
+        720,
+        3373
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 40,
+      "quality": "Legendary",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        12
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20002139,
+      "name": "Beast Mastery",
+      "class": "Hunter",
+      "spec": "BeastMastery",
+      "spell": 53270,
+      "spells": [
+        53270
+      ],
+      "talentEntry": 1072,
+      "nativeTalent": 2139,
+      "area52Entry": 1072,
+      "aliases": [
+        1072,
+        3725
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        23
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001814,
+      "name": "Scatter Shot",
+      "class": "Hunter",
+      "spec": "Survival",
+      "spell": 19503,
+      "spells": [
+        19503
+      ],
+      "talentEntry": 932,
+      "nativeTalent": 1814,
+      "area52Entry": 932,
+      "aliases": [
+        932,
+        3585
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001312,
+      "name": "Counterattack",
+      "class": "Hunter",
+      "spec": "Survival",
+      "spell": 19306,
+      "spells": [
+        19306
+      ],
+      "talentEntry": 699,
+      "nativeTalent": 1312,
+      "area52Entry": 699,
+      "aliases": [
+        699,
+        3352
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        7
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001325,
+      "name": "Wyvern Sting",
+      "class": "Hunter",
+      "spec": "Survival",
+      "spell": 19386,
+      "spells": [
+        19386
+      ],
+      "talentEntry": 702,
+      "nativeTalent": 1325,
+      "area52Entry": 702,
+      "aliases": [
+        702,
+        3355
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7,
+        5
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001322,
+      "name": "Black Arrow",
+      "class": "Hunter",
+      "spec": "Survival",
+      "spell": 3674,
+      "spells": [
+        3674
+      ],
+      "talentEntry": 701,
+      "nativeTalent": 1322,
+      "area52Entry": 701,
+      "aliases": [
+        701,
+        3354
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        19
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002145,
+      "name": "Explosive Shot",
+      "class": "Hunter",
+      "spec": "Survival",
+      "spell": 53301,
+      "spells": [
+        53301
+      ],
+      "talentEntry": 1078,
+      "nativeTalent": 2145,
+      "area52Entry": 1078,
+      "aliases": [
+        1078,
+        3731
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        8,
+        19
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001345,
+      "name": "Aimed Shot",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "spell": 19434,
+      "spells": [
+        19434
+      ],
+      "talentEntry": 707,
+      "nativeTalent": 1345,
+      "area52Entry": 707,
+      "aliases": [
+        707,
+        3360
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        5
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001353,
+      "name": "Readiness",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "spell": 23989,
+      "spells": [
+        23989
+      ],
+      "talentEntry": 713,
+      "nativeTalent": 1353,
+      "area52Entry": 713,
+      "aliases": [
+        713,
+        3366
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        12,
+        14,
+        15
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001361,
+      "name": "Trueshot Aura",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "spell": 19506,
+      "spells": [
+        19506
+      ],
+      "talentEntry": 714,
+      "nativeTalent": 1361,
+      "area52Entry": 714,
+      "aliases": [
+        714,
+        3367
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001808,
+      "name": "Silencing Shot",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "spell": 34490,
+      "spells": [
+        34490
+      ],
+      "talentEntry": 926,
+      "nativeTalent": 1808,
+      "area52Entry": 926,
+      "aliases": [
+        926,
+        3579
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002135,
+      "name": "Chimera Shot",
+      "class": "Hunter",
+      "spec": "Marksmanship",
+      "spell": 53209,
+      "spells": [
+        53209
+      ],
+      "talentEntry": 1068,
+      "nativeTalent": 2135,
+      "area52Entry": 1068,
+      "aliases": [
+        1068,
+        3721
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001481,
+      "name": "Seal of Command",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "spell": 20375,
+      "spells": [
+        20375
+      ],
+      "talentEntry": 757,
+      "nativeTalent": 1481,
+      "area52Entry": 3410,
+      "aliases": [
+        3410,
+        34905
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 1,
+      "level": 20,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        17
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001441,
+      "name": "Repentance",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "spell": 20066,
+      "spells": [
+        20066
+      ],
+      "talentEntry": 746,
+      "nativeTalent": 1441,
+      "area52Entry": 746,
+      "aliases": [
+        746,
+        3399
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 40,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        7
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001823,
+      "name": "Crusader Strike",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "spell": 35395,
+      "spells": [
+        35395
+      ],
+      "talentEntry": 941,
+      "nativeTalent": 1823,
+      "area52Entry": 941,
+      "aliases": [
+        941,
+        3594
+      ],
+      "sourceType": "Ability",
+      "ae": 2,
+      "level": 1,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        2
+      ],
+      "direct": true,
+      "order": 100,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002150,
+      "name": "Divine Storm",
+      "class": "Paladin",
+      "spec": "Retribution",
+      "spell": 53385,
+      "spells": [
+        53385
+      ],
+      "talentEntry": 1082,
+      "nativeTalent": 2150,
+      "area52Entry": 1082,
+      "aliases": [
+        1082,
+        3735
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 15,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        8,
+        30
+      ],
+      "direct": true,
+      "order": 1500,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001435,
+      "name": "Aura Mastery",
+      "class": "Paladin",
+      "spec": "Holy",
+      "spell": 31821,
+      "spells": [
+        31821
+      ],
+      "talentEntry": 745,
+      "nativeTalent": 1435,
+      "area52Entry": 745,
+      "aliases": [
+        745,
+        3398
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        22
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001433,
+      "name": "Divine Favor",
+      "class": "Paladin",
+      "spec": "Holy",
+      "spell": 20216,
+      "spells": [
+        20216
+      ],
+      "talentEntry": 744,
+      "nativeTalent": 1433,
+      "area52Entry": 744,
+      "aliases": [
+        744,
+        3397
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 30,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        13
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001502,
+      "name": "Holy Shock",
+      "class": "Paladin",
+      "spec": "Holy",
+      "spell": 20473,
+      "spells": [
+        20473
+      ],
+      "talentEntry": 759,
+      "nativeTalent": 1502,
+      "area52Entry": 759,
+      "aliases": [
+        759,
+        3412
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        29,
+        30
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001747,
+      "name": "Divine Illumination",
+      "class": "Paladin",
+      "spec": "Holy",
+      "spell": 31842,
+      "spells": [
+        31842
+      ],
+      "talentEntry": 873,
+      "nativeTalent": 1747,
+      "area52Entry": 873,
+      "aliases": [
+        873,
+        3526
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        13
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002192,
+      "name": "Beacon of Light",
+      "class": "Paladin",
+      "spec": "Holy",
+      "spell": 53563,
+      "spells": [
+        53563
+      ],
+      "talentEntry": 1088,
+      "nativeTalent": 2192,
+      "area52Entry": 1088,
+      "aliases": [
+        1088,
+        3741
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        30
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002280,
+      "name": "Divine Sacrifice",
+      "class": "Paladin",
+      "spec": "Protection",
+      "spell": 64205,
+      "spells": [
+        64205
+      ],
+      "talentEntry": 1133,
+      "nativeTalent": 2280,
+      "area52Entry": 1133,
+      "aliases": [
+        1133,
+        3786
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 3,
+      "level": 20,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 2000,
+      "sharedCatalogAECost": 3,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001431,
+      "name": "Blessing of Sanctuary",
+      "class": "Paladin",
+      "spec": "Protection",
+      "spell": 20911,
+      "spells": [
+        20911
+      ],
+      "talentEntry": 742,
+      "nativeTalent": 1431,
+      "area52Entry": 3395,
+      "aliases": [
+        3395,
+        34904
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 1,
+      "level": 30,
+      "quality": "Uncommon",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        4
+      ],
+      "direct": true,
+      "order": 3000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Uncommon"
+    },
+    {
+      "id": 20001430,
+      "name": "Holy Shield",
+      "class": "Paladin",
+      "spec": "Protection",
+      "spell": 20925,
+      "spells": [
+        20925
+      ],
+      "talentEntry": 741,
+      "nativeTalent": 1430,
+      "area52Entry": 741,
+      "aliases": [
+        741,
+        3394
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 40,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        14
+      ],
+      "direct": true,
+      "order": 4000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001754,
+      "name": "Avenger's Shield",
+      "class": "Paladin",
+      "spec": "Protection",
+      "spell": 31935,
+      "spells": [
+        31935
+      ],
+      "talentEntry": 878,
+      "nativeTalent": 1754,
+      "area52Entry": 878,
+      "aliases": [
+        878,
+        3531
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 50,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        29,
+        7
+      ],
+      "direct": true,
+      "order": 5000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002196,
+      "name": "Hammer of the Righteous",
+      "class": "Paladin",
+      "spec": "Protection",
+      "spell": 53595,
+      "spells": [
+        53595
+      ],
+      "talentEntry": 1092,
+      "nativeTalent": 2196,
+      "area52Entry": 1092,
+      "aliases": [
+        1092,
+        3745
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 2,
+      "level": 60,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 0,
+      "categories": [
+        29
+      ],
+      "direct": true,
+      "order": 6000,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": null,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001941,
+      "name": "Rune Tap",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 48982,
+      "spells": [
+        48982
+      ],
+      "talentEntry": 1218,
+      "nativeTalent": 1941,
+      "area52Entry": 1218,
+      "aliases": [
+        1218,
+        34762
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Rare",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20001949,
+      "name": "Mark of Blood",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 49005,
+      "spells": [
+        49005
+      ],
+      "talentEntry": 1224,
+      "nativeTalent": 1949,
+      "area52Entry": 1224,
+      "aliases": [
+        1224,
+        34763
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001954,
+      "name": "Hysteria",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 49016,
+      "spells": [
+        49016
+      ],
+      "talentEntry": 1227,
+      "nativeTalent": 1954,
+      "area52Entry": 1227,
+      "aliases": [
+        1227,
+        34764
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002019,
+      "name": "Vampiric Blood",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 55233,
+      "spells": [
+        55233
+      ],
+      "talentEntry": 1266,
+      "nativeTalent": 2019,
+      "area52Entry": 1266,
+      "aliases": [
+        1266,
+        34776
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001957,
+      "name": "Heart Strike",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 55050,
+      "spells": [
+        55050
+      ],
+      "talentEntry": 1229,
+      "nativeTalent": 1957,
+      "area52Entry": 1229,
+      "aliases": [
+        1229,
+        34765
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001961,
+      "name": "Dancing Rune Weapon",
+      "class": "DeathKnight",
+      "spec": "Blood",
+      "spell": 49028,
+      "spells": [
+        49028
+      ],
+      "talentEntry": 1233,
+      "nativeTalent": 1961,
+      "area52Entry": 1233,
+      "aliases": [
+        1233,
+        34766
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 6,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 4,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002215,
+      "name": "Lichborne",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 49039,
+      "spells": [
+        49039
+      ],
+      "talentEntry": 1288,
+      "nativeTalent": 2215,
+      "area52Entry": 1288,
+      "aliases": [
+        1288,
+        34778
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001980,
+      "name": "Deathchill",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 49796,
+      "spells": [
+        49796
+      ],
+      "talentEntry": 1241,
+      "nativeTalent": 1980,
+      "area52Entry": 1241,
+      "aliases": [
+        1241,
+        34769
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002223,
+      "name": "Improved Icy Talons",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 55610,
+      "spells": [
+        55610
+      ],
+      "talentEntry": 1293,
+      "nativeTalent": 2223,
+      "area52Entry": 1293,
+      "aliases": [
+        1293,
+        34781
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001999,
+      "name": "Hungering Cold",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 49203,
+      "spells": [
+        49203
+      ],
+      "talentEntry": 1252,
+      "nativeTalent": 1999,
+      "area52Entry": 1252,
+      "aliases": [
+        1252,
+        34773
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Legendary",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20001979,
+      "name": "Unbreakable Armor",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 51271,
+      "spells": [
+        51271
+      ],
+      "talentEntry": 1240,
+      "nativeTalent": 1979,
+      "area52Entry": 1240,
+      "aliases": [
+        1240,
+        34768
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20001975,
+      "name": "Frost Strike",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 49143,
+      "spells": [
+        49143
+      ],
+      "talentEntry": 1239,
+      "nativeTalent": 1975,
+      "area52Entry": 1239,
+      "aliases": [
+        1239,
+        34767
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001989,
+      "name": "Howling Blast",
+      "class": "DeathKnight",
+      "spec": "Frost",
+      "spell": 49184,
+      "spells": [
+        49184
+      ],
+      "talentEntry": 1245,
+      "nativeTalent": 1989,
+      "area52Entry": 1245,
+      "aliases": [
+        1245,
+        34772
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001985,
+      "name": "Corpse Explosion",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 49158,
+      "spells": [
+        49158
+      ],
+      "talentEntry": 1244,
+      "nativeTalent": 1985,
+      "area52Entry": 1244,
+      "aliases": [
+        1244,
+        34771
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20001984,
+      "name": "Master of Ghouls",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 52143,
+      "spells": [
+        52143
+      ],
+      "talentEntry": 1243,
+      "nativeTalent": 1984,
+      "area52Entry": 1243,
+      "aliases": [
+        1243,
+        34770
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Rare",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Rare"
+    },
+    {
+      "id": 20002221,
+      "name": "Anti-Magic Zone",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 51052,
+      "spells": [
+        51052
+      ],
+      "talentEntry": 1292,
+      "nativeTalent": 2221,
+      "area52Entry": 1292,
+      "aliases": [
+        1292,
+        34780
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 6,
+      "level": 71,
+      "quality": "Legendary",
+      "rarityCost": 2,
+      "rawQualityCost": 2,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 4,
+      "sharedCatalogQualityCost": 2,
+      "sharedCatalogQuality": "Legendary"
+    },
+    {
+      "id": 20002085,
+      "name": "Ghoul Frenzy",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 63560,
+      "spells": [
+        63560
+      ],
+      "talentEntry": 1284,
+      "nativeTalent": 2085,
+      "area52Entry": 1284,
+      "aliases": [
+        1284,
+        34777
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002007,
+      "name": "Bone Shield",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 49222,
+      "spells": [
+        49222
+      ],
+      "talentEntry": 1258,
+      "nativeTalent": 2007,
+      "area52Entry": 1258,
+      "aliases": [
+        1258,
+        34775
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Epic",
+      "rarityCost": 1,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Epic"
+    },
+    {
+      "id": 20002216,
+      "name": "Scourge Strike",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 55090,
+      "spells": [
+        55090
+      ],
+      "talentEntry": 1289,
+      "nativeTalent": 2216,
+      "area52Entry": 1289,
+      "aliases": [
+        1289,
+        34779
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 4,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 2,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    },
+    {
+      "id": 20002000,
+      "name": "Summon Gargoyle",
+      "class": "DeathKnight",
+      "spec": "Unholy",
+      "spell": 49206,
+      "spells": [
+        49206
+      ],
+      "talentEntry": 1253,
+      "nativeTalent": 2000,
+      "area52Entry": 1253,
+      "aliases": [
+        1253,
+        34774
+      ],
+      "sourceType": "TalentAbility",
+      "ae": 6,
+      "level": 71,
+      "quality": "Normal",
+      "rarityCost": 0,
+      "rawQualityCost": 1,
+      "categories": [
+        6
+      ],
+      "direct": false,
+      "order": 0,
+      "sharedCatalogAECost": 4,
+      "sharedCatalogQualityCost": 1,
+      "sharedCatalogQuality": "Normal"
+    }
+  ],
+  "alternateRecords": [
+    {
+      "talentEntry": 969,
+      "candidates": [
+        969,
+        3622
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 969,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            10
+          ]
+        },
+        {
+          "id": 3622,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 488,
+      "candidates": [
+        488,
+        3141
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 488,
+          "ae": 3,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            30,
+            30,
+            30
+          ]
+        },
+        {
+          "id": 3141,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            30,
+            30,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1049,
+      "candidates": [
+        1049,
+        3702
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1049,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            30
+          ]
+        },
+        {
+          "id": 3702,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 514,
+      "candidates": [
+        514,
+        3167
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 514,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            20,
+            15,
+            15
+          ]
+        },
+        {
+          "id": 3167,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            20,
+            20,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1059,
+      "candidates": [
+        1059,
+        3712
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1059,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            30
+          ]
+        },
+        {
+          "id": 3712,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 549,
+      "candidates": [
+        549,
+        3202
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 549,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            40,
+            40,
+            20
+          ]
+        },
+        {
+          "id": 3202,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            40,
+            40,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 564,
+      "candidates": [
+        564,
+        3217
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 564,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            20,
+            20
+          ]
+        },
+        {
+          "id": 3217,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            60,
+            60,
+            60
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1038,
+      "candidates": [
+        1038,
+        3691
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1038,
+          "ae": 3,
+          "quality": "Legendary",
+          "rarityCost": 2,
+          "levels": [
+            60,
+            60,
+            50
+          ]
+        },
+        {
+          "id": 3691,
+          "ae": 3,
+          "quality": "Legendary",
+          "rarityCost": 2,
+          "levels": [
+            50,
+            60,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1088,
+      "candidates": [
+        1088,
+        3741
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1088,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            60,
+            60,
+            30
+          ]
+        },
+        {
+          "id": 3741,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            30,
+            60,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1218,
+      "candidates": [
+        1218,
+        34762
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1218,
+          "ae": 4,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34762,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1224,
+      "candidates": [
+        1224,
+        34763
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1224,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34763,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1227,
+      "candidates": [
+        1227,
+        34764
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1227,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34764,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1266,
+      "candidates": [
+        1266,
+        34776
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1266,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34776,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1229,
+      "candidates": [
+        1229,
+        34765
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1229,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34765,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1233,
+      "candidates": [
+        1233,
+        34766
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1233,
+          "ae": 6,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34766,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1288,
+      "candidates": [
+        1288,
+        34778
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1288,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34778,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1241,
+      "candidates": [
+        1241,
+        34769
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1241,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34769,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1293,
+      "candidates": [
+        1293,
+        34781
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1293,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34781,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1252,
+      "candidates": [
+        1252,
+        34773
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1252,
+          "ae": 4,
+          "quality": "Legendary",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34773,
+          "ae": 2,
+          "quality": "Legendary",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1240,
+      "candidates": [
+        1240,
+        34768
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1240,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34768,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1239,
+      "candidates": [
+        1239,
+        34767
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1239,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34767,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1245,
+      "candidates": [
+        1245,
+        34772
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1245,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34772,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1244,
+      "candidates": [
+        1244,
+        34771
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1244,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34771,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1243,
+      "candidates": [
+        1243,
+        34770
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1243,
+          "ae": 4,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34770,
+          "ae": 2,
+          "quality": "Rare",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1292,
+      "candidates": [
+        1292,
+        34780
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1292,
+          "ae": 6,
+          "quality": "Legendary",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34780,
+          "ae": 2,
+          "quality": "Legendary",
+          "rarityCost": 2,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1284,
+      "candidates": [
+        1284,
+        34777
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1284,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34777,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1258,
+      "candidates": [
+        1258,
+        34775
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1258,
+          "ae": 4,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34775,
+          "ae": 2,
+          "quality": "Epic",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1289,
+      "candidates": [
+        1289,
+        34779
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1289,
+          "ae": 4,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34779,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "talentEntry": 1253,
+      "candidates": [
+        1253,
+        34774
+      ],
+      "policy": "Prefer existing catalog ID; alternate records retained for review",
+      "variants": [
+        {
+          "id": 1253,
+          "ae": 6,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        },
+        {
+          "id": 34774,
+          "ae": 2,
+          "quality": "Normal",
+          "rarityCost": 1,
+          "levels": [
+            71,
+            71,
+            71
+          ]
+        }
+      ]
+    }
+  ]
+}

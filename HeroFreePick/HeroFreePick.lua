@@ -63,7 +63,11 @@ local function tooltip(self)
   GameTooltip:AddLine(essenceCost(e.ae)..'  '..rarityCost(e),1,1,1)
  else GameTooltip:AddDoubleLine('Talent Point Cost',tostring(e.te),1,.82,.3,1,1,1)end
  GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
- GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.id),.75,.75,.75,1,1,1)
+ GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
+ if e.displayOnly then
+  GameTooltip:AddLine('Area 52 talent-origin ability. Recorded Ability Essence and rarity costs shown above.',.7,.85,1,true)
+  GameTooltip:AddLine('Reference only: selection and learning are not enabled for this entry.',1,.6,.3,true);GameTooltip:Show();return
+ end
  if IsShiftKeyDown and IsShiftKeyDown()then
   GameTooltip:AddLine('Costs use the selected non-random client record. Ability Points are deducted from the local selection budget.',.7,.85,1,true)
  else GameTooltip:AddLine('Hold SHIFT for more information',.2,.85,1)end
@@ -71,7 +75,7 @@ local function tooltip(self)
  GameTooltip:AddLine('Left-click: select ability. Right-click in the right panel for Unlearn, Locate, or Find Related.',.5,.9,.8,true)
  GameTooltip:AddLine('Local planning only. Level gates apply; server learning is unavailable.',1,.6,.3,true);GameTooltip:Show()
 end
-local function selectEntry(e)A.selected=e;if A.OtherClass(e.class)then return end;if A.view=='browse' and A.AssignNativeTalent(e)then A.Refresh();return end;if A.view=='browse' then A.SetLocalLearned(e.id,((HeroFreePickPlans.previewLearned or {})[e.id]or 0)+1)else A.SetRank(e.id,(HeroFreePickPlans.entries[e.id]or 0)+1)end;A.Refresh()end
+local function selectEntry(e)A.selected=e;if e.displayOnly or A.OtherClass(e.class)then return end;if A.view=='browse' and A.AssignNativeTalent(e)then A.Refresh();return end;if A.view=='browse' then A.SetLocalLearned(e.id,((HeroFreePickPlans.previewLearned or {})[e.id]or 0)+1)else A.SetRank(e.id,(HeroFreePickPlans.entries[e.id]or 0)+1)end;A.Refresh()end
 local function entryButton(parent,w,h)
  local b=CreateFrame('Button',nil,parent);b:SetSize(w,h);b:RegisterForClicks('LeftButtonUp','RightButtonUp')
  b:SetBackdrop({bgFile='Interface\\Tooltips\\UI-Tooltip-Background',edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=8,insets={left=2,right=2,top=2,bottom=2}});b:SetBackdropColor(.065,.045,.025,.84);b:SetBackdropBorderColor(.32,.25,.13,.8)

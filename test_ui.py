@@ -27,7 +27,7 @@ function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
 ''')
-for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
+for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
 lua.execute('''
 local A=HeroFreePick;A.Init();assert(#A.classes==10);assert(#HeroFreePickTrees==829)
 local old=HeroFreePickCatalog[1];A.SetRank(old.id,1);local before=HeroFreePickPlans.entries[old.id]
@@ -253,3 +253,27 @@ HeroFreePickFrame:Hide();HeroFreePick.Toggle()
 assert(HeroFreePickFrame:IsShown())
 """)
 print('PASS: menu opens and refreshes with no SetText method on the filter wrapper.')
+
+# Talent-origin references are visible across classes but never alter progression.
+lua.execute("""
+local A=HeroFreePick
+assert(#HeroTalentAbilityReferences==144)
+local seen,natives={},0
+for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)then natives=natives+1 end end
+assert(natives==829)
+A.spec='All';A.kind='All';A.quality='All';A.query=''
+for _,e in ipairs(HeroTalentAbilityReferences)do
+ assert(not seen[e.id]);seen[e.id]=true
+ assert(A.byID[e.id]==e and e.kind=='Ability' and e.ae>0 and e.te==0)
+ assert(A.IsTalent(A.byID[e.talentOrigin]))
+ assert(HeroBrowseAssignment[e.id] and HeroRarityCosts[e.id]==e.rarityCost)
+ assert(not A.SetRank(e.id,1) and not A.SetLocalLearned(e.id,1))
+ assert(not HeroFreePickPlans.entries[e.id] and not (HeroFreePickPlans.previewLearned or {})[e.id])
+ A.class=e.class;local found=false
+ for _,v in ipairs(A.VisibleEntries('ability'))do if v.id==e.id then found=true end end
+ assert(found,e.name..' absent from ability pane')
+ if e.name=='Living Bomb' then assert(e.ae==2) end
+ if e.quality=='Normal'then assert(e.rarityCost==0)end
+end
+""")
+print('PASS: 144 talent-origin ability references visible, costs mapped, 829 native talents preserved, progression blocked.')
