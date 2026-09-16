@@ -1,0 +1,19 @@
+name: Validate addon
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python test_ui.py
+      - run: python build.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HeroFreePick-addon
+          path: dist/*.zip

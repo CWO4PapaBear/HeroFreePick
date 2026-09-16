@@ -1,0 +1,3 @@
+<Bindings>
+ <Binding name="HERO_CHARACTER_ADVANCEMENT" header="HERO_CHARACTER_ADVANCEMENT">HeroFreePick.Toggle()</Binding>
+</Bindings>

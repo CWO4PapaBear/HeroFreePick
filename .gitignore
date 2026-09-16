@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+dist/
+layout-backups/
+installed.json
+HeroFreePick-Custom-Layout.zip
+*.tmp
+
+# Local-only design tool.
+/LayoutEditor/
