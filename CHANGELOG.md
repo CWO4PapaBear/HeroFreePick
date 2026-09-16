@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.29.0 - mastery prerequisites and costs
+
+- Add 23 Masteries as abilities costing 2 AP, preserving raw Area 52 rarity and gem costs.
+- Import nine missing member abilities; all mastery members cost zero AP/gems and require their Mastery in the same learned/draft state.
+- Block mastery removal until member selections are removed; back up and clear prior orphan member selections on load.
+- Enable local selection for talent-origin ability copies that belong to a Mastery; native talent trees remain unchanged.
+- Sentry Totem lacks an advancement record in this export; its explicit membership is imported with the Air Totem Mastery level as a documented fallback.
+- Full client restart required for the new Lua file. Server learning remains unavailable.
+
 ## 0.28.0 - talent-origin ability references
 
 - Add 144 Area 52 talent-origin abilities to the ability pane and Browse, with recorded Ability Essence and rarity costs.

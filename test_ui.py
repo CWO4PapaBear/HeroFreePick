@@ -27,7 +27,7 @@ function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
 ''')
-for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
+for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
 lua.execute('''
 local A=HeroFreePick;A.Init();assert(#A.classes==10);assert(#HeroFreePickTrees==829)
 local old=HeroFreePickCatalog[1];A.SetRank(old.id,1);local before=HeroFreePickPlans.entries[old.id]
@@ -264,10 +264,10 @@ assert(natives==829)
 A.spec='All';A.kind='All';A.quality='All';A.query=''
 for _,e in ipairs(HeroTalentAbilityReferences)do
  assert(not seen[e.id]);seen[e.id]=true
- assert(A.byID[e.id]==e and e.kind=='Ability' and e.ae>0 and e.te==0)
+ assert(A.byID[e.id]==e and e.kind=='Ability' and (e.ae>0 or e.requiredMastery) and e.te==0)
  assert(A.IsTalent(A.byID[e.talentOrigin]))
  assert(HeroBrowseAssignment[e.id] and HeroRarityCosts[e.id]==e.rarityCost)
- assert(not A.SetRank(e.id,1) and not A.SetLocalLearned(e.id,1))
+ if not e.requiredMastery then assert(not A.SetRank(e.id,1) and not A.SetLocalLearned(e.id,1))end
  assert(not HeroFreePickPlans.entries[e.id] and not (HeroFreePickPlans.previewLearned or {})[e.id])
  A.class=e.class;local found=false
  for _,v in ipairs(A.VisibleEntries('ability'))do if v.id==e.id then found=true end end
@@ -276,4 +276,35 @@ for _,e in ipairs(HeroTalentAbilityReferences)do
  if e.quality=='Normal'then assert(e.rarityCost==0)end
 end
 """)
-print('PASS: 144 talent-origin ability references visible, costs mapped, 829 native talents preserved, progression blocked.')
+print('PASS: 144 talent-origin references visible, costs mapped, 829 native talents preserved; non-mastery references remain read-only.')
+
+lua.execute("""
+local A=HeroFreePick
+UnitLevel=function()return 80 end;UnitClass=function()return 'Hero','HERO'end
+assert(#HeroMasteries==23 and #HeroMasteryExtraAbilities==9)
+local memberCount=0
+for _,m in ipairs(HeroMasteries)do
+ assert(m.ae==2 and m.kind=='Ability' and A.byID[m.id]==m)
+ for _,key in ipairs({'entries','previewLearned'})do
+  HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={}
+  local set=key=='entries'and A.SetRank or A.SetLocalLearned
+  local members={}
+  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then members[#members+1]=e;assert(e.ae==0 and HeroRarityCosts[e.id]==0 and not e.displayOnly)end end
+  assert(#members==#m.members,m.name..' missing members')
+  assert(not set(members[1].id,1))
+  assert(set(m.id,1))
+  for _,e in ipairs(members)do assert(set(e.id,1));memberCount=memberCount+1 end
+  assert(A.AbilityPointsSpent(key)==2)
+  if key=='previewLearned'then assert(A.RaritySpent(m.quality)==HeroRarityCosts[m.id])end
+  assert(not set(m.id,0))
+  for _,e in ipairs(members)do assert(set(e.id,0))end
+  assert(set(m.id,0) and A.AbilityPointsSpent(key)==0)
+ end
+end
+local member
+for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then member=e;break end end
+HeroFreePickPlans.entries={[member.id]=1};HeroFreePickPlans.previewLearned={[member.id]=1}
+A.Init();assert(not HeroFreePickPlans.entries[member.id] and not HeroFreePickPlans.previewLearned[member.id])
+assert(HeroFreePickPlans.masteryMigrationBackup.entries[member.id]==1)
+""")
+print('PASS: all mastery members gated in learned/draft states, free after mastery, removal guarded and old orphan selections backed up.')

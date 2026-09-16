@@ -45,3 +45,7 @@ Private repository: `CWO4PapaBear/HeroFreePick`. See `docs/PUBLICATION.md` for t
 ### Talent-origin ability references (0.28.0)
 
 The ability pane includes 144 talent-origin entries recovered from Area 52 client records. Hover for recorded Ability Essence and rarity costs. These entries are read-only pending progression design. Existing native talent nodes remain unchanged. See [the data review](docs/TALENT_ABILITY_REVIEW.md) for alternate record costs and source limitations. Restart the client after installing this version so the new Lua file is loaded.
+
+### Masteries (0.29.0)
+
+23 Masteries now cost 2 Ability Points plus their recorded rarity gems. Their member abilities cost zero points and gems, require the Mastery in the same local learned list or draft, and must be removed before removing that Mastery. Previous member selections without a Mastery are backed up in `masteryMigrationBackup` and cleared. Mastery members from the talent-origin import are now selectable; other imported references remain read-only. Native talent trees and server behavior are unchanged. See [membership review](docs/AREA52_MASTERIES_REVIEW.md) and [import metadata](docs/mastery-import.json). Restart the client after installation.

@@ -64,6 +64,8 @@ local function tooltip(self)
  else GameTooltip:AddDoubleLine('Talent Point Cost',tostring(e.te),1,.82,.3,1,1,1)end
  GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
  GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
+ if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
+ if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. No Ability Point or rarity gem cost.',1,.82,.3,true)end
  if e.displayOnly then
   GameTooltip:AddLine('Area 52 talent-origin ability. Recorded Ability Essence and rarity costs shown above.',.7,.85,1,true)
   GameTooltip:AddLine('Reference only: selection and learning are not enabled for this entry.',1,.6,.3,true);GameTooltip:Show();return

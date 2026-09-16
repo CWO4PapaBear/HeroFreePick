@@ -24,6 +24,7 @@ function A.Init()
             HeroFreePickPlans.entries[id]=nil
         else HeroFreePickPlans.entries[id]=math.min(math.floor(rank),A.MaxRank(e)) end
     end
+ if A.ValidateMasterySelections then A.ValidateMasterySelections()end
 end
 function A.Specs()
     local seen,out={}, {'All'}
@@ -71,6 +72,7 @@ function A.SetRank(id,rank)
     rank=math.max(0,math.min(math.floor(rank),A.MaxRank(e)))
     if not A.IsTalent(e) and rank>(HeroFreePickPlans.entries[id]or 0) and UnitLevel('player')<(e.level or 1) then return false end
     if A.IsTalent(e) and rank>(HeroFreePickPlans.entries[id]or 0) and not A.TalentsUnlocked() then return false end
+    if A.MasteryAllowed and not A.MasteryAllowed(e,rank,'entries')then return false end
     if not canAfford(e,rank,'entries')then return false end
     HeroFreePickPlans.entries[id]=rank>0 and rank or nil
     return true
@@ -98,6 +100,7 @@ function A.SetLocalLearned(id,rank)
  local e=A.byID[id];if not e or e.displayOnly or A.OtherClass(e.class)then return false end
  HeroFreePickPlans.previewLearned=HeroFreePickPlans.previewLearned or {}
  rank=math.max(0,math.min(rank,A.MaxRank(e)))
+ if A.MasteryAllowed and not A.MasteryAllowed(e,rank,'previewLearned')then return false end
  if rank>0 and not HeroFreePickPlans.previewLearned[id] and not A.IsTalent(e) then
   local limit=A.RarityLimits[e.quality];local cost=(HeroRarityCosts or {})[id]or 1
   if limit and A.RaritySpent(e.quality)+cost>limit then
