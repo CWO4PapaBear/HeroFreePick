@@ -1,3 +1,8 @@
+## 0.34.3
+
+- Keep learned child text/costs at full scale; shrink only icons and tighten row height (16px minimum to fit full-size cost symbols). Preserve indentation and aligned endpoints.
+- Combine gems then AP/TP in one horizontal cost label. Add original A52 Talent Essence artwork for Talent Points in learned rows, talent tooltips and the available-points display.
+
 ## 0.34.2
 
 - Correct learned icon size to 75% of 34px (25.5px), with child icons at half that size (12.75px). Preserve indentation and aligned bar endpoints.

@@ -18,6 +18,10 @@ local GOLD={1,.82,.3};local colors={Normal='ffffff',Uncommon='1eff00',Rare='0070
 local function essenceCost(value)
  return '|TInterface\\AddOns\\HeroFreePick\\Art\\AbilityEssence:16:16:0:0|t '..tostring(value or 0)
 end
+local function talentCost(value)
+ return '|TInterface\\AddOns\\HeroFreePick\\Art\\TalentEssence:16:16:0:0|t '..tostring(value or 0)
+end
+A.TalentCostMarkup=talentCost
 local function rarityCost(e)
  if A.IsTalent(e) or e.quality=='Normal' then return '' end
  local gem='|TInterface\\AddOns\\HeroFreePick\\Art\\Rarity'..e.quality..':14:12:0:0|t'
@@ -95,7 +99,7 @@ local function showMasteryTooltip(owner)
  GameTooltip:Hide();masteryPreview:Hide()
  masteryTitle:SetText(e.name)
  masteryDescription:SetText(e.isBundle and 'This companion bundle includes all listed abilities at level 1 for one purchase. Included abilities cost no additional points or rarity gems. Preview only: server learning and custom pets are not implemented.'or 'Learning this Mastery unlocks access to every connected ability when your character reaches its required level. Connected abilities cost no additional points or rarity gems.')
- masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..essenceCost(e.ae)..'  '..rarityCost(e))
+ masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..rarityCost(e)..'  '..essenceCost(e.ae))
  masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
@@ -171,8 +175,8 @@ local function tooltip(self)
   GameTooltip:AddLine('Talent tiers unlock every 5 levels from level 10. No tree-investment or prerequisite talent requirement.',.7,.85,1,true)
  else GameTooltip:AddLine(e.quality..' | Requires Level '..requiredLevel,1,locked and .15 or .82,locked and .15 or .3)end
  if not A.IsTalent(e)then
-  GameTooltip:AddLine(essenceCost(e.ae)..'  '..rarityCost(e),1,1,1)
- else GameTooltip:AddDoubleLine('Talent Point Cost',tostring(e.te),1,.82,.3,1,1,1)end
+  GameTooltip:AddLine(rarityCost(e)..'  '..essenceCost(e.ae),1,1,1)
+ else GameTooltip:AddDoubleLine('Talent Point Cost',talentCost(e.te),1,.82,.3,1,1,1)end
  GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
  GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
  if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
@@ -661,13 +665,17 @@ function A.RefreshDetails()
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(34*.75,34*.75);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();local scale=item.child and .5 or 1;local indent=item.child and 18 or 0
-  local width=(math.max(1,learnedScroll:GetWidth()-2)-indent)/scale
-  b:SetScale(scale);b:SetWidth(width)
-  b.name:ClearAllPoints();b.name:SetPoint('TOPLEFT',36,-7);b.name:SetWidth(math.max(1,width-108))
-  b.cost:ClearAllPoints();b.cost:SetPoint('TOPRIGHT',-5,-6)
-  b.rarityCost:ClearAllPoints();b.rarityCost:SetPoint('TOPRIGHT',-5,-25)
-  b:SetPoint('TOPLEFT',learnedContent,'TOPLEFT',indent/scale,-rowY/scale);b:Show();rowY=rowY+49*scale
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name)
+  b.cost:SetText(rarityCost(e)..' '..(A.IsTalent(e)and talentCost(e.te)or essenceCost(e.ae)))
+  b.rarityCost:Hide();b:ClearAllPoints()
+  local indent=item.child and 18 or 0;local iconSize=34*.75*(item.child and .5 or 1)
+  local width=math.max(1,learnedScroll:GetWidth()-2-indent)
+  local height=math.max(16,iconSize)
+  b:SetScale(1);b:SetSize(width,height);b.icon:SetSize(iconSize,iconSize)
+  local costWidth=36+(A.IsTalent(e)and 0 or e.quality=='Normal'and 0 or((HeroRarityCosts or {})[e.id]or 1)*12)
+  b.cost:ClearAllPoints();b.cost:SetPoint('RIGHT',-3,0);b.cost:SetWidth(costWidth);b.cost:SetHeight(16);b.cost:SetJustifyH('RIGHT')
+  b.name:ClearAllPoints();b.name:SetPoint('LEFT',iconSize+8,0);b.name:SetWidth(math.max(1,width-iconSize-costWidth-14));b.name:SetHeight(16)
+  b:SetPoint('TOPLEFT',learnedContent,'TOPLEFT',indent,-rowY);b:Show();rowY=rowY+height+3
  end
  learnedContent:SetHeight(math.max(learnedScroll:GetHeight(),rowY))
 end
@@ -780,7 +788,7 @@ function A.Refresh(resetScroll)
  setBadge(b.spentBadge,i==4 and spent()or spent(A.class,name))
  else b:Hide()end end
  for class,b in pairs(classButtons)do setBadge(b.spentBadge,spent(class~='Browse' and class or nil))end
- essenceIndicator:Hide();browseEssenceIndicator:Hide();talentIndicator:Hide();pointText:SetText('Ability Points: '..essenceCost(A.AvailableAbilityPoints(A.view=='architect' and 'entries' or 'previewLearned')));pointsTalentText:SetText('Talent Points: '..math.max(0,A.AvailableTalentPoints())..'/'..A.TalentPointAllowance())
+ essenceIndicator:Hide();browseEssenceIndicator:Hide();talentIndicator:Hide();pointText:SetText('Ability Points: '..essenceCost(A.AvailableAbilityPoints(A.view=='architect' and 'entries' or 'previewLearned')));pointsTalentText:SetText('Talent Points: '..talentCost(math.max(0,A.AvailableTalentPoints()))..'/'..A.TalentPointAllowance())
  if A.view=='architect'then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Show();PanelTemplates_DeselectTab(browseTab);PanelTemplates_SelectTab(architectTab);renderGroups(archContent,A.PlannedEntries(),2,744);mode:SetText('Archetype Builder - local draft')
  elseif A.summary then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Hide();allPanel:Show();summarySort:Show();renderSummary()
  elseif A.isBrowse then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Hide();allPanel:Show();PanelTemplates_SelectTab(browseTab);PanelTemplates_DeselectTab(architectTab);mode:SetText('Browse - All Abilities');renderBrowse()
