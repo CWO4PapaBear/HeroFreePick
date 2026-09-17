@@ -532,3 +532,19 @@ end
 UnitClass=oldClass;A.NativeTalent=oldNative;A.ShowPointWarning=oldWarning
 """)
 print('PASS: Classic tier and prerequisite failures alert immediately and spend no points in advancement or draft plans.')
+
+lua.execute("""
+A.mode='Classic';local oldClass=UnitClass;UnitClass=function()return 'Mage','MAGE'end
+local ability;for _,e in ipairs(HeroFreePickCatalog)do if e.class=='Mage'and e.kind=='Ability'and e.id<20000000 and #e.spells>1 then ability=e;break end end;assert(ability)
+local slots={ability.spells[1]}
+GetNumSpellTabs=function()return 1 end
+GetSpellTabInfo=function()return 'General',nil,0,#slots end
+GetSpellLink=function(slot,book)assert(book=='spell');return '|Hspell:'..slots[slot]..'|hKnown|h'end
+HeroFreePickPlans.previewLearned={};local list=A.LearnedEntries();assert(#list==1 and list[1].id==ability.id and list[1].spellbookKnown)
+slots={ability.spells[1],ability.spells[2],9999999};list=A.LearnedEntries();assert(#list==2)
+local found=false;for _,e in ipairs(list)do if e.id==ability.id then found=true;assert(e.spellbookSpell==ability.spells[2])end end;assert(found)
+assert(next(HeroFreePickPlans.previewLearned)==nil)
+slots={};assert(#A.LearnedEntries()==0)
+A.mode='Hero';assert(#A.LearnedEntries()==0);UnitClass=oldClass
+""")
+print('PASS: Classic spellbook abilities appear without preview selections; rank upgrades deduplicate, uncatalogued spells appear and removed spells disappear; custom modes remain independent.')

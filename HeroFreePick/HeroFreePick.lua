@@ -48,7 +48,7 @@ local function scroll(parent,name,x,y,w,h)
 end
 local function icon(e)
  local packaged=A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[e.spells[1]];if packaged then return packaged end
- local _,_,texture=GetSpellInfo(e.spells[1]);if texture then return texture end
+ local _,_,texture=GetSpellInfo(e.spellbookSpell or e.spells[1]);if texture then return texture end
  local path=(HeroFreePickLayout[e.id]or{}).icon
  if path and path~='' then return 'Interface\\Icons\\'..path end
  return 'Interface\\Icons\\INV_Misc_QuestionMark'
@@ -195,9 +195,10 @@ local function tooltip(self)
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
+ if e.spellbookKnown then GameTooltip:SetHyperlink('spell:'..e.spellbookSpell);GameTooltip:AddLine('Learned in your spellbook.',.1,1,.1);GameTooltip:Show();return end
  local nativeTab,nativeIndex=A.NativeTalent(e)
  if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
- local rank=math.max(1,A.PendingRank(e));local id=e.spells[math.min(rank,#e.spells)]
+ local rank=math.max(1,A.PendingRank(e));local id=e.spellbookSpell or e.spells[math.min(rank,#e.spells)]
  local description=A.mode~='Classic'and A.SummoningDescriptions and A.SummoningDescriptions[id]
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
@@ -708,7 +709,7 @@ function A.RefreshDetails()
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
   b.entry=e;b.groupedLearnedChild=item.child;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name)
-  b.cost:SetText(rarityCost(e)..' '..(A.IsTalent(e)and talentCost(e.te)or essenceCost(e.ae)))
+  b.cost:SetText(e.spellbookKnown and ''or(rarityCost(e)..' '..(A.IsTalent(e)and talentCost(e.te)or essenceCost(e.ae))))
   b.rarityCost:Hide();b:ClearAllPoints()
   local indent=item.child and 18 or 0;local iconSize=34*.75*(item.child and .5 or 1)
   local width=math.max(1,learnedScroll:GetWidth()-2-indent)
@@ -917,7 +918,7 @@ function A.FitWindow()
  f:SetScale(scale);f:ClearAllPoints();f:SetPoint('TOP',UIParent,'TOP',0,-32/(scale*parentScale))
  f:SetClampedToScreen(true);f:SetClampRectInsets(0,0,0,-32)
 end
-f:RegisterEvent('DISPLAY_SIZE_CHANGED');f:RegisterEvent('UI_SCALE_CHANGED');f:RegisterEvent('CHARACTER_POINTS_CHANGED');f:RegisterEvent('PLAYER_TALENT_UPDATE');f:RegisterEvent('PLAYER_LEVEL_UP');f:RegisterEvent('MODIFIER_STATE_CHANGED')
+f:RegisterEvent('SPELLS_CHANGED');f:RegisterEvent('LEARNED_SPELL_IN_TAB');f:RegisterEvent('DISPLAY_SIZE_CHANGED');f:RegisterEvent('UI_SCALE_CHANGED');f:RegisterEvent('CHARACTER_POINTS_CHANGED');f:RegisterEvent('PLAYER_TALENT_UPDATE');f:RegisterEvent('PLAYER_LEVEL_UP');f:RegisterEvent('MODIFIER_STATE_CHANGED')
 f:SetScript('OnEvent',function(self,event)if event=='MODIFIER_STATE_CHANGED' then if A.RefreshMasteryTooltip()then return end;local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
 SLASH_HEROFREEPICK1='/heropick'
 function A.Toggle()if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show();if A.ShowModeChoice then A.ShowModeChoice()end end end

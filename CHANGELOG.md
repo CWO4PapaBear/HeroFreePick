@@ -1,3 +1,8 @@
+## 0.35.4
+
+- Populate Classic learned abilities from the player spellbook, refreshing on spell-learning events. Deduplicate catalog rank groups and include uncatalogued spellbook skills.
+- Display actual learned spell tooltips without free-pick costs; keep pending talents separate and custom-mode ownership unchanged.
+
 ## 0.35.3
 
 - Reject Classic talent additions immediately when tier investment or dependency ranks are missing, using the existing points warning alert and the selected plan state. Custom level gates retain the same alert behavior.

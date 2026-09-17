@@ -456,3 +456,44 @@ function A.TalentPointAllowance()
  return total
 end
 end
+
+-- Classic learned abilities are read from the player's spellbook, never from preview ownership.
+function A.ClassicSpellbookEntries()
+ local out,seen={},{}
+ if not GetNumSpellTabs or not GetSpellTabInfo or not GetSpellLink then return out end
+ local bySpell={}
+ for _,e in ipairs(HeroFreePickCatalog)do
+  if e.id<20000000 and not e.isMastery and not A.OtherClass(e.class)then
+   for _,spell in ipairs(e.spells)do bySpell[spell]=e end
+  end
+ end
+ for tab=1,GetNumSpellTabs()do
+  local _,_,offset,count=GetSpellTabInfo(tab)
+  for slot=(offset or 0)+1,(offset or 0)+(count or 0)do
+   local link=GetSpellLink(slot,BOOKTYPE_SPELL or 'spell')
+   local spell=link and tonumber(link:match('spell:(%d+)'))
+   if spell then
+    local known=bySpell[spell]
+    if not known then
+     local name=GetSpellInfo(spell);local _,class=UnitClass('player')
+     for _,c in ipairs(A.classes)do if string.upper(c)==class then class=c;break end end
+     known={id=26000000+spell,name=name or('Spell '..spell),spells={spell},class=class,spec='General',kind='Ability',quality='Normal',ae=0,te=0,level=1,spellbookOnly=true}
+    end
+    if not A.IsTalent(known)and not seen[known.id]then
+     local copy={};for k,v in pairs(known)do copy[k]=v end
+     copy.spellbookKnown=true;copy.spellbookSpell=spell
+     out[#out+1]=copy;seen[known.id]=copy
+    elseif seen[known.id]then seen[known.id].spellbookSpell=spell end
+   end
+  end
+ end
+ return out
+end
+local plannedLearned=A.LearnedEntries
+function A.LearnedEntries()
+ if A.mode~='Classic'then return plannedLearned()end
+ local out=A.ClassicSpellbookEntries()
+ for _,e in ipairs(plannedLearned())do if A.IsTalent(e)then out[#out+1]=e end end
+ table.sort(out,function(a,b)if a.name==b.name then return a.id<b.id end;return a.name<b.name end)
+ return out
+end
