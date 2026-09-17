@@ -154,6 +154,41 @@ local function leaveEntryTooltip(self)
  if not self.entry or not (self.entry.isMastery or self.entry.isBundle) then GameTooltip:Hide()end
 end
 
+
+function A.TalentPrerequisiteLines(e)
+ local out={}
+ if A.mode~='Classic'then return {{text='Requires Level '..A.TalentRequiredLevel(e),met=UnitLevel('player')>=A.TalentRequiredLevel(e),kind='level'}}end
+ local node=A.TalentNode(e);if not node then return out end
+ local lower,dependency=0,nil
+ for _,candidate in ipairs(HeroFreePickCatalog)do if candidate.class==e.class and A.IsTalent(candidate)then
+  local n=A.TalentNode(candidate)
+  if n then
+   if n.spec==node.spec and n.row<node.row then lower=lower+A.PendingRank(candidate)end
+   if n.talent==node.depends then dependency=candidate end
+  end
+ end end
+ if node.row>0 then out[#out+1]={text='Requires '..node.row*5 ..' points in '..e.spec..' Talents',met=lower>=node.row*5,kind='tree'}end
+ if node.depends>0 then local needed=node.dependsRank+1;out[#out+1]={text='Requires '..needed..' points in '..(dependency and dependency.name or 'prerequisite talent'),met=dependency and A.PendingRank(dependency)>=needed or false,kind='dependency'}end
+ return out
+end
+local function prerequisiteColor(met)if met then return .1,1,.1 end;return 1,.15,.15 end
+local function classicPrerequisites(e)
+ local requirements=A.TalentPrerequisiteLines(e);local replaced={}
+ local lineCount=GameTooltip:NumLines()
+ for i=1,(tonumber(lineCount)or 0)do
+  local line=_G['GameTooltipTextLeft'..i]
+  local text=line and line:GetText()
+  if text then
+   text=text:gsub('|c%x%x%x%x%x%x%x%x',''):gsub('|r','')
+   if text:match('^Requires %d+ points? in ')then
+    local kind=text:find('Talents',1,true)and 'tree'or 'dependency'
+    for j,req in ipairs(requirements)do if req.kind==kind then line:SetText(req.text);line:SetTextColor(prerequisiteColor(req.met));replaced[j]=true;break end end
+   end
+  end
+ end
+ for j,req in ipairs(requirements)do if not replaced[j]then GameTooltip:AddLine(req.text,prerequisiteColor(req.met))end end
+end
+
 local function tooltip(self)
  local e=self.entry;if not e then return end
  if e.isMastery or e.isBundle then showMasteryTooltip(self);return end
@@ -161,7 +196,7 @@ local function tooltip(self)
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
  local nativeTab,nativeIndex=A.NativeTalent(e)
- if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
+ if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
  local rank=math.max(1,A.PendingRank(e));local id=e.spells[math.min(rank,#e.spells)]
  local description=A.mode~='Classic'and A.SummoningDescriptions and A.SummoningDescriptions[id]
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
@@ -170,7 +205,7 @@ local function tooltip(self)
  local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(e.level or 1)
  local locked=A.OtherClass(e.class)or UnitLevel('player')<requiredLevel
  if A.IsTalent(e)and A.mode~='Classic'then
-  GameTooltip:AddLine('Requires Level '..requiredLevel,1,locked and .15 or .82,locked and .15 or .3)
+  GameTooltip:AddLine('Requires Level '..requiredLevel,prerequisiteColor(UnitLevel('player')>=requiredLevel))
   GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3)
   GameTooltip:AddLine('Talent tiers unlock every 5 levels from level 10. No tree-investment or prerequisite talent requirement.',.7,.85,1,true)
  else GameTooltip:AddLine(e.quality..' | Requires Level '..requiredLevel,1,locked and .15 or .82,locked and .15 or .3)end
@@ -212,6 +247,13 @@ end
 A.UpdateMasteryBadge=updateMasteryBadge
 
 A.ShowEntryTooltip=tooltip
+local prerequisiteRefresh=CreateFrame('Frame')
+local prerequisiteElapsed=0
+prerequisiteRefresh:SetScript('OnUpdate',function(_,elapsed)
+ prerequisiteElapsed=prerequisiteElapsed+elapsed;if prerequisiteElapsed<.15 then return end;prerequisiteElapsed=0
+ local owner=GameTooltip:GetOwner()
+ if GameTooltip:IsShown()and owner and owner.entry and A.IsTalent(owner.entry)and MouseIsOver(owner)then tooltip(owner)end
+end)
 local function selectEntry(e)A.selected=e;A.AdjustPending(e,1)end
 local function entryButton(parent,w,h)
  local b=CreateFrame('Button',nil,parent);b:SetSize(w,h);b:RegisterForClicks('LeftButtonUp','RightButtonUp')

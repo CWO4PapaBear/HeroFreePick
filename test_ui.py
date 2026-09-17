@@ -501,3 +501,16 @@ for _,m in ipairs(HeroMasteries)do
 end
 """)
 print('PASS: every Mastery grants only eligible members on selection, grants remaining members at level-up for no additional AP, blocks individual removal and cancels cleanly.')
+
+lua.execute("""
+local e,dep;for _,v in ipairs(HeroFreePickCatalog)do local n=A.IsTalent(v)and A.TalentNode(v);if n and n.row>0 and n.depends>0 then e=v;break end end;assert(e)
+local oldRank=A.PendingRank;local ranks={}
+A.PendingRank=function(v)return ranks[v.id]or 0 end
+A.mode='Classic';local unmet=A.TalentPrerequisiteLines(e);assert(#unmet==2 and not unmet[1].met and not unmet[2].met)
+for _,v in ipairs(HeroFreePickCatalog)do if v.class==e.class and A.IsTalent(v)then ranks[v.id]=A.MaxRank(v)end end
+local met=A.TalentPrerequisiteLines(e);assert(met[1].met and met[2].met)
+A.mode='Hero';testLevel=A.TalentRequiredLevel(e)-1;assert(not A.TalentPrerequisiteLines(e)[1].met)
+testLevel=testLevel+1;assert(A.TalentPrerequisiteLines(e)[1].met)
+A.PendingRank=oldRank
+""")
+print('PASS: Classic tree/dependency requirements use planned ranks; custom level requirements switch at the exact required level.')

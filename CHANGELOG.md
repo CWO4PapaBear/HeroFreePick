@@ -1,3 +1,7 @@
+## 0.35.1
+
+- Color talent prerequisites red when unmet and green when met. Classic tree investment/dependencies use pending ranks, including drafts; custom talents use their tier level. Refresh hovered talent tooltips as selections change.
+
 ## 0.35.0
 
 - Automatically include Mastery members at their required character levels in both preparation and archetype plans. Synchronize on selection, level-up and login; preserve cancel baselines and prevent independent member removal.
