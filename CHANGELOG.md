@@ -1,3 +1,8 @@
+## 0.36.0
+
+- Show Classic ability headings and tooltip levels from the stock AzerothCore trainer reference (369 catalog matches); group unmatched entries under Other learning sources. Custom level data remains unchanged.
+- Allow Classic to browse other classes from the top menu without granting cross-class learning or changing the own-class spellbook list.
+
 ## 0.35.5
 
 - Limit Classic spellbook-derived learned entries to the character's class catalog. Exclude unmatched general, racial and profession spells; retain native-name matching for class spell ranks.

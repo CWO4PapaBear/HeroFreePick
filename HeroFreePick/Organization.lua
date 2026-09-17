@@ -11,7 +11,8 @@ function A.VisibleEntries(kind)
         end
     end
     table.sort(out,function(a,b)
-        if a.level~=b.level then return a.level<b.level end
+        local al=kind=='ability'and A.AbilityDisplayLevel(a)or a.level;local bl=kind=='ability'and A.AbilityDisplayLevel(b)or b.level
+        if al~=bl then return al<bl end
         local ac=(HeroFreePickLayout[a.id]or{}).column or 0
         local bc=(HeroFreePickLayout[b.id]or{}).column or 0
         if kind=='talent' and ac~=bc then return ac<bc end

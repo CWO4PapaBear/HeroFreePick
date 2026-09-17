@@ -549,3 +549,18 @@ slots={};assert(#A.LearnedEntries()==0)
 A.mode='Hero';assert(#A.LearnedEntries()==0);UnitClass=oldClass;ability.spells=originalSpells
 """)
 print('PASS: Classic spellbook abilities appear without preview selections; rank upgrades deduplicate, non-class/uncatalogued spells are excluded and removed spells disappear; custom modes remain independent.')
+
+lua.execute("""
+A.mode='Classic';local own=UnitClass;UnitClass=function()return 'Warrior','WARRIOR'end
+A.class='Mage';A.spec='All';A.query='';A.quality='All';A.kind='All'
+local count=0
+for _,e in ipairs(A.Results())do if not A.IsTalent(e)then count=count+1;assert(e.class=='Mage'and e.id<20000000);assert(not A.SetLocalLearned(e.id,1))end end
+assert(count>0)
+for _,e in ipairs(HeroFreePickCatalog)do if e.kind=='Ability'then
+ local before=e.level;assert(A.AbilityDisplayLevel(e)==(A.ClassicTrainerLevels[e.id]or 999))
+ for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(A.AbilityDisplayLevel(e)==before)end
+ A.mode='Classic';assert(e.level==before)
+end end
+UnitClass=own
+""")
+print('PASS: Classic browses other class abilities without permission to learn them; trainer headings are mode-specific and custom levels stay unchanged.')
