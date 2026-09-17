@@ -461,10 +461,10 @@ end
 function A.ClassicSpellbookEntries()
  local out,seen={},{}
  if not GetNumSpellTabs or not GetSpellTabInfo or not GetSpellLink then return out end
- local bySpell={}
+ local bySpell,byName={},{}
  for _,e in ipairs(HeroFreePickCatalog)do
   if e.id<20000000 and not e.isMastery and not A.OtherClass(e.class)then
-   for _,spell in ipairs(e.spells)do bySpell[spell]=e end
+   for _,spell in ipairs(e.spells)do bySpell[spell]=e;local name=GetSpellInfo(spell);if name then byName[name]=e end end
   end
  end
  for tab=1,GetNumSpellTabs()do
@@ -473,7 +473,7 @@ function A.ClassicSpellbookEntries()
    local link=GetSpellLink(slot,BOOKTYPE_SPELL or 'spell')
    local spell=link and tonumber(link:match('spell:(%d+)'))
    if spell then
-    local known=bySpell[spell]
+    local known=bySpell[spell]or byName[GetSpellInfo(spell)]
     if not known then
      local name=GetSpellInfo(spell);local _,class=UnitClass('player')
      for _,c in ipairs(A.classes)do if string.upper(c)==class then class=c;break end end
