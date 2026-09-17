@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.31.1 - unblock review popups
+
+- Attach the missing Classic commit poller and completion callback so confirmation/timeout restores popup controls.
+- Add Close for now and close buttons that retain pending changes and hide both modal overlays.
+- Unresolved progression choices reappear when reopening the menu.
+
 ## 0.31.0 - independent progression profiles
 
 - Add client-only Classic, optional Class+, Hybrid and Hero preview packages.

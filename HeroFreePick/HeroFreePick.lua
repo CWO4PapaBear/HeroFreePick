@@ -735,7 +735,7 @@ end
 f:RegisterEvent('DISPLAY_SIZE_CHANGED');f:RegisterEvent('UI_SCALE_CHANGED');f:RegisterEvent('CHARACTER_POINTS_CHANGED');f:RegisterEvent('PLAYER_TALENT_UPDATE');f:RegisterEvent('PLAYER_LEVEL_UP');f:RegisterEvent('MODIFIER_STATE_CHANGED')
 f:SetScript('OnEvent',function(self,event)if event=='MODIFIER_STATE_CHANGED' then local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
 SLASH_HEROFREEPICK1='/heropick'
-function A.Toggle()if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show()end end
+function A.Toggle()if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show();if A.ShowModeChoice then A.ShowModeChoice()end end end
 
 SlashCmdList.HEROFREEPICK=A.Toggle
 
@@ -756,6 +756,13 @@ local function button(text,x,fn)
  local b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(185,26);b:SetPoint('BOTTOMLEFT',x,26);b:SetText(text);b:SetScript('OnClick',fn);return b
 end
 local closing=false
+function A.HidePreparationPreservingChanges()
+ closing=true;dialog:Hide()
+ if HeroProgressionChoice then HeroProgressionChoice:Hide()end
+ window:Hide();closing=false
+end
+local dismiss=CreateFrame('Button',nil,box,'UIPanelCloseButton');dismiss:SetPoint('TOPRIGHT',-6,-6);dismiss:SetScript('OnClick',A.HidePreparationPreservingChanges)
+local closeForNow=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');closeForNow:SetSize(150,22);closeForNow:SetPoint('BOTTOM',0,0);closeForNow:SetText('Close for now');closeForNow:SetScript('OnClick',A.HidePreparationPreservingChanges)
 local function finish()
  closing=true;dialog:Hide();window:Hide();closing=false
 end
@@ -796,6 +803,12 @@ window:SetScript('OnHide',function()
  if A.HasPendingChanges()then window:Show();A.ShowPendingReview()
  elseif HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end
 end)
+A.ClassicCommitResult=function(ok,reason)
+ A.PendingAcceptButton:Enable();A.PendingBackButton:Enable();A.PendingCancelButton:Enable();message:SetText(reason)
+ A.Refresh();if ok then finish()end
+end
+local poll=CreateFrame('Frame','HeroClassicCommitPoller');A.ClassicCommitPoller=poll
+poll:SetScript('OnUpdate',function(_,elapsed)A.PollClassicCommit(elapsed)end)
 dialog:Hide()
 
 end
@@ -806,6 +819,7 @@ local shield=CreateFrame('Frame','HeroProgressionChoice',UIParent);shield:SetAll
 local box=CreateFrame('Frame',nil,shield);box:SetSize(590,370);box:SetPoint('CENTER');box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32});box:EnableMouse(true)
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24)
 local note=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');note:SetPoint('TOPLEFT',24,-55);note:SetSize(542,65);note:SetJustifyH('LEFT')
+local closeChoice=CreateFrame('Button',nil,box,'UIPanelCloseButton');closeChoice:SetPoint('TOPRIGHT',-6,-6);closeChoice:SetScript('OnClick',A.HidePreparationPreservingChanges)
 local buttons={}
 local function clear()for _,b in ipairs(buttons)do b:Hide()end end
 local function choice(label,index,description,fn)

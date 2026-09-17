@@ -266,3 +266,15 @@ end
 A.NativeTalent=native
 """)
 print('PASS: Classic uses native talent tooltips; all three custom modes show level-only requirements.')
+
+lua.execute("""
+local A=HeroFreePick;A.mode='Hero';testLevel=80;A.CancelPreparation();A.BeginPreparation()
+local e=HeroFreePickCatalog[1];assert(A.SetLocalLearned(e.id,1))
+HeroFreePickFrame:Show();A.ShowPendingReview();A.HidePreparationPreservingChanges()
+assert(not HeroFreePickFrame:IsShown()and not A.PendingDialog:IsShown()and A.HasPendingChanges())
+assert(type(A.ClassicCommitPoller.scripts.OnUpdate)=='function'and type(A.ClassicCommitResult)=='function')
+local called=false;local poll=A.PollClassicCommit;A.PollClassicCommit=function(elapsed)assert(elapsed==.1);called=true end
+A.ClassicCommitPoller.scripts.OnUpdate(A.ClassicCommitPoller,.1);assert(called);A.PollClassicCommit=poll
+A.CancelPreparation()
+""")
+print('PASS: real OnUpdate poller is connected and closing blocked popups preserves pending changes.')
