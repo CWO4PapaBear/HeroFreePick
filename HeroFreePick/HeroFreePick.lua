@@ -78,7 +78,7 @@ function A.MasteryTooltipMembers(m)
    if entry then break end
   end
   local name,_,texture=GetSpellInfo(spell)
-  out[#out+1]={spell=spell,name=entry and entry.name or name or ('Spell '..spell),level=entry and entry.level,texture=(A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[spell])or texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
+  out[#out+1]={spell=spell,name=entry and(entry.name..(entry.portalFaction and(' ('..entry.portalFaction..')')or ''))or name or ('Spell '..spell),level=entry and A.AbilityDisplayLevel(entry),texture=(A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[spell])or texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
  end
  table.sort(out,function(a,b)
   local al,bl=a.level or math.huge,b.level or math.huge
@@ -104,6 +104,7 @@ local function showMasteryTooltip(owner)
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
  if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its level-eligible members are automatically included at no additional cost.'))end
+ if e.id==21818045 then masteryDescription:SetText('Unlocks your racial capital at level 10, other faction capitals at 15, Ratchet and Booty Bay portals at 25, Shattrath at 62, and Dalaran at 72. Includes teleports and portals where listed. Connected abilities cost no additional points or gems. Neutral portals reuse Runes of Retreat and require server-authorized access.')end
  masteryDescription:SetHeight(0)
  local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
  masteryDescription:SetHeight(descriptionHeight)
@@ -203,7 +204,8 @@ local function tooltip(self)
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
  local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
- local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.AbilityDisplayLevel(e))or(e.level or 1)
+ if e.customServerRequired then GameTooltip:AddLine('Requires the Runes of Retreat client/server package and server-authorized destination access.',1,.6,.3,true)end
+ local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.AbilityDisplayLevel(e))or A.AbilityDisplayLevel(e)
  local locked=A.OtherClass(e.class)or UnitLevel('player')<requiredLevel
  if A.IsTalent(e)and A.mode~='Classic'then
   GameTooltip:AddLine('Requires Level '..requiredLevel,prerequisiteColor(UnitLevel('player')>=requiredLevel))
@@ -680,7 +682,7 @@ local function renderAbilityIcons(entries)
    b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
    abilityPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=learned[e.id] or A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.AbilityDisplayLevel(e))or e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=learned[e.id] or A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.AbilityDisplayLevel(e))or A.AbilityDisplayLevel(e));b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
  end
  spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+3))
 end

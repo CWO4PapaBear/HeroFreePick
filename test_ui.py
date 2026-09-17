@@ -15,6 +15,8 @@ function CreateFrame(kind,name)local f=frame();f.frameName=name;if name then _G[
 HeroFreePickFrame=frame();UIParent=frame();UIParent:SetSize(1920,1080);GameTooltip=frame();UISpecialFrames={};tinsert=table.insert;SlashCmdList={}
 testLevel=80
 function UnitLevel()return testLevel end
+function UnitRace()return 'Human','Human'end
+function UnitFactionGroup()return 'Alliance'end
 function GetUnspentTalentPoints()return 71 end
 function SetPortraitToTexture(t,path)t:SetTexture(path)end
 function GetSpellInfo(id)return 'Spell '..id,nil,'Interface\\\\Icons\\\\Test' end
@@ -67,7 +69,7 @@ for _,m in ipairs(HeroMasteries)do
  for _,v in ipairs(HeroFreePickCatalog)do if v.requiredMastery==m.id then members[#members+1]=v end end
  assert(#members==#m.members)
  assert(not A.SetLocalLearned(members[1].id,1));assert(A.SetLocalLearned(m.id,1))
- for _,v in ipairs(members)do assert(A.SetLocalLearned(v.id,1));assert(v.ae==0 and HeroRarityCosts[v.id]==0)end
+ for _,v in ipairs(members)do if A.PortalDestinationVisible(v)then assert(A.SetLocalLearned(v.id,1))end;assert(v.ae==0 and HeroRarityCosts[v.id]==0)end
  assert(A.AbilityPointsSpent()==2);assert(A.SetLocalLearned(m.id,0))
  for _,v in ipairs(members)do assert(not HeroFreePickPlans.previewLearned[v.id])end
  assert(not A.HasPendingChanges());A.CancelPreparation()
@@ -493,9 +495,9 @@ A.mode='Hero';A.classicCommit=nil
 for _,m in ipairs(HeroMasteries)do
  testLevel=m.level;HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil
  assert(A.SetLocalLearned(m.id,1))
- for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert((HeroFreePickPlans.previewLearned[e.id]~=nil)==(e.level<=testLevel))end end
+ for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert((HeroFreePickPlans.previewLearned[e.id]~=nil)==(A.PortalDestinationVisible(e)and A.MasteryMemberLevel(e)<=testLevel))end end
  testLevel=80;HeroMasteryGrantEvents.scripts.OnEvent(nil,'PLAYER_LEVEL_UP',80)
- for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert(HeroFreePickPlans.previewLearned[e.id]==1);assert(not A.SetLocalLearned(e.id,0))end end
+ for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert((HeroFreePickPlans.previewLearned[e.id]or 0)==(A.PortalDestinationVisible(e)and 1 or 0));assert(not A.SetLocalLearned(e.id,0))end end
  assert(A.AbilityPointsSpent()==2)
  A.CancelPreparation();assert(next(HeroFreePickPlans.previewLearned)==nil)
 end
@@ -558,7 +560,7 @@ for _,e in ipairs(A.Results())do if not A.IsTalent(e)then count=count+1;assert(e
 assert(count>0)
 for _,e in ipairs(HeroFreePickCatalog)do if e.kind=='Ability'then
  local before=e.level;assert(A.AbilityDisplayLevel(e)==(A.ClassicStartingLevels[e.id]or (A.ClassicSupplementSources[e.id]and A.ClassicSupplementSources[e.id].level)or A.ClassicTrainerLevels[e.id]or 999))
- for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(A.AbilityDisplayLevel(e)==before)end
+ for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(A.AbilityDisplayLevel(e)==A.MasteryMemberLevel(e))end
  A.mode='Classic';assert(e.level==before)
 end end
 UnitClass=own
@@ -732,7 +734,7 @@ print('PASS: unchanged builds disable apply/reset in every mode; ability-only an
 lua.execute("""
 local original=HeroFreePickPlans
 A.mode='Hero';testLevel=80;A.classicCommit=nil
-for _,pair in ipairs({{21801494,6,10},{21818045,26,20}})do
+for _,pair in ipairs({{21801494,6,1},{21818045,24,10}})do
  local m=A.byID[pair[1]];assert(m and m.ae==2 and m.quality=='Uncommon'and HeroRarityCosts[m.id]==1 and m.level==pair[3])
  assert(#m.members==pair[2] and #A.MasteryTooltipMembers(m)==pair[2])
  HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={}}
@@ -741,13 +743,33 @@ for _,pair in ipairs({{21801494,6,10},{21818045,26,20}})do
  local count=0
  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then
   count=count+1;assert(not e.classicOnly and e.ae==0 and HeroRarityCosts[e.id]==0)
-  assert((HeroFreePickPlans.previewLearned[e.id]or 0)==(e.level<=testLevel and 1 or 0))
+  assert((HeroFreePickPlans.previewLearned[e.id]or 0)==(A.PortalDestinationVisible(e)and A.MasteryMemberLevel(e)<=testLevel and 1 or 0))
   A.mode='Classic';assert(not A.EntryAvailableInMode(e));A.mode='Hero'
  end end
  assert(count==pair[2]);A.mode='Classic';assert(not A.EntryAvailableInMode(m));A.mode='Hero'
 end
 HeroFreePickPlans=original;testLevel=80
 """)
-print('PASS: Tracking/Portal costs, level gates, all 32 memberships, automatic grants, Shift lists and Classic exclusion.')
+print('PASS: Tracking/Portal costs, level gates, all 30 memberships, automatic grants, Shift lists and Classic exclusion.')
 
 lua.execute("assert(A.PassiveSpells[801494]and A.PassiveSpells[818045]);for _,spell in ipairs(A.byID[21818045].members)do assert(spell~=364768)end;assert(not A.byID[22364768])")
+
+lua.execute("""
+local original=HeroFreePickPlans;local oldRace,oldFaction=UnitRace,UnitFactionGroup
+A.mode='Hero'
+for _,row in ipairs({{'Human','Alliance','Stormwind'},{'Dwarf','Alliance','Ironforge'},{'Gnome','Alliance','Ironforge'},{'NightElf','Alliance','Darnassus'},{'Draenei','Alliance','Exodar'},{'Orc','Horde','Orgrimmar'},{'Troll','Horde','Orgrimmar'},{'Tauren','Horde','ThunderBluff'},{'Scourge','Horde','Undercity'},{'BloodElf','Horde','Silvermoon'}})do
+ UnitRace=function()return row[1],row[1]end;UnitFactionGroup=function()return row[2]end
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={[21818045]=1}}
+ for _,cutoff in ipairs({{9,0},{10,2},{14,2},{15,8},{24,8},{25,10},{61,10},{62,12},{71,12},{72,14}})do
+  testLevel=cutoff[1];A.SyncMasteryGrants();local count=0
+  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==21818045 and HeroFreePickPlans.previewLearned[e.id]then
+   count=count+1;assert(not e.portalFaction or e.portalFaction==row[2]);if testLevel<15 then assert(e.portalCity==row[3])end
+  end end
+  assert(count==cutoff[2],row[1]..' level '..testLevel..' got '..count)
+ end
+ testLevel=10;A.SyncMasteryGrants();local count=0;for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==21818045 and HeroFreePickPlans.previewLearned[e.id]then count=count+1 end end;assert(count==2)
+end
+assert(A.byID[22903018].spells[1]==903018 and A.byID[22903090].spells[1]==903090)
+HeroFreePickPlans=original;UnitRace,UnitFactionGroup=oldRace,oldFaction;testLevel=80
+""")
+print('PASS: all ten races at portal tier boundaries, faction restrictions, migration removes premature grants, and neutral destinations use saved Rune portal IDs.')

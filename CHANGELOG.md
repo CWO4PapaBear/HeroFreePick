@@ -1,3 +1,9 @@
+## 0.38.1
+
+- Tracking Mastery starts at level 1. Portal Mastery starts at 10 and grants racial capital spells at 10, faction capitals at 15, Ratchet/Booty Bay Retreat portals at 25, faction Shattrath spells at 62, and Dalaran at 72.
+- Reuse saved Runes of Retreat portal IDs 903090/903018; these still require the existing travel package and server authorization. Remove unscheduled Theramore/Stonard custom members; Classic is unchanged.
+- Reconcile portal grants by race/faction/level, removing previously premature preview grants.
+
 ## 0.38.0
 
 - Import Tracking Mastery (Hunter level 10, six members) and Portal Mastery (Mage level 20, 26 stock prerequisite-linked spells). Each costs 2 AP and one Uncommon gem; members follow custom automatic level-based grants with zero additional costs. Classic remains separate.
