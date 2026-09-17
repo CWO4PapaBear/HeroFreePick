@@ -1,3 +1,8 @@
+## 0.34.1
+
+- Size learned icons to 76% of the standard 34px ability icon (25.84px); child icons remain half-size (12.92px).
+- Preserve the 18px child indent and extend child row backgrounds to the parent right edge; adapt text and costs to row width.
+
 ## 0.34.0
 
 - Use selected A52 backflip icon for primary Agility.

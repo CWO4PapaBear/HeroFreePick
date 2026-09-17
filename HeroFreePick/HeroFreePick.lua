@@ -658,10 +658,16 @@ function A.RefreshDetails()
   local b=learnedPool[i]
   if not b then
    b=CreateFrame('Button',nil,learnedContent);b:SetSize(272,46);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.learned=true;b:SetBackdrop({bgFile='Interface\\Tooltips\\UI-Tooltip-Background',edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=8});b:SetBackdropColor(.02,.02,.02,1)
-   b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(38,38);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
+   b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(34*.76,34*.76);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();local scale=item.child and .5 or 1;b:SetScale(scale);b:SetPoint('TOPLEFT',learnedContent,'TOPLEFT',(item.child and 18 or 0)/scale,-rowY/scale);b:Show();rowY=rowY+49*scale
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();local scale=item.child and .5 or 1;local indent=item.child and 18 or 0
+  local width=(math.max(1,learnedScroll:GetWidth()-2)-indent)/scale
+  b:SetScale(scale);b:SetWidth(width)
+  b.name:ClearAllPoints();b.name:SetPoint('TOPLEFT',36,-7);b.name:SetWidth(math.max(1,width-108))
+  b.cost:ClearAllPoints();b.cost:SetPoint('TOPRIGHT',-5,-6)
+  b.rarityCost:ClearAllPoints();b.rarityCost:SetPoint('TOPRIGHT',-5,-25)
+  b:SetPoint('TOPLEFT',learnedContent,'TOPLEFT',indent/scale,-rowY/scale);b:Show();rowY=rowY+49*scale
  end
  learnedContent:SetHeight(math.max(learnedScroll:GetHeight(),rowY))
 end
