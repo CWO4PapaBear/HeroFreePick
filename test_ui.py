@@ -7,11 +7,11 @@ ET.parse(root/'HeroFreePick.xml')
 lua.execute('''
 local function frame()
  local f={shown=true,w=500,h=380,text='',scripts={}}
- local methods={SetSize=function(s,w,h)s.w=w;s.h=h end,SetWidth=function(s,w)s.w=w end,SetHeight=function(s,h)s.h=h end,GetFrameLevel=function()return 1 end,GetWidth=function(s)return s.w end,GetHeight=function(s)return s.h end,SetText=function(s,t)s.text=t end,GetText=function(s)return s.text end,GetStringHeight=function(s)return 500 end,Show=function(s)s.shown=true end,Hide=function(s)s.shown=false end,IsShown=function(s)return s.shown end,SetScript=function(s,k,v)s.scripts[k]=v end,GetVerticalScroll=function()return 0 end,GetVerticalScrollRange=function()return 2000 end}
+ local methods={SetSize=function(s,w,h)s.w=w;s.h=h end,SetWidth=function(s,w)s.w=w end,SetHeight=function(s,h)s.h=h end,GetFrameLevel=function()return 1 end,GetWidth=function(s)return s.w end,GetHeight=function(s)return s.h end,SetText=function(s,t)s.text=t end,GetText=function(s)return s.text end,GetStringHeight=function(s)return 500 end,Show=function(s)s.shown=true end,Hide=function(s)local was=s.shown;s.shown=false;if was and s.scripts.OnHide then s.scripts.OnHide(s)end end,IsShown=function(s)return s.shown end,SetScript=function(s,k,v)s.scripts[k]=v end,GetVerticalScroll=function()return 0 end,GetVerticalScrollRange=function()return 2000 end}
  setmetatable(f,{__index=function(s,k)if k=='dependencyOverlay'then return nil end;if k=='CreateFontString'or k=='CreateTexture'then return function()return frame()end end;return methods[k]or function()end end})
  return f
 end
-function CreateFrame()return frame()end
+function CreateFrame(kind,name)local f=frame();if name then _G[name]=f end;return f end
 HeroFreePickFrame=frame();UIParent=frame();UIParent:SetSize(1920,1080);GameTooltip=frame();UISpecialFrames={};tinsert=table.insert;SlashCmdList={}
 testLevel=80
 function UnitLevel()return testLevel end
@@ -27,122 +27,58 @@ function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
 ''')
-for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
-lua.execute('''
-local A=HeroFreePick;A.Init();assert(#A.classes==10);assert(#HeroFreePickTrees==829)
-local old=HeroFreePickCatalog[1];A.SetRank(old.id,1);local before=HeroFreePickPlans.entries[old.id]
+for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','PendingChanges.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua','PendingDialog.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
+lua.execute("""
+local A=HeroFreePick
+function UnitClass()return 'Hero','HERO'end
+function LearnTalent()error('Immediate talent learning must never be called')end
+A.Init();A.BeginPreparation();assert(not A.HasPendingChanges())
+assert(#HeroFreePickTrees==829 and #HeroTalentAbilityReferences==144 and #HeroMasteries==23)
 for _,class in ipairs(A.classes)do
  A.class=class;A.isBrowse=false
- for _,spec in ipairs(A.Specs())do A.spec=spec;A.view='browse';A.Refresh(true) end
+ for _,spec in ipairs(A.Specs())do A.spec=spec;A.view='browse';A.Refresh(true)end
 end
-assert(HeroFreePickPlans.entries[old.id]==before)
-A.class='Mage';A.spec='All';A.view='browse';A.quality='Legendary';A.ownership='Not planned';A.Refresh(true)
-for _,e in ipairs(A.VisibleEntries('talent'))do assert(e.quality=='Legendary');assert(not HeroFreePickPlans.entries[e.id])end
-A.quality='All';A.ownership='All';A.selected=old;A.RefreshDetails();A.view='architect';A.Refresh(true)
-A.isBrowse=true;A.view='browse';A.Refresh(true);A.isBrowse=false;assert(A.ApplyBuild()==false);assert(#A.LearnedEntries()==0)
-local savedLearned=A.LearnedEntries;A.LearnedEntries=function()return {old}end;A.RefreshDetails();A.Locate(old);A.FindRelated(old);A.LearnedEntries=savedLearned;A.RefreshDetails();assert(#A.LearnedEntries()==0)
-local talent;for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)then talent=e;break end end
-A.SetRank(talent.id,0);testLevel=9;assert(not A.SetRank(talent.id,1));A.Refresh();testLevel=10;assert(A.SetRank(talent.id,1));assert(A.NativeTalentPoints()==71);A.SetRank(talent.id,0);testLevel=80
-local nodes={};for _,n in ipairs(HeroFreePickTrees)do nodes[n.talent]=n end
-for _,n in ipairs(HeroFreePickTrees)do assert(n.column>=0 and n.column<=3);if n.depends>0 then local parent=nodes[n.depends];assert(parent and parent.class==n.class and parent.spec==n.spec)end end
-local beforeDraft=HeroFreePickPlans.entries[old.id]
-assert(A.SetLocalLearned(old.id,1));assert(#A.LearnedEntries()==1);assert(HeroFreePickPlans.entries[old.id]==beforeDraft)
-A.learnedQuery='nonexistent string';assert(#A.FilteredLearnedEntries()==0);A.learnedQuery='';A.learnedFilter=old.class;assert(#A.FilteredLearnedEntries()==1)
-A.RefreshDetails();A.Init();assert(#A.LearnedEntries()==1);assert(A.SetLocalLearned(old.id,0));assert(#A.LearnedEntries()==0)
-A.learnedFilter='All'
-A.SetRank(old.id,0);A.Refresh();SlashCmdList.HEROFREEPICK();SlashCmdList.HEROFREEPICK()
-for _,size in ipairs({{1280,720},{1920,1080},{1024,768},{800,600}})do UIParent:SetSize(size[1],size[2]);A.FitWindow();local scale=math.min(1,(size[1]-32)/1180,(size[2]-40)/802);assert(802*scale+12<=size[2]);assert(1180*scale<=size[1]-32)end
-''')
-print('PASS: Lua 5.1/XML, ten-class/spec rendering, tree dependencies, filters, saved plans, architect and disabled learning. Mock UI only; in-game visual check remains.')
-
-ET.parse(root/'Bindings.xml')
-lua.execute("function InCombatLockdown()return false end; bindCalls=0; function SetBinding(k,v)assert(k=='N' and v=='HERO_CHARACTER_ADVANCEMENT');bindCalls=bindCalls+1;return true end; function SaveBindings()end; function GetCurrentBindingSet()return 2 end; GameMenuFrame=nil; GameMenuButtonOptions=nil")
-lua.execute((root/'Access.lua').read_text())
-print('PASS: access Lua and binding XML load; live key/menu integration requires in-game validation.')
-
-lua.execute("""
-local A=HeroFreePick;A.Init();local e
-for _,v in ipairs(HeroFreePickCatalog)do if A.IsTalent(v)then e=v;break end end
-function UnitClass()return e.class,string.upper(e.class)end
-function GetNumTalentTabs()return 1 end
-function GetNumTalents()return 1 end
-function GetActiveTalentGroup()return 1 end
-local rank=0;local points=1;local calls=0
-function GetUnspentTalentPoints()return points end
-function GetTalentInfo()return GetSpellInfo(e.spells[1]),nil,1,1,rank,5 end
-function LearnTalent(tab,index,pet,group)assert(tab==1 and index==1 and pet==false and group==1);calls=calls+1 end
-function InCombatLockdown()return false end
-testLevel=10;assert(A.AssignNativeTalent(e));assert(calls==1);assert(select(3,A.NativeTalent(e))==0)
-rank=1;assert(select(3,A.NativeTalent(e))==1)
-points=0;A.AssignNativeTalent(e);assert(calls==1)
-points=1;testLevel=9;A.AssignNativeTalent(e);assert(calls==1)
-testLevel=80;function InCombatLockdown()return true end;A.AssignNativeTalent(e);assert(calls==1)
-function UnitClass()return 'Hero','HERO'end;assert(not A.AssignNativeTalent(e));assert(calls==1)
-""")
-print('PASS: own-class native talent dispatch, server-owned ranks, no points, below level 10, combat and other-class guards.')
-
-lua.execute("""
-local A=HeroFreePick;function UnitClass()return 'Warrior','WARRIOR'end
-assert(not A.OtherClass('Warrior'));assert(A.OtherClass('Mage'))
-local mage;for _,e in ipairs(HeroFreePickCatalog)do if e.class=='Mage'and e.kind=='Ability'then mage=e;break end end
-assert(not A.SetLocalLearned(mage.id,1))
-function UnitClass()return 'Hero','HERO'end;assert(not A.OtherClass('Mage'));assert(not A.OtherClass('Warrior'))
-""")
-print('PASS: normal-class preview restrictions and Hero exception.')
-
-lua.execute("""
-local A=HeroFreePick;testLevel=80;HeroFreePickPlans.previewLearned={};local entries={}
-for _,e in ipairs(HeroFreePickCatalog)do if e.kind=='Ability'and e.quality=='Legendary'then entries[#entries+1]=e end end
-assert(#entries>=7)
-local costs={};for i=1,7 do local id=entries[i].id;costs[id]=HeroRarityCosts[id];HeroRarityCosts[id]=1 end
-for i=1,6 do assert(A.SetLocalLearned(entries[i].id,1))end
-assert(A.RaritySpent('Legendary')==6);assert(not A.SetLocalLearned(entries[7].id,1))
-assert(A.SetLocalLearned(entries[1].id,0));assert(A.SetLocalLearned(entries[7].id,1));assert(A.RaritySpent('Legendary')==6)
-for id,cost in pairs(costs)do HeroRarityCosts[id]=cost end
-assert(A.RarityLimits.Legendary==6 and A.RarityLimits.Epic==11 and A.RarityLimits.Rare==12 and A.RarityLimits.Uncommon==10)
-HeroFreePickPlans.previewLearned={}
-""")
-print('PASS: rarity cap, over-cap rejection and slot refund.')
-# Primary stat tooltip behavior: no server effects are claimed or applied.
-lua.execute('''
-local lines={}
-GameTooltip.SetText=function(_,s)lines[#lines+1]=s end
-GameTooltip.AddLine=function(_,s)lines[#lines+1]=s end
-local shift=false
-IsShiftKeyDown=function()return shift end
-for _,stat in ipairs({'Strength','Agility','Intellect','Spirit'})do
- local owner={primaryStatKey=stat}
- lines={};HeroFreePick.PrimaryStatTooltip(owner)
- local normal=table.concat(lines,'\\n')
- assert(normal:find('Primary Stat: '..stat,1,true))
- assert(normal:find('Hold SHIFT',1,true))
- assert(not normal:find(HeroFreePick.PrimaryStats[stat].bonuses[1].name,1,true))
- shift=true;lines={};HeroFreePick.PrimaryStatTooltip(owner)
- local expanded=table.concat(lines,'\\n')
- for _,effect in ipairs(HeroFreePick.PrimaryStats[stat].bonuses)do assert(expanded:find(effect.description,1,true))end
- assert(expanded:find('Preview only',1,true));shift=false
+A.class='Mage';A.spec='All';A.quality='All';A.ownership='All';A.view='browse';A.Refresh()
+local e=HeroNativeTalent1.entry
+assert(A.IsTalent(e));HeroNativeTalent1.scripts.OnClick(HeroNativeTalent1,'LeftButton');assert(A.PendingRank(e)==1)
+HeroNativeTalent1.scripts.OnClick(HeroNativeTalent1,'RightButton');assert(A.PendingRank(e)==0)
+assert(not A.AssignNativeTalent(e));assert(not A.HasPendingChanges())
+A.SetLocalLearned(e.id,A.MaxRank(e));assert(A.PendingRank(e)==A.MaxRank(e))
+A.SetLocalLearned(e.id,999);assert(A.PendingRank(e)==A.MaxRank(e))
+local summary=A.PendingSummary();assert(summary[1].after.TP==A.MaxRank(e))
+HeroFreePickFrame:Show();assert(not A.RequestClose());assert(A.PendingDialog:IsShown())
+A.PendingBackButton.scripts.OnClick();assert(not A.PendingDialog:IsShown()and A.PendingRank(e)>0)
+HeroFreePickFrame:Hide();assert(HeroFreePickFrame:IsShown()and A.PendingDialog:IsShown())
+A.PendingAcceptButton.scripts.OnClick();assert(A.HasPendingChanges()and A.PendingDialog:IsShown())
+local ok,reason=A.AcceptPreparation();assert(not ok and reason:find('Server'))
+A.PendingCancelButton.scripts.OnClick();assert(not A.HasPendingChanges()and A.PendingRank(e)==0 and not HeroFreePickFrame:IsShown())
+-- Net-zero edits should not prompt; X/N and Escape share the same close decision.
+A.Toggle();A.SetLocalLearned(e.id,1);A.SetLocalLearned(e.id,0);assert(not A.HasPendingChanges());A.Toggle();assert(not HeroFreePickFrame:IsShown())
+-- Pending drafts, primary-stat changes, reload restoration and independent resource deltas.
+A.Toggle();A.SetRank(e.id,2);HeroFreePickPlans.primaryStat='Agility';assert(A.HasPendingChanges())
+local before=HeroFreePickPlans.pendingBaseline;A.BeginPreparation();assert(HeroFreePickPlans.pendingBaseline==before)
+assert(A.PendingSummary()[2].after.TP==2);A.CancelPreparation();assert(not HeroFreePickPlans.entries[e.id]and not HeroFreePickPlans.primaryStat)
+-- All imports are editable in preparation; affordability is reviewed, not charged on click.
+for _,v in ipairs(HeroTalentAbilityReferences)do if not v.requiredMastery then assert(A.SetLocalLearned(v.id,1));break end end
+assert(A.HasPendingChanges());A.CancelPreparation()
+for _,m in ipairs(HeroMasteries)do
+ A.BeginPreparation();local members={}
+ for _,v in ipairs(HeroFreePickCatalog)do if v.requiredMastery==m.id then members[#members+1]=v end end
+ assert(#members==#m.members)
+ assert(not A.SetLocalLearned(members[1].id,1));assert(A.SetLocalLearned(m.id,1))
+ for _,v in ipairs(members)do assert(A.SetLocalLearned(v.id,1));assert(v.ae==0 and HeroRarityCosts[v.id]==0)end
+ assert(A.AbilityPointsSpent()==2);assert(A.SetLocalLearned(m.id,0))
+ for _,v in ipairs(members)do assert(not HeroFreePickPlans.previewLearned[v.id])end
+ assert(not A.HasPendingChanges());A.CancelPreparation()
 end
-''')
-print('PASS: four primary-stat tooltips, normal/Shift detail separation and preview disclosure.')
-lua.execute('''
-local A=HeroFreePick
-local oldLevel=testLevel
-for _,v in ipairs({{1,9},{9,9},{10,10},{11,11},{80,80}})do testLevel=v[1];assert(A.AbilityPointAllowance()==v[2])end
-testLevel=1
-local saved=HeroFreePickPlans.previewLearned;HeroFreePickPlans.previewLearned={}
-local oldOther=A.OtherClass;A.OtherClass=function()return false end
-local e={id=99999991,kind='Ability',quality='Normal',ae=9,level=1,spells={1},class='Warrior'}
-local e2={id=99999992,kind='Ability',quality='Normal',ae=1,level=1,spells={1},class='Warrior'}
-A.byID[e.id]=e;A.byID[e2.id]=e2
-assert(A.SetLocalLearned(e.id,1));assert(A.AvailableAbilityPoints()==0)
-assert(not A.SetLocalLearned(e2.id,1))
-testLevel=10;assert(A.AvailableAbilityPoints()==1);assert(A.SetLocalLearned(e2.id,1))
-assert(A.SetLocalLearned(e.id,0));assert(A.AvailableAbilityPoints()==9)
-A.byID[e.id]=nil;A.byID[e2.id]=nil;A.OtherClass=oldOther;HeroFreePickPlans.previewLearned=saved;testLevel=oldLevel
-''')
-print('PASS: Ability Point level schedule, spending, insufficient balance, level gain and refund.')
-
-
+-- Existing real talent ranks seed the baseline, then can be edited without LearnTalent.
+HeroFreePickPlans.preparationInitialized=nil;HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil
+local original=A.NativeTalent;A.NativeTalent=function(v)if v.id==e.id then return 1,1,2,5 end end
+A.BeginPreparation();assert(A.PendingRank(e)==2 and not A.HasPendingChanges())
+assert(A.SetLocalLearned(e.id,1));assert(A.PendingSummary()[1].removed==1)
+A.CancelPreparation();assert(A.PendingRank(e)==2);A.NativeTalent=original
+""")
+print('PASS: pending clicks, reversible ranks, all close routes, review choices, baseline persistence, resource deltas, mastery cascade, and zero native learning calls.')
 lua.execute("""
 local A=HeroFreePick;local oldOther=A.OtherClass;local oldLevel=testLevel
 A.OtherClass=function()return false end;testLevel=80
@@ -254,57 +190,7 @@ assert(HeroFreePickFrame:IsShown())
 """)
 print('PASS: menu opens and refreshes with no SetText method on the filter wrapper.')
 
-# Talent-origin references are visible across classes but never alter progression.
-lua.execute("""
-local A=HeroFreePick
-assert(#HeroTalentAbilityReferences==144)
-local seen,natives={},0
-for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)then natives=natives+1 end end
-assert(natives==829)
-A.spec='All';A.kind='All';A.quality='All';A.query=''
-for _,e in ipairs(HeroTalentAbilityReferences)do
- assert(not seen[e.id]);seen[e.id]=true
- assert(A.byID[e.id]==e and e.kind=='Ability' and (e.ae>0 or e.requiredMastery) and e.te==0)
- assert(A.IsTalent(A.byID[e.talentOrigin]))
- assert(HeroBrowseAssignment[e.id] and HeroRarityCosts[e.id]==e.rarityCost)
- if not e.requiredMastery then assert(not A.SetRank(e.id,1) and not A.SetLocalLearned(e.id,1))end
- assert(not HeroFreePickPlans.entries[e.id] and not (HeroFreePickPlans.previewLearned or {})[e.id])
- A.class=e.class;local found=false
- for _,v in ipairs(A.VisibleEntries('ability'))do if v.id==e.id then found=true end end
- assert(found,e.name..' absent from ability pane')
- if e.name=='Living Bomb' then assert(e.ae==2) end
- if e.quality=='Normal'then assert(e.rarityCost==0)end
-end
-""")
-print('PASS: 144 talent-origin references visible, costs mapped, 829 native talents preserved; non-mastery references remain read-only.')
 
-lua.execute("""
-local A=HeroFreePick
-UnitLevel=function()return 80 end;UnitClass=function()return 'Hero','HERO'end
-assert(#HeroMasteries==23 and #HeroMasteryExtraAbilities==9)
-local memberCount=0
-for _,m in ipairs(HeroMasteries)do
- assert(m.ae==2 and m.kind=='Ability' and A.byID[m.id]==m)
- for _,key in ipairs({'entries','previewLearned'})do
-  HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={}
-  local set=key=='entries'and A.SetRank or A.SetLocalLearned
-  local members={}
-  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then members[#members+1]=e;assert(e.ae==0 and HeroRarityCosts[e.id]==0 and not e.displayOnly)end end
-  assert(#members==#m.members,m.name..' missing members')
-  assert(not set(members[1].id,1))
-  assert(set(m.id,1))
-  for _,e in ipairs(members)do assert(set(e.id,1));memberCount=memberCount+1 end
-  assert(A.AbilityPointsSpent(key)==2)
-  if key=='previewLearned'then assert(A.RaritySpent(m.quality)==HeroRarityCosts[m.id])end
-  assert(not set(m.id,0))
-  for _,e in ipairs(members)do assert(set(e.id,0))end
-  assert(set(m.id,0) and A.AbilityPointsSpent(key)==0)
- end
-end
-local member
-for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then member=e;break end end
-HeroFreePickPlans.entries={[member.id]=1};HeroFreePickPlans.previewLearned={[member.id]=1}
-A.Init();assert(not HeroFreePickPlans.entries[member.id] and not HeroFreePickPlans.previewLearned[member.id])
-assert(HeroFreePickPlans.masteryMigrationBackup.entries[member.id]==1)
-""")
-print('PASS: all mastery members gated in learned/draft states, free after mastery, removal guarded and old orphan selections backed up.')
+ET.parse(root/'Bindings.xml')
+lua.execute((root/'Access.lua').read_text())
+print('PASS: access bindings, XML and production preparation modules load in Lua 5.1.')

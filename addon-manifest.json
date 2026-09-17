@@ -13,8 +13,8 @@
   "Bindings.xml": "6c751eb5b4778f00cedec758df9bd32e131d7183727138dcfd410660d331e0a4",
   "Browse.lua": "d1989b7d65db19eb4565395cba7bffb2dd79bcae096edb5d4da3a1aab481e3d9",
   "Catalog.lua": "2d6a2ad24576515cdab00326b48cd1a10f6c4fc46b47ce11a4bed028289cf9d5",
-  "HeroFreePick.lua": "0ea5887de31c60041c8e05a5e7599d43824fb0cb8599a2eca7485a906cff866a",
-  "HeroFreePick.toc": "843dc877a7c71e3131f53907d8fa5c6ec9b3eef662b599d714f4b56dd749d34f",
+  "HeroFreePick.lua": "c5720ecefec511d5d7af4819061039aa106c11e0e8780ec4ff87dc5ec6f0be66",
+  "HeroFreePick.toc": "e18bb6eea743e1e67dd0c52eb900ce2f13a7c664bc2743ffdf607ec9b645f6f3",
   "HeroFreePick.xml": "12cade2eb24746668bdd5366c3818908493b594b65f778263145851e0453169b",
   "Layout.lua": "3fadf8caab6fe028943884cf167a0ba96bd7c5303362a81d2ae81f1ac7937a75",
   "Masteries.lua": "24213fb30cfe3d14c9d77c91774a5b59b575aa4e971af84585f9ea505773e03e",
@@ -22,6 +22,8 @@
   "MenuLayoutOverrides.lua": "abedfb1727ed38e79a6f6af398a0c7cc1dba18fa9fa9d903f7828eee66758164",
   "NativeTalentRoutes.lua": "84d3a46e28f0738e88902757f0b580a5513793df7b677d4534e421ef40875dff",
   "Organization.lua": "83c3260752c686e5def0c70b762bccfbfdb9dc6b92ed63738de64baf46e2c690",
+  "PendingChanges.lua": "95c0a0861da809c9d6dd9d22104bc6afc4b9b01a055b2aef681744c0dc00375f",
+  "PendingDialog.lua": "99361a1c76547b5ce2f3ca864067cdf61e7dea1aeab6138049dcaaeb08449cd4",
   "TalentAbilityReferences.lua": "4cc1c9ebe17cec6819a5a9ec5be70c766ee91b0920af76d10c9527b39e117ac0",
   "Trees.lua": "9e1d8c5f5d76f7a6b5be769ddc1a6375c33adb3b074ed0266a114541e699f32e"
 }

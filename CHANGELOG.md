@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.30.0 - pending advancement review
+
+- Replace immediate native talent learning with reversible pending ranks; left-click adds and right-click removes.
+- Add close review with before/after resource totals and Accept Changes, Go Back, and Cancel Changes.
+- Accept remains blocked until server committing is implemented; pending changes persist across reloads.
+- Permit resource-over-budget preparation; removing a Mastery removes its pending members.
+- Full client restart required for two new Lua files. See docs/PENDING_CHANGES.md.
+
 ## 0.29.1 - Hero Advancement labels
 
 - Rename the menu header, micro-menu tooltip, Escape-menu entry and binding labels to Hero Advancement.

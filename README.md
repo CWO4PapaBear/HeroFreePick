@@ -49,3 +49,7 @@ The ability pane includes 144 talent-origin entries recovered from Area 52 clien
 ### Masteries (0.29.0)
 
 23 Masteries now cost 2 Ability Points plus their recorded rarity gems. Their member abilities cost zero points and gems, require the Mastery in the same local learned list or draft, and must be removed before removing that Mastery. Previous member selections without a Mastery are backed up in `masteryMigrationBackup` and cleared. Mastery members from the talent-origin import are now selectable; other imported references remain read-only. Native talent trees and server behavior are unchanged. See [membership review](docs/AREA52_MASTERIES_REVIEW.md) and [import metadata](docs/mastery-import.json). Restart the client after installation.
+
+### Preparation and review (0.30.0)
+
+All selection clicks now edit pending state. Closing with changes opens a resource review. Go Back resumes editing; Cancel Changes restores the baseline. Accept Changes retains pending edits and reports that server committing is not implemented yet. Native talent points are never applied by menu clicks. See [the preparation workflow](docs/PENDING_CHANGES.md). This supersedes earlier descriptions of immediate native talent assignment and read-only ability references.
