@@ -1,6 +1,6 @@
 {
   "Access.lua": "79c2a02f06514108e482256f3ef1fbc7f9f9fe4f527c8ebc1abe3d4302f360e6",
-  "Adapter.lua": "8f8fda080416b8d9a72e284882fa30a3a4259a41be9b09b7d8859a70995b2834",
+  "Adapter.lua": "50938fa881494848df5777805eed0bfafbf9aa064c684b1c3bb0712bbecceef2",
   "Art/AbilityEssence.blp": "8a4ba5b97181bbd9714eef0daf8311321a77b72673de37a851346a2037acdc21",
   "Art/Atonement.tga": "d45f13952f65a432acfb215a6a2285e8b163279fb56ad7ca28c90886698ba9fe",
   "Art/AtonementIcon.blp": "3a29d68caf80cf0a443f460dffe8d977cc51244cc809e14fed3b0a5516125f24",
@@ -30,8 +30,8 @@
   "Bindings.xml": "6c751eb5b4778f00cedec758df9bd32e131d7183727138dcfd410660d331e0a4",
   "Browse.lua": "d1989b7d65db19eb4565395cba7bffb2dd79bcae096edb5d4da3a1aab481e3d9",
   "Catalog.lua": "5d18e0c4ce2154775528a48d415af47f4c38af1be752542238024494e2f5e7de",
-  "HeroFreePick.lua": "f21b3f96d13d7e55d99c9895cdf0bd1092e3408b469a19a1e3a60aadb6fb4642",
-  "HeroFreePick.toc": "88f1db29e48d44b7e4fb8ef3147f47531b920205c84e273637857ffe641b1aec",
+  "HeroFreePick.lua": "39507bb095037fcb76c717e36bdd58c103b0b5f64be19075787af8cfa02865af",
+  "HeroFreePick.toc": "c2dcb2e1e153c4988ca4ec35c2639afefecb474be8cfa896f767739456a9bf52",
   "HeroFreePick.xml": "12cade2eb24746668bdd5366c3818908493b594b65f778263145851e0453169b",
   "Layout.lua": "3fadf8caab6fe028943884cf167a0ba96bd7c5303362a81d2ae81f1ac7937a75",
   "Masteries.lua": "5fa2666c5cf6afbb07a0868e70df939251d3336ecd5b1eff07e521f22887053e",

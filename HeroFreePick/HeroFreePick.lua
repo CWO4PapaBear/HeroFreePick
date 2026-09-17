@@ -345,7 +345,18 @@ local settingsClose=CreateFrame('Button',nil,settingsMenu,'UIPanelCloseButton');
 local alertCheck=CreateFrame('CheckButton','HeroAlertSoundsCheck',settingsMenu,'UICheckButtonTemplate');alertCheck:SetSize(26,26);alertCheck:SetPoint('TOPLEFT',12,-44)
 txt(settingsMenu,'Alert sounds',42,-50,180,'GameFontHighlight')
 alertCheck:SetScript('OnClick',function(self)A.SetAlertSounds(self:GetChecked())end)
-settingsButton:SetScript('OnClick',function()GameTooltip:Hide();closeInfo();if settingsMenu:IsShown()then settingsMenu:Hide()else alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
+local changeMode=CreateFrame('Button','HeroChangeModeButton',settingsMenu,'UIPanelButtonTemplate');changeMode:SetSize(218,26);changeMode:SetPoint('TOPLEFT',16,-80);changeMode:SetText('Change Mode')
+A.ChangeModeButton=changeMode
+function A.RefreshModeChangeButton(level)
+ if (tonumber(level)or UnitLevel('player'))==1 then changeMode:Show();settingsMenu:SetHeight(122)else changeMode:Hide();settingsMenu:SetHeight(100)end
+end
+changeMode:SetScript('OnClick',function()
+ if UnitLevel('player')~=1 then A.RefreshModeChangeButton();return end
+ settingsMenu:Hide();A.ShowModeChoice(nil,true)
+end)
+A.RefreshModeChangeButton()
+
+settingsButton:SetScript('OnClick',function()GameTooltip:Hide();closeInfo();if settingsMenu:IsShown()then settingsMenu:Hide()else A.RefreshModeChangeButton();alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
 settingsButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Settings');GameTooltip:Show()end)
 settingsButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
 A.SettingsMenu=settingsMenu;A.SettingsButton=settingsButton;A.AlertSoundsCheck=alertCheck
@@ -1079,6 +1090,9 @@ do
 local A=HeroFreePick
 local shield=CreateFrame('Frame','HeroProgressionChoice',UIParent);shield:SetAllPoints(UIParent);shield:SetFrameStrata('FULLSCREEN_DIALOG');shield:SetFrameLevel(60);shield:EnableMouse(true)
 local box=CreateFrame('Frame',nil,shield);box:SetFrameLevel(61);box:SetSize(590,370);box:SetPoint('CENTER');box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32});box:EnableMouse(true)
+box:SetBackdropColor(1,1,1,1)
+local choiceStone=box:CreateTexture(nil,'ARTWORK',nil,-7);choiceStone:SetPoint('TOPLEFT',11,-11);choiceStone:SetPoint('BOTTOMRIGHT',-11,11)
+choiceStone:SetTexture('Interface\\PaperDollInfoFrame\\UI-Character-General-TopLeft');choiceStone:SetTexCoord(80/256,250/256,38/256,67/256);choiceStone:SetVertexColor(1,1,1,1);choiceStone:SetAlpha(1)
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24)
 local note=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');note:SetPoint('TOPLEFT',24,-55);note:SetSize(542,65);note:SetJustifyH('LEFT')
 local closeChoice=CreateFrame('Button',nil,box,'UIPanelCloseButton');closeChoice:SetPoint('TOPRIGHT',-6,-6);closeChoice:SetScript('OnClick',A.HidePreparationPreservingChanges)
@@ -1101,8 +1115,8 @@ local function secondClass()
  local _,own=UnitClass('player');local i=0
  for _,c in ipairs(A.classes)do if string.upper(c)~=own then local selected=c;i=i+1;choice(c,i,'Unlock abilities and talents from '..c..' alongside your original class.',function()finish(A.ChooseHybridPath(selected))end)end end
 end
-function A.ShowModeChoice(level)
- local due=A.ModeChoiceDue(level);if not due then shield:Hide();return end
+function A.ShowModeChoice(level,reopen)
+ local due=(reopen and UnitLevel('player')==1)and 'initial'or A.ModeChoiceDue(level);if not due then shield:Hide();return end
  clear();shield:Show()
  if due=='initial'then
   title:SetText('Choose your progression');note:SetText('Choose how this character will progress. Classic uses the stock server. Installed custom modes are local previews until server integration is complete.')
@@ -1134,6 +1148,7 @@ events:SetScript('OnEvent',function(_,event,level)
    if available then A.mode=saved.mode;A.secondClass=saved.secondClass end
   end
  end
+ A.RefreshModeChangeButton(event=='PLAYER_LEVEL_UP'and tonumber(level)or nil)
  A.ShowModeChoice(event=='PLAYER_LEVEL_UP'and tonumber(level)or nil)
 end)
 end

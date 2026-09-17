@@ -833,3 +833,22 @@ A.ProgressionChoiceButtons[1].scripts.OnClick();assert(HeroFreePickPlans.progres
 HeroFreePickPlans=savedPlans;A.InstalledModes=savedModes;testLevel=80
 """)
 print('PASS: Classic-only initial popup displays inert custom-mode choices, upgrade note, and working Classic selection.')
+
+
+lua.execute("""
+local savedPlans,savedModes,savedMode=HeroFreePickPlans,A.InstalledModes,A.mode
+HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={}}
+A.InstalledModes={Classic=true,ClassPlus=true,Hero=true};A.mode='Classic';testLevel=1
+A.BeginPreparation();assert(A.ChooseInitialMode('Classic'))
+A.RefreshModeChangeButton();assert(A.ChangeModeButton:IsShown())
+A.ChangeModeButton.scripts.OnClick();assert(HeroProgressionChoice:IsShown())
+assert(HeroFreePickPlans.progressionChoice.mode=='Classic')
+A.ProgressionChoiceButtons[2].scripts.OnClick();assert(A.mode=='ClassPlus'and HeroFreePickPlans.progressionChoice.mode=='ClassPlus')
+A.ChangeModeButton.scripts.OnClick();assert(A.ChooseInitialMode('Hero'))
+assert(not A.ChooseInitialMode('Hybrid'))
+testLevel=2;A.RefreshModeChangeButton();assert(not A.ChangeModeButton:IsShown())
+assert(not A.ChooseInitialMode('Classic'));assert(HeroFreePickPlans.progressionChoice.mode=='Hero')
+HeroProgressionChoice:Hide();A.ChangeModeButton.scripts.OnClick();assert(not HeroProgressionChoice:IsShown())
+HeroFreePickPlans=savedPlans;A.InstalledModes=savedModes;A.mode=savedMode;testLevel=80
+""")
+print('PASS: level-one mode reopening preserves prior choice until selection, switches installed modes, and refuses switching at level two or direct Hybrid selection.')

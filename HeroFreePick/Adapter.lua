@@ -425,7 +425,7 @@ function A.ModeChoiceDue(level)
  if choice and choice.mode=='ClassPlus'and level>=10 and not choice.hybridDecision and A.InstalledModes.Hybrid then return 'hybrid'end
 end
 function A.ChooseInitialMode(id)
- if A.ModeChoiceDue()~='initial'or id=='Hybrid'then return false,'Initial choice is only available on first arrival at level 1.'end
+ if UnitLevel('player')~=1 or id=='Hybrid'then return false,'Progression mode can only be changed at level 1.'end
  local ok,why=A.SelectMode(id);if not ok then return false,why end
  HeroFreePickPlans.progressionChoice={mode=id};return true
 end

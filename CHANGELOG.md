@@ -1,3 +1,8 @@
+## 0.39.8
+
+- Add Change Mode to Settings for level-1 characters only. Reopen initial progression choices without clearing the existing choice; retain installed-mode and pending-change validation.
+- Give the progression popup the main interface opaque stone background.
+
 ## 0.39.7
 
 - Classic-only new-character selection now shows disabled Class+, Hero and Hybrid (Level 10) buttons with an optional-module update note. Classic stays selectable; installed custom-mode flows are unchanged.
