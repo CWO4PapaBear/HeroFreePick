@@ -1,3 +1,9 @@
+## 0.31.3
+
+- All Mastery tooltips explain level-based access and zero additional member resource costs.
+- Hold Shift to reveal all linked ability icons, names and required levels; hover icons for a separate spell preview with a missing-client-data fallback.
+- Test membership coverage, live Shift expansion/collapse, preview lifecycle and dismissal for every Mastery. In-game visual verification remains pending.
+
 ## 0.31.2
 
 - Keep modal shields below their panels and progression buttons using bounded frame levels. Explicitly enable reused progression buttons.

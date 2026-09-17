@@ -48,8 +48,93 @@ local function icon(e)
  if path and path~='' then return 'Interface\\Icons\\'..path end
  return 'Interface\\Icons\\INV_Misc_QuestionMark'
 end
+
+-- Interactive mastery tooltip: real icon buttons support a separate spell preview.
+local masteryTip=panel(UIParent,0,0,370,164)
+masteryTip:SetFrameStrata('TOOLTIP');masteryTip:SetFrameLevel(20);masteryTip:SetClampedToScreen(true);masteryTip:EnableMouse(true)
+local masteryTitle=txt(masteryTip,'',12,-12,346,'GameFontNormalLarge')
+local masteryDescription=txt(masteryTip,'Learning this Mastery unlocks access to every connected ability when your character reaches that ability\'s required level. Connected abilities cost no additional Ability Points, Talent Points, or rarity gems.',12,-38,346)
+masteryDescription:SetHeight(70)
+local masteryCost=txt(masteryTip,'',12,-112,346)
+local masteryHint=txt(masteryTip,'',12,-140,346,'GameFontNormalSmall')
+local masteryPreview=CreateFrame('GameTooltip','HeroMasteryAbilityPreview',UIParent,'GameTooltipTemplate')
+masteryPreview:SetFrameStrata('TOOLTIP');masteryPreview:SetFrameLevel(30);masteryPreview:SetClampedToScreen(true)
+local masteryRows={}
+A.MasteryTooltip=masteryTip;A.MasteryTooltipRows=masteryRows
+function A.MasteryTooltipMembers(m)
+ local out={}
+ for _,spell in ipairs(m.members or {})do
+  local entry
+  for _,candidate in ipairs(HeroFreePickCatalog)do
+   if candidate.requiredMastery==m.id then
+    for _,id in ipairs(candidate.spells)do if id==spell then entry=candidate;break end end
+   end
+   if entry then break end
+  end
+  local name,_,texture=GetSpellInfo(spell)
+  out[#out+1]={spell=spell,name=entry and entry.name or name or ('Spell '..spell),level=entry and entry.level,texture=texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
+ end
+ return out
+end
+local masteryOwner,masteryEntry,masteryExpanded,masteryAway
+local function hideMasteryTooltip()
+ masteryTip:Hide();masteryPreview:Hide();masteryOwner=nil;masteryEntry=nil
+end
+local function showMasteryTooltip(owner)
+ local e=owner.entry;masteryOwner=owner;masteryEntry=e;masteryAway=0
+ masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
+ GameTooltip:Hide();masteryPreview:Hide()
+ masteryTitle:SetText(e.name)
+ masteryCost:SetText('Mastery cost: '..essenceCost(e.ae)..'  '..rarityCost(e))
+ masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
+ for _,row in ipairs(masteryRows)do row:Hide()end
+ local members=A.MasteryTooltipMembers(e)
+ if masteryExpanded then
+  for i,member in ipairs(members)do
+   local row=masteryRows[i]
+   if not row then
+    row=CreateFrame('Button',nil,masteryTip);row:SetFrameLevel(21);row:SetSize(28,28);row:EnableMouse(true)
+    row.texture=row:CreateTexture(nil,'ARTWORK');row.texture:SetAllPoints(row)
+    row.label=txt(row,'',36,-1,298);row.label:SetHeight(28)
+    row:SetScript('OnEnter',function(self)
+     local m=self.member;masteryPreview:SetOwner(self,'ANCHOR_RIGHT')
+     if GetSpellInfo(m.spell)then masteryPreview:SetHyperlink('spell:'..m.spell)else masteryPreview:SetText(m.name);masteryPreview:AddLine('Spell description is unavailable in this client.',1,.7,.3,true)end
+     masteryPreview:AddLine(m.level and ('Requires Level '..m.level)or 'Required level unavailable',1,.82,.3)
+     masteryPreview:AddLine('Requires '..masteryEntry.name,1,.82,.3,true)
+     masteryPreview:AddLine('No additional points or rarity gems.',.7,.85,1,true);masteryPreview:Show()
+    end)
+    row:SetScript('OnLeave',function()masteryPreview:Hide()end)
+    masteryRows[i]=row
+   end
+   row.member=member;row:SetPoint('TOPLEFT',masteryTip,'TOPLEFT',12,-166-(i-1)*34);row.texture:SetTexture(member.texture)
+   row.label:SetText(member.name..'\n|cffffd100'..(member.level and ('Level '..member.level)or 'Level unavailable')..'|r');row:Show()
+  end
+ end
+ masteryTip:SetHeight(164+(masteryExpanded and (#members*34+8)or 0))
+ masteryTip:ClearAllPoints();masteryTip:SetPoint('TOPLEFT',owner,'TOPRIGHT',0,0);masteryTip:Show()
+end
+A.ShowMasteryTooltip=showMasteryTooltip
+function A.RefreshMasteryTooltip()
+ if masteryOwner and masteryTip:IsShown()then showMasteryTooltip(masteryOwner);return true end
+ return false
+end
+masteryTip:SetScript('OnUpdate',function(_,elapsed)
+ if not masteryOwner or not masteryOwner:IsShown()or masteryOwner.entry~=masteryEntry or not f:IsShown()then hideMasteryTooltip();return end
+ local expanded=IsShiftKeyDown and IsShiftKeyDown()or false
+ if expanded~=masteryExpanded then showMasteryTooltip(masteryOwner)end
+ if MouseIsOver(masteryOwner)or MouseIsOver(masteryTip)then masteryAway=0 else
+  masteryAway=(masteryAway or 0)+elapsed;if masteryAway>.3 then hideMasteryTooltip()end
+ end
+end)
+masteryTip:Hide();masteryPreview:Hide()
+local function leaveEntryTooltip(self)
+ if not self.entry or not self.entry.isMastery then GameTooltip:Hide()end
+end
+
 local function tooltip(self)
  local e=self.entry;if not e then return end
+ if e.isMastery then showMasteryTooltip(self);return end
+ hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
  local nativeTab,nativeIndex=A.NativeTalent(e)
@@ -94,7 +179,7 @@ local function entryButton(parent,w,h)
   b.name:ClearAllPoints();b.name:SetPoint('TOPLEFT',3,-39);b.name:SetWidth(w-6);b.name:SetHeight(38);b.name:SetJustifyH('CENTER')
   b.rank:ClearAllPoints();b.rank:SetPoint('TOPLEFT',3,-80);b.rank:SetWidth(w-6);b.rank:SetJustifyH('CENTER')
  end
- b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end)
+ b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
  b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
  return b
 end
@@ -324,7 +409,7 @@ local function renderTrees()
     local rankBox=CreateFrame('Frame',nil,b);rankBox:SetSize(30,17);rankBox:SetPoint('CENTER',b,'BOTTOMRIGHT',-2,0);rankBox:SetFrameLevel(b:GetFrameLevel()+1)
     rankBox:SetBackdrop({bgFile='Interface\\Tooltips\\UI-Tooltip-Background',edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=7,insets={left=2,right=2,top=2,bottom=2}});rankBox:SetBackdropColor(0,0,0,1);rankBox:SetBackdropBorderColor(.7,.65,.35,1)
     b.rank:SetParent(rankBox);b.rank:ClearAllPoints();b.rank:SetPoint('CENTER',rankBox,'CENTER',0,0);b.rank:SetWidth(28);b.rank:SetHeight(14);treePools.buttons[count]=b
-    b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end)
+    b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
     b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1)end)
    end
    local e=A.byID[node.entries[1]]
@@ -493,7 +578,7 @@ local function renderAbilityIcons(entries)
    b=CreateFrame('Button',nil,spellContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp')
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b)
    b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
-   b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end)
+   b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
    abilityPool[i]=b
   end
@@ -529,7 +614,7 @@ function A.RefreshDetails()
   local b=learnedPool[i]
   if not b then
    b=CreateFrame('Button',nil,learnedContent);b:SetSize(272,46);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.learned=true;b:SetBackdrop({bgFile='Interface\\Tooltips\\UI-Tooltip-Background',edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=8});b:SetBackdropColor(.02,.02,.02,1)
-   b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(38,38);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end)
+   b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(38,38);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
   b.entry=e;b.icon:SetTexture(icon(e));b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',0,-(i-1)*49);b:Show()
@@ -584,7 +669,7 @@ local function renderSummary()
   table.sort(groups[key],function(x,y)if sort=='Rarity Cost'and (x.ae or 0)~=(y.ae or 0)then return (x.ae or 0)<(y.ae or 0)end;if x.name==y.name then return x.id<y.id end;return x.name<y.name end)
   for j,e in ipairs(groups[key])do
    n=n+1;local b=summaryButtons[n]
-   if not b then b=CreateFrame('Button',nil,allContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square');b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b:SetScript('OnClick',function(self,mouse)if mouse=='RightButton'then showSpellMenu(self.entry)end end);summaryButtons[n]=b end
+   if not b then b=CreateFrame('Button',nil,allContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square');b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip);b:SetScript('OnClick',function(self,mouse)if mouse=='RightButton'then showSpellMenu(self.entry)end end);summaryButtons[n]=b end
    b.entry=e;b.learned=true;b.icon:SetTexture(icon(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
   end
   y=y+math.ceil(#groups[key]/16)*42+15
@@ -614,7 +699,7 @@ local function renderBrowse()
   h.category=c;h:ClearAllPoints();h:SetPoint('TOPLEFT',0,-y);h.label:SetText(c.name..' - Level '..c.referenceLevel..' ('..#entries..')');h.label:SetTextColor(.23,.12,.045);h:Show();y=y+32
   for j,e in ipairs(entries)do
    count=count+1;local b=allButtons[count]
-   if not b then b=CreateFrame('Button',nil,allContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square');b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end);allButtons[count]=b end
+   if not b then b=CreateFrame('Button',nil,allContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square');b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip);b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end);allButtons[count]=b end
    if not rawget(b,'classBadge') then
     b.classBadge=b:CreateTexture(nil,'OVERLAY');b.classBadge:SetSize(16,16);b.classBadge:SetPoint('BOTTOMRIGHT',b,'BOTTOMRIGHT',4,-4)
     b.classRing=b:CreateTexture(nil,'OVERLAY',nil,1);b.classRing:SetTexture('Interface\\AddOns\\HeroFreePick\\Art\\ClassRing');b.classRing:SetSize(20,20);b.classRing:SetPoint('CENTER',b.classBadge,'CENTER',0,0)
@@ -733,7 +818,7 @@ function A.FitWindow()
  f:SetClampedToScreen(true);f:SetClampRectInsets(0,0,0,-32)
 end
 f:RegisterEvent('DISPLAY_SIZE_CHANGED');f:RegisterEvent('UI_SCALE_CHANGED');f:RegisterEvent('CHARACTER_POINTS_CHANGED');f:RegisterEvent('PLAYER_TALENT_UPDATE');f:RegisterEvent('PLAYER_LEVEL_UP');f:RegisterEvent('MODIFIER_STATE_CHANGED')
-f:SetScript('OnEvent',function(self,event)if event=='MODIFIER_STATE_CHANGED' then local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
+f:SetScript('OnEvent',function(self,event)if event=='MODIFIER_STATE_CHANGED' then if A.RefreshMasteryTooltip()then return end;local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
 SLASH_HEROFREEPICK1='/heropick'
 function A.Toggle()if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show();if A.ShowModeChoice then A.ShowModeChoice()end end end
 

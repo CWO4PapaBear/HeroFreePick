@@ -293,3 +293,28 @@ assert "shield:SetFrameLevel(60)" in ui
 assert "box:SetFrameLevel(61)" in ui
 assert "b:SetFrameLevel(62);b:EnableMouse(true);b:Enable()" in ui
 print('PASS: initial Classic choice works through its visible button; popup layers explicitly ordered.')
+
+lua.execute("""
+local shifted=false;local over=true
+IsShiftKeyDown=function()return shifted end
+MouseIsOver=function()return over end
+HeroFreePickFrame:Show()
+local owner=CreateFrame('Button');owner:Show()
+for _,m in ipairs(HeroMasteries)do
+ local members=A.MasteryTooltipMembers(m);assert(#members==#m.members)
+ for i,member in ipairs(members)do assert(member.spell==m.members[i]and member.level and member.name and member.texture)end
+ owner.entry=m;shifted=false;A.ShowMasteryTooltip(owner)
+ assert(A.MasteryTooltip:IsShown())
+ for _,row in ipairs(A.MasteryTooltipRows)do assert(not row:IsShown())end
+ shifted=true;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.01)
+ for i,member in ipairs(members)do
+  local row=A.MasteryTooltipRows[i];assert(row:IsShown()and row.member.spell==member.spell)
+  row.scripts.OnEnter(row);assert(HeroMasteryAbilityPreview:IsShown())
+  row.scripts.OnLeave(row);assert(not HeroMasteryAbilityPreview:IsShown())
+ end
+ shifted=false;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.01)
+ for _,row in ipairs(A.MasteryTooltipRows)do assert(not row:IsShown())end
+end
+over=false;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.4);assert(not A.MasteryTooltip:IsShown())
+""")
+print('PASS: every Mastery member resolves; Shift expands/collapses, icon previews open/close, and leaving dismisses the tooltip.')
