@@ -557,7 +557,7 @@ local count=0
 for _,e in ipairs(A.Results())do if not A.IsTalent(e)then count=count+1;assert(e.class=='Mage'and e.id<20000000);assert(not A.SetLocalLearned(e.id,1))end end
 assert(count>0)
 for _,e in ipairs(HeroFreePickCatalog)do if e.kind=='Ability'then
- local before=e.level;assert(A.AbilityDisplayLevel(e)==(A.ClassicTrainerLevels[e.id]or 999))
+ local before=e.level;assert(A.AbilityDisplayLevel(e)==(A.ClassicStartingLevels[e.id]or (A.ClassicSupplementSources[e.id]and A.ClassicSupplementSources[e.id].level)or A.ClassicTrainerLevels[e.id]or 999))
  for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(A.AbilityDisplayLevel(e)==before)end
  A.mode='Classic';assert(e.level==before)
 end end
@@ -599,3 +599,49 @@ for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(#A.Resu
 UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
 """)
 print('PASS: Classic Track Beasts is browsable at trainer level 2, appears as learned only for a Hunter who knows it, and stays out of custom-mode catalogs.')
+
+lua.execute("""
+local oldClass,oldTabs,oldTabInfo,oldLink=UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink
+local count=0
+for id,source in pairs(A.ClassicSupplementSources)do
+ local entry=A.byID[id];assert(entry and entry.classicOnly)
+ count=count+1
+ UnitClass=function()return entry.class,string.upper(entry.class)end
+ A.mode='Classic';A.class=entry.class;A.spec='All';A.query=entry.name;A.kind='All';A.quality='All'
+ local found=false;for _,e in ipairs(A.Results())do if e.id==id then found=true end end;assert(found)
+ assert(A.AbilityDisplayLevel(entry)==source.level)
+ assert(#A.LearningSourceLines(entry)>0)
+ GetNumSpellTabs=function()return 1 end
+ GetSpellTabInfo=function()return 'Class',nil,0,1 end
+ GetSpellLink=function()return '|Hspell:'..entry.spells[#entry.spells]..'|h[Known]|h'end
+ local learned=A.ClassicSpellbookEntries();assert(#learned==1 and learned[1].id==id)
+ for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(not A.EntryAvailableInMode(entry))end
+end
+assert(count==89)
+A.mode='Classic';A.class='Hunter';A.query='Tame Beast'
+local tame=A.Results();assert(#tame==1 and tame[1].spells[1]==1515 and A.AbilityDisplayLevel(tame[1])==10)
+assert(A.LearningSourceLines(tame[1])[1]:find('Class Quest',1,true))
+UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
+""")
+assert('Trainer Level ' not in (root/'HeroFreePick.lua').read_text())
+print('PASS: all 89 Classic supplements browse and match learned spellbook ranks; Tame Beast is level 10 from a class quest; custom modes exclude supplements; separators omit Trainer.')
+
+lua.execute("""
+local oldClass,oldTabs,oldTabInfo,oldLink=UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink
+local count=0;local covered={}
+for id,level in pairs(A.ClassicStartingLevels)do
+ local e=A.byID[id];assert(e);count=count+1;covered[e.class]=true
+ A.mode='Classic';A.class=e.class;A.query=e.name;A.spec='All'
+ assert(A.AbilityDisplayLevel(e)==(e.class=='DeathKnight'and 55 or 1))
+ assert(A.LearningSourceLines(e)[1]=='Learned at character creation.')
+ UnitClass=function()return e.class,string.upper(e.class)end
+ GetNumSpellTabs=function()return 1 end
+ GetSpellTabInfo=function()return 'Class',nil,0,1 end
+ GetSpellLink=function()return '|Hspell:'..e.spells[1]..'|h[Known]|h'end
+ local learned=A.ClassicSpellbookEntries();assert(#learned==1 and learned[1].id==id)
+ A.mode='Hero';assert(A.AbilityDisplayLevel(e)==e.level)
+end
+assert(count==28);for _,class in ipairs(A.classes)do assert(covered[class])end
+UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
+""")
+print('PASS: starting abilities cover all ten classes, use creation source/levels only in Classic, and match actual spellbook ownership.')

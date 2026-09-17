@@ -1,3 +1,10 @@
+## 0.36.2
+
+- Identify 28 starting class ability groups across all ten classes, add three missing entries, and display character-creation sources. Preserve stock Death Knight starting level 55. Exclude Classic supplements from Mastery membership.
+
+- Restore 89 missing Classic class ability groups using stock class trainer and quest teaching records, including level-10 Tame Beast and its pet-management abilities. Keep supplements out of custom modes.
+- Use plain Level headings; retain acquisition sources in tooltips.
+
 ## 0.36.1
 
 - Add the missing Classic Hunter Track Beasts catalog entry (spell 1494, trainer level 2), allowing it to appear in the ability menu and match learned spellbook entries. Keep the supplement out of custom-mode catalogs.

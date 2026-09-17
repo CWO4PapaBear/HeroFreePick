@@ -13,7 +13,7 @@ for _,e in ipairs(HeroMasteryExtraAbilities)do add(e)end
 for _,m in ipairs(HeroMasteries)do
  local spells={};for _,s in ipairs(m.members)do spells[s]=true end
  for _,e in ipairs(HeroFreePickCatalog)do
-  if not A.IsTalent(e)and not e.isMastery then
+  if not e.classicOnly and not A.IsTalent(e)and not e.isMastery then
    for _,s in ipairs(e.spells)do if spells[s]then
     e.requiredMastery=m.id;e.ae=0;e.rarityCost=0;e.displayOnly=nil;HeroRarityCosts[e.id]=0;break
    end end

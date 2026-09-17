@@ -203,7 +203,7 @@ local function tooltip(self)
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
  local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
- local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.ClassicTrainerLevels[e.id])or(e.level or 1)
+ local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.AbilityDisplayLevel(e))or(e.level or 1)
  local locked=A.OtherClass(e.class)or UnitLevel('player')<requiredLevel
  if A.IsTalent(e)and A.mode~='Classic'then
   GameTooltip:AddLine('Requires Level '..requiredLevel,prerequisiteColor(UnitLevel('player')>=requiredLevel))
@@ -662,7 +662,7 @@ local function renderAbilityIcons(entries)
   if currentLevel~=displayLevel then
    if currentLevel then y=y+math.ceil(column/columns)*40+3 end
    currentLevel=displayLevel;column=0;headerCount=headerCount+1
-   local h=abilityHeaders[headerCount]or txt(spellContent,'',5,0,350,'GameFontNormal');abilityHeaders[headerCount]=h;h:ClearAllPoints();h:SetPoint('TOPLEFT',5,-y);h:SetText(A.mode=='Classic'and(currentLevel==999 and 'Other learning sources'or('Trainer Level '..currentLevel))or('Level '..currentLevel));h:SetTextColor(.23,.12,.045);h:Show();y=y+17
+   local h=abilityHeaders[headerCount]or txt(spellContent,'',5,0,350,'GameFontNormal');abilityHeaders[headerCount]=h;h:ClearAllPoints();h:SetPoint('TOPLEFT',5,-y);h:SetText(A.mode=='Classic'and(currentLevel==999 and 'Other learning sources'or('Level '..currentLevel))or('Level '..currentLevel));h:SetTextColor(.23,.12,.045);h:Show();y=y+17
   end
   local b=abilityPool[i]
   if not b then
@@ -673,7 +673,7 @@ local function renderAbilityIcons(entries)
    b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
    abilityPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.ClassicTrainerLevels[e.id])or e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.AbilityDisplayLevel(e))or e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
  end
  spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+3))
 end

@@ -27,7 +27,7 @@ function A.Init()
  if A.ValidateMasterySelections then A.ValidateMasterySelections()end
 end
 function A.Specs()
-    local seen,out={}, {'All'}
+    local seen,out={All=true}, {'All'}
     for _,e in ipairs(HeroFreePickCatalog) do
         if e.class==A.class and not seen[e.spec] then seen[e.spec]=true;out[#out+1]=e.spec end
     end
@@ -496,7 +496,7 @@ end
 -- Stock AzerothCore trainer_spell reference; presentation only, never custom-mode requirements.
 A.ClassicTrainerLevels={[1]=20,[2]=6,[3]=4,[4]=68,[6]=12,[8]=10,[10]=4,[11]=8,[12]=26,[13]=10,[14]=22,[15]=12,[16]=22,[17]=26,[19]=12,[20]=8,[22]=4,[23]=8,[25]=8,[26]=3,[28]=12,[30]=30,[31]=32,[32]=20,[33]=1,[34]=6,[35]=68,[36]=18,[37]=6,[38]=16,[39]=18,[40]=14,[41]=20,[42]=28,[43]=32,[44]=30,[46]=8,[47]=6,[48]=12,[49]=4,[50]=30,[51]=60,[52]=12,[53]=30,[54]=10,[56]=34,[57]=18,[60]=1,[61]=14,[63]=18,[64]=16,[66]=20,[67]=4,[68]=14,[69]=28,[71]=30,[72]=12,[73]=28,[74]=20,[75]=18,[76]=4,[77]=4,[78]=16,[79]=20,[80]=16,[81]=20,[82]=8,[83]=28,[84]=20,[85]=4,[86]=30,[87]=8,[88]=14,[89]=18,[90]=10,[91]=26,[92]=18,[93]=40,[94]=16,[95]=20,[96]=20,[97]=30,[98]=10,[100]=1,[101]=6,[102]=8,[103]=14,[104]=26,[105]=1,[106]=14,[107]=6,[108]=1,[109]=20,[110]=30,[111]=32,[112]=16,[113]=20,[114]=40,[115]=14,[116]=12,[117]=32,[118]=36,[119]=34,[120]=26,[121]=8,[122]=50,[123]=22,[125]=12,[126]=6,[127]=1,[128]=16,[129]=24,[130]=26,[131]=30,[132]=26,[133]=22,[134]=40,[135]=20,[136]=30,[137]=20,[138]=16,[139]=4,[140]=10,[141]=12,[143]=20,[144]=66,[145]=34,[146]=22,[148]=16,[149]=6,[150]=24,[151]=36,[154]=6,[155]=16,[156]=18,[157]=18,[158]=16,[159]=10,[160]=24,[161]=50,[162]=70,[163]=24,[165]=26,[166]=68,[167]=22,[168]=20,[169]=20,[170]=22,[172]=12,[173]=10,[174]=36,[175]=22,[176]=6,[177]=26,[178]=70,[180]=64,[181]=42,[182]=8,[183]=16,[184]=24,[185]=8,[186]=10,[189]=28,[190]=14,[191]=20,[192]=24,[193]=22,[194]=12,[195]=22,[196]=8,[197]=24,[198]=30,[200]=40,[202]=4,[203]=26,[204]=18,[205]=16,[206]=8,[207]=20,[208]=8,[209]=70,[210]=34,[211]=22,[212]=26,[213]=14,[214]=10,[215]=32,[216]=6,[217]=20,[218]=48,[219]=28,[221]=38,[222]=14,[223]=1,[224]=10,[225]=32,[226]=42,[229]=46,[230]=16,[232]=12,[234]=20,[235]=1,[236]=10,[237]=20,[238]=4,[239]=10,[240]=20,[242]=10,[243]=10,[244]=14,[245]=24,[246]=18,[247]=38,[248]=30,[249]=24,[250]=28,[251]=26,[252]=28,[253]=30,[254]=32,[255]=14,[256]=18,[257]=4,[258]=12,[260]=28,[261]=36,[262]=20,[263]=24,[264]=30,[265]=20,[266]=40,[267]=30,[268]=4,[269]=10,[270]=16,[271]=28,[272]=34,[273]=30,[274]=20,[275]=20,[276]=10,[277]=18,[278]=40,[279]=32,[282]=60,[283]=4,[284]=14,[285]=22,[286]=20,[287]=30,[288]=60,[289]=28,[290]=10,[291]=24,[292]=32,[293]=36,[294]=46,[295]=22,[296]=30,[297]=38,[298]=20,[299]=20,[300]=30,[302]=20,[303]=30,[304]=12,[306]=32,[307]=62,[308]=44,[309]=36,[310]=64,[311]=40,[312]=44,[313]=16,[314]=20,[315]=64,[316]=70,[317]=62,[318]=40,[319]=64,[320]=66,[321]=68,[322]=70,[323]=64,[324]=66,[325]=62,[326]=66,[327]=14,[328]=64,[329]=70,[330]=62,[332]=62,[333]=64,[334]=62,[335]=68,[336]=66,[337]=64,[338]=70,[340]=66,[341]=20,[342]=6,[343]=66,[344]=70,[345]=68,[346]=30,[347]=75,[348]=70,[349]=75,[350]=30,[351]=75,[352]=80,[354]=75,[355]=80,[356]=12,[357]=75,[358]=80,[359]=20,[360]=80,[361]=30,[362]=20,[363]=75,[364]=75,[365]=71,[366]=28,[367]=12,[368]=75,[369]=80,[370]=71,[371]=80,[372]=75,[373]=50,[374]=80,[375]=75,[376]=16,[377]=80,[378]=74,[379]=71,[380]=16,[381]=40,[382]=80,[383]=71,[384]=80,[385]=80,[386]=30,[387]=40,[388]=50,[1154]=61,[1155]=80,[1156]=60,[1159]=58,[1160]=64,[1162]=56,[1163]=59,[1164]=57,[1166]=75,[1167]=57,[1168]=70,[1170]=68,[1171]=58,[1172]=66,[1173]=62,[1174]=61,[1177]=56,[1178]=56,[1180]=65,[1181]=67,[1182]=65,[1184]=72,[2663]=4}
 function A.AbilityDisplayLevel(e)
- if A.mode=="Classic"and not A.IsTalent(e)then return A.ClassicTrainerLevels[e.id]or 999 end
+ if A.mode=="Classic"and not A.IsTalent(e)then return A.ClassicStartingLevels[e.id]or (A.ClassicSupplementSources[e.id]and A.ClassicSupplementSources[e.id].level)or A.ClassicTrainerLevels[e.id]or 999 end
  return e.level
 end
 
@@ -505,6 +505,10 @@ A.ClassicQuestSources={[60]={1470,1485,1598,1599,8344},[62]={1795},[65]={1471,15
 function A.LearningSourceLines(e)
  local lines={}
  if A.mode~='Classic'or A.IsTalent(e)then return lines end
+ if A.ClassicStartingLevels[e.id]then return {'Learned at character creation.','Stock learning-source reference; server changes may differ.'}end
+ if A.ClassicSupplementSources[e.id]then
+  return {'Learned from '..A.ClassicSupplementSources[e.id].label..'.','Stock learning-source reference; server changes may differ.'}
+ end
  if A.ClassicTrainerLevels[e.id]then lines[#lines+1]='Learned from a Trainer (level '..A.ClassicTrainerLevels[e.id]..').'end
  local quests=A.ClassicQuestSources[e.id]
  if quests then lines[#lines+1]='Learned from a Quest.'end
@@ -513,3 +517,95 @@ function A.LearningSourceLines(e)
 end
 
 A.ClassicTrainerLevels[19001494]=2
+
+A.ClassicSupplementSources={[19100000]={level=55,label="Class Quest"},
+[19100001]={level=55,label="Class Quest"},
+[19100002]={level=55,label="Trainer"},
+[19100003]={level=60,label="Trainer"},
+[19100004]={level=55,label="Trainer"},
+[19100005]={level=57,label="Trainer"},
+[19100006]={level=57,label="Trainer"},
+[19100007]={level=63,label="Trainer"},
+[19100008]={level=63,label="Trainer"},
+[19100009]={level=70,label="Trainer"},
+[19100010]={level=72,label="Trainer"},
+[19100011]={level=72,label="Trainer"},
+[19100012]={level=40,label="Trainer"},
+[19100013]={level=40,label="Trainer"},
+[19100014]={level=50,label="Trainer"},
+[19100015]={level=70,label="Class Quest / Trainer"},
+[19100016]={level=32,label="Trainer"},
+[19100017]={level=24,label="Trainer"},
+[19100018]={level=10,label="Class Quest"},
+[19100019]={level=10,label="Class Quest"},
+[19100020]={level=20,label="Trainer"},
+[19100021]={level=10,label="Class Quest"},
+[19100022]={level=40,label="Trainer"},
+[19100023]={level=8,label="Trainer"},
+[19100024]={level=10,label="Class Quest"},
+[19100025]={level=10,label="Class Quest"},
+[19100026]={level=32,label="Trainer"},
+[19100027]={level=50,label="Trainer"},
+[19100028]={level=26,label="Trainer"},
+[19100029]={level=40,label="Trainer"},
+[19100030]={level=18,label="Trainer"},
+[19100031]={level=56,label="Trainer"},
+[19100032]={level=30,label="Trainer"},
+[19100033]={level=74,label="Trainer"},
+[19100034]={level=50,label="Trainer"},
+[19100035]={level=40,label="Trainer"},
+[19100036]={level=40,label="Trainer"},
+[19100037]={level=40,label="Trainer"},
+[19100038]={level=65,label="Trainer"},
+[19100039]={level=40,label="Trainer"},
+[19100040]={level=35,label="Trainer"},
+[19100041]={level=40,label="Trainer"},
+[19100042]={level=35,label="Trainer"},
+[19100043]={level=50,label="Trainer"},
+[19100044]={level=40,label="Trainer"},
+[19100045]={level=71,label="Class Quest / Trainer"},
+[19100046]={level=30,label="Trainer"},
+[19100047]={level=20,label="Trainer"},
+[19100048]={level=20,label="Trainer"},
+[19100049]={level=20,label="Trainer"},
+[19100050]={level=60,label="Trainer"},
+[19100051]={level=20,label="Trainer"},
+[19100052]={level=20,label="Trainer"},
+[19100053]={level=20,label="Trainer"},
+[19100054]={level=20,label="Trainer"},
+[19100055]={level=30,label="Trainer"},
+[19100056]={level=20,label="Trainer"},
+[19100057]={level=40,label="Class Quest / Trainer"},
+[19100058]={level=60,label="Trainer"},
+[19100059]={level=52,label="Trainer"},
+[19100060]={level=60,label="Trainer"},
+[19100061]={level=54,label="Trainer"},
+[19100062]={level=8,label="Trainer"},
+[19100063]={level=40,label="Trainer"},
+[19100064]={level=66,label="Trainer"},
+[19100065]={level=20,label="Class Quest / Trainer"},
+[19100066]={level=40,label="Class Quest / Trainer"},
+[19100067]={level=20,label="Class Quest / Trainer"},
+[19100068]={level=20,label="Class Quest / Trainer"},
+[19100069]={level=40,label="Trainer"},
+[19100070]={level=16,label="Trainer"},
+[19100071]={level=70,label="Trainer"},
+[19100072]={level=48,label="Trainer"},
+[19100073]={level=56,label="Trainer"},
+[19100074]={level=60,label="Trainer"},
+[19100075]={level=10,label="Trainer"},
+[19100076]={level=12,label="Trainer"},
+[19100077]={level=70,label="Trainer"},
+[19100078]={level=40,label="Trainer"},
+[19100079]={level=34,label="Trainer"},
+[19100080]={level=20,label="Trainer"},
+[19100081]={level=80,label="Trainer"},
+[19100082]={level=40,label="Class Quest / Trainer"},
+[19100083]={level=20,label="Class Quest / Trainer"},
+[19100084]={level=24,label="Trainer"},
+[19100085]={level=20,label="Trainer"},
+[19100086]={level=6,label="Trainer"},
+[19100087]={level=40,label="Trainer"},
+[19100088]={level=20,label="Trainer"}}
+
+A.ClassicStartingLevels={[21]=1,[18]=1,[7]=1,[152]=1,[124]=1,[171]=1,[142]=1,[45]=1,[19200000]=1,[147]=1,[59]=1,[24]=1,[29]=1,[188]=1,[187]=1,[58]=1,[55]=1,[305]=1,[1161]=55,[1169]=55,[1175]=55,[1158]=55,[19200001]=55,[1183]=55,[1157]=55,[1165]=55,[1176]=55,[19200002]=55}
