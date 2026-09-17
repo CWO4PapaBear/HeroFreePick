@@ -734,7 +734,7 @@ local talentsBox=panel(f,640,-573,177,30);local pointsTalentText=txt(talentsBox,
 talentsBox:EnableMouse(true);talentsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Pending Talent Points');GameTooltip:AddLine('Remaining / total for your level. One point per level starting at level 10. Pending talent ranks use this budget; removing a rank returns its points.',1,1,1,true);GameTooltip:Show()end);talentsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local actionMenus={}
 local function actionButton(label,action)
- local menu=CreateFrame('Frame',nil,f,'UIDropDownMenuTemplate');actionMenus[action]=menu
+ local menu=CreateFrame('Frame','HeroAdvancement'..action..'ActionMenu',f,'UIDropDownMenuTemplate');actionMenus[action]=menu
  UIDropDownMenu_Initialize(menu,function()
   for _,option in ipairs(A.FooterActions(action))do
    local item=option;local info=UIDropDownMenu_CreateInfo();info.text=item.label;info.notCheckable=true;info.disabled=not item.enabled;info.func=item.run

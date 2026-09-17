@@ -11,7 +11,7 @@ local function frame()
  setmetatable(f,{__index=function(s,k)if k=='dependencyOverlay'then return nil end;if k=='CreateFontString'or k=='CreateTexture'then return function()return frame()end end;return methods[k]or function()end end})
  return f
 end
-function CreateFrame(kind,name)local f=frame();if name then _G[name]=f end;return f end
+function CreateFrame(kind,name)local f=frame();f.frameName=name;if name then _G[name]=f end;return f end
 HeroFreePickFrame=frame();UIParent=frame();UIParent:SetSize(1920,1080);GameTooltip=frame();UISpecialFrames={};tinsert=table.insert;SlashCmdList={}
 testLevel=80
 function UnitLevel()return testLevel end
@@ -22,7 +22,7 @@ function PanelTemplates_TabResize()end
 function PanelTemplates_SelectTab(t)t:Disable()end
 function PanelTemplates_DeselectTab(t)t:Enable()end
 function UIDropDownMenu_SetWidth()end
-function UIDropDownMenu_Initialize(frame,init)init()end
+function UIDropDownMenu_Initialize(frame,init,displayMode)if displayMode=='MENU'then assert(type(frame.frameName)=='string','3.3.5 MENU dropdowns must have a name')end;init()end
 function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
@@ -705,3 +705,6 @@ end
 HeroFreePickPlans=original
 """)
 print('PASS: pending resets restore selected categories including removed baseline abilities; preserve confirmed ranks, unrelated state, Classic restrictions and in-flight commit guards; learned resets stay unavailable.')
+
+lua.execute("assert(type(HeroFreePick.Toggle)=='function');for _,action in ipairs({'Apply','Pending','Learned'})do assert(_G['HeroAdvancement'..action..'ActionMenu'])end")
+print('PASS: named footer dropdowns satisfy the 3.3.5 MENU requirement and addon initialization reaches Toggle.')
