@@ -1,3 +1,9 @@
+## 0.37.0
+
+- Compact AP/TP boxes around measured text with two-digit capacity; retain the TP right edge. Add Apply Pending, Reset Pending, and disabled Reset Learned controls between them.
+- Pending resets restore only the chosen category from its preparation baseline. Classic only permits pending talent apply/reset.
+- Learned resets remain disabled pending server integration: applied talent reset quotes and charges must use the authoritative trainer price.
+
 ## 0.36.6
 
 - Default the rarity panel to hidden for Classic characters, preserving explicit saved toggle preferences and custom-mode defaults.

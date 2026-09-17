@@ -732,25 +732,48 @@ local pointsBox=panel(f,25,-573,265,30);local pointText=txt(pointsBox,'',9,-9,24
 pointsBox:EnableMouse(true);pointsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Available Ability Points');GameTooltip:AddLine('9 points at levels 1-9, then 1 per level starting at 10. Selected ability costs are subtracted; unlearning refunds them. Local prototype balance.',1,1,1,true);GameTooltip:Show()end);pointsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local talentsBox=panel(f,640,-573,177,30);local pointsTalentText=txt(talentsBox,'',8,-9,163,'GameFontNormalSmall')
 talentsBox:EnableMouse(true);talentsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Pending Talent Points');GameTooltip:AddLine('Remaining / total for your level. One point per level starting at level 10. Pending talent ranks use this budget; removing a rank returns its points.',1,1,1,true);GameTooltip:Show()end);talentsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
-local function resetSelection(talents)
- A.BeginPreparation()
- for _,key in ipairs({'previewLearned','entries'})do
-  for id in pairs(HeroFreePickPlans[key]or {})do local e=A.byID[id];if e and A.IsTalent(e)==talents then HeroFreePickPlans[key][id]=nil end end
- end
- A.Refresh()
-end
-local function resetButton(label,x,talents)
- local b
- b=btn(f,label,x,-575,167,function(self)
-  if not self.confirmReset then self.confirmReset=true;self:SetText('Confirm reset');return end
-  self.confirmReset=nil;self:SetText(label);resetSelection(talents)
+local actionMenus={}
+local function actionButton(label,action)
+ local menu=CreateFrame('Frame',nil,f,'UIDropDownMenuTemplate');actionMenus[action]=menu
+ UIDropDownMenu_Initialize(menu,function()
+  for _,option in ipairs(A.FooterActions(action))do
+   local item=option;local info=UIDropDownMenu_CreateInfo();info.text=item.label;info.notCheckable=true;info.disabled=not item.enabled;info.func=item.run
+   UIDropDownMenu_AddButton(info)
+  end
+ end,'MENU')
+ local b=btn(f,label,0,-575,140,function(self)ToggleDropDownMenu(1,nil,menu,self,0,0)end)
+ b:SetScript('OnEnter',function(self)
+  GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText(label)
+  local text=action=='Apply'and(A.mode=='Classic'and 'Review and apply pending talents. Learned talents still require a trainer reset.'or 'Review pending abilities and talents. Server application is not connected yet.')
+   or action=='Pending'and 'Discard pending changes in the selected category and restore the build from when preparation began. Learned abilities and talents are preserved.'
+   or(A.mode=='Classic'and 'Classic learned talents must be reset at a trainer.'or 'Requires server reset support. Applied talent resets must use the current trainer price, quoted and charged by the server after confirmation. No reset or charge is available yet.')
+  GameTooltip:AddLine(text,1,1,1,true);GameTooltip:Show()
  end)
- b:SetScript('OnLeave',function(self)self.confirmReset=nil;self:SetText(label);GameTooltip:Hide()end)
- b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText(label);GameTooltip:AddLine(talents and 'Removes pending talent points. Cancel Changes restores your starting selections.' or 'Removes pending abilities and their costs. Cancel Changes restores your starting selections.',1,1,1,true);GameTooltip:Show()end)
+ b:SetScript('OnLeave',function()GameTooltip:Hide()end)
  return b
 end
-local resetAbilitiesButton=resetButton('Reset All Abilities',297,false)
-local resetTalentsButton=resetButton('Reset All Talents',468,true)
+local applyPendingButton=actionButton('Apply Pending','Apply')
+local resetPendingButton=actionButton('Reset Pending','Pending')
+local resetLearnedButton=actionButton('Reset Learned','Learned')
+local pointMeasure=txt(pointsBox,'Ability Points: '..essenceCost(99),0,0,0,'GameFontNormalSmall');pointMeasure:Hide()
+local talentMeasure=txt(talentsBox,'Talent Points: '..talentCost(99)..'/99',0,0,0,'GameFontNormalSmall');talentMeasure:Hide()
+local function layoutFooter()
+ local function measured(text,fallback)local width=text:GetStringWidth();return type(width)=='number'and width>0 and width or fallback end
+ local apWidth=math.ceil(math.max(measured(pointMeasure,128),measured(pointText,128)))+18
+ local tpWidth=math.ceil(math.max(measured(talentMeasure,142),measured(pointsTalentText,142)))+18
+ local ap=L.overrides.points or L.defaults.points;local tp=L.overrides.talentPoints or L.defaults.talentPoints
+ local apX=ap.x or L.defaults.points.x;local right=(tp.x or L.defaults.talentPoints.x)+(tp.w or L.defaults.talentPoints.w)
+ pointsBox:SetWidth(apWidth);pointText:SetWidth(apWidth-18)
+ talentsBox:ClearAllPoints();talentsBox:SetPoint('TOPRIGHT',f,'TOPLEFT',right,-(tp.y or L.defaults.talentPoints.y));talentsBox:SetWidth(tpWidth)
+ pointsTalentText:ClearAllPoints();pointsTalentText:SetPoint('RIGHT',talentsBox,'RIGHT',-8,0);pointsTalentText:SetWidth(tpWidth-16);pointsTalentText:SetJustifyH('RIGHT')
+ local start=apX+apWidth+6;local width=math.max(60,(right-tpWidth-6-start-12)/3)
+ for i,b in ipairs({applyPendingButton,resetPendingButton,resetLearnedButton})do
+  b:ClearAllPoints();b:SetPoint('TOPLEFT',f,'TOPLEFT',start+(i-1)*(width+6),-(ap.y or L.defaults.points.y)-2);b:SetWidth(width)
+ end
+ if A.classicCommit then applyPendingButton:Disable();resetPendingButton:Disable()else applyPendingButton:Enable();resetPendingButton:Enable()end
+ -- No authoritative reset handler is installed in this build.
+ resetLearnedButton:Disable()
+end
 local allPanel=panel(f,25,-135,792,433);parchment(allPanel)
 local allTitle=txt(allPanel,'Browse - All Abilities',14,-13,720,'GameFontNormalLarge')
 local browseEssenceIndicator=txt(allPanel,'',14,-36,720,'GameFontNormalSmall')
@@ -848,6 +871,7 @@ function A.Refresh(resetScroll)
  L.Apply()
 end
 L.AfterApply=function()
+ layoutFooter()
  local iconScale=math.max(.1,math.min(1,(searchBox:GetHeight()-6)/18,(searchBox:GetWidth()-12)/18))
  searchIcon:SetScale(iconScale)
  local inset=6+18*iconScale+5
@@ -891,8 +915,9 @@ L.Bind('filter',learnedFilter)
 L.Bind('points',pointsBox)
 L.Bind('talentPoints',talentsBox)
 L.Bind('rarityToggle',rarityToggle)
-L.Bind('resetAbilities',resetAbilitiesButton)
-L.Bind('resetTalents',resetTalentsButton)
+L.Bind('applyPending',applyPendingButton)
+L.Bind('resetPending',resetPendingButton)
+L.Bind('resetLearned',resetLearnedButton)
 L.Bind('bottomHero',browseTab)
 L.Bind('bottomBuilder',architectTab)
 L.Bind('spec1',specs[1])

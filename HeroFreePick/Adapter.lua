@@ -613,3 +613,38 @@ A.ClassicStartingLevels={[21]=1,[18]=1,[7]=1,[152]=1,[124]=1,[171]=1,[142]=1,[45
 -- Shared starting skill 118: class mask 40 includes Rogue and Death Knight.
 -- Creation ownership takes precedence over redundant trainer records.
 A.ClassicStartingLevels[19100075]=1 -- Rogue Dual Wield (spell 674)
+
+-- Footer actions restore draft baselines; they never erase confirmed server ownership.
+function A.ResetPendingSelection(kind)
+ if A.classicCommit then return false,'Wait for the talent application to finish.'end
+ if A.mode=='Classic'and kind~='Talents'then return false,'Classic characters can only reset pending talents.'end
+ if kind~='Abilities'and kind~='Talents'and kind~='All'then return false,'Unknown reset selection.'end
+ A.BeginPreparation()
+ local base=HeroFreePickPlans.pendingBaseline
+ for _,key in ipairs({'previewLearned','entries'})do
+  local state=HeroFreePickPlans[key]or {};local original=base[key]or {};local ids={}
+  for id in pairs(state)do ids[id]=true end;for id in pairs(original)do ids[id]=true end
+  for id in pairs(ids)do local e=A.byID[id]
+   if e and(kind=='All'or(A.IsTalent(e)and kind=='Talents')or(not A.IsTalent(e)and kind=='Abilities'))then state[id]=original[id]end
+  end
+  HeroFreePickPlans[key]=state
+ end
+ if A.SyncMasteryGrants then A.SyncMasteryGrants()end
+ return true
+end
+function A.FooterActions(action)
+ local classic=A.mode=='Classic';local busy=A.classicCommit~=nil
+ if action=='Apply'then
+  return {{label='Apply Pending Talents',enabled=classic and not busy,run=function()A.ShowPendingReview()end},
+   {label='Accept Pending Abilities and Talents',enabled=not classic and not busy,run=function()A.ShowPendingReview()end}}
+ elseif action=='Pending'then
+  local out={}
+  for _,kind in ipairs({'Abilities','Talents','All'})do local selection=kind
+   out[#out+1]={label='Reset Pending '..(kind=='All'and 'Abilities and Talents'or kind),enabled=not busy and(not classic or kind=='Talents'),run=function()
+    local ok,why=A.ResetPendingSelection(selection);if not ok then A.ShowPointWarning(why)else A.Refresh()end
+   end}
+  end
+  return out
+ end
+ return {{label='Reset Learned Abilities',enabled=false},{label='Reset Learned Talents (trainer price)',enabled=false},{label='Reset Learned Abilities and Talents',enabled=false}}
+end

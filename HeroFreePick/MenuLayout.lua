@@ -19,8 +19,9 @@ L.defaults['filter']={parent='side',x=208,y=100,w=104,h=25}
 L.defaults['points']={parent='window',x=25,y=573,w=265,h=30}
 L.defaults['talentPoints']={parent='window',x=640,y=573,w=177,h=30}
 L.defaults['rarityToggle']={parent='window',x=838,y=575,w=306,h=25}
-L.defaults['resetAbilities']={parent='window',x=297,y=575,w=167,h=25}
-L.defaults['resetTalents']={parent='window',x=468,y=575,w=167,h=25}
+L.defaults['applyPending']={parent='window',x=177,y=575,w=150,h=25}
+L.defaults['resetPending']={parent='window',x=333,y=575,w=150,h=25}
+L.defaults['resetLearned']={parent='window',x=489,y=575,w=150,h=25}
 L.defaults['bottomHero']={parent='window',x=20,y=615,w=195,h=32}
 L.defaults['bottomBuilder']={parent='window',x=207,y=615,w=195,h=32}
 L.defaults['spec1']={parent='window',x=483,y=106,w=110,h=31}

@@ -673,3 +673,35 @@ A.mode='Hero';local rows=A.LearnedDisplayRows();assert(#rows==1 and rows[1].entr
 A.FilteredLearnedEntries=oldFiltered;A.byID[-901]=nil
 """)
 print('PASS: all modes hide passive learned rows, including reinserted grouping parents, while retaining active children.')
+
+lua.execute("""
+local original=HeroFreePickPlans
+local talent,ability
+for _,e in ipairs(HeroFreePickCatalog)do
+ if e.class=='Warrior'then
+  if A.IsTalent(e)and A.MaxRank(e)>1 then talent=e elseif e.kind=='Ability'and not e.requiredMastery and not e.requiredBundle then ability=e end
+ end
+end
+assert(talent and ability)
+for _,mode in ipairs({'Hero','ClassPlus','Hybrid','Classic'})do
+ A.mode=mode;A.classicCommit=nil
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={[talent.id]=2,[ability.id]=1},previewLearned={[talent.id]=2},primaryStat='Strength',pendingBaseline={entries={[talent.id]=1},previewLearned={[talent.id]=1,[ability.id]=1},primaryStat='Strength'}}
+ assert(A.ResetPendingSelection('Talents'))
+ assert(HeroFreePickPlans.entries[talent.id]==1 and HeroFreePickPlans.previewLearned[talent.id]==1)
+ assert(HeroFreePickPlans.entries[ability.id]==1 and HeroFreePickPlans.previewLearned[ability.id]==nil)
+ assert(HeroFreePickPlans.primaryStat=='Strength')
+ if mode=='Classic'then
+  assert(not A.ResetPendingSelection('Abilities'));assert(not A.ResetPendingSelection('All'))
+ else
+  assert(A.ResetPendingSelection('Abilities'))
+  assert(HeroFreePickPlans.entries[ability.id]==nil and HeroFreePickPlans.previewLearned[ability.id]==1)
+ end
+ local actions=A.FooterActions('Pending');assert(actions[2].enabled);assert(actions[1].enabled==(mode~='Classic'))
+ local apply=A.FooterActions('Apply');assert(apply[1].enabled==(mode=='Classic'));assert(apply[2].enabled==(mode~='Classic'))
+ for _,action in ipairs(A.FooterActions('Learned'))do assert(not action.enabled)end
+ A.classicCommit={};assert(not A.ResetPendingSelection('Talents'));assert(not A.FooterActions('Apply')[1].enabled)
+ A.classicCommit=nil
+end
+HeroFreePickPlans=original
+""")
+print('PASS: pending resets restore selected categories including removed baseline abilities; preserve confirmed ranks, unrelated state, Classic restrictions and in-flight commit guards; learned resets stay unavailable.')
