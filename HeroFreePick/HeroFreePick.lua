@@ -972,11 +972,13 @@ local dialog=CreateFrame('Frame','HeroPendingChangesDialog',UIParent)
 A.PendingDialog=dialog
 -- Full-window mouse shield keeps the review modal while preserving the pending menu.
 dialog:SetAllPoints(UIParent);dialog:SetFrameStrata('FULLSCREEN_DIALOG');dialog:SetFrameLevel(40);dialog:EnableMouse(true)
-local box=CreateFrame('Frame',nil,dialog);box:SetFrameLevel(41);box:SetSize(650,440);box:SetPoint('CENTER');box:EnableMouse(true)
+local box=CreateFrame('Frame',nil,dialog);box:SetFrameLevel(41);box:SetSize(650,140);box:SetPoint('CENTER');box:EnableMouse(true)
 box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32,insets={left=11,right=11,top=11,bottom=11}})
-local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24);title:SetText('Pending Hero Advancement Changes')
-local body=box:CreateFontString(nil,'OVERLAY','GameFontHighlightSmall');body:SetPoint('TOPLEFT',26,-58);body:SetSize(598,295);body:SetJustifyH('LEFT');body:SetJustifyV('TOP')
-local message=box:CreateFontString(nil,'OVERLAY','GameFontHighlightSmall');message:SetPoint('BOTTOMLEFT',26,65);message:SetSize(598,38);message:SetTextColor(1,.65,.2);message:SetJustifyH('LEFT')
+box:SetBackdropBorderColor(1,.15,.15,1)
+local stone=box:CreateTexture(nil,'ARTWORK',nil,-7)
+stone:SetPoint('TOPLEFT',11,-11);stone:SetPoint('BOTTOMRIGHT',-11,11)
+stone:SetTexture('Interface\\PaperDollInfoFrame\\UI-Character-General-TopLeft');stone:SetTexCoord(80/256,250/256,38/256,67/256);stone:SetVertexColor(1,1,1,1);stone:SetAlpha(1)
+local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24);title:SetText('You have unapplied changes.')
 local function button(text,x,fn)
  local b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(185,26);b:SetPoint('BOTTOMLEFT',x,26);b:SetText(text);b:SetScript('OnClick',fn);return b
 end
@@ -992,20 +994,7 @@ local function finish()
  closing=true;dialog:Hide();window:Hide();closing=false
 end
 function A.ShowPendingReview()
- if A.classicCommit then dialog:Show();return end
- local lines={'Review the proposed resources below. No changes have been learned.',''}
- for _,section in ipairs(A.PendingSummary())do
-  lines[#lines+1]=(section.key=='entries'and 'Archetype draft'or 'Hero Advancement')..': +'..section.added..' / -'..section.removed..' ranks'
-  for _,q in ipairs({'AP','TP','Uncommon','Rare','Epic','Legendary'})do
-   local before=section.before[q];local after=section.after[q];local delta=after-before
-   lines[#lines+1]=(q=='AP'and 'Ability Points'or q=='TP'and 'Talent Points'or q)..': '..before..' -> '..after..' ('..(delta>=0 and '+'or '')..delta..')'
-  end
-  lines[#lines+1]=''
- end
- local base=HeroFreePickPlans.pendingBaseline
- if base and base.primaryStat~=HeroFreePickPlans.primaryStat then lines[#lines+1]='Primary stat: '..tostring(base.primaryStat or 'None')..' -> '..tostring(HeroFreePickPlans.primaryStat or 'None')end
- body:SetText(table.concat(lines,'\n'))
- message:SetText(A.mode=='Classic'and 'Accept learns new talent ranks using the stock server. Confirmed ranks require a trainer to reset.'or 'Preview only. Custom-mode server committing is not available yet.')
+ if not dialog:IsShown()and PlaySound then PlaySound('RaidWarning')end
  dialog:Show()
 end
 function A.RequestClose()
@@ -1017,7 +1006,7 @@ end
 A.PendingAcceptButton=button('Accept Changes',27,function()
  local ok,reason=A.AcceptPreparation()
  if A.classicCommit then A.PendingAcceptButton:Disable();A.PendingBackButton:Disable();A.PendingCancelButton:Disable()end
- if ok then finish()else message:SetText(reason)end
+ if ok then finish()elseif not A.classicCommit and reason then A.ShowPointWarning(reason)end
 end)
 A.PendingBackButton=button('Go Back',232,function()if A.classicCommit then return end;dialog:Hide();window:Show()end)
 A.PendingCancelButton=button('Cancel Changes',437,function()if A.classicCommit then return end;A.CancelPreparation();A.Refresh();finish()end)
@@ -1029,7 +1018,7 @@ window:SetScript('OnHide',function()
  elseif HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end
 end)
 A.ClassicCommitResult=function(ok,reason)
- A.PendingAcceptButton:Enable();A.PendingBackButton:Enable();A.PendingCancelButton:Enable();message:SetText(reason)
+ A.PendingAcceptButton:Enable();A.PendingBackButton:Enable();A.PendingCancelButton:Enable();if not ok and reason then A.ShowPointWarning(reason)end
  A.Refresh();if ok then finish()end
 end
 local poll=CreateFrame('Frame','HeroClassicCommitPoller');A.ClassicCommitPoller=poll

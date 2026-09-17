@@ -1,3 +1,8 @@
+## 0.39.1
+
+- Simplify the pending-close confirmation for every character type to the header "You have unapplied changes." and its existing buttons. Use the main interface's opaque stone texture, a red border and a compact height. Play RaidWarning once when the confirmation opens.
+- Preserve all accept/back/cancel/close behavior. Failed commits still report through the existing warning alert instead of adding text to the confirmation.
+
 ## 0.39.0
 
 - Split Teleport Mastery from Portal Mastery, with independent purchases/grants and Teleport: Dalaran artwork. Add neutral teleport previews alongside existing neutral portals; preserve Classic and faction/race level rules.
