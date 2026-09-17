@@ -1,3 +1,7 @@
+## 0.35.3
+
+- Reject Classic talent additions immediately when tier investment or dependency ranks are missing, using the existing points warning alert and the selected plan state. Custom level gates retain the same alert behavior.
+
 ## 0.35.2
 
 - Add 2px of vertical padding above and below learned-row content so borders wrap around icons instead of touching them.

@@ -330,6 +330,22 @@ local function permitted(id,rank,key)
  local e=A.byID[id];if not e then return false end
  if A.classicCommit then A.ShowPointWarning('Waiting for the server to confirm talent learning.');return false end
  if A.mode=='Classic'and not A.IsTalent(e)then A.ShowPointWarning('Classic abilities are learned from trainers.');return false end
+ if A.mode=='Classic'and A.IsTalent(e)and rank>((HeroFreePickPlans[key]or {})[id]or 0)then
+  A.BeginPreparation()
+  if UnitLevel('player')<10 then A.ShowPointWarning('Talents require level 10.');return false end
+  local node=A.TalentNode(e)
+  if not node then A.ShowPointWarning('This talent is unavailable.');return false end
+  local state=HeroFreePickPlans[key]or {};local lower,dependencyRank,dependencyName=0,0,'prerequisite talent'
+  for _,other in ipairs(HeroFreePickCatalog)do if other.class==e.class and A.IsTalent(other)then
+   local n=A.TalentNode(other)
+   if n then
+    if n.spec==node.spec and n.row<node.row then lower=lower+(state[other.id]or 0)end
+    if n.talent==node.depends then dependencyRank=state[other.id]or 0;dependencyName=other.name end
+   end
+  end end
+  if lower<node.row*5 then A.ShowPointWarning('Requires '..node.row*5 ..' points in lower tiers of '..e.spec..'.');return false end
+  if node.depends>0 and dependencyRank<math.max(1,node.dependsRank)then A.ShowPointWarning('Requires '..math.max(1,node.dependsRank)..' points in '..dependencyName..'.');return false end
+ end
  if A.Mode().tierLevels and A.IsTalent(e)and rank>((HeroFreePickPlans[key]or {})[id]or 0)then
   local node=A.TalentNode(e)
   if not node or UnitLevel('player')<10+5*node.row then A.ShowPointWarning('This talent tier requires level '..(node and 10+5*node.row or '?')..'.');return false end

@@ -515,3 +515,20 @@ A.PendingRank=oldRank
 """)
 print('PASS: Classic tree/dependency requirements use planned ranks; custom level requirements switch at the exact required level.')
 
+
+lua.execute("""
+local oldClass,oldNative,oldWarning=UnitClass,A.NativeTalent,A.ShowPointWarning
+UnitClass=function()return 'Mage','MAGE'end;A.NativeTalent=function()return nil end;testLevel=80;A.mode='Classic'
+local e;for _,v in ipairs(HeroFreePickCatalog)do local n=A.IsTalent(v)and A.TalentNode(v);if v.class=='Mage'and n and n.row>0 and n.depends>0 then e=v;break end end;assert(e)
+local warning;A.ShowPointWarning=function(s)warning=s end
+for _,key in ipairs({'entries','previewLearned'})do
+ HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil;A.BeginPreparation()
+ local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+ warning=nil;assert(not setter(e.id,1)and warning and not HeroFreePickPlans[key][e.id])
+ local node=A.TalentNode(e)
+ for _,v in ipairs(HeroFreePickCatalog)do local n=A.IsTalent(v)and A.TalentNode(v);if v.class==e.class and n and n.spec==node.spec and n.row<node.row and n.talent~=node.depends then HeroFreePickPlans[key][v.id]=A.MaxRank(v)end end
+ warning=nil;assert(not setter(e.id,1)and warning and not HeroFreePickPlans[key][e.id])
+end
+UnitClass=oldClass;A.NativeTalent=oldNative;A.ShowPointWarning=oldWarning
+""")
+print('PASS: Classic tier and prerequisite failures alert immediately and spend no points in advancement or draft plans.')
