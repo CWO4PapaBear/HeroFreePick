@@ -114,14 +114,14 @@ outerBorder:SetBackdrop({edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',
 
 
 local header=panel(f,48,-7,1124,29)
-local title=txt(header,'Character Advancement',8,-7,1048,'GameFontNormal');title:SetJustifyH('CENTER')
+local title=txt(header,'Hero Advancement',8,-7,1048,'GameFontNormal');title:SetJustifyH('CENTER')
 local closeBox=panel(f,1143,-7,29,29)
 local infoBox=panel(f,1114,-7,29,29)
 if HeroFreePickFrameClose then HeroFreePickFrameClose:SetParent(closeBox);HeroFreePickFrameClose:ClearAllPoints();HeroFreePickFrameClose:SetPoint('CENTER',closeBox,'CENTER',0,0);HeroFreePickFrameClose:SetSize(28,28);HeroFreePickFrameClose:SetScript('OnClick',function()f:Hide()end)end
 local infoButton=CreateFrame('Button',nil,infoBox);infoButton:SetAllPoints(infoBox)
 local infoLabel=txt(infoButton,'i',0,-6,29,'GameFontNormalLarge');infoLabel:SetJustifyH('CENTER')
 infoButton:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
-local function showModuleInfo(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Character Advancement');GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true);GameTooltip:AddLine('Module GitHub link coming soon.',1,.82,.3,true);GameTooltip:Show()end
+local function showModuleInfo(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Hero Advancement');GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true);GameTooltip:AddLine('Module GitHub link coming soon.',1,.82,.3,true);GameTooltip:Show()end
 infoButton:SetScript('OnEnter',showModuleInfo);infoButton:SetScript('OnClick',showModuleInfo);infoButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
 
 local emblem=CreateFrame('Frame',nil,f);emblem:SetFrameLevel(f:GetFrameLevel()+10);emblem:SetSize(66,66);emblem:SetPoint('TOPLEFT',-12,18)
@@ -132,7 +132,7 @@ for y=0,63 do
  if half>0 then local strip=well:CreateTexture(nil,'ARTWORK');strip:SetTexture('Interface\\Icons\\Ability_Paladin_BeaconOfLight');strip:SetPoint('TOPLEFT',left,-y);strip:SetSize(half*2,1);strip:SetTexCoord(.08+.84*left/64,.08+.84*(64-left)/64,.08+.84*y/64,.08+.84*(y+1)/64)end
 end
 local rim=well:CreateTexture(nil,'OVERLAY');rim:SetTexture('Interface\\AddOns\\HeroFreePick\\Art\\ClassRing');rim:SetSize(80,80);rim:SetPoint('CENTER',well,'CENTER',0,0)
-emblem:EnableMouse(true);emblem:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText('Character Advancement');GameTooltip:AddLine('Atonement',1,.82,.3);GameTooltip:Show()end);emblem:SetScript('OnLeave',function()GameTooltip:Hide()end)
+emblem:EnableMouse(true);emblem:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText('Hero Advancement');GameTooltip:AddLine('Atonement',1,.82,.3);GameTooltip:Show()end);emblem:SetScript('OnLeave',function()GameTooltip:Hide()end)
 
 local mode=txt(f,'',700,-139,425,'GameFontNormalSmall');mode:Hide()
 A.isBrowse=true

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.29.1 - Hero Advancement labels
+
+- Rename the menu header, micro-menu tooltip, Escape-menu entry and binding labels to Hero Advancement.
+- Render (N) in yellow in the micro-menu tooltip.
+
 ## 0.29.0 - mastery prerequisites and costs
 
 - Add 23 Masteries as abilities costing 2 AP, preserving raw Area 52 rarity and gem costs.
