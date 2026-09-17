@@ -401,3 +401,40 @@ for _,bundle in ipairs(HeroCompanionBundles)do for _,member in ipairs(A.MasteryT
 A.mode='Classic';assert(A.EntryIcon(HeroCompanionBundles[1])~=A.PackageSpellIcons[HeroCompanionBundles[1].spells[1]])
 """)
 print('PASS: all 12 texture hashes verified; companion entry and tooltip artwork uses explicit mappings; Classic artwork unchanged.')
+
+lua.execute("""
+A.mode='Hero';HeroFreePickFrame:Show();local shift=false
+IsShiftKeyDown=function()return shift end;MouseIsOver=function()return true end
+local owner=CreateFrame('Button');owner:Show()
+local bundle=HeroCompanionBundles[2];owner.entry=bundle
+A.ShowEntryTooltip(owner);shift=true;A.RefreshMasteryTooltip()
+local function checkRows()local count=0;for _,row in ipairs(A.MasteryTooltipRows)do if row:IsShown()then count=count+1 end end;assert(count==5)end
+checkRows()
+for _,child in ipairs(HeroCompanionAbilities)do if child.spells[1]==93558 then owner.entry=child end end
+shift=false;A.ShowEntryTooltip(owner);shift=true;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.01);checkRows()
+assert(A.PackageSpellIcons[109982]:find('novart_books'))
+assert(not A.PackageSpellIcons[91652]:find('novart_books'))
+""")
+print('PASS: Dragonkin bundle and same-named tame action both expand five skills; Lore/Dismiss artwork swapped.')
+lua.execute("""
+local native=A.NativeTalent;local oldClass=UnitClass
+UnitClass=function()return 'Warrior','WARRIOR'end;testLevel=20;A.mode='Classic';A.view='browse';A.classicCommit=nil
+HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil
+local talent;for _,e in ipairs(HeroFreePickCatalog)do local n=A.IsTalent(e)and A.TalentNode(e);if e.class=='Warrior'and n and n.row==0 and A.MaxRank(e)>=2 then talent=e;break end end;assert(talent)
+local rank,calls=0,0
+A.NativeTalent=function(e)if e.id==talent.id then return 1,1,rank,5,1 end end
+GetUnspentTalentPoints=function()return 5-rank end
+InCombatLockdown=function()return false end
+LearnTalent=function(tab,index)assert(tab==1 and index==1);calls=calls+1 end
+A.BeginPreparation();assert(A.SetLocalLearned(talent.id,2));assert(calls==0)
+HeroFreePickFrame:Show();A.ShowPendingReview();A.PendingAcceptButton.scripts.OnClick();assert(A.classicCommit)
+local function tick(dt)A.ClassicCommitPoller.scripts.OnUpdate(A.ClassicCommitPoller,dt or .1)end
+tick();assert(calls==1);tick();assert(calls==1)
+rank=1;tick();tick();assert(calls==2)
+rank=2;tick();tick();assert(not A.classicCommit and not A.PendingDialog:IsShown()and not A.HasPendingChanges())
+-- Unconfirmed ranks time out instead of silently becoming learned.
+assert(A.SetLocalLearned(talent.id,3));A.ShowPendingReview();A.PendingAcceptButton.scripts.OnClick();tick(6)
+assert(not A.classicCommit and rank==2 and A.PendingDialog:IsShown())
+A.CancelPreparation();A.NativeTalent=native;UnitClass=oldClass
+""")
+print('PASS: Classic popup Accept sends two native ranks sequentially through real OnUpdate polling, waits for acknowledgments, closes on success and times out without inventing learned ranks.')

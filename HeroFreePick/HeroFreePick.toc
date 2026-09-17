@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: Hero Free Pick | Character Builder
 ## Notes: Offline catalogue and build planning. /heropick. No server changes.
-## Version: 0.32.2
+## Version: 0.32.3
 ## SavedVariablesPerCharacter: HeroFreePickPlans, HeroFreePickPlanBackup
 Catalog.lua
 Adapter.lua

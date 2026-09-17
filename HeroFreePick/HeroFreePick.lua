@@ -90,6 +90,7 @@ local function hideMasteryTooltip()
 end
 local function showMasteryTooltip(owner)
  local e=owner.entry;masteryOwner=owner;masteryEntry=e;masteryAway=0
+ if e.requiredBundle then e=A.byID[e.requiredBundle]end
  masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
  GameTooltip:Hide();masteryPreview:Hide()
  masteryTitle:SetText(e.name)
@@ -109,7 +110,7 @@ local function showMasteryTooltip(owner)
      local m=self.member;masteryPreview:SetOwner(self,'ANCHOR_RIGHT')
      if GetSpellInfo(m.spell)then masteryPreview:SetHyperlink('spell:'..m.spell)else masteryPreview:SetText(m.name);masteryPreview:AddLine('Spell description is unavailable in this client.',1,.7,.3,true)end
      masteryPreview:AddLine(m.level and ('Requires Level '..m.level)or 'Required level unavailable',1,.82,.3)
-     masteryPreview:AddLine('Requires '..masteryEntry.name,1,.82,.3,true)
+     masteryPreview:AddLine('Requires '..(masteryEntry.requiredBundle and A.byID[masteryEntry.requiredBundle].name or masteryEntry.name),1,.82,.3,true)
      masteryPreview:AddLine('No additional points or rarity gems.',.7,.85,1,true);masteryPreview:Show()
     end)
     row:SetScript('OnLeave',function()masteryPreview:Hide()end)
@@ -142,7 +143,7 @@ end
 
 local function tooltip(self)
  local e=self.entry;if not e then return end
- if e.isMastery or e.isBundle then showMasteryTooltip(self);return end
+ if e.isMastery or e.isBundle or(e.requiredBundle and (e.name==A.byID[e.requiredBundle].name or(IsShiftKeyDown and IsShiftKeyDown())))then showMasteryTooltip(self);return end
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
@@ -196,6 +197,7 @@ local function updateMasteryBadge(b,e)
 end
 A.UpdateMasteryBadge=updateMasteryBadge
 
+A.ShowEntryTooltip=tooltip
 local function selectEntry(e)A.selected=e;A.AdjustPending(e,1)end
 local function entryButton(parent,w,h)
  local b=CreateFrame('Button',nil,parent);b:SetSize(w,h);b:RegisterForClicks('LeftButtonUp','RightButtonUp')
@@ -602,7 +604,7 @@ local function renderAbilityIcons(entries)
   if currentLevel~=e.level then
    if currentLevel then y=y+math.ceil(column/columns)*40+10 end
    currentLevel=e.level;column=0;headerCount=headerCount+1
-   local h=abilityHeaders[headerCount]or txt(spellContent,'',5,0,350,'GameFontNormal');abilityHeaders[headerCount]=h;h:ClearAllPoints();h:SetPoint('TOPLEFT',5,-y);h:SetText('Level '..currentLevel);h:SetTextColor(.23,.12,.045);h:Show();y=y+24
+   local h=abilityHeaders[headerCount]or txt(spellContent,'',5,0,350,'GameFontNormal');abilityHeaders[headerCount]=h;h:ClearAllPoints();h:SetPoint('TOPLEFT',5,-y);h:SetText('Level '..currentLevel);h:SetTextColor(.23,.12,.045);h:Show();y=y+17
   end
   local b=abilityPool[i]
   if not b then

@@ -1,3 +1,10 @@
+## 0.32.3
+
+- Swap Dragonkin Lore/Dismiss icons; expand connected groups from same-named tame actions and Shift-hovered bundle children.
+- Tighten ability level-header spacing from 24 to 17 UI units.
+- Review Summoner's Armor and all 23 imported Mastery descriptions against local rules.
+- Verify Classic Accept through the actual popup callback and frame poller with sequential mocked native acknowledgments and timeout handling; live verification remains required.
+
 ## 0.32.2
 
 - Bundle the 12 missing A52 textures inside the addon and map affected abilities and companion tooltip icons to explicit artwork.
