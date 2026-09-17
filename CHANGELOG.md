@@ -1,3 +1,9 @@
+## 0.32.2
+
+- Bundle the 12 missing A52 textures inside the addon and map affected abilities and companion tooltip icons to explicit artwork.
+- Give companion child abilities individual spell icons instead of inherited parent fallbacks. Classic artwork is unchanged; no server changes.
+- Verify BLP decoding, asset hashes and entry/tooltip routing; retain asset source metadata.
+
 ## 0.32.1
 
 - Add Summon Imp to Demon Mastery and make Demon Mastery available at level 1; retain its 2 AP and existing gem cost.

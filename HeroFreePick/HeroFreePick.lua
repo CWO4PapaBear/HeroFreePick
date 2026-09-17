@@ -43,6 +43,7 @@ local function scroll(parent,name,x,y,w,h)
  return s,c
 end
 local function icon(e)
+ local packaged=A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[e.spells[1]];if packaged then return packaged end
  local _,_,texture=GetSpellInfo(e.spells[1]);if texture then return texture end
  local path=(HeroFreePickLayout[e.id]or{}).icon
  if path and path~='' then return 'Interface\\Icons\\'..path end
@@ -50,6 +51,7 @@ local function icon(e)
 end
 
 -- Interactive mastery tooltip: real icon buttons support a separate spell preview.
+A.EntryIcon=icon
 local masteryTip=panel(UIParent,0,0,370,164)
 masteryTip:SetFrameStrata('TOOLTIP');masteryTip:SetFrameLevel(20);masteryTip:SetClampedToScreen(true);masteryTip:EnableMouse(true)
 local masteryTitle=txt(masteryTip,'',12,-12,346,'GameFontNormalLarge')
@@ -72,7 +74,7 @@ function A.MasteryTooltipMembers(m)
    if entry then break end
   end
   local name,_,texture=GetSpellInfo(spell)
-  out[#out+1]={spell=spell,name=entry and entry.name or name or ('Spell '..spell),level=entry and entry.level,texture=texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
+  out[#out+1]={spell=spell,name=entry and entry.name or name or ('Spell '..spell),level=entry and entry.level,texture=(A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[spell])or texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
  end
  table.sort(out,function(a,b)
   local al,bl=a.level or math.huge,b.level or math.huge

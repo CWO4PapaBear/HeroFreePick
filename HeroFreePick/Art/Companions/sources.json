@@ -1,0 +1,98 @@
+[
+  {
+    "file": "5_warlock05_border.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\icons\\5_warlock05_Border.blp",
+    "sha256": "edf9bda3733fa737391ce93c363e1e491bb12029a7d4a29f0793ff2b8967620f",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "_undead_03.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\_Undead_03.blp",
+    "sha256": "c886b17fabb6f3778cc126227fca57117c25384d49f44f800c4400d7a1d6d119",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_demonhunter_sigilofmisery.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\ability_demonhunter_sigilofmisery.blp",
+    "sha256": "84a303befe5000b84793186c1797aa32b0df3e429ca84a1d5604022f5e6e634b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warlock_ancientgrimoire.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\ability_warlock_ancientgrimoire.blp",
+    "sha256": "0d4880e07f23d37611e5f3c6120a15a367b631cc57f74e7883d6d415e41ce954",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warrior_dragonroar.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\ability_warrior_dragonroar.blp",
+    "sha256": "1dba7345d0b7bd51070c7eca7520ea4ccf2912a8ecdddf8f50e256c79ede1d3f",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_knife_1h_cataclysm_c_05.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\inv_knife_1h_cataclysm_c_05.blp",
+    "sha256": "255d1df4196041862b65d05d61ec6ce0b41085881b713c020c2b5fb6aae007a2",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_misc_steelweaponchain.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\inv_misc_steelweaponchain.blp",
+    "sha256": "f206526b11df5dc7cd04dcf7f9cebee72712447163be3b150554cba3256a4d32",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "novart_books_(2)_border.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\icons\\novart_books_(2)_Border.blp",
+    "sha256": "739153784c30d0928e78a1c12d8f6e3cafd427002a099ed9b8f7bef9abd97214",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_fire_twilightfireward.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\spell_fire_twilightfireward.blp",
+    "sha256": "ca968082bb2b08969e12b6404b318e2b473bacf168a4058d842074f61a8f67ba",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_warlock_demonbolt.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\spell_warlock_demonbolt.blp",
+    "sha256": "cdfb6a8fc25cb60f31a214f4bc379930080c283499fce2b10103d44bf4dc734d",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_warlock_demonicportal_purple.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\spell_warlock_demonicportal_purple.blp",
+    "sha256": "5fbee8ff3a3362d06ce15f826d313cc9eeb01028313a4ca0af3000f3afc3084b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_warrior_dragoncharge.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\spell_warrior_dragoncharge.blp",
+    "sha256": "7cebe66b6d135729b5617185b1b94e3240783e161d0072992ca0e0ddcdbd1e1e",
+    "width": 64,
+    "height": 64
+  }
+]

@@ -1,5 +1,7 @@
 # Recent package icon audit
 
+**Resolved in 0.32.2:** all 12 missing textures below are now bundled under `HeroFreePick/Art/Companions`. Custom-mode entry icons and expanded tooltip icons use explicit paths. Companion child icons have individual mappings. The following audit describes the pre-import client inventory. Source paths and SHA-256 hashes are included with the assets.
+
 Audited the four companion bundles, their 21 included abilities, all 23 Masteries and their linked catalog abilities, including Summon Imp: 142 records. Checked named texture paths against all 26 MPQ archives and loose Interface files in the configured Auto-Attack-Test client. No archives failed to open. This checks asset presence, not visual rendering.
 
 ## A52 textures absent from the test client

@@ -385,3 +385,19 @@ assert(A.SetLocalLearned(demon.id,1));assert(A.SetLocalLearned(imp.id,1))
 assert(A.AbilityPointsSpent()==2);assert(A.SetLocalLearned(demon.id,0));assert(not HeroFreePickPlans.previewLearned[imp.id])
 """)
 print('PASS: level-one Demon Mastery includes Summon Imp, free member selection and cascade removal.')
+
+# Packaged textures must exist and their routing must cover entry and expanded tooltip icons.
+import hashlib
+art=root/'Art/Companions'
+records=json.loads((art/'sources.json').read_text())
+assert len(records)==12
+for record in records:
+ assert hashlib.sha256((art/record['file']).read_bytes()).hexdigest()==record['sha256']
+lua.execute("""
+A.mode='Hero'
+for _,e in ipairs(HeroCompanionBundles)do assert(A.EntryIcon(e)==A.PackageSpellIcons[e.spells[1]])end
+for _,e in ipairs(HeroCompanionAbilities)do assert(A.EntryIcon(e)==A.PackageSpellIcons[e.spells[1]])end
+for _,bundle in ipairs(HeroCompanionBundles)do for _,member in ipairs(A.MasteryTooltipMembers(bundle))do assert(member.texture==A.PackageSpellIcons[member.spell])end end
+A.mode='Classic';assert(A.EntryIcon(HeroCompanionBundles[1])~=A.PackageSpellIcons[HeroCompanionBundles[1].spells[1]])
+""")
+print('PASS: all 12 texture hashes verified; companion entry and tooltip artwork uses explicit mappings; Classic artwork unchanged.')
