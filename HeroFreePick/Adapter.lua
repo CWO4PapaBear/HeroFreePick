@@ -511,3 +511,5 @@ function A.LearningSourceLines(e)
  if #lines>0 then lines[#lines+1]='Stock learning-source reference; server changes may differ.'end
  return lines
 end
+
+A.ClassicTrainerLevels[19001494]=2

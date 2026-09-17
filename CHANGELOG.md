@@ -1,3 +1,7 @@
+## 0.36.1
+
+- Add the missing Classic Hunter Track Beasts catalog entry (spell 1494, trainer level 2), allowing it to appear in the ability menu and match learned spellbook entries. Keep the supplement out of custom-mode catalogs.
+
 ## 0.36.0
 
 - Use Spell_Holy_PowerInfusion for the Primary Stat Spirit icon.

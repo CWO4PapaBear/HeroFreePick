@@ -59,6 +59,7 @@ for _,e in ipairs(HeroCompanionAbilities)do add(e);HeroBrowseAssignment[e.id]={c
 local replaced={}
 for _,e in ipairs(HeroCompanionAbilities)do replaced[e.spells[1]]=true end
 function A.EntryAvailableInMode(e)
+ if e.classicOnly and A.mode~='Classic'then return false end
  if A.mode=='Classic'then return e.id<20000000 and not e.isMastery end
  if not e.isBundle and not e.requiredBundle and not A.IsTalent(e)then
   for _,spell in ipairs(e.spells)do if replaced[spell]then return false end end

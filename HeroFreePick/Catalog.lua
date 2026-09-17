@@ -1247,3 +1247,5 @@ HeroFreePickCatalog = {
 {["id"]=2663,["name"]="Charge",["class"]="Warrior",["spec"]="Arms",["kind"]="Ability",["quality"]="Epic",["spells"]={100},["ae"]=2,["te"]=0,["level"]=1,["requiredAE"]=0,["requiredTE"]=0,["requiredIDs"]=""},
 {["id"]=3028,["name"]="Tricks of the Trade",["class"]="Rogue",["spec"]="Subtlety",["kind"]="Ability",["quality"]="Normal",["spells"]={57933},["ae"]=5,["te"]=0,["level"]=75,["requiredAE"]=0,["requiredTE"]=0,["requiredIDs"]=""},
 }
+-- Stock Classic supplements missing from the imported free-pick catalog.
+table.insert(HeroFreePickCatalog,{id=19001494,name='Track Beasts',class='Hunter',spec='Survival',kind='Ability',quality='Normal',spells={1494},ae=0,te=0,level=2,requiredAE=0,requiredTE=0,requiredIDs='',classicOnly=true})

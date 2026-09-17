@@ -577,3 +577,25 @@ assert(found==12)
 A.mode='Hero';for _,e in ipairs(HeroFreePickCatalog)do assert(#A.LearningSourceLines(e)==0)end
 """)
 print('PASS: verified quest sources appear for 12 Classic abilities; stock source labels do not override custom progression.')
+
+lua.execute("""
+local A=HeroFreePick
+local oldClass,oldTabs,oldTabInfo,oldLink=UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink
+UnitClass=function()return 'Hunter','HUNTER'end
+A.mode='Classic';A.class='Hunter';A.spec='All';A.query='track beasts';A.kind='All';A.quality='All'
+local entries=A.Results();assert(#entries==1 and entries[1].spells[1]==1494)
+assert(A.AbilityDisplayLevel(entries[1])==2)
+assert(table.concat(A.LearningSourceLines(entries[1]),' '):find('Trainer',1,true))
+GetNumSpellTabs=function()return 1 end
+local learned=false
+GetSpellTabInfo=function()return 'Survival',nil,0,learned and 1 or 0 end
+GetSpellLink=function()return '|Hspell:1494|h[Track Beasts]|h' end
+assert(#A.ClassicSpellbookEntries()==0)
+learned=true
+local known=A.ClassicSpellbookEntries();assert(#known==1 and known[1].id==entries[1].id and known[1].spellbookSpell==1494)
+UnitClass=function()return 'Warrior','WARRIOR'end
+assert(#A.ClassicSpellbookEntries()==0)
+for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(#A.Results()==0)end
+UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
+""")
+print('PASS: Classic Track Beasts is browsable at trainer level 2, appears as learned only for a Hunter who knows it, and stays out of custom-mode catalogs.')
