@@ -1,3 +1,7 @@
+## 0.34.2
+
+- Correct learned icon size to 75% of 34px (25.5px), with child icons at half that size (12.75px). Preserve indentation and aligned bar endpoints.
+
 ## 0.34.1
 
 - Size learned icons to 76% of the standard 34px ability icon (25.84px); child icons remain half-size (12.92px).
