@@ -196,3 +196,25 @@ ET.parse(root/'Bindings.xml')
 lua.execute((root/'Access.lua').read_text())
 print('PASS: cached pre-0.30 file list loads preparation and dialog without either new Lua file.')
 print('PASS: access bindings, XML and production preparation modules load in Lua 5.1.')
+
+lua.execute("""
+local A=HeroFreePick;local warn=A.ShowPointWarning;local warning
+A.ShowPointWarning=function(s)warning=s end
+local talents={}
+for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and A.MaxRank(e)>=2 then talents[#talents+1]=e;if #talents==2 then break end end end
+A.CancelPreparation();HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={}
+for _,key in ipairs({'entries','previewLearned'})do
+ local set=key=='entries'and A.SetRank or A.SetLocalLearned
+ testLevel=9;assert(A.TalentPointAllowance()==0 and not set(talents[1].id,1))
+ testLevel=10;assert(A.TalentPointAllowance()==1);assert(set(talents[1].id,1));assert(A.AvailableTalentPoints(key)==0)
+ warning=nil;assert(not set(talents[2].id,1));assert(warning=='Not enough Talent Points.')
+ assert(not set(talents[1].id,2));assert(A.PendingTalentSpent(key)==1)
+ assert(set(talents[1].id,0));assert(A.AvailableTalentPoints(key)==1)
+ assert(set(talents[2].id,1));testLevel=11;assert(A.AvailableTalentPoints(key)==1)
+ assert(set(talents[1].id,1));testLevel=10;assert(not set(talents[1].id,2))
+ assert(set(talents[1].id,0));assert(set(talents[2].id,0))
+end
+testLevel=80;assert(A.TalentPointAllowance()==71)
+A.ShowPointWarning=warn;A.CancelPreparation()
+""")
+print('PASS: level-based talent budget, zero at level 9, exhaustion alert, rank refunds, level changes and independent draft/advancement budgets.')

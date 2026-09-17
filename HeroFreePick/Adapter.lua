@@ -190,12 +190,27 @@ function A.HasPendingChanges()
 end
 function A.PendingKey()return A.view=='architect'and 'entries'or 'previewLearned'end
 function A.PendingRank(e)return ((HeroFreePickPlans or {})[A.PendingKey()]or {})[e.id]or 0 end
+function A.TalentPointAllowance()
+ return math.max(0,(UnitLevel('player')or 1)-9)
+end
+function A.PendingTalentSpent(key)
+ local spent=0
+ for id,rank in pairs(HeroFreePickPlans[key or A.PendingKey()]or {})do
+  local e=A.byID[id];if e and A.IsTalent(e)and rank>0 then spent=spent+rank*(e.te or 1)end
+ end
+ return spent
+end
+function A.AvailableTalentPoints(key)return A.TalentPointAllowance()-A.PendingTalentSpent(key)end
 local function set(id,rank,key)
  local e=A.byID[id];rank=tonumber(rank)
  if not e or not rank or rank~=rank or A.OtherClass(e.class)then return false end
  A.BeginPreparation()
  rank=math.max(0,math.min(math.floor(rank),A.MaxRank(e)))
  local state=HeroFreePickPlans[key]or {};HeroFreePickPlans[key]=state
+ local oldRank=state[id]or 0
+ if A.IsTalent(e)and rank>oldRank and (rank-oldRank)*(e.te or 1)>A.AvailableTalentPoints(key)then
+  A.ShowPointWarning('Not enough Talent Points.');return false
+ end
  if rank>0 and e.requiredMastery and (state[e.requiredMastery]or 0)<1 then
   A.ShowPointWarning('Requires '..A.byID[e.requiredMastery].name..'.');return false
  end
@@ -221,7 +236,6 @@ local function totals(state)
  end
  return out
 end
-function A.PendingTalentSpent()return totals(HeroFreePickPlans[A.PendingKey()]).TP end
 function A.PendingSummary()
  local base=HeroFreePickPlans.pendingBaseline or snapshot();local sections={}
  for _,key in ipairs({'previewLearned','entries'})do
@@ -240,6 +254,7 @@ end
 function A.ValidatePreparation()
  for _,key in ipairs({'previewLearned','entries'})do
   local state=HeroFreePickPlans[key]or {};local cost=totals(state)
+  if cost.TP>A.TalentPointAllowance()then return false,'Not enough Talent Points. Go Back to adjust your selections.'end
   if cost.AP>A.AbilityPointAllowance()then return false,'Not enough Ability Points. Go Back to adjust your selections.'end
   for q,limit in pairs(A.RarityLimits)do if cost[q]>limit then return false,q..' rarity limit exceeded. Go Back to adjust your selections.'end end
   for id,rank in pairs(state)do local e=A.byID[id]

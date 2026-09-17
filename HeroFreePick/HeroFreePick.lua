@@ -532,6 +532,7 @@ end
 local pointsBox=panel(f,25,-573,265,30);local pointText=txt(pointsBox,'',9,-9,249,'GameFontNormalSmall')
 pointsBox:EnableMouse(true);pointsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Available Ability Points');GameTooltip:AddLine('9 points at levels 1-9, then 1 per level starting at 10. Selected ability costs are subtracted; unlearning refunds them. Local prototype balance.',1,1,1,true);GameTooltip:Show()end);pointsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local talentsBox=panel(f,640,-573,177,30);local pointsTalentText=txt(talentsBox,'',8,-9,163,'GameFontNormalSmall')
+talentsBox:EnableMouse(true);talentsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Pending Talent Points');GameTooltip:AddLine('Remaining / total for your level. One point per level starting at level 10. Pending talent ranks use this budget; removing a rank returns its points.',1,1,1,true);GameTooltip:Show()end);talentsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local function resetSelection(talents)
  A.BeginPreparation()
  for _,key in ipairs({'previewLearned','entries'})do
@@ -636,7 +637,7 @@ function A.Refresh(resetScroll)
  setBadge(b.spentBadge,i==4 and spent()or spent(A.class,name))
  else b:Hide()end end
  for class,b in pairs(classButtons)do setBadge(b.spentBadge,spent(class~='Browse' and class or nil))end
- essenceIndicator:Hide();browseEssenceIndicator:Hide();talentIndicator:Hide();pointText:SetText('Ability Points: '..essenceCost(A.AvailableAbilityPoints(A.view=='architect' and 'entries' or 'previewLearned')));pointsTalentText:SetText('Pending Talent Points: '..A.PendingTalentSpent())
+ essenceIndicator:Hide();browseEssenceIndicator:Hide();talentIndicator:Hide();pointText:SetText('Ability Points: '..essenceCost(A.AvailableAbilityPoints(A.view=='architect' and 'entries' or 'previewLearned')));pointsTalentText:SetText('Talent Points: '..math.max(0,A.AvailableTalentPoints())..'/'..A.TalentPointAllowance())
  if A.view=='architect'then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Show();PanelTemplates_DeselectTab(browseTab);PanelTemplates_SelectTab(architectTab);renderGroups(archContent,A.PlannedEntries(),2,744);mode:SetText('Archetype Builder - local draft')
  elseif A.summary then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Hide();allPanel:Show();summarySort:Show();renderSummary()
  elseif A.isBrowse then toolbar:Hide();spellsPanel:Hide();talentsPanel:Hide();architect:Hide();allPanel:Show();PanelTemplates_SelectTab(browseTab);PanelTemplates_DeselectTab(architectTab);mode:SetText('Browse - All Abilities');renderBrowse()

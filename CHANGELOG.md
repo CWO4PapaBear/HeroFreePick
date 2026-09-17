@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.30.2 - pending talent point budget
+
+- Show remaining/total Talent Points for the active preparation view, using one point per level starting at 10.
+- Reject allocations beyond that budget with the existing point-warning alert; removing ranks returns points.
+- Apply the same limit independently to Hero Advancement and Archetype drafts.
+
 ## 0.30.1 - cached file-list compatibility
 
 - Embed preparation and review code in existing addon files so an older cached TOC cannot leave BeginPreparation or RequestClose undefined.
