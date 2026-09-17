@@ -1,3 +1,7 @@
+## 0.33.2
+
+- Use the native flexing-arm Spell_Nature_Strength icon for Strength in Choose Primary Stat.
+
 ## 0.33.1
 
 - Remove the A52 attribution prefix from displayed group descriptions, retaining the description text.
