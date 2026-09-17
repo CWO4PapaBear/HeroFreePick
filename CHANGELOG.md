@@ -1,3 +1,9 @@
+## 0.39.0
+
+- Split Teleport Mastery from Portal Mastery, with independent purchases/grants and Teleport: Dalaran artwork. Add neutral teleport previews alongside existing neutral portals; preserve Classic and faction/race level rules.
+- Record all 160 eligible Rune destinations (excluding Acherus), zone-based levels, exact faction/arrival restrictions and separate Mage ownership in a machine-readable integration specification.
+- Specify no reagent consumption and one corresponding reagent generated after successful caster travel. Server spell definitions, reward handling and the custom build commit bridge remain unimplemented; no server behavior is changed by this release.
+
 ## 0.38.1
 
 - Tracking Mastery starts at level 1. Portal Mastery starts at 10 and grants racial capital spells at 10, faction capitals at 15, Ratchet/Booty Bay Retreat portals at 25, faction Shattrath spells at 62, and Dalaran at 72.
@@ -33,7 +39,7 @@
 
 ## 0.36.5
 
-- Place the stock bronze lock icon directly below the talent panel’s level-10 lock message.
+- Place the stock bronze lock icon directly below the talent panelâ€™s level-10 lock message.
 
 ## 0.36.4
 
@@ -237,7 +243,7 @@
 - Document alternate Area 52 cost records and category fallbacks in docs/TALENT_ABILITY_REVIEW.md.
 - Require a full client restart after installation to load the new catalog file.
 
-## 0.27.3 — initial repository candidate
+## 0.27.3 â€” initial repository candidate
 
 - Character Advancement UI with class and specialization tabs, native talent tree art and dependency routes.
 - Available ability points follow the planned level allowance and local selection costs.

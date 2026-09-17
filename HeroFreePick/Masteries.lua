@@ -34,6 +34,21 @@ table.insert(HeroMasteryExtraAbilities,{["id"]=22053140,["name"]="Teleport: Dala
 table.insert(HeroMasteryExtraAbilities,{["id"]=22053142,["name"]="Portal: Dalaran",["spells"]={53142},["kind"]="Ability",["quality"]="Normal",["ae"]=0,["te"]=0,["level"]=72,["requiredAE"]=0,["requiredTE"]=0,["requiredIDs"]="",["class"]="Mage",["spec"]="Arcane",portalCity="Dalaran"})
 table.insert(HeroMasteryExtraAbilities,{id=22903018,name="Portal: Booty Bay",spells={903018},class="Mage",spec="Arcane",kind="Ability",quality="Normal",ae=0,te=0,level=25,requiredAE=0,requiredTE=0,requiredIDs="",portalCity="BootyBay",customServerRequired=true,icon="Spell_Arcane_PortalStormWind"})
 table.insert(HeroMasteryExtraAbilities,{id=22903090,name="Portal: Ratchet",spells={903090},class="Mage",spec="Arcane",kind="Ability",quality="Normal",ae=0,te=0,level=25,requiredAE=0,requiredTE=0,requiredIDs="",portalCity="Ratchet",customServerRequired=true,icon="Spell_Arcane_PortalStormWind"})
+-- Separate purchases; the Teleport Mastery is a catalog entry, not a native spell.
+-- Keep the existing Portal purchase; do not silently charge/grant the new Mastery.
+local teleportSpells={3561,3562,3563,3565,3566,3567,32271,32272,33690,35715,53140,901018,901090}
+local teleportSet={};for _,spell in ipairs(teleportSpells)do teleportSet[spell]=true end
+for _,m in ipairs(HeroMasteries)do if m.id==21818045 then
+ local portals={};for _,spell in ipairs(m.members)do if not teleportSet[spell]then portals[#portals+1]=spell end end
+ m.members=portals;m.travelKind='portal'
+end end
+table.insert(HeroMasteries,{id=21818046,name='Teleport Mastery',spells={0},catalogOnly=true,passive=true,kind='Ability',quality='Uncommon',ae=2,te=0,level=10,requiredAE=0,requiredTE=0,requiredIDs='',isMastery=true,rarityCost=1,members=teleportSpells,icon='Spell_Arcane_TeleportDalaran',class='Mage',spec='Arcane',travelKind='teleport'})
+for _,destination in ipairs({{18,'Booty Bay','BootyBay'},{90,'Ratchet','Ratchet'}})do
+ local spell=901000+destination[1]
+ table.insert(HeroMasteryExtraAbilities,{id=22000000+spell,name='Teleport: '..destination[2],spells={spell},class='Mage',spec='Arcane',kind='Ability',quality='Normal',ae=0,te=0,level=25,requiredAE=0,requiredTE=0,requiredIDs='',portalCity=destination[3],customServerRequired=true,icon='Spell_Arcane_TeleportDalaran'})
+end
+for _,e in ipairs(HeroMasteryExtraAbilities)do if e.portalCity then e.travelKind=teleportSet[e.spells[1]]and 'teleport'or 'portal'end end
+
 local A=HeroFreePick
 -- Custom destination progression; Classic continues to use stock trainer levels.
 local raceCapitals={Human='Stormwind',Dwarf='Ironforge',Gnome='Ironforge',NightElf='Darnassus',Draenei='Exodar',Orc='Orgrimmar',Troll='Orgrimmar',Tauren='ThunderBluff',Scourge='Undercity',Undead='Undercity',BloodElf='Silvermoon'}

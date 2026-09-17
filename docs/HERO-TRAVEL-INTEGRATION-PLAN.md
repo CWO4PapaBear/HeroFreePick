@@ -1,42 +1,46 @@
 # Hero travel integration plan
 
-## Scope and current status
+## Scope
 
-Reuse the existing Runes of Return / Runes of Retreat implementation for Class+, Hybrid, and Hero. Classic remains stock trainer/quest travel and does not require this integration.
+Use all 160 Rune destinations except Acherus for Mage travel: 160 teleports and 160 portals. The complete schedule and source-derived arrival data are in [HERO-TRAVEL-DESTINATIONS.md](HERO-TRAVEL-DESTINATIONS.md) and [hero-travel-destinations.json](hero-travel-destinations.json). The older twelve-city scope is superseded. Theramore and Stonard are included at level 30.
 
-Class+ can select the Mage travel mastery only as a Mage. Hybrid can select it when Mage is either of its two chosen classes. Hero can select it regardless of original class. Destination eligibility is based on actual character race/faction and level, not the browsed class tab.
+Classic remains stock. Class+ requires Mage as the original class; Hybrid requires Mage as either selected class; Hero permits any original class. Use the actual character faction and race, never the currently browsed class tab.
 
-The addon currently has one combined Portal Mastery, not a separate Teleport Mastery. It includes stock capital/Shattrath/Dalaran teleports and portals, plus the two neutral Rune portals. The plan below adds the neutral Return spells and replaces other custom-mode travel members with the corresponding existing Rune spells. This plan does not introduce a second Mastery purchase or a second gem cost.
+## Independent Masteries
 
-## Shared destination mapping
+- Portal Mastery: entry 21818045, level 10, 2 Ability Points and one Uncommon gem.
+- Teleport Mastery: entry 21818046, level 10, 2 Ability Points and one Uncommon gem, Teleport: Dalaran icon.
+- Each purchase grants only its own level-eligible spells, at no further AP or gem cost. Neither purchase implies the other. The new Teleport Mastery is an addon catalog entry; its placeholder spell 0 is not a castable or allocated server spell.
+- Existing Portal selections retain their Portal purchase. Teleport members now require the separately selected Teleport Mastery; migration must not silently spend another 2 AP/gem or grant a free purchase.
 
-| Destination | Faction | Return spell (teleport) | Retreat spell (portal) | Unlock |
-|---|---|---:|---:|---|
-| Stormwind | Alliance | 901111 | 903111 | 10 racial capital / 15 faction capitals |
-| Ironforge | Alliance | 901067 | 903067 | 10 racial capital / 15 faction capitals |
-| Darnassus | Alliance | 901039 | 903039 | 10 racial capital / 15 faction capitals |
-| Exodar | Alliance | 901048 | 903048 | 10 racial capital / 15 faction capitals |
-| Orgrimmar | Horde | 901089 | 903089 | 10 racial capital / 15 faction capitals |
-| Thunder Bluff | Horde | 901136 | 903136 | 10 racial capital / 15 faction capitals |
-| Undercity | Horde | 901142 | 903142 | 10 racial capital / 15 faction capitals |
-| Silvermoon City | Horde | 901103 | 903103 | 10 racial capital / 15 faction capitals |
-| Ratchet | Neutral | 901090 | 903090 | 25 |
-| Booty Bay | Neutral | 901018 | 903018 | 25 |
-| Shattrath | Neutral | 901102 | 903102 | 62 |
-| Dalaran | Neutral | 901037 | 903037 | 72 |
+The current 0.39.0 addon implements the split for its existing city catalog (13 members per Mastery, including faction Shattrath variants and the neutral cities). The full 160-destination catalog is specified, not yet imported into the addon or implemented as Mage server spells.
 
-Mappings originate in `Vanity_Travel_Trainer/Destinations.json`. The saved catalog contains 161 destinations; only the twelve scheduled above belong to this Mastery plan. Use its destination IDs, arrival spells, portal objects, coordinates, phases, and eligibility rules rather than duplicating them.
+## Levels and factions
 
-## Required integration work
+Both travel types use racial capital at 10, own-faction capitals at 15, Ratchet/Booty Bay at 25, Shattrath at 62 and Dalaran at 72. Other destinations follow the recorded zone entry bands; noncapital starter settlements begin at 15. These extra levels are design assignments, not pre-existing Rune level requirements.
 
-1. Package travel support as an optional shared dependency of the custom progression modes. Reuse the existing generated spell patch and server travel definitions. Do not require the Vanity collecting UI or Rune redemption process for Mastery-earned access. Avoid registering duplicate spell scripts/portal objects if Vanity is installed too.
-2. Persist a character-specific Mastery travel entitlement after a successful authoritative Hero build commit. Validate selected mode, Mage class access, mastery ownership, race/faction and level. Do not write a Rune account collection unlock or consume an unlock rune for Mastery access.
-3. Centralize access checks so the existing Rune collection path and the Hero Mastery path can independently authorize travel. Apply this consistently to teaching, casting through either UI, spellbook casts, and portal entry. Keep existing faction, arrival, combat/location, party and destination restrictions. Inspect every path: the current chat/UI cast path checks Rune ownership while the spell check emphasizes destination eligibility.
-4. Grant only eligible Return and Retreat spells at commit, login and level-up. Track each spell's grant source. Removing a Mastery/mode must revoke only Mastery-derived grants; preserve spells also authorized by a Rune account unlock or another legitimate source.
-5. Replace custom-mode stock travel entries with the mapped Rune Return/Retreat IDs, add neutral Return spells, and preserve Classic entries. Show required levels and faction requirements in the mastery tooltip and hide ineligible-faction entries. Keep the existing combined 2 AP + one Uncommon gem purchase and free member grants.
-6. Keep the existing travel cast/reagent/cooldown/portal-lifetime behavior unless the user requests a separate balance change. Runes of Return/Retreat unlock items remain part of the separate collection system; casting reagents are distinct.
-7. Validate all ten stock races at levels 9/10/14/15/24/25/61/62/71/72, Mage as either Hybrid class, non-Mage Class+ denial, Hero access, faction restrictions, learned-spell visibility, direct spellbook casting, portal passengers, removal/regrant, login reconciliation, and coexistence with Rune-owned destinations. Compile and run against the server before claiming travel works.
+Preserve the Rune catalog's exact faction tags: Alliance destinations only Alliance, Horde only Horde, neutral either. Do not infer access from a destination's name or change neutral reputation-gated settlements to a faction capital. The two Dark Portal records remain distinct faction arrivals. Faction restrictions apply to grant, cast, arrival and every portal passenger. Unknown faction fails closed for faction-restricted destinations.
 
-## Existing limitation
+Keep enabled flags, exact arrival coordinates/orientation, map and destination phase. Preserve Brunnhildar quest 12905 started/completed/rewarded, Crusaders' Pinnacle quest 13141 rewarded, Dun Nifflelem quest 12924 started/completed/rewarded OR 12967 rewarded, and Shadow Vault faction quest 12896/12897 rewarded. Required reputation must be Neutral or better. Acherus and its Death Knight requirements are excluded entirely from Mage travel. Do not compare the caster's unrelated current-area phase to the destination phase.
 
-The addon still stages custom builds locally. The server foundation does not yet commit those builds or persist Mastery entitlements. Finding the completed Rune transport implementation removes the need to recreate transport, but does not itself implement Hero learning authorization. This document records the integration plan; it is not an implemented server bridge.
+## Independent ownership and spell definitions
+
+Allocate collision-checked Mage teleport, portal, arrival and gameobject IDs. Clone travel mechanics and arrival data, not Rune ownership authorization. Do not reuse Rune spell IDs for the finished Mage versions: their existing handlers require Rune ownership and consume reagents.
+
+After a successful authoritative build commit, persist character-specific entitlement to each Mastery independently. Never update `bear_vanity_unlock`, grant account Rune ownership, consume Rune unlock items, or teach the Rune-owned spell IDs. Removing a Mastery revokes only its Mage-specific spells. Rune purchases and Rune cast behavior remain unchanged.
+
+Current neutral-city addon entries still reference Rune spells for preview. Those references are not the finished independent Mage implementation and do not bypass Rune ownership or alter reagent behavior.
+
+## Mage reagent production
+
+Mage versions require and consume no casting reagent. On successful personal teleport, give the caster one Rune of Teleportation (17031). On successful caster traversal of their own Mage portal, give that caster one Rune of Portals (17032), at most once per portal cast. This implements "after they travel": creation alone, failed/interrupted travel and other passengers generate no item. Only these ordinary reagent items are produced, not the Rune collection unlock items.
+
+Remove reagent requirements from both Mage client spell definitions and server definitions. Generate the item only after server-confirmed arrival, using a durable, unique operation per cast so reconnects or repeated portal use cannot duplicate it. Inventory-full delivery needs a persisted pending reward/recovery path rather than silently losing the item. Retain existing cast time, cooldown and portal lifetime unless separately changed.
+
+Portal passengers must be the caster or members of the same party/subgroup, meet the destination faction/level/quest/reputation and normal travel restrictions, and need not own either Mastery or a Rune unlock. Revalidate the caster's entitlement while the portal exists. Casting and arrival remain prohibited while dead, in combat, in flight or in a battleground as in the Rune implementation.
+
+## Implementation and validation still required
+
+The Hero server foundation does not yet persist or commit custom builds. Connect its trusted commit handler to independent travel entitlements before enabling server grants. Add login/level-up reconciliation, isolated spell definitions/client patch and server cast/arrival/portal handlers. The addon cannot implement inventory rewards or override stock reagent checks on its own.
+
+Test all races, faction boundaries, both Hybrid Mage positions, non-Mage Class+ denial, independent purchases/refunds, every level boundary, all 160 arrivals, quest/reputation failures, passengers, rewards after successful arrival only, inventory-full/reconnect recovery and Rune coexistence. Compile and test on the actual core before claiming server travel works. WSL access was denied during this task; no server compilation or deployment has occurred.

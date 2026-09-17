@@ -47,6 +47,7 @@ local function scroll(parent,name,x,y,w,h)
  return s,c
 end
 local function icon(e)
+ if e.catalogOnly and e.icon then return 'Interface\\Icons\\'..e.icon end
  local packaged=A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[e.spells[1]];if packaged then return packaged end
  local _,_,texture=GetSpellInfo(e.spellbookSpell or e.spells[1]);if texture then return texture end
  local path=(HeroFreePickLayout[e.id]or{}).icon
@@ -104,7 +105,7 @@ local function showMasteryTooltip(owner)
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
  if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its level-eligible members are automatically included at no additional cost.'))end
- if e.id==21818045 then masteryDescription:SetText('Unlocks your racial capital at level 10, other faction capitals at 15, Ratchet and Booty Bay portals at 25, Shattrath at 62, and Dalaran at 72. Includes teleports and portals where listed. Connected abilities cost no additional points or gems. Neutral portals reuse Runes of Retreat and require server-authorized access.')end
+ if e.travelKind then masteryDescription:SetText('Unlocks '..(e.travelKind=='teleport'and 'teleports'or 'portals')..' to your racial capital at level 10, faction capitals at 15, Ratchet and Booty Bay at 25, Shattrath at 62, and Dalaran at 72. Connected abilities cost no additional points or gems. Portal and Teleport Masteries are purchased independently. Mage travel reagent generation requires the forthcoming server implementation.')end
  masteryDescription:SetHeight(0)
  local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
  masteryDescription:SetHeight(descriptionHeight)
@@ -204,7 +205,7 @@ local function tooltip(self)
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
  local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
- if e.customServerRequired then GameTooltip:AddLine('Requires the Runes of Retreat client/server package and server-authorized destination access.',1,.6,.3,true)end
+ if e.customServerRequired then GameTooltip:AddLine('Preview uses a Rune spell reference. Independent Mage travel requires the forthcoming client/server travel package; this selection does not unlock Runes.',1,.6,.3,true)end
  local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.AbilityDisplayLevel(e))or A.AbilityDisplayLevel(e)
  local locked=A.OtherClass(e.class)or UnitLevel('player')<requiredLevel
  if A.IsTalent(e)and A.mode~='Classic'then
