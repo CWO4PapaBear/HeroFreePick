@@ -1,3 +1,8 @@
+## 0.35.0
+
+- Automatically include Mastery members at their required character levels in both preparation and archetype plans. Synchronize on selection, level-up and login; preserve cancel baselines and prevent independent member removal.
+- Keep Classic unchanged. These are local preview grants; custom server learning remains unavailable.
+
 ## 0.34.4
 
 - Hide the parent badge on indented learned child rows so it cannot cover their smaller individual ability icons. Keep parent badges in other views and preserve child tooltips.

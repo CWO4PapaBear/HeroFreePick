@@ -98,12 +98,12 @@ local function showMasteryTooltip(owner)
  masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
  GameTooltip:Hide();masteryPreview:Hide()
  masteryTitle:SetText(e.name)
- masteryDescription:SetText(e.isBundle and 'This companion bundle includes all listed abilities at level 1 for one purchase. Included abilities cost no additional points or rarity gems. Preview only: server learning and custom pets are not implemented.'or 'Learning this Mastery unlocks access to every connected ability when your character reaches its required level. Connected abilities cost no additional points or rarity gems.')
+ masteryDescription:SetText(e.isBundle and 'This companion bundle includes all listed abilities at level 1 for one purchase. Included abilities cost no additional points or rarity gems. Preview only: server learning and custom pets are not implemented.'or 'Learning this Mastery unlocks access to every connected ability when your character reaches its required level. Connected abilities are automatically included at their required levels, with no additional cost.')
  masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..rarityCost(e)..'  '..essenceCost(e.ae))
  masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
- if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its members cost no additional points or rarity gems.'))end
+ if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its level-eligible members are automatically included at no additional cost.'))end
  masteryDescription:SetHeight(0)
  local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
  masteryDescription:SetHeight(descriptionHeight)
@@ -182,7 +182,7 @@ local function tooltip(self)
  if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
  if A.mode=='Classic'and not A.IsTalent(e)then GameTooltip:AddLine('Learn this ability from a trainer through normal Classic progression.',1,.82,.3,true);GameTooltip:Show();return end
  if e.requiredBundle then GameTooltip:AddLine('Included with '..A.byID[e.requiredBundle].name..'. Add or remove the bundle to change these abilities. No additional cost.',1,.82,.3,true)end
- if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. No Ability Point or rarity gem cost.',1,.82,.3,true)end
+ if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. Automatically included at the required level; no additional cost.',1,.82,.3,true)end
  if IsShiftKeyDown and IsShiftKeyDown()then
   GameTooltip:AddLine('Costs use the selected non-random client record. Ability Points are deducted from the local selection budget.',.7,.85,1,true)
  else GameTooltip:AddLine('Hold SHIFT for more information',.2,.85,1)end

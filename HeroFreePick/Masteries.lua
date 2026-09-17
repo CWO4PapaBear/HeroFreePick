@@ -114,3 +114,43 @@ A.PackageSpellIcons[91602]="Interface\\Icons\\Spell_Nature_ElementalPrecision_2"
 A.PackageSpellIcons[91651]="Interface\\Icons\\Spell_Shaman_SpectralTransformation"
 A.PackageSpellIcons[91605]="Interface\\Icons\\Spell_Nature_ElementalAbsorption"
 A.PackageSpellIcons[109983]="Interface\\AddOns\\HeroFreePick\\Art\\Companions\\spell_shaman_bindelemental"
+
+-- Mastery member selections are derived from ownership and character level.
+function A.SyncMasteryGrants(level)
+ if A.mode=='Classic'or not HeroFreePickPlans then return end
+ level=tonumber(level)or UnitLevel('player')
+ local function sync(state)
+  if not state then return end
+  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then
+   if (state[e.requiredMastery]or 0)<1 then state[e.id]=nil
+   elseif level>=(e.level or 1)then state[e.id]=1 end
+  end end
+ end
+ for _,key in ipairs({'entries','previewLearned'})do
+  sync(HeroFreePickPlans[key])
+  if HeroFreePickPlans.pendingBaseline then sync(HeroFreePickPlans.pendingBaseline[key])end
+ end
+end
+local init=A.Init
+function A.Init()init();A.SyncMasteryGrants()end
+local function masterySetter(original,key)
+ return function(id,rank)
+  local e=A.byID[id]
+  if A.mode~='Classic'and e and e.requiredMastery then
+   A.SyncMasteryGrants()
+   if tonumber(rank)and tonumber(rank)>0 and ((HeroFreePickPlans[key]or {})[e.id]or 0)>0 then return true end
+   A.ShowPointWarning('Automatically included at level '..(e.level or 1)..' with '..A.byID[e.requiredMastery].name..'. Change the Mastery instead.');return false
+  end
+  if e and e.isMastery and tonumber(rank)and tonumber(rank)>0 and UnitLevel('player')<(e.level or 1)then
+   A.ShowPointWarning('Requires level '..(e.level or 1)..'.');return false
+  end
+  local ok=original(id,rank);if ok then A.SyncMasteryGrants()end;return ok
+ end
+end
+A.SetRank=masterySetter(A.SetRank,'entries')
+A.SetLocalLearned=masterySetter(A.SetLocalLearned,'previewLearned')
+local cancel=A.CancelPreparation
+function A.CancelPreparation()local result=cancel();A.SyncMasteryGrants();return result end
+local masteryEvents=CreateFrame('Frame','HeroMasteryGrantEvents')
+masteryEvents:RegisterEvent('PLAYER_LEVEL_UP');masteryEvents:RegisterEvent('PLAYER_ENTERING_WORLD')
+masteryEvents:SetScript('OnEvent',function(_,event,level)A.SyncMasteryGrants(event=='PLAYER_LEVEL_UP'and tonumber(level)or nil);if A.Refresh and HeroFreePickFrame:IsShown()then A.Refresh()end end)

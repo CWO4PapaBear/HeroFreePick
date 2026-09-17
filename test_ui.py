@@ -487,3 +487,17 @@ b.groupedLearnedChild=true;A.UpdateMasteryBadge(b,child);assert(not b.masteryBad
 b.groupedLearnedChild=false;A.UpdateMasteryBadge(b,child);assert(b.masteryBadge:IsShown())
 """)
 print('PASS: compact learned children hide covering badges; reused ordinary icons restore badges.')
+
+lua.execute("""
+A.mode='Hero';A.classicCommit=nil
+for _,m in ipairs(HeroMasteries)do
+ testLevel=m.level;HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil
+ assert(A.SetLocalLearned(m.id,1))
+ for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert((HeroFreePickPlans.previewLearned[e.id]~=nil)==(e.level<=testLevel))end end
+ testLevel=80;HeroMasteryGrantEvents.scripts.OnEvent(nil,'PLAYER_LEVEL_UP',80)
+ for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then assert(HeroFreePickPlans.previewLearned[e.id]==1);assert(not A.SetLocalLearned(e.id,0))end end
+ assert(A.AbilityPointsSpent()==2)
+ A.CancelPreparation();assert(next(HeroFreePickPlans.previewLearned)==nil)
+end
+""")
+print('PASS: every Mastery grants only eligible members on selection, grants remaining members at level-up for no additional AP, blocks individual removal and cancels cleanly.')
