@@ -1,3 +1,8 @@
+## 0.31.2
+
+- Keep modal shields below their panels and progression buttons using bounded frame levels. Explicitly enable reused progression buttons.
+- Exercise initial Classic selection through the popup button in the Lua harness; live client verification remains required.
+
 # Changelog
 
 ## 0.31.1 - unblock review popups

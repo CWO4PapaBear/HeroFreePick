@@ -278,3 +278,18 @@ A.ClassicCommitPoller.scripts.OnUpdate(A.ClassicCommitPoller,.1);assert(called);
 A.CancelPreparation()
 """)
 print('PASS: real OnUpdate poller is connected and closing blocked popups preserves pending changes.')
+
+# Exercise the visible initial-choice button, rather than only the policy helper.
+lua.execute("""
+A=HeroFreePick;testLevel=1;A.classicCommit=nil
+HeroFreePickPlans.progressionChoice=nil;HeroFreePickPlans.pendingBaseline=nil
+HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={}
+A.ShowModeChoice();assert(HeroProgressionChoice:IsShown())
+local b=A.ProgressionChoiceButtons[1];assert(b.text=='Classic Character' and b:IsShown())
+b.scripts.OnClick();assert(HeroFreePickPlans.progressionChoice.mode=='Classic')
+assert(not HeroProgressionChoice:IsShown())
+""")
+assert "shield:SetFrameLevel(60)" in ui
+assert "box:SetFrameLevel(61)" in ui
+assert "b:SetFrameLevel(62);b:EnableMouse(true);b:Enable()" in ui
+print('PASS: initial Classic choice works through its visible button; popup layers explicitly ordered.')

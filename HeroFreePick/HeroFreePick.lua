@@ -746,8 +746,8 @@ local window=HeroFreePickFrame
 local dialog=CreateFrame('Frame','HeroPendingChangesDialog',UIParent)
 A.PendingDialog=dialog
 -- Full-window mouse shield keeps the review modal while preserving the pending menu.
-dialog:SetAllPoints(UIParent);dialog:SetFrameStrata('FULLSCREEN_DIALOG');dialog:SetFrameLevel(500);dialog:EnableMouse(true)
-local box=CreateFrame('Frame',nil,dialog);box:SetSize(650,440);box:SetPoint('CENTER');box:EnableMouse(true)
+dialog:SetAllPoints(UIParent);dialog:SetFrameStrata('FULLSCREEN_DIALOG');dialog:SetFrameLevel(40);dialog:EnableMouse(true)
+local box=CreateFrame('Frame',nil,dialog);box:SetFrameLevel(41);box:SetSize(650,440);box:SetPoint('CENTER');box:EnableMouse(true)
 box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32,insets={left=11,right=11,top=11,bottom=11}})
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24);title:SetText('Pending Hero Advancement Changes')
 local body=box:CreateFontString(nil,'OVERLAY','GameFontHighlightSmall');body:SetPoint('TOPLEFT',26,-58);body:SetSize(598,295);body:SetJustifyH('LEFT');body:SetJustifyV('TOP')
@@ -815,17 +815,17 @@ end
 
 do
 local A=HeroFreePick
-local shield=CreateFrame('Frame','HeroProgressionChoice',UIParent);shield:SetAllPoints(UIParent);shield:SetFrameStrata('FULLSCREEN_DIALOG');shield:SetFrameLevel(650);shield:EnableMouse(true)
-local box=CreateFrame('Frame',nil,shield);box:SetSize(590,370);box:SetPoint('CENTER');box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32});box:EnableMouse(true)
+local shield=CreateFrame('Frame','HeroProgressionChoice',UIParent);shield:SetAllPoints(UIParent);shield:SetFrameStrata('FULLSCREEN_DIALOG');shield:SetFrameLevel(60);shield:EnableMouse(true)
+local box=CreateFrame('Frame',nil,shield);box:SetFrameLevel(61);box:SetSize(590,370);box:SetPoint('CENTER');box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32});box:EnableMouse(true)
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24)
 local note=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');note:SetPoint('TOPLEFT',24,-55);note:SetSize(542,65);note:SetJustifyH('LEFT')
 local closeChoice=CreateFrame('Button',nil,box,'UIPanelCloseButton');closeChoice:SetPoint('TOPRIGHT',-6,-6);closeChoice:SetScript('OnClick',A.HidePreparationPreservingChanges)
-local buttons={}
+local buttons={};A.ProgressionChoiceButtons=buttons
 local function clear()for _,b in ipairs(buttons)do b:Hide()end end
 local function choice(label,index,description,fn)
  local b=buttons[index]
  if not b then b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(255,30);buttons[index]=b end
- b:ClearAllPoints();b:SetPoint('TOPLEFT',25+((index-1)%2)*280,-125-math.floor((index-1)/2)*40);b:SetText(label)
+ b:SetFrameStrata('FULLSCREEN_DIALOG');b:SetFrameLevel(62);b:EnableMouse(true);b:Enable();b:ClearAllPoints();b:SetPoint('TOPLEFT',25+((index-1)%2)*280,-125-math.floor((index-1)/2)*40);b:SetText(label)
  b:SetScript('OnClick',fn);b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(label);GameTooltip:AddLine(description,1,1,1,true);GameTooltip:Show()end);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b:Show()
 end
 local function finish(ok,why)
