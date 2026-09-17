@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.30.1 - cached file-list compatibility
+
+- Embed preparation and review code in existing addon files so an older cached TOC cannot leave BeginPreparation or RequestClose undefined.
+- Retain harmless compatibility placeholders for the two newly introduced files.
+- Test the complete workflow while omitting those two files from the loader.
+
 ## 0.30.0 - pending advancement review
 
 - Replace immediate native talent learning with reversible pending ranks; left-click adds and right-click removes.

@@ -1,6 +1,6 @@
 {
   "Access.lua": "79c2a02f06514108e482256f3ef1fbc7f9f9fe4f527c8ebc1abe3d4302f360e6",
-  "Adapter.lua": "caeb5ffaeab45e539aac84c46e1dc4f2a10431b4a23630f19500d19a36b9337c",
+  "Adapter.lua": "840edbbc3c590508334ddef7eaf6dee42c69bd25cd1e3ef47a6f9f95b91eface",
   "Art/AbilityEssence.blp": "8a4ba5b97181bbd9714eef0daf8311321a77b72673de37a851346a2037acdc21",
   "Art/Atonement.tga": "d45f13952f65a432acfb215a6a2285e8b163279fb56ad7ca28c90886698ba9fe",
   "Art/AtonementIcon.blp": "3a29d68caf80cf0a443f460dffe8d977cc51244cc809e14fed3b0a5516125f24",
@@ -13,8 +13,8 @@
   "Bindings.xml": "6c751eb5b4778f00cedec758df9bd32e131d7183727138dcfd410660d331e0a4",
   "Browse.lua": "d1989b7d65db19eb4565395cba7bffb2dd79bcae096edb5d4da3a1aab481e3d9",
   "Catalog.lua": "2d6a2ad24576515cdab00326b48cd1a10f6c4fc46b47ce11a4bed028289cf9d5",
-  "HeroFreePick.lua": "c5720ecefec511d5d7af4819061039aa106c11e0e8780ec4ff87dc5ec6f0be66",
-  "HeroFreePick.toc": "e18bb6eea743e1e67dd0c52eb900ce2f13a7c664bc2743ffdf607ec9b645f6f3",
+  "HeroFreePick.lua": "00a1f32a093b85426f1c4cf8d34e44dece8882a72ffe56eded03145327522c71",
+  "HeroFreePick.toc": "001847e7111004d050af3f0b4d691955f7bbd090f49a6c852461a688bbf693dd",
   "HeroFreePick.xml": "12cade2eb24746668bdd5366c3818908493b594b65f778263145851e0453169b",
   "Layout.lua": "3fadf8caab6fe028943884cf167a0ba96bd7c5303362a81d2ae81f1ac7937a75",
   "Masteries.lua": "24213fb30cfe3d14c9d77c91774a5b59b575aa4e971af84585f9ea505773e03e",
@@ -22,8 +22,8 @@
   "MenuLayoutOverrides.lua": "abedfb1727ed38e79a6f6af398a0c7cc1dba18fa9fa9d903f7828eee66758164",
   "NativeTalentRoutes.lua": "84d3a46e28f0738e88902757f0b580a5513793df7b677d4534e421ef40875dff",
   "Organization.lua": "83c3260752c686e5def0c70b762bccfbfdb9dc6b92ed63738de64baf46e2c690",
-  "PendingChanges.lua": "95c0a0861da809c9d6dd9d22104bc6afc4b9b01a055b2aef681744c0dc00375f",
-  "PendingDialog.lua": "99361a1c76547b5ce2f3ca864067cdf61e7dea1aeab6138049dcaaeb08449cd4",
+  "PendingChanges.lua": "15eca390bbc9dc107f9784be90d5b7f3ddfa315e45334f5c0a362c9ce7a2eb71",
+  "PendingDialog.lua": "96eac7cf5bd8aa39b37059776a0c3673e4c1c874d6e5c824112110255f6814b9",
   "TalentAbilityReferences.lua": "4cc1c9ebe17cec6819a5a9ec5be70c766ee91b0920af76d10c9527b39e117ac0",
   "Trees.lua": "9e1d8c5f5d76f7a6b5be769ddc1a6375c33adb3b074ed0266a114541e699f32e"
 }

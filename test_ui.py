@@ -27,9 +27,10 @@ function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
 ''')
-for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','PendingChanges.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua','PendingDialog.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
+for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
 lua.execute("""
 local A=HeroFreePick
+assert(type(A.BeginPreparation)=='function' and type(A.RequestClose)=='function')
 function UnitClass()return 'Hero','HERO'end
 function LearnTalent()error('Immediate talent learning must never be called')end
 A.Init();A.BeginPreparation();assert(not A.HasPendingChanges())
@@ -193,4 +194,5 @@ print('PASS: menu opens and refreshes with no SetText method on the filter wrapp
 
 ET.parse(root/'Bindings.xml')
 lua.execute((root/'Access.lua').read_text())
+print('PASS: cached pre-0.30 file list loads preparation and dialog without either new Lua file.')
 print('PASS: access bindings, XML and production preparation modules load in Lua 5.1.')
