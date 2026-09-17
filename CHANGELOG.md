@@ -1,3 +1,8 @@
+## Unreleased — Class+ server inventory
+
+- Audit the effective Class+ catalog across all classes and both factions against the saved stock 3.3.5 Spell.dbc. Record 66 missing IDs, 120 stock/reference name-review flags and one catalog-only placeholder.
+- Separate entitlement wrappers, More Minions dependencies, travel references and Class+ mechanics. No spell definitions, server data or gameplay behavior changed.
+
 ## 0.39.9
 
 - Move level-one Pick Again out of Settings into a matching 22px title-bar box to the left of the gear. Use the verified native red pass/prohibition icon at 16px and explain mode reselection on hover.
