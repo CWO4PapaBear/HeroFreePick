@@ -66,7 +66,7 @@ function A.MasteryTooltipMembers(m)
  for _,spell in ipairs(m.members or {})do
   local entry
   for _,candidate in ipairs(HeroFreePickCatalog)do
-   if candidate.requiredMastery==m.id then
+   if (candidate.requiredMastery==m.id or candidate.requiredBundle==m.id) then
     for _,id in ipairs(candidate.spells)do if id==spell then entry=candidate;break end end
    end
    if entry then break end
@@ -91,7 +91,8 @@ local function showMasteryTooltip(owner)
  masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
  GameTooltip:Hide();masteryPreview:Hide()
  masteryTitle:SetText(e.name)
- masteryCost:SetText('Mastery cost: '..essenceCost(e.ae)..'  '..rarityCost(e))
+ masteryDescription:SetText(e.isBundle and 'This companion bundle includes all listed abilities at level 1 for one purchase. Included abilities cost no additional points or rarity gems. Preview only: server learning and custom pets are not implemented.'or 'Learning this Mastery unlocks access to every connected ability when your character reaches its required level. Connected abilities cost no additional points or rarity gems.')
+ masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..essenceCost(e.ae)..'  '..rarityCost(e))
  masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
  local members=A.MasteryTooltipMembers(e)
@@ -134,12 +135,12 @@ masteryTip:SetScript('OnUpdate',function(_,elapsed)
 end)
 masteryTip:Hide();masteryPreview:Hide()
 local function leaveEntryTooltip(self)
- if not self.entry or not self.entry.isMastery then GameTooltip:Hide()end
+ if not self.entry or not (self.entry.isMastery or self.entry.isBundle) then GameTooltip:Hide()end
 end
 
 local function tooltip(self)
  local e=self.entry;if not e then return end
- if e.isMastery then showMasteryTooltip(self);return end
+ if e.isMastery or e.isBundle then showMasteryTooltip(self);return end
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
@@ -163,6 +164,7 @@ local function tooltip(self)
  GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
  if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
  if A.mode=='Classic'and not A.IsTalent(e)then GameTooltip:AddLine('Learn this ability from a trainer through normal Classic progression.',1,.82,.3,true);GameTooltip:Show();return end
+ if e.requiredBundle then GameTooltip:AddLine('Included with '..A.byID[e.requiredBundle].name..'. Add or remove the bundle to change these abilities. No additional cost.',1,.82,.3,true)end
  if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. No Ability Point or rarity gem cost.',1,.82,.3,true)end
  if IsShiftKeyDown and IsShiftKeyDown()then
   GameTooltip:AddLine('Costs use the selected non-random client record. Ability Points are deducted from the local selection budget.',.7,.85,1,true)
@@ -175,7 +177,7 @@ end
 -- Shared badge policy for every ability view; Classic never displays Mastery UI.
 local function updateMasteryBadge(b,e)
  local badge=rawget(b,'masteryBadge')
- local mastery=A.mode~='Classic'and not A.IsTalent(e)and e.requiredMastery and A.byID[e.requiredMastery]
+ local mastery=A.mode~='Classic'and not A.IsTalent(e)and (e.requiredMastery or e.requiredBundle) and A.byID[e.requiredMastery or e.requiredBundle]
  if not mastery then
   if badge then if masteryOwner==badge then hideMasteryTooltip()end;badge.entry=nil;badge:Hide()end
   return
@@ -712,7 +714,7 @@ local function renderBrowse()
  local grouped={};for _,c in ipairs(HeroBrowseCategories)do grouped[c.id]={}end
  for _,e in ipairs(HeroFreePickCatalog)do
   local planned=(HeroFreePickPlans.entries[e.id]or 0)>0
-  if e.kind=='Ability' and (A.quality=='All' or e.quality==A.quality) and string.find(string.lower(e.name),string.lower(A.query or''),1,true)
+  if A.EntryAvailableInMode(e) and e.kind=='Ability' and (A.quality=='All' or e.quality==A.quality) and string.find(string.lower(e.name),string.lower(A.query or''),1,true)
    and (A.ownership=='All' or A.ownership=='Planned'and planned or A.ownership=='Not planned'and not planned)then
    for _,id in ipairs((HeroBrowseAssignment[e.id]or {categories={6}}).categories)do table.insert(grouped[id]or grouped[6],e)end
   end

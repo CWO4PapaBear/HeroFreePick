@@ -339,3 +339,37 @@ A.mode='Hero';A.UpdateMasteryBadge(b,member)
 A.UpdateMasteryBadge(b,HeroMasteries[1]);assert(not b.masteryBadge:IsShown())
 """)
 print('PASS: Mastery badges open the matching tooltip in all custom modes; Classic and recycled non-member buttons hide badges.')
+
+lua.execute("""
+local oldClass=UnitClass
+UnitClass=function()return 'Hunter','HUNTER'end;testLevel=1;A.classicCommit=nil
+A.mode='Hero';A.view='browse'
+for _,bundle in ipairs(HeroCompanionBundles)do
+ HeroFreePickPlans.previewLearned={};HeroFreePickPlans.entries={};HeroFreePickPlans.pendingBaseline=nil
+ assert(A.SetLocalLearned(bundle.id,1))
+ assert(A.AbilityPointsSpent()==4 and A.RaritySpent('Epic')==2)
+ local count=0
+ for _,child in ipairs(HeroCompanionAbilities)do if child.requiredBundle==bundle.id then
+  count=count+1;assert(HeroFreePickPlans.previewLearned[child.id]==1)
+  assert(not A.SetLocalLearned(child.id,0));assert(child.level==1 and child.ae==0)
+  local b=CreateFrame('Button');b.icon=b:CreateTexture();A.UpdateMasteryBadge(b,child)
+  assert(b.masteryBadge.entry==bundle)
+ end end
+ assert(count==#bundle.members and #A.MasteryTooltipMembers(bundle)==count)
+ assert(A.SetLocalLearned(bundle.id,0));assert(next(HeroFreePickPlans.previewLearned)==nil)
+ assert(A.AbilityPointsSpent()==0 and A.RaritySpent('Epic')==0)
+ HeroFreePickPlans.pendingBaseline=nil;assert(A.SetRank(bundle.id,1))
+ for _,child in ipairs(HeroCompanionAbilities)do if child.requiredBundle==bundle.id then assert(HeroFreePickPlans.entries[child.id]==1)end end
+ assert(A.CancelPreparation());assert(next(HeroFreePickPlans.entries)==nil)
+end
+HeroFreePickPlans.pendingBaseline=nil;A.mode='ClassPlus'
+assert(A.SetLocalLearned(HeroCompanionBundles[1].id,1))
+assert(not A.SetLocalLearned(HeroCompanionBundles[2].id,1))
+A.CancelPreparation();A.mode='Classic'
+for _,e in ipairs(HeroCompanionBundles)do assert(not A.EntryAvailableInMode(e)and not A.SetLocalLearned(e.id,1))end
+for _,e in ipairs(HeroCompanionAbilities)do assert(not A.EntryAvailableInMode(e))end
+local tame={id=1515,class='Hunter',kind='Ability',spells={1515}}
+assert(tame and A.EntryAvailableInMode(tame));A.mode='Hero';assert(not A.EntryAvailableInMode(tame))
+UnitClass=oldClass
+""")
+print('PASS: all four bundles stage/refund full grants at 4 AP/2 Epic; drafts cancel cleanly; child purchases blocked; Hunter Class+ and Classic boundaries enforced.')

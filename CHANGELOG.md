@@ -1,3 +1,9 @@
+## 0.32.0
+
+- Integrate all four companion bundles as custom-mode preview purchases with 4 AP / 2 Epic cost and automatic level-one child grants.
+- Add bundle lists, skill previews, parent badges, reversible bundle removal and duplicate native-entry replacement. Classic excludes bundle content.
+- Test all bundles, resource accounting, cancellation and mode boundaries; document Hunter tests and the future standalone Companion Training module. Server learning and pet support remain unimplemented.
+
 ## 0.31.5
 
 - Add small bottom-right Mastery badges to member ability icons across ability, learned, summary and browse views. Hover opens the interactive Mastery tooltip.
