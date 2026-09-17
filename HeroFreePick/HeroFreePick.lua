@@ -7,11 +7,18 @@ local warningText=pointWarning:CreateFontString(nil,'OVERLAY');warningText:SetAl
 pointWarning:Hide()
 local remaining=0
 pointWarning:SetScript('OnUpdate',function(self,elapsed)remaining=remaining-elapsed;if remaining<=0 or not f:IsShown()then self:Hide()else self:SetAlpha(math.min(1,remaining))end end)
+function A.AlertSoundsEnabled()
+ return type(HeroFreePickSettings)~='table'or HeroFreePickSettings.alertSounds~=false
+end
+function A.SetAlertSounds(enabled)
+ if type(HeroFreePickSettings)~='table'then HeroFreePickSettings={}end
+ HeroFreePickSettings.alertSounds=not not enabled
+end
 local lastWarningSound=-100
 function A.ShowPointWarning(message)
  warningText:SetText(message);remaining=3;pointWarning:SetAlpha(1);pointWarning:Show()
  local now=GetTime and GetTime()or 0
- if PlaySound and now-lastWarningSound>=1 then PlaySound('RaidWarning');lastWarningSound=now end
+ if A.AlertSoundsEnabled()and PlaySound and now-lastWarningSound>=1 then PlaySound('RaidWarning');lastWarningSound=now end
 end
 
 local GOLD={1,.82,.3};local colors={Normal='ffffff',Uncommon='1eff00',Rare='0070dd',Epic='a335ee',Legendary='ff8000'}
@@ -294,16 +301,35 @@ local outerBorder=CreateFrame('Frame',nil,f);outerBorder:SetAllPoints(f);outerBo
 outerBorder:SetBackdrop({edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',edgeSize=32});outerBorder:SetBackdropBorderColor(1,1,1,1)
 
 
-local header=panel(f,48,-7,1124,29)
-local title=txt(header,'Hero Advancement',8,-7,1048,'GameFontNormal');title:SetJustifyH('CENTER')
-local closeBox=panel(f,1143,-7,29,29)
-local infoBox=panel(f,1114,-7,29,29)
-if HeroFreePickFrameClose then HeroFreePickFrameClose:SetParent(closeBox);HeroFreePickFrameClose:ClearAllPoints();HeroFreePickFrameClose:SetPoint('CENTER',closeBox,'CENTER',0,0);HeroFreePickFrameClose:SetSize(28,28);HeroFreePickFrameClose:SetScript('OnClick',function()f:Hide()end)end
+local header=panel(f,48,-7,1031,29)
+local title=txt(header,'Hero Advancement',8,-7,1015,'GameFontNormal');title:SetJustifyH('CENTER')
+local closeBox=panel(f,1147,-11,22,22)
+local infoBox=panel(f,1119,-11,22,22)
+if HeroFreePickFrameClose then HeroFreePickFrameClose:SetParent(closeBox);HeroFreePickFrameClose:ClearAllPoints();HeroFreePickFrameClose:SetPoint('CENTER',closeBox,'CENTER',0,0);HeroFreePickFrameClose:SetSize(22,22);HeroFreePickFrameClose:SetScript('OnClick',function()f:Hide()end)end
 local infoButton=CreateFrame('Button',nil,infoBox);infoButton:SetAllPoints(infoBox)
-local infoLabel=txt(infoButton,'i',0,-6,29,'GameFontNormalLarge');infoLabel:SetJustifyH('CENTER')
+local infoLabel=txt(infoButton,'i',0,-3,22,'GameFontNormalLarge');infoLabel:SetJustifyH('CENTER')
 infoButton:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
 local function showModuleInfo(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Hero Advancement');GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true);GameTooltip:AddLine('Module GitHub link coming soon.',1,.82,.3,true);GameTooltip:Show()end
 infoButton:SetScript('OnEnter',showModuleInfo);infoButton:SetScript('OnClick',showModuleInfo);infoButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
+local settingsBox=panel(f,1091,-11,22,22)
+settingsBox:ClearAllPoints();settingsBox:SetPoint('RIGHT',infoBox,'LEFT',-6,0)
+local settingsButton=CreateFrame('Button','HeroSettingsButton',settingsBox);settingsButton:SetAllPoints(settingsBox)
+local gear=settingsButton:CreateTexture(nil,'ARTWORK');gear:SetSize(16,16);gear:SetPoint('CENTER');gear:SetTexture('Interface\\Icons\\Trade_Engineering')
+settingsButton:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
+local settingsMenu=panel(f,0,0,250,100);settingsMenu:ClearAllPoints();settingsMenu:SetPoint('TOPRIGHT',settingsBox,'BOTTOMRIGHT',0,-8);settingsMenu:SetFrameLevel(f:GetFrameLevel()+30);settingsMenu:EnableMouse(true)
+local settingsStone=settingsMenu:CreateTexture(nil,'ARTWORK',nil,-7);settingsStone:SetPoint('TOPLEFT',3,-3);settingsStone:SetPoint('BOTTOMRIGHT',-3,3)
+settingsStone:SetTexture('Interface\\PaperDollInfoFrame\\UI-Character-General-TopLeft');settingsStone:SetTexCoord(80/256,250/256,38/256,67/256);settingsStone:SetAlpha(1)
+txt(settingsMenu,'Settings',14,-12,190,'GameFontNormalLarge')
+local settingsClose=CreateFrame('Button',nil,settingsMenu,'UIPanelCloseButton');settingsClose:SetSize(22,22);settingsClose:SetPoint('TOPRIGHT',-4,-4);settingsClose:SetScript('OnClick',function()settingsMenu:Hide()end)
+local alertCheck=CreateFrame('CheckButton','HeroAlertSoundsCheck',settingsMenu,'UICheckButtonTemplate');alertCheck:SetSize(26,26);alertCheck:SetPoint('TOPLEFT',12,-44)
+txt(settingsMenu,'Alert sounds',42,-50,180,'GameFontHighlight')
+alertCheck:SetScript('OnClick',function(self)A.SetAlertSounds(self:GetChecked())end)
+settingsButton:SetScript('OnClick',function()GameTooltip:Hide();if settingsMenu:IsShown()then settingsMenu:Hide()else alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
+settingsButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Settings');GameTooltip:Show()end)
+settingsButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
+A.SettingsMenu=settingsMenu;A.SettingsButton=settingsButton;A.AlertSoundsCheck=alertCheck
+settingsMenu:Hide()
+
 
 local emblem=CreateFrame('Frame',nil,f);emblem:SetFrameLevel(f:GetFrameLevel()+10);emblem:SetSize(66,66);emblem:SetPoint('TOPLEFT',-12,18)
 local well=CreateFrame('Frame',nil,emblem);well:SetSize(64,64);well:SetPoint('CENTER')
@@ -994,7 +1020,7 @@ local function finish()
  closing=true;dialog:Hide();window:Hide();closing=false
 end
 function A.ShowPendingReview()
- if not dialog:IsShown()and PlaySound then PlaySound('RaidWarning')end
+ if not dialog:IsShown()and A.AlertSoundsEnabled()and PlaySound then PlaySound('RaidWarning')end
  dialog:Show()
 end
 function A.RequestClose()
@@ -1013,6 +1039,7 @@ A.PendingCancelButton=button('Cancel Changes',437,function()if A.classicCommit t
 if HeroFreePickFrameClose then HeroFreePickFrameClose:SetScript('OnClick',A.RequestClose)end
 -- Escape and inherited close actions use Hide directly; intercept them as well.
 window:SetScript('OnHide',function()
+ if A.SettingsMenu then A.SettingsMenu:Hide()end
  if closing then return end
  if A.HasPendingChanges()then window:Show();A.ShowPendingReview()
  elseif HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end

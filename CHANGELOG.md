@@ -1,3 +1,8 @@
+## 0.39.3
+
+- Separate compact close/info boxes from the title bar and add a matching gear button with a Settings menu.
+- Add a per-character Alert sounds preference, enabled by default. It controls point/prerequisite warnings and pending-confirmation raid warnings for all character types, independently of pending build edits.
+
 ## 0.39.2
 
 - Move pending-confirmation buttons directly beneath the heading and reduce popup height from 140 to 112. Keep the secondary close button inside the stone border.

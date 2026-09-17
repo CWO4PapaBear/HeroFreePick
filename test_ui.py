@@ -798,3 +798,24 @@ assert(A.EntryIcon(A.byID[21818046])=='Interface\\Icons\\Spell_Arcane_TeleportDa
 HeroFreePickPlans=original
 """)
 print('PASS: independent travel purchases/removal, disjoint memberships and explicit Teleport Dalaran mastery icon.')
+
+
+lua.execute("""
+local savedSettings=HeroFreePickSettings;local oldSound,oldTime=PlaySound,GetTime
+local sounds=0;PlaySound=function(name)assert(name=='RaidWarning');sounds=sounds+1 end
+local time=100;GetTime=function()time=time+2;return time end
+for _,mode in ipairs({'Classic','ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;HeroFreePickSettings=nil;assert(A.AlertSoundsEnabled())
+ A.PendingDialog:Hide();local before=sounds;A.ShowPendingReview();assert(sounds==before+1)
+ A.ShowPendingReview();assert(sounds==before+1)
+ A.SetAlertSounds(false);assert(not A.AlertSoundsEnabled())
+ before=sounds;A.PendingDialog:Hide();A.ShowPendingReview();A.ShowPointWarning('Muted test');assert(sounds==before)
+ A.SetAlertSounds(true);A.ShowPointWarning('Audible test');assert(sounds==before+1)
+end
+A.SettingsMenu:Hide();A.SettingsButton.scripts.OnClick();assert(A.SettingsMenu:IsShown())
+A.AlertSoundsCheck.GetChecked=function()return nil end
+A.AlertSoundsCheck.scripts.OnClick(A.AlertSoundsCheck);assert(not A.AlertSoundsEnabled())
+A.SettingsButton.scripts.OnClick();assert(not A.SettingsMenu:IsShown())
+HeroFreePickSettings=savedSettings;PlaySound,GetTime=oldSound,oldTime;A.PendingDialog:Hide()
+""")
+print('PASS: settings opens/closes, checkbox persists mute independently, and both alert sound paths respect the preference in every mode.')
