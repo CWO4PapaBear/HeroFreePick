@@ -411,11 +411,13 @@ A.ShowEntryTooltip(owner);shift=true;A.RefreshMasteryTooltip()
 local function checkRows()local count=0;for _,row in ipairs(A.MasteryTooltipRows)do if row:IsShown()then count=count+1 end end;assert(count==5)end
 checkRows()
 for _,child in ipairs(HeroCompanionAbilities)do if child.spells[1]==93558 then owner.entry=child end end
-shift=false;A.ShowEntryTooltip(owner);shift=true;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.01);checkRows()
+shift=false;A.ShowEntryTooltip(owner);assert(not A.MasteryTooltip:IsShown())
+shift=true;A.ShowEntryTooltip(owner);assert(not A.MasteryTooltip:IsShown())
+for _,child in ipairs(HeroCompanionAbilities)do owner.entry=child;A.ShowEntryTooltip(owner);assert(not A.MasteryTooltip:IsShown())end
 assert(A.PackageSpellIcons[109982]:find('novart_books'))
 assert(not A.PackageSpellIcons[91652]:find('novart_books'))
 """)
-print('PASS: Dragonkin bundle and same-named tame action both expand five skills; Lore/Dismiss artwork swapped.')
+print('PASS: Primary Dragonkin bundle expands five skills; all child spells stay on normal tooltips with Shift; Lore/Dismiss artwork swapped.')
 lua.execute("""
 local native=A.NativeTalent;local oldClass=UnitClass
 UnitClass=function()return 'Warrior','WARRIOR'end;testLevel=20;A.mode='Classic';A.view='browse';A.classicCommit=nil

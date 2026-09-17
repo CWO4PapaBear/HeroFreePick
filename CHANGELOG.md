@@ -1,3 +1,7 @@
+## 0.32.4
+
+- Restrict connected-ability expansion to primary Mastery/bundle tooltips and their parent badges. Individual child spells retain normal tooltips even while Shift is held.
+
 ## 0.32.3
 
 - Swap Dragonkin Lore/Dismiss icons; expand connected groups from same-named tame actions and Shift-hovered bundle children.

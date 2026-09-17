@@ -90,7 +90,7 @@ local function hideMasteryTooltip()
 end
 local function showMasteryTooltip(owner)
  local e=owner.entry;masteryOwner=owner;masteryEntry=e;masteryAway=0
- if e.requiredBundle then e=A.byID[e.requiredBundle]end
+ if not e.isMastery and not e.isBundle then hideMasteryTooltip();return end
  masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
  GameTooltip:Hide();masteryPreview:Hide()
  masteryTitle:SetText(e.name)
@@ -143,7 +143,7 @@ end
 
 local function tooltip(self)
  local e=self.entry;if not e then return end
- if e.isMastery or e.isBundle or(e.requiredBundle and (e.name==A.byID[e.requiredBundle].name or(IsShiftKeyDown and IsShiftKeyDown())))then showMasteryTooltip(self);return end
+ if e.isMastery or e.isBundle then showMasteryTooltip(self);return end
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
