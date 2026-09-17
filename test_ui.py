@@ -323,3 +323,19 @@ end
 over=false;A.MasteryTooltip.scripts.OnUpdate(A.MasteryTooltip,.4);assert(not A.MasteryTooltip:IsShown())
 """)
 print('PASS: every Mastery member resolves; Shift expands/collapses, icon previews open/close, and leaving dismisses the tooltip.')
+
+lua.execute("""
+local b=CreateFrame('Button');b.icon=b:CreateTexture();HeroFreePickFrame:Show()
+local member;for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then member=e;break end end
+assert(member)
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;A.UpdateMasteryBadge(b,member)
+ assert(b.masteryBadge:IsShown()and b.masteryBadge.entry==A.byID[member.requiredMastery])
+ b.masteryBadge.scripts.OnEnter(b.masteryBadge);assert(A.MasteryTooltip:IsShown())
+end
+A.mode='Classic';A.UpdateMasteryBadge(b,member)
+assert(not b.masteryBadge:IsShown()and not A.MasteryTooltip:IsShown())
+A.mode='Hero';A.UpdateMasteryBadge(b,member)
+A.UpdateMasteryBadge(b,HeroMasteries[1]);assert(not b.masteryBadge:IsShown())
+""")
+print('PASS: Mastery badges open the matching tooltip in all custom modes; Classic and recycled non-member buttons hide badges.')

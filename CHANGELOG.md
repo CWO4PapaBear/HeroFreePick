@@ -1,3 +1,8 @@
+## 0.31.5
+
+- Add small bottom-right Mastery badges to member ability icons across ability, learned, summary and browse views. Hover opens the interactive Mastery tooltip.
+- Explicitly hide badges in Classic and clear badges when pooled buttons are reused.
+
 ## 0.31.4
 
 - Sort connected Mastery abilities by required level, then name; unknown levels appear last. Verify ordering and membership for all Masteries.

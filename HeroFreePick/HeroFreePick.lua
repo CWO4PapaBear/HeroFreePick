@@ -171,6 +171,27 @@ local function tooltip(self)
  GameTooltip:AddLine('Left-click adds a pending rank. Right-click removes a pending rank.',.5,.9,.8,true)
  GameTooltip:AddLine('Pending preparation only. Closing opens a change review; server committing is unavailable.',1,.6,.3,true);GameTooltip:Show()
 end
+
+-- Shared badge policy for every ability view; Classic never displays Mastery UI.
+local function updateMasteryBadge(b,e)
+ local badge=rawget(b,'masteryBadge')
+ local mastery=A.mode~='Classic'and not A.IsTalent(e)and e.requiredMastery and A.byID[e.requiredMastery]
+ if not mastery then
+  if badge then if masteryOwner==badge then hideMasteryTooltip()end;badge.entry=nil;badge:Hide()end
+  return
+ end
+ if not badge then
+  badge=CreateFrame('Button',nil,b);b.masteryBadge=badge
+  badge:SetSize(13,13);badge:SetFrameLevel(b:GetFrameLevel()+3);badge:EnableMouse(true)
+  badge:SetPoint('BOTTOMRIGHT',b.icon,'BOTTOMRIGHT',0,0)
+  badge.texture=badge:CreateTexture(nil,'ARTWORK');badge.texture:SetAllPoints(badge)
+  badge:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
+  badge:SetScript('OnEnter',tooltip);badge:SetScript('OnLeave',leaveEntryTooltip)
+ end
+ badge.entry=mastery;badge.texture:SetTexture(icon(mastery));badge:Show()
+end
+A.UpdateMasteryBadge=updateMasteryBadge
+
 local function selectEntry(e)A.selected=e;A.AdjustPending(e,1)end
 local function entryButton(parent,w,h)
  local b=CreateFrame('Button',nil,parent);b:SetSize(w,h);b:RegisterForClicks('LeftButtonUp','RightButtonUp')
@@ -190,7 +211,7 @@ local function entryButton(parent,w,h)
  return b
 end
 local function fill(b,e,showClass)
- b.entry=e;b.icon:SetTexture(icon(e));b.name:SetText('|cff'..(colors[e.quality]or'ffffff')..e.name..'|r')
+ b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText('|cff'..(colors[e.quality]or'ffffff')..e.name..'|r')
  local rank=HeroFreePickPlans.entries[e.id]or 0
  b.rank:SetText((showClass and e.class..'  -  ' or '')..rank..'/'..A.MaxRank(e)..' planned')
  if rank>0 then b.rank:SetTextColor(.3,1,.4)else b.rank:SetTextColor(.7,.7,.7)end
@@ -423,7 +444,7 @@ local function renderTrees()
    if e then used[e.id]=true else
     e={id=-node.talent,name=GetSpellInfo(node.ranks[1])or('Talent '..node.talent),class=node.class,spec=node.spec,spells=node.ranks,kind='Talent',quality='Normal',level=10+node.row*5,ae=0,te=1,requiredAE=0,requiredTE=0,requiredIDs='',unavailable=true}
    end
-   b.entry=e;b.node=node;b.icon:SetTexture(icon(e));local planned=A.PendingRank(e);b.rank:SetText(planned..'/'..A.MaxRank(e));b.rank:SetTextColor(planned>0 and 0 or 1,1,0);b:SetBackdropBorderColor(planned>0 and .3 or .8,planned>0 and 1 or .65,.25,1)
+   b.entry=e;b.node=node;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local planned=A.PendingRank(e);b.rank:SetText(planned..'/'..A.MaxRank(e));b.rank:SetTextColor(planned>0 and 0 or 1,1,0);b:SetBackdropBorderColor(planned>0 and .3 or .8,planned>0 and 1 or .65,.25,1)
    local x=35+node.column*63;local ny=y+node.row*63;b:ClearAllPoints();b:SetPoint('TOPLEFT',x,-ny);b.icon:SetDesaturated(A.OtherClass(e.class));b:SetAlpha(not A.OtherClass(e.class)and allowed[e.id]and A.TalentsUnlocked()and 1 or .38);b:Show();positions[node.talent]={x=x+16,y=ny,rank=planned,button=b};A.talentPositions[e.id]=ny;maxRow=math.max(maxRow,node.row)
   end
   local highest=talentContent:GetFrameLevel()
@@ -588,7 +609,7 @@ local function renderAbilityIcons(entries)
    b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
    abilityPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));local locked=A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
  end
  spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+10))
 end
@@ -623,7 +644,7 @@ function A.RefreshDetails()
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(38,38);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',0,-(i-1)*49);b:Show()
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',0,-(i-1)*49);b:Show()
  end
  learnedContent:SetHeight(math.max(293,#visible*49))
 end
@@ -676,7 +697,7 @@ local function renderSummary()
   for j,e in ipairs(groups[key])do
    n=n+1;local b=summaryButtons[n]
    if not b then b=CreateFrame('Button',nil,allContent);b:SetSize(34,34);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square');b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip);b:SetScript('OnClick',function(self,mouse)if mouse=='RightButton'then showSpellMenu(self.entry)end end);summaryButtons[n]=b end
-   b.entry=e;b.learned=true;b.icon:SetTexture(icon(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
+   b.entry=e;b.learned=true;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
   end
   y=y+math.ceil(#groups[key]/16)*42+15
  end
@@ -712,7 +733,7 @@ local function renderBrowse()
    end
    local classTexture='Interface\\Icons\\'..(badges[e.class]or'INV_Misc_QuestionMark')
    if SetPortraitToTexture then SetPortraitToTexture(b.classBadge,classTexture)else b.classBadge:SetTexture(classTexture)end
-   b.entry=e;b.icon:SetTexture(icon(e));b.icon:SetDesaturated(A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
+   b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.icon:SetDesaturated(A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
   end
   y=y+math.ceil(#entries/16)*42+12
   end

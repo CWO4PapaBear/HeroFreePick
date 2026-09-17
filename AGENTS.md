@@ -7,3 +7,4 @@ This is the modular Hero Advancement private repository for CWO4PapaBear/HeroFre
 - The owner authorizes normal commits and pushes at completed development milestones. Run relevant tests and build.py, review the diff, and update the changelog first. Do not force-push.
 - Preserve Lua 5.1 / Interface 30300 compatibility. Mock tests are not substitutes for in-game visual verification.
 - Keep local MenuLayoutOverrides.lua values out of published changes unless explicitly requested.
+`n- Classic remains stock class/trainer progression: exclude custom Masteries, their badges and custom unlock requirements. Apply new free-pick features only to custom modes unless explicitly requested for Classic.
