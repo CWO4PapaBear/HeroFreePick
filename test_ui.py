@@ -478,3 +478,12 @@ local rows=A.GroupLearnedEntries({member,A.byID[member.requiredMastery]});assert
 A.mode='Classic';rows=A.GroupLearnedEntries({member});assert(#rows==1 and not rows[1].child)
 """)
 print('PASS: learned bundle/Mastery parents precede compact children without duplication; filtered children retain parent context; Classic rows remain full size.')
+
+lua.execute("""
+A.mode='Hero'
+local child=HeroCompanionAbilities[1];local b=CreateFrame('Button');b.icon=b:CreateTexture()
+A.UpdateMasteryBadge(b,child);assert(b.masteryBadge:IsShown())
+b.groupedLearnedChild=true;A.UpdateMasteryBadge(b,child);assert(not b.masteryBadge:IsShown())
+b.groupedLearnedChild=false;A.UpdateMasteryBadge(b,child);assert(b.masteryBadge:IsShown())
+""")
+print('PASS: compact learned children hide covering badges; reused ordinary icons restore badges.')

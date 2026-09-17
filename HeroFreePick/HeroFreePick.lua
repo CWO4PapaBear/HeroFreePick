@@ -195,7 +195,7 @@ end
 local function updateMasteryBadge(b,e)
  local badge=rawget(b,'masteryBadge')
  local mastery=A.mode~='Classic'and not A.IsTalent(e)and (e.requiredMastery or e.requiredBundle) and A.byID[e.requiredMastery or e.requiredBundle]
- if not mastery then
+ if not mastery or rawget(b,'groupedLearnedChild')then
   if badge then if masteryOwner==badge then hideMasteryTooltip()end;badge.entry=nil;badge:Hide()end
   return
  end
@@ -665,7 +665,7 @@ function A.RefreshDetails()
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(34*.75,34*.75);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name)
+  b.entry=e;b.groupedLearnedChild=item.child;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name)
   b.cost:SetText(rarityCost(e)..' '..(A.IsTalent(e)and talentCost(e.te)or essenceCost(e.ae)))
   b.rarityCost:Hide();b:ClearAllPoints()
   local indent=item.child and 18 or 0;local iconSize=34*.75*(item.child and .5 or 1)

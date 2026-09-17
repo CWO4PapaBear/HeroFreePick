@@ -1,3 +1,7 @@
+## 0.34.4
+
+- Hide the parent badge on indented learned child rows so it cannot cover their smaller individual ability icons. Keep parent badges in other views and preserve child tooltips.
+
 ## 0.34.3
 
 - Keep learned child text/costs at full scale; shrink only icons and tighten row height (16px minimum to fit full-size cost symbols). Preserve indentation and aligned endpoints.
