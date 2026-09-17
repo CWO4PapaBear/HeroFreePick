@@ -1,3 +1,7 @@
+## 0.33.3
+
+- Use Spell_Arcane_MindMastery for the Intellect primary-stat icon.
+
 ## 0.33.2
 
 - Use the native flexing-arm Spell_Nature_Strength icon for Strength in Choose Primary Stat.

@@ -534,7 +534,7 @@ function A.PrimaryStatTooltip(owner)
 end
 
 local statButtons={}
-local statIcons={Strength='Spell_Nature_Strength',Agility='Ability_Rogue_Sprint',Intellect='Spell_Holy_MagicalSentry',Spirit='Spell_Holy_SealOfWisdom'}
+local statIcons={Strength='Spell_Nature_Strength',Agility='Ability_Rogue_Sprint',Intellect='Spell_Arcane_MindMastery',Spirit='Spell_Holy_SealOfWisdom'}
 for i,stat in ipairs({'Strength','Agility','Intellect','Spirit'})do
  local b=CreateFrame('Button',nil,side);b:SetSize(36,36);b:SetPoint('TOPLEFT',35+(i-1)*67,-69)
  b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b.icon:SetTexture('Interface\\Icons\\'..statIcons[stat]);b:SetBackdrop({edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=12});b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
