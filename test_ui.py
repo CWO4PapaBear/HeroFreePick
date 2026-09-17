@@ -373,3 +373,15 @@ assert(tame and A.EntryAvailableInMode(tame));A.mode='Hero';assert(not A.EntryAv
 UnitClass=oldClass
 """)
 print('PASS: all four bundles stage/refund full grants at 4 AP/2 Epic; drafts cancel cleanly; child purchases blocked; Hunter Class+ and Classic boundaries enforced.')
+
+lua.execute("""
+local demon=A.byID[21954705];assert(demon.level==1)
+local imp
+for _,e in ipairs(HeroFreePickCatalog)do for _,spell in ipairs(e.spells)do if spell==688 and not A.IsTalent(e)then imp=e end end end
+assert(imp and imp.requiredMastery==demon.id and imp.ae==0 and HeroRarityCosts[imp.id]==0)
+local found=false;for _,m in ipairs(A.MasteryTooltipMembers(demon))do if m.spell==688 then found=true end end;assert(found)
+A.mode='Hero';testLevel=1;HeroFreePickPlans.previewLearned={};HeroFreePickPlans.entries={};HeroFreePickPlans.pendingBaseline=nil
+assert(A.SetLocalLearned(demon.id,1));assert(A.SetLocalLearned(imp.id,1))
+assert(A.AbilityPointsSpent()==2);assert(A.SetLocalLearned(demon.id,0));assert(not HeroFreePickPlans.previewLearned[imp.id])
+""")
+print('PASS: level-one Demon Mastery includes Summon Imp, free member selection and cascade removal.')

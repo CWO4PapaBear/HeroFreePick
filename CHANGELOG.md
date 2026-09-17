@@ -1,3 +1,8 @@
+## 0.32.1
+
+- Add Summon Imp to Demon Mastery and make Demon Mastery available at level 1; retain its 2 AP and existing gem cost.
+- Audit recent companion/Mastery icon paths against the test client and document missing A52 assets without substituting artwork.
+
 ## 0.32.0
 
 - Integrate all four companion bundles as custom-mode preview purchases with 4 AP / 2 Epic cost and automatic level-one child grants.
