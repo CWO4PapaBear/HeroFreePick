@@ -581,7 +581,7 @@ function A.PrimaryStatTooltip(owner)
 end
 
 local statButtons={}
-local statIcons={Strength='Spell_Nature_Strength',Agility='Interface\\AddOns\\HeroFreePick\\Art\\PrimaryStats\\ability_demonhunter_vengefulretreat2',Intellect='Spell_Arcane_MindMastery',Spirit='Spell_Holy_SealOfWisdom'}
+local statIcons={Strength='Spell_Nature_Strength',Agility='Interface\\AddOns\\HeroFreePick\\Art\\PrimaryStats\\ability_demonhunter_vengefulretreat2',Intellect='Spell_Arcane_MindMastery',Spirit='Spell_Holy_PowerInfusion'}
 for i,stat in ipairs({'Strength','Agility','Intellect','Spirit'})do
  local b=CreateFrame('Button',nil,side);b:SetSize(36,36);b:SetPoint('TOPLEFT',35+(i-1)*67,-60)
  b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b.icon:SetTexture(statIcons[stat]:find('Interface',1,true)and statIcons[stat]or('Interface\\Icons\\'..statIcons[stat]));b:SetBackdrop({edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=12});b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')

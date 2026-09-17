@@ -1,5 +1,7 @@
 ## 0.36.0
 
+- Use Spell_Holy_PowerInfusion for the Primary Stat Spirit icon.
+
 - Show Classic ability headings and tooltip levels from the stock AzerothCore trainer reference (369 catalog matches); group unmatched entries under Other learning sources. Custom level data remains unchanged.
 - Allow Classic to browse other classes from the top menu without granting cross-class learning or changing the own-class spellbook list.
 
