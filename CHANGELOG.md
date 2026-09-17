@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.31.0 - independent progression profiles
+
+- Add client-only Classic, optional Class+, Hybrid and Hero preview packages.
+- Prompt for level-1 progression and the Class+ level-10 Hybrid/continue decision; explain Hybrid in the Class+ tooltip.
+- Use native Classic talent tooltips/commit acknowledgments and level-only custom talent tiers/tooltips.
+- Add independent server policy source packages; custom-mode learning/refunds and server-owned choices remain unimplemented.
+- Generate separate release archives and a complete development bundle. See docs/MODULES.md for status and installation.
+
 ## 0.30.2 - pending talent point budget
 
 - Show remaining/total Talent Points for the active preparation view, using one point per level starting at 10.

@@ -1,0 +1,6 @@
+## Interface: 30300
+## Title: Hero Advancement - Hybrid
+## Notes: Optional local preview profile. Server committing requires integration.
+## Version: 0.31.0
+## Dependencies: HeroFreePick
+Profile.lua

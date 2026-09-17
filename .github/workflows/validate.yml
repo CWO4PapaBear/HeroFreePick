@@ -12,6 +12,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r requirements-dev.txt
       - run: python test_ui.py
+      - run: g++ -std=c++17 -Wall -Wextra -pedantic server/tests/mode_rules.cpp -o /tmp/hero-mode-tests && /tmp/hero-mode-tests
       - run: python build.py
       - uses: actions/upload-artifact@v4
         with:

@@ -1,3 +1,5 @@
+> **0.31.0 status:** Classic is client-only. Class+, Hybrid and Hero are local preview profiles with server policy source foundations; custom server progression is not implemented yet. [Package guide](docs/MODULES.md).
+
 # HeroFreePick
 
 Character Advancement interface for World of Warcraft 3.3.5a (Interface 30300). Current version: **0.27.3**.

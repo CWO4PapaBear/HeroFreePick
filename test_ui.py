@@ -29,7 +29,7 @@ function UIDropDownMenu_SetText()end
 ''')
 for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
 lua.execute("""
-local A=HeroFreePick
+local A=HeroFreePick;A.mode='Hero';A.InstalledModes={Classic=true,ClassPlus=true,Hybrid=true,Hero=true}
 assert(type(A.BeginPreparation)=='function' and type(A.RequestClose)=='function')
 function UnitClass()return 'Hero','HERO'end
 function LearnTalent()error('Immediate talent learning must never be called')end
@@ -51,7 +51,7 @@ HeroFreePickFrame:Show();assert(not A.RequestClose());assert(A.PendingDialog:IsS
 A.PendingBackButton.scripts.OnClick();assert(not A.PendingDialog:IsShown()and A.PendingRank(e)>0)
 HeroFreePickFrame:Hide();assert(HeroFreePickFrame:IsShown()and A.PendingDialog:IsShown())
 A.PendingAcceptButton.scripts.OnClick();assert(A.HasPendingChanges()and A.PendingDialog:IsShown())
-local ok,reason=A.AcceptPreparation();assert(not ok and reason:find('Server'))
+local ok,reason=A.AcceptPreparation();assert(not ok and reason:lower():find('server'))
 A.PendingCancelButton.scripts.OnClick();assert(not A.HasPendingChanges()and A.PendingRank(e)==0 and not HeroFreePickFrame:IsShown())
 -- Net-zero edits should not prompt; X/N and Escape share the same close decision.
 A.Toggle();A.SetLocalLearned(e.id,1);A.SetLocalLearned(e.id,0);assert(not A.HasPendingChanges());A.Toggle();assert(not HeroFreePickFrame:IsShown())
@@ -201,7 +201,7 @@ lua.execute("""
 local A=HeroFreePick;local warn=A.ShowPointWarning;local warning
 A.ShowPointWarning=function(s)warning=s end
 local talents={}
-for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and A.MaxRank(e)>=2 then talents[#talents+1]=e;if #talents==2 then break end end end
+for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and A.MaxRank(e)>=2 and A.TalentRequiredLevel(e)==10 then talents[#talents+1]=e;if #talents==2 then break end end end
 A.CancelPreparation();HeroFreePickPlans.entries={};HeroFreePickPlans.previewLearned={}
 for _,key in ipairs({'entries','previewLearned'})do
  local set=key=='entries'and A.SetRank or A.SetLocalLearned
@@ -218,3 +218,51 @@ testLevel=80;assert(A.TalentPointAllowance()==71)
 A.ShowPointWarning=warn;A.CancelPreparation()
 """)
 print('PASS: level-based talent budget, zero at level 9, exhaustion alert, rank refunds, level changes and independent draft/advancement budgets.')
+
+lua.execute("""
+local A=HeroFreePick;A.CancelPreparation();HeroFreePickPlans.pendingBaseline=nil
+function UnitClass()return 'Warrior','WARRIOR'end
+testLevel=1;HeroFreePickPlans.progressionChoice=nil;A.InstalledModes={Classic=true,Hybrid=true}
+assert(A.ModeChoiceDue()=='initial');assert(not A.ChooseInitialMode('Hero'));assert(A.ChooseInitialMode('ClassPlus'))
+assert(A.mode=='ClassPlus'and A.ModeChoiceDue()==nil);assert(A.OtherClass('Mage')and not A.OtherClass('Warrior'))
+assert(A.ClassPlusChoiceTooltip():find('level 10')and A.ClassPlusChoiceTooltip():find('Hybrid'))
+testLevel=10;assert(A.ModeChoiceDue()=='hybrid');assert(not A.ChooseHybridPath('Warrior'));assert(A.ChooseHybridPath('Mage'))
+assert(A.mode=='Hybrid'and not A.OtherClass('Mage')and A.OtherClass('Priest')and not A.ModeChoiceDue())
+HeroFreePickPlans.progressionChoice={mode='ClassPlus'};A.mode='ClassPlus';assert(A.ChooseHybridPath(nil));assert(not A.ModeChoiceDue())
+A.InstalledModes.Hybrid=nil;assert(A.ClassPlusChoiceTooltip():find('requires the Hybrid module'))
+local tier0,tier1
+for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and e.class=='Warrior'then local n=A.TalentNode(e);if n.row==0 then tier0=e elseif n.row==1 then tier1=e end end end
+assert(tier0 and tier1);HeroFreePickPlans.previewLearned={};HeroFreePickPlans.pendingBaseline=nil
+testLevel=10;assert(not A.SetLocalLearned(tier1.id,1));A.mode='Hero';assert(not A.SetLocalLearned(tier1.id,1));A.mode='ClassPlus';testLevel=15;assert(A.SetLocalLearned(tier1.id,1));A.CancelPreparation()
+-- Classic commits only at acceptance and waits for live rank acknowledgment.
+A.mode='Classic';HeroFreePickPlans.previewLearned={};HeroFreePickPlans.entries={};HeroFreePickPlans.pendingBaseline=nil
+local original=A.NativeTalent;local rank=0;local calls=0
+A.NativeTalent=function(e)if e.id==tier0.id then return 1,1,rank,A.MaxRank(tier0),1 end end
+function InCombatLockdown()return false end
+function GetUnspentTalentPoints()return 5 end
+function LearnTalent(tab,index)assert(tab==1 and index==1);calls=calls+1 end
+A.BeginPreparation();assert(A.SetLocalLearned(tier0.id,1));assert(calls==0)
+local ok,msg=A.AcceptPreparation();assert(not ok and A.classicCommit);A.PollClassicCommit(.1);assert(calls==1 and A.classicCommit)
+A.PollClassicCommit(.1);assert(calls==1);rank=1;A.PollClassicCommit(.1);A.PollClassicCommit(.1);assert(not A.classicCommit and not A.HasPendingChanges())
+assert(A.SetLocalLearned(tier0.id,0));local valid,why=A.ValidateClassic();assert(not valid and why:find('trainer'));A.CancelPreparation();assert(A.PendingRank(tier0)==1)
+local ability;for _,e in ipairs(HeroFreePickCatalog)do if e.class=='Warrior'and not A.IsTalent(e)then ability=e;break end end
+assert(not A.SetLocalLearned(ability.id,1));A.NativeTalent=original
+""")
+print('PASS: initial mode choice, Hybrid-only package path, level-10 decision, class boundaries, tier gates, Classic native acknowledgments and trainer-only committed resets.')
+
+lua.execute("""
+local A=HeroFreePick;local native=A.NativeTalent
+A.NativeTalent=function()return 1,1,0,5,1 end
+function GetActiveTalentGroup()return 1 end
+local nativeCalls=0;local lines={}
+GameTooltip.SetTalent=function()nativeCalls=nativeCalls+1 end
+GameTooltip.AddLine=function(_,s)lines[#lines+1]=s end
+A.class='Warrior';A.spec='All';A.view='browse';A.isBrowse=false;testLevel=80
+A.mode='Classic';A.Refresh();HeroNativeTalent1.scripts.OnEnter(HeroNativeTalent1);assert(nativeCalls==1)
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;lines={};A.Refresh();HeroNativeTalent1.scripts.OnEnter(HeroNativeTalent1)
+ assert(nativeCalls==1);local text=table.concat(lines,' ');assert(text:find('Requires Level')and text:find('No tree%-investment'))
+end
+A.NativeTalent=native
+""")
+print('PASS: Classic uses native talent tooltips; all three custom modes show level-only requirements.')

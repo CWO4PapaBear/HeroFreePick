@@ -272,3 +272,164 @@ function A.AcceptPreparation()
 end
 
 end
+
+
+-- Independent progression profiles. Optional addons register preview modes; Classic is stock-safe.
+do
+local A=HeroFreePick
+A.ModeDefinitions={Classic={name='Classic Character',classes=1,classic=true},ClassPlus={name='Class+',classes=1,tierLevels=true},Hybrid={name='Hybrid',classes=2,tierLevels=true},Hero={name='Hero',classes=10,tierLevels=true}}
+A.InstalledModes={Classic=true}
+A.mode='Classic'
+function A.RegisterMode(id)if A.ModeDefinitions[id]then A.InstalledModes[id]=true end end
+function A.Mode()return A.ModeDefinitions[A.mode]or A.ModeDefinitions.Classic end
+local function ownClass()
+ local _,token=UnitClass('player');for _,c in ipairs(A.classes)do if string.upper(c)==token then return c end end
+ return nil
+end
+function A.OtherClass(class)
+ if A.mode=='Hero'then return false end
+ local own=ownClass();if class==own then return false end
+ return not(A.mode=='Hybrid'and UnitLevel('player')>=10 and class==A.secondClass)
+end
+function A.SelectMode(id,second)
+ if A.HasPendingChanges()or A.classicCommit then return false,'Finish or cancel pending changes before switching modes.'end
+ if not A.InstalledModes[id]and not(id=='ClassPlus'and A.InstalledModes.Hybrid)then return false,'That mode package is not installed.'end
+ if id=='Hybrid'and second then
+  local found=false;for _,c in ipairs(A.classes)do if c==second then found=true end end
+  if not found or second==ownClass()or UnitLevel('player')<10 then return false,'Choose a different second class at level 10 or later.'end
+ end
+ A.mode=id;A.secondClass=second
+ -- Each optional mode has isolated local preview state; switching never grants server spells.
+ HeroFreePickPlans.modePreviews=HeroFreePickPlans.modePreviews or {}
+ local state=HeroFreePickPlans.modePreviews[id]or {entries={},previewLearned={}}
+ HeroFreePickPlans.entries=state.entries;HeroFreePickPlans.previewLearned=state.previewLearned
+ HeroFreePickPlans.modePreviews[id]=state;HeroFreePickPlans.pendingBaseline=nil
+ A.BeginPreparation();return true,id=='Classic'and 'Classic: trainer abilities and native talent commit.'or 'Preview only: server commit is not enabled.'
+end
+local results=A.Results
+function A.Results()
+ local out={};for _,e in ipairs(results())do
+  if A.mode~='Classic'or A.IsTalent(e)or(e.id<20000000 and not e.isMastery)then out[#out+1]=e end
+ end;return out
+end
+function A.TalentNode(e)
+ for _,node in ipairs(HeroFreePickTrees or {})do if node.talent==e.nativeTalent then return node end end
+end
+local begin=A.BeginPreparation
+function A.BeginPreparation()
+ A.Init()
+ if A.mode=='Classic'and not HeroFreePickPlans.pendingBaseline then
+  HeroFreePickPlans.previewLearned={}
+  for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)then local _,_,rank=A.NativeTalent(e);if rank and rank>0 then HeroFreePickPlans.previewLearned[e.id]=rank end end end
+ end
+ begin()
+end
+function A.TalentRequiredLevel(e)local node=A.TalentNode(e);return node and (10+5*node.row)or 80 end
+local setRank,setLearned=A.SetRank,A.SetLocalLearned
+local function permitted(id,rank,key)
+ local e=A.byID[id];if not e then return false end
+ if A.classicCommit then A.ShowPointWarning('Waiting for the server to confirm talent learning.');return false end
+ if A.mode=='Classic'and not A.IsTalent(e)then A.ShowPointWarning('Classic abilities are learned from trainers.');return false end
+ if A.Mode().tierLevels and A.IsTalent(e)and rank>((HeroFreePickPlans[key]or {})[id]or 0)then
+  local node=A.TalentNode(e)
+  if not node or UnitLevel('player')<10+5*node.row then A.ShowPointWarning('This talent tier requires level '..(node and 10+5*node.row or '?')..'.');return false end
+ end
+ return true
+end
+function A.SetRank(id,rank)if not permitted(id,rank,'entries')then return false end;return setRank(id,rank)end
+function A.SetLocalLearned(id,rank)if not permitted(id,rank,'previewLearned')then return false end;return setLearned(id,rank)end
+function A.ValidateClassic()
+ if InCombatLockdown and InCombatLockdown()then return false,'Cannot commit talents during combat.'end
+ local state=HeroFreePickPlans.previewLearned or {};local total=0;local current=0;local nodes={};local ranks={};local queue={}
+ for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and not A.OtherClass(e.class)then
+  local tab,index,rank,maxRank=A.NativeTalent(e);rank=rank or 0
+  local wanted=state[e.id]or 0
+  if wanted<rank then return false,'Committed talents must be reset at a trainer.'end
+  if wanted>0 then
+   local node=A.TalentNode(e);if not node or not tab or wanted>(maxRank or A.MaxRank(e))then return false,'Talent is unavailable in the stock client.'end
+   nodes[node.talent]=node;ranks[node.talent]=wanted;total=total+wanted
+   for nextRank=rank+1,wanted do queue[#queue+1]={entry=e,tab=tab,index=index,rank=nextRank,row=node.row}end
+  end
+  current=current+rank
+ end end
+ if total-current>A.NativeTalentPoints()then return false,'Not enough unspent native Talent Points.'end
+ for id,node in pairs(nodes)do
+  local lower=0;for other,n in pairs(nodes)do if n.spec==node.spec and n.row<node.row then lower=lower+ranks[other]end end
+  if lower<node.row*5 then return false,'Classic talents require five points in lower tiers per row.'end
+  if node.depends>0 and (ranks[node.depends]or 0)<node.dependsRank+1 then return false,'A Classic talent prerequisite is missing.'end
+ end
+ table.sort(queue,function(a,b)if a.row~=b.row then return a.row<b.row end;if a.entry.id~=b.entry.id then return a.entry.id<b.entry.id end;return a.rank<b.rank end)
+ return true,queue
+end
+function A.AcceptPreparation()
+ if A.mode~='Classic'then return false,'This mode is a local preview. The server learning/refund integration is not enabled yet.'end
+ if A.view=='architect'then return false,'Archetype Builder is a separate draft. Set the desired ranks in Hero Advancement to learn them.'end
+ local ok,queue=A.ValidateClassic();if not ok then return false,queue end
+ if #queue==0 then return false,'No new native talent ranks to learn. Committed ranks require a trainer reset.'end
+ if A.classicCommit then return false,'Waiting for server confirmation.'end
+ A.classicCommit={queue=queue,index=1,elapsed=0,sent=false}
+ return false,'Learning talents; waiting for the server to confirm each rank.'
+end
+function A.PollClassicCommit(elapsed)
+ local job=A.classicCommit;if not job then return end
+ local item=job.queue[job.index]
+ if not item then
+  A.classicCommit=nil;HeroFreePickPlans.pendingBaseline=nil;A.BeginPreparation()
+  if A.ClassicCommitResult then A.ClassicCommitResult(true,'Talents confirmed by the server.')end;return
+ end
+ local tab,index,rank=A.NativeTalent(item.entry)
+ if not tab or (InCombatLockdown and InCombatLockdown())then
+  A.classicCommit=nil;if A.ClassicCommitResult then A.ClassicCommitResult(false,'Commit interrupted. Any ranks already confirmed remain learned; visit a trainer to reset them.')end;return
+ end
+ if rank>=item.rank then job.index=job.index+1;job.elapsed=0;job.sent=false;return end
+ if not job.sent then LearnTalent(tab,index);job.sent=true end
+ job.elapsed=job.elapsed+elapsed
+ if job.elapsed>5 then A.classicCommit=nil;if A.ClassicCommitResult then A.ClassicCommitResult(false,'The server did not confirm the talent. Earlier confirmed ranks remain learned; verify your character before retrying.')end end
+end
+local cancel=A.CancelPreparation
+function A.CancelPreparation()
+ if A.classicCommit then return false end
+ cancel()
+ if A.mode=='Classic'then HeroFreePickPlans.pendingBaseline=nil;A.BeginPreparation()end
+ return true
+end
+end
+
+do
+local A=HeroFreePick
+function A.ClassPlusChoiceTooltip()
+ local text='Choose abilities and talents from your original class within free-pick resource limits.'
+ if A.InstalledModes.Hybrid then return text..' At level 10, you may continue as Class+ or become Hybrid and choose a second class.'end
+ return text..' The option to become Hybrid at level 10 requires the Hybrid module.'
+end
+function A.ModeChoiceDue(level)
+ level=level or UnitLevel('player')
+ if not HeroFreePickPlans.progressionChoice and level==1 then return 'initial'end
+ local choice=HeroFreePickPlans.progressionChoice
+ if choice and choice.mode=='ClassPlus'and level>=10 and not choice.hybridDecision and A.InstalledModes.Hybrid then return 'hybrid'end
+end
+function A.ChooseInitialMode(id)
+ if A.ModeChoiceDue()~='initial'or id=='Hybrid'then return false,'Initial choice is only available on first arrival at level 1.'end
+ local ok,why=A.SelectMode(id);if not ok then return false,why end
+ HeroFreePickPlans.progressionChoice={mode=id};return true
+end
+function A.ChooseHybridPath(second)
+ if A.ModeChoiceDue()~='hybrid'then return false,'Hybrid selection is not available.'end
+ if second then
+  local ok,why=A.SelectMode('Hybrid',second);if not ok then return false,why end
+  HeroFreePickPlans.progressionChoice={mode='Hybrid',secondClass=second,hybridDecision=true}
+ else HeroFreePickPlans.progressionChoice.hybridDecision=true end
+ return true
+end
+end
+
+do
+local A=HeroFreePick
+local allowance=A.TalentPointAllowance
+function A.TalentPointAllowance()
+ if A.mode~='Classic'then return allowance()end
+ local total=A.NativeTalentPoints()
+ for _,e in ipairs(HeroFreePickCatalog)do if A.IsTalent(e)and not A.OtherClass(e.class)then local _,_,rank=A.NativeTalent(e);total=total+(rank or 0)end end
+ return total
+end
+end

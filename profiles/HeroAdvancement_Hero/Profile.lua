@@ -1,0 +1,1 @@
+HeroFreePick.RegisterMode('Hero')
