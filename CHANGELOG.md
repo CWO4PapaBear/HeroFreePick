@@ -1,3 +1,7 @@
+## 0.36.6
+
+- Default the rarity panel to hidden for Classic characters, preserving explicit saved toggle preferences and custom-mode defaults.
+
 ## 0.36.5
 
 - Place the stock bronze lock icon directly below the talent panel’s level-10 lock message.

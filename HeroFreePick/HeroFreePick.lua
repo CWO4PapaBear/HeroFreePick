@@ -636,9 +636,13 @@ for i,q in ipairs({'Legendary','Epic','Rare','Uncommon'})do
  end
 end
 local rarityDivider=side:CreateTexture(nil,'OVERLAY');rarityDivider:SetTexture(.45,.42,.35,1);rarityDivider:SetPoint('TOPLEFT',10,-322);rarityDivider:SetSize(302,2)
-local rarityToggle=btn(f,'Hide Rarities',838,-575,306,function()HeroFreePickPlans.hideRarities=not HeroFreePickPlans.hideRarities;A.Refresh()end)
+local function raritiesHidden()
+ if HeroFreePickPlans.hideRarities~=nil then return HeroFreePickPlans.hideRarities end
+ return A.mode=='Classic'
+end
+local rarityToggle=btn(f,'Hide Rarities',838,-575,306,function()HeroFreePickPlans.hideRarities=not raritiesHidden();A.Refresh()end)
 local function refreshRarities()
- local hidden=HeroFreePickPlans.hideRarities
+ local hidden=raritiesHidden()
  rarityToggle:SetText(hidden and 'Show Rarities' or 'Hide Rarities')
  learnedScroll:SetHeight(hidden and 314 or 188)
  if hidden then rarityDivider:Hide()else rarityDivider:Show()end
