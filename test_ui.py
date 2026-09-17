@@ -819,3 +819,17 @@ A.SettingsButton.scripts.OnClick();assert(not A.SettingsMenu:IsShown())
 HeroFreePickSettings=savedSettings;PlaySound,GetTime=oldSound,oldTime;A.PendingDialog:Hide()
 """)
 print('PASS: settings opens/closes, checkbox persists mute independently, and both alert sound paths respect the preference in every mode.')
+
+
+lua.execute("""
+local savedPlans,savedModes=HeroFreePickPlans,A.InstalledModes
+HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={}}
+A.InstalledModes={Classic=true};testLevel=1;A.ShowModeChoice()
+assert(A.ProgressionChoiceButtons[1].scripts.OnClick)
+for i=2,4 do assert(A.ProgressionChoiceButtons[i]:IsShown()and not A.ProgressionChoiceButtons[i].scripts.OnClick)end
+assert(A.ProgressionUpgradeNote:IsShown())
+assert(not A.ChooseInitialMode('ClassPlus'))
+A.ProgressionChoiceButtons[1].scripts.OnClick();assert(HeroFreePickPlans.progressionChoice.mode=='Classic')
+HeroFreePickPlans=savedPlans;A.InstalledModes=savedModes;testLevel=80
+""")
+print('PASS: Classic-only initial popup displays inert custom-mode choices, upgrade note, and working Classic selection.')

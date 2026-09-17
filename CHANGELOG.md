@@ -1,3 +1,7 @@
+## 0.39.7
+
+- Classic-only new-character selection now shows disabled Class+, Hero and Hybrid (Level 10) buttons with an optional-module update note. Classic stays selectable; installed custom-mode flows are unchanged.
+
 ## 0.39.6
 
 - Show GitHub URL and installed addon version in the information tooltip. Clicking information opens a selectable URL for copying to a browser.

@@ -1082,8 +1082,10 @@ local box=CreateFrame('Frame',nil,shield);box:SetFrameLevel(61);box:SetSize(590,
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24)
 local note=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');note:SetPoint('TOPLEFT',24,-55);note:SetSize(542,65);note:SetJustifyH('LEFT')
 local closeChoice=CreateFrame('Button',nil,box,'UIPanelCloseButton');closeChoice:SetPoint('TOPRIGHT',-6,-6);closeChoice:SetScript('OnClick',A.HidePreparationPreservingChanges)
+local upgradeNote=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');upgradeNote:SetPoint('TOPLEFT',24,-218);upgradeNote:SetSize(542,70);upgradeNote:SetJustifyH('CENTER');upgradeNote:SetText('Update with the optional Class+, Hybrid, or Hero modules to access these features. Custom modes are currently development previews.');upgradeNote:Hide()
+A.ProgressionUpgradeNote=upgradeNote
 local buttons={};A.ProgressionChoiceButtons=buttons
-local function clear()for _,b in ipairs(buttons)do b:Hide()end end
+local function clear()upgradeNote:Hide();for _,b in ipairs(buttons)do b:Hide()end end
 local function choice(label,index,description,fn)
  local b=buttons[index]
  if not b then b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(255,30);buttons[index]=b end
@@ -1107,6 +1109,14 @@ function A.ShowModeChoice(level)
   choice('Classic Character',1,'Learn abilities from trainers. Preview talents here; committed talents require a trainer reset.',function()finish(A.ChooseInitialMode('Classic'))end)
   if A.InstalledModes.ClassPlus or A.InstalledModes.Hybrid then choice('Class+',2,A.ClassPlusChoiceTooltip(),function()finish(A.ChooseInitialMode('ClassPlus'))end)end
   if A.InstalledModes.Hero then choice('Hero',3,'Full free-pick preparation across all classes within resource limits.',function()finish(A.ChooseInitialMode('Hero'))end)end
+  if not A.InstalledModes.ClassPlus and not A.InstalledModes.Hybrid and not A.InstalledModes.Hero then
+   note:SetText('Choose how this character will progress. Classic uses normal trainer abilities and stock talent rules.')
+   choice('Class+',2,'Requires the optional Class+ module.',nil)
+   choice('Hero',3,'Requires the optional Hero module.',nil)
+   choice('Hybrid (Level 10)',4,'With the optional Hybrid module, Class+ characters may choose a second class at level 10.',nil)
+   for i=2,4 do buttons[i]:Disable();buttons[i]:SetScript('OnClick',nil)end
+   upgradeNote:Show()
+  end
  else
   title:SetText('Continue as Class+ or become Hybrid');note:SetText('You have reached level 10. Continue with your original class, or choose a second class. This one-time choice is saved locally until server integration is available.')
   choice('Continue as Class+',1,'Keep your original class only.',function()finish(A.ChooseHybridPath(nil))end)
