@@ -998,7 +998,7 @@ local dialog=CreateFrame('Frame','HeroPendingChangesDialog',UIParent)
 A.PendingDialog=dialog
 -- Full-window mouse shield keeps the review modal while preserving the pending menu.
 dialog:SetAllPoints(UIParent);dialog:SetFrameStrata('FULLSCREEN_DIALOG');dialog:SetFrameLevel(40);dialog:EnableMouse(true)
-local box=CreateFrame('Frame',nil,dialog);box:SetFrameLevel(41);box:SetSize(650,112);box:SetPoint('CENTER');box:EnableMouse(true)
+local box=CreateFrame('Frame',nil,dialog);box:SetFrameLevel(41);box:SetSize(650,84);box:SetPoint('CENTER');box:EnableMouse(true)
 box:SetBackdrop({bgFile='Interface\\DialogFrame\\UI-DialogBox-Background',edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',tile=true,tileSize=32,edgeSize=32,insets={left=11,right=11,top=11,bottom=11}})
 box:SetBackdropBorderColor(1,.15,.15,1)
 local stone=box:CreateTexture(nil,'ARTWORK',nil,-7)
@@ -1015,7 +1015,6 @@ function A.HidePreparationPreservingChanges()
  window:Hide();closing=false
 end
 local dismiss=CreateFrame('Button',nil,box,'UIPanelCloseButton');dismiss:SetPoint('TOPRIGHT',-6,-6);dismiss:SetScript('OnClick',A.HidePreparationPreservingChanges)
-local closeForNow=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');closeForNow:SetSize(150,22);closeForNow:SetPoint('BOTTOM',0,12);closeForNow:SetText('Close for now');closeForNow:SetScript('OnClick',A.HidePreparationPreservingChanges)
 local function finish()
  closing=true;dialog:Hide();window:Hide();closing=false
 end

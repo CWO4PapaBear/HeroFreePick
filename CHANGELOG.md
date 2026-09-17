@@ -1,3 +1,7 @@
+## 0.39.4
+
+- Remove the redundant Close for now button from pending confirmation. Retain the X action and reduce popup height to 84, with 14 pixels below the remaining button row.
+
 ## 0.39.3
 
 - Separate compact close/info boxes from the title bar and add a matching gear button with a Settings menu.
