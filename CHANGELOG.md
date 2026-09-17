@@ -1,3 +1,7 @@
+## 0.31.4
+
+- Sort connected Mastery abilities by required level, then name; unknown levels appear last. Verify ordering and membership for all Masteries.
+
 ## 0.31.3
 
 - All Mastery tooltips explain level-based access and zero additional member resource costs.

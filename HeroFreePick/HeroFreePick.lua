@@ -74,6 +74,12 @@ function A.MasteryTooltipMembers(m)
   local name,_,texture=GetSpellInfo(spell)
   out[#out+1]={spell=spell,name=entry and entry.name or name or ('Spell '..spell),level=entry and entry.level,texture=texture or(entry and icon(entry))or 'Interface\\Icons\\INV_Misc_QuestionMark'}
  end
+ table.sort(out,function(a,b)
+  local al,bl=a.level or math.huge,b.level or math.huge
+  if al~=bl then return al<bl end
+  if a.name~=b.name then return a.name<b.name end
+  return a.spell<b.spell
+ end)
  return out
 end
 local masteryOwner,masteryEntry,masteryExpanded,masteryAway

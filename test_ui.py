@@ -302,7 +302,12 @@ HeroFreePickFrame:Show()
 local owner=CreateFrame('Button');owner:Show()
 for _,m in ipairs(HeroMasteries)do
  local members=A.MasteryTooltipMembers(m);assert(#members==#m.members)
- for i,member in ipairs(members)do assert(member.spell==m.members[i]and member.level and member.name and member.texture)end
+ local expected={};for _,spell in ipairs(m.members)do expected[spell]=true end
+ for i,member in ipairs(members)do
+  assert(expected[member.spell]and member.level and member.name and member.texture);expected[member.spell]=nil
+  if i>1 then local previous=members[i-1];assert(previous.level<member.level or(previous.level==member.level and previous.name<=member.name))end
+ end
+ assert(next(expected)==nil)
  owner.entry=m;shifted=false;A.ShowMasteryTooltip(owner)
  assert(A.MasteryTooltip:IsShown())
  for _,row in ipairs(A.MasteryTooltipRows)do assert(not row:IsShown())end
