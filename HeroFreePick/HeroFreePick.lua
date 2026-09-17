@@ -301,7 +301,7 @@ local outerBorder=CreateFrame('Frame',nil,f);outerBorder:SetAllPoints(f);outerBo
 outerBorder:SetBackdrop({edgeFile='Interface\\DialogFrame\\UI-DialogBox-Border',edgeSize=32});outerBorder:SetBackdropBorderColor(1,1,1,1)
 
 
-local header=panel(f,48,-7,1031,29)
+local header=panel(f,48,-7,1124,29)
 local title=txt(header,'Hero Advancement',8,-7,1015,'GameFontNormal');title:SetJustifyH('CENTER')
 local closeBox=panel(f,1147,-11,22,22)
 local infoBox=panel(f,1119,-11,22,22)

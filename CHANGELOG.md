@@ -1,3 +1,7 @@
+## 0.39.5
+
+- Extend the main header bar to the right edge behind the compact settings, information and close controls. Keep title text clear of the controls.
+
 ## 0.39.4
 
 - Remove the redundant Close for now button from pending confirmation. Retain the X action and reduce popup height to 84, with 14 pixels below the remaining button row.

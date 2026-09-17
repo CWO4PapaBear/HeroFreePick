@@ -1,7 +1,7 @@
 HeroMenuLayout={frames={},defaults={},overrides=HeroMenuLayoutOverrides or {}}
 local L=HeroMenuLayout
 L.defaults['window']={parent='',x=0,y=0,w=1180,h=620}
-L.defaults['header']={parent='window',x=48,y=7,w=1031,h=29}
+L.defaults['header']={parent='window',x=48,y=7,w=1124,h=29}
 L.defaults['close']={parent='window',x=1147,y=11,w=22,h=22}
 L.defaults['info']={parent='window',x=1119,y=11,w=22,h=22}
 L.defaults['abilities']={parent='window',x=25,y=135,w=451,h=433}
