@@ -27,3 +27,7 @@ Other matches, such as Elemental Mastery, Aura Mastery, Tactical Mastery, Trap M
 ## Import guidance
 
 Discover candidates using names, teaching/unlock language, embedded member references, and reverse prerequisite references. Confirm against the Area 52 advancement table before importing; shared client files also contain other game modes/classes. Keep Classic trainer/quest progression separate. Integrating Portal Mastery into our automatic-grant system would be a deliberate custom rule change from its stated A52 acquisition behavior.
+
+## Import completed in 0.38.0
+
+Tracking and Portal Mastery are imported for custom modes at levels 10 and 20, each costing 2 AP and one Uncommon gem. Their 6 and 26 connected spells use zero-cost automatic grants under our rules. Portal member levels come from A52 spell data (level 1), so our mastery prerequisite makes them available at level 20. This deliberately differs from A52 city learning. Classic catalog entries stay independent. Portal: Azzar Faire is excluded by user request. Custom learning remains local preparation until the server commit handler is implemented.

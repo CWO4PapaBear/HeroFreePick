@@ -1,3 +1,8 @@
+## 0.38.0
+
+- Import Tracking Mastery (Hunter level 10, six members) and Portal Mastery (Mage level 20, 26 stock prerequisite-linked spells). Each costs 2 AP and one Uncommon gem; members follow custom automatic level-based grants with zero additional costs. Classic remains separate.
+- Exclude Portal: Azzar Faire by request; classify both imported Masteries as passive for Learned Abilities filtering. Imported A52 portal member levels are 1, so our grant policy unlocks them with level-20 Portal Mastery.
+
 ## 0.37.3
 
 - Grey learned abilities in the left ability menu using the same ownership list as Learned Abilities (Classic spellbook/custom selections). Preserve hover tooltips and pending-edit interactions.

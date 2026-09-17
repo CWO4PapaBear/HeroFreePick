@@ -77,3 +77,7 @@ function A.LearnedDisplayRows()
  end
  return out
 end
+
+-- Imported unlock Masteries are passive spells; keep learned-list filtering consistent.
+A.PassiveSpells[801494]=true
+A.PassiveSpells[818045]=true

@@ -34,7 +34,7 @@ assert(type(A.BeginPreparation)=='function' and type(A.RequestClose)=='function'
 function UnitClass()return 'Hero','HERO'end
 function LearnTalent()error('Immediate talent learning must never be called')end
 A.Init();A.BeginPreparation();assert(not A.HasPendingChanges())
-assert(#HeroFreePickTrees==829 and #HeroTalentAbilityReferences==144 and #HeroMasteries==23)
+assert(#HeroFreePickTrees==829 and #HeroTalentAbilityReferences==144 and #HeroMasteries==25)
 for _,class in ipairs(A.classes)do
  A.class=class;A.isBrowse=false
  for _,spec in ipairs(A.Specs())do A.spec=spec;A.view='browse';A.Refresh(true)end
@@ -595,7 +595,7 @@ learned=true
 local known=A.ClassicSpellbookEntries();assert(#known==1 and known[1].id==entries[1].id and known[1].spellbookSpell==1494)
 UnitClass=function()return 'Warrior','WARRIOR'end
 assert(#A.ClassicSpellbookEntries()==0)
-for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;assert(#A.Results()==0)end
+for _,mode in ipairs({'Hero','ClassPlus','Hybrid'})do A.mode=mode;for _,e in ipairs(A.Results())do assert(not e.classicOnly)end end
 UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
 """)
 print('PASS: Classic Track Beasts is browsable at trainer level 2, appears as learned only for a Hunter who knows it, and stays out of custom-mode catalogs.')
@@ -728,3 +728,26 @@ end
 HeroFreePickPlans=original
 """)
 print('PASS: unchanged builds disable apply/reset in every mode; ability-only and talent-only drafts enable only relevant categories; reverted drafts disable again.')
+
+lua.execute("""
+local original=HeroFreePickPlans
+A.mode='Hero';testLevel=80;A.classicCommit=nil
+for _,pair in ipairs({{21801494,6,10},{21818045,26,20}})do
+ local m=A.byID[pair[1]];assert(m and m.ae==2 and m.quality=='Uncommon'and HeroRarityCosts[m.id]==1 and m.level==pair[3])
+ assert(#m.members==pair[2] and #A.MasteryTooltipMembers(m)==pair[2])
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={}}
+ testLevel=m.level-1;assert(not A.SetLocalLearned(m.id,1))
+ testLevel=m.level;assert(A.SetLocalLearned(m.id,1))
+ local count=0
+ for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==m.id then
+  count=count+1;assert(not e.classicOnly and e.ae==0 and HeroRarityCosts[e.id]==0)
+  assert((HeroFreePickPlans.previewLearned[e.id]or 0)==(e.level<=testLevel and 1 or 0))
+  A.mode='Classic';assert(not A.EntryAvailableInMode(e));A.mode='Hero'
+ end end
+ assert(count==pair[2]);A.mode='Classic';assert(not A.EntryAvailableInMode(m));A.mode='Hero'
+end
+HeroFreePickPlans=original;testLevel=80
+""")
+print('PASS: Tracking/Portal costs, level gates, all 32 memberships, automatic grants, Shift lists and Classic exclusion.')
+
+lua.execute("assert(A.PassiveSpells[801494]and A.PassiveSpells[818045]);for _,spell in ipairs(A.byID[21818045].members)do assert(spell~=364768)end;assert(not A.byID[22364768])")
