@@ -1,3 +1,7 @@
+## 0.33.1
+
+- Remove the A52 attribution prefix from displayed group descriptions, retaining the description text.
+
 ## 0.33.0
 
 - Add the A52 Tether Elemental bundle and its five companion skills, preserving level 1 / 4 AP / 2 Epic configuration. Bundle the missing Elemental Lore texture.

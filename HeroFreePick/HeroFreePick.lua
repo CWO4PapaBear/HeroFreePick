@@ -99,7 +99,7 @@ local function showMasteryTooltip(owner)
  masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
- if original then masteryDescription:SetText('A52: '..original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its members cost no additional points or rarity gems.'))end
+ if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its members cost no additional points or rarity gems.'))end
  masteryDescription:SetHeight(0)
  local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
  masteryDescription:SetHeight(descriptionHeight)
