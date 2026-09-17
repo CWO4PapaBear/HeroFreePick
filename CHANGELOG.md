@@ -1,3 +1,7 @@
+## 0.36.5
+
+- Place the stock bronze lock icon directly below the talent panel’s level-10 lock message.
+
 ## 0.36.4
 
 - Hide passive spells and talents from Learned Abilities in every mode, including passive grouping parents. Keep ownership, planning and resource accounting intact.

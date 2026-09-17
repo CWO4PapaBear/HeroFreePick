@@ -432,6 +432,7 @@ talentLock:SetPoint('TOPLEFT',8,-8);talentLock:SetPoint('BOTTOMRIGHT',-8,8)
 talentLock:SetFrameLevel(talentScroll:GetFrameLevel()+20);talentLock:EnableMouse(true)
 local talentShade=talentLock:CreateTexture(nil,'BACKGROUND');talentShade:SetAllPoints(talentLock);talentShade:SetTexture(0,0,0,.68)
 local talentLockText=talentLock:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');talentLockText:SetPoint('CENTER',0,0);talentLockText:SetText('Unlocks at Level 10');talentLockText:SetTextColor(1,.2,.15)
+local talentLockIcon=talentLock:CreateTexture(nil,'OVERLAY');talentLockIcon:SetTexture('Interface\\LFGFrame\\UI-LFG-ICON-LOCK');talentLockIcon:SetSize(32,32);talentLockIcon:SetPoint('TOP',talentLockText,'BOTTOM',0,-6)
 talentLock:SetScript('OnEnter',function()GameTooltip:Hide()end)
 A.TalentLockOverlay=talentLock
 
