@@ -474,16 +474,11 @@ function A.ClassicSpellbookEntries()
    local spell=link and tonumber(link:match('spell:(%d+)'))
    if spell then
     local known=bySpell[spell]or byName[GetSpellInfo(spell)]
-    if not known then
-     local name=GetSpellInfo(spell);local _,class=UnitClass('player')
-     for _,c in ipairs(A.classes)do if string.upper(c)==class then class=c;break end end
-     known={id=26000000+spell,name=name or('Spell '..spell),spells={spell},class=class,spec='General',kind='Ability',quality='Normal',ae=0,te=0,level=1,spellbookOnly=true}
-    end
-    if not A.IsTalent(known)and not seen[known.id]then
+    if known and not A.IsTalent(known)and not seen[known.id]then
      local copy={};for k,v in pairs(known)do copy[k]=v end
      copy.spellbookKnown=true;copy.spellbookSpell=spell
      out[#out+1]=copy;seen[known.id]=copy
-    elseif seen[known.id]then seen[known.id].spellbookSpell=spell end
+    elseif known and seen[known.id]then seen[known.id].spellbookSpell=spell end
    end
   end
  end

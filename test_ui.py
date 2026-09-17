@@ -542,10 +542,10 @@ GetNumSpellTabs=function()return 1 end
 GetSpellTabInfo=function()return 'General',nil,0,#slots end
 GetSpellLink=function(slot,book)assert(book=='spell');return '|Hspell:'..slots[slot]..'|hKnown|h'end
 HeroFreePickPlans.previewLearned={};local list=A.LearnedEntries();assert(#list==1 and list[1].id==ability.id and list[1].spellbookKnown)
-slots={ability.spells[1],ability.spells[2],9999999};list=A.LearnedEntries();assert(#list==2)
+slots={ability.spells[1],ability.spells[2],9999999};list=A.LearnedEntries();assert(#list==1)
 local found=false;for _,e in ipairs(list)do if e.id==ability.id then found=true;assert(e.spellbookSpell==ability.spells[2])end end;assert(found)
 assert(next(HeroFreePickPlans.previewLearned)==nil)
 slots={};assert(#A.LearnedEntries()==0)
 A.mode='Hero';assert(#A.LearnedEntries()==0);UnitClass=oldClass;ability.spells=originalSpells
 """)
-print('PASS: Classic spellbook abilities appear without preview selections; rank upgrades deduplicate, uncatalogued spells appear and removed spells disappear; custom modes remain independent.')
+print('PASS: Classic spellbook abilities appear without preview selections; rank upgrades deduplicate, non-class/uncatalogued spells are excluded and removed spells disappear; custom modes remain independent.')

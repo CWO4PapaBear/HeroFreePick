@@ -1,3 +1,7 @@
+## 0.35.5
+
+- Limit Classic spellbook-derived learned entries to the character's class catalog. Exclude unmatched general, racial and profession spells; retain native-name matching for class spell ranks.
+
 ## 0.35.4
 
 - Populate Classic learned abilities from the player spellbook, refreshing on spell-learning events. Deduplicate catalog rank groups and include uncatalogued spellbook skills.
