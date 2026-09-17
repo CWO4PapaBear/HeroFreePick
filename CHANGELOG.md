@@ -1,3 +1,7 @@
+## 0.37.3
+
+- Grey learned abilities in the left ability menu using the same ownership list as Learned Abilities (Classic spellbook/custom selections). Preserve hover tooltips and pending-edit interactions.
+
 ## 0.37.2
 
 - Disable apply and pending-reset controls without relevant changes. Gate each reset category independently and reject stale reset/apply callbacks.

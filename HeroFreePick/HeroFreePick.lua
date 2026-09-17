@@ -657,6 +657,8 @@ local learnedPool={}
 local spellMenu=CreateFrame('Frame','HeroBuilderSpellMenu',UIParent,'UIDropDownMenuTemplate')
 local abilityPool={};local abilityHeaders={};A.iconPositions={}
 local function renderAbilityIcons(entries)
+ local learned={}
+ for _,entry in ipairs(A.LearnedEntries())do if not A.IsTalent(entry)then learned[entry.id]=true end end
  local columns=math.max(1,math.floor((spellScroll:GetWidth()-10)/40))
  for _,b in ipairs(abilityPool)do b:Hide()end
  A.iconPositions={}
@@ -678,7 +680,7 @@ local function renderAbilityIcons(entries)
    b:SetScript('OnClick',function(self,mouse)A.AdjustPending(self.entry,mouse=='RightButton'and -1 or 1) end)
    abilityPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.AbilityDisplayLevel(e))or e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=learned[e.id] or A.OtherClass(e.class) or UnitLevel('player')<((A.mode=='Classic'and A.AbilityDisplayLevel(e))or e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
  end
  spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+3))
 end
