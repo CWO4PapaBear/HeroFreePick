@@ -416,7 +416,14 @@ end
 function A.ChooseHybridPath(second)
  if A.ModeChoiceDue()~='hybrid'then return false,'Hybrid selection is not available.'end
  if second then
-  local ok,why=A.SelectMode('Hybrid',second);if not ok then return false,why end
+  local _,own=UnitClass('player');local valid=false
+  for _,class in ipairs(A.classes)do if class==second and string.upper(class)~=own then valid=true end end
+  if not valid then return false,'Choose a different second class.'end
+  if A.classicCommit then return false,'Wait for the current commit to finish.'end
+  -- Hybrid expands the same build; preserve pending edits instead of trapping the choice behind a review.
+  A.mode='Hybrid';A.secondClass=second
+  HeroFreePickPlans.modePreviews=HeroFreePickPlans.modePreviews or {}
+  HeroFreePickPlans.modePreviews.Hybrid={entries=HeroFreePickPlans.entries,previewLearned=HeroFreePickPlans.previewLearned}
   HeroFreePickPlans.progressionChoice={mode='Hybrid',secondClass=second,hybridDecision=true}
  else HeroFreePickPlans.progressionChoice.hybridDecision=true end
  return true
