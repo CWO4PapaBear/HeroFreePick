@@ -700,7 +700,7 @@ function A.RefreshDetails()
  for _,b in ipairs(learnedPool)do b:Hide()end
  for stat,b in pairs(statButtons)do local selected=HeroFreePickPlans.primaryStat==stat;b.icon:SetDesaturated(not selected);if selected then b.glow:Show()else b.glow:Hide()end;b:SetBackdropBorderColor(selected and 1 or .4,selected and .82 or .4,selected and .1 or .4,1)end
  UIDropDownMenu_SetText(filterMenu,A.learnedFilter and A.learnedFilter~='All' and A.learnedFilter or 'Filter')
- local visible=A.GroupLearnedEntries(A.FilteredLearnedEntries());local rowY=0
+ local visible=A.LearnedDisplayRows();local rowY=0
  for i,item in ipairs(visible)do
   local e=item.entry
   local b=learnedPool[i]

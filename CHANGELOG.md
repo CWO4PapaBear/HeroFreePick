@@ -1,3 +1,7 @@
+## 0.36.4
+
+- Hide passive spells and talents from Learned Abilities in every mode, including passive grouping parents. Keep ownership, planning and resource accounting intact.
+
 ## 0.36.3
 
 - Correct Classic Rogue Dual Wield to level 1 and character-creation source. Audit shared starting skills as well as class-named skills; retain Warrior/Hunter level-20 trainer progression.

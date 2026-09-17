@@ -656,3 +656,20 @@ end end
 assert(checked.Rogue and checked.Hunter and checked.Warrior)
 """)
 print('PASS: Rogue starting Dual Wield overrides redundant level-10 training; Warrior/Hunter retain level-20 trainer sources.')
+
+lua.execute("""
+local oldFiltered=A.FilteredLearnedEntries
+local passive={id=-901,name='Passive parent',spells={674},level=1}
+local active={id=-902,name='Active child',spells={133},level=1,requiredMastery=-901}
+A.byID[-901]=passive
+assert(A.IsPassiveEntry(passive));assert(not A.IsPassiveEntry(active))
+A.FilteredLearnedEntries=function()return {passive,active}end
+for _,mode in ipairs({'Classic','ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;local rows=A.LearnedDisplayRows()
+ assert(#rows==1 and rows[1].entry==active and not rows[1].child)
+end
+A.FilteredLearnedEntries=function()return {active}end
+A.mode='Hero';local rows=A.LearnedDisplayRows();assert(#rows==1 and rows[1].entry==active)
+A.FilteredLearnedEntries=oldFiltered;A.byID[-901]=nil
+""")
+print('PASS: all modes hide passive learned rows, including reinserted grouping parents, while retaining active children.')
