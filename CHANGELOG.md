@@ -1,3 +1,7 @@
+## 0.35.2
+
+- Add 2px of vertical padding above and below learned-row content so borders wrap around icons instead of touching them.
+
 ## 0.35.1
 
 - Color talent prerequisites red when unmet and green when met. Classic tree investment/dependencies use pending ranks, including drafts; custom talents use their tier level. Refresh hovered talent tooltips as selections change.

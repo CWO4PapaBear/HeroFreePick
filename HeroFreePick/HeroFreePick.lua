@@ -712,7 +712,7 @@ function A.RefreshDetails()
   b.rarityCost:Hide();b:ClearAllPoints()
   local indent=item.child and 18 or 0;local iconSize=34*.75*(item.child and .5 or 1)
   local width=math.max(1,learnedScroll:GetWidth()-2-indent)
-  local height=math.max(16,iconSize)
+  local height=math.max(16,iconSize)+4
   b:SetScale(1);b:SetSize(width,height);b.icon:SetSize(iconSize,iconSize)
   local costWidth=36+(A.IsTalent(e)and 0 or e.quality=='Normal'and 0 or((HeroRarityCosts or {})[e.id]or 1)*12)
   b.cost:ClearAllPoints();b.cost:SetPoint('RIGHT',-3,0);b.cost:SetWidth(costWidth);b.cost:SetHeight(16);b.cost:SetJustifyH('RIGHT')
