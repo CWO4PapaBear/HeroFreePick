@@ -1,3 +1,7 @@
+## 0.39.9
+
+- Move level-one Pick Again out of Settings into a matching 22px title-bar box to the left of the gear. Use the verified native red pass/prohibition icon at 16px and explain mode reselection on hover.
+
 ## 0.39.8
 
 - Add Change Mode to Settings for level-1 characters only. Reopen initial progression choices without clearing the existing choice; retain installed-mode and pending-change validation.

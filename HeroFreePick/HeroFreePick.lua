@@ -345,14 +345,19 @@ local settingsClose=CreateFrame('Button',nil,settingsMenu,'UIPanelCloseButton');
 local alertCheck=CreateFrame('CheckButton','HeroAlertSoundsCheck',settingsMenu,'UICheckButtonTemplate');alertCheck:SetSize(26,26);alertCheck:SetPoint('TOPLEFT',12,-44)
 txt(settingsMenu,'Alert sounds',42,-50,180,'GameFontHighlight')
 alertCheck:SetScript('OnClick',function(self)A.SetAlertSounds(self:GetChecked())end)
-local changeMode=CreateFrame('Button','HeroChangeModeButton',settingsMenu,'UIPanelButtonTemplate');changeMode:SetSize(218,26);changeMode:SetPoint('TOPLEFT',16,-80);changeMode:SetText('Change Mode')
+local changeModeBox=panel(f,0,0,22,22);changeModeBox:ClearAllPoints();changeModeBox:SetPoint('RIGHT',settingsBox,'LEFT',-6,0)
+local changeMode=CreateFrame('Button','HeroChangeModeButton',changeModeBox);changeMode:SetAllPoints(changeModeBox)
+local pickIcon=changeMode:CreateTexture(nil,'ARTWORK');pickIcon:SetSize(16,16);pickIcon:SetPoint('CENTER');pickIcon:SetTexture('Interface\\Buttons\\UI-GroupLoot-Pass-Up')
+changeMode:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
+changeMode:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Pick Again');GameTooltip:AddLine('Reopens the starting selection screen so you can change your progression mode. Available only at level 1.',1,1,1,true);GameTooltip:Show()end)
+changeMode:SetScript('OnLeave',function()GameTooltip:Hide()end)
 A.ChangeModeButton=changeMode
 function A.RefreshModeChangeButton(level)
- if (tonumber(level)or UnitLevel('player'))==1 then changeMode:Show();settingsMenu:SetHeight(122)else changeMode:Hide();settingsMenu:SetHeight(100)end
+ if (tonumber(level)or UnitLevel('player'))==1 then changeModeBox:Show();changeMode:Show()else changeMode:Hide();changeModeBox:Hide()end
 end
 changeMode:SetScript('OnClick',function()
  if UnitLevel('player')~=1 then A.RefreshModeChangeButton();return end
- settingsMenu:Hide();A.ShowModeChoice(nil,true)
+ GameTooltip:Hide();closeInfo();settingsMenu:Hide();A.ShowModeChoice(nil,true)
 end)
 A.RefreshModeChangeButton()
 
