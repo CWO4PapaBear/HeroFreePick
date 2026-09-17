@@ -39,3 +39,22 @@ function A.LevelGroups(entries)
     end
     return groups
 end
+
+-- Preserve group context even when a filter matches only a learned child.
+function A.GroupLearnedEntries(visible)
+ local groups,roots={},{}
+ for _,e in ipairs(visible)do
+  local parent=A.mode~='Classic'and(e.requiredMastery or e.requiredBundle)
+  local root=parent and A.byID[parent]or e
+  if not groups[root.id]then groups[root.id]={entry=root,children={}};roots[#roots+1]=groups[root.id]end
+  if parent then table.insert(groups[root.id].children,e)end
+ end
+ table.sort(roots,function(a,b)if a.entry.name~=b.entry.name then return a.entry.name<b.entry.name end;return a.entry.id<b.entry.id end)
+ local out={}
+ for _,group in ipairs(roots)do
+  out[#out+1]={entry=group.entry,child=false}
+  table.sort(group.children,function(a,b)if a.level~=b.level then return a.level<b.level end;if a.name~=b.name then return a.name<b.name end;return a.id<b.id end)
+  for _,e in ipairs(group.children)do out[#out+1]={entry=e,child=true}end
+ end
+ return out
+end

@@ -496,7 +496,7 @@ local sideTabs={}
 for i,label in ipairs({'Abilities','Specs','Loadouts'})do
  local tab=panel(side,10+(i-1)*101,-8,99,26);sideTabs[i]=tab;tab:SetBackdropColor(i==1 and .22 or .07,i==1 and .16 or .07,.04,1);local caption=txt(tab,label,3,-7,93,i==1 and 'GameFontNormalSmall' or 'GameFontDisableSmall');caption:SetJustifyH('CENTER')
 end
-local statTitle=txt(side,'Choose a Primary Stat',14,-44,292,'GameFontNormal');statTitle:SetJustifyH('CENTER')
+local statTitle=txt(side,'Choose a Primary Stat',14,-40,292,'GameFontNormal');statTitle:SetJustifyH('CENTER')
 -- Recovered from current Area 52 Spell.dbc; reference effects, not active server bonuses.
 A.PrimaryStats={
 ["Strength"]={spell=84864,advancement=1149,summary="This primary stat focuses on dealing heavy hits and armor piercing attacks, and is especially beneficial for Plate armor users.\n\nGrants you bonus Strength, and each point of Strength now also increases your |cFFFFFFFFAttack Power|r and |cFFFFFFFFParry|r.",bonuses={
@@ -534,15 +534,15 @@ function A.PrimaryStatTooltip(owner)
 end
 
 local statButtons={}
-local statIcons={Strength='Spell_Nature_Strength',Agility='Ability_Rogue_Sprint',Intellect='Spell_Arcane_MindMastery',Spirit='Spell_Holy_SealOfWisdom'}
+local statIcons={Strength='Spell_Nature_Strength',Agility='Interface\\AddOns\\HeroFreePick\\Art\\PrimaryStats\\ability_demonhunter_vengefulretreat2',Intellect='Spell_Arcane_MindMastery',Spirit='Spell_Holy_SealOfWisdom'}
 for i,stat in ipairs({'Strength','Agility','Intellect','Spirit'})do
- local b=CreateFrame('Button',nil,side);b:SetSize(36,36);b:SetPoint('TOPLEFT',35+(i-1)*67,-69)
- b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b.icon:SetTexture('Interface\\Icons\\'..statIcons[stat]);b:SetBackdrop({edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=12});b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
+ local b=CreateFrame('Button',nil,side);b:SetSize(36,36);b:SetPoint('TOPLEFT',35+(i-1)*67,-60)
+ b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b.icon:SetTexture(statIcons[stat]:find('Interface',1,true)and statIcons[stat]or('Interface\\Icons\\'..statIcons[stat]));b:SetBackdrop({edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=12});b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
  b:SetScript('OnClick',function()if A.mode=='Classic'then A.ShowPointWarning('Classic primary stats use normal class progression.');return end;A.BeginPreparation();HeroFreePickPlans.primaryStat=stat;A.RefreshDetails()end)
  b.glow=b:CreateTexture(nil,'OVERLAY');b.glow:SetTexture('Interface\\Buttons\\UI-ActionButton-Border');b.glow:SetBlendMode('ADD');b.glow:SetVertexColor(1,.85,.1,1);b.glow:SetSize(64,64);b.glow:SetPoint('CENTER',b,'CENTER',0,0);b.glow:Hide()
  b.primaryStatKey=stat;b:SetScript('OnEnter',A.PrimaryStatTooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end);statButtons[stat]=b
 end
-local searchBox=panel(side,12,-120,192,25)
+local searchBox=panel(side,12,-100,192,25)
 local learnedSearch=CreateFrame('EditBox',nil,searchBox);learnedSearch:SetFontObject(GameFontHighlightSmall);learnedSearch:SetSize(159,20);learnedSearch:SetPoint('LEFT',27,0);learnedSearch:SetAutoFocus(false)
 local hint=txt(searchBox,'Search',27,-7,152,'GameFontDisableSmall')
 -- Keep the magnifier in a scalable child frame; the editor controls its box.
@@ -553,7 +553,7 @@ for i=0,4 do local t=searchIcon:CreateTexture(nil,'ARTWORK');t:SetTexture(.65,.6
 learnedSearch:SetScript('OnTextChanged',function(self)A.learnedQuery=self:GetText();A.query=A.learnedQuery;if A.learnedQuery==''then hint:Show()else hint:Hide()end;if A.Refresh then A.Refresh(true)end end)
 A.ClearSearch=function()learnedSearch:SetText('')end
 learnedSearch:SetScript('OnEscapePressed',function(self)self:ClearFocus()end)
-local learnedFilter=CreateFrame('Frame',nil,side);learnedFilter:SetSize(104,25);learnedFilter:SetPoint('TOPLEFT',208,-120)
+local learnedFilter=CreateFrame('Frame',nil,side);learnedFilter:SetSize(104,25);learnedFilter:SetPoint('TOPLEFT',208,-100)
 local filterMenu=CreateFrame('Frame','HeroBuilderLearnedFilterMenu',learnedFilter,'UIDropDownMenuTemplate')
 filterMenu:SetPoint('TOPLEFT',-16,3);UIDropDownMenu_SetWidth(filterMenu,80);UIDropDownMenu_SetText(filterMenu,'Filter')
 UIDropDownMenu_Initialize(filterMenu,function(self,level)
@@ -575,7 +575,7 @@ UIDropDownMenu_Initialize(filterMenu,function(self,level)
   UIDropDownMenu_AddButton(info,level)
  end
 end)
-local learnedScroll,learnedContent=scroll(side,'HeroBuilderLearned',12,-152,274,199)
+local learnedScroll,learnedContent=scroll(side,'HeroBuilderLearned',12,-128,274,188)
 local rarityRows={}
 local rarityColors={Legendary={1,.5,0},Epic={.64,.21,.93},Rare={0,.44,.87},Uncommon={.12,1,0}}
 for i,q in ipairs({'Legendary','Epic','Rare','Uncommon'})do
@@ -592,7 +592,7 @@ local rarityToggle=btn(f,'Hide Rarities',838,-575,306,function()HeroFreePickPlan
 local function refreshRarities()
  local hidden=HeroFreePickPlans.hideRarities
  rarityToggle:SetText(hidden and 'Show Rarities' or 'Hide Rarities')
- learnedScroll:SetHeight(hidden and 290 or 164)
+ learnedScroll:SetHeight(hidden and 314 or 188)
  if hidden then rarityDivider:Hide()else rarityDivider:Show()end
  for _,row in pairs(rarityRows)do if hidden then row:Hide()else row:Show()end end
  local used={}
@@ -612,7 +612,7 @@ local function renderAbilityIcons(entries)
  local currentLevel,y,column,headerCount=nil,5,0,0
  for i,e in ipairs(entries)do
   if currentLevel~=e.level then
-   if currentLevel then y=y+math.ceil(column/columns)*40+10 end
+   if currentLevel then y=y+math.ceil(column/columns)*40+3 end
    currentLevel=e.level;column=0;headerCount=headerCount+1
    local h=abilityHeaders[headerCount]or txt(spellContent,'',5,0,350,'GameFontNormal');abilityHeaders[headerCount]=h;h:ClearAllPoints();h:SetPoint('TOPLEFT',5,-y);h:SetText('Level '..currentLevel);h:SetTextColor(.23,.12,.045);h:Show();y=y+17
   end
@@ -627,7 +627,7 @@ local function renderAbilityIcons(entries)
   end
   b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local locked=A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1);b.icon:SetDesaturated(locked);b.icon:SetVertexColor(locked and .4 or 1,locked and .4 or 1,locked and .4 or 1);b:ClearAllPoints();local rowY=y+math.floor(column/columns)*40;b:SetPoint('TOPLEFT',5+(column%columns)*40,-rowY);b:Show();A.iconPositions[e.id]=rowY;column=column+1
  end
- spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+10))
+ spellContent:SetHeight(math.max(380,y+math.ceil(column/columns)*40+3))
 end
 function A.Locate(e)
  A.isBrowse=false;A.class=e.class;A.spec=e.spec;A.query='';A.quality='All';A.ownership='All';A.view='browse';search:SetText('');A.Refresh(true)
@@ -652,17 +652,18 @@ function A.RefreshDetails()
  for _,b in ipairs(learnedPool)do b:Hide()end
  for stat,b in pairs(statButtons)do local selected=HeroFreePickPlans.primaryStat==stat;b.icon:SetDesaturated(not selected);if selected then b.glow:Show()else b.glow:Hide()end;b:SetBackdropBorderColor(selected and 1 or .4,selected and .82 or .4,selected and .1 or .4,1)end
  UIDropDownMenu_SetText(filterMenu,A.learnedFilter and A.learnedFilter~='All' and A.learnedFilter or 'Filter')
- local visible=A.FilteredLearnedEntries()
- for i,e in ipairs(visible)do
+ local visible=A.GroupLearnedEntries(A.FilteredLearnedEntries());local rowY=0
+ for i,item in ipairs(visible)do
+  local e=item.entry
   local b=learnedPool[i]
   if not b then
    b=CreateFrame('Button',nil,learnedContent);b:SetSize(272,46);b:RegisterForClicks('LeftButtonUp','RightButtonUp');b.learned=true;b:SetBackdrop({bgFile='Interface\\Tooltips\\UI-Tooltip-Background',edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=8});b:SetBackdropColor(.02,.02,.02,1)
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(38,38);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();b:SetPoint('TOPLEFT',0,-(i-1)*49);b:Show()
+  b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name);b.cost:SetText(A.IsTalent(e) and (tostring(e.te)..' TP') or essenceCost(e.ae));b.rarityCost:SetText(rarityCost(e));b:ClearAllPoints();local scale=item.child and .5 or 1;b:SetScale(scale);b:SetPoint('TOPLEFT',learnedContent,'TOPLEFT',(item.child and 18 or 0)/scale,-rowY/scale);b:Show();rowY=rowY+49*scale
  end
- learnedContent:SetHeight(math.max(293,#visible*49))
+ learnedContent:SetHeight(math.max(learnedScroll:GetHeight(),rowY))
 end
 local pointsBox=panel(f,25,-573,265,30);local pointText=txt(pointsBox,'',9,-9,249,'GameFontNormalSmall')
 pointsBox:EnableMouse(true);pointsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Available Ability Points');GameTooltip:AddLine('9 points at levels 1-9, then 1 per level starting at 10. Selected ability costs are subtracted; unlearning refunds them. Local prototype balance.',1,1,1,true);GameTooltip:Show()end);pointsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)

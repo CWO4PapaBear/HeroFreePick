@@ -462,3 +462,19 @@ for _,e in ipairs(HeroCompanionAbilities)do
 end
 """)
 print('PASS: Elemental matches imported costs/class/level; all five group members show recovered A52 descriptions in normal and expanded preview tooltips.')
+
+lua.execute("""
+A.mode='Hero'
+for _,bundle in ipairs(HeroCompanionBundles)do
+ local children={}
+ for _,e in ipairs(HeroCompanionAbilities)do if e.requiredBundle==bundle.id then children[#children+1]=e end end
+ local list={};for _,e in ipairs(children)do list[#list+1]=e end;list[#list+1]=bundle
+ local grouped=A.GroupLearnedEntries(list);assert(#grouped==#children+1 and grouped[1].entry==bundle and not grouped[1].child)
+ for i=2,#grouped do assert(grouped[i].child and grouped[i].entry.requiredBundle==bundle.id)end
+ local filtered=A.GroupLearnedEntries({children[1]});assert(#filtered==2 and filtered[1].entry==bundle and filtered[2].child)
+end
+local member;for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then member=e;break end end
+local rows=A.GroupLearnedEntries({member,A.byID[member.requiredMastery]});assert(#rows==2 and rows[2].entry==member and rows[2].child)
+A.mode='Classic';rows=A.GroupLearnedEntries({member});assert(#rows==1 and not rows[1].child)
+""")
+print('PASS: learned bundle/Mastery parents precede compact children without duplication; filtered children retain parent context; Classic rows remain full size.')

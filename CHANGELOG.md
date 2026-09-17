@@ -1,3 +1,10 @@
+## 0.34.0
+
+- Use selected A52 backflip icon for primary Agility.
+- Tighten primary-stat title/icons, lift search/filter controls and expand the learned viewport upward; reduce gap before the next ability level header.
+- Group learned Mastery/companion abilities under their controlling entry; indent and scale child rows/icons to 50%, preserving hover and click scripts. Keep parent context when filters match a child.
+- Learned normal icons remain 38px versus 34px in the ability grid; grouped child icons are 19px.
+
 ## 0.33.3
 
 - Use Spell_Arcane_MindMastery for the Intellect primary-stat icon.
