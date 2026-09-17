@@ -770,7 +770,10 @@ local function layoutFooter()
  for i,b in ipairs({applyPendingButton,resetPendingButton,resetLearnedButton})do
   b:ClearAllPoints();b:SetPoint('TOPLEFT',f,'TOPLEFT',start+(i-1)*(width+6),-(ap.y or L.defaults.points.y)-2);b:SetWidth(width)
  end
- if A.classicCommit then applyPendingButton:Disable();resetPendingButton:Disable()else applyPendingButton:Enable();resetPendingButton:Enable()end
+ for _,item in ipairs({{applyPendingButton,'Apply'},{resetPendingButton,'Pending'}})do
+  local enabled=false;for _,option in ipairs(A.FooterActions(item[2]))do if option.enabled then enabled=true end end
+  if enabled then item[1]:Enable()else item[1]:Disable()end
+ end
  -- No authoritative reset handler is installed in this build.
  resetLearnedButton:Disable()
 end

@@ -696,8 +696,8 @@ for _,mode in ipairs({'Hero','ClassPlus','Hybrid','Classic'})do
   assert(A.ResetPendingSelection('Abilities'))
   assert(HeroFreePickPlans.entries[ability.id]==nil and HeroFreePickPlans.previewLearned[ability.id]==1)
  end
- local actions=A.FooterActions('Pending');assert(actions[2].enabled);assert(actions[1].enabled==(mode~='Classic'))
- local apply=A.FooterActions('Apply');assert(apply[1].enabled==(mode=='Classic'));assert(apply[2].enabled==(mode~='Classic'))
+ local actions=A.FooterActions('Pending');assert(not actions[2].enabled);assert(not actions[1].enabled)
+ local apply=A.FooterActions('Apply');assert(not apply[1].enabled);assert(not apply[2].enabled)
  for _,action in ipairs(A.FooterActions('Learned'))do assert(not action.enabled)end
  A.classicCommit={};assert(not A.ResetPendingSelection('Talents'));assert(not A.FooterActions('Apply')[1].enabled)
  A.classicCommit=nil
@@ -708,3 +708,23 @@ print('PASS: pending resets restore selected categories including removed baseli
 
 lua.execute("assert(type(HeroFreePick.Toggle)=='function');for _,action in ipairs({'Apply','Pending','Learned'})do assert(_G['HeroAdvancement'..action..'ActionMenu'])end")
 print('PASS: named footer dropdowns satisfy the 3.3.5 MENU requirement and addon initialization reaches Toggle.')
+
+lua.execute("""
+local original=HeroFreePickPlans
+local ability,talent
+for _,e in ipairs(HeroFreePickCatalog)do if not e.classicOnly then if A.IsTalent(e)then talent=e elseif not e.requiredMastery and not e.requiredBundle then ability=e end end end
+for _,mode in ipairs({'Classic','ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;A.classicCommit=nil
+ HeroFreePickPlans={entries={},previewLearned={},pendingBaseline={entries={},previewLearned={}}}
+ for _,action in ipairs({'Apply','Pending'})do for _,option in ipairs(A.FooterActions(action))do assert(not option.enabled)end end
+ assert(not A.ResetPendingSelection('Talents'))
+ HeroFreePickPlans.previewLearned[ability.id]=1
+ assert(A.HasPendingSelection('Abilities')and not A.HasPendingSelection('Talents'))
+ local actions=A.FooterActions('Pending');assert(not actions[2].enabled);assert(actions[1].enabled==(mode~='Classic'))
+ HeroFreePickPlans.previewLearned[ability.id]=nil;HeroFreePickPlans.entries[talent.id]=1
+ actions=A.FooterActions('Pending');assert(actions[2].enabled and not actions[1].enabled)
+ assert(A.ResetPendingSelection('Talents'));assert(not A.HasPendingSelection('All'))
+end
+HeroFreePickPlans=original
+""")
+print('PASS: unchanged builds disable apply/reset in every mode; ability-only and talent-only drafts enable only relevant categories; reverted drafts disable again.')

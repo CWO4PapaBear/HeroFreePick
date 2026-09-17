@@ -1,3 +1,7 @@
+## 0.37.2
+
+- Disable apply and pending-reset controls without relevant changes. Gate each reset category independently and reject stale reset/apply callbacks.
+
 ## 0.37.1
 
 - Fix startup failure by naming all footer MENU dropdown frames as required by the 3.3.5 UI. Extend the UI mock to reject unnamed MENU dropdowns and verify Toggle initializes.
