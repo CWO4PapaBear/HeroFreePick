@@ -564,3 +564,16 @@ end end
 UnitClass=own
 """)
 print('PASS: Classic browses other class abilities without permission to learn them; trainer headings are mode-specific and custom levels stay unchanged.')
+
+lua.execute("""
+local A=HeroFreePick;A.mode='Classic'
+local found=0
+for _,e in ipairs(HeroFreePickCatalog)do
+ if A.ClassicQuestSources[e.id]then
+  found=found+1;assert(table.concat(A.LearningSourceLines(e),' '):find('Learned from a Quest',1,true))
+ end
+end
+assert(found==12)
+A.mode='Hero';for _,e in ipairs(HeroFreePickCatalog)do assert(#A.LearningSourceLines(e)==0)end
+""")
+print('PASS: verified quest sources appear for 12 Classic abilities; stock source labels do not override custom progression.')

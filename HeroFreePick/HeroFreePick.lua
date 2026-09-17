@@ -195,7 +195,7 @@ local function tooltip(self)
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
- if e.spellbookKnown then GameTooltip:SetHyperlink('spell:'..e.spellbookSpell);GameTooltip:AddLine('Learned in your spellbook.',.1,1,.1);GameTooltip:Show();return end
+ if e.spellbookKnown then GameTooltip:SetHyperlink('spell:'..e.spellbookSpell);GameTooltip:AddLine('Learned in your spellbook.',.1,1,.1);for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end;GameTooltip:Show();return end
  local nativeTab,nativeIndex=A.NativeTalent(e)
  if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
  local rank=math.max(1,A.PendingRank(e));local id=e.spellbookSpell or e.spells[math.min(rank,#e.spells)]
@@ -216,7 +216,7 @@ local function tooltip(self)
  GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
  GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
  if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
- if A.mode=='Classic'and not A.IsTalent(e)then GameTooltip:AddLine(A.ClassicTrainerLevels[e.id]and('Available from a trainer at level '..A.ClassicTrainerLevels[e.id]..' (stock trainer reference).')or 'No stock trainer record matched; this ability may use another learning source.',1,.82,.3,true);GameTooltip:Show();return end
+ if A.mode=='Classic'and not A.IsTalent(e)then for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end;GameTooltip:Show();return end
  if e.requiredBundle then GameTooltip:AddLine('Included with '..A.byID[e.requiredBundle].name..'. Add or remove the bundle to change these abilities. No additional cost.',1,.82,.3,true)end
  if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. Automatically included at the required level; no additional cost.',1,.82,.3,true)end
  if IsShiftKeyDown and IsShiftKeyDown()then

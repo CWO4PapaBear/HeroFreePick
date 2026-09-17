@@ -122,6 +122,8 @@
 
 # Changelog
 
+- Classic tooltips include verified stock trainer/quest sources, including learned spellbook entries. Fixed a syntax error in the cross-class browsing gate.
+
 ## 0.31.1 - unblock review popups
 
 - Attach the missing Classic commit poller and completion callback so confirmation/timeout restores popup controls.

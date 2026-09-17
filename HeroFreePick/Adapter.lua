@@ -499,3 +499,15 @@ function A.AbilityDisplayLevel(e)
  if A.mode=="Classic"and not A.IsTalent(e)then return A.ClassicTrainerLevels[e.id]or 999 end
  return e.level
 end
+
+-- Quest reward display-spell matches from the stock world database.
+A.ClassicQuestSources={[60]={1470,1485,1598,1599,8344},[62]={1795},[65]={1471,1504,1689,9619},[70]={1474,1513,1739},[99]={7603},[169]={5644,5646,5679},[179]={1527,9555},[199]={96,9509},[217]={5641,5645,5647,10377},[231]={1785,1788,9600,9685},[241]={1518,1521,9451},[280]={7583}}
+function A.LearningSourceLines(e)
+ local lines={}
+ if A.mode~='Classic'or A.IsTalent(e)then return lines end
+ if A.ClassicTrainerLevels[e.id]then lines[#lines+1]='Learned from a Trainer (level '..A.ClassicTrainerLevels[e.id]..').'end
+ local quests=A.ClassicQuestSources[e.id]
+ if quests then lines[#lines+1]='Learned from a Quest.'end
+ if #lines>0 then lines[#lines+1]='Stock learning-source reference; server changes may differ.'end
+ return lines
+end
