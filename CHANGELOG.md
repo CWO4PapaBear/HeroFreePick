@@ -1,3 +1,7 @@
+## 0.39.2
+
+- Move pending-confirmation buttons directly beneath the heading and reduce popup height from 140 to 112. Keep the secondary close button inside the stone border.
+
 ## 0.39.1
 
 - Simplify the pending-close confirmation for every character type to the header "You have unapplied changes." and its existing buttons. Use the main interface's opaque stone texture, a red border and a compact height. Play RaidWarning once when the confirmation opens.
