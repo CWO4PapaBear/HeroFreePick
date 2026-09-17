@@ -130,3 +130,7 @@ Matched class skills in stock playercreateinfo_skills.sql with SkillLineAbility.
 | DeathKnight | Death Coil | 55 |
 | DeathKnight | Death Grip | 55 |
 | DeathKnight | Blood Plague | 55 |
+
+## Shared starting-skill correction (0.36.3)
+
+The initial creation audit restricted skills to class-named categories. Auditing all race-independent starting skills against catalog spell IDs identifies Rogue Dual Wield as one further match: skill 118, class mask 40, spell 674. Character creation takes precedence over the redundant Rogue trainer level 10 record. Warrior and Hunter Dual Wield remain trainer level 20. This audit concerns existing class catalog entries; it does not add general weapon/armor proficiency spells or racial abilities.

@@ -609,3 +609,7 @@ A.ClassicSupplementSources={[19100000]={level=55,label="Class Quest"},
 [19100088]={level=20,label="Trainer"}}
 
 A.ClassicStartingLevels={[21]=1,[18]=1,[7]=1,[152]=1,[124]=1,[171]=1,[142]=1,[45]=1,[19200000]=1,[147]=1,[59]=1,[24]=1,[29]=1,[188]=1,[187]=1,[58]=1,[55]=1,[305]=1,[1161]=55,[1169]=55,[1175]=55,[1158]=55,[19200001]=55,[1183]=55,[1157]=55,[1165]=55,[1176]=55,[19200002]=55}
+
+-- Shared starting skill 118: class mask 40 includes Rogue and Death Knight.
+-- Creation ownership takes precedence over redundant trainer records.
+A.ClassicStartingLevels[19100075]=1 -- Rogue Dual Wield (spell 674)

@@ -609,7 +609,7 @@ for id,source in pairs(A.ClassicSupplementSources)do
  UnitClass=function()return entry.class,string.upper(entry.class)end
  A.mode='Classic';A.class=entry.class;A.spec='All';A.query=entry.name;A.kind='All';A.quality='All'
  local found=false;for _,e in ipairs(A.Results())do if e.id==id then found=true end end;assert(found)
- assert(A.AbilityDisplayLevel(entry)==source.level)
+ assert(A.AbilityDisplayLevel(entry)==(A.ClassicStartingLevels[id]or source.level))
  assert(#A.LearningSourceLines(entry)>0)
  GetNumSpellTabs=function()return 1 end
  GetSpellTabInfo=function()return 'Class',nil,0,1 end
@@ -641,7 +641,18 @@ for id,level in pairs(A.ClassicStartingLevels)do
  local learned=A.ClassicSpellbookEntries();assert(#learned==1 and learned[1].id==id)
  A.mode='Hero';assert(A.AbilityDisplayLevel(e)==e.level)
 end
-assert(count==28);for _,class in ipairs(A.classes)do assert(covered[class])end
+assert(count==29);for _,class in ipairs(A.classes)do assert(covered[class])end
 UnitClass,GetNumSpellTabs,GetSpellTabInfo,GetSpellLink=oldClass,oldTabs,oldTabInfo,oldLink
 """)
 print('PASS: starting abilities cover all ten classes, use creation source/levels only in Classic, and match actual spellbook ownership.')
+
+lua.execute("""
+A.mode='Classic'
+local checked={}
+for _,e in ipairs(HeroFreePickCatalog)do if e.name=='Dual Wield'and e.kind=='Ability'then
+ if e.class=='Rogue'then assert(A.AbilityDisplayLevel(e)==1);assert(A.LearningSourceLines(e)[1]=='Learned at character creation.');checked.Rogue=true
+ elseif e.class=='Hunter'or e.class=='Warrior'then assert(A.AbilityDisplayLevel(e)==20);assert(A.LearningSourceLines(e)[1]:find('Trainer',1,true));checked[e.class]=true end
+end end
+assert(checked.Rogue and checked.Hunter and checked.Warrior)
+""")
+print('PASS: Rogue starting Dual Wield overrides redundant level-10 training; Warrior/Hunter retain level-20 trainer sources.')

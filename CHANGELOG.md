@@ -1,3 +1,7 @@
+## 0.36.3
+
+- Correct Classic Rogue Dual Wield to level 1 and character-creation source. Audit shared starting skills as well as class-named skills; retain Warrior/Hunter level-20 trainer progression.
+
 ## 0.36.2
 
 - Identify 28 starting class ability groups across all ten classes, add three missing entries, and display character-creation sources. Preserve stock Death Knight starting level 55. Exclude Classic supplements from Mastery membership.
