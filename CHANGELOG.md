@@ -1,3 +1,8 @@
+## 0.39.6
+
+- Show GitHub URL and installed addon version in the information tooltip. Clicking information opens a selectable URL for copying to a browser.
+- No automatic update checker is included; stock 3.3.5 addons cannot query GitHub directly.
+
 ## 0.39.5
 
 - Extend the main header bar to the right edge behind the compact settings, information and close controls. Keep title text clear of the controls.

@@ -309,8 +309,29 @@ if HeroFreePickFrameClose then HeroFreePickFrameClose:SetParent(closeBox);HeroFr
 local infoButton=CreateFrame('Button',nil,infoBox);infoButton:SetAllPoints(infoBox)
 local infoLabel=txt(infoButton,'i',0,-3,22,'GameFontNormalLarge');infoLabel:SetJustifyH('CENTER')
 infoButton:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
-local function showModuleInfo(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Hero Advancement');GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true);GameTooltip:AddLine('Module GitHub link coming soon.',1,.82,.3,true);GameTooltip:Show()end
-infoButton:SetScript('OnEnter',showModuleInfo);infoButton:SetScript('OnClick',showModuleInfo);infoButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
+local githubURL='https://github.com/CWO4PapaBear/HeroFreePick'
+local function installedVersion()return GetAddOnMetadata and GetAddOnMetadata('HeroFreePick','Version')or 'Unknown'end
+local function showModuleInfo(self)
+ GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Hero Advancement')
+ GameTooltip:AddLine('Installed version: '..installedVersion(),1,1,1)
+ GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true)
+ GameTooltip:AddLine(githubURL,1,.82,.3,true)
+ GameTooltip:AddLine('Click to copy the GitHub address.',.7,.7,.7,true);GameTooltip:Show()
+end
+local infoPopup=panel(f,0,0,480,118);infoPopup:ClearAllPoints();infoPopup:SetPoint('TOPRIGHT',infoBox,'BOTTOMRIGHT',0,-8);infoPopup:SetFrameLevel(f:GetFrameLevel()+30);infoPopup:EnableMouse(true)
+local infoHeading=txt(infoPopup,'Hero Advancement',14,-12,420,'GameFontNormalLarge')
+local infoVersion=txt(infoPopup,'',14,-36,420,'GameFontHighlightSmall')
+local githubField=CreateFrame('EditBox',nil,infoPopup,'InputBoxTemplate');githubField:SetSize(442,24);githubField:SetPoint('TOPLEFT',20,-58);githubField:SetAutoFocus(false);githubField:SetText(githubURL)
+local function closeInfo()githubField:ClearFocus();infoPopup:Hide()end
+local infoClose=CreateFrame('Button',nil,infoPopup,'UIPanelCloseButton');infoClose:SetSize(22,22);infoClose:SetPoint('TOPRIGHT',-4,-4);infoClose:SetScript('OnClick',closeInfo)
+githubField:SetScript('OnEscapePressed',closeInfo);githubField:SetScript('OnEnterPressed',closeInfo)
+txt(infoPopup,'Press Ctrl+C to copy, then paste into your browser.',14,-90,448,'GameFontHighlightSmall')
+local function openModuleInfo()
+ GameTooltip:Hide();if A.SettingsMenu then A.SettingsMenu:Hide()end
+ infoVersion:SetText('Installed version: '..installedVersion());infoPopup:Show();githubField:SetText(githubURL);githubField:SetFocus();githubField:HighlightText()
+end
+A.InfoPopup=infoPopup;infoPopup:Hide()
+infoButton:SetScript('OnEnter',showModuleInfo);infoButton:SetScript('OnClick',openModuleInfo);infoButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local settingsBox=panel(f,1091,-11,22,22)
 settingsBox:ClearAllPoints();settingsBox:SetPoint('RIGHT',infoBox,'LEFT',-6,0)
 local settingsButton=CreateFrame('Button','HeroSettingsButton',settingsBox);settingsButton:SetAllPoints(settingsBox)
@@ -324,7 +345,7 @@ local settingsClose=CreateFrame('Button',nil,settingsMenu,'UIPanelCloseButton');
 local alertCheck=CreateFrame('CheckButton','HeroAlertSoundsCheck',settingsMenu,'UICheckButtonTemplate');alertCheck:SetSize(26,26);alertCheck:SetPoint('TOPLEFT',12,-44)
 txt(settingsMenu,'Alert sounds',42,-50,180,'GameFontHighlight')
 alertCheck:SetScript('OnClick',function(self)A.SetAlertSounds(self:GetChecked())end)
-settingsButton:SetScript('OnClick',function()GameTooltip:Hide();if settingsMenu:IsShown()then settingsMenu:Hide()else alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
+settingsButton:SetScript('OnClick',function()GameTooltip:Hide();closeInfo();if settingsMenu:IsShown()then settingsMenu:Hide()else alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
 settingsButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Settings');GameTooltip:Show()end)
 settingsButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
 A.SettingsMenu=settingsMenu;A.SettingsButton=settingsButton;A.AlertSoundsCheck=alertCheck
@@ -1039,6 +1060,7 @@ if HeroFreePickFrameClose then HeroFreePickFrameClose:SetScript('OnClick',A.Requ
 -- Escape and inherited close actions use Hide directly; intercept them as well.
 window:SetScript('OnHide',function()
  if A.SettingsMenu then A.SettingsMenu:Hide()end
+ if A.InfoPopup then A.InfoPopup:Hide()end
  if closing then return end
  if A.HasPendingChanges()then window:Show();A.ShowPendingReview()
  elseif HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end
