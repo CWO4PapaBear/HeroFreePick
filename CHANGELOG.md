@@ -1,3 +1,9 @@
+## 0.33.0
+
+- Add the A52 Tether Elemental bundle and its five companion skills, preserving level 1 / 4 AP / 2 Epic configuration. Bundle the missing Elemental Lore texture.
+- Show recovered A52 descriptions for imported companion and Demon Mastery summoning abilities in normal and expanded preview tooltips. Mark unresolved spell values explicitly.
+- Review Wild Imps: found temporary Hand of Gul'dan summons and vanity/passive records, not a corresponding taming bundle; no invented package added.
+
 ## 0.32.4
 
 - Restrict connected-ability expansion to primary Mastery/bundle tooltips and their parent badges. Individual child spells retain normal tooltips even while Shift is held.

@@ -98,6 +98,14 @@ local function showMasteryTooltip(owner)
  masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..essenceCost(e.ae)..'  '..rarityCost(e))
  masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
+ local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
+ if original then masteryDescription:SetText('A52: '..original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its members cost no additional points or rarity gems.'))end
+ masteryDescription:SetHeight(0)
+ local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
+ masteryDescription:SetHeight(descriptionHeight)
+ masteryCost:ClearAllPoints();masteryCost:SetPoint('TOPLEFT',12,-42-descriptionHeight)
+ masteryHint:ClearAllPoints();masteryHint:SetPoint('TOPLEFT',12,-70-descriptionHeight)
+ local listTop=96+descriptionHeight
  local members=A.MasteryTooltipMembers(e)
  if masteryExpanded then
   for i,member in ipairs(members)do
@@ -108,7 +116,8 @@ local function showMasteryTooltip(owner)
     row.label=txt(row,'',36,-1,298);row.label:SetHeight(28)
     row:SetScript('OnEnter',function(self)
      local m=self.member;masteryPreview:SetOwner(self,'ANCHOR_RIGHT')
-     if GetSpellInfo(m.spell)then masteryPreview:SetHyperlink('spell:'..m.spell)else masteryPreview:SetText(m.name);masteryPreview:AddLine('Spell description is unavailable in this client.',1,.7,.3,true)end
+     local description=A.SummoningDescriptions and A.SummoningDescriptions[m.spell]
+     if description then masteryPreview:SetText(m.name);masteryPreview:AddLine(description,1,1,1,true)elseif GetSpellInfo(m.spell)then masteryPreview:SetHyperlink('spell:'..m.spell)else masteryPreview:SetText(m.name);masteryPreview:AddLine('Spell description is unavailable in this client.',1,.7,.3,true)end
      masteryPreview:AddLine(m.level and ('Requires Level '..m.level)or 'Required level unavailable',1,.82,.3)
      masteryPreview:AddLine('Requires '..(masteryEntry.requiredBundle and A.byID[masteryEntry.requiredBundle].name or masteryEntry.name),1,.82,.3,true)
      masteryPreview:AddLine('No additional points or rarity gems.',.7,.85,1,true);masteryPreview:Show()
@@ -116,11 +125,11 @@ local function showMasteryTooltip(owner)
     row:SetScript('OnLeave',function()masteryPreview:Hide()end)
     masteryRows[i]=row
    end
-   row.member=member;row:SetPoint('TOPLEFT',masteryTip,'TOPLEFT',12,-166-(i-1)*34);row.texture:SetTexture(member.texture)
+   row.member=member;row:SetPoint('TOPLEFT',masteryTip,'TOPLEFT',12,-listTop-(i-1)*34);row.texture:SetTexture(member.texture)
    row.label:SetText(member.name..'\n|cffffd100'..(member.level and ('Level '..member.level)or 'Level unavailable')..'|r');row:Show()
   end
  end
- masteryTip:SetHeight(164+(masteryExpanded and (#members*34+8)or 0))
+ masteryTip:SetHeight(listTop+(masteryExpanded and (#members*34+8)or 0))
  masteryTip:ClearAllPoints();masteryTip:SetPoint('TOPLEFT',owner,'TOPRIGHT',0,0);masteryTip:Show()
 end
 A.ShowMasteryTooltip=showMasteryTooltip
@@ -150,7 +159,8 @@ local function tooltip(self)
  local nativeTab,nativeIndex=A.NativeTalent(e)
  if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
  local rank=math.max(1,A.PendingRank(e));local id=e.spells[math.min(rank,#e.spells)]
- if GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
+ local description=A.mode~='Classic'and A.SummoningDescriptions and A.SummoningDescriptions[id]
+ if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
  local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
  local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(e.level or 1)

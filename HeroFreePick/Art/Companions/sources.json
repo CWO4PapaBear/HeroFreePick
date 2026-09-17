@@ -94,5 +94,13 @@
     "sha256": "7cebe66b6d135729b5617185b1b94e3240783e161d0072992ca0e0ddcdbd1e1e",
     "width": 64,
     "height": 64
+  },
+  {
+    "file": "spell_shaman_bindelemental.blp",
+    "sourceArchive": "ascension-live/Data/patch-I.MPQ",
+    "sourcePath": "Interface\\Icons\\spell_shaman_bindelemental.blp",
+    "sha256": "84c5e8b1f5d22cfa77e40086711dea1213d01e54ae773227a81d3553e91bab6e",
+    "width": 64,
+    "height": 64
   }
 ]

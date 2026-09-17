@@ -372,7 +372,7 @@ local tame={id=1515,class='Hunter',kind='Ability',spells={1515}}
 assert(tame and A.EntryAvailableInMode(tame));A.mode='Hero';assert(not A.EntryAvailableInMode(tame))
 UnitClass=oldClass
 """)
-print('PASS: all four bundles stage/refund full grants at 4 AP/2 Epic; drafts cancel cleanly; child purchases blocked; Hunter Class+ and Classic boundaries enforced.')
+print('PASS: all five bundles stage/refund full grants at 4 AP/2 Epic; drafts cancel cleanly; child purchases blocked; Hunter Class+ and Classic boundaries enforced.')
 
 lua.execute("""
 local demon=A.byID[21954705];assert(demon.level==1)
@@ -390,7 +390,7 @@ print('PASS: level-one Demon Mastery includes Summon Imp, free member selection 
 import hashlib
 art=root/'Art/Companions'
 records=json.loads((art/'sources.json').read_text())
-assert len(records)==12
+assert len(records)==13
 for record in records:
  assert hashlib.sha256((art/record['file']).read_bytes()).hexdigest()==record['sha256']
 lua.execute("""
@@ -400,7 +400,7 @@ for _,e in ipairs(HeroCompanionAbilities)do assert(A.EntryIcon(e)==A.PackageSpel
 for _,bundle in ipairs(HeroCompanionBundles)do for _,member in ipairs(A.MasteryTooltipMembers(bundle))do assert(member.texture==A.PackageSpellIcons[member.spell])end end
 A.mode='Classic';assert(A.EntryIcon(HeroCompanionBundles[1])~=A.PackageSpellIcons[HeroCompanionBundles[1].spells[1]])
 """)
-print('PASS: all 12 texture hashes verified; companion entry and tooltip artwork uses explicit mappings; Classic artwork unchanged.')
+print('PASS: all 13 texture hashes verified; companion entry and tooltip artwork uses explicit mappings; Classic artwork unchanged.')
 
 lua.execute("""
 A.mode='Hero';HeroFreePickFrame:Show();local shift=false
@@ -440,3 +440,25 @@ assert(not A.classicCommit and rank==2 and A.PendingDialog:IsShown())
 A.CancelPreparation();A.NativeTalent=native;UnitClass=oldClass
 """)
 print('PASS: Classic popup Accept sends two native ranks sequentially through real OnUpdate polling, waits for acknowledgments, closes on success and times out without inventing learned ranks.')
+
+lua.execute("""
+assert(#HeroCompanionBundles==5)
+local elemental=A.byID[23091606];assert(elemental.class=='Shaman'and elemental.level==1 and elemental.ae==4 and elemental.rarityCost==2 and #elemental.members==5)
+A.mode='Hero';HeroFreePickFrame:Show();IsShiftKeyDown=function()return true end
+local owner=CreateFrame('Button');owner:Show()
+for _,bundle in ipairs(HeroCompanionBundles)do
+ assert(A.SummoningDescriptions[bundle.spells[1]])
+ owner.entry=bundle;A.ShowEntryTooltip(owner)
+ for _,row in ipairs(A.MasteryTooltipRows)do if row:IsShown()then
+  local lines={};HeroMasteryAbilityPreview.AddLine=function(_,s)lines[#lines+1]=s end
+  row.scripts.OnEnter(row)
+  assert(lines[1]==A.SummoningDescriptions[row.member.spell])
+ end end
+end
+for _,e in ipairs(HeroCompanionAbilities)do
+ local desc=A.SummoningDescriptions[e.spells[1]];assert(desc and #desc>0 and not desc:find('@ext:'))
+ local lines={};GameTooltip.AddLine=function(_,s)lines[#lines+1]=s end
+ owner.entry=e;A.ShowEntryTooltip(owner);assert(lines[1]==desc)
+end
+""")
+print('PASS: Elemental matches imported costs/class/level; all five group members show recovered A52 descriptions in normal and expanded preview tooltips.')
