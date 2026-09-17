@@ -356,7 +356,7 @@ function A.ValidateClassic()
  for id,node in pairs(nodes)do
   local lower=0;for other,n in pairs(nodes)do if n.spec==node.spec and n.row<node.row then lower=lower+ranks[other]end end
   if lower<node.row*5 then return false,'Classic talents require five points in lower tiers per row.'end
-  if node.depends>0 and (ranks[node.depends]or 0)<node.dependsRank+1 then return false,'A Classic talent prerequisite is missing.'end
+  if node.depends>0 and (ranks[node.depends]or 0)<math.max(1,node.dependsRank) then return false,'A Classic talent prerequisite is missing.'end
  end
  table.sort(queue,function(a,b)if a.row~=b.row then return a.row<b.row end;if a.entry.id~=b.entry.id then return a.entry.id<b.entry.id end;return a.rank<b.rank end)
  return true,queue

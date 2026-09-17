@@ -508,9 +508,10 @@ local oldRank=A.PendingRank;local ranks={}
 A.PendingRank=function(v)return ranks[v.id]or 0 end
 A.mode='Classic';local unmet=A.TalentPrerequisiteLines(e);assert(#unmet==2 and not unmet[1].met and not unmet[2].met)
 for _,v in ipairs(HeroFreePickCatalog)do if v.class==e.class and A.IsTalent(v)then ranks[v.id]=A.MaxRank(v)end end
-local met=A.TalentPrerequisiteLines(e);assert(met[1].met and met[2].met)
+local met=A.TalentPrerequisiteLines(e);assert(met[1].met and met[2].met,e.name.." / "..met[1].text.."="..tostring(met[1].met).." / "..met[2].text.."="..tostring(met[2].met))
 A.mode='Hero';testLevel=A.TalentRequiredLevel(e)-1;assert(not A.TalentPrerequisiteLines(e)[1].met)
 testLevel=testLevel+1;assert(A.TalentPrerequisiteLines(e)[1].met)
 A.PendingRank=oldRank
 """)
 print('PASS: Classic tree/dependency requirements use planned ranks; custom level requirements switch at the exact required level.')
+

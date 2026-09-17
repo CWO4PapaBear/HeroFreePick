@@ -168,7 +168,7 @@ function A.TalentPrerequisiteLines(e)
   end
  end end
  if node.row>0 then out[#out+1]={text='Requires '..node.row*5 ..' points in '..e.spec..' Talents',met=lower>=node.row*5,kind='tree'}end
- if node.depends>0 then local needed=node.dependsRank+1;out[#out+1]={text='Requires '..needed..' points in '..(dependency and dependency.name or 'prerequisite talent'),met=dependency and A.PendingRank(dependency)>=needed or false,kind='dependency'}end
+ if node.depends>0 then local needed=math.max(1,node.dependsRank);out[#out+1]={text='Requires '..needed..' points in '..(dependency and dependency.name or 'prerequisite talent'),met=dependency and A.PendingRank(dependency)>=needed or false,kind='dependency'}end
  return out
 end
 local function prerequisiteColor(met)if met then return .1,1,.1 end;return 1,.15,.15 end
