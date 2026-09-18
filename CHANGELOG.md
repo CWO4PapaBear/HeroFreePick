@@ -1,5 +1,6 @@
 ## Unreleased — Class+ server inventory
 
+- Audit all custom-mode ability level boundaries across both drafts (3,042 cases); enforce controller/member levels for automatic Mastery and bundle grants (142 members). Remove stale ineligible automatic grants.
 - Reject below-level ability selections immediately in both drafts using the raid-warning alert, with the ability name and required level. Name the blocking ability in final validation too.
 - Update the shared pending-change confirmation to warn that changing talents after confirmation costs Gold; fit the message on two lines.
 - Prompt new Class+, Hybrid and Hero selections with a screen-wide raid warning to open Hero Advancement and choose initial abilities. Respect muted alert sounds and avoid reminders on ordinary mode synchronization.

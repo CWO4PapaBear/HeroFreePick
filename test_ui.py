@@ -911,6 +911,50 @@ HeroFreePickPlans=savedPlans;A.mode=savedMode;UnitClass=savedClass;A.ShowPointWa
 print('PASS: Drain Mana rejected at 22 without spending AP, accepted at 24, and removable below its requirement in both drafts.')
 
 lua.execute("""
+local plans,mode,unit,warn=HeroFreePickPlans,A.mode,UnitClass,A.ShowPointWarning
+local checked,blocked=0,0
+A.ShowPointWarning=function(text)assert(type(text)=='string'and #text>0)end
+for _,m in ipairs({'ClassPlus','Hybrid','Hero'})do
+ A.mode=m
+ for _,e in ipairs(HeroFreePickCatalog)do
+  UnitClass=function()return e.class,string.upper(e.class)end
+  if not A.IsTalent(e)and A.EntryAvailableInMode(e)and not e.requiredMastery and not e.requiredBundle then
+   local required=A.AbilityDisplayLevel(e)or 1
+   for _,key in ipairs({'previewLearned','entries'})do
+    local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+    HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+    testLevel=required-1
+    assert(not setter(e.id,1),m..' below-level addition: '..e.name)
+    assert(not HeroFreePickPlans[key][e.id],m..' mutated below level: '..e.name)
+    blocked=blocked+1
+    testLevel=required
+    assert(setter(e.id,1),m..' rejected at level: '..e.name)
+    assert(HeroFreePickPlans[key][e.id]==1);checked=checked+1
+   end
+  end
+ end
+end
+local members=0;A.mode='Hero'
+for _,e in ipairs(HeroFreePickCatalog)do
+ local parent=e.requiredMastery or e.requiredBundle
+ if parent and A.EntryAvailableInMode(e)then
+  local required=math.max(A.AbilityDisplayLevel(e)or 1,A.AbilityDisplayLevel(A.byID[parent])or 1)
+  HeroFreePickPlans={entries={[parent]=1},previewLearned={[parent]=1}}
+  testLevel=required-1;A.SyncMasteryGrants()
+  assert(not HeroFreePickPlans.entries[e.id]and not HeroFreePickPlans.previewLearned[e.id],'Premature group member: '..e.name)
+  testLevel=required;A.SyncMasteryGrants()
+  assert(HeroFreePickPlans.entries[e.id]==1 and HeroFreePickPlans.previewLearned[e.id]==1,'Missing eligible member: '..e.name)
+  testLevel=required-1;A.SyncMasteryGrants()
+  assert(not HeroFreePickPlans.entries[e.id]and not HeroFreePickPlans.previewLearned[e.id],'Stale group member: '..e.name)
+  members=members+1
+ end
+end
+print('PASS: '..members..' automatic group members checked below, at, and back below their level requirement.')
+HeroFreePickPlans=plans;A.mode=mode;UnitClass=unit;A.ShowPointWarning=warn;testLevel=80
+print('PASS: full ability catalog level boundaries: '..blocked..' rejected below requirement and '..checked..' accepted at requirement across both drafts and all custom modes.')
+""")
+
+lua.execute("""
 local A=HeroFreePick
 local notices,sounds=0,0
 RaidWarningFrame={}

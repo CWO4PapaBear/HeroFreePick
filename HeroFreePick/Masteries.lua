@@ -145,7 +145,7 @@ local function bundleSetter(original,key)
   if e and e.isBundle and A.mode~='Classic'then
    if not original(id,rank)then return false end
    local state=HeroFreePickPlans[key]
-   for _,child in ipairs(HeroCompanionAbilities)do if child.requiredBundle==id then state[child.id]=state[id]and 1 or nil end end
+   for _,child in ipairs(HeroCompanionAbilities)do if child.requiredBundle==id then state[child.id]=(state[id]and UnitLevel('player')>=A.AbilityDisplayLevel(child))and 1 or nil end end
    -- Replace old independently planned versions in custom modes only.
    if state[id]then
     for oldID in pairs(state)do local old=A.byID[oldID]
@@ -186,11 +186,15 @@ function A.SyncMasteryGrants(level)
  level=tonumber(level)or UnitLevel('player')
  local function sync(state)
   if not state then return end
-  for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery then
-   if (state[e.requiredMastery]or 0)<1 then state[e.id]=nil
-   elseif e.portalCity then state[e.id]=(A.PortalDestinationVisible(e)and level>=A.MasteryMemberLevel(e))and 1 or nil
-   elseif level>=(e.level or 1)then state[e.id]=1 end
-  end end
+  for _,e in ipairs(HeroFreePickCatalog)do
+   local parent=e.requiredMastery or e.requiredBundle
+   if parent then
+    local controller=A.byID[parent]
+    local eligible=controller and (state[parent]or 0)>0 and level>=(A.AbilityDisplayLevel(controller)or 1)and level>=(A.AbilityDisplayLevel(e)or 1)
+    if e.portalCity then eligible=eligible and A.PortalDestinationVisible(e)end
+    state[e.id]=eligible and 1 or nil
+   end
+  end
  end
  for _,key in ipairs({'entries','previewLearned'})do
   sync(HeroFreePickPlans[key])
