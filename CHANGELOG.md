@@ -1,3 +1,7 @@
+## 0.40.2
+
+- Show and enable the Hero Advancement micro-menu button from level 1 in Class+, Hybrid, and Hero. Hook the actual 3.3.5 talent-button refresh and restore neighboring button spacing; Classic retains stock visibility.
+
 ## 0.40.1
 
 - Display custom-mode class trainer guidance in the standard NPC gossip window with portrait, NPC name, parchment, Goodbye, and native-style dialogue options. Preserve server purchase blocking and reset confirmation.

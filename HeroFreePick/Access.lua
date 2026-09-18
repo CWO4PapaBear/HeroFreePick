@@ -23,7 +23,19 @@ if TalentMicroButton then
  TalentMicroButton:SetScript('OnClick',function()A.Toggle()end)
  TalentMicroButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText('Hero Advancement |cffffff00(N)|r',1,1,1);GameTooltip:Show()end)
  TalentMicroButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
- local function enableAdvancementButton()TalentMicroButton:Enable()end
+ local function enableAdvancementButton()
+  if A.mode~='ClassPlus'and A.mode~='Hybrid'and A.mode~='Hero'then return end
+  TalentMicroButton:Show();TalentMicroButton:Enable()
+  if AchievementMicroButton then AchievementMicroButton:SetPoint('BOTTOMLEFT',TalentMicroButton,'BOTTOMRIGHT',-2,0)end
+ end
+ function A.RefreshAdvancementButton()
+  -- Restore stock visibility/spacing first, including when switching to Classic.
+  if UpdateTalentButton then UpdateTalentButton()end
+  enableAdvancementButton()
+ end
+ if UpdateTalentButton then hooksecurefunc('UpdateTalentButton',enableAdvancementButton)end
  if TalentMicroButton_Update then hooksecurefunc('TalentMicroButton_Update',enableAdvancementButton)end
- enableAdvancementButton()
+ if A.Init then hooksecurefunc(A,'Init',A.RefreshAdvancementButton)end
+ if A.Refresh then hooksecurefunc(A,'Refresh',A.RefreshAdvancementButton)end
+ A.RefreshAdvancementButton()
 end
