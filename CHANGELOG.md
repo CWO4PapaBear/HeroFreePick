@@ -1,5 +1,6 @@
 ## Unreleased — Class+ server inventory
 
+- Set custom Dark Command to level 65 and promoted Corpse Explosion to level 20; preserve Classic talent prerequisites and existing resource costs.
 - Set custom Presence Mastery to level 1 by explicit design choice; its free Blood/Frost/Unholy grants remain level 1/10/28.
 - Apply 48 Death Knight custom ability unlock levels from the shared patch-M/Dawnrise candidate reference. Preserve Classic trainer/starting levels, native talents, costs and stock rank chains; unresolved level-71 entries remain explicit exceptions.
 - Audit all custom-mode ability level boundaries across both drafts (3,042 cases); enforce controller/member levels for automatic Mastery and bundle grants (142 members). Remove stale ineligible automatic grants.

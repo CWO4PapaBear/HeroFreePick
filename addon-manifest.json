@@ -29,7 +29,7 @@
   "Art/TalentEssence.blp": "96e4edff926bf56e56b385253e0469dc9603568667b7281aa4381f799262472a",
   "Bindings.xml": "6c751eb5b4778f00cedec758df9bd32e131d7183727138dcfd410660d331e0a4",
   "Browse.lua": "d1989b7d65db19eb4565395cba7bffb2dd79bcae096edb5d4da3a1aab481e3d9",
-  "Catalog.lua": "0661d87a2fa3b559f6a762d70d4a419102c603bfa500a5b2a86fa700bd35bdb3",
+  "Catalog.lua": "26937da5c3647135eb5872e1b44a908a9f4ecc74d3419339f3f64a1a7b2f348b",
   "HeroFreePick.lua": "cdbb66ee57f0a53d9787b29a842ffa565451656a5bfecf9905c7523a719bd746",
   "HeroFreePick.toc": "3226ae5fedd8ee09658797872302272698c3f7d88cb8a72d777f7390a0d219cd",
   "HeroFreePick.xml": "12cade2eb24746668bdd5366c3818908493b594b65f778263145851e0453169b",
@@ -41,6 +41,6 @@
   "Organization.lua": "61e0de2601d9029f71b53755281d66a5b0306615a113701f9b04a529c0d6a98b",
   "PendingChanges.lua": "15eca390bbc9dc107f9784be90d5b7f3ddfa315e45334f5c0a362c9ce7a2eb71",
   "PendingDialog.lua": "96eac7cf5bd8aa39b37059776a0c3673e4c1c874d6e5c824112110255f6814b9",
-  "TalentAbilityReferences.lua": "41df0eb04a5afd93a83599a4dac0d67af325bb88ee41a65776ce33b726151ed7",
+  "TalentAbilityReferences.lua": "9a2a323d778bc0d7afe6a5662a45bd993a86f74c55f619cde5410b05ab5f00b4",
   "Trees.lua": "9e1d8c5f5d76f7a6b5be769ddc1a6375c33adb3b074ed0266a114541e699f32e"
 }

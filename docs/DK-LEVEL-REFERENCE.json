@@ -340,8 +340,6 @@
     }
   ],
   "unchangedExceptions": [
-    "Dark Command: 71",
-    "Corpse Explosion: 71",
     "Forceful Deflection: no matching shared record"
   ],
   "designOverrides": [
@@ -351,6 +349,29 @@
       "sourceLevel": 71,
       "level": 1,
       "reason": "Explicit user decision; members retain levels 1, 10, 28."
+    },
+    {
+      "id": 1180,
+      "name": "Dark Command",
+      "sourceLevel": 71,
+      "level": 65,
+      "reason": "Explicit user decision."
+    },
+    {
+      "id": 20001985,
+      "name": "Corpse Explosion",
+      "sourceLevel": 71,
+      "level": 20,
+      "reason": "Explicit user decision; promoted ability only, not native Classic talent."
     }
-  ]
+  ],
+  "corpseExplosionReview": {
+    "source": "shared patch-M CharacterAdvancement.dbc record 1244 and CharacterAdvancementData.json record 1244",
+    "dbcAECost": 4,
+    "dbcTECost": 0,
+    "sourceRequiredLevel": 71,
+    "finding": "No additional Talent Point spending prerequisite found in the available reference. JSON record has no required-point or prerequisite-ID fields. This does not prove every Dawnrise server-side rule.",
+    "classic": "Native Unholy third-tier talent: 10 points in Unholy before spending one point on Corpse Explosion.",
+    "custom": "Promoted ability costs remain 4 AP, 0 TP, 0 rarity gems; user-selected level 20."
+  }
 }

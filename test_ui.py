@@ -993,7 +993,7 @@ assert(A.AbilityDisplayLevel(A.byID[1158])==55)
 A.mode='Hero'
 assert(A.AbilityDisplayLevel(A.byID[1157])==1)
 assert(A.AbilityDisplayLevel(A.byID[1176])==20)
-assert(A.byID[1180].level==71 and A.byID[21092418].level==1)
+assert(A.byID[1180].level==65 and A.byID[20001985].level==20 and A.byID[21092418].level==1)
 """)
 print('PASS: all 48 DK reference changes match; Classic starting levels stay 55, native talents excluded.')
 
