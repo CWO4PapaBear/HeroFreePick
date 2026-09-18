@@ -1,0 +1,444 @@
+{
+  "Warrior": {
+    "total": 5,
+    "entries": [
+      {
+        "id": 83,
+        "name": "Shield Wall",
+        "gems": 2,
+        "ap": 3,
+        "level": 28
+      },
+      {
+        "id": 20001863,
+        "name": "Bladestorm",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001872,
+        "name": "Shockwave",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      },
+      {
+        "id": 20001867,
+        "name": "Titan's Grip",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Paladin": {
+    "total": 13,
+    "entries": [
+      {
+        "id": 37,
+        "name": "Divine Protection",
+        "gems": 2,
+        "ap": 3,
+        "level": 6
+      },
+      {
+        "id": 54,
+        "name": "Lay on Hands",
+        "gems": 1,
+        "ap": 2,
+        "level": 10
+      },
+      {
+        "id": 56,
+        "name": "Divine Shield",
+        "gems": 3,
+        "ap": 3,
+        "level": 34
+      },
+      {
+        "id": 90,
+        "name": "Hand of Protection",
+        "gems": 2,
+        "ap": 3,
+        "level": 10
+      },
+      {
+        "id": 92,
+        "name": "Hand of Freedom",
+        "gems": 2,
+        "ap": 3,
+        "level": 18
+      },
+      {
+        "id": 20002150,
+        "name": "Divine Storm",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002192,
+        "name": "Beacon of Light",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002196,
+        "name": "Hammer of the Righteous",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Hunter": {
+    "total": 9,
+    "entries": [
+      {
+        "id": 79,
+        "name": "Disengage",
+        "gems": 2,
+        "ap": 3,
+        "level": 20
+      },
+      {
+        "id": 282,
+        "name": "Deterrence",
+        "gems": 2,
+        "ap": 3,
+        "level": 60
+      },
+      {
+        "id": 20001386,
+        "name": "Bestial Wrath",
+        "gems": 2,
+        "ap": 3,
+        "level": 40
+      },
+      {
+        "id": 20002139,
+        "name": "Beast Mastery",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002145,
+        "name": "Explosive Shot",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002135,
+        "name": "Chimera Shot",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Rogue": {
+    "total": 6,
+    "entries": [
+      {
+        "id": 173,
+        "name": "Sprint",
+        "gems": 1,
+        "ap": 2,
+        "level": 10
+      },
+      {
+        "id": 326,
+        "name": "Cloak of Shadows",
+        "gems": 2,
+        "ap": 3,
+        "level": 66
+      },
+      {
+        "id": 20002076,
+        "name": "Killing Spree",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      },
+      {
+        "id": 20002071,
+        "name": "Hunger For Blood",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002081,
+        "name": "Shadow Dance",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Priest": {
+    "total": 4,
+    "entries": [
+      {
+        "id": 20001774,
+        "name": "Pain Suppression",
+        "gems": 1,
+        "ap": 2,
+        "level": 50
+      },
+      {
+        "id": 20001897,
+        "name": "Penance",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001911,
+        "name": "Guardian Spirit",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001910,
+        "name": "Dispersion",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      }
+    ]
+  },
+  "DeathKnight": {
+    "total": 11,
+    "entries": [
+      {
+        "id": 1155,
+        "name": "Army of the Dead",
+        "gems": 1,
+        "ap": 2,
+        "level": 34
+      },
+      {
+        "id": 1173,
+        "name": "Icebound Fortitude",
+        "gems": 2,
+        "ap": 2,
+        "level": 34
+      },
+      {
+        "id": 1176,
+        "name": "Death Grip",
+        "gems": 2,
+        "ap": 2,
+        "level": 20
+      },
+      {
+        "id": 20001961,
+        "name": "Dancing Rune Weapon",
+        "gems": 1,
+        "ap": 6,
+        "level": 60
+      },
+      {
+        "id": 20001999,
+        "name": "Hungering Cold",
+        "gems": 1,
+        "ap": 4,
+        "level": 40
+      },
+      {
+        "id": 20001989,
+        "name": "Howling Blast",
+        "gems": 1,
+        "ap": 4,
+        "level": 60
+      },
+      {
+        "id": 20002221,
+        "name": "Anti-Magic Zone",
+        "gems": 2,
+        "ap": 6,
+        "level": 40
+      },
+      {
+        "id": 20002000,
+        "name": "Summon Gargoyle",
+        "gems": 1,
+        "ap": 6,
+        "level": 60
+      }
+    ]
+  },
+  "Shaman": {
+    "total": 5,
+    "entries": [
+      {
+        "id": 158,
+        "name": "Ghost Wolf",
+        "gems": 1,
+        "ap": 2,
+        "level": 16
+      },
+      {
+        "id": 162,
+        "name": "Bloodlust",
+        "gems": 1,
+        "ap": 2,
+        "level": 70
+      },
+      {
+        "id": 20002053,
+        "name": "Thunderstorm",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      },
+      {
+        "id": 20002064,
+        "name": "Riptide",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002058,
+        "name": "Feral Spirit",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      }
+    ]
+  },
+  "Mage": {
+    "total": 9,
+    "entries": [
+      {
+        "id": 137,
+        "name": "Blink",
+        "gems": 3,
+        "ap": 3,
+        "level": 20
+      },
+      {
+        "id": 350,
+        "name": "Ice Block",
+        "gems": 2,
+        "ap": 3,
+        "level": 30
+      },
+      {
+        "id": 371,
+        "name": "Mirror Image",
+        "gems": 1,
+        "ap": 2,
+        "level": 80
+      },
+      {
+        "id": 20001852,
+        "name": "Living Bomb",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001857,
+        "name": "Deep Freeze",
+        "gems": 1,
+        "ap": 3,
+        "level": 60
+      },
+      {
+        "id": 20001847,
+        "name": "Arcane Barrage",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Warlock": {
+    "total": 5,
+    "entries": [
+      {
+        "id": 352,
+        "name": "Demonic Circle: Summon",
+        "gems": 2,
+        "ap": 2,
+        "level": 80
+      },
+      {
+        "id": 20001891,
+        "name": "Chaos Bolt",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20002041,
+        "name": "Haunt",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001886,
+        "name": "Metamorphosis",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  },
+  "Druid": {
+    "total": 7,
+    "entries": [
+      {
+        "id": 80,
+        "name": "Travel Form",
+        "gems": 2,
+        "ap": 3,
+        "level": 16
+      },
+      {
+        "id": 20001927,
+        "name": "Berserk",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20001791,
+        "name": "Tree of Life",
+        "gems": 1,
+        "ap": 2,
+        "level": 50
+      },
+      {
+        "id": 20001917,
+        "name": "Wild Growth",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      },
+      {
+        "id": 20000793,
+        "name": "Moonkin Form",
+        "gems": 1,
+        "ap": 2,
+        "level": 40
+      },
+      {
+        "id": 20001926,
+        "name": "Starfall",
+        "gems": 1,
+        "ap": 2,
+        "level": 60
+      }
+    ]
+  }
+}

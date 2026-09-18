@@ -219,10 +219,10 @@ local function masterySetter(original,key)
   if A.mode~='Classic'and e and e.requiredMastery then
    A.SyncMasteryGrants()
    if tonumber(rank)and tonumber(rank)>0 and ((HeroFreePickPlans[key]or {})[e.id]or 0)>0 then return true end
-   A.ShowPointWarning('Automatically included at level '..A.MasteryMemberLevel(e)..' with '..A.byID[e.requiredMastery].name..'. Change the Mastery instead.');return false
+   A.ShowPointWarning('Automatically included at level '..A.AbilityDisplayLevel(e)..' with '..A.byID[e.requiredMastery].name..'. Change the Mastery instead.');return false
   end
-  if e and e.isMastery and tonumber(rank)and tonumber(rank)>0 and UnitLevel('player')<(e.level or 1)then
-   A.ShowPointWarning('Requires level '..(e.level or 1)..'.');return false
+  if e and e.isMastery and tonumber(rank)and tonumber(rank)>0 and UnitLevel('player')<(A.AbilityDisplayLevel(e)or 1)then
+   A.ShowPointWarning('Requires level '..(A.AbilityDisplayLevel(e)or 1)..'.');return false
   end
   local ok=original(id,rank);if ok then A.SyncMasteryGrants()end;return ok
  end

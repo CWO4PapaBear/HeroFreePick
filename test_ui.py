@@ -7,7 +7,7 @@ ET.parse(root/'HeroFreePick.xml')
 lua.execute('''
 local function frame()
  local f={shown=true,w=500,h=380,text='',scripts={}}
- local methods={SetSize=function(s,w,h)s.w=w;s.h=h end,SetWidth=function(s,w)s.w=w end,SetHeight=function(s,h)s.h=h end,GetFrameLevel=function()return 1 end,GetWidth=function(s)return s.w end,GetHeight=function(s)return s.h end,SetText=function(s,t)s.text=t end,GetText=function(s)return s.text end,GetStringHeight=function(s)return 500 end,Show=function(s)s.shown=true end,Hide=function(s)local was=s.shown;s.shown=false;if was and s.scripts.OnHide then s.scripts.OnHide(s)end end,IsShown=function(s)return s.shown end,SetScript=function(s,k,v)s.scripts[k]=v end,GetVerticalScroll=function()return 0 end,GetVerticalScrollRange=function()return 2000 end}
+ local methods={SetAlpha=function(s,a)s.alpha=a end,SetSize=function(s,w,h)s.w=w;s.h=h end,SetWidth=function(s,w)s.w=w end,SetHeight=function(s,h)s.h=h end,GetFrameLevel=function()return 1 end,GetWidth=function(s)return s.w end,GetHeight=function(s)return s.h end,SetText=function(s,t)s.text=t end,GetText=function(s)return s.text end,GetStringHeight=function(s)return 500 end,Show=function(s)s.shown=true end,Hide=function(s)local was=s.shown;s.shown=false;if was and s.scripts.OnHide then s.scripts.OnHide(s)end end,IsShown=function(s)return s.shown end,SetScript=function(s,k,v)s.scripts[k]=v end,GetVerticalScroll=function()return 0 end,GetVerticalScrollRange=function()return 2000 end}
  setmetatable(f,{__index=function(s,k)if k=='dependencyOverlay'then return nil end;if k=='CreateFontString'or k=='CreateTexture'then return function()return frame()end end;return methods[k]or function()end end})
  return f
 end
@@ -1049,3 +1049,38 @@ for q,row in pairs(A.RarityRows)do assert(#row.gems==16);row.scripts.OnMouseUp(r
 A.Refresh=refresh;A.mode=mode;HeroFreePickPlans=plans;testLevel=level
 """)
 print('PASS: Runeforging grants ten free level-20 runes; expanded rarity rows filter and clear on click.')
+
+# Production progression overlay: test after the unchanged baseline regression suite.
+for n in ['StockAbilityLevels.lua','ProgressionRules.lua']:lua.execute((root/n).read_text())
+lua.execute("""
+local plans,mode,unit,warn=HeroFreePickPlans,A.mode,UnitClass,A.ShowPointWarning
+A.mode='Hero';testLevel=80;A.ShowPointWarning=function()end
+local capstones,abilities=0,0
+for native,id in pairs(A.TalentAbilityMap)do
+ local e=A.byID[id];local node=A.TalentNode(A.byID[native])
+ assert(e and not A.IsTalent(e)and e.ae>0 and e.te==0)
+ assert(e.level>=10+5*node.row)
+ if node.row==10 then capstones=capstones+1;assert(e.level==60 and e.quality=='Legendary'and HeroRarityCosts[id]==1)end
+ for _,key in ipairs({'entries','previewLearned'})do
+  HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+  local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+  testLevel=e.level-1;assert(not setter(native,1));assert(not HeroFreePickPlans[key][native]and not HeroFreePickPlans[key][id])
+  testLevel=80;assert(setter(native,1),e.name);assert(HeroFreePickPlans[key][id]==1 and not HeroFreePickPlans[key][native])
+  assert(A.PendingTalentSpent(key)==0);local ap=A.AbilityPointsSpent(key);assert(setter(id,1));assert(A.AbilityPointsSpent(key)==ap)
+  assert(setter(native,0));assert(not HeroFreePickPlans[key][id])
+ end
+ abilities=abilities+1
+end
+assert(capstones==30)
+for _,m in ipairs({'ClassPlus','Hybrid'})do
+ A.mode=m
+ assert(A.AbilityDisplayLevel(A.byID[1157])==1) -- DK exception
+ assert(A.AbilityDisplayLevel(A.byID[21092418])==1)
+ assert(A.AbilityDisplayLevel(A.byID[184])==24)
+ assert(A.AbilityDisplayLevel(A.byID[21053428])==20)
+ for _,e in ipairs(HeroFreePickCatalog)do if e.talentOrigin then assert(A.AbilityDisplayLevel(e)==e.level)end end
+end
+A.mode='Classic';assert(A.AbilityForTalent(A.byID[1244])==A.byID[1244]);assert(A.IsTalent(A.byID[1244]));assert(A.AbilityDisplayLevel(A.byID[1157])==55)
+HeroFreePickPlans=plans;A.mode=mode;UnitClass=unit;A.ShowPointWarning=warn;testLevel=80
+print('PASS: '..abilities..' tree ability aliases share AP purchases; 30 capstones cost one Legendary; Classic and DK exceptions preserved.')
+""")

@@ -147,6 +147,7 @@ HeroTalentAbilityReferences={
 {["id"]=20002000,["name"]="Summon Gargoyle",["class"]="DeathKnight",["spec"]="Unholy",["kind"]="Ability",["quality"]="Normal",["spells"]={49206},["ae"]=6,["te"]=0,["level"]=40,["requiredAE"]=0,["requiredTE"]=0,["requiredIDs"]="",["displayOnly"]=true,["talentOrigin"]=1253,["area52Entry"]=1253,["rarityCost"]=0,["categories"]={6},["directCategory"]=false,["order"]=0},
 }
 for _,e in ipairs(HeroTalentAbilityReferences)do
+ e.talentAbilityAP=e.ae;e.talentAbilityRarityCost=e.rarityCost
  HeroFreePickCatalog[#HeroFreePickCatalog+1]=e
  HeroFreePick.byID[e.id]=e
  HeroRarityCosts[e.id]=e.rarityCost

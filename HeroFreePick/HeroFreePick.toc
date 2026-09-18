@@ -11,6 +11,8 @@ Organization.lua
 Browse.lua
 TalentAbilityReferences.lua
 Masteries.lua
+StockAbilityLevels.lua
+ProgressionRules.lua
 PendingChanges.lua
 NativeTalentRoutes.lua
 HeroFreePick.xml

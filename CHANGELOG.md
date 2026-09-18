@@ -1,5 +1,6 @@
 ## Unreleased — Class+ server inventory
 
+- Unify 151 talent-origin choices as AP purchases across both menu locations; set all 30 capstones to level 60 and one Legendary gem. Apply stock non-DK Class+/Hybrid unlocks and rank references, preserve DK level-one progression, and derive each Mastery unlock from its earliest member. Preserve Classic.
 - Add level-20 Runeforging Mastery and ten free rune enchants; expand rarity budgets to 11 Uncommon / 16 Rare / 13 Epic / 7 Legendary. Rarity bars filter on left-click and clear on right-click.
 - Block ability additions that exceed a rarity budget immediately in either draft, using the shared alert. Change custom Death Grip from Epic to Legendary; retain existing budgets pending the level-80 budget decision.
 - Set custom Dark Command to level 65 and promoted Corpse Explosion to level 20; preserve Classic talent prerequisites and existing resource costs.

@@ -35,7 +35,8 @@ function A.LevelGroups(entries)
     local groups={}
     for _,e in ipairs(entries)do
         local last=groups[#groups]
-        if not last or last.level~=e.level then last={level=e.level,entries={}};groups[#groups+1]=last end
+        local level=A.IsTalent(e)and e.level or A.AbilityDisplayLevel(e)
+        if not last or last.level~=level then last={level=level,entries={}};groups[#groups+1]=last end
         last.entries[#last.entries+1]=e
     end
     return groups

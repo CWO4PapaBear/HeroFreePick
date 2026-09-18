@@ -549,6 +549,7 @@ local function renderTrees()
  for _,l in ipairs(treePools.lines)do l:Hide()end
  for _,l in ipairs(treePools.arrows)do l:Hide()end
  local allowed={};for _,e in ipairs(A.VisibleEntries('talent'))do allowed[e.id]=true end
+ if A.mode~='Classic'then for _,e in ipairs(A.VisibleEntries('ability'))do if e.talentOrigin then allowed[e.id]=true end end end
  local used={};local groups={};local order={}
  for _,node in ipairs(HeroFreePickTrees)do
   if node.class==A.class and activeSpec==node.spec then
@@ -589,6 +590,7 @@ local function renderTrees()
    if e then used[e.id]=true else
     e={id=-node.talent,name=GetSpellInfo(node.ranks[1])or('Talent '..node.talent),class=node.class,spec=node.spec,spells=node.ranks,kind='Talent',quality='Normal',level=10+node.row*5,ae=0,te=1,requiredAE=0,requiredTE=0,requiredIDs='',unavailable=true}
    end
+   if A.AbilityForTalent then e=A.AbilityForTalent(e)end
    b.entry=e;b.node=node;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local planned=A.PendingRank(e);b.rank:SetText(planned..'/'..A.MaxRank(e));b.rank:SetTextColor(planned>0 and 0 or 1,1,0);b:SetBackdropBorderColor(planned>0 and .3 or .8,planned>0 and 1 or .65,.25,1)
    local x=35+node.column*63;local ny=y+node.row*63;b:ClearAllPoints();b:SetPoint('TOPLEFT',x,-ny);b.icon:SetDesaturated(A.OtherClass(e.class));b:SetAlpha(not A.OtherClass(e.class)and allowed[e.id]and A.TalentsUnlocked()and 1 or .38);b:Show();positions[node.talent]={x=x+16,y=ny,rank=planned,button=b};A.talentPositions[e.id]=ny;maxRow=math.max(maxRow,node.row)
   end
@@ -874,7 +876,7 @@ local function renderSummary()
  local groups,keys={},{}
  for _,e in ipairs(A.LearnedEntries())do
   local key=e.class
-  if sort=='Level'then key=e.level or 1 elseif sort=='Ability Point Cost'then key=A.IsTalent(e)and 0 or(e.ae or 0) elseif sort=='Rarity Cost'then key=({Legendary=1,Epic=2,Rare=3,Uncommon=4,Normal=5,Common=5})[e.quality]or 5 end
+  if sort=='Level'then key=A.AbilityDisplayLevel(e)or 1 elseif sort=='Ability Point Cost'then key=A.IsTalent(e)and 0 or(e.ae or 0) elseif sort=='Rarity Cost'then key=({Legendary=1,Epic=2,Rare=3,Uncommon=4,Normal=5,Common=5})[e.quality]or 5 end
   if not groups[key]then groups[key]={};keys[#keys+1]=key end;table.insert(groups[key],e)
  end
  table.sort(keys);local y,n=0,0
@@ -908,7 +910,7 @@ local function renderBrowse()
  end
  local y,count=0,0
  for i,c in ipairs(HeroBrowseCategories)do
-  local entries=grouped[c.id];table.sort(entries,function(a,b)local x=HeroBrowseAssignment[a.id];local y=HeroBrowseAssignment[b.id];if a.level~=b.level then return a.level<b.level end;if x.order~=y.order then return x.order<y.order end;if a.name==b.name then return a.id<b.id end;return a.name<b.name end)
+  local entries=grouped[c.id];table.sort(entries,function(a,b)local x=HeroBrowseAssignment[a.id];local y=HeroBrowseAssignment[b.id];if A.AbilityDisplayLevel(a)~=A.AbilityDisplayLevel(b)then return A.AbilityDisplayLevel(a)<A.AbilityDisplayLevel(b)end;if x.order~=y.order then return x.order<y.order end;if a.name==b.name then return a.id<b.id end;return a.name<b.name end)
   if #entries>0 then
   local h=allHeaders[i]
   if not h then h=CreateFrame('Button',nil,allContent);h:SetSize(720,28);h.label=txt(h,'',4,-4,710,'GameFontNormal');allHeaders[i]=h;h:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(self.category.name);GameTooltip:AddLine(self.category.description,1,1,1,true);GameTooltip:AddLine('A52 category definitions and level order. Spell tooltips identify fallback assignments.',1,.8,.3,true);GameTooltip:Show()end);h:SetScript('OnLeave',function()GameTooltip:Hide()end)end
@@ -922,7 +924,7 @@ local function renderBrowse()
    end
    local classTexture='Interface\\Icons\\'..(badges[e.class]or'INV_Misc_QuestionMark')
    if SetPortraitToTexture then SetPortraitToTexture(b.classBadge,classTexture)else b.classBadge:SetTexture(classTexture)end
-   b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.icon:SetDesaturated(A.OtherClass(e.class) or UnitLevel('player')<(e.level or 1));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
+   b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.icon:SetDesaturated(A.OtherClass(e.class) or UnitLevel('player')<(A.AbilityDisplayLevel(e)or 1));b:ClearAllPoints();b:SetPoint('TOPLEFT',6+((j-1)%16)*45,-y-math.floor((j-1)/16)*42);b:Show()
   end
   y=y+math.ceil(#entries/16)*42+12
   end

@@ -1,0 +1,328 @@
+{
+  "noStockEquivalent": [
+    {
+      "id": 22954809,
+      "name": "Crimson Tempest",
+      "class": "Rogue",
+      "level": 14
+    },
+    {
+      "id": 22954553,
+      "name": "Dispatch",
+      "class": "Rogue",
+      "level": 40
+    },
+    {
+      "id": 22701521,
+      "name": "Summoner's Armor",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 22092171,
+      "name": "Arcane Ward",
+      "class": "Mage",
+      "level": 20
+    },
+    {
+      "id": 22760210,
+      "name": "Nature Ward",
+      "class": "Mage",
+      "level": 20
+    },
+    {
+      "id": 22760204,
+      "name": "Holy Ward",
+      "class": "Mage",
+      "level": 20
+    },
+    {
+      "id": 22965425,
+      "name": "Recuperate",
+      "class": "Rogue",
+      "level": 10
+    },
+    {
+      "id": 22965426,
+      "name": "Meditate",
+      "class": "Rogue",
+      "level": 10
+    },
+    {
+      "id": 22903018,
+      "name": "Portal: Booty Bay",
+      "class": "Mage",
+      "level": 25
+    },
+    {
+      "id": 22903090,
+      "name": "Portal: Ratchet",
+      "class": "Mage",
+      "level": 25
+    },
+    {
+      "id": 22901018,
+      "name": "Teleport: Booty Bay",
+      "class": "Mage",
+      "level": 25
+    },
+    {
+      "id": 22901090,
+      "name": "Teleport: Ratchet",
+      "class": "Mage",
+      "level": 25
+    },
+    {
+      "id": 25093558,
+      "name": "Tame Dragonkin",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "id": 25091631,
+      "name": "Call Dragonkin",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "id": 25091652,
+      "name": "Dismiss Dragonkin",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "id": 25091633,
+      "name": "Revive Dragonkin",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "id": 25109982,
+      "name": "Dragonkin Lore",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "id": 25000896,
+      "name": "Enslave Demon",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 25000884,
+      "name": "Summon Demon",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 25000892,
+      "name": "Dismiss Demon",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 25000887,
+      "name": "Revive Demon",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 25109981,
+      "name": "Demon Lore",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "id": 25093569,
+      "name": "Tether Elemental",
+      "class": "Shaman",
+      "level": 1
+    },
+    {
+      "id": 25091602,
+      "name": "Raise Elemental",
+      "class": "Shaman",
+      "level": 1
+    },
+    {
+      "id": 25091651,
+      "name": "Dismiss Elemental",
+      "class": "Shaman",
+      "level": 1
+    },
+    {
+      "id": 25091605,
+      "name": "Revive Elemental",
+      "class": "Shaman",
+      "level": 1
+    },
+    {
+      "id": 25109983,
+      "name": "Elemental Lore",
+      "class": "Shaman",
+      "level": 1
+    }
+  ],
+  "groupUnlocks": [
+    {
+      "name": "Shock Mastery",
+      "class": "Shaman",
+      "level": 4
+    },
+    {
+      "name": "Essential Finishing Move Mastery",
+      "class": "Rogue",
+      "level": 1
+    },
+    {
+      "name": "Mage Armor Mastery",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "name": "Hunter Aspect Mastery",
+      "class": "Hunter",
+      "level": 4
+    },
+    {
+      "name": "Paladin Aura Mastery",
+      "class": "Paladin",
+      "level": 1
+    },
+    {
+      "name": "Weapon Enhancement Mastery",
+      "class": "Shaman",
+      "level": 1
+    },
+    {
+      "name": "Fire Totem Mastery",
+      "class": "Shaman",
+      "level": 10
+    },
+    {
+      "name": "Air Totem Mastery",
+      "class": "Shaman",
+      "level": 30
+    },
+    {
+      "name": "Water Totem Mastery",
+      "class": "Shaman",
+      "level": 20
+    },
+    {
+      "name": "Earth Totem Mastery",
+      "class": "Shaman",
+      "level": 4
+    },
+    {
+      "name": "Advanced Trap Mastery",
+      "class": "Hunter",
+      "level": 20
+    },
+    {
+      "name": "Warlock Armor Mastery",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "name": "Judgement Mastery",
+      "class": "Paladin",
+      "level": 4
+    },
+    {
+      "name": "Ward Mastery",
+      "class": "Mage",
+      "level": 20
+    },
+    {
+      "name": "Presence Mastery",
+      "class": "DeathKnight",
+      "level": 1
+    },
+    {
+      "name": "Stance Mastery",
+      "class": "Warrior",
+      "level": 1
+    },
+    {
+      "name": "Demon Mastery",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "name": "Conjuring Mastery",
+      "class": "Warlock",
+      "level": 28
+    },
+    {
+      "name": "Seal Mastery",
+      "class": "Paladin",
+      "level": 1
+    },
+    {
+      "name": "Advanced Finishing Move Mastery",
+      "class": "Rogue",
+      "level": 10
+    },
+    {
+      "name": "Shout Mastery",
+      "class": "Warrior",
+      "level": 1
+    },
+    {
+      "name": "Feral Shapeshift Mastery",
+      "class": "Druid",
+      "level": 10
+    },
+    {
+      "name": "Blessing Mastery",
+      "class": "Paladin",
+      "level": 4
+    },
+    {
+      "name": "Tracking Mastery",
+      "class": "Hunter",
+      "level": 2
+    },
+    {
+      "name": "Portal Mastery",
+      "class": "Mage",
+      "level": 25
+    },
+    {
+      "name": "Teleport Mastery",
+      "class": "Mage",
+      "level": 20
+    },
+    {
+      "name": "Runeforging Mastery",
+      "class": "DeathKnight",
+      "level": 20
+    },
+    {
+      "name": "Tame Beast",
+      "class": "Hunter",
+      "level": 10
+    },
+    {
+      "name": "Tame Dragonkin",
+      "class": "Mage",
+      "level": 1
+    },
+    {
+      "name": "Enslave Demon",
+      "class": "Warlock",
+      "level": 1
+    },
+    {
+      "name": "Dominate Undead",
+      "class": "DeathKnight",
+      "level": 1
+    },
+    {
+      "name": "Tether Elemental",
+      "class": "Shaman",
+      "level": 1
+    }
+  ]
+}
