@@ -208,6 +208,9 @@ local function set(id,rank,key)
  rank=math.max(0,math.min(math.floor(rank),A.MaxRank(e)))
  local state=HeroFreePickPlans[key]or {};HeroFreePickPlans[key]=state
  local oldRank=state[id]or 0
+ if not A.IsTalent(e)and rank>0 and oldRank<=0 and (e.ae or 0)>A.AvailableAbilityPoints(key)then
+  A.ShowPointWarning('Not enough Ability Points.');return false
+ end
  if A.IsTalent(e)and rank>oldRank and (rank-oldRank)*(e.te or 1)>A.AvailableTalentPoints(key)then
   A.ShowPointWarning('Not enough Talent Points.');return false
  end

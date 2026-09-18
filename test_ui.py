@@ -868,3 +868,28 @@ HeroProgressionChoice:Hide();A.ChangeModeButton.scripts.OnClick();assert(not Her
 HeroFreePickPlans=savedPlans;A.InstalledModes=savedModes;A.mode=savedMode;testLevel=80
 """)
 print('PASS: level-one mode reopening preserves prior choice until selection, switches installed modes, and refuses switching at level two or direct Hybrid selection.')
+
+lua.execute("""
+local savedPlans,savedMode,savedClass,savedWarning=HeroFreePickPlans,A.mode,UnitClass,A.ShowPointWarning
+UnitClass=function()return 'Mage','MAGE'end;A.mode='ClassPlus';testLevel=1
+local warning;A.ShowPointWarning=function(text)warning=text end
+for _,key in ipairs({'previewLearned','entries'})do
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+ local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+ for _,id in ipairs({18,10,108,149})do assert(setter(id,1))end
+ assert(A.AvailableAbilityPoints(key)==1)
+ assert(not setter(185,1));assert(warning=='Not enough Ability Points.')
+ assert(not HeroFreePickPlans[key][185]and A.AvailableAbilityPoints(key)==1)
+ assert(not setter(21092155,1));assert(not HeroFreePickPlans[key][21])
+ assert(setter(47,1));assert(A.AvailableAbilityPoints(key)==0)
+ warning=nil;assert(not setter(202,1));assert(warning=='Not enough Ability Points.')
+ assert(A.AvailableAbilityPoints(key)==0 and not HeroFreePickPlans[key][202])
+ assert(setter(18,1));assert(A.AvailableAbilityPoints(key)==0) -- no double charge
+ assert(setter(18,0));assert(A.AvailableAbilityPoints(key)==2)
+ assert(setter(21092155,1));assert(A.AvailableAbilityPoints(key)==0)
+ assert(HeroFreePickPlans[key][21]==1) -- free Mastery child still granted at zero
+ assert(setter(21092155,0));assert(A.AvailableAbilityPoints(key)==2 and not HeroFreePickPlans[key][21])
+end
+HeroFreePickPlans=savedPlans;A.mode=savedMode;UnitClass=savedClass;A.ShowPointWarning=savedWarning;testLevel=80
+""")
+print('PASS: both drafts reject unaffordable AP additions before mutation; exact spending, free children and refunds work.')
