@@ -1,0 +1,1644 @@
+{
+  "provenance": "Column names/order/data types from live export; signedness and varchar widths from AzerothCore base spell_dbc schema. Generated SQL rechecks these before writing.",
+  "upstreamSchema": "https://raw.githubusercontent.com/azerothcore/azerothcore-wotlk/master/data/sql/base/db_world/spell_dbc.sql",
+  "columns": [
+    {
+      "name": "ID",
+      "sourceField": 0,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Category",
+      "sourceField": 1,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "DispelType",
+      "sourceField": 2,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Mechanic",
+      "sourceField": 3,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Attributes",
+      "sourceField": 4,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx",
+      "sourceField": 5,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx2",
+      "sourceField": 6,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx3",
+      "sourceField": 7,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx4",
+      "sourceField": 8,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx5",
+      "sourceField": 9,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx6",
+      "sourceField": 10,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AttributesEx7",
+      "sourceField": 11,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ShapeshiftMask",
+      "sourceField": 12,
+      "dataType": "bigint",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "unk_320_2",
+      "sourceField": 13,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ShapeshiftExclude",
+      "sourceField": 14,
+      "dataType": "bigint",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "unk_320_3",
+      "sourceField": 15,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Targets",
+      "sourceField": 16,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "TargetCreatureType",
+      "sourceField": 17,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RequiresSpellFocus",
+      "sourceField": 18,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "FacingCasterFlags",
+      "sourceField": 19,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "CasterAuraState",
+      "sourceField": 20,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "TargetAuraState",
+      "sourceField": 21,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ExcludeCasterAuraState",
+      "sourceField": 22,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ExcludeTargetAuraState",
+      "sourceField": 23,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "CasterAuraSpell",
+      "sourceField": 24,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "TargetAuraSpell",
+      "sourceField": 25,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ExcludeCasterAuraSpell",
+      "sourceField": 26,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ExcludeTargetAuraSpell",
+      "sourceField": 27,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "CastingTimeIndex",
+      "sourceField": 28,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RecoveryTime",
+      "sourceField": 29,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "CategoryRecoveryTime",
+      "sourceField": 30,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "InterruptFlags",
+      "sourceField": 31,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AuraInterruptFlags",
+      "sourceField": 32,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ChannelInterruptFlags",
+      "sourceField": 33,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ProcTypeMask",
+      "sourceField": 34,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ProcChance",
+      "sourceField": 35,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ProcCharges",
+      "sourceField": 36,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "MaxLevel",
+      "sourceField": 37,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "BaseLevel",
+      "sourceField": 38,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellLevel",
+      "sourceField": 39,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "DurationIndex",
+      "sourceField": 40,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "PowerType",
+      "sourceField": 41,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ManaCost",
+      "sourceField": 42,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ManaCostPerLevel",
+      "sourceField": 43,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ManaPerSecond",
+      "sourceField": 44,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ManaPerSecondPerLevel",
+      "sourceField": 45,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RangeIndex",
+      "sourceField": 46,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Speed",
+      "sourceField": 47,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ModalNextSpell",
+      "sourceField": 48,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "CumulativeAura",
+      "sourceField": 49,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Totem_1",
+      "sourceField": 50,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Totem_2",
+      "sourceField": 51,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_1",
+      "sourceField": 52,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_2",
+      "sourceField": 53,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_3",
+      "sourceField": 54,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_4",
+      "sourceField": 55,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_5",
+      "sourceField": 56,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_6",
+      "sourceField": 57,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_7",
+      "sourceField": 58,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Reagent_8",
+      "sourceField": 59,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_1",
+      "sourceField": 60,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_2",
+      "sourceField": 61,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_3",
+      "sourceField": 62,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_4",
+      "sourceField": 63,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_5",
+      "sourceField": 64,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_6",
+      "sourceField": 65,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_7",
+      "sourceField": 66,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "ReagentCount_8",
+      "sourceField": 67,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EquippedItemClass",
+      "sourceField": 68,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EquippedItemSubclass",
+      "sourceField": 69,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EquippedItemInvTypes",
+      "sourceField": 70,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "Effect_1",
+      "sourceField": 71,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Effect_2",
+      "sourceField": 72,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Effect_3",
+      "sourceField": 73,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectDieSides_1",
+      "sourceField": 74,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectDieSides_2",
+      "sourceField": 75,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectDieSides_3",
+      "sourceField": 76,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRealPointsPerLevel_1",
+      "sourceField": 77,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRealPointsPerLevel_2",
+      "sourceField": 78,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRealPointsPerLevel_3",
+      "sourceField": 79,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBasePoints_1",
+      "sourceField": 80,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBasePoints_2",
+      "sourceField": 81,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBasePoints_3",
+      "sourceField": 82,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMechanic_1",
+      "sourceField": 83,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMechanic_2",
+      "sourceField": 84,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMechanic_3",
+      "sourceField": 85,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetA_1",
+      "sourceField": 86,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetA_2",
+      "sourceField": 87,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetA_3",
+      "sourceField": 88,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetB_1",
+      "sourceField": 89,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetB_2",
+      "sourceField": 90,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ImplicitTargetB_3",
+      "sourceField": 91,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRadiusIndex_1",
+      "sourceField": 92,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRadiusIndex_2",
+      "sourceField": 93,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectRadiusIndex_3",
+      "sourceField": 94,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAura_1",
+      "sourceField": 95,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAura_2",
+      "sourceField": 96,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAura_3",
+      "sourceField": 97,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAuraPeriod_1",
+      "sourceField": 98,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAuraPeriod_2",
+      "sourceField": 99,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectAuraPeriod_3",
+      "sourceField": 100,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMultipleValue_1",
+      "sourceField": 101,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMultipleValue_2",
+      "sourceField": 102,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMultipleValue_3",
+      "sourceField": 103,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainTargets_1",
+      "sourceField": 104,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainTargets_2",
+      "sourceField": 105,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainTargets_3",
+      "sourceField": 106,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectItemType_1",
+      "sourceField": 107,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectItemType_2",
+      "sourceField": 108,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectItemType_3",
+      "sourceField": 109,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValue_1",
+      "sourceField": 110,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValue_2",
+      "sourceField": 111,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValue_3",
+      "sourceField": 112,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValueB_1",
+      "sourceField": 113,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValueB_2",
+      "sourceField": 114,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectMiscValueB_3",
+      "sourceField": 115,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectTriggerSpell_1",
+      "sourceField": 116,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectTriggerSpell_2",
+      "sourceField": 117,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectTriggerSpell_3",
+      "sourceField": 118,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectPointsPerCombo_1",
+      "sourceField": 119,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectPointsPerCombo_2",
+      "sourceField": 120,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectPointsPerCombo_3",
+      "sourceField": 121,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskA_1",
+      "sourceField": 122,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskA_2",
+      "sourceField": 125,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskA_3",
+      "sourceField": 128,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskB_1",
+      "sourceField": 123,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskB_2",
+      "sourceField": 126,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskB_3",
+      "sourceField": 129,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskC_1",
+      "sourceField": 124,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskC_2",
+      "sourceField": 127,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectSpellClassMaskC_3",
+      "sourceField": 130,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellVisualID_1",
+      "sourceField": 131,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellVisualID_2",
+      "sourceField": 132,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellIconID",
+      "sourceField": 133,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ActiveIconID",
+      "sourceField": 134,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellPriority",
+      "sourceField": 135,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Name_Lang_enUS",
+      "sourceField": 136,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_enGB",
+      "sourceField": 137,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_koKR",
+      "sourceField": 138,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_frFR",
+      "sourceField": 139,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_deDE",
+      "sourceField": 140,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_enCN",
+      "sourceField": 141,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_zhCN",
+      "sourceField": 142,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_enTW",
+      "sourceField": 143,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_zhTW",
+      "sourceField": 144,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_esES",
+      "sourceField": 145,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_esMX",
+      "sourceField": 146,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_ruRU",
+      "sourceField": 147,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_ptPT",
+      "sourceField": 148,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_ptBR",
+      "sourceField": 149,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_itIT",
+      "sourceField": 150,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_Unk",
+      "sourceField": 151,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "Name_Lang_Mask",
+      "sourceField": 152,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "NameSubtext_Lang_enUS",
+      "sourceField": 153,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_enGB",
+      "sourceField": 154,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_koKR",
+      "sourceField": 155,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_frFR",
+      "sourceField": 156,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_deDE",
+      "sourceField": 157,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_enCN",
+      "sourceField": 158,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_zhCN",
+      "sourceField": 159,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_enTW",
+      "sourceField": 160,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_zhTW",
+      "sourceField": 161,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_esES",
+      "sourceField": 162,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_esMX",
+      "sourceField": 163,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_ruRU",
+      "sourceField": 164,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_ptPT",
+      "sourceField": 165,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_ptBR",
+      "sourceField": 166,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_itIT",
+      "sourceField": 167,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_Unk",
+      "sourceField": 168,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "NameSubtext_Lang_Mask",
+      "sourceField": 169,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_enUS",
+      "sourceField": 170,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_enGB",
+      "sourceField": 171,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_koKR",
+      "sourceField": 172,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_frFR",
+      "sourceField": 173,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_deDE",
+      "sourceField": 174,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_enCN",
+      "sourceField": 175,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_zhCN",
+      "sourceField": 176,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_enTW",
+      "sourceField": 177,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_zhTW",
+      "sourceField": 178,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_esES",
+      "sourceField": 179,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_esMX",
+      "sourceField": 180,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_ruRU",
+      "sourceField": 181,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_ptPT",
+      "sourceField": 182,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_ptBR",
+      "sourceField": 183,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_itIT",
+      "sourceField": 184,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_Unk",
+      "sourceField": 185,
+      "dataType": "text",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "Description_Lang_Mask",
+      "sourceField": 186,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "AuraDescription_Lang_enUS",
+      "sourceField": 187,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_enGB",
+      "sourceField": 188,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_koKR",
+      "sourceField": 189,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_frFR",
+      "sourceField": 190,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_deDE",
+      "sourceField": 191,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_enCN",
+      "sourceField": 192,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_zhCN",
+      "sourceField": 193,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_enTW",
+      "sourceField": 194,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_zhTW",
+      "sourceField": 195,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_esES",
+      "sourceField": 196,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_esMX",
+      "sourceField": 197,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_ruRU",
+      "sourceField": 198,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_ptPT",
+      "sourceField": 199,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_ptBR",
+      "sourceField": 200,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_itIT",
+      "sourceField": 201,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 550
+    },
+    {
+      "name": "AuraDescription_Lang_Unk",
+      "sourceField": 202,
+      "dataType": "varchar",
+      "unsigned": true,
+      "maxLength": 100
+    },
+    {
+      "name": "AuraDescription_Lang_Mask",
+      "sourceField": 203,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "ManaCostPct",
+      "sourceField": 204,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "StartRecoveryCategory",
+      "sourceField": 205,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "StartRecoveryTime",
+      "sourceField": 206,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "MaxTargetLevel",
+      "sourceField": 207,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellClassSet",
+      "sourceField": 208,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellClassMask_1",
+      "sourceField": 209,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellClassMask_2",
+      "sourceField": 210,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellClassMask_3",
+      "sourceField": 211,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "MaxTargets",
+      "sourceField": 212,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "DefenseType",
+      "sourceField": 213,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "PreventionType",
+      "sourceField": 214,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "StanceBarOrder",
+      "sourceField": 215,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainAmplitude_1",
+      "sourceField": 216,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainAmplitude_2",
+      "sourceField": 217,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectChainAmplitude_3",
+      "sourceField": 218,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "MinFactionID",
+      "sourceField": 219,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "MinReputation",
+      "sourceField": 220,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RequiredAuraVision",
+      "sourceField": 221,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RequiredTotemCategoryID_1",
+      "sourceField": 222,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RequiredTotemCategoryID_2",
+      "sourceField": 223,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RequiredAreasID",
+      "sourceField": 224,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "SchoolMask",
+      "sourceField": 225,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "RuneCostID",
+      "sourceField": 226,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellMissileID",
+      "sourceField": 227,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "PowerDisplayID",
+      "sourceField": 228,
+      "dataType": "int",
+      "unsigned": false,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBonusMultiplier_1",
+      "sourceField": 229,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBonusMultiplier_2",
+      "sourceField": 230,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "EffectBonusMultiplier_3",
+      "sourceField": 231,
+      "dataType": "float",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellDescriptionVariableID",
+      "sourceField": 232,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    },
+    {
+      "name": "SpellDifficultyID",
+      "sourceField": 233,
+      "dataType": "int",
+      "unsigned": true,
+      "maxLength": null
+    }
+  ]
+}

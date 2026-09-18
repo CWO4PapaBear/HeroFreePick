@@ -1,0 +1,1422 @@
+{
+  "edges": [
+    {
+      "from": 988256,
+      "kind": "tooltip",
+      "to": 988258,
+      "presentInBaseline": false
+    },
+    {
+      "from": 986067,
+      "kind": "trigger",
+      "to": 986069,
+      "presentInBaseline": false
+    },
+    {
+      "from": 956046,
+      "kind": "tooltip",
+      "to": 5729,
+      "presentInBaseline": true
+    },
+    {
+      "from": 956046,
+      "kind": "tooltip",
+      "to": 2304121,
+      "presentInBaseline": false
+    },
+    {
+      "from": 956033,
+      "kind": "tooltip",
+      "to": 956034,
+      "presentInBaseline": false
+    },
+    {
+      "from": 956033,
+      "kind": "trigger",
+      "to": 956034,
+      "presentInBaseline": false
+    },
+    {
+      "from": 956032,
+      "kind": "tooltip",
+      "to": 956034,
+      "presentInBaseline": false
+    },
+    {
+      "from": 956031,
+      "kind": "tooltip",
+      "to": 956034,
+      "presentInBaseline": false
+    },
+    {
+      "from": 955062,
+      "kind": "tooltip",
+      "to": 954805,
+      "presentInBaseline": false
+    },
+    {
+      "from": 955032,
+      "kind": "tooltip",
+      "to": 955054,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954854,
+      "kind": "tooltip",
+      "to": 954855,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954854,
+      "kind": "trigger",
+      "to": 954855,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954836,
+      "kind": "auraRequirement",
+      "to": 954881,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954836,
+      "kind": "tooltip",
+      "to": 954837,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954836,
+      "kind": "trigger",
+      "to": 954837,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954836,
+      "kind": "trigger",
+      "to": 954838,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954838,
+      "kind": "tooltip",
+      "to": 954837,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954837,
+      "kind": "tooltip",
+      "to": 954837,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954821,
+      "kind": "tooltip",
+      "to": 954824,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954821,
+      "kind": "trigger",
+      "to": 954824,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954821,
+      "kind": "trigger",
+      "to": 954825,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954814,
+      "kind": "tooltip",
+      "to": 954815,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954814,
+      "kind": "tooltip",
+      "to": 954816,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954814,
+      "kind": "trigger",
+      "to": 954815,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954814,
+      "kind": "trigger",
+      "to": 954816,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954807,
+      "kind": "trigger",
+      "to": 954808,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954807,
+      "kind": "trigger",
+      "to": 954810,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954803,
+      "kind": "tooltip",
+      "to": 955004,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954803,
+      "kind": "trigger",
+      "to": 954874,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954803,
+      "kind": "trigger",
+      "to": 954878,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954803,
+      "kind": "trigger",
+      "to": 955004,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954878,
+      "kind": "trigger",
+      "to": 954879,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954874,
+      "kind": "trigger",
+      "to": 954875,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954875,
+      "kind": "trigger",
+      "to": 300024,
+      "presentInBaseline": false
+    },
+    {
+      "from": 300024,
+      "kind": "auraRequirement",
+      "to": 92752,
+      "presentInBaseline": false
+    },
+    {
+      "from": 300024,
+      "kind": "trigger",
+      "to": 300026,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954801,
+      "kind": "tooltip",
+      "to": 954848,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954801,
+      "kind": "trigger",
+      "to": 954802,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954587,
+      "kind": "tooltip",
+      "to": 954583,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954587,
+      "kind": "trigger",
+      "to": 954583,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954524,
+      "kind": "trigger",
+      "to": 954525,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954525,
+      "kind": "trigger",
+      "to": 954526,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954525,
+      "kind": "trigger",
+      "to": 954527,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954527,
+      "kind": "trigger",
+      "to": 954526,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954527,
+      "kind": "trigger",
+      "to": 954528,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954523,
+      "kind": "trigger",
+      "to": 954569,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954569,
+      "kind": "trigger",
+      "to": 54748,
+      "presentInBaseline": true
+    },
+    {
+      "from": 954522,
+      "kind": "auraRequirement",
+      "to": 956037,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954522,
+      "kind": "tooltip",
+      "to": 956037,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954522,
+      "kind": "trigger",
+      "to": 956037,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954518,
+      "kind": "tooltip",
+      "to": 954519,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954516,
+      "kind": "tooltip",
+      "to": 954517,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954516,
+      "kind": "trigger",
+      "to": 954517,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954514,
+      "kind": "tooltip",
+      "to": 954515,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954514,
+      "kind": "tooltip",
+      "to": 954568,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954507,
+      "kind": "tooltip",
+      "to": 954499,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954507,
+      "kind": "trigger",
+      "to": 283457,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954507,
+      "kind": "trigger",
+      "to": 954643,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954643,
+      "kind": "trigger",
+      "to": 954644,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954643,
+      "kind": "trigger",
+      "to": 954645,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954644,
+      "kind": "trigger",
+      "to": 954643,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954644,
+      "kind": "trigger",
+      "to": 954645,
+      "presentInBaseline": false
+    },
+    {
+      "from": 283457,
+      "kind": "trigger",
+      "to": 283458,
+      "presentInBaseline": false
+    },
+    {
+      "from": 283457,
+      "kind": "trigger",
+      "to": 283460,
+      "presentInBaseline": false
+    },
+    {
+      "from": 283458,
+      "kind": "trigger",
+      "to": 283457,
+      "presentInBaseline": false
+    },
+    {
+      "from": 283458,
+      "kind": "trigger",
+      "to": 283460,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954504,
+      "kind": "trigger",
+      "to": 954505,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954501,
+      "kind": "tooltip",
+      "to": 954533,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954501,
+      "kind": "trigger",
+      "to": 954502,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954500,
+      "kind": "trigger",
+      "to": 983591,
+      "presentInBaseline": false
+    },
+    {
+      "from": 983591,
+      "kind": "auraRequirement",
+      "to": 954690,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954217,
+      "kind": "tooltip",
+      "to": 954224,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954217,
+      "kind": "trigger",
+      "to": 801044,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954224,
+      "kind": "trigger",
+      "to": 954225,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954216,
+      "kind": "tooltip",
+      "to": 954224,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954216,
+      "kind": "trigger",
+      "to": 801044,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954215,
+      "kind": "tooltip",
+      "to": 954224,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954215,
+      "kind": "trigger",
+      "to": 801044,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954200,
+      "kind": "tooltip",
+      "to": 954200,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954199,
+      "kind": "tooltip",
+      "to": 954200,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954198,
+      "kind": "tooltip",
+      "to": 954200,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954194,
+      "kind": "tooltip",
+      "to": 954204,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954194,
+      "kind": "trigger",
+      "to": 954204,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954194,
+      "kind": "trigger",
+      "to": 954205,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954194,
+      "kind": "trigger",
+      "to": 983917,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954193,
+      "kind": "tooltip",
+      "to": 954204,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954193,
+      "kind": "trigger",
+      "to": 954205,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954192,
+      "kind": "tooltip",
+      "to": 954204,
+      "presentInBaseline": false
+    },
+    {
+      "from": 954192,
+      "kind": "trigger",
+      "to": 954205,
+      "presentInBaseline": false
+    },
+    {
+      "from": 853238,
+      "kind": "trigger",
+      "to": 853241,
+      "presentInBaseline": false
+    },
+    {
+      "from": 853237,
+      "kind": "trigger",
+      "to": 853240,
+      "presentInBaseline": false
+    },
+    {
+      "from": 853236,
+      "kind": "trigger",
+      "to": 853239,
+      "presentInBaseline": false
+    },
+    {
+      "from": 812577,
+      "kind": "tooltip",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812577,
+      "kind": "trigger",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812577,
+      "kind": "trigger",
+      "to": 812574,
+      "presentInBaseline": false
+    },
+    {
+      "from": 812576,
+      "kind": "tooltip",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812576,
+      "kind": "trigger",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812576,
+      "kind": "trigger",
+      "to": 812574,
+      "presentInBaseline": false
+    },
+    {
+      "from": 812575,
+      "kind": "tooltip",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812575,
+      "kind": "trigger",
+      "to": 57669,
+      "presentInBaseline": true
+    },
+    {
+      "from": 812575,
+      "kind": "trigger",
+      "to": 812574,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760191,
+      "kind": "trigger",
+      "to": 760192,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760122,
+      "kind": "tooltip",
+      "to": 760185,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760122,
+      "kind": "trigger",
+      "to": 760185,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760185,
+      "kind": "trigger",
+      "to": 760186,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760107,
+      "kind": "tooltip",
+      "to": 760174,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760107,
+      "kind": "trigger",
+      "to": 760174,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760100,
+      "kind": "tooltip",
+      "to": 760101,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760100,
+      "kind": "tooltip",
+      "to": 760120,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760080,
+      "kind": "tooltip",
+      "to": 760082,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760080,
+      "kind": "trigger",
+      "to": 760082,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760060,
+      "kind": "tooltip",
+      "to": 760062,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760060,
+      "kind": "tooltip",
+      "to": 760194,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760060,
+      "kind": "tooltip",
+      "to": 760195,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760060,
+      "kind": "tooltip",
+      "to": 760196,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760056,
+      "kind": "tooltip",
+      "to": 760095,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760056,
+      "kind": "tooltip",
+      "to": 760096,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760056,
+      "kind": "trigger",
+      "to": 760096,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760053,
+      "kind": "tooltip",
+      "to": 760055,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760050,
+      "kind": "tooltip",
+      "to": 760187,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760050,
+      "kind": "tooltip",
+      "to": 760193,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760050,
+      "kind": "trigger",
+      "to": 760187,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760187,
+      "kind": "trigger",
+      "to": 760188,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760188,
+      "kind": "trigger",
+      "to": 760193,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760040,
+      "kind": "tooltip",
+      "to": 760042,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760042,
+      "kind": "tooltip",
+      "to": 760042,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760014,
+      "kind": "tooltip",
+      "to": 760016,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760009,
+      "kind": "trigger",
+      "to": 760010,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760009,
+      "kind": "trigger",
+      "to": 760200,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760000,
+      "kind": "tooltip",
+      "to": 760123,
+      "presentInBaseline": false
+    },
+    {
+      "from": 760123,
+      "kind": "auraRequirement",
+      "to": 760000,
+      "presentInBaseline": false
+    },
+    {
+      "from": 701463,
+      "kind": "tooltip",
+      "to": 109499,
+      "presentInBaseline": false
+    },
+    {
+      "from": 109499,
+      "kind": "tooltip",
+      "to": 991293,
+      "presentInBaseline": false
+    },
+    {
+      "from": 435105,
+      "kind": "tooltip",
+      "to": 435103,
+      "presentInBaseline": false
+    },
+    {
+      "from": 435105,
+      "kind": "trigger",
+      "to": 435103,
+      "presentInBaseline": false
+    },
+    {
+      "from": 435104,
+      "kind": "tooltip",
+      "to": 435102,
+      "presentInBaseline": false
+    },
+    {
+      "from": 435104,
+      "kind": "trigger",
+      "to": 435102,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423825,
+      "kind": "tooltip",
+      "to": 420104,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423825,
+      "kind": "tooltip",
+      "to": 420114,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423825,
+      "kind": "tooltip",
+      "to": 420124,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423825,
+      "kind": "tooltip",
+      "to": 420134,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423825,
+      "kind": "tooltip",
+      "to": 420144,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423824,
+      "kind": "tooltip",
+      "to": 420103,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423824,
+      "kind": "tooltip",
+      "to": 420113,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423824,
+      "kind": "tooltip",
+      "to": 420123,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423824,
+      "kind": "tooltip",
+      "to": 420133,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423824,
+      "kind": "tooltip",
+      "to": 420143,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423823,
+      "kind": "tooltip",
+      "to": 420102,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423823,
+      "kind": "tooltip",
+      "to": 420112,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423823,
+      "kind": "tooltip",
+      "to": 420122,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423823,
+      "kind": "tooltip",
+      "to": 420132,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423823,
+      "kind": "tooltip",
+      "to": 420142,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423822,
+      "kind": "tooltip",
+      "to": 420101,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423822,
+      "kind": "tooltip",
+      "to": 420111,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423822,
+      "kind": "tooltip",
+      "to": 420121,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423822,
+      "kind": "tooltip",
+      "to": 420131,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423822,
+      "kind": "tooltip",
+      "to": 420141,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423785,
+      "kind": "tooltip",
+      "to": 420100,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423785,
+      "kind": "tooltip",
+      "to": 420110,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423785,
+      "kind": "tooltip",
+      "to": 420120,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423785,
+      "kind": "tooltip",
+      "to": 420130,
+      "presentInBaseline": false
+    },
+    {
+      "from": 423785,
+      "kind": "tooltip",
+      "to": 420140,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410002,
+      "kind": "tooltip",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410002,
+      "kind": "trigger",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410003,
+      "kind": "tooltip",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410001,
+      "kind": "tooltip",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410001,
+      "kind": "trigger",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410000,
+      "kind": "tooltip",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 410000,
+      "kind": "trigger",
+      "to": 410003,
+      "presentInBaseline": false
+    },
+    {
+      "from": 93569,
+      "kind": "tooltip",
+      "to": 91606,
+      "presentInBaseline": false
+    },
+    {
+      "from": 93569,
+      "kind": "trigger",
+      "to": 91603,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91603,
+      "kind": "tooltip",
+      "to": 91606,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91606,
+      "kind": "tooltip",
+      "to": 93569,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91606,
+      "kind": "trigger",
+      "to": 91603,
+      "presentInBaseline": false
+    },
+    {
+      "from": 93558,
+      "kind": "trigger",
+      "to": 91632,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91632,
+      "kind": "tooltip",
+      "to": 91634,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91634,
+      "kind": "tooltip",
+      "to": 93558,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91634,
+      "kind": "trigger",
+      "to": 91632,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91652,
+      "kind": "trigger",
+      "to": 47531,
+      "presentInBaseline": true
+    },
+    {
+      "from": 91651,
+      "kind": "trigger",
+      "to": 47531,
+      "presentInBaseline": true
+    },
+    {
+      "from": 91234,
+      "kind": "tooltip",
+      "to": 991234,
+      "presentInBaseline": false
+    },
+    {
+      "from": 91234,
+      "kind": "trigger",
+      "to": 991234,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86397,
+      "kind": "trigger",
+      "to": 86401,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86401,
+      "kind": "auraRequirement",
+      "to": 86401,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86382,
+      "kind": "trigger",
+      "to": 86385,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86381,
+      "kind": "auraRequirement",
+      "to": 886381,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86381,
+      "kind": "trigger",
+      "to": 886381,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86378,
+      "kind": "tooltip",
+      "to": 86379,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86378,
+      "kind": "trigger",
+      "to": 86379,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86378,
+      "kind": "trigger",
+      "to": 886378,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86379,
+      "kind": "tooltip",
+      "to": 86379,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86379,
+      "kind": "trigger",
+      "to": 886378,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86358,
+      "kind": "tooltip",
+      "to": 86359,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86358,
+      "kind": "trigger",
+      "to": 86359,
+      "presentInBaseline": false
+    },
+    {
+      "from": 86358,
+      "kind": "trigger",
+      "to": 86360,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84867,
+      "kind": "tooltip",
+      "to": 92842,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84867,
+      "kind": "tooltip",
+      "to": 92843,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84867,
+      "kind": "trigger",
+      "to": 820041,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84867,
+      "kind": "trigger",
+      "to": 954690,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84866,
+      "kind": "tooltip",
+      "to": 92839,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84866,
+      "kind": "tooltip",
+      "to": 92840,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84866,
+      "kind": "trigger",
+      "to": 820040,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84866,
+      "kind": "trigger",
+      "to": 954689,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84865,
+      "kind": "tooltip",
+      "to": 986200,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84865,
+      "kind": "tooltip",
+      "to": 986201,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84865,
+      "kind": "trigger",
+      "to": 820042,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84864,
+      "kind": "tooltip",
+      "to": 986202,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84864,
+      "kind": "tooltip",
+      "to": 986203,
+      "presentInBaseline": false
+    },
+    {
+      "from": 84864,
+      "kind": "trigger",
+      "to": 820043,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32525,
+      "kind": "trigger",
+      "to": 32528,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32513,
+      "kind": "tooltip",
+      "to": 32515,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32513,
+      "kind": "tooltip",
+      "to": 58567,
+      "presentInBaseline": true
+    },
+    {
+      "from": 32513,
+      "kind": "tooltip",
+      "to": 832513,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32513,
+      "kind": "trigger",
+      "to": 58567,
+      "presentInBaseline": true
+    },
+    {
+      "from": 32513,
+      "kind": "trigger",
+      "to": 832513,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32512,
+      "kind": "tooltip",
+      "to": 32515,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32512,
+      "kind": "tooltip",
+      "to": 58567,
+      "presentInBaseline": true
+    },
+    {
+      "from": 32512,
+      "kind": "tooltip",
+      "to": 832513,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32512,
+      "kind": "trigger",
+      "to": 58567,
+      "presentInBaseline": true
+    },
+    {
+      "from": 32512,
+      "kind": "trigger",
+      "to": 832513,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32511,
+      "kind": "tooltip",
+      "to": 411139,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32511,
+      "kind": "trigger",
+      "to": 411139,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32510,
+      "kind": "tooltip",
+      "to": 411139,
+      "presentInBaseline": false
+    },
+    {
+      "from": 32509,
+      "kind": "tooltip",
+      "to": 411139,
+      "presentInBaseline": false
+    },
+    {
+      "from": 899,
+      "kind": "tooltip",
+      "to": 891,
+      "presentInBaseline": false
+    },
+    {
+      "from": 899,
+      "kind": "trigger",
+      "to": 888,
+      "presentInBaseline": false
+    },
+    {
+      "from": 888,
+      "kind": "tooltip",
+      "to": 891,
+      "presentInBaseline": false
+    },
+    {
+      "from": 891,
+      "kind": "tooltip",
+      "to": 899,
+      "presentInBaseline": false
+    },
+    {
+      "from": 891,
+      "kind": "trigger",
+      "to": 888,
+      "presentInBaseline": false
+    },
+    {
+      "from": 896,
+      "kind": "tooltip",
+      "to": 890,
+      "presentInBaseline": false
+    },
+    {
+      "from": 896,
+      "kind": "trigger",
+      "to": 886,
+      "presentInBaseline": false
+    },
+    {
+      "from": 886,
+      "kind": "tooltip",
+      "to": 890,
+      "presentInBaseline": false
+    },
+    {
+      "from": 890,
+      "kind": "tooltip",
+      "to": 896,
+      "presentInBaseline": false
+    },
+    {
+      "from": 890,
+      "kind": "trigger",
+      "to": 886,
+      "presentInBaseline": false
+    },
+    {
+      "from": 893,
+      "kind": "trigger",
+      "to": 47531,
+      "presentInBaseline": true
+    },
+    {
+      "from": 892,
+      "kind": "trigger",
+      "to": 47531,
+      "presentInBaseline": true
+    }
+  ],
+  "unresolvedSpellIDs": [],
+  "note": "Trace covers explicit trigger/aura requirement/tooltip references. Misc values, scripts, procs and auxiliary table dependencies require separate review."
+}

@@ -1,3 +1,9 @@
+## Development - optional spell definition reference
+
+- Package 179 missing Area 52 spell roots (excluding 901018) and 141 non-stock reference dependencies with localized text, source hashes, support-table rows and icon references.
+- Add offline typed spell_dbc conversion, explicit effect-mask mapping, collision/schema checks, receipt-based rollback candidates and lossless aura-text schema expansion.
+- Block raw SQL installation for unsupported core enum values; preserve all source records for later module effect adaptation. No server deployment or Classic addon changes.
+
 ## Development audit — server coverage
 
 - Inventory all 1,665 current entries, four primary-stat choices and 29 staged talent records against stock/Area 52 spell data and recorded server routes. Distinguish aliases, supported purchases, changed effects and missing systems. No gameplay or deployment changes. Live database verification remains pending because WSL access is denied.

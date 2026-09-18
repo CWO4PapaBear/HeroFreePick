@@ -53,3 +53,7 @@ Local development installer: `python3 .../Hero_Classless_UI/install.py` installs
 ## Optional persistent Class+ runtime
 
 The ClassPlus-enrollment-runtime package is separate from Classic and the policy-only modules. Read `server/mod-hero-starting-path/README.md` before installation. Do not combine its trainer hooks with the separate foundation module. Existing `_test` table and addon folder names are retained for upgrade compatibility; no character-name prefix is required. Full server compilation and in-game enrollment verification are pending deployment.
+
+## Optional spell definition reference
+
+`server/spell-definitions` is a standalone offline converter and curated reference-data package for missing custom spells. Download `HeroAdvancement-spell-definition-reference-<version>.zip` or use the folder in the repository. See its README for conversion, compatibility blockers and rollback details. It is not required for Classic and does not auto-install server changes.

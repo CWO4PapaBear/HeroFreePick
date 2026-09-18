@@ -1,0 +1,3274 @@
+{
+  "tables": {
+    "SpellDuration": {
+      "sourceSHA256": "eeae44ef0185924f3d6ec57ab2701c66566db86e51ab0bae017a9449126eb3a0",
+      "rows": {
+        "1": [
+          1,
+          10000,
+          0,
+          10000
+        ],
+        "3": [
+          3,
+          60000,
+          0,
+          60000
+        ],
+        "8": [
+          8,
+          15000,
+          0,
+          15000
+        ],
+        "9": [
+          9,
+          30000,
+          0,
+          30000
+        ],
+        "18": [
+          18,
+          20000,
+          0,
+          20000
+        ],
+        "21": [
+          21,
+          4294967295,
+          0,
+          4294967295
+        ],
+        "23": [
+          23,
+          90000,
+          0,
+          90000
+        ],
+        "25": [
+          25,
+          180000,
+          0,
+          180000
+        ],
+        "27": [
+          27,
+          3000,
+          0,
+          3000
+        ],
+        "28": [
+          28,
+          5000,
+          0,
+          5000
+        ],
+        "29": [
+          29,
+          12000,
+          0,
+          12000
+        ],
+        "30": [
+          30,
+          1800000,
+          0,
+          1800000
+        ],
+        "31": [
+          31,
+          8000,
+          0,
+          8000
+        ],
+        "32": [
+          32,
+          6000,
+          0,
+          6000
+        ],
+        "35": [
+          35,
+          4000,
+          0,
+          4000
+        ],
+        "36": [
+          36,
+          1000,
+          0,
+          1000
+        ],
+        "37": [
+          37,
+          1,
+          0,
+          1
+        ],
+        "39": [
+          39,
+          2000,
+          0,
+          2000
+        ],
+        "65": [
+          65,
+          1500,
+          0,
+          1500
+        ],
+        "66": [
+          66,
+          2500,
+          0,
+          2500
+        ],
+        "245": [
+          245,
+          50000,
+          0,
+          50000
+        ],
+        "327": [
+          327,
+          500,
+          0,
+          500
+        ],
+        "387": [
+          387,
+          16000,
+          0,
+          16000
+        ],
+        "407": [
+          407,
+          100,
+          0,
+          100
+        ]
+      },
+      "localizedStrings": {},
+      "missingIDs": []
+    },
+    "SpellRange": {
+      "sourceSHA256": "bb899631818942a7a7100abfb7a970612a79ac99637b1b459561e2b108125ddd",
+      "rows": {
+        "1": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          11,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "2": [
+          2,
+          0,
+          0,
+          1084227584,
+          1084227584,
+          1,
+          16,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          12648510,
+          29,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          12648508
+        ],
+        "3": [
+          3,
+          0,
+          0,
+          1101004800,
+          1101004800,
+          0,
+          36,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          49,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "4": [
+          4,
+          0,
+          0,
+          1106247680,
+          1106247680,
+          0,
+          55,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          68,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "5": [
+          5,
+          0,
+          0,
+          1109393408,
+          1109393408,
+          0,
+          75,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          86,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "6": [
+          6,
+          0,
+          0,
+          1120403456,
+          1120403456,
+          0,
+          91,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          104,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "7": [
+          7,
+          0,
+          0,
+          1092616192,
+          1092616192,
+          0,
+          111,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          121,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "11": [
+          11,
+          0,
+          0,
+          1097859072,
+          1097859072,
+          0,
+          149,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          163,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "13": [
+          13,
+          0,
+          0,
+          1195593728,
+          1195593728,
+          0,
+          195,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          195,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "34": [
+          34,
+          0,
+          0,
+          1103626240,
+          1103626240,
+          0,
+          232,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          250,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "36": [
+          36,
+          0,
+          0,
+          1110704128,
+          1110704128,
+          0,
+          293,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900,
+          306,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "114": [
+          114,
+          0,
+          0,
+          1108082688,
+          1108082688,
+          2,
+          479,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          2031676,
+          472,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          2031668
+        ],
+        "163": [
+          163,
+          1090519040,
+          1090519040,
+          1106247680,
+          1106247680,
+          0,
+          909,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          65536,
+          909,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          65536
+        ],
+        "212": [
+          212,
+          0,
+          0,
+          1103626240,
+          1103626240,
+          0,
+          1479,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          1479,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "217": [
+          217,
+          0,
+          0,
+          1106247680,
+          1106247680,
+          0,
+          1524,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          1524,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ],
+        "222": [
+          222,
+          0,
+          0,
+          1108082688,
+          1108082688,
+          0,
+          1569,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259902,
+          1569,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          4259900
+        ]
+      },
+      "localizedStrings": {
+        "1": {
+          "6": "Self Only",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Self",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "2": {
+          "6": "Combat Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Combat",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "3": {
+          "6": "Twenty yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Short",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "4": {
+          "6": "Medium Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Medium",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "5": {
+          "6": "Long Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Long",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "6": {
+          "6": "Vision Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Vision",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "7": {
+          "6": "Ten yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Very Short",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "11": {
+          "6": "Fifteen yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Shorter",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "13": {
+          "6": "Anywhere",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Anywhere",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "34": {
+          "6": "Twenty-Five yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Medium-Short",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "36": {
+          "6": "Longer Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Longer",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "114": {
+          "6": "Hunter Range",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Hunter",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "163": {
+          "6": "Death Grip",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "Death Grip",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "212": {
+          "6": "25 yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "25 yards",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "217": {
+          "6": "30 yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "30 yards",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        },
+        "222": {
+          "6": "35 yards",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "12": "",
+          "13": "",
+          "14": "",
+          "15": "",
+          "16": "",
+          "17": "",
+          "18": "",
+          "19": "",
+          "20": "",
+          "21": "",
+          "23": "35 yards",
+          "24": "",
+          "25": "",
+          "26": "",
+          "27": "",
+          "28": "",
+          "29": "",
+          "30": "",
+          "31": "",
+          "32": "",
+          "33": "",
+          "34": "",
+          "35": "",
+          "36": "",
+          "37": "",
+          "38": ""
+        }
+      },
+      "missingIDs": []
+    },
+    "SpellRadius": {
+      "sourceSHA256": "dba6ed2f165f75c84dda5f32ae46b1a01fe562efd88fa51fd19365705c3e6a44",
+      "rows": {
+        "7": [
+          7,
+          1073741824,
+          0,
+          1073741824
+        ],
+        "8": [
+          8,
+          1084227584,
+          0,
+          1084227584
+        ],
+        "9": [
+          9,
+          1101004800,
+          0,
+          1101004800
+        ],
+        "10": [
+          10,
+          1106247680,
+          0,
+          1106247680
+        ],
+        "12": [
+          12,
+          1120403456,
+          0,
+          1120403456
+        ],
+        "13": [
+          13,
+          1092616192,
+          0,
+          1092616192
+        ],
+        "14": [
+          14,
+          1090519040,
+          0,
+          1090519040
+        ],
+        "15": [
+          15,
+          1077936128,
+          0,
+          1077936128
+        ],
+        "16": [
+          16,
+          1065353216,
+          0,
+          1065353216
+        ],
+        "18": [
+          18,
+          1097859072,
+          0,
+          1097859072
+        ],
+        "23": [
+          23,
+          1109393408,
+          0,
+          1109393408
+        ],
+        "29": [
+          29,
+          1086324736,
+          0,
+          1086324736
+        ],
+        "32": [
+          32,
+          1094713344,
+          0,
+          1094713344
+        ],
+        "42": [
+          42,
+          1093664768,
+          0,
+          1093664768
+        ],
+        "193": [
+          193,
+          1086324736,
+          0,
+          1086324736
+        ]
+      },
+      "localizedStrings": {},
+      "missingIDs": []
+    }
+  },
+  "iconCandidates": {
+    "1": [
+      {
+        "path": "Interface\\Icons\\Trade_Engineering",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Trade_Engineering",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Trade_Engineering",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Trade_Engineering",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "20": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_StrangleVines",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_StrangleVines",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_StrangleVines",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_StrangleVines",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "30": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Invisibilty",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Invisibilty",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Invisibilty",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Invisibilty",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "40": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_NatureTouchDecay",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_NatureTouchDecay",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_NatureTouchDecay",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_NatureTouchDecay",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "44": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Sleep",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Sleep",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Sleep",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Sleep",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "51": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_InnerFire",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_InnerFire",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_InnerFire",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_InnerFire",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "54": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Brilliance",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Brilliance",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Brilliance",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Brilliance",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "66": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Earthquake",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Earthquake",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Earthquake",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Earthquake",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "80": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfValor",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfValor",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfValor",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfValor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "82": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Polymorph",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Polymorph",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Polymorph",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Polymorph",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "86": [
+      {
+        "path": "Interface\\Icons\\Ability_Racial_BloodRage",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Racial_BloodRage",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Racial_BloodRage",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Racial_BloodRage",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "95": [
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_UnholyFrenzy",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_UnholyFrenzy",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_UnholyFrenzy",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_UnholyFrenzy",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "122": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_WispSplode",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_WispSplode",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_WispSplode",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_WispSplode",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "198": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_SpiritArmor",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_SpiritArmor",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_SpiritArmor",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_SpiritArmor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "203": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HarmUndeadAura",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HarmUndeadAura",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HarmUndeadAura",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HarmUndeadAura",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "220": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Cyclone",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Cyclone",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Cyclone",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_Cyclone",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "306": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWisdom",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWisdom",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWisdom",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWisdom",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "307": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWrath",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWrath",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWrath",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SealOfWrath",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "329": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HolyProtection",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HolyProtection",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HolyProtection",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_HolyProtection",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "516": [
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Sprint",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Sprint",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Sprint",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Sprint",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "756": [
+      {
+        "path": "Interface\\Icons\\INV_Gauntlets_04",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Gauntlets_04",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Gauntlets_04",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Gauntlets_04",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "816": [
+      {
+        "path": "Interface\\Icons\\Spell_Fire_SoulBurn",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_SoulBurn",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_SoulBurn",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_SoulBurn",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1476": [
+      {
+        "path": "Interface\\Icons\\Ability_Druid_TravelForm",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Druid_TravelForm",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Druid_TravelForm",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Druid_TravelForm",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1548": [
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_01",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_01",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_01",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_01",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1623": [
+      {
+        "path": "Interface\\Icons\\INV_Staff_07",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Staff_07",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Staff_07",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Staff_07",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1694": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_ArcaneIntellect",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_ArcaneIntellect",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_ArcaneIntellect",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_ArcaneIntellect",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1930": [
+      {
+        "path": "Interface\\Icons\\Spell_Fire_ElementalDevastation",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_ElementalDevastation",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_ElementalDevastation",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Fire_ElementalDevastation",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1980": [
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicFortitude",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicFortitude",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicFortitude",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicFortitude",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "1981": [
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicTactics",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicTactics",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicTactics",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shadow_DemonicTactics",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2006": [
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Rampage",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Rampage",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Rampage",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Rampage",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2011": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_GiftoftheWaterSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_GiftoftheWaterSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_GiftoftheWaterSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_GiftoftheWaterSpirit",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2014": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_FocusedMind",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_FocusedMind",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_FocusedMind",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_FocusedMind",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2016": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalAbsorption",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalAbsorption",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalAbsorption",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalAbsorption",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2017": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_1",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_1",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_1",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_1",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2045": [
+      {
+        "path": "Interface\\Icons\\INV_Helmet_01",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Helmet_01",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Helmet_01",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Helmet_01",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2114": [
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_MasterOfSubtlety",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_MasterOfSubtlety",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_MasterOfSubtlety",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_MasterOfSubtlety",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2176": [
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SurgeOfLight",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SurgeOfLight",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SurgeOfLight",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Holy_SurgeOfLight",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2285": [
+      {
+        "path": "Interface\\Icons\\Ability_Hunter_RapidKilling",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Hunter_RapidKilling",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Hunter_RapidKilling",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Hunter_RapidKilling",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2598": [
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_Red",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_Red",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_Red",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Head_Dragon_Red",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2603": [
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_2",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_2",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_2",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Nature_ElementalPrecision_2",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2774": [
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_BloodBath",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_BloodBath",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_BloodBath",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_BloodBath",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2777": [
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Shockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Shockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Shockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Warrior_Shockwave",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2886": [
+      {
+        "path": "Interface\\Icons\\INV_Misc_Herb_TalandrasRose",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Herb_TalandrasRose",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Herb_TalandrasRose",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\INV_Misc_Herb_TalandrasRose",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2903": [
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_HonorAmongstThieves",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_HonorAmongstThieves",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_HonorAmongstThieves",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_HonorAmongstThieves",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "2958": [
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Waylay",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Waylay",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Waylay",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_Rogue_Waylay",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "3081": [
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_FeralSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_FeralSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_FeralSpirit",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_FeralSpirit",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "3149": [
+      {
+        "path": "Interface\\Icons\\Ability_HeroicLeap",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_HeroicLeap",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_HeroicLeap",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Ability_HeroicLeap",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "3158": [
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_SpectralTransformation",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_SpectralTransformation",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_SpectralTransformation",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\Spell_Shaman_SpectralTransformation",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "3769": [
+      {
+        "path": "Interface\\Icons\\ability_vehicle_sonicshockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS-2.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "35cd0ec316b542ad18cb4f2e5145ebc03ab6c896ed63389688451878d79f74d9"
+      },
+      {
+        "path": "Interface\\Icons\\ability_vehicle_sonicshockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS-3.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "2b12326641dba1554878b3f53c993e1211e50b3839ccdbeca378a23e7b3248db"
+      },
+      {
+        "path": "Interface\\Icons\\ability_vehicle_sonicshockwave",
+        "source": "ascension-live_Data_enUS_patch-enUS.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "82c07c920e5809e043eb7506c1b59fa8e09c90e037ed5e2ba4cb3d394cbc52b1"
+      },
+      {
+        "path": "Interface\\Icons\\ability_vehicle_sonicshockwave",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4605": [
+      {
+        "path": "Interface\\Icons\\Warrior_talent_icon_singlemindedfury",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4609": [
+      {
+        "path": "Interface\\Icons\\Achievement_GarrisonFollower_Epic",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4902": [
+      {
+        "path": "Interface\\Icons\\ability_deathwing_bloodcorruption_earth",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4908": [
+      {
+        "path": "Interface\\Icons\\ability_deathwing_sealarmorbreachtga",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4936": [
+      {
+        "path": "Interface\\Icons\\ability_demonhunter_glide",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4953": [
+      {
+        "path": "Interface\\Icons\\ability_demonhunter_sigilofmisery",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5005": [
+      {
+        "path": "Interface\\Icons\\ability_druid_ironfur",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5086": [
+      {
+        "path": "Interface\\Icons\\ability_glaivetoss",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5104": [
+      {
+        "path": "Interface\\Icons\\ability_hunter_barbedshot",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5209": [
+      {
+        "path": "Interface\\Icons\\ability_hunter_sickem",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5227": [
+      {
+        "path": "Interface\\Icons\\ability_ironmaidens_convulsiveshadows",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5306": [
+      {
+        "path": "Interface\\Icons\\ability_mage_massinvisibility",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5356": [
+      {
+        "path": "Interface\\Icons\\ability_monk_forcesphere_arcane",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5452": [
+      {
+        "path": "Interface\\Icons\\ability_mount_drake_red",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5619": [
+      {
+        "path": "Interface\\Icons\\ability_paladin_blindinglight",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5670": [
+      {
+        "path": "Interface\\Icons\\ability_priest_angelicfeather",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5687": [
+      {
+        "path": "Interface\\Icons\\ability_priest_halo",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5786": [
+      {
+        "path": "Interface\\Icons\\ability_rhyolith_lavapool",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5800": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_combatreadiness",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5827": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_grapplinghook",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5847": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_rollthebones",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5848": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_rollthebones01",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5871": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_smoke",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5898": [
+      {
+        "path": "Interface\\Icons\\ability_shaman_condensationtotem",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5913": [
+      {
+        "path": "Interface\\Icons\\ability_shaman_windwalktotem",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5967": [
+      {
+        "path": "Interface\\Icons\\ability_thunderclap",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5997": [
+      {
+        "path": "Interface\\Icons\\ability_trueshot",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6019": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_ancientgrimoire",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6039": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_handofguldan",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6041": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_howlofterror",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6055": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_soulswap",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6067": [
+      {
+        "path": "Interface\\Icons\\ability_warrior_colossussmash",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6074": [
+      {
+        "path": "Interface\\Icons\\ability_warrior_dragonroar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6205": [
+      {
+        "path": "Interface\\Icons\\achievement_bg_killingblow_startingrock",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "7666": [
+      {
+        "path": "Interface\\Icons\\demoralizing_banner",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "8461": [
+      {
+        "path": "Interface\\Icons\\inv_artifact_stolenpower",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "13065": [
+      {
+        "path": "Interface\\Icons\\inv_glaive_1h_artifactaldrochi_d_01dual",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "15730": [
+      {
+        "path": "Interface\\Icons\\inv_knife_1h_cataclysm_c_05",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16228": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_fistweapon",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16230": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_knife",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16231": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_mace",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16235": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_staff",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16236": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_sword",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16565": [
+      {
+        "path": "Interface\\Icons\\inv_mace_2h_draenorguard_b_01_horde",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "17130": [
+      {
+        "path": "Interface\\Icons\\inv_misc_book_05",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "18965": [
+      {
+        "path": "Interface\\Icons\\inv_misc_questionmark",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "19215": [
+      {
+        "path": "Interface\\Icons\\inv_misc_steelweaponchain",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "23540": [
+      {
+        "path": "Interface\\Icons\\inv_throwingknife_07",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24399": [
+      {
+        "path": "Interface\\Icons\\priest_spell_leapoffaith_a",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24433": [
+      {
+        "path": "Interface\\Icons\\shaman_talent_elementalblast",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24510": [
+      {
+        "path": "Interface\\Icons\\spell_arcane_arcane03",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24511": [
+      {
+        "path": "Interface\\Icons\\spell_arcane_arcane04",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24624": [
+      {
+        "path": "Interface\\Icons\\spell_deathknight_defile",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24672": [
+      {
+        "path": "Interface\\Icons\\spell_druid_stampedingroar_cat",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24678": [
+      {
+        "path": "Interface\\Icons\\spell_druid_ursolsvortex",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24679": [
+      {
+        "path": "Interface\\Icons\\spell_druid_wildburst",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24759": [
+      {
+        "path": "Interface\\Icons\\spell_fire_twilightfireward",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24792": [
+      {
+        "path": "Interface\\Icons\\spell_frost_frozenorb",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24803": [
+      {
+        "path": "Interface\\Icons\\spell_frost_ring_of_frost",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24874": [
+      {
+        "path": "Interface\\Icons\\spell_holy_holyprotection",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24969": [
+      {
+        "path": "Interface\\Icons\\spell_mage_altertime",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24971": [
+      {
+        "path": "Interface\\Icons\\spell_mage_arcaneorb",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24978": [
+      {
+        "path": "Interface\\Icons\\spell_mage_evanesce",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24989": [
+      {
+        "path": "Interface\\Icons\\spell_mage_meteor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25086": [
+      {
+        "path": "Interface\\Icons\\spell_nature_lightningoverload",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25178": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_executionsentence",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25182": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_lightofdawn",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25183": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_lightshammer",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25188": [
+      {
+        "path": "Interface\\Icons\\spell_priest_divinestar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25204": [
+      {
+        "path": "Interface\\Icons\\spell_priest_void_blast",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25208": [
+      {
+        "path": "Interface\\Icons\\spell_priest_voidshift",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25219": [
+      {
+        "path": "Interface\\Icons\\spell_shadow_animatedead",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25356": [
+      {
+        "path": "Interface\\Icons\\spell_shaman_bindelemental",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25365": [
+      {
+        "path": "Interface\\Icons\\spell_shaman_earthquake",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25409": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonbolt",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25412": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonicportal_purple",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25414": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonsoul",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25425": [
+      {
+        "path": "Interface\\Icons\\spell_warrior_dragoncharge",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25741": [
+      {
+        "path": "Interface\\Icons\\warrior_skullbanner",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25743": [
+      {
+        "path": "Interface\\Icons\\warrior_talent_icon_avatar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25758": [
+      {
+        "path": "Interface\\Icons\\warrior_wild_strike",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "26898": [
+      {
+        "path": "Interface\\Icons\\spell_animaardenweald_buff",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "26999": [
+      {
+        "path": "Interface\\Icons\\_ArcaneShot_Red",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27323": [
+      {
+        "path": "Interface\\Icons\\_D3dashingstrike",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27330": [
+      {
+        "path": "Interface\\Icons\\_D3energyarmor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27437": [
+      {
+        "path": "Interface\\Icons\\_DeathCoil_Color_Shadow",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27679": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_DeathKnight",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27682": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Mage",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27684": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Paladin",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27687": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Shaman",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27689": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Warrior",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "28359": [
+      {
+        "path": "Interface\\Icons\\_Undead_03",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "41123": [
+      {
+        "path": "Interface\\Icons\\custom_20_shield",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "54923": [
+      {
+        "path": "Interface\\icons\\5_warlock05_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "62742": [
+      {
+        "path": "Interface\\icons\\custom_T_FrozenMoon_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "62936": [
+      {
+        "path": "Interface\\icons\\custom_T_Nhance_RPG_Icons_ShadowArrow_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "63931": [
+      {
+        "path": "Interface\\icons\\nhi_frozenmoon_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "63970": [
+      {
+        "path": "Interface\\icons\\nhi_holyhand_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "64370": [
+      {
+        "path": "Interface\\icons\\novart_books_(2)_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "99100": [
+      {
+        "path": "Interface\\Icons\\Sinisterstrike_Shadow",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "99113": [
+      {
+        "path": "Interface\\Icons\\Steadyshot_Storm",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ]
+  },
+  "missingIconIDs": [],
+  "notPackaged": [
+    "Cast times",
+    "Visuals and their effect assets",
+    "Rune costs",
+    "Area groups",
+    "Creature/gameobject/item definitions",
+    "Ascension server scripts",
+    "Client patch"
+  ],
+  "note": "Raw support rows and icon paths are reference data, not installed DBC records. Icon variants retain provenance; no load order is guessed."
+}

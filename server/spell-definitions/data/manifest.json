@@ -1,0 +1,17 @@
+{
+  "formatVersion": 1,
+  "sourceName": "ascension-live_Data_area-52_patch-D.MPQ.Spell.dbc",
+  "sourceSHA256": "5e85f10ccb861e8463e838caaa46630050bd8f6b73bc5ddf6378eb879f69c263",
+  "liveDBC_SHA256": "d5cce1a83550dcfa9eb2f0251dbb11fd24c272534b2b1a9b230924a44d817ab3",
+  "rootCount": 179,
+  "recordCount": 320,
+  "excludedIDs": [
+    901018
+  ],
+  "files": {
+    "dependencies.json": "53e5c74765d5d85f4041d69e7438ba23d94353d543deb8c940f20fca40259112",
+    "schema.json": "711129dc51056d015ac4d193664f819744c0ad05e91da93597900e4e36050dd6",
+    "spells.json": "2c29aa24e54152ea6953cee1a0467d6bd6b44be97effc177e26a64542b24f7e6",
+    "supporting-data.json": "c3f7d125469131886d0cdb8d6c2fab453e4e7f4fee88e51c43457ffb3549ede1"
+  }
+}
