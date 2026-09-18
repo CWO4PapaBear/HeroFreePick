@@ -893,3 +893,30 @@ end
 HeroFreePickPlans=savedPlans;A.mode=savedMode;UnitClass=savedClass;A.ShowPointWarning=savedWarning;testLevel=80
 """)
 print('PASS: both drafts reject unaffordable AP additions before mutation; exact spending, free children and refunds work.')
+
+lua.execute("""
+local A=HeroFreePick
+local notices,sounds=0,0
+RaidWarningFrame={}
+function RaidNotice_AddMessage(frame,text,color)assert(frame==RaidWarningFrame);assert(text:find('Open Hero Advancement',1,true));assert(text:find('Accept Changes',1,true));notices=notices+1;lastOnboard=text end
+function GetBindingKey()return 'N'end
+function PlaySound(sound)assert(sound=='RaidWarning');sounds=sounds+1 end
+HeroFreePickPlans.previewLearned={};A.SetAlertSounds(true)
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do A.mode=mode;A.PromptFirstAbilities()end
+assert(notices==3 and sounds==3 and lastOnboard:find('(N)',1,true))
+A.SetAlertSounds(false);A.PromptFirstAbilities();assert(notices==4 and sounds==3)
+A.mode='Classic';A.PromptFirstAbilities();assert(notices==4)
+A.mode='ClassPlus';HeroFreePickPlans.previewLearned={[18]=1};A.PromptFirstAbilities();assert(notices==4)
+HeroFreePickPlans.previewLearned={};GetBindingKey=function()return nil end
+A.PromptFirstAbilities();assert(notices==5 and not lastOnboard:find('(N)',1,true))
+-- Shared mode setter covers the server bridge too; an unchanged saved mode is silent.
+A.HasPendingChanges=function()return false end;A.classicCommit=nil;A.InstalledModes={Classic=true,ClassPlus=true,Hybrid=true,Hero=true}
+A.BeginPreparation=function()end
+HeroFreePickPlans.modePreviews={};HeroFreePickPlans.progressionChoice=nil
+assert(A.SelectMode('ClassPlus'));assert(notices==6)
+HeroFreePickPlans.progressionChoice={mode='ClassPlus'}
+assert(A.SelectMode('ClassPlus'));assert(notices==6)
+assert(A.SelectMode('Classic'));assert(notices==6)
+assert(A.SelectMode('Hero'));assert(notices==7)
+""")
+print('PASS: first-ability raid warning covers custom modes, ignores Classic/owned builds/status repeats, respects sound mute and current keybinding.')

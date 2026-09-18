@@ -301,13 +301,16 @@ function A.SelectMode(id,second)
   local found=false;for _,c in ipairs(A.classes)do if c==second then found=true end end
   if not found or second==ownClass()or UnitLevel('player')<10 then return false,'Choose a different second class at level 10 or later.'end
  end
+ local firstChoice=not HeroFreePickPlans.progressionChoice or A.mode~=id
  A.mode=id;A.secondClass=second
  -- Each optional mode has isolated local preview state; switching never grants server spells.
  HeroFreePickPlans.modePreviews=HeroFreePickPlans.modePreviews or {}
  local state=HeroFreePickPlans.modePreviews[id]or {entries={},previewLearned={}}
  HeroFreePickPlans.entries=state.entries;HeroFreePickPlans.previewLearned=state.previewLearned
  HeroFreePickPlans.modePreviews[id]=state;HeroFreePickPlans.pendingBaseline=nil
- A.BeginPreparation();return true,id=='Classic'and 'Classic: trainer abilities and native talent commit.'or 'Preview only: server commit is not enabled.'
+ A.BeginPreparation()
+ if firstChoice and A.PromptFirstAbilities then A.PromptFirstAbilities()end
+ return true,id=='Classic'and 'Classic: trainer abilities and native talent commit.'or 'Preview only: server commit is not enabled.'
 end
 local results=A.Results
 function A.Results()

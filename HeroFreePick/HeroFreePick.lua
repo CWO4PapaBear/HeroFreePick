@@ -21,6 +21,21 @@ function A.ShowPointWarning(message)
  if A.AlertSoundsEnabled()and PlaySound and now-lastWarningSound>=1 then PlaySound('RaidWarning');lastWarningSound=now end
 end
 
+-- Screen-wide onboarding must remain visible when Hero Advancement is closed.
+function A.PromptFirstAbilities()
+ if A.mode~='ClassPlus'and A.mode~='Hybrid'and A.mode~='Hero'then return end
+ for id,rank in pairs(HeroFreePickPlans.previewLearned or {})do
+  local e=A.byID[id]
+  if rank>0 and e and not A.IsTalent(e)then return end
+ end
+ local key=GetBindingKey and GetBindingKey('HERO_CHARACTER_ADVANCEMENT')
+ local message='Open Hero Advancement'..(key and (' ('..key..')')or '')..' to choose your first abilities, then Accept Changes.'
+ if RaidNotice_AddMessage and RaidWarningFrame then
+  RaidNotice_AddMessage(RaidWarningFrame,message,{r=1,g=.82,b=0})
+ elseif UIErrorsFrame then UIErrorsFrame:AddMessage(message,1,.82,0)end
+ if A.AlertSoundsEnabled()and PlaySound then PlaySound('RaidWarning')end
+end
+
 local GOLD={1,.82,.3};local colors={Normal='ffffff',Uncommon='1eff00',Rare='0070dd',Epic='a335ee',Legendary='ff8000'}
 local function essenceCost(value)
  return '|TInterface\\AddOns\\HeroFreePick\\Art\\AbilityEssence:16:16:0:0|t '..tostring(value or 0)
