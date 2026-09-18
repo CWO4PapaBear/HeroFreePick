@@ -35,6 +35,16 @@ class ConversionTests(unittest.TestCase):
         with self.assertRaises(ValueError):m.convert(r,self.cols)
         r=copy.deepcopy(self.source['records'][0]);r['localizedStrings']['136']='a'*101
         with self.assertRaises(ValueError):m.convert(r,self.cols)
+    def test_filtered_closure(self):
+        records,report=m.compatible_selection(self.source)
+        ids={r['id'] for r in records}
+        self.assertEqual(len(report['selectedRoots']),156)
+        self.assertEqual(len(report['excludedRoots']),23)
+        for r in records:
+            for d in r['dependencies']:
+                self.assertTrue(d['presentInBaseline'] or d['id'] in ids)
+            self.assertLess(max(r['rawUInt32Fields'][71:74]),165)
+            self.assertLess(max(r['rawUInt32Fields'][95:98]),317)
     def test_unsupported_enums_block_apply(self):
         row=m.convert(self.source['records'][0],self.cols);row['Effect_2']=184
         issues=m.compatibility_issues([row]);self.assertEqual(issues[0]['outOfRangeFields']['Effect_2'],184)

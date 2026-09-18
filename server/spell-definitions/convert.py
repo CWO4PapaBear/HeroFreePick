@@ -77,6 +77,25 @@ def compatibility_issues(rows):
         if bad:issues.append({'id':row['ID'],'name':row['Name_Lang_enUS'],'outOfRangeFields':bad})
     return issues
 
+def compatible_selection(source):
+    """Conservative closure: tooltip links can also exclude a root; never claim gameplay readiness."""
+    records={r['id']:r for r in source['records']}
+    blocked={i for i,r in records.items() if any(v>=165 for v in r['rawUInt32Fields'][71:74]) or any(v>=317 for v in r['rawUInt32Fields'][95:98]) or any(v>=111 for v in r['rawUInt32Fields'][86:92])}
+    direct=set(blocked)
+    while True:
+        more={i for i,r in records.items() if any(d['id'] in blocked or (not d['presentInBaseline'] and d['id'] not in records) for d in r['dependencies'])}-blocked
+        if not more: break
+        blocked.update(more)
+    roots=set(source['rootIDs'])-blocked
+    selected=set(roots);queue=list(roots)
+    while queue:
+        r=records[queue.pop()]
+        for d in r['dependencies']:
+            if not d['presentInBaseline'] and d['id'] not in selected:
+                selected.add(d['id']);queue.append(d['id'])
+    report={'selectedRoots':sorted(roots),'selectedRecords':sorted(selected),'excludedRoots':[{'id':i,'name':records[i]['name'],'reason':'unsupported enum' if i in direct else 'reference dependency blocked'} for i in sorted(set(source['rootIDs'])&blocked)],'note':'Conservative trigger/aura/tooltip closure. Auxiliary DBC references and runtime effects remain unverified.'}
+    return [records[i] for i in sorted(selected)],report
+
 def generate_sql(rows, columns, batch):
     names=','.join('`'+c['name']+'`' for c in columns)
     ids=','.join(str(r['ID']) for r in rows)
@@ -109,6 +128,7 @@ def main():
     p.add_argument('--data',type=Path,default=ROOT/'data')
     p.add_argument('--output',type=Path,default=ROOT/'generated')
     p.add_argument('--include-dependencies',action='store_true',help='Also convert preserved non-stock reference dependencies (review required)')
+    p.add_argument('--compatible-only',action='store_true',help='Exclude unsupported enums and roots referencing them; include remaining reference closure')
     p.add_argument('--server-spell-dbc',type=Path,help='Optional installer Spell.dbc for fresh ID collision detection')
     a=p.parse_args()
     manifest=read_json(a.data/'manifest.json')
@@ -118,6 +138,8 @@ def main():
     source=read_json(a.data/'spells.json');columns=read_json(a.data/'schema.json')['columns']
     if len(columns)!=234 or len({c['name'] for c in columns})!=234: raise ValueError('Expected 234 unique columns')
     records=source['records'] if a.include_dependencies else [r for r in source['records'] if r['id'] in source['rootIDs']]
+    selection=None
+    if a.compatible_only: records,selection=compatible_selection(source)
     if not records: raise ValueError('No records selected')
     records=sorted(records,key=lambda r:r['id'])
     if len({r['id'] for r in records})!=len(records):raise ValueError('Duplicate spell IDs')
@@ -161,7 +183,9 @@ def main():
         (a.output/'schema-restore.review.sql').write_text(restore,encoding='utf-8',newline='\n')
     issues=compatibility_issues(rows)
     (a.output/'compatibility.json').write_text(json.dumps({'unsupportedEnumRecords':issues,'limits':{'effects':165,'auras':317,'targets':111},'note':'In-range values are not proof of implemented behavior. All spell effects/dependencies still require testing.'},indent=2)+'\n',encoding='utf-8')
-    summary={'unsupportedEnumRecords':len(issues),'schemaWidening':widened,'batch':batch,'rootCount':len(source['rootIDs']),'selectedCount':len(rows),'excludedIDs':sorted(EXCLUDED),'dependenciesIncluded':a.include_dependencies,'serverDBCCollisionChecked':bool(a.server_spell_dbc),'sourceManifest':manifest,'status':'Definition candidates. Not deployed or gameplay validated.'}
+    if selection:
+        (a.output/'selection.json').write_text(json.dumps(selection,indent=2)+'\n',encoding='utf-8')
+    summary={'compatibleOnly':a.compatible_only,'unsupportedEnumRecords':len(issues),'schemaWidening':widened,'batch':batch,'rootCount':len(source['rootIDs']),'selectedCount':len(rows),'excludedIDs':sorted(EXCLUDED),'dependenciesIncluded':a.include_dependencies,'serverDBCCollisionChecked':bool(a.server_spell_dbc),'sourceManifest':manifest,'status':'Definition candidates. Not deployed or gameplay validated.'}
     (a.output/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
     print(f"Converted {len(rows)} definitions into {a.output}. No server changes made.")
 

@@ -1,3 +1,7 @@
+## Development - filtered spell candidates
+
+- Add conservative dependency-aware selection: retain 156 roots and 110 reference dependencies; hold 23 roots affected by unsupported enums or references. Auxiliary DBC validation remains required before deployment.
+
 ## Development - optional spell definition reference
 
 - Package 179 missing Area 52 spell roots (excluding 901018) and 141 non-stock reference dependencies with localized text, source hashes, support-table rows and icon references.

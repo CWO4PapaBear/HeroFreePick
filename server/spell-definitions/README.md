@@ -59,3 +59,7 @@ python3 test_convert.py
 ```
 
 The reference preparation step needs the maintainer's local source files; conversion by future installers uses only packaged data. Regeneration excludes 901018, refuses root ID collisions, traces dependencies, checks field types, and records hashes. Tests cover signed/float/string conversion, all-record bit round trips, mask ordering, exclusions, invalid inputs and generated collision/rollback/enum guards. They are not an in-game effect or live SQL test.
+
+## Filtered candidate batch
+
+`python3 convert.py --compatible-only --output filtered` excludes out-of-range records and roots referencing them, then includes the remaining non-stock reference closure. Current result: 156 roots plus 110 dependencies; 23 roots are held back. This conservatively includes tooltip links when deciding exclusions. `selection.json` identifies exclusions. Passing this filter is not a full compatibility test: validate auxiliary DBC references and behavior before applying the SQL or restarting the server.
