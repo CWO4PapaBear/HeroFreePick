@@ -895,6 +895,22 @@ HeroFreePickPlans=savedPlans;A.mode=savedMode;UnitClass=savedClass;A.ShowPointWa
 print('PASS: both drafts reject unaffordable AP additions before mutation; exact spending, free children and refunds work.')
 
 lua.execute("""
+local savedPlans,savedMode,savedClass,savedWarning=HeroFreePickPlans,A.mode,UnitClass,A.ShowPointWarning
+UnitClass=function()return 'Warlock','WARLOCK'end;A.mode='ClassPlus';testLevel=22
+local warning;A.ShowPointWarning=function(text)warning=text end
+for _,key in ipairs({'previewLearned','entries'})do
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+ local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+ assert(not setter(184,1));assert(warning=='Drain Mana requires level 24.')
+ assert(not HeroFreePickPlans[key][184]and A.AvailableAbilityPoints(key)==22)
+ testLevel=24;assert(setter(184,1));assert(HeroFreePickPlans[key][184]==1)
+ testLevel=22;assert(setter(184,0));assert(not HeroFreePickPlans[key][184])
+end
+HeroFreePickPlans=savedPlans;A.mode=savedMode;UnitClass=savedClass;A.ShowPointWarning=savedWarning;testLevel=80
+""")
+print('PASS: Drain Mana rejected at 22 without spending AP, accepted at 24, and removable below its requirement in both drafts.')
+
+lua.execute("""
 local A=HeroFreePick
 local notices,sounds=0,0
 RaidWarningFrame={}

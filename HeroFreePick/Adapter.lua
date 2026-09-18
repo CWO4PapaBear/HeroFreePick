@@ -208,6 +208,9 @@ local function set(id,rank,key)
  rank=math.max(0,math.min(math.floor(rank),A.MaxRank(e)))
  local state=HeroFreePickPlans[key]or {};HeroFreePickPlans[key]=state
  local oldRank=state[id]or 0
+ if not A.IsTalent(e)and rank>oldRank and UnitLevel('player')<(A.AbilityDisplayLevel(e)or 1)then
+  A.ShowPointWarning(e.name..' requires level '..A.AbilityDisplayLevel(e)..'.');return false
+ end
  if not A.IsTalent(e)and rank>0 and oldRank<=0 and (e.ae or 0)>A.AvailableAbilityPoints(key)then
   A.ShowPointWarning('Not enough Ability Points.');return false
  end
@@ -264,7 +267,7 @@ function A.ValidatePreparation()
    if e and rank>0 then
     if A.OtherClass(e.class)then return false,'A selection belongs to another class.'end
     if e.requiredMastery and (state[e.requiredMastery]or 0)<1 then return false,'A required Mastery is missing.'end
-    if not A.IsTalent(e)and UnitLevel('player')<A.AbilityDisplayLevel(e)then return false,'Required level not met for '..e.name..'.'end
+    if not A.IsTalent(e)and UnitLevel('player')<A.AbilityDisplayLevel(e)then return false,e.name..' requires level '..A.AbilityDisplayLevel(e)..'.'end
    end
   end
  end
