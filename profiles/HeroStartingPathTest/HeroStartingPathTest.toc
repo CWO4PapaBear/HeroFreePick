@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: Hero Starting Path
+## Notes: Server-confirmed persistent Classic/Class+ enrollment; no name restriction.
+## Version: 0.40.3
+## Dependencies: HeroFreePick
+## OptionalDeps: HeroStartingGateTest
+PathTest.lua

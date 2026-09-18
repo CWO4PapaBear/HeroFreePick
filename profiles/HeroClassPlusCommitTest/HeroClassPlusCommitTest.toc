@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: Hero Class+ Commit
+## Notes: Server-validated stock ability purchases for enrolled Class+ characters.
+## Version: 0.40.3
+## Dependencies: HeroFreePick, HeroStartingPathTest
+Catalog.lua
+CommitTest.lua

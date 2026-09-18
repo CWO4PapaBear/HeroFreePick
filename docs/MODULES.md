@@ -49,3 +49,7 @@ ModeRules.h accepts only server-owned character/catalog data. The current startu
 Run `python test_ui.py`, then `python build.py`. Portable C++ policy tests: `g++ -std=c++17 -Wall -Wextra -pedantic server/tests/mode_rules.cpp -o mode-rules-test && ./mode-rules-test`. CI includes this test; it has not been executed locally because no C++ compiler is available here.
 
 Local development installer: `python3 .../Hero_Classless_UI/install.py` installs all three optional preview addons by default. Use `--modes` with no following values to install only the shared addon (already installed profiles are not deleted). Restart the client to detect optional addons. Release users should extract only desired addon ZIPs into Interface/AddOns.
+
+## Optional persistent Class+ runtime
+
+The ClassPlus-enrollment-runtime package is separate from Classic and the policy-only modules. Read `server/mod-hero-starting-path/README.md` before installation. Do not combine its trainer hooks with the separate foundation module. Existing `_test` table and addon folder names are retained for upgrade compatibility; no character-name prefix is required. Full server compilation and in-game enrollment verification are pending deployment.

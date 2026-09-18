@@ -1,3 +1,7 @@
+## 0.40.3
+
+- Add optional persistent Class+ enrollment runtime and matching bridges without character-name restrictions. Preserve existing enrolled builds, keep unenrolled characters Classic, validate account/class identity independently of names, and clean up ownership records on deletion. Full core build and live verification pending deployment.
+
 ## 0.40.2
 
 - Show and enable the Hero Advancement micro-menu button from level 1 in Class+, Hybrid, and Hero. Hook the actual 3.3.5 talent-button refresh and restore neighboring button spacing; Classic retains stock visibility.

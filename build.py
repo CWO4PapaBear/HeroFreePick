@@ -19,6 +19,7 @@ def main():
     for mode,folder in [('ClassPlus','mod-hero-classplus'),('Hybrid','mod-hero-hybrid'),('Hero','mod-hero-freepick')]:
         components.append((mode+'-preview-addon',[ROOT/'profiles'/('HeroAdvancement_'+mode)]))
         components.append((mode+'-server-policy',[ROOT/'server'/folder]))
+    components.append(('ClassPlus-enrollment-runtime',[ROOT/'server/mod-hero-starting-path',ROOT/'profiles/HeroStartingPathTest',ROOT/'profiles/HeroClassPlusCommitTest']))
     components.append(('complete-development-bundle',[addon,*sorted((ROOT/'profiles').iterdir()),*sorted(p for p in (ROOT/'server').iterdir()if p.name.startswith('mod-'))]))
     for label,folders in components:
         package=out/f'HeroAdvancement-{label}-{version}.zip'
