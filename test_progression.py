@@ -53,3 +53,19 @@ A.mode='ClassPlus'
 assert(HeroStockAbilityLevels[133]==1 and HeroStockAbilityLevels[143]==6 and HeroStockAbilityLevels[145]==12)
 print('PASS: fresh production startup, all 30 trees, '..count..' mode/draft unlock boundaries and automatic grants; stock Fireball ranks 1/6/12.')
 """)
+
+lua.execute("""
+local A=HeroFreePick
+for _,mode in ipairs({'ClassPlus','Hybrid'})do
+ A.mode=mode
+ assert(A.AbilityDisplayLevel(A.byID[184])==24)
+ assert(A.AbilityDisplayLevel(A.byID[21092158])==1)
+ for _,e in ipairs(HeroFreePickCatalog)do if not A.IsTalent(e)and A.EntryAvailableInMode(e)then
+  local level=A.AbilityDisplayLevel(e);assert(level==1 or level>10,e.name..' still has an early unlock')
+ end end
+end
+A.mode='Classic';assert(A.AbilityDisplayLevel(A.byID[19001494])==2)
+A.mode='Hero';assert(A.AbilityDisplayLevel(A.byID[1167])==10)
+assert(HeroStockAbilityLevels[143]==6) -- later-rank training remains stock
+print('PASS: Class+/Hybrid early unlocks and group grants move to 1; Classic, Hero and later-rank schedules remain unchanged.')
+""")

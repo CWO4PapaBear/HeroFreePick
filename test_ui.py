@@ -1078,7 +1078,7 @@ for _,m in ipairs({'ClassPlus','Hybrid'})do
  assert(A.AbilityDisplayLevel(A.byID[21092418])==1)
  assert(A.AbilityDisplayLevel(A.byID[184])==24)
  assert(A.AbilityDisplayLevel(A.byID[21053428])==20)
- for _,e in ipairs(HeroFreePickCatalog)do if e.talentOrigin then assert(A.AbilityDisplayLevel(e)==e.level)end end
+ for _,e in ipairs(HeroFreePickCatalog)do if e.talentOrigin then assert(A.AbilityDisplayLevel(e)==(e.level<=10 and 1 or e.level))end end
 end
 A.mode='Classic';assert(A.AbilityForTalent(A.byID[1244])==A.byID[1244]);assert(A.IsTalent(A.byID[1244]));assert(A.AbilityDisplayLevel(A.byID[1157])==55)
 HeroFreePickPlans=plans;A.mode=mode;UnitClass=unit;A.ShowPointWarning=warn;testLevel=80

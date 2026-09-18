@@ -84,6 +84,13 @@ function A.AbilityDisplayLevel(e)
  end
  return originalLevel(e)
 end
+-- Early ability unlocks are available immediately in the class-limited custom modes.
+local progressionLevel=A.AbilityDisplayLevel
+function A.AbilityDisplayLevel(e)
+ local level=progressionLevel(e)
+ if (A.mode=='ClassPlus'or A.mode=='Hybrid')and not A.IsTalent(e)and level and level<=10 then return 1 end
+ return level
+end
 -- Both entry points share one purchase; the tree retains its original geometry.
 local available=A.EntryAvailableInMode
 function A.EntryAvailableInMode(e)

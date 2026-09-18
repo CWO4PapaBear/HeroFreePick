@@ -40,13 +40,13 @@
       "id": 22965425,
       "name": "Recuperate",
       "class": "Rogue",
-      "level": 10
+      "level": 1
     },
     {
       "id": 22965426,
       "name": "Meditate",
       "class": "Rogue",
-      "level": 10
+      "level": 1
     },
     {
       "id": 22903018,
@@ -167,7 +167,7 @@
     {
       "name": "Shock Mastery",
       "class": "Shaman",
-      "level": 4
+      "level": 1
     },
     {
       "name": "Essential Finishing Move Mastery",
@@ -182,7 +182,7 @@
     {
       "name": "Hunter Aspect Mastery",
       "class": "Hunter",
-      "level": 4
+      "level": 1
     },
     {
       "name": "Paladin Aura Mastery",
@@ -197,7 +197,7 @@
     {
       "name": "Fire Totem Mastery",
       "class": "Shaman",
-      "level": 10
+      "level": 1
     },
     {
       "name": "Air Totem Mastery",
@@ -212,7 +212,7 @@
     {
       "name": "Earth Totem Mastery",
       "class": "Shaman",
-      "level": 4
+      "level": 1
     },
     {
       "name": "Advanced Trap Mastery",
@@ -227,7 +227,7 @@
     {
       "name": "Judgement Mastery",
       "class": "Paladin",
-      "level": 4
+      "level": 1
     },
     {
       "name": "Ward Mastery",
@@ -262,7 +262,7 @@
     {
       "name": "Advanced Finishing Move Mastery",
       "class": "Rogue",
-      "level": 10
+      "level": 1
     },
     {
       "name": "Shout Mastery",
@@ -272,17 +272,17 @@
     {
       "name": "Feral Shapeshift Mastery",
       "class": "Druid",
-      "level": 10
+      "level": 1
     },
     {
       "name": "Blessing Mastery",
       "class": "Paladin",
-      "level": 4
+      "level": 1
     },
     {
       "name": "Tracking Mastery",
       "class": "Hunter",
-      "level": 2
+      "level": 1
     },
     {
       "name": "Portal Mastery",
@@ -302,7 +302,7 @@
     {
       "name": "Tame Beast",
       "class": "Hunter",
-      "level": 10
+      "level": 1
     },
     {
       "name": "Tame Dragonkin",

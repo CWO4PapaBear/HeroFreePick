@@ -40,14 +40,14 @@
         "name": "Divine Protection",
         "gems": 2,
         "ap": 3,
-        "level": 6
+        "level": 1
       },
       {
         "id": 54,
         "name": "Lay on Hands",
         "gems": 1,
         "ap": 2,
-        "level": 10
+        "level": 1
       },
       {
         "id": 56,
@@ -61,7 +61,7 @@
         "name": "Hand of Protection",
         "gems": 2,
         "ap": 3,
-        "level": 10
+        "level": 1
       },
       {
         "id": 92,
@@ -148,7 +148,7 @@
         "name": "Sprint",
         "gems": 1,
         "ap": 2,
-        "level": 10
+        "level": 1
       },
       {
         "id": 326,
