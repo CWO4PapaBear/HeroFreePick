@@ -1,3 +1,7 @@
+## 0.40.1
+
+- Display custom-mode class trainer guidance in the standard NPC gossip window with portrait, NPC name, parchment, Goodbye, and native-style dialogue options. Preserve server purchase blocking and reset confirmation.
+
 # 0.40.0
 
 - Add 65 missing Ascension class abilities as custom-mode planning entries, with source levels, AP/rarity costs, descriptions and packaged icons. Keep Classic and established progression/Mastery overrides intact.

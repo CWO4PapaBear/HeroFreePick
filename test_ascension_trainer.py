@@ -3,6 +3,13 @@ import runpy, contextlib, io
 with contextlib.redirect_stdout(io.StringIO()):
     context=runpy.run_path(str(Path(__file__).with_name('test_ui.py')))
 lua=context['lua'];root=context['root']
+lua.execute("""
+for _,name in ipairs({'GossipFrame','GossipFramePortrait','GossipGreetingText','GossipFrameNpcNameText','GossipGreetingScrollChildFrame','GossipSpacerFrame','GossipGreetingScrollFrame'})do _G[name]=CreateFrame('Frame',name)end
+UnitName=function()return 'Trainer Test' end
+SetPortraitTexture=function()end
+ShowUIPanel=function(f)f:Show()end
+GossipFrame.HookScript=function(self,event,fn)self.scripts[event]=fn end
+""")
 lua.execute((root/'TrainerGate.lua').read_text())
 lua.execute("""
 local A=HeroFreePick
@@ -28,14 +35,21 @@ local closed=0;CloseTrainer=function()closed=closed+1 end
 ClassTrainerFrame={};HideUIPanel=function()end
 local greeting='Profession Trainer';GetTrainerGreetingText=function()return greeting end
 for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
- A.mode=mode;A.TrainerDialogue:Hide()
- HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');assert(not A.TrainerDialogue:IsShown())
- greeting='HF_CLASS_TRAINER: message';HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');assert(A.TrainerDialogue:IsShown())
+ A.mode=mode;GossipFrame:Hide()
+ HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');HeroAdvancementTrainerEvents.scripts.OnUpdate();assert(not GossipFrame:IsShown())
+ greeting='HF_CLASS_TRAINER: message';HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');HeroAdvancementTrainerEvents.scripts.OnUpdate();assert(GossipFrame:IsShown())
  greeting='Profession Trainer'
 end
-A.mode='Classic';A.TrainerDialogue:Hide();greeting='HF_CLASS_TRAINER: message'
-HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');assert(not A.TrainerDialogue:IsShown());assert(not A.ShowClassTrainerDialogue())
-assert(closed==3)
+A.mode='Classic';GossipFrame:Hide();greeting='HF_CLASS_TRAINER: message'
+HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'TRAINER_SHOW');HeroAdvancementTrainerEvents.scripts.OnUpdate();assert(not GossipFrame:IsShown());assert(not A.ShowClassTrainerDialogue())
+assert(closed==3);assert(GossipFrameNpcNameText:GetText()=='Trainer Test');assert(HeroAdvancementTrainerDialogue==nil)
+A.mode='ClassPlus';A.ShowClassTrainerDialogue()
+local sent;SendChatMessage=function(text)sent=text end
+HeroAdvancementTrainerOption2.scripts.OnClick();assert(sent=='.hftrainer reset')
+HeroAdvancementTrainerEvents.scripts.OnEvent(nil,'GOSSIP_SHOW')
+assert(not HeroAdvancementTrainerOption1:IsShown()and not HeroAdvancementTrainerOption2:IsShown())
+sent=nil;HeroAdvancementTrainerOption2.scripts.OnClick();assert(sent==nil)
+A.ShowClassTrainerDialogue();GossipFrame:Hide();assert(not HeroAdvancementTrainerOption1:IsShown())
 print('PASS: 65 unique custom previews, costs/descriptions/icons, Classic isolation; class/profession trainer routing and rebound/unbound hotkeys.')
 """)
 for e in lua.globals().HeroFreePick.AscensionAbilities.values():

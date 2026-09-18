@@ -80,7 +80,7 @@ Packaged and decoded 73 icon textures (about 0.42 MB including metadata), includ
 
 ## Trainer behavior
 
-The server overrides class-trainer spell state to Unavailable, which blocks direct purchase requests as well as normal clicks. It also removes the list shown to custom characters and sends a marked greeting. The addon replaces that window with the requested text and its current Hero Advancement binding (including rebound and unbound cases). Profession, riding, pet trainers and Classic are not subject to the class-trainer rule. Hidden client buttons are not the security boundary.
+The server overrides class-trainer spell state to Unavailable, which blocks direct purchase requests as well as normal clicks. It also removes the list shown to custom characters and sends a marked greeting. The addon presents the requested text in Blizzard's standard NPC gossip frame (portrait, NPC name, parchment and Goodbye) and its current Hero Advancement binding (including rebound and unbound cases). Profession, riding, pet trainers and Classic are not subject to the class-trainer rule. Hidden client buttons are not the security boundary.
 
 The dialogue offers Open Hero Advancement and Reset Talents. Reset requires an unexpired class-trainer visit, valid nearby trainer, correct trainer eligibility and being out of combat. It opens native talent-wipe confirmation, letting the core quote and charge its normal reset price. It does not debit gold directly, waive costs, or reset talents before confirmation. Existing trainer gossip reset options are retained. `HeroTrainer::TalentResetPrice` exposes the same core/configuration price calculation for the future interface reset implementation; remote custom-build reset remains unfinished.
 
