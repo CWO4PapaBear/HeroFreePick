@@ -1,3 +1,7 @@
+## Development audit — server coverage
+
+- Inventory all 1,665 current entries, four primary-stat choices and 29 staged talent records against stock/Area 52 spell data and recorded server routes. Distinguish aliases, supported purchases, changed effects and missing systems. No gameplay or deployment changes. Live database verification remains pending because WSL access is denied.
+
 ## 0.41.1
 
 - Fix Class+ talent clicks: resolve talent-tree ability aliases before the purchase allowlist and permit passive talent drafts while preserving level/TP limits. Server application of passive talents remains unsupported and now reports the affected talent explicitly.
