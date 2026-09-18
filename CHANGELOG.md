@@ -1,3 +1,8 @@
+# 0.39.10
+
+- Add Hunter Auto Shot as a level 1, 2 AP custom-mode choice using native spell 75; retain the Classic creation-grant entry.
+- Audit stock starting abilities and extracted Ascension level-one paid choices; preserve paid Mastery membership and the approved DK progression.
+
 ## Unreleased — Class+ server inventory
 
 - Make ability unlocks through level 10 available at level 1 in Class+ and Hybrid, including DK and free group members; Masteries follow their earliest member. Preserve Classic/Hero, passive talent tiers, higher unlocks and later-rank schedules.

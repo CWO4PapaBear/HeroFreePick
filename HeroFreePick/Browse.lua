@@ -867,3 +867,5 @@ HeroRarityCosts={
 [2663]=1,
 [3028]=1,
 }
+
+HeroBrowseAssignment[24000075]={categories={1},order=0,direct=false}

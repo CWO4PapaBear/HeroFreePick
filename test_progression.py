@@ -69,3 +69,23 @@ A.mode='Hero';assert(A.AbilityDisplayLevel(A.byID[1167])==10)
 assert(HeroStockAbilityLevels[143]==6) -- later-rank training remains stock
 print('PASS: Class+/Hybrid early unlocks and group grants move to 1; Classic, Hero and later-rank schedules remain unchanged.')
 """)
+
+lua.execute("""
+local A=HeroFreePick
+local custom=A.byID[24000075];local classic=A.byID[19200000]
+assert(custom.spells[1]==75 and custom.ae==2 and custom.te==0 and custom.quality=='Normal')
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;testLevel=1;UnitClass=function()return 'Hunter','HUNTER'end
+ assert(A.EntryAvailableInMode(custom) and not A.EntryAvailableInMode(classic))
+ assert(A.AbilityDisplayLevel(custom)==1)
+ HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+ assert(A.SetRank(custom.id,1));assert(A.AbilityPointsSpent('entries')==2)
+ assert(A.SetRank(custom.id,0));assert(A.AbilityPointsSpent('entries')==0)
+ local allowance=A.AbilityPointAllowance;A.AbilityPointAllowance=function()return 1 end
+ assert(not A.SetRank(custom.id,1));assert(not HeroFreePickPlans.entries[custom.id])
+ A.AbilityPointAllowance=allowance
+end
+A.mode='Classic';assert(not A.EntryAvailableInMode(custom) and A.EntryAvailableInMode(classic))
+assert(classic.ae==0 and A.AbilityDisplayLevel(classic)==1)
+print('PASS: Auto Shot is a refundable level-one 2 AP custom purchase; Classic creation grant stays unchanged.')
+""")

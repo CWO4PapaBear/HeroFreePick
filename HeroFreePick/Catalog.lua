@@ -1349,3 +1349,7 @@ for _,entry in ipairs({
 {id=19200001,name="Frost Fever",class="DeathKnight",spec="All",kind="Ability",quality="Normal",spells={59921},ae=0,te=0,level=55,requiredAE=0,requiredTE=0,requiredIDs="",classicOnly=true},
 {id=19200002,name="Blood Plague",class="DeathKnight",spec="All",kind="Ability",quality="Normal",spells={59879},ae=0,te=0,level=55,requiredAE=0,requiredTE=0,requiredIDs="",classicOnly=true}
 })do table.insert(HeroFreePickCatalog,entry)end
+
+-- Custom-mode starting purchase; retain the separate Classic creation grant.
+-- Ascension advancement 392 prices Auto Shot at 2 AP; use native 3.3.5 spell 75.
+table.insert(HeroFreePickCatalog,{id=24000075,name="Auto Shot",class="Hunter",spec="Marksmanship",kind="Ability",quality="Normal",spells={75},ae=2,te=0,level=1,rarityCost=0,requiredAE=0,requiredTE=0,requiredIDs=""})
