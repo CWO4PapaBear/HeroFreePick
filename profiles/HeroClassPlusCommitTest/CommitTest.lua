@@ -35,6 +35,8 @@ local function encode(state)
  local ids={};local ap=0;local gems={0,0,0,0};local caps={11,16,13,7}
  for id,rank in pairs(state or {})do
   local e=C.entries[id]
+  local talent=A.byID[id]
+  if not e and talent and A.IsTalent(talent)then return nil,'Server talent applying is not implemented yet: '..talent.name..'. Remove the pending talent changes to apply abilities; your draft has been kept.'end
   if not e or rank~=1 then return nil,'Not supported by this server test: '..((A.byID[id]or {}).name or tostring(id))end
   if e.level>UnitLevel('player')then return nil,((A.byID[id]or {}).name or ('Ability '..id))..' requires level '..e.level..'.'end
   if e.parent~=0 then
@@ -105,7 +107,17 @@ for _,key in ipairs({'SetLocalLearned','SetRank'})do
  local setter=A[key]
  A[key]=function(id,rank)
   if job then return false end
-  if subject()and tonumber(rank)and rank>0 and not C.entries[id]then A.ShowPointWarning('Not available in this server test.');return false end
+  if subject()then
+   -- Resolve talent-tree ability aliases before the server ability allowlist.
+   local entry=A.byID[id]
+   local resolved=entry and A.AbilityForTalent(entry)or entry
+   if resolved then id=resolved.id end
+   -- Passive talents remain editable drafts; the commit encoder below explains
+   -- their unsupported server state without blocking ordinary point planning.
+   if tonumber(rank)and rank>0 and not C.entries[id]and not(resolved and A.IsTalent(resolved))then
+    A.ShowPointWarning('Not available on this server: '..(resolved and resolved.name or tostring(id))..'.');return false
+   end
+  end
   local ok=setter(id,rank);if ok then A.SyncMasteryGrants()end;return ok
  end
 end

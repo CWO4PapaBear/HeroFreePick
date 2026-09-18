@@ -1,3 +1,7 @@
+## 0.41.1
+
+- Fix Class+ talent clicks: resolve talent-tree ability aliases before the purchase allowlist and permit passive talent drafts while preserving level/TP limits. Server application of passive talents remains unsupported and now reports the affected talent explicitly.
+
 ## 0.41.0
 
 - Add reproducible Area 52 talent importer, rank-level tooltip comparisons and packaged icons. Preserve existing native identities, routes, costs and prerequisite color logic; Classic keeps stock tooltips.
