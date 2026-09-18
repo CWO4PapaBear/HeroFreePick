@@ -342,7 +342,15 @@
   "unchangedExceptions": [
     "Dark Command: 71",
     "Corpse Explosion: 71",
-    "Presence Mastery: 71",
     "Forceful Deflection: no matching shared record"
+  ],
+  "designOverrides": [
+    {
+      "id": 21092418,
+      "name": "Presence Mastery",
+      "sourceLevel": 71,
+      "level": 1,
+      "reason": "Explicit user decision; members retain levels 1, 10, 28."
+    }
   ]
 }

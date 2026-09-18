@@ -993,6 +993,19 @@ assert(A.AbilityDisplayLevel(A.byID[1158])==55)
 A.mode='Hero'
 assert(A.AbilityDisplayLevel(A.byID[1157])==1)
 assert(A.AbilityDisplayLevel(A.byID[1176])==20)
-assert(A.byID[1180].level==71 and A.byID[21092418].level==71)
+assert(A.byID[1180].level==71 and A.byID[21092418].level==1)
 """)
 print('PASS: all 48 DK reference changes match; Classic starting levels stay 55, native talents excluded.')
+
+lua.execute("""
+local A=HeroFreePick;A.mode='Hero'
+HeroFreePickPlans={entries={[21092418]=1},previewLearned={[21092418]=1}}
+for _,level in ipairs({1,9,10,27,28})do
+ testLevel=level;A.SyncMasteryGrants()
+ assert(HeroFreePickPlans.previewLearned[1169]==1)
+ assert((HeroFreePickPlans.previewLearned[1167]==1)==(level>=10))
+ assert((HeroFreePickPlans.previewLearned[1168]==1)==(level>=28))
+end
+testLevel=80
+""")
+print('PASS: Presence Mastery level 1; Blood granted at 1, Frost at 10, Unholy at 28.')
