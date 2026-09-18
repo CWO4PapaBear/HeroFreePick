@@ -980,3 +980,19 @@ assert(A.SelectMode('Classic'));assert(notices==6)
 assert(A.SelectMode('Hero'));assert(notices==7)
 """)
 print('PASS: first-ability raid warning covers custom modes, ignores Classic/owned builds/status repeats, respects sound mute and current keybinding.')
+
+# Shared-client DK unlocks affect custom ability entries, never Classic display levels.
+dk_reference=json.loads((root.parent/'docs/DK-LEVEL-REFERENCE.json').read_text())
+for change in dk_reference['changes']:
+    e=lua.globals().HeroFreePick.byID[change['id']]
+    assert e['class']=='DeathKnight' and e['level']==change['level'] and not lua.globals().HeroFreePick.IsTalent(e)
+lua.execute("""
+local A=HeroFreePick;A.mode='Classic'
+assert(A.AbilityDisplayLevel(A.byID[1157])==55)
+assert(A.AbilityDisplayLevel(A.byID[1158])==55)
+A.mode='Hero'
+assert(A.AbilityDisplayLevel(A.byID[1157])==1)
+assert(A.AbilityDisplayLevel(A.byID[1176])==20)
+assert(A.byID[1180].level==71 and A.byID[21092418].level==71)
+""")
+print('PASS: all 48 DK reference changes match; Classic starting levels stay 55, native talents excluded.')

@@ -1,0 +1,348 @@
+{
+  "sourceSHA256": "2c501672d09ead8f1e8a74d683c75bb00e9eb64ae2c9647657f0f73b9cd21336",
+  "policy": "Shared patch-M required-level field (index 26); Classic trainer/starting levels and native talents stay independent. Costs and rank chains unchanged.",
+  "changes": [
+    {
+      "id": 1154,
+      "source": 1154,
+      "name": "Path of Frost",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 1155,
+      "source": 1155,
+      "name": "Army of the Dead",
+      "old": 71,
+      "level": 34
+    },
+    {
+      "id": 1156,
+      "source": 1156,
+      "name": "Death and Decay",
+      "old": 71,
+      "level": 20
+    },
+    {
+      "id": 1157,
+      "source": 1157,
+      "name": "Plague Strike",
+      "old": 71,
+      "level": 1
+    },
+    {
+      "id": 1158,
+      "source": 1158,
+      "name": "Icy Touch",
+      "old": 71,
+      "level": 1
+    },
+    {
+      "id": 1159,
+      "source": 1159,
+      "name": "Chains of Ice",
+      "old": 71,
+      "level": 14
+    },
+    {
+      "id": 1160,
+      "source": 1160,
+      "name": "Blood Tap",
+      "old": 71,
+      "level": 18
+    },
+    {
+      "id": 1161,
+      "source": 1161,
+      "name": "Blood Strike",
+      "old": 71,
+      "level": 1
+    },
+    {
+      "id": 1162,
+      "source": 1162,
+      "name": "Raise Dead",
+      "old": 71,
+      "level": 18
+    },
+    {
+      "id": 1163,
+      "source": 1163,
+      "name": "Strangulate",
+      "old": 71,
+      "level": 22
+    },
+    {
+      "id": 1164,
+      "source": 1164,
+      "name": "Mind Freeze",
+      "old": 71,
+      "level": 14
+    },
+    {
+      "id": 1165,
+      "source": 1165,
+      "name": "Death Coil",
+      "old": 71,
+      "level": 12
+    },
+    {
+      "id": 1166,
+      "source": 1166,
+      "name": "Empower Rune Weapon",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 1167,
+      "source": 1167,
+      "name": "Frost Presence",
+      "old": 71,
+      "level": 10
+    },
+    {
+      "id": 1168,
+      "source": 1168,
+      "name": "Unholy Presence",
+      "old": 71,
+      "level": 28
+    },
+    {
+      "id": 1169,
+      "source": 1169,
+      "name": "Blood Presence",
+      "old": 71,
+      "level": 1
+    },
+    {
+      "id": 1170,
+      "source": 1170,
+      "name": "Anti-Magic Shell",
+      "old": 71,
+      "level": 22
+    },
+    {
+      "id": 1171,
+      "source": 1171,
+      "name": "Blood Boil",
+      "old": 71,
+      "level": 16
+    },
+    {
+      "id": 1172,
+      "source": 1172,
+      "name": "Death Pact",
+      "old": 71,
+      "level": 22
+    },
+    {
+      "id": 1173,
+      "source": 1173,
+      "name": "Icebound Fortitude",
+      "old": 71,
+      "level": 34
+    },
+    {
+      "id": 1174,
+      "source": 1174,
+      "name": "Obliterate",
+      "old": 71,
+      "level": 20
+    },
+    {
+      "id": 1176,
+      "source": 1176,
+      "name": "Death Grip",
+      "old": 71,
+      "level": 20
+    },
+    {
+      "id": 1177,
+      "source": 1177,
+      "name": "Death Strike",
+      "old": 71,
+      "level": 14
+    },
+    {
+      "id": 1178,
+      "source": 1178,
+      "name": "Pestilence",
+      "old": 71,
+      "level": 10
+    },
+    {
+      "id": 1179,
+      "source": 1179,
+      "name": "Runeforging",
+      "old": 71,
+      "level": 20
+    },
+    {
+      "id": 1181,
+      "source": 1181,
+      "name": "Rune Strike",
+      "old": 71,
+      "level": 32
+    },
+    {
+      "id": 1182,
+      "source": 1182,
+      "name": "Horn of Winter",
+      "old": 71,
+      "level": 4
+    },
+    {
+      "id": 1183,
+      "source": 1183,
+      "name": "Runic Focus",
+      "old": 71,
+      "level": 20
+    },
+    {
+      "id": 1184,
+      "source": 1184,
+      "name": "Raise Ally",
+      "old": 71,
+      "level": 24
+    },
+    {
+      "id": 20001941,
+      "source": 1218,
+      "name": "Rune Tap",
+      "old": 71,
+      "level": 16
+    },
+    {
+      "id": 20001949,
+      "source": 1224,
+      "name": "Mark of Blood",
+      "old": 71,
+      "level": 22
+    },
+    {
+      "id": 20001954,
+      "source": 1227,
+      "name": "Hysteria",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 20002019,
+      "source": 1266,
+      "name": "Vampiric Blood",
+      "old": 71,
+      "level": 34
+    },
+    {
+      "id": 20001957,
+      "source": 1229,
+      "name": "Heart Strike",
+      "old": 71,
+      "level": 36
+    },
+    {
+      "id": 20001961,
+      "source": 1233,
+      "name": "Dancing Rune Weapon",
+      "old": 71,
+      "level": 40
+    },
+    {
+      "id": 20002215,
+      "source": 1288,
+      "name": "Lichborne",
+      "old": 71,
+      "level": 16
+    },
+    {
+      "id": 20001980,
+      "source": 1241,
+      "name": "Deathchill",
+      "old": 71,
+      "level": 22
+    },
+    {
+      "id": 20002223,
+      "source": 1293,
+      "name": "Improved Icy Talons",
+      "old": 71,
+      "level": 24
+    },
+    {
+      "id": 20001999,
+      "source": 1252,
+      "name": "Hungering Cold",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 20001979,
+      "source": 1240,
+      "name": "Unbreakable Armor",
+      "old": 71,
+      "level": 34
+    },
+    {
+      "id": 20001975,
+      "source": 1239,
+      "name": "Frost Strike",
+      "old": 71,
+      "level": 36
+    },
+    {
+      "id": 20001989,
+      "source": 1245,
+      "name": "Howling Blast",
+      "old": 71,
+      "level": 40
+    },
+    {
+      "id": 20001984,
+      "source": 1243,
+      "name": "Master of Ghouls",
+      "old": 71,
+      "level": 24
+    },
+    {
+      "id": 20002221,
+      "source": 1292,
+      "name": "Anti-Magic Zone",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 20002085,
+      "source": 1284,
+      "name": "Ghoul Frenzy",
+      "old": 71,
+      "level": 30
+    },
+    {
+      "id": 20002007,
+      "source": 1258,
+      "name": "Bone Shield",
+      "old": 71,
+      "level": 34
+    },
+    {
+      "id": 20002216,
+      "source": 1289,
+      "name": "Scourge Strike",
+      "old": 71,
+      "level": 36
+    },
+    {
+      "id": 20002000,
+      "source": 1253,
+      "name": "Summon Gargoyle",
+      "old": 71,
+      "level": 40
+    }
+  ],
+  "unchangedExceptions": [
+    "Dark Command: 71",
+    "Corpse Explosion: 71",
+    "Presence Mastery: 71",
+    "Forceful Deflection: no matching shared record"
+  ]
+}
