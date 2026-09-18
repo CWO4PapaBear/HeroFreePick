@@ -214,6 +214,21 @@ local function set(id,rank,key)
  if not A.IsTalent(e)and rank>0 and oldRank<=0 and (e.ae or 0)>A.AvailableAbilityPoints(key)then
   A.ShowPointWarning('Not enough Ability Points.');return false
  end
+ if not A.IsTalent(e)and rank>0 and oldRank<=0 then
+  local limit=A.RarityLimits[e.quality]
+  if limit then
+   local spent=0
+   for selectedID,selectedRank in pairs(state)do local selected=A.byID[selectedID]
+    if selected and selectedRank>0 and not A.IsTalent(selected)and selected.quality==e.quality then
+     spent=spent+((HeroRarityCosts or {})[selectedID]or 1)
+    end
+   end
+   local cost=(HeroRarityCosts or {})[id]or 1
+   if cost>0 and spent+cost>limit then
+    A.ShowPointWarning('Not enough '..e.quality..' rarity gems for '..e.name..'.');return false
+   end
+  end
+ end
  if A.IsTalent(e)and rank>oldRank and (rank-oldRank)*(e.te or 1)>A.AvailableTalentPoints(key)then
   A.ShowPointWarning('Not enough Talent Points.');return false
  end

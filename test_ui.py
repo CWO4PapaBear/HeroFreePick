@@ -1009,3 +1009,28 @@ end
 testLevel=80
 """)
 print('PASS: Presence Mastery level 1; Blood granted at 1, Frost at 10, Unholy at 28.')
+
+
+lua.execute("""
+local plans,mode,warning=HeroFreePickPlans,A.mode,A.ShowPointWarning
+local limits,costs=A.RarityLimits,HeroRarityCosts
+A.mode='Hero';testLevel=80
+local message;A.ShowPointWarning=function(text)message=text end
+assert(A.byID[1176].quality=='Legendary')
+for _,key in ipairs({'entries','previewLearned'})do
+ local setter=key=='entries'and A.SetRank or A.SetLocalLearned
+ for _,quality in ipairs({'Uncommon','Rare','Epic','Legendary'})do
+  local e=A.byID[1176];local oldQuality=e.quality;e.quality=quality
+  A.RarityLimits={[quality]=1};HeroRarityCosts={[1176]=2}
+  HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+  assert(not setter(1176,1));assert(not HeroFreePickPlans[key][1176])
+  assert(string.find(message,quality)and string.find(message,'Death Grip'))
+  A.RarityLimits[quality]=2;assert(setter(1176,1));assert(setter(1176,1))
+  A.RarityLimits[quality]=1;assert(setter(1176,0)) -- removal allowed even if over cap
+  HeroRarityCosts[1176]=0;A.RarityLimits[quality]=0;assert(setter(1176,1))
+  assert(setter(1176,0));e.quality=oldQuality
+ end
+end
+HeroFreePickPlans=plans;A.mode=mode;A.ShowPointWarning=warning;A.RarityLimits=limits;HeroRarityCosts=costs
+""")
+print('PASS: both drafts block all four rarity overflows before mutation; exact caps, repeat clicks, refunds and zero-cost entries remain allowed.')

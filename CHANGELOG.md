@@ -1,5 +1,6 @@
 ## Unreleased — Class+ server inventory
 
+- Block ability additions that exceed a rarity budget immediately in either draft, using the shared alert. Change custom Death Grip from Epic to Legendary; retain existing budgets pending the level-80 budget decision.
 - Set custom Dark Command to level 65 and promoted Corpse Explosion to level 20; preserve Classic talent prerequisites and existing resource costs.
 - Set custom Presence Mastery to level 1 by explicit design choice; its free Blood/Frost/Unholy grants remain level 1/10/28.
 - Apply 48 Death Knight custom ability unlock levels from the shared patch-M/Dawnrise candidate reference. Preserve Classic trainer/starting levels, native talents, costs and stock rank chains; unresolved level-71 entries remain explicit exceptions.
