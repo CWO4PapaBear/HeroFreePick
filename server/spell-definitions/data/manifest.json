@@ -9,11 +9,11 @@
     901018
   ],
   "files": {
-    "dependencies.json": "53e5c74765d5d85f4041d69e7438ba23d94353d543deb8c940f20fca40259112",
-    "schema.json": "711129dc51056d015ac4d193664f819744c0ad05e91da93597900e4e36050dd6",
-    "spells.json": "2c29aa24e54152ea6953cee1a0467d6bd6b44be97effc177e26a64542b24f7e6",
-    "supporting-data.json": "c3f7d125469131886d0cdb8d6c2fab453e4e7f4fee88e51c43457ffb3549ede1",
-    "auxiliary-additions.json": "72fc703e0a71f84f1b4115c22597ed6cd3d215209a38c593dc65407b8932b117",
-    "visual-icon-review.json": "4c8a123377303f9ac9da6dd654779b20933346090fae53cd662ed3635732a57d"
+    "dependencies.json": "2ddaf60c08845a217175f9e21ce8146a906cfe18374a13a3c3f09894388a3b73",
+    "schema.json": "a7222a36e6b3eff489e6017cc5740b2f6390e47fa8253cd26e5b1b416567e6e4",
+    "spells.json": "a564ced1583502f41e377230943574ecc18b6b16f1806869001054c04329bea7",
+    "supporting-data.json": "58ad715f4ad132af44bc3ccb8595e446078604737e7f6abe906604818ecc00e1",
+    "auxiliary-additions.json": "ec788edeb9e7d384e82bddb999f457371ad577b1fce29e8cb2824358d4a77d7b",
+    "visual-icon-review.json": "4931027e8905d07a2bb574f5aa1d4739d543be497e518fd73b7ac312a68e1483"
   }
 }

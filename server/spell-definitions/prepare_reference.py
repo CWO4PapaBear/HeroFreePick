@@ -15,7 +15,7 @@ class DBC:
         if not 0<=offset<len(self.strings):raise ValueError('Bad string offset')
         return self.strings[offset:self.strings.index(b'\0',offset)].decode('utf-8')
 
-def save(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+def save(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--spells',type=Path,required=True);p.add_argument('--live-export',type=Path,required=True)
