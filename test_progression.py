@@ -3,7 +3,7 @@ import json
 # Load the production file order into a fresh Lua 5.1 runtime.
 source=(Path(__file__).parent/'test_ui.py').read_text()
 setup=source.split('lua.execute("""\nlocal A=HeroFreePick;')[0]
-setup=setup.replace("'Masteries.lua','NativeTalentRoutes.lua'", "'Masteries.lua','StockAbilityLevels.lua','ProgressionRules.lua','NativeTalentRoutes.lua'")
+setup=setup.replace("'Masteries.lua','AscensionAbilities.lua','NativeTalentRoutes.lua'", "'Masteries.lua','StockAbilityLevels.lua','ProgressionRules.lua','AscensionAbilities.lua','NativeTalentRoutes.lua'")
 exec(setup)
 lua.execute("""
 local A=HeroFreePick

@@ -1,0 +1,513 @@
+[
+  {
+    "file": "spell_shadow_unholyfrenzy.blp",
+    "sourcePath": "Interface\\icons\\spell_shadow_unholyfrenzy.blp",
+    "sha256": "91695fb56ebf4c112566da48114b57eea4be784e92dd8ba4bef0b96e355e0909",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_misc_herb_talandrasrose.blp",
+    "sourcePath": "Interface\\icons\\inv_misc_herb_talandrasrose.blp",
+    "sha256": "bc3093f9776d1faa587f0e2402b171047cd5d25445da519e3e7af95bf33dd74b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_druid_wildburst.blp",
+    "sourcePath": "Interface\\icons\\spell_druid_wildburst.blp",
+    "sha256": "9009c5670d97bab27e0a58cad2ace8c83d5c6bc996fac9d7dfa4246fd7a40bfc",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "achievement_bg_killingblow_startingrock.blp",
+    "sourcePath": "Interface\\icons\\achievement_bg_killingblow_startingrock.blp",
+    "sha256": "b1c6bd1b6a79c0164267bf7f220b66dc9210017682b27971392f9f114bde5add",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_druid_ironfur.blp",
+    "sourcePath": "Interface\\icons\\ability_druid_ironfur.blp",
+    "sha256": "186ee908df967602ee2b9078375ebe44fb50f06be776b184dd558e4ae113877b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_nature_stranglevines.blp",
+    "sourcePath": "Interface\\icons\\spell_nature_stranglevines.blp",
+    "sha256": "222a1a6ea7873f7053030ba9d8274b815098524c1e5e18f4f0ccaf8f77f13d28",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_vehicle_sonicshockwave.blp",
+    "sourcePath": "Interface\\icons\\ability_vehicle_sonicshockwave.blp",
+    "sha256": "c0ab96d4cb395b8022a0c5c24d3c3f3491f0857865a767b665ab80154479fb39",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_druid_stampedingroar_cat.blp",
+    "sourcePath": "Interface\\icons\\spell_druid_stampedingroar_cat.blp",
+    "sha256": "63943a374ee16502defc263841ec6172710d738c31d2022f87c6fdf196cad387",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_arcane_arcane03.blp",
+    "sourcePath": "Interface\\icons\\spell_arcane_arcane03.blp",
+    "sha256": "614307dbe97e9333bff6b3d2439f3e7cf9342eb8666f92966facc8b08b87d828",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_druid_ursolsvortex.blp",
+    "sourcePath": "Interface\\icons\\spell_druid_ursolsvortex.blp",
+    "sha256": "4bcae7c137b7982a7b199f9aab068492c2ca071e2be33d4d01efb4b9f9139fa4",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "_arcaneshot_red.blp",
+    "sourcePath": "Interface\\icons\\_ArcaneShot_Red.blp",
+    "sha256": "3647396f4a03c1383953876837b2e2bc73ca29465479943f7034963cfa62f01c",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_glaivetoss.blp",
+    "sourcePath": "Interface\\icons\\ability_glaivetoss.blp",
+    "sha256": "eff8c609ca764ce11978710f95e79eaabc50c2db13b20ff5a754d3a993a9d24b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_mage_altertime.blp",
+    "sourcePath": "Interface\\icons\\spell_mage_altertime.blp",
+    "sha256": "cdbb83ea6a752e52fa4579af6f769e1447dd5b1ef465d91a7f61f2dacdda6f42",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_mage_arcaneorb.blp",
+    "sourcePath": "Interface\\icons\\spell_mage_arcaneorb.blp",
+    "sha256": "b7f7637f9908072e7ab6ead16e935695f16eae38f491c70bbdc7c2734145fe13",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_nature_brilliance.blp",
+    "sourcePath": "Interface\\icons\\spell_nature_brilliance.blp",
+    "sha256": "9fe7d3b096e275606b88c1dd71f543e223efb9339cf52c88c37aa220322be8fd",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_arcane_arcane04.blp",
+    "sourcePath": "Interface\\icons\\spell_arcane_arcane04.blp",
+    "sha256": "d53f314f2c1804d8ddedfa7fcd782edbe77dc303094773615cbab771b833c34f",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_frost_frozenorb.blp",
+    "sourcePath": "Interface\\icons\\spell_frost_frozenorb.blp",
+    "sha256": "7ddd36e678cb1e0263d8d8da8c36f64c843143149e345035b838c0ef5898a9f0",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_artifact_stolenpower.blp",
+    "sourcePath": "Interface\\icons\\inv_artifact_stolenpower.blp",
+    "sha256": "eed508f5bc6fd59632e87bc09815fb364fbcfdd253e9943674190ea3382779fe",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "_d3energyarmor.blp",
+    "sourcePath": "Interface\\icons\\_D3energyarmor.blp",
+    "sha256": "eb3ea90bfbd338404b5f8d1b8f85b9cd47a2190242d39cd563066d468c74ca5b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_mage_massinvisibility.blp",
+    "sourcePath": "Interface\\icons\\ability_mage_massinvisibility.blp",
+    "sha256": "60e414c6ab35131e0eb6dee765203f49e9f474ea69ec480f7ffddd4846edaf60",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_mage_meteor.blp",
+    "sourcePath": "Interface\\icons\\spell_mage_meteor.blp",
+    "sha256": "72bf7f005d6839f5f20374d5037c6ce2953dd563737fc3ab955b0a8ab4f070b7",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_frost_ringoffrost.blp",
+    "sourcePath": "Interface\\icons\\spell_frost_ringoffrost.blp",
+    "sha256": "552930a23aff8a356e2a093df3c55ea72bfcd3bc9341eae510fc095bcd69154e",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_paladin_blindinglight.blp",
+    "sourcePath": "Interface\\icons\\ability_paladin_blindinglight.blp",
+    "sha256": "2740ffd56a8bfcb192ed70eae9f29214eb6833a7e4fcb26e693c18675d4068cc",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_paladin_executionsentence.blp",
+    "sourcePath": "Interface\\icons\\spell_paladin_executionsentence.blp",
+    "sha256": "41bb4de8f93983945faeb3fb2aa399b950bc7cd51e011719154ea80018a75d80",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_paladin_lightofdawn.blp",
+    "sourcePath": "Interface\\icons\\spell_paladin_lightofdawn.blp",
+    "sha256": "39ade4edc9e2e3f0ac562ebefb9124519ca680b4a6f8f00211678f70dd4090ab",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_paladin_lightshammer.blp",
+    "sourcePath": "Interface\\icons\\spell_paladin_lightshammer.blp",
+    "sha256": "c16302e872037e36ce61656be6598e64a8b95c98625793c6104965a1240e9ca6",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "nhi_holyhand_border.blp",
+    "sourcePath": "Interface\\icons\\nhi_holyhand_Border.blp",
+    "sha256": "3912911a6ad41c02f59a585f5bef66eab9aa0135fa2828cc8824411082e3b1dd",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_priest_angelicfeather.blp",
+    "sourcePath": "Interface\\icons\\ability_priest_angelicfeather.blp",
+    "sha256": "52f742dc14ae9b6222d9a3df5a007f920eaadbeab44756475a484eac1c6390c7",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_priest_divinestar.blp",
+    "sourcePath": "Interface\\icons\\spell_priest_divinestar.blp",
+    "sha256": "74ec6d6691fc0a6512075be627d7efe699d1551f2df98078661ee94e5ebd67ea",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_priest_halo.blp",
+    "sourcePath": "Interface\\icons\\ability_priest_halo.blp",
+    "sha256": "368e9575edbaa3a5e012ccf5eaf6734a64d59432a34789bd76729a773622ba95",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "priest_spell_leapoffaith_a.blp",
+    "sourcePath": "Interface\\icons\\priest_spell_leapoffaith_a.blp",
+    "sha256": "b105e031d5675f0ed02031f5fddc88d757ec915ddf46e56b7cc20bfc6f34640b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_priest_voidblast.blp",
+    "sourcePath": "Interface\\icons\\spell_priest_voidblast.blp",
+    "sha256": "ace47f3ca022c0e56708541cfe7610ce2bca73b9fc844a8798eda5b6b8be1914",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_priest_voidshift.blp",
+    "sourcePath": "Interface\\icons\\spell_priest_voidshift.blp",
+    "sha256": "4e2e6e1f69e443bf0e3bb6a823941d16ae3760b119650e11f3311e0727944b61",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_combatreadiness.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_combatreadiness.blp",
+    "sha256": "5f552877a95e2e54cd55f517d9dba824ad0749b0a8d5cb3793742a9a81cb598a",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_ironmaidens_convulsiveshadows.blp",
+    "sourcePath": "Interface\\icons\\ability_ironmaidens_convulsiveshadows.blp",
+    "sha256": "ac220b948843434542edda7fab962c1f0ba569e111c507816dcbbcc3350f0f5d",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_grapplinghook.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_grapplinghook.blp",
+    "sha256": "7d17bfe3146e25b1512538c415005dfdf10c86df7116e2e9c66b0458f2e98c3a",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_rollthebones.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_rollthebones.blp",
+    "sha256": "6fff7d0942f2cf14591a50474287f4651d4d78cc724c5f1ad7e39b7f70298b07",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_throwingknife_07.blp",
+    "sourcePath": "Interface\\icons\\inv_throwingknife_07.blp",
+    "sha256": "896186b881f83eaebe48bc1f4b37dcf1df6a694077e62339e84fe8e0ea46a263",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_smoke.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_smoke.blp",
+    "sha256": "d02079a4c4ccf24dd913226b35976bfb1b60f76824a139f5bb982fdd9900f50e",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_fire_elementaldevastation.blp",
+    "sourcePath": "Interface\\icons\\spell_fire_elementaldevastation.blp",
+    "sha256": "b6a1b904a1e34b6e3a985bc09aaee26a09168b262487bfece6466c0b4f93c39b",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_shaman_bindelemental.blp",
+    "sourcePath": "Interface\\icons\\spell_shaman_bindelemental.blp",
+    "sha256": "84c5e8b1f5d22cfa77e40086711dea1213d01e54ae773227a81d3553e91bab6e",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_staff_07.blp",
+    "sourcePath": "Interface\\icons\\inv_staff_07.blp",
+    "sha256": "6864729f4eda0f7334e80ee438e89651c70ba0a09158f79a67320a1ae4111476",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_shaman_condensationtotem.blp",
+    "sourcePath": "Interface\\icons\\ability_shaman_condensationtotem.blp",
+    "sha256": "e742014130770e90e3e497787c510ccdad8e3a0f4faec48a38d17501ef329197",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_shaman_earthquake.blp",
+    "sourcePath": "Interface\\icons\\spell_shaman_earthquake.blp",
+    "sha256": "e819683f2cf319c609a56d33ef5d9c59a24dc5a17659684d5310d11952a04be3",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "shaman_talent_elementalblast.blp",
+    "sourcePath": "Interface\\icons\\shaman_talent_elementalblast.blp",
+    "sha256": "24f1b87995e92adc850e9993c6192e2ed1c626c84ddeb16b6c8de4d31269e018",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_nature_giftofthewaterspirit.blp",
+    "sourcePath": "Interface\\icons\\spell_nature_giftofthewaterspirit.blp",
+    "sha256": "ad0cde26a66c3266682919a3b38ee14f9aa8e1fb6250a72bb4919722112776b9",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rhyolith_lavapool.blp",
+    "sourcePath": "Interface\\icons\\ability_rhyolith_lavapool.blp",
+    "sha256": "47e450fcf58eb9a9d96e224f185502bf3628aa545601d33f8b444888cde9b6ef",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_shaman_windwalktotem.blp",
+    "sourcePath": "Interface\\icons\\ability_shaman_windwalktotem.blp",
+    "sha256": "19274ba22ef33c52e773464c17c9347e8f63c47618581b6bf1813e5cb935149e",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_deathwing_bloodcorruption_earth.blp",
+    "sourcePath": "Interface\\icons\\ability_deathwing_bloodcorruption_earth.blp",
+    "sha256": "9f8886e99ce87dd648a347a4e267c6e1d980836632b35382d825656e44faf974",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_deathwing_sealarmorbreachtga.blp",
+    "sourcePath": "Interface\\icons\\ability_deathwing_sealarmorbreachtga.blp",
+    "sha256": "b19357eb418a1dca6c3f3377728647b46abd3db9a36c40e2576628925bc55364",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_demonhunter_glide.blp",
+    "sourcePath": "Interface\\icons\\ability_demonhunter_glide.blp",
+    "sha256": "25c89ebdad6a7187d818e13afc4d336819447c5239a8cdb1ebfd9f939a7302e2",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warlock_handofguldan.blp",
+    "sourcePath": "Interface\\icons\\ability_warlock_handofguldan.blp",
+    "sha256": "32606e2e56ba2977feb123e7edf6c289404a86c319869d90edced64d4caac7d6",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_warlock_demonsoul.blp",
+    "sourcePath": "Interface\\icons\\spell_warlock_demonsoul.blp",
+    "sha256": "b0a781ba21684a6afc6d1d90b97ac130dc043ce8357b8d15c0e4e0a126be0619",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warlock_soulswap.blp",
+    "sourcePath": "Interface\\icons\\ability_warlock_soulswap.blp",
+    "sha256": "7a78daacd56600e73deea8362f4396015d3dd32ff7b386eb526f19f520a3f535",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_shadow_demonictactics.blp",
+    "sourcePath": "Interface\\icons\\spell_shadow_demonictactics.blp",
+    "sha256": "7e95f0c3047dbe031c3fbd1896700062f442af2861cf499598ce299413e0d94c",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "warrior_talent_icon_avatar.blp",
+    "sourcePath": "Interface\\icons\\warrior_talent_icon_avatar.blp",
+    "sha256": "0139e069a4a42d726b3decbbb393366d467fdfacfcad691ef5cd5426bd3b0499",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warrior_bloodbath.blp",
+    "sourcePath": "Interface\\icons\\ability_warrior_bloodbath.blp",
+    "sha256": "dcac494be09ec661a6ca97d4eff2dc6acab66fcce4c4eac27cf4a85b64381e9c",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_warrior_colossussmash.blp",
+    "sourcePath": "Interface\\icons\\ability_warrior_colossussmash.blp",
+    "sha256": "2df3cd7698316c9614ceb5ba86ca76f0d82afa8831e355a990527f1e7f0eebec",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "demoralizing_banner.blp",
+    "sourcePath": "Interface\\icons\\demoralizing_banner.blp",
+    "sha256": "0a2e23b674469ece4aac0c49cf3f94d4137add605ae11532784802ee91338a50",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_heroicleap.blp",
+    "sourcePath": "Interface\\icons\\ability_heroicleap.blp",
+    "sha256": "3b8882031cdbdab2f5dafbf5148cbdf9ef43202732487b98dc8ca2f3739d4436",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "warrior_wild_strike.blp",
+    "sourcePath": "Interface\\icons\\warrior_wild_strike.blp",
+    "sha256": "6b562476100c49e0bcff760a2f8a2868930b96dc337da986d2416b35eaa803a5",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "warrior_skullbanner.blp",
+    "sourcePath": "Interface\\icons\\warrior_skullbanner.blp",
+    "sha256": "4a742f4125ee634e7dd5f5251eea6bd8ca6f369b8daca299a23b09e100809d74",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "inv_knife_1h_cataclysm_c_05.blp",
+    "sourcePath": "Interface\\icons\\inv_knife_1h_cataclysm_c_05.blp",
+    "sha256": "255d1df4196041862b65d05d61ec6ce0b41085881b713c020c2b5fb6aae007a2",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_waylay.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_waylay.blp",
+    "sha256": "988a4f7d0711e5e231d02566c68cbb8b67fea4d41853e40ae0b6c89b23f9a8d9",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "5_warlock05_border.blp",
+    "sourcePath": "Interface\\icons\\5_warlock05_Border.blp",
+    "sha256": "edf9bda3733fa737391ce93c363e1e491bb12029a7d4a29f0793ff2b8967620f",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_fire_twilightfireward.blp",
+    "sourcePath": "Interface\\icons\\spell_fire_twilightfireward.blp",
+    "sha256": "ca968082bb2b08969e12b6404b318e2b473bacf168a4058d842074f61a8f67ba",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_nature_spiritarmor.blp",
+    "sourcePath": "Interface\\icons\\spell_nature_spiritarmor.blp",
+    "sha256": "a94d6b4520dbacdbd50c964079eb01eb650fb09935fc997eb79dd987a87c54cd",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "spell_holy_holyprotection.blp",
+    "sourcePath": "Interface\\icons\\spell_holy_holyprotection.blp",
+    "sha256": "0a01cd592d444f28e4d097bdf0023d4be58a960fc758bf66d484e3ae0eaf4c17",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_honoramongstthieves.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_honoramongstthieves.blp",
+    "sha256": "c864b7f4cad6c4fbdf6df47083c31c90c3deb72077a69e4270758c3640389901",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_rogue_masterofsubtlety.blp",
+    "sourcePath": "Interface\\icons\\ability_rogue_masterofsubtlety.blp",
+    "sha256": "df741f6788ec7d1b09e26db208b250b7bc2e58d332029c24b2a3cf1c20e64789",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "sinisterstrike_shadow.blp",
+    "sourcePath": "Interface\\icons\\Sinisterstrike_Shadow.blp",
+    "sha256": "8e158f81899cea1efb2a60f2a1206fcbd626f2a6a9ffe0acceb9f95d6ffa2aad",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "steadyshot_storm.blp",
+    "sourcePath": "Interface\\icons\\Steadyshot_Storm.blp",
+    "sha256": "a122228a2b0884934dc1a54e5a738e6553532331983e731fcd02ab669c2060a1",
+    "width": 64,
+    "height": 64
+  },
+  {
+    "file": "ability_hunter_rapidkilling.blp",
+    "sourcePath": "Interface\\icons\\ability_hunter_rapidkilling.blp",
+    "sha256": "39eb0c730cd9ee23350115aa79da67c956db3fb82eae396c78c369737268c3ef",
+    "width": 64,
+    "height": 64
+  }
+]

@@ -1,3 +1,11 @@
+# 0.40.0
+
+- Add 65 missing Ascension class abilities as custom-mode planning entries, with source levels, AP/rarity costs, descriptions and packaged icons. Keep Classic and established progression/Mastery overrides intact.
+- Add missing-client description/icon fallbacks for 11 existing custom entries; preserve dynamic scaling as readable formulas in offline previews.
+- Add class-trainer guidance with the current Hero Advancement key binding and a native talent-reset confirmation action.
+- Add authoritative trainer-state blocking for server-published custom modes. The staged Class+ test connects persisted mode to the gate; Hybrid/Hero production persistence integration remains required. Profession/riding trainers remain available.
+- New Ascension abilities are previews until server spell implementation; the supported server purchase catalog is unchanged. Native trainer resets use the existing server price; remote custom-build resets remain unimplemented.
+
 # 0.39.10
 
 - Add Hunter Auto Shot as a level 1, 2 AP custom-mode choice using native spell 75; retain the Classic creation-grant entry.

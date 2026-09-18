@@ -29,7 +29,7 @@ function UIDropDownMenu_CreateInfo()return{}end
 function UIDropDownMenu_AddButton()end
 function UIDropDownMenu_SetText()end
 ''')
-for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
+for n in ['Catalog.lua','Adapter.lua','Layout.lua','Trees.lua','Organization.lua','Browse.lua','TalentAbilityReferences.lua','Masteries.lua','AscensionAbilities.lua','NativeTalentRoutes.lua','MenuLayoutOverrides.lua','MenuLayout.lua','HeroFreePick.lua']:lua.execute((root/n).read_text(encoding='utf-8-sig'))
 lua.execute("""
 local A=HeroFreePick;A.mode='Hero';A.InstalledModes={Classic=true,ClassPlus=true,Hybrid=true,Hero=true}
 assert(type(A.BeginPreparation)=='function' and type(A.RequestClose)=='function')
