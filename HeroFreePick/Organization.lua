@@ -69,10 +69,15 @@ function A.IsPassiveEntry(e)
 end
 function A.LearnedDisplayRows()
  local out={}
+ local function visible(e)
+  -- Purchased group controls remain visible even when their wrapper spell is
+  -- passive. They provide the cost, tooltip and removal action for the group.
+  return (A.mode~='Classic'and(e.isMastery or e.isBundle))or not A.IsPassiveEntry(e)
+ end
  for _,row in ipairs(A.GroupLearnedEntries(A.FilteredLearnedEntries()))do
-  if not A.IsPassiveEntry(row.entry)then
+  if visible(row.entry)then
    local parent=A.byID[row.entry.requiredMastery or row.entry.requiredBundle]
-   if row.child and parent and A.IsPassiveEntry(parent)then row.child=false end
+   if row.child and parent and not visible(parent)then row.child=false end
    out[#out+1]=row
   end
  end

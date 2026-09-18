@@ -677,6 +677,22 @@ A.FilteredLearnedEntries=oldFiltered;A.byID[-901]=nil
 print('PASS: all modes hide passive learned rows, including reinserted grouping parents, while retaining active children.')
 
 lua.execute("""
+local oldFiltered=A.FilteredLearnedEntries
+local mastery=A.byID[21092155];local member=A.byID[21]
+assert(mastery.isMastery and A.IsPassiveEntry(mastery))
+A.FilteredLearnedEntries=function()return {mastery,member}end
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;local rows=A.LearnedDisplayRows()
+ assert(#rows==2 and rows[1].entry==mastery and not rows[1].child)
+ assert(rows[2].entry==member and rows[2].child)
+end
+A.mode='Classic';local rows=A.LearnedDisplayRows()
+assert(#rows==1 and rows[1].entry==member and not rows[1].child)
+A.FilteredLearnedEntries=oldFiltered;A.mode='Hero'
+""")
+print('PASS: custom modes retain passive Mastery controls and nested active members; Classic still hides passive rows.')
+
+lua.execute("""
 local original=HeroFreePickPlans
 local talent,ability
 for _,e in ipairs(HeroFreePickCatalog)do
