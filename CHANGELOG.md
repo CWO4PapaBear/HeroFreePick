@@ -1,5 +1,6 @@
 ## Unreleased — Class+ server inventory
 
+- Update the shared pending-change confirmation to warn that changing talents after confirmation costs Gold; fit the message on two lines.
 - Prompt new Class+, Hybrid and Hero selections with a screen-wide raid warning to open Hero Advancement and choose initial abilities. Respect muted alert sounds and avoid reminders on ordinary mode synchronization.
 - Reject ability additions immediately when the active draft lacks enough Ability Points, using the existing alert. Applies to both advancement and Archetype drafts.
 - Custom-mode learned lists retain Mastery and bundle headings, with their active member abilities nested beneath them. Ordinary passive rows remain hidden; Classic filtering is unchanged.
