@@ -6,6 +6,8 @@ Before the progression redesign: commit `54a681b`, tag `restore-runes-budget-bef
 
 ## Implemented rules
 
+Latest adjustment: in Class+ and Hybrid, ability unlock requirements of levels 1–10 become level 1, including DK and Mastery/bundle members. Passive talent tiers, levels above 10, Classic, Hero and later-rank schedules are unchanged. The earliest-member rule automatically brings affected Masteries to level 1.
+
 - Fixed caps: 11 Uncommon, 16 Rare, 13 Epic, 7 Legendary. Rarity limits still apply to Class+, Hybrid and Hero.
 - Click a rarity bar to filter; right-click clears it. Sixteen gem positions fit before the count.
 - Runeforging Mastery: 2 AP and 1 Rare gem, ten free weapon runes at level 20. Classic rune records remain separate.
