@@ -49,6 +49,16 @@ for _,destination in ipairs({{18,'Booty Bay','BootyBay'},{90,'Ratchet','Ratchet'
 end
 for _,e in ipairs(HeroMasteryExtraAbilities)do if e.portalCity then e.travelKind=teleportSet[e.spells[1]]and 'teleport'or 'portal'end end
 
+-- Runeforging uses the same free, level-gated member grants as other Masteries.
+table.insert(HeroMasteries,{id=21053428,name='Runeforging Mastery',spells={53428},kind='Ability',quality='Rare',ae=2,te=0,level=20,isMastery=true,rarityCost=1,members={53323,53331,53341,53342,53343,53344,62158,70164,54447,54446},icon='Spell_DeathKnight_FrozenRuneWeapon',class='DeathKnight',spec='Blood'})
+for _,e in ipairs(HeroFreePickCatalog)do
+ if e.classicOnly and e.class=='DeathKnight'and string.find(e.name,'Rune of ',1,true)==1 then
+  local member={};for k,v in pairs(e)do member[k]=v end
+  member.id=22000000+e.spells[1];member.classicOnly=nil;member.level=20;member.ae=0;member.te=0;member.rarityCost=0
+  table.insert(HeroMasteryExtraAbilities,member)
+ end
+ if e.id==1179 then e.classicOnly=true end
+end
 local A=HeroFreePick
 -- Custom destination progression; Classic continues to use stock trainer levels.
 local raceCapitals={Human='Stormwind',Dwarf='Ironforge',Gnome='Ironforge',NightElf='Darnassus',Draenei='Exodar',Orc='Orgrimmar',Troll='Orgrimmar',Tauren='ThunderBluff',Scourge='Undercity',Undead='Undercity',BloodElf='Silvermoon'}

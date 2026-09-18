@@ -36,7 +36,7 @@ assert(type(A.BeginPreparation)=='function' and type(A.RequestClose)=='function'
 function UnitClass()return 'Hero','HERO'end
 function LearnTalent()error('Immediate talent learning must never be called')end
 A.Init();A.BeginPreparation();assert(not A.HasPendingChanges())
-assert(#HeroFreePickTrees==829 and #HeroTalentAbilityReferences==144 and #HeroMasteries==26)
+assert(#HeroFreePickTrees==829 and #HeroTalentAbilityReferences==144 and #HeroMasteries==27)
 for _,class in ipairs(A.classes)do
  A.class=class;A.isBrowse=false
  for _,spec in ipairs(A.Specs())do A.spec=spec;A.view='browse';A.Refresh(true)end
@@ -1034,3 +1034,18 @@ end
 HeroFreePickPlans=plans;A.mode=mode;A.ShowPointWarning=warning;A.RarityLimits=limits;HeroRarityCosts=costs
 """)
 print('PASS: both drafts block all four rarity overflows before mutation; exact caps, repeat clicks, refunds and zero-cost entries remain allowed.')
+
+
+lua.execute("""
+local mode,plans,level,refresh=A.mode,HeroFreePickPlans,testLevel,A.Refresh
+A.mode='Hero';testLevel=20
+HeroFreePickPlans={version=1,catalog='stock-335-v1',entries={},previewLearned={},preparationInitialized=true}
+assert(A.RarityLimits.Legendary==7 and A.RarityLimits.Epic==13 and A.RarityLimits.Rare==16 and A.RarityLimits.Uncommon==11)
+assert(A.SetLocalLearned(21053428,1))
+local n=0;for _,e in ipairs(HeroFreePickCatalog)do if e.requiredMastery==21053428 then n=n+1;assert(HeroFreePickPlans.previewLearned[e.id]==1 and e.ae==0 and HeroRarityCosts[e.id]==0)end end;assert(n==10)
+assert(A.SetLocalLearned(21053428,0))
+A.Refresh=function()end
+for q,row in pairs(A.RarityRows)do assert(#row.gems==16);row.scripts.OnMouseUp(row,'LeftButton');assert(A.quality==q);row.scripts.OnMouseUp(row,'RightButton');assert(A.quality=='All')end
+A.Refresh=refresh;A.mode=mode;HeroFreePickPlans=plans;testLevel=level
+""")
+print('PASS: Runeforging grants ten free level-20 runes; expanded rarity rows filter and clear on click.')

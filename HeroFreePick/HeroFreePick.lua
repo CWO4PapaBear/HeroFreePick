@@ -705,13 +705,13 @@ UIDropDownMenu_Initialize(filterMenu,function(self,level)
  end
 end)
 local learnedScroll,learnedContent=scroll(side,'HeroBuilderLearned',12,-128,274,188)
-local rarityRows={}
+local rarityRows={};A.RarityRows=rarityRows
 local rarityColors={Legendary={1,.5,0},Epic={.64,.21,.93},Rare={0,.44,.87},Uncommon={.12,1,0}}
 for i,q in ipairs({'Legendary','Epic','Rare','Uncommon'})do
  local row=panel(side,10,-329-(i-1)*29,302,28);row.label=txt(row,q,8,-7,88,'GameFontNormalSmall');row.label:SetTextColor(unpack(rarityColors[q]));row.count=txt(row,'0',266,-7,34);row.gems={};rarityRows[q]=row
- row:EnableMouse(true);row:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_LEFT');GameTooltip:SetText(q..' slots used');GameTooltip:AddLine('Rarity slots used by local selections. Limits: 6 Legendary, 11 Epic, 12 Rare, 10 Uncommon.',1,1,1,true);GameTooltip:Show()end);row:SetScript('OnLeave',function()GameTooltip:Hide()end)
- for j=1,12 do
-  local gem=CreateFrame('Frame',nil,row);gem:SetSize(12,18);gem:SetPoint('TOPLEFT',94+(j-1)*14,-5);gem.parts={}
+ row:EnableMouse(true);row:SetScript('OnMouseUp',function(_,button)A.quality=button=='RightButton'and 'All'or q;A.page=1;A.Refresh()end);row:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_LEFT');GameTooltip:SetText(q..' slots used');GameTooltip:AddLine('Rarity slots used by local selections. Limits: 7 Legendary, 13 Epic, 16 Rare, 11 Uncommon. Left-click this bar to filter abilities by rarity. Right-click to clear the rarity filter.',1,1,1,true);GameTooltip:Show()end);row:SetScript('OnLeave',function()GameTooltip:Hide()end)
+ for j=1,16 do
+  local gem=CreateFrame('Frame',nil,row);gem:SetSize(12,18);gem:SetPoint('TOPLEFT',80+(j-1)*11,-5);gem.parts={}
   for y=0,15 do local width=math.max(1,10*(1-math.abs(y-7.5)/8));local t=gem:CreateTexture(nil,'ARTWORK');t:SetPoint('TOPLEFT',(12-width)/2,-y);t:SetSize(width,1);t:SetTexture(1,1,1,1);gem.parts[#gem.parts+1]=t end
   row.gems[j]=gem
  end

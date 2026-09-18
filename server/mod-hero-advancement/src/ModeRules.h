@@ -40,7 +40,7 @@ inline std::string Validate(Character const& c,Catalog const& catalog,Build cons
  }
  if(spent.ability>(c.level<10?9:c.level))return "Ability budget exceeded";
  if(spent.talent>(c.level<10?0:c.level-9))return "Talent budget exceeded";
- std::array<unsigned,5> caps{0,10,12,11,6};for(unsigned i=1;i<5;++i)if(spent.gems[i]>caps[i])return "Rarity budget exceeded";
+ std::array<unsigned,5> caps{0,11,16,13,7};for(unsigned i=1;i<5;++i)if(spent.gems[i]>caps[i])return "Rarity budget exceeded";
  return {};
 }
 inline std::set<Mode>& InstalledModes(){static std::set<Mode> modes;return modes;}

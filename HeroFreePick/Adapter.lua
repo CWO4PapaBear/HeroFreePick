@@ -90,7 +90,7 @@ function A.ApplyBuild() return false,'Learning is unavailable: this is a local p
 
 -- No server-owned learned state exists in this read-only build. Never infer ownership from draft selections or native class spells.
 -- Local prototype state, separate from Archetype drafts and real character spells.
-A.RarityLimits={Legendary=6,Epic=11,Rare=12,Uncommon=10}
+A.RarityLimits={Legendary=7,Epic=13,Rare=16,Uncommon=11}
 function A.RaritySpent(quality)
  local spent=0
  for id,rank in pairs(HeroFreePickPlans.previewLearned or {})do local e=A.byID[id];if e and rank>0 and not A.IsTalent(e) and e.quality==quality then spent=spent+((HeroRarityCosts or {})[id]or 1)end end
