@@ -1,3 +1,9 @@
+## 0.41.0
+
+- Add reproducible Area 52 talent importer, rank-level tooltip comparisons and packaged icons. Preserve existing native identities, routes, costs and prerequisite color logic; Classic keeps stock tooltips.
+- Highlight changed wording yellow until the exact reference revision is explicitly confirmed implemented. Unresolved formula values remain visibly pending.
+- Stage 29 unmatched source records (27 distinct class/name pairs) separately for future tree/server integration; export complete effect and dependency references without applying server changes.
+
 ## 0.40.3
 
 - Add optional persistent Class+ enrollment runtime and matching bridges without character-name restrictions. Preserve existing enrolled builds, keep unenrolled characters Classic, validate account/class identity independently of names, and clean up ownership records on deletion. Full core build and live verification pending deployment.

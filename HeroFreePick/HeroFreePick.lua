@@ -69,6 +69,7 @@ local function scroll(parent,name,x,y,w,h)
  return s,c
 end
 local function icon(e)
+ if A.AscensionTalentIcon then local ref=A.AscensionTalentIcon(e);if ref then return ref end end
  if A.mode~='Classic'and e.referenceIcon then return e.referenceIcon end
  if e.catalogOnly and e.icon then return 'Interface\\Icons\\'..e.icon end
  local packaged=A.mode~='Classic'and A.PackageSpellIcons and A.PackageSpellIcons[e.spells[1]];if packaged then return packaged end
@@ -225,8 +226,10 @@ local function tooltip(self)
  if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
  local rank=math.max(1,A.PendingRank(e));local id=e.spellbookSpell or e.spells[math.min(rank,#e.spells)]
  local description=A.mode~='Classic'and(e.referenceDescription or(A.SummoningDescriptions and A.SummoningDescriptions[id]))
+ if A.AscensionTalentDescription then description=A.AscensionTalentDescription(e,rank)or description end
  if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  if A.mode~='Classic'and e.serverPending then GameTooltip:AddLine('Plannable ability. Server implementation pending.',1,.65,.2,true)end
+ if A.AddAscensionTalentNotes then A.AddAscensionTalentNotes(e,rank)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
  local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
  if e.customServerRequired then GameTooltip:AddLine('Preview uses a Rune spell reference. Independent Mage travel requires the forthcoming client/server travel package; this selection does not unlock Runes.',1,.6,.3,true)end

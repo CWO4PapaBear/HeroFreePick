@@ -19,6 +19,7 @@ def main():
     for mode,folder in [('ClassPlus','mod-hero-classplus'),('Hybrid','mod-hero-hybrid'),('Hero','mod-hero-freepick')]:
         components.append((mode+'-preview-addon',[ROOT/'profiles'/('HeroAdvancement_'+mode)]))
         components.append((mode+'-server-policy',[ROOT/'server'/folder]))
+    components.append(('Area52-talent-importer',[ROOT/'tools/talents']))
     components.append(('ClassPlus-enrollment-runtime',[ROOT/'server/mod-hero-starting-path',ROOT/'profiles/HeroStartingPathTest',ROOT/'profiles/HeroClassPlusCommitTest']))
     components.append(('complete-development-bundle',[addon,*sorted((ROOT/'profiles').iterdir()),*sorted(p for p in (ROOT/'server').iterdir()if p.name.startswith('mod-'))]))
     for label,folders in components:
@@ -26,7 +27,7 @@ def main():
         with zipfile.ZipFile(package,'w',zipfile.ZIP_DEFLATED)as z:
             for folder in folders:
                 for p in sorted(folder.rglob('*')):
-                    if p.is_file():z.write(p,Path(folder.name)/p.relative_to(folder))
+                    if p.is_file()and '__pycache__'not in p.parts and p.suffix not in ('.pyc','.pyo'):z.write(p,Path(folder.name)/p.relative_to(folder))
             z.write(ROOT/'docs/MODULES.md','INSTALL-MODULES.md')
         print(package.name)
 if __name__=='__main__':main()

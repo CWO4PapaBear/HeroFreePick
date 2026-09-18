@@ -1,0 +1,3357 @@
+[
+  {
+    "source": "Spell_Arcane_MassDispel",
+    "sha256": "e41a47d65118b6cf1afa18b222d0e9d782ed9f4279065eab6deda398299bff5e",
+    "file": "spellarcanemassdispel.blp"
+  },
+  {
+    "source": "Spell_Fire_Fire",
+    "sha256": "d0e2d5d598f6ed105593f55a8b1f3525eb806d7a91266cc4bbb78b95c6d51882",
+    "file": "spellfirefire.blp"
+  },
+  {
+    "source": "Spell_Fire_FireArmor",
+    "sha256": "3fb0d74b71d608daed3aeac4a814aedb29ac49ccb85ccbbe3e6a5a61e1e0b99f",
+    "file": "spellfirefirearmor.blp"
+  },
+  {
+    "source": "Spell_Fire_SoulBurn",
+    "sha256": "928a656b34776bff4306342a7a2bec13a3b8cbd8169fe2c3e8a218f47dd9165c",
+    "file": "spellfiresoulburn.blp"
+  },
+  {
+    "source": "Spell_Fire_FlameBolt",
+    "sha256": "9d91b4e0eaed4beffc087e3e1ed2e3d0a35a576a77168bb9f0d71240363ec554",
+    "file": "spellfireflamebolt.blp"
+  },
+  {
+    "source": "Spell_Fire_Fireball",
+    "sha256": "85e4be91fd4b3c0fc53c9584e46963af1c6e26643997edadbe164e128640065c",
+    "file": "spellfirefireball.blp"
+  },
+  {
+    "source": "Spell_Fire_Flare",
+    "sha256": "374115ae061d773dd260472234f4423a56746496319e7b81b24a6eb116cb0623",
+    "file": "spellfireflare.blp"
+  },
+  {
+    "source": "Spell_Fire_Fireball02",
+    "sha256": "91d2a57fbbd5ca3a927ac42e07ba5ffa3972bba610f838037b15d98bc4656703",
+    "file": "spellfirefireball02.blp"
+  },
+  {
+    "source": "Spell_Fire_MeteorStorm",
+    "sha256": "9b84b0cff6e71d627c41eae9ce86e267fb202f3bdc97669ba035cecaa41109b8",
+    "file": "spellfiremeteorstorm.blp"
+  },
+  {
+    "source": "Ability_Mage_WorldInFlames",
+    "sha256": "7f75db5e7a82f3ef43e705f19ed5465b19970ba4abe10605b6623f33fa213a26",
+    "file": "abilitymageworldinflames.blp"
+  },
+  {
+    "source": "Spell_Holy_Excorcism_02",
+    "sha256": "d80e49ffd31b952b44589b4a93b511d77435d6428f7eff65d636dd9956fe84ee",
+    "file": "spellholyexcorcism02.blp"
+  },
+  {
+    "source": "Spell_Nature_WispHeal",
+    "sha256": "f1591c87c69f6d4f71cce5e52671ed014e0485433768c51d040ddd3d28296a61",
+    "file": "spellnaturewispheal.blp"
+  },
+  {
+    "source": "Spell_Fire_Incinerate",
+    "sha256": "5d75b895fa3aac22508b53d72ba9b36a5111f6643719d3289f10c81433a79419",
+    "file": "spellfireincinerate.blp"
+  },
+  {
+    "source": "Spell_Fire_Immolation",
+    "sha256": "f761c8a9121a767b611ccb574b03998a1ae4dad865e71c7bde3178d1a07b979e",
+    "file": "spellfireimmolation.blp"
+  },
+  {
+    "source": "Spell_Fire_SealOfFire",
+    "sha256": "0bab03f0a723c0f4cb479c7f3eb2b789037e93ee4f6bd32213593a9ce8d411f5",
+    "file": "spellfiresealoffire.blp"
+  },
+  {
+    "source": "Spell_Frost_FrostBolt02",
+    "sha256": "deb65f180e2e2604fd723a54f0775eb6f7ff3a0ac92770fe920ea8e1c466e586",
+    "file": "spellfrostfrostbolt02.blp"
+  },
+  {
+    "source": "Spell_Frost_FrostArmor",
+    "sha256": "aa44fc02cee8df8e2f434ee2b008f23beb3d24df864f6bf2d552898e29a06e17",
+    "file": "spellfrostfrostarmor.blp"
+  },
+  {
+    "source": "Spell_Frost_Frostbolt",
+    "sha256": "1ad321a0b9874ca33457ca7487dd64da6cee0ac2f41c0fcb79f07f8ae6af8c9e",
+    "file": "spellfrostfrostbolt.blp"
+  },
+  {
+    "source": "Spell_Frost_IceFloes",
+    "sha256": "44bec08150773d3c01e9d30649a2f05cc217ffa2029caafba4ccb01cd7e31241",
+    "file": "spellfrosticefloes.blp"
+  },
+  {
+    "source": "Spell_Frost_IceStorm",
+    "sha256": "d17b34454ab0da081b95caac2772067ca98ad0b562399ac31b17e58ba5f0ae82",
+    "file": "spellfrosticestorm.blp"
+  },
+  {
+    "source": "Spell_Frost_Glacier",
+    "sha256": "dccf39b12289ca5e65863308e5c26e8298c8d0680181eac4b2ad8063e0cb2916",
+    "file": "spellfrostglacier.blp"
+  },
+  {
+    "source": "Spell_Frost_Wisp",
+    "sha256": "e96843f84915f9efe90865185d011890fff65a11901f404c4e608251ab4ab3e3",
+    "file": "spellfrostwisp.blp"
+  },
+  {
+    "source": "Spell_Frost_Stun",
+    "sha256": "dc787585ca60b4d429af567a6813df38737f862d9452bcba4849126c3c32f0bb",
+    "file": "spellfroststun.blp"
+  },
+  {
+    "source": "Spell_Frost_FrostShock",
+    "sha256": "bae23927c5f9c88d9538241a4fdec609810598cb99f5d816ac300eb3060e2ed8",
+    "file": "spellfrostfrostshock.blp"
+  },
+  {
+    "source": "Spell_Frost_ChillingBlast",
+    "sha256": "f556c2b986a8c4a42cd25d8191ae46f05241696bf4aa34ac55267dc7ff7bd9b7",
+    "file": "spellfrostchillingblast.blp"
+  },
+  {
+    "source": "Spell_Frost_ColdHearted",
+    "sha256": "bb6fd5ef65e6522673d123c0169c8b5da9d82fb95830bab21590b7d7ace97143",
+    "file": "spellfrostcoldhearted.blp"
+  },
+  {
+    "source": "Spell_Frost_FrostWard",
+    "sha256": "07269c536a706084c606618e314c56ce2915bb896fbe4bc44bcbaae79cc56ce8",
+    "file": "spellfrostfrostward.blp"
+  },
+  {
+    "source": "Spell_Ice_Lament",
+    "sha256": "71d23a751dfb6f812b68d4949d8e88afda2c617797b5f0e5c29d2301fa41e4f7",
+    "file": "spellicelament.blp"
+  },
+  {
+    "source": "Spell_Frost_WizardMark",
+    "sha256": "66c46b548d229ca808f606d09f0264cf7b8d7110171ebcd6cf72dd49b3e9268a",
+    "file": "spellfrostwizardmark.blp"
+  },
+  {
+    "source": "Spell_Frost_IceShard",
+    "sha256": "d54a9c8cf9debc3d75550020136b06bb54ed8e334500b214b21caab21c6f5e39",
+    "file": "spellfrosticeshard.blp"
+  },
+  {
+    "source": "Spell_Holy_DispelMagic",
+    "sha256": "ea7e3db25b09e67d179431c7734112be0840f588d9cf07bf89ddcc2ed740512c",
+    "file": "spellholydispelmagic.blp"
+  },
+  {
+    "source": "Spell_Shadow_ManaBurn",
+    "sha256": "cdf3406bad8e862c8c3a0cf338cdb12394b53a933ecab7d75ebc98cb9bf91299",
+    "file": "spellshadowmanaburn.blp"
+  },
+  {
+    "source": "spell_arcane_rune",
+    "sha256": "3d0b17e4f5cc657f780d2260265f86652ceadfba9785dfd09917207ac4be3b75",
+    "file": "spellarcanerune.blp"
+  },
+  {
+    "source": "Spell_Shadow_Charm",
+    "sha256": "eea722f15f5f5f1992b67de4d1a1d445382fd1ce000d85df71c33bcdd792ae4a",
+    "file": "spellshadowcharm.blp"
+  },
+  {
+    "source": "Spell_Nature_StarFall",
+    "sha256": "f7c8dd8f4b9325e815e9093b683a00bcd413069bbc4d5f2b9ba73ea31425f53f",
+    "file": "spellnaturestarfall.blp"
+  },
+  {
+    "source": "Spell_Nature_WispSplode",
+    "sha256": "edfdd81d6a952e40603dd1477f7cc245faac8774c133a74907a2f4001d3c4791",
+    "file": "spellnaturewispsplode.blp"
+  },
+  {
+    "source": "Spell_Nature_Polymorph",
+    "sha256": "cdbbccd4993c8d01cd100bb1642a8cfa8f1304f4b7ffcda69a6220a66eba9853",
+    "file": "spellnaturepolymorph.blp"
+  },
+  {
+    "source": "Spell_Shadow_DetectLesserInvisibility",
+    "sha256": "bd2fbadcd57c67ba86b767ee7b4f8513ae974f7f6c00b036623d9cf4424c9c50",
+    "file": "spellshadowdetectlesserinvisibility.blp"
+  },
+  {
+    "source": "Spell_Arcane_ArcaneResilience",
+    "sha256": "1b71834ef510044860b90838e893e6e09a70dec41f8b135de7042625568d43a9",
+    "file": "spellarcanearcaneresilience.blp"
+  },
+  {
+    "source": "Spell_Nature_EnchantArmor",
+    "sha256": "c09c4234c31cee2ccfb5884a1374270300b022bb6c5b4b62982c569bdfdabcb8",
+    "file": "spellnatureenchantarmor.blp"
+  },
+  {
+    "source": "Spell_Nature_Lightning",
+    "sha256": "abd138a73e9b36d0b604853fa5915c464d7f109f267708ffcbbe1d1ddae8b46d",
+    "file": "spellnaturelightning.blp"
+  },
+  {
+    "source": "Spell_Frost_IceShock",
+    "sha256": "3e523de4a9345b05f7570197946da29bcbaa48756bd426ed58c3e721df02ccdd",
+    "file": "spellfrosticeshock.blp"
+  },
+  {
+    "source": "Ability_BackStab",
+    "sha256": "f6c537d0e7578f5597c9b35478f555c895c1269e94b0297f9d6d1468294f63fa",
+    "file": "abilitybackstab.blp"
+  },
+  {
+    "source": "INV_Sword_27",
+    "sha256": "ba1394caae2f1631964f3f185427dd4317552e6a9c7307b97eefed92a00d61dd",
+    "file": "invsword27.blp"
+  },
+  {
+    "source": "Ability_Rogue_Ambush",
+    "sha256": "4b0a5a8749feeddc84a686ba5d3adaaa7c4f8eaa0ab0925adab25d97dbdf1c8f",
+    "file": "abilityrogueambush.blp"
+  },
+  {
+    "source": "INV_Mace_01",
+    "sha256": "8518342c6ea30362bf2219548ffb0d575b08e33bc27bd91b608be6eadcb9e961",
+    "file": "invmace01.blp"
+  },
+  {
+    "source": "Ability_Warrior_Charge",
+    "sha256": "69f12f1fe357130b873c8a97a384107d7529c0cb325fda70ae924a67532560f9",
+    "file": "abilitywarriorcharge.blp"
+  },
+  {
+    "source": "Ability_Gouge",
+    "sha256": "6abba572fe2bb4a6a6ba158968eda3e022dfb5b78283cf884584b14964d31969",
+    "file": "abilitygouge.blp"
+  },
+  {
+    "source": "Ability_ShockWave",
+    "sha256": "18e8d25a38ff654460727b1fb98033b31ae987ad62c041451f739147996409af",
+    "file": "abilityshockwave.blp"
+  },
+  {
+    "source": "Ability_Parry",
+    "sha256": "9fff0bacb8f5e531b69424fe93be12a99ffae1951eb93408bde72680b6e13326",
+    "file": "abilityparry.blp"
+  },
+  {
+    "source": "INV_Sword_05",
+    "sha256": "5b57b76363bd33015262d27e16bb827080f54bd8750c499bdff00b99f8cd3f5b",
+    "file": "invsword05.blp"
+  },
+  {
+    "source": "INV_Axe_06",
+    "sha256": "30f3769fbde2c5cda997b85af0f9560bce752651adfec96c4a0e052834d0a968",
+    "file": "invaxe06.blp"
+  },
+  {
+    "source": "Ability_Rogue_SliceDice",
+    "sha256": "03b57085b6921862f1386286afc0f88524ee9b6fe69464780e29da78f6833640",
+    "file": "abilityrogueslicedice.blp"
+  },
+  {
+    "source": "Ability_Warrior_WeaponMastery",
+    "sha256": "8f01c6b95fd4dacdc70961d29343611dddd6ec0e34730b27c612b615583ad07a",
+    "file": "abilitywarriorweaponmastery.blp"
+  },
+  {
+    "source": "Ability_Warrior_SavageBlow",
+    "sha256": "9d7a3bf72bc7568db8191da82b4341b28e1ee6376907ac795e324859cb574f03",
+    "file": "abilitywarriorsavageblow.blp"
+  },
+  {
+    "source": "INV_Axe_09",
+    "sha256": "12d3585e9ed7790975848b251361efe1b704d0cf5fb1d048e20d81862d3db64a",
+    "file": "invaxe09.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessingOfStamina",
+    "sha256": "e083b09912af003b8c474e3b636a1d1831b34a4cf44fdcee37c1e8c969782645",
+    "file": "spellholyblessingofstamina.blp"
+  },
+  {
+    "source": "Spell_Nature_MirrorImage",
+    "sha256": "27714e7037c9f6a7580f9e8a2159b23f4c7d6469c1ebb04babdbd2f60a49387f",
+    "file": "spellnaturemirrorimage.blp"
+  },
+  {
+    "source": "Ability_Warrior_ShieldGuard",
+    "sha256": "5d68087a688cda8608e3883cafb8bd3673e2136519ba14caa4b12b6a62e24c0c",
+    "file": "abilitywarriorshieldguard.blp"
+  },
+  {
+    "source": "Ability_ThunderClap",
+    "sha256": "48a408e87a2e811b748412999421038edf03d4fbfd9e4b9d8f4ff1459b0aa0bc",
+    "file": "abilitythunderclap.blp"
+  },
+  {
+    "source": "Ability_Racial_BloodRage",
+    "sha256": "ae86e98a056a4cc4c7f42093ef92fcbd19c7871190c9397ac6a423b0fa7e9b66",
+    "file": "abilityracialbloodrage.blp"
+  },
+  {
+    "source": "Ability_Warrior_Incite",
+    "sha256": "c28134dc0b2c87830812beea7c543951a100b1a1c14d8a44187ad1ceadda36b9",
+    "file": "abilitywarriorincite.blp"
+  },
+  {
+    "source": "Ability_Warrior_Sunder",
+    "sha256": "1f086c0e61bce0e9a09aae6336e0c86e84dfe49ae151d4fd9b864acf3197ad66",
+    "file": "abilitywarriorsunder.blp"
+  },
+  {
+    "source": "Ability_Warrior_Revenge",
+    "sha256": "84c50558ada33a614befd5c0975eaa092bd321ba6e1807cfdf02569c3c839f18",
+    "file": "abilitywarriorrevenge.blp"
+  },
+  {
+    "source": "Ability_Warrior_Vigilance",
+    "sha256": "e064929c0d737b96b5b0dd298a75fdc32dbd15d66fda7d5da1b7e946297e2dbb",
+    "file": "abilitywarriorvigilance.blp"
+  },
+  {
+    "source": "Ability_Warrior_ShieldBash",
+    "sha256": "8e8e097fead160d99095b134460ed025bc2aa342157797c6456b1eef234748fc",
+    "file": "abilitywarriorshieldbash.blp"
+  },
+  {
+    "source": "Ability_Warrior_ShieldWall",
+    "sha256": "83fef432659562755d4af7d7d87eca8d37c40fef7f8a22ce22ce9b70e5275ce5",
+    "file": "abilitywarriorshieldwall.blp"
+  },
+  {
+    "source": "Ability_Warrior_Disarm",
+    "sha256": "5c084eb761a473f0fec7a8ee325d56c8eb5efb21e6958c0ab951737e6d340a67",
+    "file": "abilitywarriordisarm.blp"
+  },
+  {
+    "source": "Ability_ThunderBolt",
+    "sha256": "7661db1ae54e6530279aa5c2dc24ebd0698ae34621e7927436a035ed0f97b4de",
+    "file": "abilitythunderbolt.blp"
+  },
+  {
+    "source": "Spell_Holy_AshesToAshes",
+    "sha256": "6963c6ddbdfaccc64d22ad6c41969a63d11f04e442df4fdcd93538ac21df2727",
+    "file": "spellholyashestoashes.blp"
+  },
+  {
+    "source": "Spell_Nature_FocusedMind",
+    "sha256": "3b9b54bf1b243b54d95c37376bbe22a82d37e797f63bb28456594ae3e061b870",
+    "file": "spellnaturefocusedmind.blp"
+  },
+  {
+    "source": "Spell_Shadow_UnholyFrenzy",
+    "sha256": "91695fb56ebf4c112566da48114b57eea4be784e92dd8ba4bef0b96e355e0909",
+    "file": "spellshadowunholyfrenzy.blp"
+  },
+  {
+    "source": "Ability_GhoulFrenzy",
+    "sha256": "3bffdbdc4e6067ee201ee091a79951da26239afa10f580d60a0216c366c78b9c",
+    "file": "abilityghoulfrenzy.blp"
+  },
+  {
+    "source": "Ability_Rogue_Eviscerate",
+    "sha256": "e0de15ba0b152dfead7b6628a889e57567371d21ee4acf8706add0ef14a5af5b",
+    "file": "abilityrogueeviscerate.blp"
+  },
+  {
+    "source": "Spell_Nature_Purge",
+    "sha256": "6ec9fb523873d069ac3bba9361f90949d5b4388425bc33e3d78885a649f06b22",
+    "file": "spellnaturepurge.blp"
+  },
+  {
+    "source": "Spell_Nature_StoneClawTotem",
+    "sha256": "2a1b55968d7d351d664bd3742f62d9146f87cbb4309409d0b7d333ff295947c7",
+    "file": "spellnaturestoneclawtotem.blp"
+  },
+  {
+    "source": "Spell_Shadow_DeathScream",
+    "sha256": "d49a4203fc8c35fbdd70e568b12fdd0f70551e17321daa97410595c388b0c997",
+    "file": "spellshadowdeathscream.blp"
+  },
+  {
+    "source": "Ability_Warrior_Devastate",
+    "sha256": "fe368341aca6e6f47b878b165e51332b4d3c97afa50741544d453877aca64c80",
+    "file": "abilitywarriordevastate.blp"
+  },
+  {
+    "source": "Ability_Warrior_Cleave",
+    "sha256": "b550b60c87a24da1ae90b858ed686650d6f30677f9131e6f35b08492beb4ec0f",
+    "file": "abilitywarriorcleave.blp"
+  },
+  {
+    "source": "Spell_Nature_BloodLust",
+    "sha256": "eb603655ddee3585cada02379b2c11ab53af38b3a870cad0c2bcba71e394bbc6",
+    "file": "spellnaturebloodlust.blp"
+  },
+  {
+    "source": "Ability_Marksmanship",
+    "sha256": "5bdbdea1bf1048f08492d49345de6278a4191fc240739fc575f2aa0606ece147",
+    "file": "abilitymarksmanship.blp"
+  },
+  {
+    "source": "INV_Weapon_ShortBlade_05",
+    "sha256": "c0e32875fa1c1f5b23de6d314b70e655e1258a8fb0b498b006250c1c49028379",
+    "file": "invweaponshortblade05.blp"
+  },
+  {
+    "source": "Spell_Nature_Invisibilty",
+    "sha256": "a392a297a5b52324c6f648a4be88199752ab59f0860246deb7dfbd8a82d0c01c",
+    "file": "spellnatureinvisibilty.blp"
+  },
+  {
+    "source": "Spell_Shadow_RitualOfSacrifice",
+    "sha256": "0ab094eef25e1fa3209de64f6d2b59ddf341a11803f1cc9c95ea10872a928e9f",
+    "file": "spellshadowritualofsacrifice.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowWard",
+    "sha256": "2dc616c5b65c447920c1fc2bbd490f7649b01369d86a9712dee4b3e74e42c25c",
+    "file": "spellshadowshadowward.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowWordDominate",
+    "sha256": "5a2a21243c94f82fb58c221d707377db65f6080d144669e061a6ae0a4d63a1be",
+    "file": "spellshadowshadowworddominate.blp"
+  },
+  {
+    "source": "Ability_Kick",
+    "sha256": "ad2e2be7b144d5194cd4f6cbef7ab9612c8d8b853dddc5df8afeee0538760253",
+    "file": "abilitykick.blp"
+  },
+  {
+    "source": "Ability_DualWield",
+    "sha256": "30a6fdfbf81c7740fb5b133db75c99360a88e45f3dae7c8be9f06cb790380d19",
+    "file": "abilitydualwield.blp"
+  },
+  {
+    "source": "Ability_Rogue_Sprint",
+    "sha256": "94b5dd4f53b6a02efc4637a8db211a1947a7d884df3a9ee6fbcae4ff97a8ca94",
+    "file": "abilityroguesprint.blp"
+  },
+  {
+    "source": "Ability_Warrior_PunishingBlow",
+    "sha256": "04be106bf370fb4c155b9d7f4bcfff45281b4eb2a2a7006c1086785ac6b22652",
+    "file": "abilitywarriorpunishingblow.blp"
+  },
+  {
+    "source": "Ability_Stealth",
+    "sha256": "32919ff033b2b72bf472f5b623902390549057d88f87cf8c847d3630c7642fed",
+    "file": "abilitystealth.blp"
+  },
+  {
+    "source": "Spell_Shadow_Fumble",
+    "sha256": "966d7f8aec0eaeb510a03636bba646d8108ef82d00171477710012a7d3f5911e",
+    "file": "spellshadowfumble.blp"
+  },
+  {
+    "source": "Spell_Magic_LesserInvisibilty",
+    "sha256": "d344f3681042e713a54994d13103f8004d9dc7d0fd3a582f39dd351d635860ce",
+    "file": "spellmagiclesserinvisibilty.blp"
+  },
+  {
+    "source": "Ability_Warrior_WarCry",
+    "sha256": "9282b15241d8bd7615ba01b9b455e09cc5fa3e95a213fe59b63f196f72f9f464",
+    "file": "abilitywarriorwarcry.blp"
+  },
+  {
+    "source": "Ability_Sap",
+    "sha256": "2642814343d188509987f37328cc96629c3d79977e2f2372a5174fca32d0ac85",
+    "file": "abilitysap.blp"
+  },
+  {
+    "source": "Spell_Shadow_SummonSuccubus",
+    "sha256": "1524dc653cc227272930e57ff8f03c62d1f7cb796beac4d4b5c51c4cf3df8331",
+    "file": "spellshadowsummonsuccubus.blp"
+  },
+  {
+    "source": "Ability_Poisons",
+    "sha256": "e8f8ad12e708346bc39c4b0c0524179376697513d33553f368570b7ff09ebcd6",
+    "file": "abilitypoisons.blp"
+  },
+  {
+    "source": "Ability_CriticalStrike",
+    "sha256": "98a14bde1d14cdd5a88763c886f1f5cdcc418e607402041e3b700c79a7dff3e5",
+    "file": "abilitycriticalstrike.blp"
+  },
+  {
+    "source": "Ability_FiegnDead",
+    "sha256": "4f41f59cf7372adc57b30e5a360505571823572ef1f6a832db23720581d95acc",
+    "file": "abilityfiegndead.blp"
+  },
+  {
+    "source": "Ability_Druid_Disembowel",
+    "sha256": "9db369ad5c68bd18f24e3ed46388d65b0f96893821d316522046954afafc1bca",
+    "file": "abilitydruiddisembowel.blp"
+  },
+  {
+    "source": "Ability_Warrior_Riposte",
+    "sha256": "62b4c26ad653930e6c9db38134d398a1ebd32ba878f28e317cbdb023592a6647",
+    "file": "abilitywarriorriposte.blp"
+  },
+  {
+    "source": "Ability_Rogue_KidneyShot",
+    "sha256": "dc8d357261fdfe5361708e15f0ce1c804cf56f427065b57e2d8f465d8c335dcd",
+    "file": "abilityroguekidneyshot.blp"
+  },
+  {
+    "source": "Ability_Hunter_RapidKilling",
+    "sha256": "39eb0c730cd9ee23350115aa79da67c956db3fb82eae396c78c369737268c3ef",
+    "file": "abilityhunterrapidkilling.blp"
+  },
+  {
+    "source": "Spell_Shadow_ChillTouch",
+    "sha256": "4b9e1d8f2185137f86b386600432a7f7824968d262edb1de87bcf19e2df90575",
+    "file": "spellshadowchilltouch.blp"
+  },
+  {
+    "source": "Spell_Shadow_AntiShadow",
+    "sha256": "ba88f6707115f9345d6b7a47ef7f4b9236fe5e39eb059303bc82a4cbdbd7c18d",
+    "file": "spellshadowantishadow.blp"
+  },
+  {
+    "source": "Ability_Warrior_Challange",
+    "sha256": "cad8729bdf910e45f1cc4a447e46053bd3f4fb15d918a58fc9e3c365b25d8141",
+    "file": "abilitywarriorchallange.blp"
+  },
+  {
+    "source": "Spell_Shadow_Curse",
+    "sha256": "47693e3f0382e8b36f7121cba64cf61707f95e91a37bcfb04b480abb070ca625",
+    "file": "spellshadowcurse.blp"
+  },
+  {
+    "source": "Spell_Nature_Tranquility",
+    "sha256": "31ea44b872a5ace94bb6ea6e6f9b64a240976035219ffc91d0af2224454d9807",
+    "file": "spellnaturetranquility.blp"
+  },
+  {
+    "source": "Spell_Holy_PowerInfusion",
+    "sha256": "7fe04f117ca9ab512d4734276bd98f04849dde0d8dcfd376b9d37c589bbf7af9",
+    "file": "spellholypowerinfusion.blp"
+  },
+  {
+    "source": "Ability_Hibernation",
+    "sha256": "ddb3e26d9fb160ad325801981c0044c3898b4e5fced022b0e32f312b0510314b",
+    "file": "abilityhibernation.blp"
+  },
+  {
+    "source": "Spell_Magic_MageArmor",
+    "sha256": "88b6fbfb2e079fd937ca5b51c415994d73e1b921229676258d7f9a502d6534ad",
+    "file": "spellmagicmagearmor.blp"
+  },
+  {
+    "source": "Spell_Holy_PowerWordShield",
+    "sha256": "5dd2259f2107e64cef549e27e4cb5f9d2758f6e3d0a3132fdccfd63790cd17bb",
+    "file": "spellholypowerwordshield.blp"
+  },
+  {
+    "source": "Spell_Holy_WordFortitude",
+    "sha256": "ff38a00809be3383e74c9b1e7bf2e9de3b6c3ddd5b41b4f90398ecf73ac586fa",
+    "file": "spellholywordfortitude.blp"
+  },
+  {
+    "source": "Spell_Holy_InnerFire",
+    "sha256": "5adeb306adee7c2dcc0140270f11ccdcf27364b802bbfefbdcebf4420fcc314f",
+    "file": "spellholyinnerfire.blp"
+  },
+  {
+    "source": "Spell_Nature_Sleep",
+    "sha256": "d85476189bb33efd870fe6fb8ed29c1f63ccb7a15e9d2dab9568b9ccd4f4770c",
+    "file": "spellnaturesleep.blp"
+  },
+  {
+    "source": "Spell_Frost_WindWalkOn",
+    "sha256": "7fbfee79adb51a719358ec900ba0aa1a408d9e9a98921a5436645406db49310e",
+    "file": "spellfrostwindwalkon.blp"
+  },
+  {
+    "source": "Spell_Holy_PureOfHeart",
+    "sha256": "4090e4dfc83d05b71f0e9dc1c77f653b963450da3981f84c5681a9253567e8ba",
+    "file": "spellholypureofheart.blp"
+  },
+  {
+    "source": "Spell_Holy_SpiritualGuidence",
+    "sha256": "9a8611460b25d9ad9693b8d1191f4ea774187a15b015732ac826d65c79d0a410",
+    "file": "spellholyspiritualguidence.blp"
+  },
+  {
+    "source": "Spell_Holy_LayOnHands",
+    "sha256": "0a1402f57b6e294f539a7d4e45b594ac8b3109c5c5bc4946b02d0238c14cb3dd",
+    "file": "spellholylayonhands.blp"
+  },
+  {
+    "source": "Spell_Shadow_Possession",
+    "sha256": "921cf95b0fbcb267bd68bf3a16aa3d4aa3a44b9a1e51a826c5be1cd42377ad9e",
+    "file": "spellshadowpossession.blp"
+  },
+  {
+    "source": "Spell_Nature_EarthBindTotem",
+    "sha256": "4fa47fa50ea03f9c2d473d8564076dfcad3febcb8be0c55ca4f464cb732ae440",
+    "file": "spellnatureearthbindtotem.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfSalvation",
+    "sha256": "25a2008366c161a1bed8935ab31daf787ffeb2f410142ccccdec48196b4703e2",
+    "file": "spellholysealofsalvation.blp"
+  },
+  {
+    "source": "Spell_Holy_SearingLightPriest",
+    "sha256": "77cff30911bee3a89a2cecadb1bb4f4e354e552b11cc4034c272cd6faf8a36f4",
+    "file": "spellholysearinglightpriest.blp"
+  },
+  {
+    "source": "Spell_Nature_MoonGlow",
+    "sha256": "23859237d43c1afb7af96f4cfb494251ca0a873596e3c8a8750cd245de44f96f",
+    "file": "spellnaturemoonglow.blp"
+  },
+  {
+    "source": "Spell_Holy_Renew",
+    "sha256": "cc5031473cc0dcfe0f8052a0dbe7fd2c55cda800a03875ed4ab1a0c3b9c6cc7e",
+    "file": "spellholyrenew.blp"
+  },
+  {
+    "source": "Spell_Holy_Heal02",
+    "sha256": "9f8a025cb410b81a96deb49cb6ad0b1f8fa9f3476108c7a614a344725ce43d69",
+    "file": "spellholyheal02.blp"
+  },
+  {
+    "source": "Spell_Holy_HealingFocus",
+    "sha256": "a8e08624a77ff388112af9a4c732d049a626900860f1b8344b6697602b553719",
+    "file": "spellholyhealingfocus.blp"
+  },
+  {
+    "source": "Spell_Holy_SpellWarding",
+    "sha256": "b7a024b56e298447315d69efaa885a3a0f86a2d6382231329b27e30d5d21954b",
+    "file": "spellholyspellwarding.blp"
+  },
+  {
+    "source": "Spell_Holy_PrayerOfHealing02",
+    "sha256": "b77fb55f1a39727905208529801f078e27beb957683c92248b5bd32bc9e4ca51",
+    "file": "spellholyprayerofhealing02.blp"
+  },
+  {
+    "source": "Spell_Shadow_Teleport",
+    "sha256": "41aef34a905ae0de54012f65694aba789eaef41a6ff5bcd66513434c88f2fb90",
+    "file": "spellshadowteleport.blp"
+  },
+  {
+    "source": "Spell_Holy_Restoration",
+    "sha256": "3b94f57d6d9cc5c8c62c6fe8b6de62086e5afb5fd73240d0294bbf8c73e98c79",
+    "file": "spellholyrestoration.blp"
+  },
+  {
+    "source": "Spell_Shadow_BlackPlague",
+    "sha256": "27486c6b3fe7bf1b7c33077877abc378f7c4a8b3b5d033c89fd00012aa78da12",
+    "file": "spellshadowblackplague.blp"
+  },
+  {
+    "source": "Spell_Shadow_Twilight",
+    "sha256": "a6bb9a53de410cd03c45694eb662d2ee1e5e88b1439849d93693d6830c1e9ef8",
+    "file": "spellshadowtwilight.blp"
+  },
+  {
+    "source": "Spell_Shadow_BurningSpirit",
+    "sha256": "3a747302c79e60acb5f2c8c6e4fb07a71eaae5a1e73c6a08c66bd0e4e9e855df",
+    "file": "spellshadowburningspirit.blp"
+  },
+  {
+    "source": "Spell_Shadow_Requiem",
+    "sha256": "3777bc0db2beb1bb58ecb7c9f5ad7b9071b8e3bb967c70d0980fa1beba545f53",
+    "file": "spellshadowrequiem.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowWordPain",
+    "sha256": "a98e86f28627e596bff3bbc2024c334885be624aa4b03d871dba1822f39ee086",
+    "file": "spellshadowshadowwordpain.blp"
+  },
+  {
+    "source": "Spell_Shadow_UnsummonBuilding",
+    "sha256": "be603f78c946b31ca7d9f5b63f8f5ea102ae41e392dec010dc7512c81ee745e3",
+    "file": "spellshadowunsummonbuilding.blp"
+  },
+  {
+    "source": "Spell_Shadow_SiphonMana",
+    "sha256": "bcc96d894bdc45aa899020618d99c12dd49d5279fc52e776c60af3fe501c2c91",
+    "file": "spellshadowsiphonmana.blp"
+  },
+  {
+    "source": "Spell_Shadow_Shadowform",
+    "sha256": "6531839f79b4d98a49c732e2b05f34b51805f9a73cef5a15703b067416928262",
+    "file": "spellshadowshadowform.blp"
+  },
+  {
+    "source": "Spell_Shadow_ImpPhaseShift",
+    "sha256": "1b4618f4c4a705d698fe204d10c17e58e4c087a71800d5a70a2f90b9deb47bc4",
+    "file": "spellshadowimpphaseshift.blp"
+  },
+  {
+    "source": "Spell_Shadow_PsychicScream",
+    "sha256": "429bb70a992e90ca17b048e116d7d30e5c889a35442a37bec2be0146aaad16f2",
+    "file": "spellshadowpsychicscream.blp"
+  },
+  {
+    "source": "Spell_Nature_CallStorm",
+    "sha256": "464c6a2bb1ce6a300da9d9c164223fb71436717eea2e6b6e397b3b7d608626a0",
+    "file": "spellnaturecallstorm.blp"
+  },
+  {
+    "source": "Spell_Fire_Volcano",
+    "sha256": "ecdf50d3fe8eaadd3b991c5d7b74f79ffc776064c3d58d71aab327bf45932e57",
+    "file": "spellfirevolcano.blp"
+  },
+  {
+    "source": "Spell_Nature_UndyingStrength",
+    "sha256": "8576c8d47b004b8f76ddd623d95489d90843bd75d192eae96c10755d5d93fc0f",
+    "file": "spellnatureundyingstrength.blp"
+  },
+  {
+    "source": "Ability_Shaman_WaterShield",
+    "sha256": "7f4291a9c43f29903df08bf5c6d4ee5fa0a65269d3e6d27ca1e4737336d8b116",
+    "file": "abilityshamanwatershield.blp"
+  },
+  {
+    "source": "Spell_Nature_MagicImmunity",
+    "sha256": "cebf64cfb5f5083f7c7b8eca48b718b04ae44d1575ce84d10547a42c69433555",
+    "file": "spellnaturemagicimmunity.blp"
+  },
+  {
+    "source": "Spell_Nature_HealingWaveLesser",
+    "sha256": "b21864a6457ca00ceb24ec28b16b5efe0e037afb4e537d1de1d42d173ed0b7d0",
+    "file": "spellnaturehealingwavelesser.blp"
+  },
+  {
+    "source": "Spell_Nature_ManaRegenTotem",
+    "sha256": "6d52a7df8a4c49ee4c34ba196c9644f0ddd8351e93595555b86819363817f6ca",
+    "file": "spellnaturemanaregentotem.blp"
+  },
+  {
+    "source": "Spell_Nature_Reincarnation",
+    "sha256": "cccf05c7c18f20df238ab861e8a0f8fada70a10b22de628f190cae014c2c509b",
+    "file": "spellnaturereincarnation.blp"
+  },
+  {
+    "source": "Spell_Frost_SummonWaterElemental",
+    "sha256": "2de69fcfc2ddae63ed60ac14f6b8cc41676cba0f44ca67668edde9a6fc79238c",
+    "file": "spellfrostsummonwaterelemental.blp"
+  },
+  {
+    "source": "Spell_Nature_RavenForm",
+    "sha256": "1ab45dc67c4ce787e26ae78f4683a9b5c82505c47a71f7711c289ba2d6d5fdf8",
+    "file": "spellnatureravenform.blp"
+  },
+  {
+    "source": "Spell_Frost_ManaRecharge",
+    "sha256": "30753bb554f19fd9fe3719a812048f34c7865508efaa251f219d1ed39cddfa59",
+    "file": "spellfrostmanarecharge.blp"
+  },
+  {
+    "source": "Spell_Nature_SpiritWolf",
+    "sha256": "d7dc19e0a5321ff1a4ca24b5c5b0a10340f99048daddf518242fb5cd35db8727",
+    "file": "spellnaturespiritwolf.blp"
+  },
+  {
+    "source": "Spell_Nature_LightningShield",
+    "sha256": "606979955541d50fd44256a45906b42caa09765c1c73fbb2d75c572165a2e845",
+    "file": "spellnaturelightningshield.blp"
+  },
+  {
+    "source": "Spell_Nature_StoneSkinTotem",
+    "sha256": "624390bb50653a02c4a63d5678a08c17b84d0c1a5ae2c81856d1aafd5961a269",
+    "file": "spellnaturestoneskintotem.blp"
+  },
+  {
+    "source": "Spell_Fire_FlameTounge",
+    "sha256": "d9a86f2fe222b70a4b02a3402735aa9d68170fd97d882a3102e5c050ae615a1e",
+    "file": "spellfireflametounge.blp"
+  },
+  {
+    "source": "Spell_Shadow_GrimWard",
+    "sha256": "13370c409cb749ddfc231305a0e99a82807bc6018954cdc08d636512cedeec57",
+    "file": "spellshadowgrimward.blp"
+  },
+  {
+    "source": "Spell_Holy_Devotion",
+    "sha256": "104c92b7a4e9436ed85223584808a205b9c04b5d00853c2f81432823cd3f857e",
+    "file": "spellholydevotion.blp"
+  },
+  {
+    "source": "Spell_Frost_FrostBrand",
+    "sha256": "af87d562d5e66c863a2fddeda389e9869a5f3b686e22d4d11481fcb5de9f622c",
+    "file": "spellfrostfrostbrand.blp"
+  },
+  {
+    "source": "Spell_Nature_ElementalAbsorption",
+    "sha256": "ada57f2bd0ba1f0e236e2b48ce45aad788af814cde41977eab00f1cd06c817b4",
+    "file": "spellnatureelementalabsorption.blp"
+  },
+  {
+    "source": "Spell_Shadow_SummonImp",
+    "sha256": "bdb116134206038aa4aa04efaf41a8a79f2bdd7658dbaf2c5a7b5a607e46718e",
+    "file": "spellshadowsummonimp.blp"
+  },
+  {
+    "source": "Ability_SearingArrow",
+    "sha256": "f242688a38ab00bff89d772c944f2b5f716a2c9e4280ebee54c7a618bffc6f79",
+    "file": "abilitysearingarrow.blp"
+  },
+  {
+    "source": "Spell_Shadow_LifeDrain",
+    "sha256": "8d7bc3aaaa2c6dbdd57d0ab69cac9924ab4c0188e6b091a04d49bcb11d738f1e",
+    "file": "spellshadowlifedrain.blp"
+  },
+  {
+    "source": "Ability_Rogue_FeignDeath",
+    "sha256": "7b5738382c7269de2cc3b64e05b02ec01d4f62b88132fc876a3fdc0470c59743",
+    "file": "abilityroguefeigndeath.blp"
+  },
+  {
+    "source": "INV_Sword_20",
+    "sha256": "3b0359df5901e34150633686e0644f9225f21528b5d14fdcb3852579612ce3d7",
+    "file": "invsword20.blp"
+  },
+  {
+    "source": "Spell_Lightning_LightningBolt01",
+    "sha256": "01f84284f6c4074df2e278e631487d3e0b589e653893698eb9fae1b9cd0e4fb4",
+    "file": "spelllightninglightningbolt01.blp"
+  },
+  {
+    "source": "Spell_Shadow_DarkRitual",
+    "sha256": "1bf41735a14219ed00af83386fb3a8c0e4b16ac3096fb82ed75415b72adb704f",
+    "file": "spellshadowdarkritual.blp"
+  },
+  {
+    "source": "Spell_Nature_AbolishMagic",
+    "sha256": "7c3fc8a304e131353c15d1037f3e4601070eb33201cfecfbbdd9c28510d5199c",
+    "file": "spellnatureabolishmagic.blp"
+  },
+  {
+    "source": "Spell_Nature_NatureTouchGrow",
+    "sha256": "a3892b8fd7e449d119bf05535890ce33420cf166a79c172cec5b51b3e872b5b4",
+    "file": "spellnaturenaturetouchgrow.blp"
+  },
+  {
+    "source": "Spell_Nature_Thorns",
+    "sha256": "7b0b48ef9220bb2ca96a26ac50151a50dd16512aa50fedb8e099144431f4ee68",
+    "file": "spellnaturethorns.blp"
+  },
+  {
+    "source": "Spell_Nature_Sentinal",
+    "sha256": "24ad97cd7af5e7ab07e4da42ba9a43f3303616cf5a7561a0ab7379fb66b3735c",
+    "file": "spellnaturesentinal.blp"
+  },
+  {
+    "source": "Spell_Arcane_StarFire",
+    "sha256": "9b42083e30bd170c088ebc45635daa802ccd9185828a6ddb80a41a56ea28fef1",
+    "file": "spellarcanestarfire.blp"
+  },
+  {
+    "source": "Spell_Nature_InsectSwarm",
+    "sha256": "7c27bc5ccd57f06bcc315a5679fa9e54c5dbaee35adbd786098c6ea7fa47897c",
+    "file": "spellnatureinsectswarm.blp"
+  },
+  {
+    "source": "Spell_Nature_NaturesBlessing",
+    "sha256": "33746fab09454c6c0c6725b7e8bb8d8a4fdef99abdc563c70225ca8736ac2d85",
+    "file": "spellnaturenaturesblessing.blp"
+  },
+  {
+    "source": "Spell_Nature_ForceOfNature",
+    "sha256": "d1541ffc93542ac0d4ea3f243132244443222ec6a49a657bf0fa360baf4d3245",
+    "file": "spellnatureforceofnature.blp"
+  },
+  {
+    "source": "INV_Misc_Pelt_Bear_03",
+    "sha256": "8718d6bee7b31575a81ad31b4f47fa733e0ec6708c7fdf2ac9131def1b461abf",
+    "file": "invmiscpeltbear03.blp"
+  },
+  {
+    "source": "Ability_Druid_DemoralizingRoar",
+    "sha256": "f3638a7c1bd08d9511dafaad5def6e8c1ba6ff74e17d8c9b3ac9c089206259ed",
+    "file": "abilitydruiddemoralizingroar.blp"
+  },
+  {
+    "source": "Ability_Hunter_Pet_Hyena",
+    "sha256": "290ed8d5f9bb91973755e231128f8aabd532e636bef39520c9d2697827394a44",
+    "file": "abilityhunterpethyena.blp"
+  },
+  {
+    "source": "Ability_Druid_Bash",
+    "sha256": "7462d068110dc69d4d7852ca2b2a89d1a9797a824903790e8a1bffc9674147c3",
+    "file": "abilitydruidbash.blp"
+  },
+  {
+    "source": "INV_Misc_MonsterClaw_04",
+    "sha256": "3da70594dd1ba397cd4db9b67f2327feb09ca69e27db7529b5ff37eb28ec70cb",
+    "file": "invmiscmonsterclaw04.blp"
+  },
+  {
+    "source": "Ability_Ambush",
+    "sha256": "7d8cc4add645f2f8d18cce7ab461dd11d4a41982dad3849dd4086646e0c8c0ec",
+    "file": "abilityambush.blp"
+  },
+  {
+    "source": "Ability_Racial_Cannibalize",
+    "sha256": "82b4a37bad88dd25927432c3464b8ec3ca1b62d74c2dadcf7de2d962ad817ab3",
+    "file": "abilityracialcannibalize.blp"
+  },
+  {
+    "source": "Spell_Shadow_VampiricAura",
+    "sha256": "f07822926f4239d698a7b7dff31bf2e0f28eb1eae1895d3a5d63f7cd5a78b36a",
+    "file": "spellshadowvampiricaura.blp"
+  },
+  {
+    "source": "Ability_Hunter_Pet_Cat",
+    "sha256": "d75be0f98eaaaf32770ec5385e6544d86c57340e406ac5ff249e60aa87d0df16",
+    "file": "abilityhunterpetcat.blp"
+  },
+  {
+    "source": "Ability_Druid_Ravage",
+    "sha256": "3a3d891649b48d79a3277955c1bd6e8056c3eab08c1bd7de340f5dbdf98d9395",
+    "file": "abilitydruidravage.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessingOfAgility",
+    "sha256": "795332f62df2ab8bc5afe866c3f57c1fde5c5d14948b16a1744e04eecc74e98b",
+    "file": "spellholyblessingofagility.blp"
+  },
+  {
+    "source": "Spell_Nature_UnyeildingStamina",
+    "sha256": "cb546de99d18b74907fb4cf8d56f4f972c6c5e9f8633f2d14ac328a4bf2186fc",
+    "file": "spellnatureunyeildingstamina.blp"
+  },
+  {
+    "source": "Spell_Nature_Regeneration",
+    "sha256": "90334a4a0b038369eeaa4c2e490775350d8bf33223611cb05e7c5f7b043e2ea6",
+    "file": "spellnatureregeneration.blp"
+  },
+  {
+    "source": "Spell_Nature_HealingWaveGreater",
+    "sha256": "19e1261c567ac20143142b85563033bafc5bc6de1b114abec59ba81bc73ed78f",
+    "file": "spellnaturehealingwavegreater.blp"
+  },
+  {
+    "source": "Spell_Nature_HealingTouch",
+    "sha256": "59195e4af73687c890584ad34e694604f73efbeae24ca277ec79db6d2010a32e",
+    "file": "spellnaturehealingtouch.blp"
+  },
+  {
+    "source": "Spell_Nature_ResistNature",
+    "sha256": "c304939afd8812671d70a1e65beb87ec4f50f2ea3cb63edf2034c9181ac094f5",
+    "file": "spellnatureresistnature.blp"
+  },
+  {
+    "source": "Spell_Nature_CrystalBall",
+    "sha256": "9d9bd3aecf07f38c6c1defc3f5c2b8aaeb1168f721abb500de536ee61d109970",
+    "file": "spellnaturecrystalball.blp"
+  },
+  {
+    "source": "Spell_Nature_ProtectionformNature",
+    "sha256": "1ce499e04aea9ec35b85ca1fb6704e6a37bdce4f6edde10cc3ed850ad3c435fe",
+    "file": "spellnatureprotectionformnature.blp"
+  },
+  {
+    "source": "Spell_Nature_Rejuvenation",
+    "sha256": "3cc47b8628afd203e370fff5562e8b344a1a0f1d675751ba34483d17299b3993",
+    "file": "spellnaturerejuvenation.blp"
+  },
+  {
+    "source": "Ability_EyeOfTheOwl",
+    "sha256": "31ef33cb98abf9687f98de0ca56c47cbb3e010cc5ae9dc26d402cf41945fb8f3",
+    "file": "abilityeyeoftheowl.blp"
+  },
+  {
+    "source": "Spell_Holy_ElunesGrace",
+    "sha256": "a6b14a9bcda1af95356bc391edea3feb1bab5f12cf4bc058b0b27e94ec17b654",
+    "file": "spellholyelunesgrace.blp"
+  },
+  {
+    "source": "INV_Relics_IdolofRejuvenation",
+    "sha256": "1651a0a35d9272013f3fd1ba3e132417036be48a7bb43c126c1276cc1ce8ba0b",
+    "file": "invrelicsidolofrejuvenation.blp"
+  },
+  {
+    "source": "Spell_Fire_WindsofWoe",
+    "sha256": "e7a7ab33dae95e936477e68b13a719aea3e5927560a7f26809a963a3dbf234bd",
+    "file": "spellfirewindsofwoe.blp"
+  },
+  {
+    "source": "Spell_Shadow_DeathPact",
+    "sha256": "e0ec8b95e9c8db395769f615aba156175c1e5887d10e4a30ccdfaf729c28a9d8",
+    "file": "spellshadowdeathpact.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowBolt",
+    "sha256": "39aea6b3aec1f90658df48f6b602d46ccb639939bdeda08f62824d6a850bf996",
+    "file": "spellshadowshadowbolt.blp"
+  },
+  {
+    "source": "Spell_Shadow_ScourgeBuild",
+    "sha256": "c910948b4c2088d55c6bdb622ada0a612be552b7c25d7d5183ee72b4d7bdd4dd",
+    "file": "spellshadowscourgebuild.blp"
+  },
+  {
+    "source": "Spell_Shadow_CorpseExplode",
+    "sha256": "f0f3de6dfde330646711cd0760dac983482983b57869e569b523baae87b4ee14",
+    "file": "spellshadowcorpseexplode.blp"
+  },
+  {
+    "source": "Spell_Fire_SelfDestruct",
+    "sha256": "972083de2a878a2f48b08053f668c8519992023e39f0d60626b53936bec02ac7",
+    "file": "spellfireselfdestruct.blp"
+  },
+  {
+    "source": "Spell_Fire_FlameShock",
+    "sha256": "6d14de12bde8e6058959a690a22da8de340d34f9e1edb21c60711bca9a2f15ed",
+    "file": "spellfireflameshock.blp"
+  },
+  {
+    "source": "Spell_Fire_FireBolt",
+    "sha256": "a564324f2ad0d488ac793f79371c1a64a3e04053aff99f019b4ccb9d2b4144e3",
+    "file": "spellfirefirebolt.blp"
+  },
+  {
+    "source": "Spell_Fire_LavaSpawn",
+    "sha256": "3e5b226b371b6422713d605ed22f018db5135432f63fb6be8e90f7451d04500f",
+    "file": "spellfirelavaspawn.blp"
+  },
+  {
+    "source": "Spell_Shadow_FingerOfDeath",
+    "sha256": "6156394d719dd92efa533e7d568cf51463988cb0c1a4566d179bdd05943b8cc9",
+    "file": "spellshadowfingerofdeath.blp"
+  },
+  {
+    "source": "Spell_Shadow_AbominationExplosion",
+    "sha256": "64d07a2e05105b949c475dd742b84931e1f54ed589fb739fb77eb63c80000c71",
+    "file": "spellshadowabominationexplosion.blp"
+  },
+  {
+    "source": "Spell_Shadow_LifeDrain02",
+    "sha256": "3be36df1c27569d97272e087feed0cd9159935171f0c1db48c0eaa00a61c5e48",
+    "file": "spellshadowlifedrain02.blp"
+  },
+  {
+    "source": "_D3shadowpower",
+    "sha256": "11af8e4e3e366dd99e6e726ecc6469bd46218abb83fb925d8eff594a647261bb",
+    "file": "d3shadowpower.blp"
+  },
+  {
+    "source": "Spell_Shadow_CurseOfMannoroth",
+    "sha256": "c5bb8e878774c2a4f5b5cefdd6ce5a93c1399482bb42d423e6fecfdd47ce79b3",
+    "file": "spellshadowcurseofmannoroth.blp"
+  },
+  {
+    "source": "Spell_Shadow_CallofBone",
+    "sha256": "661a4a5d68d88a787fda7fb68dfd0d735cc0c1a83e7891f22228297f2587f885",
+    "file": "spellshadowcallofbone.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadeTrueSight",
+    "sha256": "ca8cc07eeb80a53bde36fef59799d8779dc71f902c2173fa64c2f12831cbb9c3",
+    "file": "spellshadowshadetruesight.blp"
+  },
+  {
+    "source": "Spell_Shadow_Contagion",
+    "sha256": "774149fc3aa6940c34341843d8f8a753af564ee3c7c0b9fe26873aa0347dcb65",
+    "file": "spellshadowcontagion.blp"
+  },
+  {
+    "source": "Spell_Shadow_Haunting",
+    "sha256": "4c2bb9cfec320daf9c03d657046d4c33e08cef76cfa2ed1a9241347002f5cf28",
+    "file": "spellshadowhaunting.blp"
+  },
+  {
+    "source": "Ability_Racial_Avatar",
+    "sha256": "aee05d7734f9ebe6bdd0c38e48015541d461192277a95e4b2f158901d49852fe",
+    "file": "abilityracialavatar.blp"
+  },
+  {
+    "source": "INV_Sword_17",
+    "sha256": "1c8d010c6d95bdbf158511c85ae75bd45c204be5d58c930a2099bac2edffe935",
+    "file": "invsword17.blp"
+  },
+  {
+    "source": "Ability_Druid_TigersRoar",
+    "sha256": "8cb5116600f37a4c8c93d05a2c51311be7ceb5cf13d703fb5dae128d80159ad0",
+    "file": "abilitydruidtigersroar.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfWrath",
+    "sha256": "fc5949da0919eb8de0ff839a42fc1b5260bf2e56eb982d4f676adb72a89fc1cb",
+    "file": "spellholysealofwrath.blp"
+  },
+  {
+    "source": "Spell_Holy_BorrowedTime",
+    "sha256": "1917fb2213d7d40a9d53a6759921892c68869c9a90bfc53acdc0759f03801518",
+    "file": "spellholyborrowedtime.blp"
+  },
+  {
+    "source": "INV_Stone_04",
+    "sha256": "b41835bc2f64504d0ce4578f35f824d40c514ea15b839912a5c48c7c942ab8fd",
+    "file": "invstone04.blp"
+  },
+  {
+    "source": "Spell_Shadow_Metamorphosis",
+    "sha256": "1817175349ff2e2e1f5eee335c3f96ca4a1400ebb5f0952c49930293f85e35cb",
+    "file": "spellshadowmetamorphosis.blp"
+  },
+  {
+    "source": "Spell_Shadow_SummonVoidWalker",
+    "sha256": "537f1ebb309879cd81c41ddfd0dbf8b8a00485df574315ad2bbb5914e2e1a185",
+    "file": "spellshadowsummonvoidwalker.blp"
+  },
+  {
+    "source": "Spell_Nature_RemoveCurse",
+    "sha256": "6086ee4dff68d647618ebab6e3ea87c661db7c20e3c68ce308b77baff3317551",
+    "file": "spellnatureremovecurse.blp"
+  },
+  {
+    "source": "Spell_Holy_MagicalSentry",
+    "sha256": "9c5bc14cf519c13b7231c8ef4b430d95c9d058e0ced0f257958be35f90d43f92",
+    "file": "spellholymagicalsentry.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowPact",
+    "sha256": "f1d9f733927b2e951715a972f3580555b6cf4d1de8df69d0a602cfeff8902831",
+    "file": "spellshadowshadowpact.blp"
+  },
+  {
+    "source": "INV_Ammo_FireTar",
+    "sha256": "7a75cfa4fbfc841ee31f1303f6589fea1546b8ef87fe2d604b8ca8b6c6527863",
+    "file": "invammofiretar.blp"
+  },
+  {
+    "source": "Spell_Shadow_ImprovedVampiricEmbrace",
+    "sha256": "5eac5a2aae8eb61203c68373a9d25ae7840f0fb09ac356112eba8357ddd88db9",
+    "file": "spellshadowimprovedvampiricembrace.blp"
+  },
+  {
+    "source": "Spell_Shadow_ManaFeed",
+    "sha256": "f079ffdb35c0a60db573273367c6cd48511a1d66a479165416fa1448d592ebb8",
+    "file": "spellshadowmanafeed.blp"
+  },
+  {
+    "source": "Spell_Shadow_GatherShadows",
+    "sha256": "ae6b7094db0e71a068f4f854466e2ce32a273df18076963ab228fae60a153525",
+    "file": "spellshadowgathershadows.blp"
+  },
+  {
+    "source": "Ability_Warlock_MoltenCore",
+    "sha256": "8fac7373e853b8172e02367bb670689f9df627fbc95bb7eff4753e0ff31de202",
+    "file": "abilitywarlockmoltencore.blp"
+  },
+  {
+    "source": "Spell_Shadow_CurseOfSargeras",
+    "sha256": "020ae0d8e50e7b19353ca93e56911aa993cabc11fecdbcee5c6e76e97cf429bf",
+    "file": "spellshadowcurseofsargeras.blp"
+  },
+  {
+    "source": "Spell_Nature_StrangleVines",
+    "sha256": "222a1a6ea7873f7053030ba9d8274b815098524c1e5e18f4f0ccaf8f77f13d28",
+    "file": "spellnaturestranglevines.blp"
+  },
+  {
+    "source": "Ability_Ensnare",
+    "sha256": "be686126fb9489c82ff36a6ddcc652e9bb16e71afaa74dc250bbde02927d2583",
+    "file": "abilityensnare.blp"
+  },
+  {
+    "source": "Ability_Hunter_LockAndLoad",
+    "sha256": "fdcba3e7cad9c1860eb21bff5c6fad6077325a7ac10e270140d5f7fe85788c90",
+    "file": "abilityhunterlockandload.blp"
+  },
+  {
+    "source": "rogue_burstofspeed",
+    "sha256": "9b1db517aa087c6dc90b7c8ba97072a7200d306210acb42c2a5b87376ec277a7",
+    "file": "rogueburstofspeed.blp"
+  },
+  {
+    "source": "Spell_Shadow_PainSpike",
+    "sha256": "ef8e2f988565f7d39064ac84273e4e4273420e227b4bc5ae6c7638d81a22f263",
+    "file": "spellshadowpainspike.blp"
+  },
+  {
+    "source": "INV_Spear_02",
+    "sha256": "8d6515088c6efd590f73a9c14211544f6787c398981ea1471ddc7fc9fac89cd6",
+    "file": "invspear02.blp"
+  },
+  {
+    "source": "Ability_Hunter_SniperShot",
+    "sha256": "7a440b6671df9d2e6d70efe2f7906a726f46a0445aced151e4b5bbd0e64d785b",
+    "file": "abilityhuntersnipershot.blp"
+  },
+  {
+    "source": "INV_Spear_07",
+    "sha256": "f8db479ad7ec0b6ac6f2ab5fe3c464d95077deed74d5dac49e17043755bcc5a6",
+    "file": "invspear07.blp"
+  },
+  {
+    "source": "Ability_ImpalingBolt",
+    "sha256": "c6b55f3d3b61343397b86a53812a0c30f0e5bf91c903364cbf9e77aabe5b787a",
+    "file": "abilityimpalingbolt.blp"
+  },
+  {
+    "source": "Ability_UpgradeMoonGlaive",
+    "sha256": "4e24737189d773cd3ecc953662f06fc403612e720f0bf9d22425550e1dd41f54",
+    "file": "abilityupgrademoonglaive.blp"
+  },
+  {
+    "source": "Ability_Hunter_Quickshot",
+    "sha256": "4c250e9d79b6bc2760737626756b249ebf16da817bce29a11fb7d42a0bb0f693",
+    "file": "abilityhunterquickshot.blp"
+  },
+  {
+    "source": "Ability_PierceDamage",
+    "sha256": "f2d1ea61bfcbeff2c6d3c30a31ff7b62714581f1162fa37ca658ae5df1343020",
+    "file": "abilitypiercedamage.blp"
+  },
+  {
+    "source": "Ability_Hunter_Readiness",
+    "sha256": "c9cb70d3e5e6a42ff35369f5f6ae7e62bc0e14e4fb09aa5f6c09ca7d171911c6",
+    "file": "abilityhunterreadiness.blp"
+  },
+  {
+    "source": "Ability_TrueShot",
+    "sha256": "0b881e5832b735bf890c58c084ec6ebfed47a0ad671095f4ec1f3cd8d259d8a3",
+    "file": "abilitytrueshot.blp"
+  },
+  {
+    "source": "INV_Weapon_Rifle_06",
+    "sha256": "2f531f70d0b127f6e86a0d1f824db051a2402fdad1e46866541b475436788fff",
+    "file": "invweaponrifle06.blp"
+  },
+  {
+    "source": "Ability_Hunter_AspectOfTheMonkey",
+    "sha256": "acba766aeca5de98668be7d00ce9b89b19befb0a681aadacf42684612a8f9a59",
+    "file": "abilityhunteraspectofthemonkey.blp"
+  },
+  {
+    "source": "Ability_Mount_JungleTiger",
+    "sha256": "e6d4f1287b7776159b2da8387fd627c09ba21def8c5fc7cc259b71fd673ba38e",
+    "file": "abilitymountjungletiger.blp"
+  },
+  {
+    "source": "Ability_Hunter_MendPet",
+    "sha256": "e64e278fb2eaf4037930fef820e03f09e8358709a31ee3cee1e7bd5f6c18b133",
+    "file": "abilityhuntermendpet.blp"
+  },
+  {
+    "source": "Ability_Druid_FerociousBite",
+    "sha256": "086469b59e6633e0ff3583b60daafbfc3105c86a3892e85154cca480e05dd76e",
+    "file": "abilitydruidferociousbite.blp"
+  },
+  {
+    "source": "Ability_Devour",
+    "sha256": "6e58cae4a3ef60c500d016778a2a5ba8b9521d14f19baa88daf85aa0325ed4e2",
+    "file": "abilitydevour.blp"
+  },
+  {
+    "source": "Ability_BullRush",
+    "sha256": "1d00dcf6a648cd8a1655fb48a11aa8db94118525b34481d18317fb818af4feca",
+    "file": "abilitybullrush.blp"
+  },
+  {
+    "source": "INV_Misc_MonsterClaw_03",
+    "sha256": "3e57a6a9cfb614c07a4c77547fa8361bd1303830ea29e177240bc8d56bbb3fa5",
+    "file": "invmiscmonsterclaw03.blp"
+  },
+  {
+    "source": "Spell_Holy_FistOfJustice",
+    "sha256": "42745970bb6b38820be71c9a497e5a08ceaf560b2ea99e77a9b1ce72a184fc72",
+    "file": "spellholyfistofjustice.blp"
+  },
+  {
+    "source": "INV_Hammer_04",
+    "sha256": "99c1df5083e82cd95066b955688488ee6bb3715cdccc1a81ce877c8f5bd1d203",
+    "file": "invhammer04.blp"
+  },
+  {
+    "source": "Spell_Holy_RetributionAura",
+    "sha256": "0d3f71ec2f85bf9dc06f600420f71e6afb4dbdbd2df3a2866ea974763e513145",
+    "file": "spellholyretributionaura.blp"
+  },
+  {
+    "source": "Ability_Defend",
+    "sha256": "12b92ebe4522afaf6ad308552e7c04be956709a1294d4ca01f49902918438bc3",
+    "file": "abilitydefend.blp"
+  },
+  {
+    "source": "Spell_Holy_DevotionAura",
+    "sha256": "7040de65d8053e5ee445cbcb562d7aeb589fecf1ce35753bf4598b049e0ad36b",
+    "file": "spellholydevotionaura.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfProtection",
+    "sha256": "0b5846eb29284c665ee338a92f8725e85b98121eb3cb702de11a6c611490f58f",
+    "file": "spellholysealofprotection.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessingOfStrength",
+    "sha256": "f00a3074e6724059ae5ba37e74bbf1cd989df9b47b30fdccacb6b68ce6f1ba38",
+    "file": "spellholyblessingofstrength.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessingOfProtection",
+    "sha256": "7de03d9c63c2357f6c8a76136eb3189ce99e750cecd82dfd17a932ec67e9ddbc",
+    "file": "spellholyblessingofprotection.blp"
+  },
+  {
+    "source": "Spell_Arcane_Blink",
+    "sha256": "a8b1c95bc7a164092715ff804235f11f31cd5b8ca935c93113167d1b8102a5e3",
+    "file": "spellarcaneblink.blp"
+  },
+  {
+    "source": "Spell_Holy_Heal",
+    "sha256": "cbeb601051fc67cd59756d182cccb1776db0e62de11eb67577352bf41b5864c1",
+    "file": "spellholyheal.blp"
+  },
+  {
+    "source": "Spell_Holy_AuraMastery",
+    "sha256": "cdd0a9b10ac47d67e4fd213429d3df6571217f28bf1f56c523ac3ff252a1dba4",
+    "file": "spellholyauramastery.blp"
+  },
+  {
+    "source": "Spell_Holy_PrayerOfHealing",
+    "sha256": "c03e9268f587b34e536d8ed72f1892dca0296c7d79762fa07e09dc0ba1f4ef2a",
+    "file": "spellholyprayerofhealing.blp"
+  },
+  {
+    "source": "Spell_Holy_BlindingHeal",
+    "sha256": "03e84d146f7192523f263eaf9e5ade0f6255127ee01252c06c0dcfa904a2a7d3",
+    "file": "spellholyblindingheal.blp"
+  },
+  {
+    "source": "Spell_Holy_HolyBolt",
+    "sha256": "1a2a601ca07a2657c5210a8690a6a9cdfa36a0305a2d4767a0774241434518a6",
+    "file": "spellholyholybolt.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfWisdom",
+    "sha256": "fa9d76e7bd9a27afe814d5368198d733fae6eddc73d1301608e1b77ca1af72be",
+    "file": "spellholysealofwisdom.blp"
+  },
+  {
+    "source": "Spell_Holy_MindSooth",
+    "sha256": "a8d988715f589dee9afdeca98a86733b1f526a747018dcd4603b138210746bb7",
+    "file": "spellholymindsooth.blp"
+  },
+  {
+    "source": "Spell_Holy_GreaterHeal",
+    "sha256": "f79edd34265678e22a2be0e02422dbb99bbc7167f17bcf7c091c93c9a823bb09",
+    "file": "spellholygreaterheal.blp"
+  },
+  {
+    "source": "Spell_Holy_HolySmite",
+    "sha256": "1a066b255f9fe1b2d29ce4efdb8efab9cb6684f3ac266ac43fa75ce394a23037",
+    "file": "spellholyholysmite.blp"
+  },
+  {
+    "source": "Spell_Holy_HealingAura",
+    "sha256": "3c882bfc653beb0b67e706a98448c10147068d8efe64496b608b55057f048396",
+    "file": "spellholyhealingaura.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfFury",
+    "sha256": "776646dc182e35f617282f7d6407d85b12f2a1e1baea9f3ac6090182293cda44",
+    "file": "spellholysealoffury.blp"
+  },
+  {
+    "source": "Spell_Holy_SearingLight",
+    "sha256": "b5e11ef908496a5a191d14fa1db9b05add6e2260a762a8bf21c9f2e895e44951",
+    "file": "spellholysearinglight.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfMight",
+    "sha256": "d4f0d405d7a5812ba99096da078eebb2df4c87fa50af46d6d3919ff176d15e2a",
+    "file": "spellholysealofmight.blp"
+  },
+  {
+    "source": "Spell_Nature_AncestralGuardian",
+    "sha256": "0532fdb6da15b1fd1c4dfb89af4f7b3625e54cb62fa012e28cc116a51a650dfe",
+    "file": "spellnatureancestralguardian.blp"
+  },
+  {
+    "source": "INV_Sword_48",
+    "sha256": "134ee51a8ab6cacb08d03c706adc0125c01164a62ef7ea93b852bd744a747d2b",
+    "file": "invsword48.blp"
+  },
+  {
+    "source": "INV_Enchant_EssenceEternalLarge",
+    "sha256": "69d5767272c8cd733f67bbb40af4f8858205a592ce140cd1d004002d714e8b61",
+    "file": "invenchantessenceeternallarge.blp"
+  },
+  {
+    "source": "INV_Shield_06",
+    "sha256": "152863c66e065c21d62dbe62b33a5d3f5e4881e48f8a263e78572412f27fb45f",
+    "file": "invshield06.blp"
+  },
+  {
+    "source": "Ability_Hunter_ImprovedTracking",
+    "sha256": "53288bcd35de970360c5224524e937751e702a5ba1fa4c0ff2f9429182eed8a8",
+    "file": "abilityhunterimprovedtracking.blp"
+  },
+  {
+    "source": "Ability_Hunter_SilentHunter",
+    "sha256": "24a37c1bc8b5694ee0e5457dc4bd303d6d7d6518988343dc5c2a926b2bc1e195",
+    "file": "abilityhuntersilenthunter.blp"
+  },
+  {
+    "source": "Ability_Hunter_BeastSoothe",
+    "sha256": "33cc9df2f35b32eca3f9cf58a3469c69ea21273064b58e2425f1068ccec6b535",
+    "file": "abilityhunterbeastsoothe.blp"
+  },
+  {
+    "source": "Spell_Holy_Power",
+    "sha256": "faa071e39e67d02c7a18526374f672de555967d46342874de495526846d43171",
+    "file": "spellholypower.blp"
+  },
+  {
+    "source": "Spell_Holy_UnyieldingFaith",
+    "sha256": "66085dda5be5436fae53b1f415ab16ce94d5d4b371896486cfae1ea1f28b4979",
+    "file": "spellholyunyieldingfaith.blp"
+  },
+  {
+    "source": "Spell_Holy_RighteousFury",
+    "sha256": "b5d7fabf3e8d53eae05d044d1282a676cee9121ce8cf344c92b59e67fc2a627d",
+    "file": "spellholyrighteousfury.blp"
+  },
+  {
+    "source": "Spell_Holy_EyeforanEye",
+    "sha256": "6cff429192ba6466a73035b50ca2781206bb279634fc98ba8f5db938befab5b2",
+    "file": "spellholyeyeforaneye.blp"
+  },
+  {
+    "source": "Spell_Holy_Vindication",
+    "sha256": "6237e43efeecdacc389c3a83b826c0b709165b1ee2c602a22a53caa238f7ac2c",
+    "file": "spellholyvindication.blp"
+  },
+  {
+    "source": "Spell_Holy_PersuitofJustice",
+    "sha256": "47b96c733aaa8e7509fa1a9359699e35ca5d6aecbb6013d1c73ff89fd126221f",
+    "file": "spellholypersuitofjustice.blp"
+  },
+  {
+    "source": "Spell_Holy_Purify",
+    "sha256": "5fd93bf8921169164cee7ebbb305595f103a1d2bd345b8a2557613244469be9c",
+    "file": "spellholypurify.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessedRecovery",
+    "sha256": "570f6cf78aa035448743c334a6d4a47dd5f9af97c40b5083ccd77615131be960",
+    "file": "spellholyblessedrecovery.blp"
+  },
+  {
+    "source": "Spell_Holy_SummonLightwell",
+    "sha256": "103bb130e8ef85d0fa8cfe38262679a82b48272c24cf69a4c52f95bae2e06c36",
+    "file": "spellholysummonlightwell.blp"
+  },
+  {
+    "source": "Spell_Fire_MasterOfElements",
+    "sha256": "7a76a67cd90a4b087f764948dd29453d0d6747c05e034260e743887b95f5cb1a",
+    "file": "spellfiremasterofelements.blp"
+  },
+  {
+    "source": "Spell_Nature_SpiritArmor",
+    "sha256": "a94d6b4520dbacdbd50c964079eb01eb650fb09935fc997eb79dd987a87c54cd",
+    "file": "spellnaturespiritarmor.blp"
+  },
+  {
+    "source": "Spell_Nature_StormReach",
+    "sha256": "a2b5b0bbd668dbec6e6c20b6f08ef7743dfa6de8f07155c74c5e37b8af655ee9",
+    "file": "spellnaturestormreach.blp"
+  },
+  {
+    "source": "Spell_Shadow_SoulLeech_2",
+    "sha256": "3544612e9785f57652aa4152ea1bf2b3f0b9869d3b4ea96b313876e73e56458f",
+    "file": "spellshadowsoulleech2.blp"
+  },
+  {
+    "source": "Ability_Hunter_SwiftStrike",
+    "sha256": "fdd2267a3c3cfceb3bb36da4db104d47912b744dad8a79786c292522c0da280e",
+    "file": "abilityhunterswiftstrike.blp"
+  },
+  {
+    "source": "Spell_Fire_ElementalDevastation",
+    "sha256": "b6a1b904a1e34b6e3a985bc09aaee26a09168b262487bfece6466c0b4f93c39b",
+    "file": "spellfireelementaldevastation.blp"
+  },
+  {
+    "source": "Spell_Nature_Windfury",
+    "sha256": "71a76b20035e97bc455b004c763768dded94ca6f83e4ece4486c826e5ced621e",
+    "file": "spellnaturewindfury.blp"
+  },
+  {
+    "source": "Spell_Nature_HealingWay",
+    "sha256": "aa5f4226afc5d0d3ca295865cc6f7985d29c5f340d56e9c1151f2884dab88825",
+    "file": "spellnaturehealingway.blp"
+  },
+  {
+    "source": "Spell_Ice_MagicDamage",
+    "sha256": "46d98f31391a7a30b1817060b878fa6b171d1505fee86e8a47e97468e762e3ed",
+    "file": "spellicemagicdamage.blp"
+  },
+  {
+    "source": "Spell_Nature_AstralRecalGroup",
+    "sha256": "a14715fe51839292937e6bbc1cbff121bce180a26d8df58202735e3daf2aa6c3",
+    "file": "spellnatureastralrecalgroup.blp"
+  },
+  {
+    "source": "Ability_Warrior_DefensiveStance",
+    "sha256": "c21fca193406c61b1b53e887925c72307f1b164481e09657aea5e4c2d4d7fbc9",
+    "file": "abilitywarriordefensivestance.blp"
+  },
+  {
+    "source": "INV_Helmet_21",
+    "sha256": "deab2e5a410b1e56a3fbf0417237449eea685a110e5edbec42280a1a92699896",
+    "file": "invhelmet21.blp"
+  },
+  {
+    "source": "Ability_Warrior_ShieldMastery",
+    "sha256": "7d6273df3c2c46ac0e6f07346dd95a64467eb9a6bb4debe789102a4dabc16af1",
+    "file": "abilitywarriorshieldmastery.blp"
+  },
+  {
+    "source": "Ability_Whirlwind",
+    "sha256": "1fa1a4cc549a0840bb7b265b85599f8b9944661265ae0dad3e137cf40267387a",
+    "file": "abilitywhirlwind.blp"
+  },
+  {
+    "source": "Ability_Warrior_Rampage",
+    "sha256": "b3598b1e292e5601d2c9d7e20762130736c65a038159282203875c1eb148a517",
+    "file": "abilitywarriorrampage.blp"
+  },
+  {
+    "source": "Ability_Warrior_FocusedRage",
+    "sha256": "8bf9cc0bb7f3fc512f08720db70e00e5d27b7d4892fe166f9b3f68b8e3c6f2b4",
+    "file": "abilitywarriorfocusedrage.blp"
+  },
+  {
+    "source": "Ability_Warrior_EndlessRage",
+    "sha256": "27fba7ea3507cbc9d03264edfb809c9dbe4e8e29c808bcfdac4dbf8c640eb1b7",
+    "file": "abilitywarriorendlessrage.blp"
+  },
+  {
+    "source": "Ability_Warrior_ImprovedDisciplines",
+    "sha256": "b104f2a756704aff2d0d6f7350450b6c8a9ff67b45d76cc2698ceff276661db7",
+    "file": "abilitywarriorimproveddisciplines.blp"
+  },
+  {
+    "source": "Ability_Hunter_Harass",
+    "sha256": "18741f996cb4d592bbc7d82a434a695bd93cc88494fa04d14d635d4fdacc762f",
+    "file": "abilityhunterharass.blp"
+  },
+  {
+    "source": "Ability_Warrior_BloodFrenzy",
+    "sha256": "d07edec799976ad1e6219918675dfec819188936b4d7f42d19bd2a5baca72bbd",
+    "file": "abilitywarriorbloodfrenzy.blp"
+  },
+  {
+    "source": "Spell_Shadow_CurseOfAchimonde",
+    "sha256": "bc568678a009bb5b5b0fd5d2ac993366115260077938baf37380f5f1c35b6cff",
+    "file": "spellshadowcurseofachimonde.blp"
+  },
+  {
+    "source": "Spell_Shadow_PainfulAfflictions",
+    "sha256": "71786a8a402706c79d934c19bda57882c61421c51c7189d9a6a2185f65335c92",
+    "file": "spellshadowpainfulafflictions.blp"
+  },
+  {
+    "source": "Spell_Shadow_UnstableAffliction_3",
+    "sha256": "a607c1a56b0f6c62266890015b0e2d53a40d0da341001e6487f871874bf8b335",
+    "file": "spellshadowunstableaffliction3.blp"
+  },
+  {
+    "source": "Spell_Shadow_RagingScream",
+    "sha256": "b78ecc5ca8b2876b51d47f0e5fc8bee9fb1de45de463a30e3bc17df643aaf50f",
+    "file": "spellshadowragingscream.blp"
+  },
+  {
+    "source": "Spell_Shadow_DemonicTactics",
+    "sha256": "7e95f0c3047dbe031c3fbd1896700062f442af2861cf499598ce299413e0d94c",
+    "file": "spellshadowdemonictactics.blp"
+  },
+  {
+    "source": "Spell_Shadow_Shadowfury",
+    "sha256": "1357f7d385baac5b77b466891eec640a8616037631c9a5456815a05ab2f71dab",
+    "file": "spellshadowshadowfury.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowandFlame",
+    "sha256": "a78e4fc32c58e4b811423254a172383af19a4145b9c89c01939af311b057b8a7",
+    "file": "spellshadowshadowandflame.blp"
+  },
+  {
+    "source": "Spell_Shadow_SoulLeech_3",
+    "sha256": "26b1a2d7286556b7c24e5d58f4a11643db4f4031550f794785a556ab7ca106f7",
+    "file": "spellshadowsoulleech3.blp"
+  },
+  {
+    "source": "Spell_Shadow_NetherProtection",
+    "sha256": "211525e7fb312a3afd92f84c7070cbe1352057c0ee32a2eff0acbbe27fb7856e",
+    "file": "spellshadownetherprotection.blp"
+  },
+  {
+    "source": "Spell_Shadow_DemonicFortitude",
+    "sha256": "5a79fb235b00340dfca25b9e990b0313068e4d7cefddffa9b4c29f3c90c7587c",
+    "file": "spellshadowdemonicfortitude.blp"
+  },
+  {
+    "source": "Spell_Nature_UnrelentingStorm",
+    "sha256": "e332c6e69348515635dd05b7d6028b82b68f9fcfc1f554c25d6883fea34bc864",
+    "file": "spellnatureunrelentingstorm.blp"
+  },
+  {
+    "source": "Spell_Nature_ElementalPrecision_1",
+    "sha256": "0962bf2bf104d57b03de28230d2988816ab81b736111582af981d36f2f69615d",
+    "file": "spellnatureelementalprecision1.blp"
+  },
+  {
+    "source": "Spell_Nature_LightningOverload",
+    "sha256": "22e32ece975a065baf144c354f5e2d9548d5bdfc2be467d8602b6db34a85def7",
+    "file": "spellnaturelightningoverload.blp"
+  },
+  {
+    "source": "Spell_Nature_UnleashedRage",
+    "sha256": "60e141573940094d3b4cc0de17d130a874a77ae7cf91945ffc335e698183bdd1",
+    "file": "spellnatureunleashedrage.blp"
+  },
+  {
+    "source": "Spell_Nature_ElementalPrecision_2",
+    "sha256": "f346ddfcbf820ccdd23dba4aa7f3d75306187b7bf02730fc2949c3cd2eda583a",
+    "file": "spellnatureelementalprecision2.blp"
+  },
+  {
+    "source": "Spell_Nature_MentalQuickness",
+    "sha256": "9b124a385890d3ba1a0aa7e18dd857962c856203d075150c92ecacee3f24431c",
+    "file": "spellnaturementalquickness.blp"
+  },
+  {
+    "source": "Ability_DualWieldSpecialization",
+    "sha256": "81d25699fded3a3e2c2e49b1ae65861b43df2eb478460cda8308ba8c57370a92",
+    "file": "abilitydualwieldspecialization.blp"
+  },
+  {
+    "source": "Spell_Nature_ShamanRage",
+    "sha256": "4f8ec4cf9968107d1679696ddb6e291e674452b1bbc034be349f0772ca51c6ba",
+    "file": "spellnatureshamanrage.blp"
+  },
+  {
+    "source": "Spell_Nature_NatureBlessing",
+    "sha256": "85c5dec09e267f2d70d710b44385c32170663977732967895baf6b84858517c9",
+    "file": "spellnaturenatureblessing.blp"
+  },
+  {
+    "source": "Spell_Nature_SkinofEarth",
+    "sha256": "9a123e4d49d2e7d7f07b7b12c0dd2fac69b351e9aa2c5ec24c13b69989efa239",
+    "file": "spellnatureskinofearth.blp"
+  },
+  {
+    "source": "Spell_Nature_NatureGuardian",
+    "sha256": "6f463947e52caca7f5ed5f0e07f7896f2ea20a27808b32f18ae3864585175d5d",
+    "file": "spellnaturenatureguardian.blp"
+  },
+  {
+    "source": "Ability_Rogue_Feint",
+    "sha256": "10ed238e8c5db207d17dc0b4fb072c1d2ef7be6bc0f075bd05e59aeaaf3a3e3f",
+    "file": "abilityroguefeint.blp"
+  },
+  {
+    "source": "INV_Weapon_Crossbow_11",
+    "sha256": "a32ef36d242fe65f59dbae10a9cb5e987757436e24644db55c6b1803e12dae93",
+    "file": "invweaponcrossbow11.blp"
+  },
+  {
+    "source": "Ability_Rogue_BladeTwisting",
+    "sha256": "1c6ecc91d85ede2509d622d17ef7752b7d5d2f790e9daac51cff81acf6f421db",
+    "file": "abilityroguebladetwisting.blp"
+  },
+  {
+    "source": "Ability_Rogue_NervesOfSteel",
+    "sha256": "cb9f6a1e7c1bdf1c7b5eb9f8707ea4f3248f3adf9a1b3baf1d96dfe21ab7d685",
+    "file": "abilityroguenervesofsteel.blp"
+  },
+  {
+    "source": "Ability_Rogue_SurpriseAttack",
+    "sha256": "d6d233394696829ef8f315ba72aa7ba67737742ce4e365215b3e0adb21eb97f2",
+    "file": "abilityroguesurpriseattack.blp"
+  },
+  {
+    "source": "Ability_Rogue_EnvelopingShadows",
+    "sha256": "c2950700e0808e69f3025337d891942cdb29e7d41d06b1cd7925e4739f7317d3",
+    "file": "abilityrogueenvelopingshadows.blp"
+  },
+  {
+    "source": "Ability_Rogue_SinisterCalling",
+    "sha256": "b9c3cd71552469195ca0d77e1f1e960bf17cfed13a22b05ab905ea1e5ff05946",
+    "file": "abilityroguesinistercalling.blp"
+  },
+  {
+    "source": "Ability_Rogue_MasterOfSubtlety",
+    "sha256": "df741f6788ec7d1b09e26db208b250b7bc2e58d332029c24b2a3cf1c20e64789",
+    "file": "abilityroguemasterofsubtlety.blp"
+  },
+  {
+    "source": "Ability_Creature_Poison_06",
+    "sha256": "4625e9c8389b2c4d1e6cb5e0197163120d973d11227b21c838354e5ee6b5f16b",
+    "file": "abilitycreaturepoison06.blp"
+  },
+  {
+    "source": "Ability_Rogue_FindWeakness",
+    "sha256": "ee910977d7d5500c4455e282ba0f4fc2d602658ba6aeeb42c06e18fa82e02658",
+    "file": "abilityroguefindweakness.blp"
+  },
+  {
+    "source": "Ability_Rogue_ShadowStrikes",
+    "sha256": "75b2f2b7e4e251bdc87b916f048dbff72e9940f6376b53ca3ed07ebb269ded06",
+    "file": "abilityrogueshadowstrikes.blp"
+  },
+  {
+    "source": "Ability_Rogue_FleetFooted",
+    "sha256": "d482f69285b608faaf151cddd9d6c7498264a6dfb03291344df26290227ffb4d",
+    "file": "abilityroguefleetfooted.blp"
+  },
+  {
+    "source": "Ability_Rogue_CheatDeath",
+    "sha256": "edbdd63f090d636fd742e5c774081dbc88984e348b5bbc371bbd844e9f3e5afc",
+    "file": "abilityroguecheatdeath.blp"
+  },
+  {
+    "source": "Ability_Rogue_DeadenedNerves",
+    "sha256": "ec1f1fdaa6b3d1faea0c7aa217fe81f602707907c3ef33474be831ca6999bde8",
+    "file": "abilityroguedeadenednerves.blp"
+  },
+  {
+    "source": "Spell_Arcane_ArcanePotency",
+    "sha256": "4524c0defcf454013f0d08aab1accd69a40a35bc6795b02cb36bf5933ed3460c",
+    "file": "spellarcanearcanepotency.blp"
+  },
+  {
+    "source": "Spell_Arcane_PrismaticCloak",
+    "sha256": "5111e0b9f5089bdc4a4f71bfbc165fd5404ae9f921e04e86e878e6fda80af81e",
+    "file": "spellarcaneprismaticcloak.blp"
+  },
+  {
+    "source": "Spell_Arcane_MindMastery",
+    "sha256": "fe136fa21d92c19a1ae90ae9071236f2677ba731486d43d6508c75820eaf543f",
+    "file": "spellarcanemindmastery.blp"
+  },
+  {
+    "source": "Spell_Nature_Slow",
+    "sha256": "2ca2fc55c1a2e2b323fc7dbc1a6f410af2833fda7d8035d8ae6f100d7131f3c3",
+    "file": "spellnatureslow.blp"
+  },
+  {
+    "source": "Spell_Fire_PlayingWithFire",
+    "sha256": "aebfc1503133f5883f3e7a5260fa80d03c21757d2f98c914e086c7793c9e27be",
+    "file": "spellfireplayingwithfire.blp"
+  },
+  {
+    "source": "Spell_Fire_BurningSpeed",
+    "sha256": "7be44d8143f4b9537d1f887e417d0945659cdc7a4d1cc07a4cb692eb22895a96",
+    "file": "spellfireburningspeed.blp"
+  },
+  {
+    "source": "Spell_Fire_MoltenBlood",
+    "sha256": "4e73d48f84aa0b4b625511f917e66f0e76dac4edff35a55d747973a65294c87d",
+    "file": "spellfiremoltenblood.blp"
+  },
+  {
+    "source": "Spell_Fire_Burnout",
+    "sha256": "0282a3c42b8880962347277a45e05b85b5220724f9e46de0647e4626ff02b7cf",
+    "file": "spellfireburnout.blp"
+  },
+  {
+    "source": "INV_Misc_Head_Dragon_01",
+    "sha256": "5a879726087967e1108a011fd7fe0a18f1afc8b6da0fcbca44c60c7cf3b096c8",
+    "file": "invmischeaddragon01.blp"
+  },
+  {
+    "source": "Spell_Frost_FrozenCore",
+    "sha256": "d1109406eafa7a0db0f9a989fb0bff017abaaed23a09037c1587011b31e4516e",
+    "file": "spellfrostfrozencore.blp"
+  },
+  {
+    "source": "Ability_Mage_ColdAsIce",
+    "sha256": "d7bb3f033bb2beb760977068a9ea2cbdee0ed45f4daba031e71e12bbcf97c913",
+    "file": "abilitymagecoldasice.blp"
+  },
+  {
+    "source": "Spell_Frost_ArcticWinds",
+    "sha256": "6b84f8192cf9f14f64ee53af36806c11ca7c3e00daa44ef5712aef87c22e0500",
+    "file": "spellfrostarcticwinds.blp"
+  },
+  {
+    "source": "Spell_Frost_SummonWaterElemental_2",
+    "sha256": "99cbe9c698633ec9c4c89bfcf27a8e087f11851eec565099878d89a74c00cfaa",
+    "file": "spellfrostsummonwaterelemental2.blp"
+  },
+  {
+    "source": "Spell_Holy_PurifyingPower",
+    "sha256": "5098d92390073a05f3db2598802a069659a643547887d0a6749ef12807fac5c5",
+    "file": "spellholypurifyingpower.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessedLife",
+    "sha256": "6d26b62602b7465f5a35a128a73cfb48b29bd42d851c2ac7eb0e3b980320bd43",
+    "file": "spellholyblessedlife.blp"
+  },
+  {
+    "source": "Spell_Holy_LightsGrace",
+    "sha256": "7d4dad5f1df1e34507e3787b21a737672f22decd20870afc670d2aa0afe1e5a0",
+    "file": "spellholylightsgrace.blp"
+  },
+  {
+    "source": "Spell_Holy_HolyGuidance",
+    "sha256": "bce8f67be65127f04db0a21ae01ea725de1d5706b284c49bf7849554ac3b1b26",
+    "file": "spellholyholyguidance.blp"
+  },
+  {
+    "source": "Spell_Holy_DivineIllumination",
+    "sha256": "c4bde29408d0b788e27f8c5c947267ce756e4d5e1029f3a4f91b7308cfd64c33",
+    "file": "spellholydivineillumination.blp"
+  },
+  {
+    "source": "Spell_Holy_Stoicism",
+    "sha256": "e8e5607064cac4af77a16ee617b7913795097714ab1ad4e1e72d6f7c1804d131",
+    "file": "spellholystoicism.blp"
+  },
+  {
+    "source": "Spell_Holy_DivineIntervention",
+    "sha256": "06bb4df6c1709ed141f5316921a49260322797ed4263571ad71d0bd60a04f351",
+    "file": "spellholydivineintervention.blp"
+  },
+  {
+    "source": "Spell_Holy_ArdentDefender",
+    "sha256": "53a8ce7320d11f35c77afa9052e57a02f5bf2f6b73ee2013a6795d43009170f2",
+    "file": "spellholyardentdefender.blp"
+  },
+  {
+    "source": "Spell_Holy_WeaponMastery",
+    "sha256": "3743807ccc46da40143ef0a418e8d79bf76383a802856a0ddc2b2dc828b5ea8e",
+    "file": "spellholyweaponmastery.blp"
+  },
+  {
+    "source": "Spell_Holy_AvengersShield",
+    "sha256": "7045b6f147717230660c7dcc1d44114535b0833c09f101593c840b45cbf24b01",
+    "file": "spellholyavengersshield.blp"
+  },
+  {
+    "source": "Spell_Holy_Crusade",
+    "sha256": "0346384cb95915f77fb31f2ab119880936e1187c23f34d9da8d7f28035645bbd",
+    "file": "spellholycrusade.blp"
+  },
+  {
+    "source": "Spell_Holy_MindVision",
+    "sha256": "c499cd1fd32cebad9e3ffea6f2229cc26d0930e04006add474e004fe3604b787",
+    "file": "spellholymindvision.blp"
+  },
+  {
+    "source": "Spell_Holy_DivinePurpose",
+    "sha256": "b66ef3ea13671e47504d6b757463dbc2915d90f30b80f98429845be70b5e59a6",
+    "file": "spellholydivinepurpose.blp"
+  },
+  {
+    "source": "Ability_Paladin_JudgementoftheWise",
+    "sha256": "5a5ecb256c5378d736189766fc4aea547e4e106bb18e2a2f4341f360016f3974",
+    "file": "abilitypaladinjudgementofthewise.blp"
+  },
+  {
+    "source": "Spell_Holy_Fanaticism",
+    "sha256": "ff19717e6cb5926d13782323892811025cac8cd368bc22108a9d1db341416739",
+    "file": "spellholyfanaticism.blp"
+  },
+  {
+    "source": "Ability_Rogue_QuickRecovery",
+    "sha256": "e55003c4a95efc4684661786a9c87ca1eaa8c5bbf000f7bb32d3a18f7ae6f9c0",
+    "file": "abilityroguequickrecovery.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowEmbrace",
+    "sha256": "257be6db02a57e31e3c122f6477625aad7cbd78f8ea1aa80eab0cf0662167653",
+    "file": "spellshadowshadowembrace.blp"
+  },
+  {
+    "source": "Spell_Holy_BlessedResillience",
+    "sha256": "7381be154cd1c8ab0a9cf9b8672052a93d099a99cd624e347f6c583cc7ba6eed",
+    "file": "spellholyblessedresillience.blp"
+  },
+  {
+    "source": "Spell_Holy_SurgeOfLight",
+    "sha256": "9f0e147b14c7434788b08191116462679ff521c683cc5351aac02b7b2c86bf16",
+    "file": "spellholysurgeoflight.blp"
+  },
+  {
+    "source": "Spell_Holy_Absolution",
+    "sha256": "c44155c9765d53ccfc5ee8a47232ba987cff29ed14aa7fbd93850f1e160782cf",
+    "file": "spellholyabsolution.blp"
+  },
+  {
+    "source": "Spell_Shadow_FocusedPower",
+    "sha256": "99860c762b37781dd06e36dc612db4af9b156a11072698763f0f06e22649dd7c",
+    "file": "spellshadowfocusedpower.blp"
+  },
+  {
+    "source": "Spell_Holy_Chastise",
+    "sha256": "a6287615f69116c0a694c0ae62fe516246bb992522585983d200edc52b9c4b89",
+    "file": "spellholychastise.blp"
+  },
+  {
+    "source": "Spell_Holy_PainSupression",
+    "sha256": "cb36ba433086bc870b4eab8388a5dd2a473245afce72f01f56e42dce064ed093",
+    "file": "spellholypainsupression.blp"
+  },
+  {
+    "source": "Spell_Shadow_ShadowPower",
+    "sha256": "8ef7c1f47db7cbdd9b66f824dab63af9948bdadb9597c051766c1536b5c8abea",
+    "file": "spellshadowshadowpower.blp"
+  },
+  {
+    "source": "Spell_Shadow_Skull",
+    "sha256": "1cad2f0be1f23dd59d99b2cbf52bd50218e93c87a35b729e91c85b54aac68ead",
+    "file": "spellshadowskull.blp"
+  },
+  {
+    "source": "Ability_Druid_LunarGuidance",
+    "sha256": "39fb10c841b062e034b66c131abd3930ffc760feaa933d9eb782d3805ccd414a",
+    "file": "abilitydruidlunarguidance.blp"
+  },
+  {
+    "source": "Ability_Druid_BalanceofPower",
+    "sha256": "987b297225a07cee7806f1ab4b51010430ec75127b9c1576000e6f72c2f3d694",
+    "file": "abilitydruidbalanceofpower.blp"
+  },
+  {
+    "source": "Ability_Druid_Dreamstate",
+    "sha256": "fc1a319e74c599eff7f1787729a3e3620c74ed27eb011a48d2abf14dbee211f5",
+    "file": "abilitydruiddreamstate.blp"
+  },
+  {
+    "source": "Spell_Nature_FaerieFire",
+    "sha256": "2152131c3aab4550f4f646eacf157b7733e54216c873b8e5282f4e2c6c933ac0",
+    "file": "spellnaturefaeriefire.blp"
+  },
+  {
+    "source": "Ability_Druid_TwilightsWrath",
+    "sha256": "52d98ffd3108c22ee5dc89f0ab7255089fc13b654cbad5f43e32bf860175a6de",
+    "file": "abilitydruidtwilightswrath.blp"
+  },
+  {
+    "source": "Ability_Druid_ForceofNature",
+    "sha256": "e3369f5f0b8440d18d7e3ed5cb2e82cf79529c973b83264a5eea849a037b6b0f",
+    "file": "abilitydruidforceofnature.blp"
+  },
+  {
+    "source": "Ability_Druid_EmpoweredTouch",
+    "sha256": "50d5cc8ea1394c4ca61f869c9208f69bb46bed00c5b48ad48fde28c9423048ed",
+    "file": "abilitydruidempoweredtouch.blp"
+  },
+  {
+    "source": "Ability_Druid_EmpoweredRejuvination",
+    "sha256": "b41f1b9621118ba3fc2655807878a3478f76530f77575b307985b5d68d2c57c9",
+    "file": "abilitydruidempoweredrejuvination.blp"
+  },
+  {
+    "source": "Ability_Druid_NaturalPerfection",
+    "sha256": "cd8df927805dd870c44738b06f5a9b550bd5615c805dfe59cf513a862dba7dc1",
+    "file": "abilitydruidnaturalperfection.blp"
+  },
+  {
+    "source": "Ability_Druid_TreeofLife",
+    "sha256": "c0ca6af8df92ea6935dcd8079da0346a51e30c0c7f80d6afb1b5b2b2eb3ea6f0",
+    "file": "abilitydruidtreeoflife.blp"
+  },
+  {
+    "source": "Ability_Druid_HealingInstincts",
+    "sha256": "3eb34af8acfe5e8c0e0b557d125ae4405bdb7de472eee4a9e8cd656cf011d664",
+    "file": "abilitydruidhealinginstincts.blp"
+  },
+  {
+    "source": "Ability_Druid_PrimalTenacity",
+    "sha256": "16ec6005316f6b2a5a11b662a4012a170a9bff79a3c0f084d09588bf2c956f9f",
+    "file": "abilitydruidprimaltenacity.blp"
+  },
+  {
+    "source": "Ability_Druid_Enrage",
+    "sha256": "82837c25b42fbdd58c3434391d0a4157c58c6c6c32b4331abfa7f0b6f484a196",
+    "file": "abilitydruidenrage.blp"
+  },
+  {
+    "source": "Ability_Druid_PredatoryInstincts",
+    "sha256": "a8ee2061cffb160ab7cab2a15bc7a84035759b7063944ad894132431b3b8ce50",
+    "file": "abilitydruidpredatoryinstincts.blp"
+  },
+  {
+    "source": "Ability_Druid_Mangle2",
+    "sha256": "29dffd68d6dd3fde8d4ca91eb3d00858e44c5afd5d93d54e6422936ffffafad6",
+    "file": "abilitydruidmangle2.blp"
+  },
+  {
+    "source": "Spell_Nature_GiftoftheWaterSpirit",
+    "sha256": "ad0cde26a66c3266682919a3b38ee14f9aa8e1fb6250a72bb4919722112776b9",
+    "file": "spellnaturegiftofthewaterspirit.blp"
+  },
+  {
+    "source": "Ability_Hunter_AnimalHandler",
+    "sha256": "f04ac08cd3167619b419f5a4e5760581d4e544982cf33ccdab509cb8f4b55dbf",
+    "file": "abilityhunteranimalhandler.blp"
+  },
+  {
+    "source": "Ability_Hunter_FerociousInspiration",
+    "sha256": "5db766ac2a6fc00fe9e12769c264c37af15344301cc58c856cefbb31df5dea51",
+    "file": "abilityhunterferociousinspiration.blp"
+  },
+  {
+    "source": "Ability_Hunter_CatlikeReflexes",
+    "sha256": "45ca61122ff9c2c517d31f5b70ada03dfdfb0796e19cb62d8a6585bd0d76473d",
+    "file": "abilityhuntercatlikereflexes.blp"
+  },
+  {
+    "source": "Ability_Hunter_SerpentSwiftness",
+    "sha256": "0d6ef66495341828e1c7857661d7c345ee2e37b2b2023b6b5535f53250f4123b",
+    "file": "abilityhunterserpentswiftness.blp"
+  },
+  {
+    "source": "Ability_Hunter_BeastWithin",
+    "sha256": "170d0903047e9228dcc00d3ca96c3e799127d881d26041e620710e8d7188b848",
+    "file": "abilityhunterbeastwithin.blp"
+  },
+  {
+    "source": "Ability_Hunter_CombatExperience",
+    "sha256": "9ad33c861e00a3b8fffae9900f04ebd44dc294a93281bf364e79e996650c6ba1",
+    "file": "abilityhuntercombatexperience.blp"
+  },
+  {
+    "source": "Ability_Hunter_ZenArchery",
+    "sha256": "990e21151f25771c431b0508be937df6447b2f97088ee7b110f9ab4712027a1d",
+    "file": "abilityhunterzenarchery.blp"
+  },
+  {
+    "source": "Ability_Hunter_MasterMarksman",
+    "sha256": "2a775ad0fe115c276de7f6638a968f5ceda86587b2ab17108fef99da444d15af",
+    "file": "abilityhuntermastermarksman.blp"
+  },
+  {
+    "source": "Ability_TheBlackArrow",
+    "sha256": "b4f2df201f7a2c3ec26642ab06d7c55fb559394fdb8aa1693f76c3dab00e90c6",
+    "file": "abilitytheblackarrow.blp"
+  },
+  {
+    "source": "Ability_Hunter_Resourcefulness",
+    "sha256": "ccc161847f4c836dbd9188ef0ab092cefcec435da10095755bd8af9f30ed9c93",
+    "file": "abilityhunterresourcefulness.blp"
+  },
+  {
+    "source": "Ability_Hunter_SurvivalInstincts",
+    "sha256": "39eff593f68fefcc3de2b57fb5e00e58e81a18560acc6055d177cdbfb3cae231",
+    "file": "abilityhuntersurvivalinstincts.blp"
+  },
+  {
+    "source": "Ability_Hunter_ThrilloftheHunt",
+    "sha256": "0b1487c3b6ace053941c9a6d79cdaa571edb33d281dd5b05c5fa3002525e3bb3",
+    "file": "abilityhunterthrillofthehunt.blp"
+  },
+  {
+    "source": "Ability_Hunter_MasterTactitian",
+    "sha256": "6e45afaf8a96f3bde5ce85a58f9a2ac1e650ded366bf6b301b874d8af23d662c",
+    "file": "abilityhuntermastertactitian.blp"
+  },
+  {
+    "source": "Ability_GolemStormBolt",
+    "sha256": "ef1adb1150f454f1d75ad1ab1c811d6f669786f843eb0909b56c3c8b4d8ac714",
+    "file": "abilitygolemstormbolt.blp"
+  },
+  {
+    "source": "Spell_Holy_CircleOfRenewal",
+    "sha256": "6c88550b39f635f574984d872e8b7d6c3c6a485c9ea62a3106b1db6ae6239764",
+    "file": "spellholycircleofrenewal.blp"
+  },
+  {
+    "source": "Spell_Shadow_Misery",
+    "sha256": "6e5f15fabe3c0ebf2dce71770c91d8319d8c985e346463d8c10383f4797d9d6e",
+    "file": "spellshadowmisery.blp"
+  },
+  {
+    "source": "Ability_Hunter_GoForTheThroat",
+    "sha256": "c9bca82c633fb50e270f96ee7950c216c1e3d1133ec5d4c33cd82c9e3730cf44",
+    "file": "abilityhuntergoforthethroat.blp"
+  },
+  {
+    "source": "Ability_TownWatch",
+    "sha256": "0a47b6297a577a340914a737fe852adb422dea851d7c6b61ff3c519a1af45186",
+    "file": "abilitytownwatch.blp"
+  },
+  {
+    "source": "INV_Staff_01",
+    "sha256": "8809ee8c316858cc2514bbaa3891f5edd8afb06c417f8cbeb6004908f9aa8ff4",
+    "file": "invstaff01.blp"
+  },
+  {
+    "source": "INV_Weapon_Shortblade_38",
+    "sha256": "40e74b8519803a87691af5e7d30a16e7bb8dac0d2ecab0ec7ac706557f9fe1f9",
+    "file": "invweaponshortblade38.blp"
+  },
+  {
+    "source": "Spell_Arcane_ArcaneTorrent",
+    "sha256": "f59e843cd65cc18f568918a34f943344083a29bf87ff391b3c6fdd2c7781b10d",
+    "file": "spellarcanearcanetorrent.blp"
+  },
+  {
+    "source": "Ability_Mage_PotentSpirit",
+    "sha256": "8783948a6d24bbb5a765e22439bc3c2861554de8aafc799f74ef0baf9f41f873",
+    "file": "abilitymagepotentspirit.blp"
+  },
+  {
+    "source": "Ability_Mage_IncantersAbsorbtion",
+    "sha256": "178d88b8b3f7751528f4656d3a34df2601b20cbf5e7eee5ceaa8c6135f02c63e",
+    "file": "abilitymageincantersabsorbtion.blp"
+  },
+  {
+    "source": "Ability_Mage_StudentOfTheMind",
+    "sha256": "9d411b2eda06d5041ec13a847d098cdf1d4c4f62e7ee7ca9969f20ab9c36553e",
+    "file": "abilitymagestudentofthemind.blp"
+  },
+  {
+    "source": "Ability_Mage_NetherWindPresence",
+    "sha256": "a11074379c25384f2158a84944a0b3deff8414c2d6eabd71bce95c45643f3d3f",
+    "file": "abilitymagenetherwindpresence.blp"
+  },
+  {
+    "source": "Ability_Mage_ArcaneBarrage",
+    "sha256": "50d9f54394a4c6afde859fa9832c2b1fd632db36b73a8ba386b88ed13b1b86e9",
+    "file": "abilitymagearcanebarrage.blp"
+  },
+  {
+    "source": "Ability_Mage_FieryPayback",
+    "sha256": "d2530d5bcc15f46671fe0e55689534c66b269940c18d6ebd04cf639dbc178af1",
+    "file": "abilitymagefierypayback.blp"
+  },
+  {
+    "source": "Ability_Mage_FireStarter",
+    "sha256": "6fe4d0faab68a05793dd9b90efa34d68ccf51ca66d0faac8a195dd84c7832090",
+    "file": "abilitymagefirestarter.blp"
+  },
+  {
+    "source": "Ability_Mage_HotStreak",
+    "sha256": "92e64fef090f8a21ce33688efce8fd1764c201b16b3d15b5994393ea867dec6a",
+    "file": "abilitymagehotstreak.blp"
+  },
+  {
+    "source": "Ability_Mage_Burnout",
+    "sha256": "ac81c43925294d8d6a2254e8ce1bd0974dcf3bbb6dbba4f81712dde1de4371e6",
+    "file": "abilitymageburnout.blp"
+  },
+  {
+    "source": "Ability_Mage_LivingBomb",
+    "sha256": "d202654cbba0ef562c6c263de25a7f9f3162b834b2d128deaa8f861eab722e4c",
+    "file": "abilitymagelivingbomb.blp"
+  },
+  {
+    "source": "Ability_Mage_WintersGrasp",
+    "sha256": "bb8e81c4c167cbcc3648c502794768cf39c1ee259b15690ca7a85983d86a233b",
+    "file": "abilitymagewintersgrasp.blp"
+  },
+  {
+    "source": "Ability_Mage_BrainFreeze",
+    "sha256": "ad9a3df0b81369c22b00ee8224348ea5f3aa0d461f7bc386b9cb6612abe1df1f",
+    "file": "abilitymagebrainfreeze.blp"
+  },
+  {
+    "source": "Ability_Mage_ChilledToTheBone",
+    "sha256": "b6155b6193c6d9b646ba469ce5e2e33c36934ab2ad0fa7d6caa7cd39bfea8d8f",
+    "file": "abilitymagechilledtothebone.blp"
+  },
+  {
+    "source": "Ability_Mage_DeepFreeze",
+    "sha256": "1f979fddaac50e2efec895de96a33198f938838a0d6e0148a2564fc5f69a7993",
+    "file": "abilitymagedeepfreeze.blp"
+  },
+  {
+    "source": "Spell_Arcane_FocusedPower",
+    "sha256": "7f979eab3ad887492718e3dd38fb1de9bf61b0d06c28f0fbe4ab5c99d9dc07c8",
+    "file": "spellarcanefocusedpower.blp"
+  },
+  {
+    "source": "Ability_Warrior_BloodNova",
+    "sha256": "8ce2a77e26b3e17708cf63177813a6b36224e844f6f23583432b8ea6a33781f8",
+    "file": "abilitywarriorbloodnova.blp"
+  },
+  {
+    "source": "Ability_Warrior_UnrelentingAssault",
+    "sha256": "5a2d21dc506e56bd2b07979153564d74a3c9cebbd263ee610d7a3ce15e63e406",
+    "file": "abilitywarriorunrelentingassault.blp"
+  },
+  {
+    "source": "Ability_Warrior_OffensiveStance",
+    "sha256": "ab423cedcc7f239f33b673ad3cfb558a8464604af8abce59d5a0bbb672ff893f",
+    "file": "abilitywarrioroffensivestance.blp"
+  },
+  {
+    "source": "Ability_Warrior_Bladestorm",
+    "sha256": "723ba15bc00325a2c6fe7fbcf6d40bf2b550bfdeafbe266b9ae0ee46be177d7f",
+    "file": "abilitywarriorbladestorm.blp"
+  },
+  {
+    "source": "Ability_Warrior_FuriousResolve",
+    "sha256": "abebc925874f161ddaede7afcaa0afd48fc829d088e47c1356156a26665a8ede",
+    "file": "abilitywarriorfuriousresolve.blp"
+  },
+  {
+    "source": "Ability_Warrior_Bloodsurge",
+    "sha256": "bd566c224c20c9e8de7cf8cfb4514b69c30b29cb3d88662b982b6ac2ba7419e3",
+    "file": "abilitywarriorbloodsurge.blp"
+  },
+  {
+    "source": "Ability_Warrior_TitansGrip",
+    "sha256": "2359ecb873a8e100b7c6d268bb46282b472fae1404e6461ec5aad3eba93f7c93",
+    "file": "abilitywarriortitansgrip.blp"
+  },
+  {
+    "source": "Ability_HeroicLeap",
+    "sha256": "3b8882031cdbdab2f5dafbf5148cbdf9ef43202732487b98dc8ca2f3739d4436",
+    "file": "abilityheroicleap.blp"
+  },
+  {
+    "source": "Warrior_talent_icon_singlemindedfury",
+    "sha256": "fb2b504df84be307b38395e5e36b1ea5e9a39569611996a95711c2215f98b1fa",
+    "file": "warriortalenticonsinglemindedfury.blp"
+  },
+  {
+    "source": "Ability_Warrior_Safeguard",
+    "sha256": "fd8adf67a345c860974c5ddd503a8c8a73130d9918d3265aef4e120aad7e2d38",
+    "file": "abilitywarriorsafeguard.blp"
+  },
+  {
+    "source": "Ability_Warrior_SwordandBoard",
+    "sha256": "24962ae78fe356a3da28ff7785d810f787aa9122364881f7bd06c38d61467794",
+    "file": "abilitywarriorswordandboard.blp"
+  },
+  {
+    "source": "Ability_Warrior_Shockwave",
+    "sha256": "1a89bc861a6576113eae03de0c6b3786f6d20ebf417ecc6607293279761ea2ee",
+    "file": "abilitywarriorshockwave.blp"
+  },
+  {
+    "source": "Spell_Shadow_SummonFelHunter",
+    "sha256": "63751212044d845e81008a35160baf9a4aeb9714c0de5177d93bfc12c0861903",
+    "file": "spellshadowsummonfelhunter.blp"
+  },
+  {
+    "source": "Spell_Shadow_DeathsEmbrace",
+    "sha256": "6b7bc904eda60221d41b52fd8b985f9c2be870434e47ef0b7467d60e717278ca",
+    "file": "spellshadowdeathsembrace.blp"
+  },
+  {
+    "source": "Ability_Warlock_EverlastingAffliction",
+    "sha256": "84d1703256ad18660ccb6e60d122293dd0367c9a99e63e5819a24122c4e12fb8",
+    "file": "abilitywarlockeverlastingaffliction.blp"
+  },
+  {
+    "source": "Ability_Warlock_Eradication",
+    "sha256": "0d4ad55db69f73499160c6a8e0ecfed2ba60a7273101d96fa415ce12eeafbcfb",
+    "file": "abilitywarlockeradication.blp"
+  },
+  {
+    "source": "Ability_Warlock_DemonicEmpowerment",
+    "sha256": "cb3782694cb7f5015e60da91fe2d0b45b0a9f937235cd95167d73e13331ff866",
+    "file": "abilitywarlockdemonicempowerment.blp"
+  },
+  {
+    "source": "Ability_Warlock_ImprovedDemonicTactics",
+    "sha256": "b17e7429463e787deb67057c29fbf234c653ad841d47f4223e3811a1c1ad8137",
+    "file": "abilitywarlockimproveddemonictactics.blp"
+  },
+  {
+    "source": "Spell_Shadow_FelMending",
+    "sha256": "0b627ce0bf8bf2223417e3acff04cc8e539e7fff8c5930ab40120249196e1ba9",
+    "file": "spellshadowfelmending.blp"
+  },
+  {
+    "source": "Spell_Shadow_DemonicEmpathy",
+    "sha256": "bc40ac0cff9916defed74a55c03929f0abfa0a851e3f78c6ded5c392b0333a29",
+    "file": "spellshadowdemonicempathy.blp"
+  },
+  {
+    "source": "Spell_Shadow_DemonicPact",
+    "sha256": "995e7d8d4ad9cd9787c1a341c66e190b11a3f5fa631336a70ae60ab733bd54f7",
+    "file": "spellshadowdemonicpact.blp"
+  },
+  {
+    "source": "Spell_Shadow_DemonForm",
+    "sha256": "3b409b32353553252a13695b55b4dd769ec6f025176f1020e7118d3340a0d4d6",
+    "file": "spellshadowdemonform.blp"
+  },
+  {
+    "source": "Ability_Mage_MoltenArmor",
+    "sha256": "d9ba71a9889b775682e89e639b9a8ccffa1575bf71e82434dc78f8081afea3ce",
+    "file": "abilitymagemoltenarmor.blp"
+  },
+  {
+    "source": "Ability_Warlock_Backdraft",
+    "sha256": "79b2162a802dcc86c1acce6476b14d84c2b7f85e0f15e778b25704c2d70b6980",
+    "file": "abilitywarlockbackdraft.blp"
+  },
+  {
+    "source": "Ability_Warlock_ImprovedSoulLeech",
+    "sha256": "b05476c2a22a71ed5532e7594aff8d296f4868b514e575d33a8a7d05446bd8ce",
+    "file": "abilitywarlockimprovedsoulleech.blp"
+  },
+  {
+    "source": "Ability_Warlock_FireandBrimstone",
+    "sha256": "de59955960f40f9d4e46f5d52f1c8116ec42594a292ba2c1244ba21a0f10c1a1",
+    "file": "abilitywarlockfireandbrimstone.blp"
+  },
+  {
+    "source": "Ability_Warlock_ChaosBolt",
+    "sha256": "aeae153f75d033cb887b1e1fbc95c37b407361b7c3f98f692700cd5b39f0f988",
+    "file": "abilitywarlockchaosbolt.blp"
+  },
+  {
+    "source": "Ability_Warrior_CriticalBlock",
+    "sha256": "899d4f839e065066b519c0360e35dbcb15293a4adb76a8cd77a02ce6ac4bd87c",
+    "file": "abilitywarriorcriticalblock.blp"
+  },
+  {
+    "source": "Spell_Holy_Aspiration",
+    "sha256": "47a4f278956206536ff584d588084aa3d8900d6f285ee249155f91aa0367ea63",
+    "file": "spellholyaspiration.blp"
+  },
+  {
+    "source": "Spell_Holy_DevineAegis",
+    "sha256": "d8726ea02edbf46b128ef8a632d8a66939046f3a42a03b296f8d84a06618d44e",
+    "file": "spellholydevineaegis.blp"
+  },
+  {
+    "source": "Spell_Holy_Rapture",
+    "sha256": "3e6ae5e63320df5b836fb97a23859827e2a41aa9d2c8444cf1e15d29263c12ff",
+    "file": "spellholyrapture.blp"
+  },
+  {
+    "source": "Spell_Holy_Penance",
+    "sha256": "55052813d9af9366ced0d191bb17c620ae35ebab3ea8fa8c3612ecb2f4dc2f71",
+    "file": "spellholypenance.blp"
+  },
+  {
+    "source": "Spell_Holy_SealOfVengeance",
+    "sha256": "a04676efe6ef0c337fccf794c79d4115411429202fb03c14f67ffde40a4119b2",
+    "file": "spellholysealofvengeance.blp"
+  },
+  {
+    "source": "Spell_Holy_HopeAndGrace",
+    "sha256": "fcf736ac3f1dc7f2aae63531df2c1ce1ab2ea226bd94fdcf0fc48193a113e07a",
+    "file": "spellholyhopeandgrace.blp"
+  },
+  {
+    "source": "Ability_Paladin_InfusionofLight",
+    "sha256": "90c223f2e2de3163b562fd2851dc4e6e35767f0202fe2b1e8ac3f4067ba40622",
+    "file": "abilitypaladininfusionoflight.blp"
+  },
+  {
+    "source": "Spell_Holy_TestOfFaith",
+    "sha256": "9972ccfd17bdc2943031dbb59b1c59d45101845069ef1ec5a84036f272c6f8d0",
+    "file": "spellholytestoffaith.blp"
+  },
+  {
+    "source": "Spell_Holy_Serendipity",
+    "sha256": "c90a201b01e594efff5dad3d7226f0f9435e27bcbdb48be35720856fa6c4da43",
+    "file": "spellholyserendipity.blp"
+  },
+  {
+    "source": "Spell_Holy_DivineProvidence",
+    "sha256": "8b94d1549eadecd7f3cb629bf7a403b86e0f11aa81a3296b8a78c7e67033aebd",
+    "file": "spellholydivineprovidence.blp"
+  },
+  {
+    "source": "Spell_Shadow_MindTwisting",
+    "sha256": "fbfe29a9455be9a837a8870bb9684b1f64322a646a42a285c0dae40afd715ca1",
+    "file": "spellshadowmindtwisting.blp"
+  },
+  {
+    "source": "Spell_Shadow_PsychicHorrors",
+    "sha256": "9582c2280f63962c2a77b53139281e266cfc3ac8958a11af212829113e86e758",
+    "file": "spellshadowpsychichorrors.blp"
+  },
+  {
+    "source": "Spell_Shadow_PainAndSuffering",
+    "sha256": "b223c527e18c0e47c523b002f9d551dabfeafe8a345a4f98a2c37d902ae966f1",
+    "file": "spellshadowpainandsuffering.blp"
+  },
+  {
+    "source": "Spell_Shadow_Dispersion",
+    "sha256": "9cb9260d223284c23012eb5db450389b68954fc3a7534c26deec57e05dbd4c4a",
+    "file": "spellshadowdispersion.blp"
+  },
+  {
+    "source": "Spell_Holy_GuardianSpirit",
+    "sha256": "e5fb1c7237a887da5d3bb8d7c12b237d1287d5875a801e429bcb76176a235a45",
+    "file": "spellholyguardianspirit.blp"
+  },
+  {
+    "source": "Ability_Druid_ImprovedMoonkinForm",
+    "sha256": "b62c136f2b34ed91f6e07b8d7d0eac9040d355294f4b9f1fea58caf6e5ac7186",
+    "file": "abilitydruidimprovedmoonkinform.blp"
+  },
+  {
+    "source": "Ability_Druid_OwlkinFrenzy",
+    "sha256": "987a6f33e74849516c39c902aaa067bf995b4ad03235ded67c022e3136b1a351",
+    "file": "abilitydruidowlkinfrenzy.blp"
+  },
+  {
+    "source": "Ability_Druid_PrimalPrecision",
+    "sha256": "42c04dd16417315c438c96bb1f4ffc2e000a463a3a2eea91588835290773bec0",
+    "file": "abilitydruidprimalprecision.blp"
+  },
+  {
+    "source": "Ability_Druid_MasterShapeshifter",
+    "sha256": "5fe00381210a810f8d9891840dc894ddc7053161a78e45662d6da089ce5ae6d4",
+    "file": "abilitydruidmastershapeshifter.blp"
+  },
+  {
+    "source": "Ability_Druid_ManaTree",
+    "sha256": "3e5874f1c7fff86386a740639280e37f08d3355d2352d9d17c7f216cf676005c",
+    "file": "abilitydruidmanatree.blp"
+  },
+  {
+    "source": "Ability_Druid_Flourish",
+    "sha256": "688969ffe52556697cfe6f6186bd9a8eaae0b3b915a0956d45136657bc747c71",
+    "file": "abilitydruidflourish.blp"
+  },
+  {
+    "source": "Ability_Druid_PrimalAgression",
+    "sha256": "a3b4684767b03aaea1f8844762d7042d2b2ec2f9a62998e953b189cd9d955ee6",
+    "file": "abilitydruidprimalagression.blp"
+  },
+  {
+    "source": "Ability_Druid_InfectedWound",
+    "sha256": "8394ce1c6416d8c2e981550ebc7f7d52cbe4f9b1e1fe39c267e1e499fba5e4ac",
+    "file": "abilitydruidinfectedwound.blp"
+  },
+  {
+    "source": "Ability_Druid_KingoftheJungle",
+    "sha256": "a10e00c5656190e40bd78c0ccfbd2b5ee540043ef660271417563fcbb2daf3cd",
+    "file": "abilitydruidkingofthejungle.blp"
+  },
+  {
+    "source": "Ability_Druid_GiftoftheEarthmother",
+    "sha256": "d1145c7b6c1367f8bcca9dff3e2326e45519d7e1276d968fef2bcadead36ddca",
+    "file": "abilitydruidgiftoftheearthmother.blp"
+  },
+  {
+    "source": "Ability_Druid_Typhoon",
+    "sha256": "8b1ed5b6af44977cac29b59fa91d2a9c2bc5edf2b2ec25a01c87f53b686e34c7",
+    "file": "abilitydruidtyphoon.blp"
+  },
+  {
+    "source": "Ability_Druid_Eclipse",
+    "sha256": "6b029d4f73e03ecc914058ea442efd16aee04c99a0bcebaa14720846bcb4fbf6",
+    "file": "abilitydruideclipse.blp"
+  },
+  {
+    "source": "Ability_Druid_GaleWinds",
+    "sha256": "6821c4cab1e2d35b732d974f5cb974145638a161cdd7c7191feb0c462c863321",
+    "file": "abilitydruidgalewinds.blp"
+  },
+  {
+    "source": "Ability_Druid_Starfall",
+    "sha256": "fbf80ca7f8d538da09586bd70952033f4cabcbe51e3376ffd22d6d6aa0cc0e72",
+    "file": "abilitydruidstarfall.blp"
+  },
+  {
+    "source": "Ability_Druid_Berserk",
+    "sha256": "48ab34f21df86e506fba8121c1d4c47a9a7c91740d241abed7fd47d403e2586a",
+    "file": "abilitydruidberserk.blp"
+  },
+  {
+    "source": "Ability_Druid_EarthandSky",
+    "sha256": "2ecdce2d373bb6cbdaf1ddb6fb44e1d6aa78596a33c52ff77c52ba46dad38b2a",
+    "file": "abilitydruidearthandsky.blp"
+  },
+  {
+    "source": "Ability_Druid_Replenish",
+    "sha256": "5db3d32d788cc8f8d9e963858bbc5cec67ae94d995eedc1bfadcd524ae3f94a4",
+    "file": "abilitydruidreplenish.blp"
+  },
+  {
+    "source": "Ability_Druid_ImprovedTreeForm",
+    "sha256": "0bdba85dda171994a49aca01f6bd42b170a3da108461e865ad6d75f65f430840",
+    "file": "abilitydruidimprovedtreeform.blp"
+  },
+  {
+    "source": "Ability_Warlock_Haunt",
+    "sha256": "34cb291c594d99e6b2802ce7586084eeef38d8fb2e90775aa6fe980f326d3f73",
+    "file": "abilitywarlockhaunt.blp"
+  },
+  {
+    "source": "Ability_Warlock_EmpoweredImp",
+    "sha256": "09e6a2e4b4461e7e69368c58fc0a324e69bb068bc7c743d762e68966276d6833",
+    "file": "abilitywarlockempoweredimp.blp"
+  },
+  {
+    "source": "Spell_Shaman_ElementalOath",
+    "sha256": "efdf52a83b2b1d4527cd170c52a471775b091b1d36f5d676185395dea3426269",
+    "file": "spellshamanelementaloath.blp"
+  },
+  {
+    "source": "Spell_Shaman_AstralShift",
+    "sha256": "ddc6be1a0895202a1044f9a3f66eb80209669a49989a1bea1121fa0f53ed09fa",
+    "file": "spellshamanastralshift.blp"
+  },
+  {
+    "source": "Spell_Shaman_LavaFlow",
+    "sha256": "c6937195e8a80cfc4da04b1659f89183efec4b0c42b7755ecc40a7b1e242794c",
+    "file": "spellshamanlavaflow.blp"
+  },
+  {
+    "source": "Spell_Shaman_StormEarthFire",
+    "sha256": "e23bd8051c1b94d1fcc4919a9c309898a7fad8dcd87af87b5b441262ed571170",
+    "file": "spellshamanstormearthfire.blp"
+  },
+  {
+    "source": "Spell_Shaman_ThunderStorm",
+    "sha256": "c0a3c44d0d2d096399d538a21aae3e2801628d4ed29a8f9005a7b09c3dd86696",
+    "file": "spellshamanthunderstorm.blp"
+  },
+  {
+    "source": "Spell_Shaman_ImprovedStormstrike",
+    "sha256": "278a6181d7d6c3155e1ff80259cb0353f6cf09b5424c6090feb64af69c8dd6f3",
+    "file": "spellshamanimprovedstormstrike.blp"
+  },
+  {
+    "source": "Spell_Shaman_StaticShock",
+    "sha256": "e62189931c1eac9ec67e6529f856508699499bbb09b76bc35a60fc6458ada0bf",
+    "file": "spellshamanstaticshock.blp"
+  },
+  {
+    "source": "Spell_Nature_EarthElemental_Totem",
+    "sha256": "6d16389dc91555bdb1bafa30a6db26c6348038b58193c27d2d66afca3f5e5798",
+    "file": "spellnatureearthelementaltotem.blp"
+  },
+  {
+    "source": "Spell_Shaman_MaelstromWeapon",
+    "sha256": "75be39673b481bb354e9a22b44a5866b1cb3322cc6cbca367374f004dda4fcc5",
+    "file": "spellshamanmaelstromweapon.blp"
+  },
+  {
+    "source": "Spell_Shaman_FeralSpirit",
+    "sha256": "210fe033c72c7072730e1a456855bf014f52bfdbe8d91a3c23eb4ba70193c32b",
+    "file": "spellshamanferalspirit.blp"
+  },
+  {
+    "source": "Spell_Shaman_BlessingOfEternals",
+    "sha256": "57c5cc57ec0e090559a0f38a4005643c5c8ce3d327c806181318f71a9c79f58b",
+    "file": "spellshamanblessingofeternals.blp"
+  },
+  {
+    "source": "Spell_Shaman_AncestralAwakening",
+    "sha256": "5904922812ed5526c5fce9036fe3f02cbceaba81f74ced3ba2b1f74f0e80146f",
+    "file": "spellshamanancestralawakening.blp"
+  },
+  {
+    "source": "Spell_Shaman_TidalWaves",
+    "sha256": "4f0c608b751e1ee89c5e8f407f6c6cad226a49995d84f1d2aad0f855dc65a33c",
+    "file": "spellshamantidalwaves.blp"
+  },
+  {
+    "source": "Ability_Rogue_DeadlyBrew",
+    "sha256": "bc97f27face21a05bbad3509f10f4cc16f38c705f2081139d127eaf51b92d167",
+    "file": "abilityroguedeadlybrew.blp"
+  },
+  {
+    "source": "Ability_Rogue_TurntheTables",
+    "sha256": "932a6b447a67ff819b8a64775819b301e8ee798e48b041acce8f5ff60edb2e72",
+    "file": "abilityrogueturnthetables.blp"
+  },
+  {
+    "source": "Ability_Rogue_BloodSplatter",
+    "sha256": "e199de422506d0c88fc2daa8d4caffb516a10d0ecfadfbe3f1d7b036da684fc8",
+    "file": "abilityroguebloodsplatter.blp"
+  },
+  {
+    "source": "Ability_Rogue_FocusedAttacks",
+    "sha256": "b7a2c4e0db071acd77ce35b53afd2be65f87b5e9634d98bb01495c7f8d73807b",
+    "file": "abilityroguefocusedattacks.blp"
+  },
+  {
+    "source": "Ability_Rogue_CutToTheChase",
+    "sha256": "571a1f00f073b6138b011695648fadd0484c008c695f640dc51d75f78538649f",
+    "file": "abilityroguecuttothechase.blp"
+  },
+  {
+    "source": "ability_demonhunter_bloodlet",
+    "sha256": "26100bc8cf2920837947853777ec43728347adc566bd0b9b22b22d779b0c6ea9",
+    "file": "abilitydemonhunterbloodlet.blp"
+  },
+  {
+    "source": "Ability_Rogue_ThrowingSpecialization",
+    "sha256": "21b8b1c91ff83ffb5a6e1023c7569ab90a2bd7e3d5aff30438ed5bb09aa89bc4",
+    "file": "abilityroguethrowingspecialization.blp"
+  },
+  {
+    "source": "Ability_Rogue_UnfairAdvantage",
+    "sha256": "baad581d8bbd3fa7e0e402acab633860046e5a1d803ee8b57b7f5c778af8d048",
+    "file": "abilityrogueunfairadvantage.blp"
+  },
+  {
+    "source": "Ability_Creature_Disease_03",
+    "sha256": "e7c03005e7cca0a6e5ef2fc7c43524606ea8ae5c38cfde4f3176b21aa42518f6",
+    "file": "abilitycreaturedisease03.blp"
+  },
+  {
+    "source": "Ability_Rogue_PreyontheWeak",
+    "sha256": "b0bc19dee8953735be01df471eccbde77aaaef35f71dcc88fb277074f46e9032",
+    "file": "abilityroguepreyontheweak.blp"
+  },
+  {
+    "source": "Ability_Rogue_MurderSpree",
+    "sha256": "373ecc4a614f87cd2e68e217a9c3516c6c3710b6721abe23933c0f3df9d7cc40",
+    "file": "abilityroguemurderspree.blp"
+  },
+  {
+    "source": "Ability_Rogue_Waylay",
+    "sha256": "988a4f7d0711e5e231d02566c68cbb8b67fea4d41853e40ae0b6c89b23f9a8d9",
+    "file": "abilityroguewaylay.blp"
+  },
+  {
+    "source": "Ability_Rogue_HonorAmongstThieves",
+    "sha256": "c864b7f4cad6c4fbdf6df47083c31c90c3deb72077a69e4270758c3640389901",
+    "file": "abilityroguehonoramongstthieves.blp"
+  },
+  {
+    "source": "Ability_Rogue_WrongfullyAccused",
+    "sha256": "e7790b7838a61412f9689b26fbf08f1a952128103727b19de5b467c977fb3c3d",
+    "file": "abilityroguewrongfullyaccused.blp"
+  },
+  {
+    "source": "Ability_Rogue_SlaughterfromtheShadows",
+    "sha256": "a502439295148d2342863aba6e73b60f3511794cd0548915de392c03a29cb8db",
+    "file": "abilityrogueslaughterfromtheshadows.blp"
+  },
+  {
+    "source": "Ability_Rogue_ShadowDance",
+    "sha256": "3d0e1f7f63ecf5b62d427e61693d38d490fcdf01baf93bec7374851bce654424",
+    "file": "abilityrogueshadowdance.blp"
+  },
+  {
+    "source": "Ability_Shaman_CleanseSpirit",
+    "sha256": "786a8cbbd99253120151c482ce018119994bba09ad1251bafa0b306a5e34994c",
+    "file": "abilityshamancleansespirit.blp"
+  },
+  {
+    "source": "Ability_Hunter_PiercingShots",
+    "sha256": "6155cc03e0183304282e5a6c91aed9b46edaa2551483751878d10df9e6ac9186",
+    "file": "abilityhunterpiercingshots.blp"
+  },
+  {
+    "source": "Ability_Hunter_RapidRegeneration",
+    "sha256": "833c0307a740ba658ac8cf038c3ec23828b1a267602f5305e015839e4c2e56e0",
+    "file": "abilityhunterrapidregeneration.blp"
+  },
+  {
+    "source": "Ability_Hunter_WildQuiver",
+    "sha256": "a0ded2c27487d52130fcaaaca9b4683f6242fd74ea8fabc0c5cc8ad26ad07817",
+    "file": "abilityhunterwildquiver.blp"
+  },
+  {
+    "source": "Ability_Hunter_ImprovedSteadyShot",
+    "sha256": "88b607c556919f3aea444704bd03e97901a29815f5d0dbdb939ef5e27a2739f2",
+    "file": "abilityhunterimprovedsteadyshot.blp"
+  },
+  {
+    "source": "Ability_Hunter_Assassinate",
+    "sha256": "7f17bc1252ed9f67c7871f7ce0eac667938c5c4fca27650467b76a42ee36577c",
+    "file": "abilityhunterassassinate.blp"
+  },
+  {
+    "source": "Ability_Hunter_ChimeraShot2",
+    "sha256": "e1de46e9d4d97f4fcdb5b9000fcb3209a7d3b9f43637f2d241ba67b1df83847c",
+    "file": "abilityhunterchimerashot2.blp"
+  },
+  {
+    "source": "Ability_Hunter_Invigeration",
+    "sha256": "335e4da0f1a169a99adf35185c2ddd6d8ccc7d8d24271ac2fc7db06cd0c498b6",
+    "file": "abilityhunterinvigeration.blp"
+  },
+  {
+    "source": "Ability_Hunter_CobraStrikes",
+    "sha256": "0cff2ae830ed29a4d158de8c22568402892bedc0a4485fc4be3ffe2f56a52e4f",
+    "file": "abilityhuntercobrastrikes.blp"
+  },
+  {
+    "source": "Ability_Hunter_AspectMastery",
+    "sha256": "d39dcb88bcca30bf73e77c350eca6028322be82dd24ef0da064b18fc24fbd06b",
+    "file": "abilityhunteraspectmastery.blp"
+  },
+  {
+    "source": "Ability_Hunter_BeastMastery",
+    "sha256": "0c7e69e7d951e50097a308950b0154f054ba66386670aca073e206b30ca672ef",
+    "file": "abilityhunterbeastmastery.blp"
+  },
+  {
+    "source": "Ability_Hunter_Longevity",
+    "sha256": "4a5b50657a68b61f03927a432d5c6e52baf7298cfdd2eb229294feb05fa5b8c6",
+    "file": "abilityhunterlongevity.blp"
+  },
+  {
+    "source": "Ability_Hunter_PotentVenom",
+    "sha256": "e5ebb7e01a518c3be354124cfca66733d18a8227fe447f84836adaab4212b6ae",
+    "file": "abilityhunterpotentvenom.blp"
+  },
+  {
+    "source": "Ability_Hunter_PointofNoEscape",
+    "sha256": "17fee8086ee7323ae1b63dd4d531dae779daeecf30d54ec49759a5ed23879cd9",
+    "file": "abilityhunterpointofnoescape.blp"
+  },
+  {
+    "source": "Ability_Hunter_LongShots",
+    "sha256": "94d2bcb8c3be121ea50820aa026ceb2c15ad2cb0af4458003d79b98fc5244c17",
+    "file": "abilityhunterlongshots.blp"
+  },
+  {
+    "source": "Ability_Hunter_HuntingParty",
+    "sha256": "6238daff5576bd36a7fa92cc18dd77bb1775c828c218ad22747fe7ac60408133",
+    "file": "abilityhunterhuntingparty.blp"
+  },
+  {
+    "source": "Ability_Hunter_ExplosiveShot",
+    "sha256": "ed9e5ca875a68925a415e213e1158facd9b24646a3ea55ba798350edaab435de",
+    "file": "abilityhunterexplosiveshot.blp"
+  },
+  {
+    "source": "Ability_Paladin_SanctifiedWrath",
+    "sha256": "19768a992d093c3edf4c1d3656a16dc517ab95b9685406c6e11433cf73123b9b",
+    "file": "abilitypaladinsanctifiedwrath.blp"
+  },
+  {
+    "source": "Ability_Paladin_SwiftRetribution",
+    "sha256": "326f9d2bd38127124bfd3427c0ff368139e5967b78a4de2bc53a916b79273a28",
+    "file": "abilitypaladinswiftretribution.blp"
+  },
+  {
+    "source": "Ability_Paladin_RighteousVengeance",
+    "sha256": "778936fec98d86492eab7661509ae7fc0c5a11e2c9e1a6e6a073423f06ca56d1",
+    "file": "abilitypaladinrighteousvengeance.blp"
+  },
+  {
+    "source": "Ability_Paladin_DivineStorm",
+    "sha256": "28c17531150f51c24e786d2687b299ab9a6ad5373791f1f0b6071082873dad42",
+    "file": "abilitypaladindivinestorm.blp"
+  },
+  {
+    "source": "Ability_Paladin_ArtofWar",
+    "sha256": "3f80c9589b6795ed889737fa16ff2588b07939de9431b22adbe7dad1dadd3b6c",
+    "file": "abilitypaladinartofwar.blp"
+  },
+  {
+    "source": "Ability_Paladin_SheathofLight",
+    "sha256": "456a62c70081c57a9168c8ef97b35d127ab57e6d03da400bc3f0d0b63b26fe00",
+    "file": "abilitypaladinsheathoflight.blp"
+  },
+  {
+    "source": "Ability_GolemThunderClap",
+    "sha256": "04be9992ad9f00669ff6a1e7163874d204a5c6a7ee0e6d08359faed5cfa61ad0",
+    "file": "abilitygolemthunderclap.blp"
+  },
+  {
+    "source": "Ability_Paladin_SacredCleansing",
+    "sha256": "5e1874c1094a33754a1f67113a0974cf7a03c758186bc1d695f0b4d4f213bc53",
+    "file": "abilitypaladinsacredcleansing.blp"
+  },
+  {
+    "source": "Ability_Paladin_EnlightenedJudgements",
+    "sha256": "63f78c8bbf8cf76f2bbe304356a5f3ce752191544acf0c459ec11e92fe53e46d",
+    "file": "abilitypaladinenlightenedjudgements.blp"
+  },
+  {
+    "source": "Ability_Paladin_BeaconofLight",
+    "sha256": "bfc287cded813115b4921c47c78ede12eb9f89542a24db327c5e19ea9753351e",
+    "file": "abilitypaladinbeaconoflight.blp"
+  },
+  {
+    "source": "Ability_Paladin_GaurdedbytheLight",
+    "sha256": "20107ea5f30aa393e9a52528f1b0baf5aa15a1351012c0ba784f1e56a1730890",
+    "file": "abilitypaladingaurdedbythelight.blp"
+  },
+  {
+    "source": "Ability_Paladin_TouchedbyLight",
+    "sha256": "e17b2a25873dbdb68cb4adf90d2a56c93d44e38e785d52ca5e319a17d5d96c23",
+    "file": "abilitypaladintouchedbylight.blp"
+  },
+  {
+    "source": "Ability_Paladin_HammeroftheRighteous",
+    "sha256": "f4a4bd4110fef8c7b3824d7881dbe381b62c589bba8d81ff1db38d3729c8355a",
+    "file": "abilitypaladinhammeroftherighteous.blp"
+  },
+  {
+    "source": "Ability_Hunter_FocusedAim",
+    "sha256": "b25c09797d3dd6c5e9712c3f1846c40db1a37c65b1942a72ace55c44c1959dce",
+    "file": "abilityhunterfocusedaim.blp"
+  },
+  {
+    "source": "Ability_Paladin_BlessedHands",
+    "sha256": "0af3d95c6b65a2eae7a2a4d86d1c605067d7371d6577e0bd3fe5f705e166089d",
+    "file": "abilitypaladinblessedhands.blp"
+  },
+  {
+    "source": "Ability_Paladin_JudgementofthePure",
+    "sha256": "1183f10e08a670579540bbb639bd255664ef730f13d72c133eb8c8069362348e",
+    "file": "abilitypaladinjudgementofthepure.blp"
+  },
+  {
+    "source": "Ability_Paladin_JudgementsoftheJust",
+    "sha256": "f7b36048d2d2786cff19ade0effe72af7609de374ffe960f86711396bbcde230",
+    "file": "abilitypaladinjudgementsofthejust.blp"
+  },
+  {
+    "source": "Ability_Paladin_ShieldoftheTemplar",
+    "sha256": "cb638321581a859e41105c9ee29bf93e33f28f6df04e1a14ccad78170d4ef797",
+    "file": "abilitypaladinshieldofthetemplar.blp"
+  },
+  {
+    "source": "Ability_Mage_MissileBarrage",
+    "sha256": "1ecb85617d1c47de31a340917d0b7ee5af9373e6ffa7fa838309dc4977fb8510",
+    "file": "abilitymagemissilebarrage.blp"
+  },
+  {
+    "source": "Spell_Arcane_StudentOfMagic",
+    "sha256": "64bea6920e86ab7bba0d8ce198f184f73cd72a42fc1399b8e6ed15de62b9742e",
+    "file": "spellarcanestudentofmagic.blp"
+  },
+  {
+    "source": "Spell_Fire_TotemOfWrath",
+    "sha256": "7778ee84bb50d973098782625b47f72bc0f758f9d128cb72108d74f21e4a471a",
+    "file": "spellfiretotemofwrath.blp"
+  },
+  {
+    "source": "Ability_Mage_ShatterShield",
+    "sha256": "6f7c673f6e698e3bc9ef4e46eac7ff29cc71b54d1e1525bf2ec44dea58e9bcee",
+    "file": "abilitymageshattershield.blp"
+  },
+  {
+    "source": "Ability_Mage_TormentOfTheWeak",
+    "sha256": "281e78c18e624b2ac86221aabc6a13ffa6fc2891cd9ca502d7eb1b4a3012ab55",
+    "file": "abilitymagetormentoftheweak.blp"
+  },
+  {
+    "source": "Ability_Hunter_SeparationAnxiety",
+    "sha256": "1d6a9d641ab0bf97ac1197ed910c0a1bef6e5eb6b0d9a9c78ecfc5a617408831",
+    "file": "abilityhunterseparationanxiety.blp"
+  },
+  {
+    "source": "Ability_Hunter_HunterVsWild",
+    "sha256": "92cdf9dc121cfd9e28b4ed5ae26ba32bc90cf86f856e7fbf993d4328a6e45973",
+    "file": "abilityhunterhuntervswild.blp"
+  },
+  {
+    "source": "INV_Misc_Bomb_05",
+    "sha256": "7d285f964446c7a6c163a0cb2caed6643858f7687e2dbb38bed72c47cda05e0e",
+    "file": "invmiscbomb05.blp"
+  },
+  {
+    "source": "Ability_Warrior_Trauma",
+    "sha256": "1bac329ff4b5ff2bde584db197622b0b11b8960deb29f733d4fd848c904560e8",
+    "file": "abilitywarriortrauma.blp"
+  },
+  {
+    "source": "Ability_Rogue_HungerforBlood",
+    "sha256": "ca41867c3db2c58016421272b8e38ef1e2457cef193533193df72c74dd03ae87",
+    "file": "abilityroguehungerforblood.blp"
+  },
+  {
+    "source": "Ability_Warrior_DecisiveStrike",
+    "sha256": "b7ef153e8f2a693bf7aeae3c36a20ccc94b614258a2f394546cc934ca2259558",
+    "file": "abilitywarriordecisivestrike.blp"
+  },
+  {
+    "source": "Ability_Warrior_IntensifyRage",
+    "sha256": "d12d46d54f0902235ced1cb628d0e6106d15bff1406985b12ad77d9e46fc2587",
+    "file": "abilitywarriorintensifyrage.blp"
+  },
+  {
+    "source": "spell_holy_holyprotection",
+    "sha256": "0a01cd592d444f28e4d097bdf0023d4be58a960fc758bf66d484e3ae0eaf4c17",
+    "file": "spellholyholyprotection.blp"
+  },
+  {
+    "source": "Ability_Warrior_Warbringer",
+    "sha256": "71b2027c9c908d7c3b3361f9bb2def08fa3c8224fe0effd6967f7b9759e0b206",
+    "file": "abilitywarriorwarbringer.blp"
+  },
+  {
+    "source": "Spell_Arcane_Arcane03",
+    "sha256": "614307dbe97e9333bff6b3d2439f3e7cf9342eb8666f92966facc8b08b87d828",
+    "file": "spellarcanearcane03.blp"
+  },
+  {
+    "source": "Ability_Druid_ChallangingRoar",
+    "sha256": "f49e53e48b0a30d95b7266f30c05887a7b717f778e0c3ca92cd936c0372dbc1c",
+    "file": "abilitydruidchallangingroar.blp"
+  },
+  {
+    "source": "Spell_Shadow_UnstableAffliction_2",
+    "sha256": "55f9f51fad78f0e82e5ed7ed25290fc7ff256236e847a57a88ef16857f7dc1a7",
+    "file": "spellshadowunstableaffliction2.blp"
+  },
+  {
+    "source": "INV_Shield_31",
+    "sha256": "48cde40164e9c454825d0a146252e3592be5182a46f4de4e91ae4933a16096ab",
+    "file": "invshield31.blp"
+  },
+  {
+    "source": "inv_legendary_shield",
+    "sha256": "d1a972d411152bd10fbf92361bf25eff6f25450833a39920adfc85b55086a34f",
+    "file": "invlegendaryshield.blp"
+  },
+  {
+    "source": "INV_Shoulder_22",
+    "sha256": "dfd844be2109eea4a710aaca18c93c292644632715a4b31ffe9b9edcec21b743",
+    "file": "invshoulder22.blp"
+  },
+  {
+    "source": "Spell_unused2",
+    "sha256": "f21a8d976fefb7502c63aaddc6264a4ee5de4abae01d4f9c4b5055ce5f0c5de1",
+    "file": "spellunused2.blp"
+  },
+  {
+    "source": "Spell_Fire_BlueFlameRing",
+    "sha256": "faccdebfaa6f72b14d55ec0bfc585ffac2d49d05497d07e848b946c999e70083",
+    "file": "spellfireblueflamering.blp"
+  },
+  {
+    "source": "Spell_Fire_BlueCano",
+    "sha256": "7bbcfe35336d4e09bfcde2230026bb17d11168094f021f99b70b9aa72ca67130",
+    "file": "spellfirebluecano.blp"
+  },
+  {
+    "source": "Ability_Druid_Rake",
+    "sha256": "f3ad5a35dc73cc9d2ee0af9591e58677542c1d5e4bf9954b401b2b06c189953c",
+    "file": "abilitydruidrake.blp"
+  },
+  {
+    "source": "Spell_Shadow_DevouringPlague.",
+    "sha256": "39a5c0bf235c6377d61373e44ca75b62895a0dbde746dee10236af8e8c8aab31",
+    "file": "spellshadowdevouringplague.blp"
+  },
+  {
+    "source": "Spell_Holy_SymbolOfHope",
+    "sha256": "f050d5a6cfacfdf7750931b4fd94a25600fb95408c6eae3b23f992a98a5abddc",
+    "file": "spellholysymbolofhope.blp"
+  },
+  {
+    "source": "spell_holy_powerwordbarrier",
+    "sha256": "eae9fa6aa1130e77efd737880a98a70a26cf4ee32db49c91349dd2cdc6d2752a",
+    "file": "spellholypowerwordbarrier.blp"
+  },
+  {
+    "source": "Spell_Holy_ReviveChampion",
+    "sha256": "9b14fabbea4c473dcf95b78b94c0d0d65f5a572c63ca1966858f0e08ba240be1",
+    "file": "spellholyrevivechampion.blp"
+  },
+  {
+    "source": "Ability_Warrior_BullRush",
+    "sha256": "89189978ac5bbbc328eb6f8d1a10ce4baeab803f70d8a463376e5358022a11a2",
+    "file": "abilitywarriorbullrush.blp"
+  },
+  {
+    "source": "_D3dashingstrike",
+    "sha256": "d9cc3436748523c334078e7fe0069c364143b6954ac95798cdac69a71b7f1d7b",
+    "file": "d3dashingstrike.blp"
+  },
+  {
+    "source": "Ability_Druid_TravelForm",
+    "sha256": "d083cf67d7e04b018ff9fcf096af4b76af6746300f9c9a7c6e2d7d8293d6f869",
+    "file": "abilitydruidtravelform.blp"
+  },
+  {
+    "source": "INV_Gauntlets_04",
+    "sha256": "211e2a857f86cbad7eb5be63dd1734284f3fe4015423ade3348731d100945d89",
+    "file": "invgauntlets04.blp"
+  },
+  {
+    "source": "Spell_Nature_Cyclone",
+    "sha256": "ff1f065f1212599bba74e763a12991ed5d0ba5414d42a3a296fc3e534de69b46",
+    "file": "spellnaturecyclone.blp"
+  },
+  {
+    "source": "_DeathCoil_Color_Shadow",
+    "sha256": "ac603b1d9912722218ea6dac491dc1e7f1f82f289a980eaee7edc4bbd09307b4",
+    "file": "deathcoilcolorshadow.blp"
+  },
+  {
+    "source": "ability_warlock_howlofterror",
+    "sha256": "ead4562f46141425d1330096dd3bf8eefd57518093298f3ae5326e9ba7bd2a55",
+    "file": "abilitywarlockhowlofterror.blp"
+  },
+  {
+    "source": "spell_deathknight_defile",
+    "sha256": "14d9066be4d0a307fe30ac9ebd2f233e96129747c39315a42bfcaac14bf931be",
+    "file": "spelldeathknightdefile.blp"
+  },
+  {
+    "source": "spell_mage_evanesce",
+    "sha256": "80134fe03cfef02c73f3fc52a9e02eb41d41a162a1baa757aa35bdd14b879c3c",
+    "file": "spellmageevanesce.blp"
+  },
+  {
+    "source": "spell_animaardenweald_buff",
+    "sha256": "c35bd4b343d473312a73c4ee928954a79170da8091d35ae83e8ce5b142ebd618",
+    "file": "spellanimaardenwealdbuff.blp"
+  },
+  {
+    "source": "Spell_Shadow_DeathAndDecay",
+    "sha256": "7c1429149437716dead69a282f078b4f6d6a3a3b829bf9b539c912c46a7ced7e",
+    "file": "spellshadowdeathanddecay.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_Gnaw_Ghoul",
+    "sha256": "e1a698d18d8f8a76ad447f08126a874a77368cfc93c013bb9fd8f8321c6951fc",
+    "file": "spelldeathknightgnawghoul.blp"
+  },
+  {
+    "source": "Spell_Deathknight_BloodPresence",
+    "sha256": "02d9e9c54270af092c2aa6a5d99025c8730e970949b3298a50345cef037d3715",
+    "file": "spelldeathknightbloodpresence.blp"
+  },
+  {
+    "source": "INV_Shoulder_36",
+    "sha256": "a39f8e2481ca8c89147fafd3279a801c99cc40ebd2fd06929cfe31a5087fb32b",
+    "file": "invshoulder36.blp"
+  },
+  {
+    "source": "INV_Axe_68",
+    "sha256": "6ad9af763c29efd956fd48c6cb5e239b859642a09591cf05db3de1fe7aca3d95",
+    "file": "invaxe68.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_RuneTap",
+    "sha256": "6ebf80b0d130f9835622bea1de14f8a024892f6eea5e4f2f4fbbea5dac3216c7",
+    "file": "spelldeathknightrunetap.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_DarkConviction",
+    "sha256": "0e847815e71c521ca1e86eebb5c5dbc922f21209f54312dc87f300fadf7fa65c",
+    "file": "spelldeathknightdarkconviction.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_Subversion",
+    "sha256": "5e59d3c26d0a49dbd04052e281b56747ff64b58db2e1042477f005228bd23070",
+    "file": "spelldeathknightsubversion.blp"
+  },
+  {
+    "source": "Ability_Rogue_BloodyEye",
+    "sha256": "1f3b62516af7e0c7e66134512270d330a2c7ef9790e63b28a647aee9c8c19846",
+    "file": "abilityroguebloodyeye.blp"
+  },
+  {
+    "source": "Spell_Misc_WarsongFocus",
+    "sha256": "6236f700ce5758159043fd4787b87b0f37f28c9fcb88b6e0ed88f2d3a40c97f9",
+    "file": "spellmiscwarsongfocus.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_Vendetta",
+    "sha256": "4a6e4f3a81aeb7df764e6d0885277081bc99d86f49d4e19130c57c3534cdbd08",
+    "file": "spelldeathknightvendetta.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_BladedArmor",
+    "sha256": "a56b54f00453728b163324bc11b7baa704de6d3315c2d4f5abb857df4dfbc27a",
+    "file": "spelldeathknightbladedarmor.blp"
+  },
+  {
+    "source": "INV_Weapon_Shortblade_40",
+    "sha256": "d660bd1411ee1a65bccdd07370581692236dfed632bbb9c5cc3f386ed030fbf0",
+    "file": "invweaponshortblade40.blp"
+  },
+  {
+    "source": "Spell_Deathknight_ClassIcon",
+    "sha256": "bdf30c7a46ddbb41d794f3fcb05830f48be85807e7f2f90493b3e22e62d80365",
+    "file": "spelldeathknightclassicon.blp"
+  },
+  {
+    "source": "Ability_Creature_Cursed_02",
+    "sha256": "b521d6892d1779b3567bf7055805bad349a699aa624c6a9ed9aa5b7efdf02c51",
+    "file": "abilitycreaturecursed02.blp"
+  },
+  {
+    "source": "Spell_Shadow_SoulLeech",
+    "sha256": "a78d150de88c6ed31178685c05149a0a6ad8cf5d3be6e70ec30dfce9b2b41b95",
+    "file": "spellshadowsoulleech.blp"
+  },
+  {
+    "source": "INV_Sword_07",
+    "sha256": "da021217785f91d41f8a684936fd6bfdb24e07cfb60152a3e3f4fa7fa9447773",
+    "file": "invsword07.blp"
+  },
+  {
+    "source": "Spell_Nature_NullifyDisease",
+    "sha256": "ed36c666d55d8f02ff1421fb320a7455200badce8990909f64bbdb2572db258b",
+    "file": "spellnaturenullifydisease.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_EmpowerRuneBlade2",
+    "sha256": "544ed3c559d4c30b775a5ec4b3856d528a384c67ff5b2a7a35a6cc0d43b0ccd8",
+    "file": "spelldeathknightempowerruneblade2.blp"
+  },
+  {
+    "source": "INV_Armor_Helm_Plate_Naxxramas_RaidWarrior_C_01",
+    "sha256": "15d902342092fca0a3bb01b45c704fbca593801578299dc79ff2000569ff1c1e",
+    "file": "invarmorhelmplatenaxxramasraidwarriorc01.blp"
+  },
+  {
+    "source": "Spell_Shadow_AnimateDead",
+    "sha256": "02b4f4308a7f0561e035139873e0119ca4a6db657e82f0d4bc80533dbf5d4d43",
+    "file": "spellshadowanimatedead.blp"
+  },
+  {
+    "source": "Ability_Creature_Disease_02",
+    "sha256": "9ad1e99b6413502ac1e386b359c00211d95863507a81b64302b869114f4cba13",
+    "file": "abilitycreaturedisease02.blp"
+  },
+  {
+    "source": "INV_CHEST_MAIL_04",
+    "sha256": "e8cbccd3bc635f0c665eca96ab08821128ea2746a665502eda2831b1a61b9aa6",
+    "file": "invchestmail04.blp"
+  },
+  {
+    "source": "Spell_Frost_FreezingBreath",
+    "sha256": "2ecced58bcbdccfce25843e9aaddb571c21cd5c1fa4fcb48e1e26b552d997448",
+    "file": "spellfrostfreezingbreath.blp"
+  },
+  {
+    "source": "INV_Sword_112",
+    "sha256": "b628f47c2d6c826f4e247f1f690b960372ee7b783c362e98faa6cd3ec364a377",
+    "file": "invsword112.blp"
+  },
+  {
+    "source": "INV_Staff_15",
+    "sha256": "2fc520f735dcaaa65ad7128fe13b7fa4d4626b0d7ca77c6e104abce1fd46e515",
+    "file": "invstaff15.blp"
+  },
+  {
+    "source": "Ability_Hunter_Pet_Bat",
+    "sha256": "37b7e825190b95d555dd834e4042a7899e02ccf469b2b838b032c66416baaf9e",
+    "file": "abilityhunterpetbat.blp"
+  },
+  {
+    "source": "INV_Chest_Leather_13",
+    "sha256": "124d2602c6a685e24a3973c42be55afe05e8b7a7287ea1e96cb14d1879a2b9e0",
+    "file": "invchestleather13.blp"
+  },
+  {
+    "source": "Spell_Shadow_PlagueCloud",
+    "sha256": "cf2c850c7de7a379ce3de5edada767f5cd0b8a347dfda245851deda9f4e1df51",
+    "file": "spellshadowplaguecloud.blp"
+  },
+  {
+    "source": "Spell_Shadow_AntiMagicShell",
+    "sha256": "4e16dc62095c94e76efd670974ea25e7a639eb2f6988889fb4ab7a903315e036",
+    "file": "spellshadowantimagicshell.blp"
+  },
+  {
+    "source": "Spell_Shadow_Shadesofdarkness",
+    "sha256": "b6beae47438f838ef622b1d7c51ef717ed87ded516630177be21c39028410940",
+    "file": "spellshadowshadesofdarkness.blp"
+  },
+  {
+    "source": "Spell_Deathknight_UnholyPresence",
+    "sha256": "a641ba2bbf1a8955555f69d477a4ed71a45ba82e35bf105fa748a492fd5f87a6",
+    "file": "spelldeathknightunholypresence.blp"
+  },
+  {
+    "source": "Spell_Deathknight_DeathStrike",
+    "sha256": "576cbaf147af67119ebb227514e991991c4ede95583d9f518cf4677576475772",
+    "file": "spelldeathknightdeathstrike.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_SpellDeflection",
+    "sha256": "c1daa9462bcd279b5dc6cb5c4827d47155cbddd16c1f4fe7d967069ed514054d",
+    "file": "spelldeathknightspelldeflection.blp"
+  },
+  {
+    "source": "Spell_Arcane_Arcane01",
+    "sha256": "19dcfc4d82a3c3c51316ce455ffea3e9d62c3fae20f240e57b694ed36e4b0964",
+    "file": "spellarcanearcane01.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_Strangulate",
+    "sha256": "cbc11d5627e9b887fd68c64748effe3c51b58d2d96ca55379d2398b6e5d4c589",
+    "file": "spelldeathknightstrangulate.blp"
+  },
+  {
+    "source": "Spell_Deathknight_FrostPresence",
+    "sha256": "19837387d680c40c910e020982f6ad844b54a917f777fb475f5aa90a51941b99",
+    "file": "spelldeathknightfrostpresence.blp"
+  },
+  {
+    "source": "Spell_Nature_RemoveDisease",
+    "sha256": "fc3ec0f264721a26fe412e4de52d5205edf8afdc1ae67b7e3e116b2cfb49ef5d",
+    "file": "spellnatureremovedisease.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_IceTouch",
+    "sha256": "633393b11580638fb17ad9187ed318678701269b4c971e2217a2a1175bf3750a",
+    "file": "spelldeathknighticetouch.blp"
+  },
+  {
+    "source": "INV_Weapon_Halberd14",
+    "sha256": "df4888b42928ebf82cda4622531a49ab940dbef928698d29c9bfa35a7e4bf64d",
+    "file": "invweaponhalberd14.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_SummonDeathCharger",
+    "sha256": "5c433626d466d8e1014e5c643c485a2e4f2c17522084116bbcd1981802a81441",
+    "file": "spelldeathknightsummondeathcharger.blp"
+  },
+  {
+    "source": "INV-Sword_53",
+    "sha256": "1554bd5ee4fba68de251a6982dd77a52c8013c38c989040c61d26889ec8d3578",
+    "file": "invsword53.blp"
+  },
+  {
+    "source": "Spell_Deathknight_IcyTalons",
+    "sha256": "a77d5421dd2efd537cc6a5b100077cdda08e9e7f8b87b8504e270a3161719e8d",
+    "file": "spelldeathknighticytalons.blp"
+  },
+  {
+    "source": "Ability_Creature_Cursed_03",
+    "sha256": "c5311bcab42f3cb1cfef74dc9ef6eebb23a72cbefae42bf06c17d733d0d02cbb",
+    "file": "abilitycreaturecursed03.blp"
+  },
+  {
+    "source": "INV_Sword_122",
+    "sha256": "fe0e60e1541051aa1787807f3bed4d1715544b83858dd9662820ab4e090c3726",
+    "file": "invsword122.blp"
+  },
+  {
+    "source": "INV_Weapon_Shortblade_60",
+    "sha256": "262017a08721baec2b10a461d098111d6004f0abe8657d634ab50fc042d5d695",
+    "file": "invweaponshortblade60.blp"
+  },
+  {
+    "source": "INV_Weapon_Hand_18",
+    "sha256": "074e4d30478adbd93c04bf83f592d822862e7a037d770ee52b7704761c9423d8",
+    "file": "invweaponhand18.blp"
+  },
+  {
+    "source": "Spell_Deathknight_PlagueStrike",
+    "sha256": "7d563d9d123079acff6b4badc3e38707185ec740b68c21f64d725ead8c1f43a7",
+    "file": "spelldeathknightplaguestrike.blp"
+  },
+  {
+    "source": "INV_Sword_62",
+    "sha256": "0d50c0e86ded56ff922847dfd6ca83515b364fa6c8125e381043c3312b4eabbd",
+    "file": "invsword62.blp"
+  },
+  {
+    "source": "INV_Weapon_Shortblade_79",
+    "sha256": "ef51f65c6441c15285ee56480360a73a8b38c509d2629bf877051dd8bb164bc3",
+    "file": "invweaponshortblade79.blp"
+  },
+  {
+    "source": "Spell_Shadow_RaiseDead",
+    "sha256": "f186c13cfeb884ed5f817d04091161b2712418da3057c2d75dd5d57039ad1ed3",
+    "file": "spellshadowraisedead.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_ScourgeStrike",
+    "sha256": "b5309357436523cfbf1a8f866a1b269ef885ceceb19c83b3c69f828fb501abf4",
+    "file": "spelldeathknightscourgestrike.blp"
+  },
+  {
+    "source": "INV_Sword_68",
+    "sha256": "76afcfa6e146cfa5c801816897fa185b0ad6fa52ee6873f781a15c685a61a437",
+    "file": "invsword68.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_AntiMagicZone",
+    "sha256": "7cd5b35cdf07e3e829f2da7377ead80f638bf22437f08e7c0d53f75c782d6919",
+    "file": "spelldeathknightantimagiczone.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_ArmyOfTheDead",
+    "sha256": "289ef85bed51ccd8bb531245b199f1b9229b5f33e664fc973b5a46e22ea308b3",
+    "file": "spelldeathknightarmyofthedead.blp"
+  },
+  {
+    "source": "Spell_Shadow_Shadowfiend",
+    "sha256": "ddd12357788f82ee5ed3164737bf02558ef6399c3f6a4cfc574c5e894db54aaa",
+    "file": "spellshadowshadowfiend.blp"
+  },
+  {
+    "source": "Spell_DeathKnight_Butcher2",
+    "sha256": "cba290127098fafb3a4ca94e85eb6bbd554b7b7c9ff698c536cb692191975f1d",
+    "file": "spelldeathknightbutcher2.blp"
+  },
+  {
+    "source": "ability_monk_forcesphere_arcane",
+    "sha256": "0cf0d0678a1f43c3715ec34e41a3fdb8bf983dd739d9dc65b36996f8b3798238",
+    "file": "abilitymonkforcespherearcane.blp"
+  },
+  {
+    "source": "ability_hunter_barbedshot",
+    "sha256": "9116f9db68b7da0416f244ab9f1f61da3e6c93470fb57f998dea13423183ebcc",
+    "file": "abilityhunterbarbedshot.blp"
+  },
+  {
+    "source": "ability_glaivetoss",
+    "sha256": "eff8c609ca764ce11978710f95e79eaabc50c2db13b20ff5a754d3a993a9d24b",
+    "file": "abilityglaivetoss.blp"
+  },
+  {
+    "source": "Interface\\Icons\\spell_paladin_lightofdawn",
+    "sha256": "39ade4edc9e2e3f0ac562ebefb9124519ca680b4a6f8f00211678f70dd4090ab",
+    "file": "spellpaladinlightofdawn.blp"
+  },
+  {
+    "source": "ability_hunter_callofthewild",
+    "sha256": "b21c9a1083db21a6132cc409185e3943047c92d1a1ad67f105b882a4591dafa7",
+    "file": "abilityhuntercallofthewild.blp"
+  },
+  {
+    "source": "Interface\\Icons\\spell_priest_divinestar",
+    "sha256": "74ec6d6691fc0a6512075be627d7efe699d1551f2df98078661ee94e5ebd67ea",
+    "file": "spellpriestdivinestar.blp"
+  },
+  {
+    "source": "Achievement_GarrisonFollower_Epic",
+    "sha256": "1667821e9e56ae69e02d2019b00d442e46ab5aae6fb2b86763ff26c68ad659d7",
+    "file": "achievementgarrisonfollowerepic.blp"
+  },
+  {
+    "source": "Ability_Warrior_InnerRage",
+    "sha256": "d1a1228d09fe7c5be53abe3f1e254d33d1896b6a47fa229f8946690ba967120b",
+    "file": "abilitywarriorinnerrage.blp"
+  },
+  {
+    "source": "INV_Sword_11",
+    "sha256": "9a34ebfe38cda91ece80eacc342b180858fd0cb2d7603e2d9c94ef5e612bdcf0",
+    "file": "invsword11.blp"
+  },
+  {
+    "source": "Spell_Shadow_SummonFelGuard",
+    "sha256": "f63d9ecc2b662008c5e5190849ab4edbb94bfb775298d700e221b5f3bef2574a",
+    "file": "spellshadowsummonfelguard.blp"
+  },
+  {
+    "source": "spell_nature_riptide",
+    "sha256": "257ea6004a375433278bd8f76b6a40e3e894ecfd81cfff5dc750f43a28334f9f",
+    "file": "spellnatureriptide.blp"
+  },
+  {
+    "source": "inv_glaive_1h_artifactaldrochi_d_01dual",
+    "sha256": "25b916d4da60fcd398229aaddcf5ef02d411810b753f634652adef0f9a2051d3",
+    "file": "invglaive1hartifactaldrochid01dual.blp"
+  }
+]
