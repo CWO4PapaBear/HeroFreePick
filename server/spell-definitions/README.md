@@ -63,3 +63,11 @@ The reference preparation step needs the maintainer's local source files; conver
 ## Filtered candidate batch
 
 `python3 convert.py --compatible-only --output filtered` excludes out-of-range records and roots referencing them, then includes the remaining non-stock reference closure. Current result: 156 roots plus 110 dependencies; 23 roots are held back. This conservatively includes tooltip links when deciding exclusions. `selection.json` identifies exclusions. Passing this filter is not a full compatibility test: validate auxiliary DBC references and behavior before applying the SQL or restarting the server.
+
+## Auxiliary DBC staging
+
+`stage_auxiliary_dbc.py --input ORIGINAL_DBC_DIRECTORY --output NEW_STAGING_DIRECTORY` stages the four missing supporting records: SpellRange 212/217/222 and SpellRadius 193. The output directory must be new. It refuses conflicting IDs, preserves existing row bytes/string offsets and appends rebased localized range strings. It never installs the output or writes to the input directory. Run it independently against the actual server and actual client baselines; do not assume those files are identical.
+
+`data/auxiliary-additions.json` contains these four records with decoded strings and source hashes. `data/visual-icon-review.json` contains candidate source rows for all 79 missing visual IDs and path candidates for all 83 missing icon IDs. These visual rows are NOT yet a usable client patch: nested visual kits, model attachments, missile paths, textures and actual assets still need compatibility/availability checks, and archive precedence must be resolved before writing conflicting variants. Original server spells and gameplay rules remain unchanged.
+
+Run `python3 test_auxiliary_dbc.py` for preservation, string-rebasing and collision checks. Tests use synthetic destination files with the real four source additions; actual live-file staging remains a separate validation.

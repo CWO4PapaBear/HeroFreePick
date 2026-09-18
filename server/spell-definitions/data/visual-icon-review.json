@@ -1,0 +1,3749 @@
+{
+  "missingVisualIDsNotFound": [],
+  "visualVariants": {
+    "20213": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20213,
+          0,
+          20375,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          20376,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20217": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20217,
+          0,
+          0,
+          0,
+          20385,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20218": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20218,
+          0,
+          20386,
+          0,
+          20387,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20219": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20219,
+          0,
+          20388,
+          0,
+          20389,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20220": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20220,
+          0,
+          20403,
+          20404,
+          20405,
+          20390,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20227": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20227,
+          20399,
+          20400,
+          20401,
+          20402,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20301": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20301,
+          0,
+          20498,
+          0,
+          20503,
+          0,
+          20504,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20302": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20302,
+          20495,
+          20499,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20303": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20303,
+          20496,
+          20500,
+          0,
+          0,
+          0,
+          20505,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "20564": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          20564,
+          0,
+          20989,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21824": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21824,
+          194,
+          202,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21754,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21861": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21861,
+          0,
+          21790,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21885": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21885,
+          0,
+          0,
+          0,
+          2169,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21820,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21886": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21886,
+          100,
+          25289,
+          0,
+          0,
+          0,
+          21825,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          114547,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21891": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21891,
+          0,
+          0,
+          21830,
+          349,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21893": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21893,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          528,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          21833,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21894": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21894,
+          106818,
+          106778,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21834,
+          125716,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21895": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21895,
+          0,
+          0,
+          21835,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21915": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21915,
+          0,
+          0,
+          0,
+          66,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "21919": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          21919,
+          6777,
+          6778,
+          21845,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22008": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22008,
+          0,
+          21894,
+          21893,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22009": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22009,
+          0,
+          21895,
+          21893,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22041": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22041,
+          0,
+          21927,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22044": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22044,
+          266,
+          730,
+          21928,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22078": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22078,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21960,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22080": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22080,
+          21962,
+          21963,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22082": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22082,
+          0,
+          253,
+          21965,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22099": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22099,
+          0,
+          21990,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22101": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22101,
+          0,
+          0,
+          0,
+          21989,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22125": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22125,
+          99,
+          270,
+          22140,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22126": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22126,
+          345,
+          181,
+          22141,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "22128": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          22128,
+          99,
+          22144,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "24043": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          24043,
+          24137,
+          243413,
+          0,
+          0,
+          0,
+          24729,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "40225": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          40225,
+          0,
+          0,
+          0,
+          3769,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "50000": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          50000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          50000,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "50778": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          50778,
+          0,
+          50778,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "52091": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          52091,
+          266,
+          267,
+          0,
+          52091,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "52489": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          52489,
+          0,
+          0,
+          0,
+          66046,
+          0,
+          52489,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "54106": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          54106,
+          0,
+          54106,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "77004": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          77004,
+          0,
+          0,
+          0,
+          77004,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "101023": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          101023,
+          0,
+          101044,
+          100133,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "108163": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          108163,
+          0,
+          0,
+          104991,
+          103531,
+          0,
+          0,
+          1,
+          100259,
+          0,
+          1,
+          3013,
+          0,
+          1,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "110700": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          110700,
+          0,
+          114122,
+          109851,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "111441": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          111441,
+          0,
+          121094,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          116840,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "116162": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          116162,
+          119555,
+          119556,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          116301,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "117080": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          117080,
+          118080,
+          118081,
+          0,
+          0,
+          0,
+          0,
+          1,
+          107278,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          118082,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "117106": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          117106,
+          100036,
+          100037,
+          0,
+          120124,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          115980,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "117639": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          117639,
+          100036,
+          100037,
+          0,
+          116552,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "117792": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          117792,
+          0,
+          116715,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "117933": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          117933,
+          0,
+          116860,
+          0,
+          116860,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "118232": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          118232,
+          100114,
+          100118,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "119288": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          119288,
+          0,
+          118565,
+          0,
+          102111,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "121909": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          121909,
+          100217,
+          126142,
+          0,
+          121633,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "122904": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          122904,
+          0,
+          0,
+          125314,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          576,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "122962": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          122962,
+          0,
+          113128,
+          125649,
+          122967,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "123117": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          123117,
+          100099,
+          123138,
+          123570,
+          105749,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "123119": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          123119,
+          0,
+          0,
+          125587,
+          127885,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "123279": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          123279,
+          0,
+          100191,
+          125795,
+          125737,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1073741824
+        ]
+      }
+    ],
+    "123418": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          123418,
+          100223,
+          100224,
+          114381,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "123610": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          123610,
+          100171,
+          131363,
+          0,
+          0,
+          0,
+          0,
+          1,
+          53016,
+          0,
+          34,
+          34740,
+          0,
+          512,
+          0,
+          128194,
+          4294967295,
+          0,
+          300,
+          750,
+          516,
+          3000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124246": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124246,
+          0,
+          0,
+          125562,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3244294144,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124318": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124318,
+          0,
+          100181,
+          106095,
+          116529,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          124507,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124360": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124360,
+          124558,
+          124564,
+          110688,
+          0,
+          0,
+          0,
+          1,
+          114016,
+          0,
+          34,
+          20419,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          300,
+          750,
+          516,
+          2967,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124366": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124366,
+          0,
+          0,
+          104991,
+          0,
+          0,
+          0,
+          1,
+          112991,
+          0,
+          34,
+          174960,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          300,
+          750,
+          516,
+          2968,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124370": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124370,
+          0,
+          0,
+          113182,
+          0,
+          0,
+          0,
+          1,
+          56570,
+          0,
+          34,
+          3014,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          300,
+          750,
+          516,
+          2969,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124376": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124376,
+          100171,
+          100172,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          124855,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124442": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124442,
+          124653,
+          124922,
+          100651,
+          100349,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124847": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124847,
+          0,
+          0,
+          125725,
+          0,
+          0,
+          0,
+          1,
+          112329,
+          0,
+          34,
+          15229,
+          0,
+          580,
+          0,
+          0,
+          34,
+          1200,
+          200,
+          500,
+          0,
+          2990,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124848": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124848,
+          0,
+          0,
+          125725,
+          0,
+          0,
+          0,
+          1,
+          112329,
+          0,
+          34,
+          15229,
+          0,
+          580,
+          0,
+          0,
+          34,
+          1200,
+          200,
+          500,
+          0,
+          2991,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "124974": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          124974,
+          0,
+          0,
+          0,
+          125250,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "125212": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          125212,
+          171,
+          123566,
+          0,
+          0,
+          0,
+          0,
+          1,
+          111021,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          100,
+          300,
+          750,
+          516,
+          38,
+          0,
+          0,
+          125510,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "125480": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          125480,
+          0,
+          125864,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "125790": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          125790,
+          100200,
+          100208,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "126643": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          126643,
+          0,
+          0,
+          0,
+          127334,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "126687": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          126687,
+          118052,
+          127384,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          220,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "129497": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          129497,
+          0,
+          131118,
+          131117,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "130693": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          130693,
+          0,
+          132642,
+          0,
+          0,
+          0,
+          132643,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "130694": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          130694,
+          0,
+          0,
+          0,
+          132645,
+          0,
+          0,
+          0,
+          0,
+          0,
+          34,
+          0,
+          0,
+          512,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "903012": [
+      {
+        "source": "ascension-live_Data_patch-S.MPQ.SpellVisual.dbc",
+        "sourceSHA256": "240d77e9b3e9cd09196618aa00ecc5f28612bce29f5dee2ae8da9f20b6d7eb1c",
+        "rawFields": [
+          903012,
+          0,
+          399,
+          903012,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4294967295,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "iconVariants": {
+    "4605": [
+      {
+        "path": "Interface\\Icons\\Warrior_talent_icon_singlemindedfury",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4902": [
+      {
+        "path": "Interface\\Icons\\ability_deathwing_bloodcorruption_earth",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4908": [
+      {
+        "path": "Interface\\Icons\\ability_deathwing_sealarmorbreachtga",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4936": [
+      {
+        "path": "Interface\\Icons\\ability_demonhunter_glide",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "4953": [
+      {
+        "path": "Interface\\Icons\\ability_demonhunter_sigilofmisery",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5005": [
+      {
+        "path": "Interface\\Icons\\ability_druid_ironfur",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5086": [
+      {
+        "path": "Interface\\Icons\\ability_glaivetoss",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5209": [
+      {
+        "path": "Interface\\Icons\\ability_hunter_sickem",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5227": [
+      {
+        "path": "Interface\\Icons\\ability_ironmaidens_convulsiveshadows",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5306": [
+      {
+        "path": "Interface\\Icons\\ability_mage_massinvisibility",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5356": [
+      {
+        "path": "Interface\\Icons\\ability_monk_forcesphere_arcane",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5452": [
+      {
+        "path": "Interface\\Icons\\ability_mount_drake_red",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5619": [
+      {
+        "path": "Interface\\Icons\\ability_paladin_blindinglight",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5670": [
+      {
+        "path": "Interface\\Icons\\ability_priest_angelicfeather",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5800": [
+      {
+        "path": "Interface\\Icons\\ability_rogue_combatreadiness",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5913": [
+      {
+        "path": "Interface\\Icons\\ability_shaman_windwalktotem",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5967": [
+      {
+        "path": "Interface\\Icons\\ability_thunderclap",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "5997": [
+      {
+        "path": "Interface\\Icons\\ability_trueshot",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6019": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_ancientgrimoire",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6039": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_handofguldan",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6041": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_howlofterror",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6055": [
+      {
+        "path": "Interface\\Icons\\ability_warlock_soulswap",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "6074": [
+      {
+        "path": "Interface\\Icons\\ability_warrior_dragonroar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "7666": [
+      {
+        "path": "Interface\\Icons\\demoralizing_banner",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "8461": [
+      {
+        "path": "Interface\\Icons\\inv_artifact_stolenpower",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "13065": [
+      {
+        "path": "Interface\\Icons\\inv_glaive_1h_artifactaldrochi_d_01dual",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "15730": [
+      {
+        "path": "Interface\\Icons\\inv_knife_1h_cataclysm_c_05",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16230": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_knife",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16235": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_staff",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16236": [
+      {
+        "path": "Interface\\Icons\\inv_legendary_sword",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "16565": [
+      {
+        "path": "Interface\\Icons\\inv_mace_2h_draenorguard_b_01_horde",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "17130": [
+      {
+        "path": "Interface\\Icons\\inv_misc_book_05",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "18965": [
+      {
+        "path": "Interface\\Icons\\inv_misc_questionmark",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "19215": [
+      {
+        "path": "Interface\\Icons\\inv_misc_steelweaponchain",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "23540": [
+      {
+        "path": "Interface\\Icons\\inv_throwingknife_07",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24399": [
+      {
+        "path": "Interface\\Icons\\priest_spell_leapoffaith_a",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24433": [
+      {
+        "path": "Interface\\Icons\\shaman_talent_elementalblast",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24510": [
+      {
+        "path": "Interface\\Icons\\spell_arcane_arcane03",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24511": [
+      {
+        "path": "Interface\\Icons\\spell_arcane_arcane04",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24624": [
+      {
+        "path": "Interface\\Icons\\spell_deathknight_defile",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24672": [
+      {
+        "path": "Interface\\Icons\\spell_druid_stampedingroar_cat",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24678": [
+      {
+        "path": "Interface\\Icons\\spell_druid_ursolsvortex",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24759": [
+      {
+        "path": "Interface\\Icons\\spell_fire_twilightfireward",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24792": [
+      {
+        "path": "Interface\\Icons\\spell_frost_frozenorb",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24803": [
+      {
+        "path": "Interface\\Icons\\spell_frost_ring_of_frost",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24874": [
+      {
+        "path": "Interface\\Icons\\spell_holy_holyprotection",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24971": [
+      {
+        "path": "Interface\\Icons\\spell_mage_arcaneorb",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24978": [
+      {
+        "path": "Interface\\Icons\\spell_mage_evanesce",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "24989": [
+      {
+        "path": "Interface\\Icons\\spell_mage_meteor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25086": [
+      {
+        "path": "Interface\\Icons\\spell_nature_lightningoverload",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25178": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_executionsentence",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25182": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_lightofdawn",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25183": [
+      {
+        "path": "Interface\\Icons\\spell_paladin_lightshammer",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25188": [
+      {
+        "path": "Interface\\Icons\\spell_priest_divinestar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25208": [
+      {
+        "path": "Interface\\Icons\\spell_priest_voidshift",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25219": [
+      {
+        "path": "Interface\\Icons\\spell_shadow_animatedead",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25356": [
+      {
+        "path": "Interface\\Icons\\spell_shaman_bindelemental",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25365": [
+      {
+        "path": "Interface\\Icons\\spell_shaman_earthquake",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25409": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonbolt",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25412": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonicportal_purple",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25414": [
+      {
+        "path": "Interface\\Icons\\spell_warlock_demonsoul",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25425": [
+      {
+        "path": "Interface\\Icons\\spell_warrior_dragoncharge",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25741": [
+      {
+        "path": "Interface\\Icons\\warrior_skullbanner",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25743": [
+      {
+        "path": "Interface\\Icons\\warrior_talent_icon_avatar",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "25758": [
+      {
+        "path": "Interface\\Icons\\warrior_wild_strike",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "26898": [
+      {
+        "path": "Interface\\Icons\\spell_animaardenweald_buff",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "26999": [
+      {
+        "path": "Interface\\Icons\\_ArcaneShot_Red",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27323": [
+      {
+        "path": "Interface\\Icons\\_D3dashingstrike",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27330": [
+      {
+        "path": "Interface\\Icons\\_D3energyarmor",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27437": [
+      {
+        "path": "Interface\\Icons\\_DeathCoil_Color_Shadow",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27679": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_DeathKnight",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27682": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Mage",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27684": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Paladin",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27687": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Shaman",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "27689": [
+      {
+        "path": "Interface\\Icons\\_HearthStone_Necklace_Warrior",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "28359": [
+      {
+        "path": "Interface\\Icons\\_Undead_03",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "41123": [
+      {
+        "path": "Interface\\Icons\\custom_20_shield",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "54923": [
+      {
+        "path": "Interface\\icons\\5_warlock05_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "62936": [
+      {
+        "path": "Interface\\icons\\custom_T_Nhance_RPG_Icons_ShadowArrow_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "63970": [
+      {
+        "path": "Interface\\icons\\nhi_holyhand_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "64370": [
+      {
+        "path": "Interface\\icons\\novart_books_(2)_Border",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "99100": [
+      {
+        "path": "Interface\\Icons\\Sinisterstrike_Shadow",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ],
+    "99113": [
+      {
+        "path": "Interface\\Icons\\Steadyshot_Storm",
+        "source": "ascension-live_Data_patch-S.MPQ.SpellIcon.dbc",
+        "sourceSHA256": "0352754bcfe62dcbe5d52a4ea8deedf1914dadaeebc0849267d881cba40d7d29"
+      }
+    ]
+  },
+  "note": "Top-level visual rows and icon paths only. No archive precedence chosen; visual kits/models/textures and client patch require further validation."
+}

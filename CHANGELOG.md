@@ -1,3 +1,8 @@
+## Development - auxiliary spell references
+
+- Add append-only staging tool for three missing SpellRange records and one SpellRadius record, preserving destination rows and rebuilding localized string offsets.
+- Preserve source candidates for all 79 missing visual IDs and 83 missing icon IDs; nested visual assets remain under review. No deployment or gameplay changes.
+
 ## Development - filtered spell candidates
 
 - Add conservative dependency-aware selection: retain 156 roots and 110 reference dependencies; hold 23 roots affected by unsupported enums or references. Auxiliary DBC validation remains required before deployment.
