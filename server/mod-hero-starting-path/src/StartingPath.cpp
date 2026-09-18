@@ -195,7 +195,7 @@ bool Status(ChatHandler* handler) {
 }
 bool Choose(ChatHandler* handler,uint8 phase) {
     auto p=handler->GetSession()->GetPlayer();
-    
+
     if (!HeroStartingPath::CanChoose(p->GetLevel(),phase,p->getClass()) || p->IsInCombat()) { Reply(p,"CHOICE_BLOCKED");return true; }
     if (Read(p).phase<0) { Reply(p,"NOT_ENROLLED");return true; }
     if(phase==1) {
@@ -256,7 +256,7 @@ public:
         if(HeroTrainer::Current(p)==HeroTrainer::Mode::ClassPlus)levelRefresh[p->GetGUID().GetCounter()]=Clock::now()+std::chrono::seconds(1);
     }
     void OnPlayerUpdate(Player* p,uint32) override {
-        
+
         {
         std::lock_guard<std::mutex> lock(stateMutex);
         auto guid=p->GetGUID().GetCounter();auto it=levelRefresh.find(guid);
@@ -269,7 +269,7 @@ public:
     }
     void OnPlayerLogout(Player* p) override { std::lock_guard<std::mutex> lock(stateMutex);auto guid=p->GetGUID().GetCounter();uploads.erase(guid);levelRefresh.erase(guid); }
     void OnPlayerLogin(Player* p) override {
-        
+
         auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);if (snapshot.phase<0) { Reply(p,snapshot.phase==-1?"LEGACY_CLASSIC":"ERROR");return; }
         bool ok=Sync(p,snapshot);
         LOG_INFO("server.loading","HERO_STARTING_PATH stage=login guid={} phase={} baseline_verified={}",p->GetGUID().GetCounter(),snapshot.phase,ok);
