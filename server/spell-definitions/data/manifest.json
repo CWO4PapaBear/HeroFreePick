@@ -14,6 +14,8 @@
     "spells.json": "a564ced1583502f41e377230943574ecc18b6b16f1806869001054c04329bea7",
     "supporting-data.json": "58ad715f4ad132af44bc3ccb8595e446078604737e7f6abe906604818ecc00e1",
     "auxiliary-additions.json": "ec788edeb9e7d384e82bddb999f457371ad577b1fce29e8cb2824358d4a77d7b",
-    "visual-icon-review.json": "4931027e8905d07a2bb574f5aa1d4739d543be497e518fd73b7ac312a68e1483"
+    "visual-icon-review.json": "4931027e8905d07a2bb574f5aa1d4739d543be497e518fd73b7ac312a68e1483",
+    "resolved-icons.json": "e6baed5614b411eded58d20eb544d473aeca0d91b2e1a7521ce9ff69f2c267dd",
+    "resolved-visuals.json": "de431a60e86b453bd9ef75a50215b73bb716e2083739c091747055abf0057f50"
   }
 }

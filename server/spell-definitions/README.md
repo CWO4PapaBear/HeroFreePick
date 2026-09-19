@@ -71,3 +71,20 @@ The reference preparation step needs the maintainer's local source files; conver
 `data/auxiliary-additions.json` contains these four records with decoded strings and source hashes. `data/visual-icon-review.json` contains candidate source rows for all 79 missing visual IDs and path candidates for all 83 missing icon IDs. These visual rows are NOT yet a usable client patch: nested visual kits, model attachments, missile paths, textures and actual assets still need compatibility/availability checks, and archive precedence must be resolved before writing conflicting variants. Original server spells and gameplay rules remain unchanged.
 
 Run `python3 test_auxiliary_dbc.py` for preservation, string-rebasing and collision checks. Tests use synthetic destination files with the real four source additions; actual live-file staging remains a separate validation.
+
+## Resolved icons and visual staging
+
+All 83 missing icon IDs now have verified BLP files in `icon-assets` and mappings in `data/resolved-icons.json`. `stage_icon_dbc.py --input SpellIcon.dbc --output NEW_DIRECTORY` adds the records while preserving original rows/strings. Imported assets use the separate `HeroAdvancement` path prefix; native icon paths are not overwritten.
+
+`data/resolved-visuals.json` and `visual-assets` contain 79 visual roots and their selected dependency records/assets. `stage_visual_dbc.py --input CLIENT_DBC_DIRECTORY --output NEW_DIRECTORY` clones dependent kits, effect names, attachments, motion records, sounds, advanced sounds and chains into new IDs. Existing records remain byte-identical. The top-level missing visual IDs are retained for the new spell definitions; a conflicting top-level ID aborts staging. M2 texture filenames and DBC asset paths are redirected to an isolated `HeroAdvancement` directory. These outputs must be merged into the final client patch; dropping a staging directory into the game is not an installer.
+
+Compatibility repairs are explicitly recorded, not described as exact Ascension rendering:
+
+- Elemental Blast: nonexistent left-hand effect 2287 uses the verified right-hand elemental precast effect 113935.
+- Arcing Light: disable only its dangling chain-effect 2436 reference; keep its other visual components. The missing beam is not recreated.
+- Missing sound record 1493 is disabled only in imported clones. Earth-elemental loop uses the available same-name WAV. Seven absent sound-file slots (including test placeholders) are removed; available slots remain.
+- Shared/conflicting texture references use the existing test client's available asset bytes. All selected files are included with checksums; this does not require future installers to have that test client.
+
+Asset resolution used the supplied Area 52 patch-S visual tables and patch-M sound tables, with the known 3.3.5 client as a fallback for files absent or conflicting in the supplied patches. All newly staged files have separate paths, so those fallback choices do not replace existing assets. Tests verify hashes, row/string preservation, ID remapping and collision refusal. In-game rendering, sound timing, missile scripts and gameplay effects are still untested. Native 3.3.5 layouts were checked against [WoWDBDefs](https://github.com/wowdev/WoWDBDefs/tree/master/definitions).
+
+The tools use only the packaged curated records and assets plus the installer's own baseline DBCs. No MPQ reader, complete extracted archive, unrelated client addon or third-party server module is bundled. `test_assets.py` exercises the portable staging code.

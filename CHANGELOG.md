@@ -1,3 +1,8 @@
+## Development - isolated icon and visual assets
+
+- Resolve and package 83 icons and 837 visual support assets; add isolated icon/visual DBC staging with cloned dependent IDs and rewritten asset paths. Preserve existing client records.
+- Record explicit cosmetic repairs for missing Elemental Blast, Arcing Light and sound references. Offline validation passed; client rendering and gameplay remain untested.
+
 ## Development - auxiliary spell references
 
 - Add append-only staging tool for three missing SpellRange records and one SpellRadius record, preserving destination rows and rebuilding localized string offsets.
@@ -13,7 +18,7 @@
 - Add offline typed spell_dbc conversion, explicit effect-mask mapping, collision/schema checks, receipt-based rollback candidates and lossless aura-text schema expansion.
 - Block raw SQL installation for unsupported core enum values; preserve all source records for later module effect adaptation. No server deployment or Classic addon changes.
 
-## Development audit � server coverage
+## Development audit — server coverage
 
 - Inventory all 1,665 current entries, four primary-stat choices and 29 staged talent records against stock/Area 52 spell data and recorded server routes. Distinguish aliases, supported purchases, changed effects and missing systems. No gameplay or deployment changes. Live database verification remains pending because WSL access is denied.
 
@@ -52,7 +57,7 @@
 - Add Hunter Auto Shot as a level 1, 2 AP custom-mode choice using native spell 75; retain the Classic creation-grant entry.
 - Audit stock starting abilities and extracted Ascension level-one paid choices; preserve paid Mastery membership and the approved DK progression.
 
-## Unreleased — Class+ server inventory
+## Unreleased â€” Class+ server inventory
 
 - Make ability unlocks through level 10 available at level 1 in Class+ and Hybrid, including DK and free group members; Masteries follow their earliest member. Preserve Classic/Hero, passive talent tiers, higher unlocks and later-rank schedules.
 - Unify 151 talent-origin choices as AP purchases across both menu locations; set all 30 capstones to level 60 and one Legendary gem. Apply stock non-DK Class+/Hybrid unlocks and rank references, preserve DK level-one progression, and derive each Mastery unlock from its earliest member. Preserve Classic.
@@ -151,7 +156,7 @@
 
 ## 0.36.5
 
-- Place the stock bronze lock icon directly below the talent panel’s level-10 lock message.
+- Place the stock bronze lock icon directly below the talent panelâ€™s level-10 lock message.
 
 ## 0.36.4
 
@@ -355,7 +360,7 @@
 - Document alternate Area 52 cost records and category fallbacks in docs/TALENT_ABILITY_REVIEW.md.
 - Require a full client restart after installation to load the new catalog file.
 
-## 0.27.3 — initial repository candidate
+## 0.27.3 â€” initial repository candidate
 
 - Character Advancement UI with class and specialization tabs, native talent tree art and dependency routes.
 - Available ability points follow the planned level allowance and local selection costs.

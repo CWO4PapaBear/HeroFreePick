@@ -1,0 +1,667 @@
+{
+  "4605": {
+    "dbcPath": "Interface\\Icons\\Warrior_talent_icon_singlemindedfury",
+    "file": "Interface/Icons/Warrior_talent_icon_singlemindedfury.blp",
+    "sha256": "fb2b504df84be307b38395e5e36b1ea5e9a39569611996a95711c2215f98b1fa",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "4902": {
+    "dbcPath": "Interface\\Icons\\ability_deathwing_bloodcorruption_earth",
+    "file": "Interface/Icons/ability_deathwing_bloodcorruption_earth.blp",
+    "sha256": "9f8886e99ce87dd648a347a4e267c6e1d980836632b35382d825656e44faf974",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "4908": {
+    "dbcPath": "Interface\\Icons\\ability_deathwing_sealarmorbreachtga",
+    "file": "Interface/Icons/ability_deathwing_sealarmorbreachtga.blp",
+    "sha256": "b19357eb418a1dca6c3f3377728647b46abd3db9a36c40e2576628925bc55364",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "4936": {
+    "dbcPath": "Interface\\Icons\\ability_demonhunter_glide",
+    "file": "Interface/Icons/ability_demonhunter_glide.blp",
+    "sha256": "25c89ebdad6a7187d818e13afc4d336819447c5239a8cdb1ebfd9f939a7302e2",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "4953": {
+    "dbcPath": "Interface\\Icons\\ability_demonhunter_sigilofmisery",
+    "file": "Interface/Icons/ability_demonhunter_sigilofmisery.blp",
+    "sha256": "84a303befe5000b84793186c1797aa32b0df3e429ca84a1d5604022f5e6e634b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5005": {
+    "dbcPath": "Interface\\Icons\\ability_druid_ironfur",
+    "file": "Interface/Icons/ability_druid_ironfur.blp",
+    "sha256": "186ee908df967602ee2b9078375ebe44fb50f06be776b184dd558e4ae113877b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5086": {
+    "dbcPath": "Interface\\Icons\\ability_glaivetoss",
+    "file": "Interface/Icons/ability_glaivetoss.blp",
+    "sha256": "eff8c609ca764ce11978710f95e79eaabc50c2db13b20ff5a754d3a993a9d24b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5209": {
+    "dbcPath": "Interface\\Icons\\ability_hunter_sickem",
+    "file": "Interface/Icons/ability_hunter_sickem.blp",
+    "sha256": "1d032eb531c2100239f95e7621e792a3a3bf21946a0d025e1f237e7c4725c267",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5227": {
+    "dbcPath": "Interface\\Icons\\ability_ironmaidens_convulsiveshadows",
+    "file": "Interface/Icons/ability_ironmaidens_convulsiveshadows.blp",
+    "sha256": "ac220b948843434542edda7fab962c1f0ba569e111c507816dcbbcc3350f0f5d",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5306": {
+    "dbcPath": "Interface\\Icons\\ability_mage_massinvisibility",
+    "file": "Interface/Icons/ability_mage_massinvisibility.blp",
+    "sha256": "60e414c6ab35131e0eb6dee765203f49e9f474ea69ec480f7ffddd4846edaf60",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5356": {
+    "dbcPath": "Interface\\Icons\\ability_monk_forcesphere_arcane",
+    "file": "Interface/Icons/ability_monk_forcesphere_arcane.blp",
+    "sha256": "0cf0d0678a1f43c3715ec34e41a3fdb8bf983dd739d9dc65b36996f8b3798238",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5452": {
+    "dbcPath": "Interface\\Icons\\ability_mount_drake_red",
+    "file": "Interface/Icons/ability_mount_drake_red.blp",
+    "sha256": "71650670887d70af6faa4eb6b2c988db1ddd13007ea1a06dee7084b96356f2ab",
+    "sourceArchives": [
+      "ascension-live_Data_enUS_patch-enUS.MPQ",
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5619": {
+    "dbcPath": "Interface\\Icons\\ability_paladin_blindinglight",
+    "file": "Interface/Icons/ability_paladin_blindinglight.blp",
+    "sha256": "2740ffd56a8bfcb192ed70eae9f29214eb6833a7e4fcb26e693c18675d4068cc",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5670": {
+    "dbcPath": "Interface\\Icons\\ability_priest_angelicfeather",
+    "file": "Interface/Icons/ability_priest_angelicfeather.blp",
+    "sha256": "52f742dc14ae9b6222d9a3df5a007f920eaadbeab44756475a484eac1c6390c7",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5800": {
+    "dbcPath": "Interface\\Icons\\ability_rogue_combatreadiness",
+    "file": "Interface/Icons/ability_rogue_combatreadiness.blp",
+    "sha256": "5f552877a95e2e54cd55f517d9dba824ad0749b0a8d5cb3793742a9a81cb598a",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5913": {
+    "dbcPath": "Interface\\Icons\\ability_shaman_windwalktotem",
+    "file": "Interface/Icons/ability_shaman_windwalktotem.blp",
+    "sha256": "19274ba22ef33c52e773464c17c9347e8f63c47618581b6bf1813e5cb935149e",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5967": {
+    "dbcPath": "Interface\\Icons\\ability_thunderclap",
+    "file": "Interface/Icons/ability_thunderclap.blp",
+    "sha256": "48a408e87a2e811b748412999421038edf03d4fbfd9e4b9d8f4ff1459b0aa0bc",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "5997": {
+    "dbcPath": "Interface\\Icons\\ability_trueshot",
+    "file": "Interface/Icons/ability_trueshot.blp",
+    "sha256": "0b881e5832b735bf890c58c084ec6ebfed47a0ad671095f4ec1f3cd8d259d8a3",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "6019": {
+    "dbcPath": "Interface\\Icons\\ability_warlock_ancientgrimoire",
+    "file": "Interface/Icons/ability_warlock_ancientgrimoire.blp",
+    "sha256": "0d4880e07f23d37611e5f3c6120a15a367b631cc57f74e7883d6d415e41ce954",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "6039": {
+    "dbcPath": "Interface\\Icons\\ability_warlock_handofguldan",
+    "file": "Interface/Icons/ability_warlock_handofguldan.blp",
+    "sha256": "32606e2e56ba2977feb123e7edf6c289404a86c319869d90edced64d4caac7d6",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "6041": {
+    "dbcPath": "Interface\\Icons\\ability_warlock_howlofterror",
+    "file": "Interface/Icons/ability_warlock_howlofterror.blp",
+    "sha256": "ead4562f46141425d1330096dd3bf8eefd57518093298f3ae5326e9ba7bd2a55",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "6055": {
+    "dbcPath": "Interface\\Icons\\ability_warlock_soulswap",
+    "file": "Interface/Icons/ability_warlock_soulswap.blp",
+    "sha256": "7a78daacd56600e73deea8362f4396015d3dd32ff7b386eb526f19f520a3f535",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "6074": {
+    "dbcPath": "Interface\\Icons\\ability_warrior_dragonroar",
+    "file": "Interface/Icons/ability_warrior_dragonroar.blp",
+    "sha256": "1dba7345d0b7bd51070c7eca7520ea4ccf2912a8ecdddf8f50e256c79ede1d3f",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "7666": {
+    "dbcPath": "Interface\\Icons\\demoralizing_banner",
+    "file": "Interface/Icons/demoralizing_banner.blp",
+    "sha256": "0a2e23b674469ece4aac0c49cf3f94d4137add605ae11532784802ee91338a50",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "8461": {
+    "dbcPath": "Interface\\Icons\\inv_artifact_stolenpower",
+    "file": "Interface/Icons/inv_artifact_stolenpower.blp",
+    "sha256": "eed508f5bc6fd59632e87bc09815fb364fbcfdd253e9943674190ea3382779fe",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "13065": {
+    "dbcPath": "Interface\\Icons\\inv_glaive_1h_artifactaldrochi_d_01dual",
+    "file": "Interface/Icons/inv_glaive_1h_artifactaldrochi_d_01dual.blp",
+    "sha256": "25b916d4da60fcd398229aaddcf5ef02d411810b753f634652adef0f9a2051d3",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "15730": {
+    "dbcPath": "Interface\\Icons\\inv_knife_1h_cataclysm_c_05",
+    "file": "Interface/Icons/inv_knife_1h_cataclysm_c_05.blp",
+    "sha256": "255d1df4196041862b65d05d61ec6ce0b41085881b713c020c2b5fb6aae007a2",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "16230": {
+    "dbcPath": "Interface\\Icons\\inv_legendary_knife",
+    "file": "Interface/Icons/inv_legendary_knife.blp",
+    "sha256": "a4c564c24964de9acd344be1e563347063b9d9d28586ada97d189fa0f10faa3b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "16235": {
+    "dbcPath": "Interface\\Icons\\inv_legendary_staff",
+    "file": "Interface/Icons/inv_legendary_staff.blp",
+    "sha256": "d53015453905c2b4296176fc4b442cc3df1628befa2c36b54221e51d256eb30b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "16236": {
+    "dbcPath": "Interface\\Icons\\inv_legendary_sword",
+    "file": "Interface/Icons/inv_legendary_sword.blp",
+    "sha256": "f7306080a2e73403a87807ca4f3831993278f268938ca8da7f3a47cef93cd892",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "16565": {
+    "dbcPath": "Interface\\Icons\\inv_mace_2h_draenorguard_b_01_horde",
+    "file": "Interface/Icons/inv_mace_2h_draenorguard_b_01_horde.blp",
+    "sha256": "74dad1aeaa8bde7eb0f16d1adf0dd043d3c1cf479ab62fe26d5f9b75a738265f",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "17130": {
+    "dbcPath": "Interface\\Icons\\inv_misc_book_05",
+    "file": "Interface/Icons/inv_misc_book_05.blp",
+    "sha256": "0d042ae248b0b6f5763d574c343508c5804764355c1bfcbdaeb77ccf821f071b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "18965": {
+    "dbcPath": "Interface\\Icons\\inv_misc_questionmark",
+    "file": "Interface/Icons/inv_misc_questionmark.blp",
+    "sha256": "4fe1c9232ac7a5ad2ced3be9789384ebe13a906813f7df9a660322b5009e0a02",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "19215": {
+    "dbcPath": "Interface\\Icons\\inv_misc_steelweaponchain",
+    "file": "Interface/Icons/inv_misc_steelweaponchain.blp",
+    "sha256": "f206526b11df5dc7cd04dcf7f9cebee72712447163be3b150554cba3256a4d32",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "23540": {
+    "dbcPath": "Interface\\Icons\\inv_throwingknife_07",
+    "file": "Interface/Icons/inv_throwingknife_07.blp",
+    "sha256": "896186b881f83eaebe48bc1f4b37dcf1df6a694077e62339e84fe8e0ea46a263",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24399": {
+    "dbcPath": "Interface\\Icons\\priest_spell_leapoffaith_a",
+    "file": "Interface/Icons/priest_spell_leapoffaith_a.blp",
+    "sha256": "b105e031d5675f0ed02031f5fddc88d757ec915ddf46e56b7cc20bfc6f34640b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24433": {
+    "dbcPath": "Interface\\Icons\\shaman_talent_elementalblast",
+    "file": "Interface/Icons/shaman_talent_elementalblast.blp",
+    "sha256": "24f1b87995e92adc850e9993c6192e2ed1c626c84ddeb16b6c8de4d31269e018",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24510": {
+    "dbcPath": "Interface\\Icons\\spell_arcane_arcane03",
+    "file": "Interface/Icons/spell_arcane_arcane03.blp",
+    "sha256": "614307dbe97e9333bff6b3d2439f3e7cf9342eb8666f92966facc8b08b87d828",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24511": {
+    "dbcPath": "Interface\\Icons\\spell_arcane_arcane04",
+    "file": "Interface/Icons/spell_arcane_arcane04.blp",
+    "sha256": "d53f314f2c1804d8ddedfa7fcd782edbe77dc303094773615cbab771b833c34f",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24624": {
+    "dbcPath": "Interface\\Icons\\spell_deathknight_defile",
+    "file": "Interface/Icons/spell_deathknight_defile.blp",
+    "sha256": "14d9066be4d0a307fe30ac9ebd2f233e96129747c39315a42bfcaac14bf931be",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24672": {
+    "dbcPath": "Interface\\Icons\\spell_druid_stampedingroar_cat",
+    "file": "Interface/Icons/spell_druid_stampedingroar_cat.blp",
+    "sha256": "63943a374ee16502defc263841ec6172710d738c31d2022f87c6fdf196cad387",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24678": {
+    "dbcPath": "Interface\\Icons\\spell_druid_ursolsvortex",
+    "file": "Interface/Icons/spell_druid_ursolsvortex.blp",
+    "sha256": "4bcae7c137b7982a7b199f9aab068492c2ca071e2be33d4d01efb4b9f9139fa4",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24759": {
+    "dbcPath": "Interface\\Icons\\spell_fire_twilightfireward",
+    "file": "Interface/Icons/spell_fire_twilightfireward.blp",
+    "sha256": "ca968082bb2b08969e12b6404b318e2b473bacf168a4058d842074f61a8f67ba",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24792": {
+    "dbcPath": "Interface\\Icons\\spell_frost_frozenorb",
+    "file": "Interface/Icons/spell_frost_frozenorb.blp",
+    "sha256": "7ddd36e678cb1e0263d8d8da8c36f64c843143149e345035b838c0ef5898a9f0",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24803": {
+    "dbcPath": "Interface\\Icons\\spell_frost_ring_of_frost",
+    "file": "Interface/Icons/spell_frost_ring_of_frost.blp",
+    "sha256": "552930a23aff8a356e2a093df3c55ea72bfcd3bc9341eae510fc095bcd69154e",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24874": {
+    "dbcPath": "Interface\\Icons\\spell_holy_holyprotection",
+    "file": "Interface/Icons/spell_holy_holyprotection.blp",
+    "sha256": "0a01cd592d444f28e4d097bdf0023d4be58a960fc758bf66d484e3ae0eaf4c17",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24971": {
+    "dbcPath": "Interface\\Icons\\spell_mage_arcaneorb",
+    "file": "Interface/Icons/spell_mage_arcaneorb.blp",
+    "sha256": "b7f7637f9908072e7ab6ead16e935695f16eae38f491c70bbdc7c2734145fe13",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24978": {
+    "dbcPath": "Interface\\Icons\\spell_mage_evanesce",
+    "file": "Interface/Icons/spell_mage_evanesce.blp",
+    "sha256": "80134fe03cfef02c73f3fc52a9e02eb41d41a162a1baa757aa35bdd14b879c3c",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "24989": {
+    "dbcPath": "Interface\\Icons\\spell_mage_meteor",
+    "file": "Interface/Icons/spell_mage_meteor.blp",
+    "sha256": "72bf7f005d6839f5f20374d5037c6ce2953dd563737fc3ab955b0a8ab4f070b7",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25086": {
+    "dbcPath": "Interface\\Icons\\spell_nature_lightningoverload",
+    "file": "Interface/Icons/spell_nature_lightningoverload.blp",
+    "sha256": "22e32ece975a065baf144c354f5e2d9548d5bdfc2be467d8602b6db34a85def7",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25178": {
+    "dbcPath": "Interface\\Icons\\spell_paladin_executionsentence",
+    "file": "Interface/Icons/spell_paladin_executionsentence.blp",
+    "sha256": "41bb4de8f93983945faeb3fb2aa399b950bc7cd51e011719154ea80018a75d80",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25182": {
+    "dbcPath": "Interface\\Icons\\spell_paladin_lightofdawn",
+    "file": "Interface/Icons/spell_paladin_lightofdawn.blp",
+    "sha256": "39ade4edc9e2e3f0ac562ebefb9124519ca680b4a6f8f00211678f70dd4090ab",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25183": {
+    "dbcPath": "Interface\\Icons\\spell_paladin_lightshammer",
+    "file": "Interface/Icons/spell_paladin_lightshammer.blp",
+    "sha256": "c16302e872037e36ce61656be6598e64a8b95c98625793c6104965a1240e9ca6",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25188": {
+    "dbcPath": "Interface\\Icons\\spell_priest_divinestar",
+    "file": "Interface/Icons/spell_priest_divinestar.blp",
+    "sha256": "74ec6d6691fc0a6512075be627d7efe699d1551f2df98078661ee94e5ebd67ea",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25208": {
+    "dbcPath": "Interface\\Icons\\spell_priest_voidshift",
+    "file": "Interface/Icons/spell_priest_voidshift.blp",
+    "sha256": "4e2e6e1f69e443bf0e3bb6a823941d16ae3760b119650e11f3311e0727944b61",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25219": {
+    "dbcPath": "Interface\\Icons\\spell_shadow_animatedead",
+    "file": "Interface/Icons/spell_shadow_animatedead.blp",
+    "sha256": "02b4f4308a7f0561e035139873e0119ca4a6db657e82f0d4bc80533dbf5d4d43",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25356": {
+    "dbcPath": "Interface\\Icons\\spell_shaman_bindelemental",
+    "file": "Interface/Icons/spell_shaman_bindelemental.blp",
+    "sha256": "84c5e8b1f5d22cfa77e40086711dea1213d01e54ae773227a81d3553e91bab6e",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25365": {
+    "dbcPath": "Interface\\Icons\\spell_shaman_earthquake",
+    "file": "Interface/Icons/spell_shaman_earthquake.blp",
+    "sha256": "e819683f2cf319c609a56d33ef5d9c59a24dc5a17659684d5310d11952a04be3",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25409": {
+    "dbcPath": "Interface\\Icons\\spell_warlock_demonbolt",
+    "file": "Interface/Icons/spell_warlock_demonbolt.blp",
+    "sha256": "cdfb6a8fc25cb60f31a214f4bc379930080c283499fce2b10103d44bf4dc734d",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25412": {
+    "dbcPath": "Interface\\Icons\\spell_warlock_demonicportal_purple",
+    "file": "Interface/Icons/spell_warlock_demonicportal_purple.blp",
+    "sha256": "5fbee8ff3a3362d06ce15f826d313cc9eeb01028313a4ca0af3000f3afc3084b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25414": {
+    "dbcPath": "Interface\\Icons\\spell_warlock_demonsoul",
+    "file": "Interface/Icons/spell_warlock_demonsoul.blp",
+    "sha256": "b0a781ba21684a6afc6d1d90b97ac130dc043ce8357b8d15c0e4e0a126be0619",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25425": {
+    "dbcPath": "Interface\\Icons\\spell_warrior_dragoncharge",
+    "file": "Interface/Icons/spell_warrior_dragoncharge.blp",
+    "sha256": "7cebe66b6d135729b5617185b1b94e3240783e161d0072992ca0e0ddcdbd1e1e",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25741": {
+    "dbcPath": "Interface\\Icons\\warrior_skullbanner",
+    "file": "Interface/Icons/warrior_skullbanner.blp",
+    "sha256": "4a742f4125ee634e7dd5f5251eea6bd8ca6f369b8daca299a23b09e100809d74",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25743": {
+    "dbcPath": "Interface\\Icons\\warrior_talent_icon_avatar",
+    "file": "Interface/Icons/warrior_talent_icon_avatar.blp",
+    "sha256": "0139e069a4a42d726b3decbbb393366d467fdfacfcad691ef5cd5426bd3b0499",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "25758": {
+    "dbcPath": "Interface\\Icons\\warrior_wild_strike",
+    "file": "Interface/Icons/warrior_wild_strike.blp",
+    "sha256": "6b562476100c49e0bcff760a2f8a2868930b96dc337da986d2416b35eaa803a5",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "26898": {
+    "dbcPath": "Interface\\Icons\\spell_animaardenweald_buff",
+    "file": "Interface/Icons/spell_animaardenweald_buff.blp",
+    "sha256": "c35bd4b343d473312a73c4ee928954a79170da8091d35ae83e8ce5b142ebd618",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "26999": {
+    "dbcPath": "Interface\\Icons\\_ArcaneShot_Red",
+    "file": "Interface/Icons/_ArcaneShot_Red.blp",
+    "sha256": "3647396f4a03c1383953876837b2e2bc73ca29465479943f7034963cfa62f01c",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27323": {
+    "dbcPath": "Interface\\Icons\\_D3dashingstrike",
+    "file": "Interface/Icons/_D3dashingstrike.blp",
+    "sha256": "d9cc3436748523c334078e7fe0069c364143b6954ac95798cdac69a71b7f1d7b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27330": {
+    "dbcPath": "Interface\\Icons\\_D3energyarmor",
+    "file": "Interface/Icons/_D3energyarmor.blp",
+    "sha256": "eb3ea90bfbd338404b5f8d1b8f85b9cd47a2190242d39cd563066d468c74ca5b",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27437": {
+    "dbcPath": "Interface\\Icons\\_DeathCoil_Color_Shadow",
+    "file": "Interface/Icons/_DeathCoil_Color_Shadow.blp",
+    "sha256": "ac603b1d9912722218ea6dac491dc1e7f1f82f289a980eaee7edc4bbd09307b4",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27679": {
+    "dbcPath": "Interface\\Icons\\_HearthStone_Necklace_DeathKnight",
+    "file": "Interface/Icons/_HearthStone_Necklace_DeathKnight.blp",
+    "sha256": "3a1676c28bb9d81e06cdf73105b5612e45504cd5c771b4e5e92e98c8d728c3a3",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27682": {
+    "dbcPath": "Interface\\Icons\\_HearthStone_Necklace_Mage",
+    "file": "Interface/Icons/_HearthStone_Necklace_Mage.blp",
+    "sha256": "831c401ded1abb20a9cf35df3909a0ea516d7b1279024a978a028d97a5eb2549",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27684": {
+    "dbcPath": "Interface\\Icons\\_HearthStone_Necklace_Paladin",
+    "file": "Interface/Icons/_HearthStone_Necklace_Paladin.blp",
+    "sha256": "feb873a9827a40adc8583741928beaa2f6557216c3d58a776ae5830cdf564c56",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27687": {
+    "dbcPath": "Interface\\Icons\\_HearthStone_Necklace_Shaman",
+    "file": "Interface/Icons/_HearthStone_Necklace_Shaman.blp",
+    "sha256": "48a30bdb2607b1304c6fd04fd487ae2657021578efda05b0517e42e9392e7c70",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "27689": {
+    "dbcPath": "Interface\\Icons\\_HearthStone_Necklace_Warrior",
+    "file": "Interface/Icons/_HearthStone_Necklace_Warrior.blp",
+    "sha256": "d899dddb5faae479a2d29c0ab3e1fa0727c3e3396123c5e7c2061b211488d7cf",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "28359": {
+    "dbcPath": "Interface\\Icons\\_Undead_03",
+    "file": "Interface/Icons/_Undead_03.blp",
+    "sha256": "c886b17fabb6f3778cc126227fca57117c25384d49f44f800c4400d7a1d6d119",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "41123": {
+    "dbcPath": "Interface\\Icons\\custom_20_shield",
+    "file": "Interface/Icons/custom_20_shield.blp",
+    "sha256": "0a206294a16c501b7fda0195c001c7d599f790b9df70e60d0097f1ea34739050",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "54923": {
+    "dbcPath": "Interface\\icons\\5_warlock05_Border",
+    "file": "Interface/icons/5_warlock05_Border.blp",
+    "sha256": "edf9bda3733fa737391ce93c363e1e491bb12029a7d4a29f0793ff2b8967620f",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "62936": {
+    "dbcPath": "Interface\\icons\\custom_T_Nhance_RPG_Icons_ShadowArrow_Border",
+    "file": "Interface/icons/custom_T_Nhance_RPG_Icons_ShadowArrow_Border.blp",
+    "sha256": "f1722630d3108b39267818444525a4fe11eaac317fb7b15dda8e389be842b1d3",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "63970": {
+    "dbcPath": "Interface\\icons\\nhi_holyhand_Border",
+    "file": "Interface/icons/nhi_holyhand_Border.blp",
+    "sha256": "3912911a6ad41c02f59a585f5bef66eab9aa0135fa2828cc8824411082e3b1dd",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "64370": {
+    "dbcPath": "Interface\\icons\\novart_books_(2)_Border",
+    "file": "Interface/icons/novart_books_(2)_Border.blp",
+    "sha256": "739153784c30d0928e78a1c12d8f6e3cafd427002a099ed9b8f7bef9abd97214",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "99100": {
+    "dbcPath": "Interface\\Icons\\Sinisterstrike_Shadow",
+    "file": "Interface/Icons/Sinisterstrike_Shadow.blp",
+    "sha256": "8e158f81899cea1efb2a60f2a1206fcbd626f2a6a9ffe0acceb9f95d6ffa2aad",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  },
+  "99113": {
+    "dbcPath": "Interface\\Icons\\Steadyshot_Storm",
+    "file": "Interface/Icons/Steadyshot_Storm.blp",
+    "sha256": "a122228a2b0884934dc1a54e5a738e6553532331983e731fcd02ab669c2060a1",
+    "sourceArchives": [
+      "ascension-live_Data_patch-I.MPQ"
+    ]
+  }
+}

@@ -2,3 +2,5 @@
 data/*.json text eol=lf
 *.py text eol=lf
 *.md text eol=lf
+icon-assets/** -text
+visual-assets/** -text
