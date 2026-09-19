@@ -22,7 +22,7 @@ def build(blob,records):
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
  if a.output.exists():raise ValueError('Output already exists')
- ref=json.loads((ROOT/'data/spells.json').read_text());records,selection=compatible_selection(ref)
+ ref=json.loads((ROOT/'data/spells.json').read_text(encoding='utf-8'));records,selection=compatible_selection(ref)
  before=a.input.read_bytes();after=build(before,records);a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_bytes(after)
  print('Appended',len(records),'spell records; original records and strings preserved.')
 if __name__=='__main__':main()

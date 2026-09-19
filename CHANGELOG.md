@@ -1,3 +1,7 @@
+## Development - client Spell.dbc staging
+
+- Add append-only client Spell.dbc staging for 266 filtered definitions, preserving baseline records and UTF-8 localized strings. Prepared an isolated test installation package; live SQL and startup validation run during deployment.
+
 ## Development - isolated icon and visual assets
 
 - Resolve and package 83 icons and 837 visual support assets; add isolated icon/visual DBC staging with cloned dependent IDs and rewritten asset paths. Preserve existing client records.
