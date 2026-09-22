@@ -1,0 +1,6 @@
+## Interface: 30300
+## Title: Hero Hybrid Spellbook
+## Dependencies: HeroFreePick, HeroClassPlusCommitTest
+## Notes: Learned-spell tree tabs and synchronized onboarding. Local test.
+TreeMap.lua
+HybridSpellbook.lua

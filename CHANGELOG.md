@@ -1,3 +1,9 @@
+## Development - expanded spellbook tree pages
+
+- Keep individual learned class/tree tabs in Hybrid and Hero, including builds with more than eight tabs. Add Previous/Next controls and a tree-page count, preserving native spell slots for casting, dragging and tooltips.
+- Preserve page navigation during spell refreshes; clamp pages when a build loses trees. Classic and pet spellbooks keep native behavior.
+- Lua 5.1 regression test covers all 30 trees plus General across four pages. In-game visual testing and launcher publication remain pending.
+
 ## Development - client Spell.dbc staging
 
 - Add append-only client Spell.dbc staging for 266 filtered definitions, preserving baseline records and UTF-8 localized strings. Prepared an isolated test installation package; live SQL and startup validation run during deployment.
@@ -373,3 +379,4 @@
 - Fix menu-opening failure caused by a button-only text call after converting the Filter control to a dropdown.
 
 This repository candidate includes the current addon. In-game validation is still required after layout changes. Server-owned cross-class progression and individual native talent refunds are not implemented.
+
