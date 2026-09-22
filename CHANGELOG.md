@@ -1,3 +1,8 @@
+## Development - PTR portrait repair
+
+- Restore portrait control loading, saved player/target locks and positions, pet right-click menus, narrower resource bars and stock DK rune hiding. Preserve pet happiness and keep spellbook changes separate.
+- Reviewed client-only overlay includes hash guards, backups and rollback on installation failure. Lua 5.1 and installer regression checks pass; in-game visuals and launcher publication pending.
+
 ## Development - expanded spellbook tree pages
 
 - Keep individual learned class/tree tabs in Hybrid and Hero, including builds with more than eight tabs. Add Previous/Next controls and a tree-page count, preserving native spell slots for casting, dragging and tooltips.
@@ -379,4 +384,3 @@
 - Fix menu-opening failure caused by a button-only text call after converting the Filter control to a dropdown.
 
 This repository candidate includes the current addon. In-game validation is still required after layout changes. Server-owned cross-class progression and individual native talent refunds are not implemented.
-
