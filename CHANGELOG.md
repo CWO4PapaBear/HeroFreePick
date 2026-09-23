@@ -1,3 +1,8 @@
+## Development - portrait menu and drag follow-up
+
+- Correct primary pet/player secure menu setup to the native 3.3.5 menu action. Add player portrait/resource drag surfaces and target/focus bar dragging with per-character lock and position persistence.
+- Client-only patch staged and regression checked. In-game verification and launcher promotion pending.
+
 ## Development - shared weapon proficiency
 
 - Display Dual Wield (674) under General in the Hybrid/Hero spellbook, regardless of its Warrior catalogue assignment. It no longer creates a Warrior tree tab by itself. No learned spells or server records change.

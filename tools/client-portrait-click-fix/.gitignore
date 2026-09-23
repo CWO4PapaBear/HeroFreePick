@@ -1,0 +1,4 @@
+test-output-*/
+backups/
+installation.json
+__pycache__/
