@@ -93,6 +93,14 @@ HeroSpellbookPreviousTabs.scripts.OnClick();assert(HeroSpellbookTabPager.label.t
 -- Hidden-rank mode still uses real native slots.
 allRanks=false;refresh();assert(HeroSpellbookTabPager.label.text=='Trees 3 / 4')
 -- Shrinking learned build clamps the page and selection safely.
+-- Dual Wield remains General even when catalogue ownership says Warrior.
+HeroFreePick.byID={dw={class='Warrior',spec='Fury',spells={674}}}
+HeroSpellbookSpellTrees[674]=nil;ids={674};refresh()
+assert(SpellBook_GetTabInfo(1)=='General'and SpellBook_GetSpellID(1)==1)
+assert(HeroSpellbookTabPager.label.text=='Trees 1 / 1'and not HeroSpellbookTreeTab2.shown)
+-- The explicit General override also wins over a direct tree mapping.
+HeroSpellbookSpellTrees[674]=256;refresh()
+assert(not HeroSpellbookTreeTab2.shown and SpellBook_GetSpellID(1)==1)
 ids={999999};refresh();assert(HeroSpellbookTabPager.shown and not HeroSpellbookNextTabs.shown and SpellBook_GetSpellID(1)==1)
 SpellBookFrame.bookType='pet';SpellBookFrame_Update();assert(SpellBook_GetTabInfo(1)=='native')
 HeroFreePick.mode='Classic';SpellBookFrame.bookType='spell';SpellBookFrame_Update()

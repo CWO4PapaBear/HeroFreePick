@@ -1,3 +1,7 @@
+## Development - shared weapon proficiency
+
+- Display Dual Wield (674) under General in the Hybrid/Hero spellbook, regardless of its Warrior catalogue assignment. It no longer creates a Warrior tree tab by itself. No learned spells or server records change.
+
 ## Development - spellbook refresh isolation
 
 - Use dedicated tree-tab buttons inside the normal spellbook so stock refreshes cannot replace their icons and tab identities. Reconcile visible controls after refreshes and retain the selected tree/page.

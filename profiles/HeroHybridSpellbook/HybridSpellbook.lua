@@ -2,6 +2,8 @@ local A=HeroFreePick
 local tabs,active,dirty={},false,true
 local nativeInfo,nativeSlot=SpellBook_GetTabInfo,SpellBook_GetSpellID
 local tabPage=0
+-- Shared weapon proficiency: catalogue ownership must not create a class tab.
+local generalSpells={[674]=true} -- Dual Wield
 local function enabled()return A and (A.mode=='Hybrid'or A.mode=='Hero')end
 local function custom()return active and enabled()and SpellBookFrame.bookType==BOOKTYPE_SPELL end
 local function rebuild()
@@ -24,7 +26,7 @@ local function rebuild()
   for slot=offset+1,offset+count do
    if GetCVarBool('ShowAllSpellRanks')or highest[slot]then
     local link=GetSpellLink(slot,BOOKTYPE_SPELL);local id=link and tonumber(link:match('spell:(%d+)'))
-    local skill=id and (HeroSpellbookSpellTrees[id]or imported[id]);local tree=skill and HeroSpellbookTrees[skill]
+    local skill=id and not generalSpells[id]and (HeroSpellbookSpellTrees[id]or imported[id]);local tree=skill and HeroSpellbookTrees[skill]
     local bucket=tabs[1]
     if tree then
      if not buckets[skill]then buckets[skill]={key=tostring(skill),class=tree.class,name=tree.class..' - '..tree.name,icon=tree.icon or 'Interface\\Icons\\INV_Misc_Book_09',slots={}}end
