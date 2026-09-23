@@ -1,3 +1,8 @@
+## 2026-09-23 — Talent modification skill
+
+- Add a repository-local skill for talent creation and modification, covering mode policy, level gates, UI, server/data integration, testing, rollback and release delivery.
+- Reference the skill from AGENTS.md for all talent modifications.
+
 ## 2026-09-23 — Martial Fluidity
 
 Custom-mode Vigor unlocks shared combo points. Correct native talent detection and target display after deselection. Reviewed integration and four-file client payload: tools/martial-fluidity.

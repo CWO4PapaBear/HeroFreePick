@@ -9,3 +9,7 @@ This is the modular Hero Advancement private repository for CWO4PapaBear/HeroFre
 - Keep local MenuLayoutOverrides.lua values out of published changes unless explicitly requested.
 
 - Classic remains stock class/trainer progression: exclude custom Masteries, their badges and custom unlock requirements. Apply new free-pick features only to custom modes unless explicitly requested for Classic.
+
+## Talent modifications
+
+For any talent modification, including new talents, mechanics, tooltips, ranks, level gates, costs, prerequisites, or mode availability, read and apply [the talent modification skill](.agents/skills/bear-cave-talent-modification/SKILL.md). Follow the current user request and repository instructions if they differ from the skill.
