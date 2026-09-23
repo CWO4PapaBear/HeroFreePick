@@ -16,9 +16,11 @@ The class masks were checked against stock WotLK SkillLineAbility and SkillRaceC
 
 ## Validation and deployment status
 
-Compiled C++ policy tests cover all 90 ordered class pairs, level boundaries, unchanged Classic/profession behavior and the actual staged grant functions. They verify that a trained weapon skill keeps its value when its cap increases. Full PTR compilation and in-game testing are still required. No activation, SQL migration or client update has occurred for this package.
+Compiled C++ policy tests cover all 90 ordered class pairs, level boundaries, unchanged Classic/profession behavior and the actual staged grant functions. They verify that a trained weapon skill keeps its value when its cap increases. The full PTR image build passed and all original source files were restored without errors. In-game testing is still required. No activation, SQL migration or client update has occurred for this package.
 
 The local Build-Test.py verifies the reviewed source hashes, builds an isolated image and restores the source, including removal of its newly added header. It does not restart the server. Activation follows review of the build result.
+
+Activate-Test.py uses the local build-state.json and verified source backups created by that build. Run with --check for preflight, or --activate --maintenance during downtime. It requires zero online players, verifies private startup before publishing the original game port, and automatically rolls back on startup failure. Manual recovery uses --rollback --maintenance. Rollback restores the previous image and source, including removing the newly added policy header. It does not reverse normal player progression saved after a successful deployment. Test-Activation.py checks install, rollback and rejection of unrelated source edits without accessing Docker. The deployment script is specific to this PTR; build state and private configuration are not included in GitHub.
 
 The published source package contains a minimal patch against the reviewed PTR source, its SHA-256 manifest and standalone tests. It intentionally excludes full exported core files and database records. Apply only against matching source; do not bypass failed patch or hash checks.
 

@@ -1,6 +1,6 @@
 ## Staged Hybrid equipment union
 
-Hybrid characters gain the weapon and armor proficiencies of both selected classes, with level gates and weapon skill progress preserved. Secondary-class equipment and skill eligibility survive reconnects. Classic remains unchanged. Compiled policy/grant tests pass; full PTR build, activation and gameplay validation remain pending. See tools/hybrid-equipment/README.md.
+Hybrid characters gain the weapon and armor proficiencies of both selected classes, with level gates and weapon skill progress preserved. Secondary-class equipment and skill eligibility survive reconnects. Classic remains unchanged. Compiled policy/grant tests and full PTR build passed; source restoration was clean. Activation/rollback tooling is ready and source restoration regression checks pass. PTR activation and gameplay validation remain pending. See tools/hybrid-equipment/README.md.
 
 ## Staged light-blue tooltip values
 
