@@ -1,3 +1,7 @@
+## Staged light-blue tooltip values
+
+Resolved numbers and percentages now use light blue in Hero Advancement. Yellow warnings remain distinct; Shift details and paragraph spacing are preserved. Client visual review and launcher publication pending.
+
 ## Staged server spell tooltip resolution
 
 Audited 2,955 descriptions; resolved 110 of 175 affected spell/rank descriptions from exported PTR fields and supported formulas. Serpent Sting displays its 15-second total using current ranged attack power. The remaining 65 descriptions stay yellow. Existing implementation warnings and Classic behavior are preserved. Client-only installer and renderer checks passed; in-game review and launcher publication pending.
