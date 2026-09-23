@@ -1,3 +1,7 @@
+## Staged Hybrid equipment union
+
+Hybrid characters gain the weapon and armor proficiencies of both selected classes, with level gates and weapon skill progress preserved. Secondary-class equipment and skill eligibility survive reconnects. Classic remains unchanged. Compiled policy/grant tests pass; full PTR build, activation and gameplay validation remain pending. See tools/hybrid-equipment/README.md.
+
 ## Staged light-blue tooltip values
 
 Resolved numbers and percentages now use light blue in Hero Advancement. Yellow warnings remain distinct; Shift details and paragraph spacing are preserved. Client visual review and launcher publication pending.

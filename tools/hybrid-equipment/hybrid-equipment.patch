@@ -1,0 +1,279 @@
+--- a/modules/mod-hero-starting-path/src/AdditionalResources.cpp
++++ b/modules/mod-hero-starting-path/src/AdditionalResources.cpp
+@@ -1,4 +1,5 @@
+ #include "AdditionalResources.h"
++#include "EquipmentPolicy.h"
+ #include "Player.h"
+ #include "PlayerScript.h"
+ #include "ObjectMgr.h"
+@@ -7,16 +8,19 @@
+ #include <mutex>
+ #include <string>
+ namespace {
+-struct State{unsigned mask=0,mana=0,age=0;std::string last;};
++struct State{unsigned mask=0,mana=0,age=0,equipment=0;std::string last;};
+ std::mutex lock;std::map<uint32,State> states;
+ State Get(Player const* p){if(!p)return {};std::lock_guard<std::mutex> guard(lock);auto it=states.find(p->GetGUID().GetCounter());return it==states.end()?State{}:it->second;}
+ }
++unsigned HeroEquipmentClassMask(Player const* p){auto s=Get(p);return s.equipment?s.equipment:p->getClassMask();}
++unsigned HeroEquipmentSkillMask(Player const* p,unsigned skill){return HeroEquipment::Skill(skill)?HeroEquipmentClassMask(p):p->getClassMask();}
++unsigned HeroEquipmentSkillClass(Player const* p,unsigned skill){return HeroEquipment::SkillClass(HeroEquipmentClassMask(p),p->getClass(),skill);}
+ bool HeroResourcesNeedsRunes(Player const* p){return (Get(p).mask&256)!=0;}
+ unsigned HeroResourceManaClass(Player const* p){auto s=Get(p);return s.mana?s.mana:p->getClass();}
+ void HeroResourcesForget(Player const* p){std::lock_guard<std::mutex> guard(lock);states.erase(p->GetGUID().GetCounter());}
+ void HeroResourcesPublish(Player* p,unsigned mode,unsigned second){
+  auto mask=HeroResources::Allowed(mode,p->getClass(),second);auto mana=HeroResources::ManaSource(mode,p->getClass(),second);
+- std::lock_guard<std::mutex> guard(lock);auto& s=states[p->GetGUID().GetCounter()];if(s.mask!=mask||s.mana!=mana)s.last.clear();s.mask=mask;s.mana=mana;
++ std::lock_guard<std::mutex> guard(lock);auto& s=states[p->GetGUID().GetCounter()];if(s.mask!=mask||s.mana!=mana)s.last.clear();s.mask=mask;s.mana=mana;s.equipment=HeroEquipment::Mask(mode,p->getClass(),second);
+ }
+ void HeroResourcesRefresh(Player* p){
+  auto s=Get(p);if(!s.mask)return;
+@@ -29,6 +33,9 @@
+  bool OnPlayerHasActivePowerType(Player const* p,Powers power)override{auto s=Get(p);return power>=0&&power<MAX_POWERS&&(s.mask&(1u<<unsigned(power)));}
+  Optional<bool> OnPlayerIsClass(Player const* p,Classes c,ClassContext context)override{
+   if(c==CLASS_DEATH_KNIGHT&&context==CLASS_CONTEXT_ABILITY&&HeroResourcesNeedsRunes(p)&&p->HasHeroRuneData())return true;
++  if(context==CLASS_CONTEXT_EQUIP_RELIC||context==CLASS_CONTEXT_EQUIP_SHIELDS||context==CLASS_CONTEXT_EQUIP_ARMOR_CLASS){
++   auto mask=HeroEquipmentClassMask(p);if(mask!=p->getClassMask()&&(mask&HeroEquipment::Bit(c)))return true;
++  }
+   return std::nullopt;
+  }
+  void OnPlayerLogout(Player* p)override{HeroResourcesForget(p);}
+--- a/modules/mod-hero-starting-path/src/AdditionalResources.h
++++ b/modules/mod-hero-starting-path/src/AdditionalResources.h
+@@ -6,4 +6,7 @@
+ void HeroResourcesForget(Player const*);
+ bool HeroResourcesNeedsRunes(Player const*);
+ unsigned HeroResourceManaClass(Player const*);
++unsigned HeroEquipmentClassMask(Player const*);
++unsigned HeroEquipmentSkillMask(Player const*,unsigned skill);
++unsigned HeroEquipmentSkillClass(Player const*,unsigned skill);
+ void AddHeroResourceScripts();
+--- /dev/null
++++ b/modules/mod-hero-starting-path/src/EquipmentPolicy.h
+@@ -0,0 +1,35 @@
++#pragma once
++namespace HeroEquipment {
++struct Proficiency { unsigned spell, skill, classes; bool weapon; };
++// Stock SkillLineAbility masks; thrown uses SkillRaceClassInfo (13).
++constexpr Proficiency Proficiencies[] = {
++ {201,43,431,true},{196,44,111,true},{264,45,13,true},{266,46,13,true},
++ {198,54,1147,true},{202,55,39,true},{227,136,1493,true},{199,160,1123,true},
++ {197,172,103,true},{1180,173,1501,true},{2567,176,13,true},{5011,226,13,true},
++ {5009,228,400,true},{200,229,1063,true},{15590,473,1101,true},
++ {750,293,35,false},{8737,413,103,false},{9077,414,1135,false},
++ {9078,415,1535,false},{9116,433,67,false}, {674,118,45,false}
++};
++inline bool Class(unsigned c){return c>=1&&c<=11&&c!=10;}
++inline unsigned Bit(unsigned c){return Class(c)?1u<<(c-1):0;}
++inline unsigned Mask(unsigned mode,unsigned own,unsigned second){
++ return Bit(own)|((mode>=3&&mode<=4&&Class(second)&&own!=second)?Bit(second):0);
++}
++inline unsigned RequiredLevel(Proficiency const& p,unsigned c){
++ if(p.skill==293)return 40; // custom level-one DK progression also withholds starter plate
++ if(p.skill==229)return 20;
++ if(p.skill==413)return c==3||c==7?40:1;
++ if(p.skill==118)return c==6?1:c==4?10:20;
++ return 1;
++}
++inline bool Available(Proficiency const& p,unsigned mask,unsigned level){
++ for(unsigned c=1;c<=11;++c)if((mask&p.classes&Bit(c))&&level>=RequiredLevel(p,c))return true;
++ return false;
++}
++inline Proficiency const* Skill(unsigned id){for(auto const& p:Proficiencies)if(p.skill==id)return &p;return nullptr;}
++inline unsigned SkillClass(unsigned mask,unsigned own,unsigned skill){
++ auto p=Skill(skill);if(!p||(p->classes&Bit(own)))return own;
++ for(unsigned c=1;c<=11;++c)if(mask&p->classes&Bit(c))return c;
++ return own;
++}
++}
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -22,6 +22,7 @@
+ extern unsigned HeroDKStartCoreHookVersion();
+ #include "CommitRules.h"
+ #include "AdditionalResources.h"
++#include "EquipmentPolicy.h"
+ #include "GrantRules.h"
+ #include "SpellMgr.h"
+ #include "SpellInfo.h"
+@@ -291,6 +292,27 @@
+  }
+ }
+ 
++void KeepHybridEquipment(Player* p,HeroBuild::Build& keep){
++ auto mask=HeroEquipmentClassMask(p);if(mask==p->getClassMask())return;
++ for(auto const& profile:HeroEquipment::Proficiencies){
++  if(!HeroEquipment::Available(profile,mask,p->GetLevel()))continue;
++  keep.insert(profile.spell);
++ }
++}
++bool VerifyHybridEquipment(Player* p){
++ auto mask=HeroEquipmentClassMask(p);if(mask==p->getClassMask())return true;
++ for(auto const& profile:HeroEquipment::Proficiencies){
++  if(!HeroEquipment::Available(profile,mask,p->GetLevel()))continue;
++  if(!p->HasSpell(profile.spell))return false;
++  // Do not reset trained skill or award max skill just for choosing a class.
++  auto value=p->GetPureSkillValue(profile.skill);
++  unsigned cap=profile.weapon?p->GetMaxSkillValueForLevel():1;
++  if(!value)p->SetSkill(profile.skill,0,1,cap);
++  else if(profile.weapon&&p->GetPureMaxSkillValue(profile.skill)<cap)p->SetSkill(profile.skill,0,value,cap);
++  if(!p->HasSkill(profile.skill))return false;
++ }
++ return true;
++}
+ bool Sync(Player* p,Snapshot const& snapshot,HeroBuild::Build const* proposed=nullptr,uint32 revision=0,uint32 proposedPrimary=0){
+  if(snapshot.phase<0||!HeroDKStart::Ensure(p))return false;
+  if(snapshot.phase==2)HeroResourcesRefresh(p);
+@@ -321,6 +343,7 @@
+   for(auto spell:wanted)if(!recorded.count(spell))return false;
+  }
+  if(ReadHybrid(p).pending){auto coverage=ClassCoverage(p);for(auto spell:coverage)keep.erase(spell); }
++ if(snapshot.phase==2)KeepHybridEquipment(p,keep);
+  GrantScope grants(p,wanted);
+  for(auto const& s:snapshot.spells)if(s.held&&snapshot.phase!=1&&!wanted.count(s.id))remove.insert(s.id);
+  for(auto spell:remove)if(!keep.count(spell)&&p->HasSpell(spell))p->removeSpell(spell,SPEC_MASK_ALL,false);
+@@ -330,6 +353,7 @@
+  for(auto spell:keep)if(!p->HasSpell(spell))p->learnSpell(spell);
+  for(auto spell:keep)if(!p->HasSpell(spell)){LOG_ERROR("server.loading","HERO_BUILD grant verification failed guid={} spell={}",p->GetGUID().GetCounter(),spell);return false;}
+  for(auto spell:remove)if(!keep.count(spell)&&p->HasSpell(spell)){LOG_ERROR("server.loading","HERO_BUILD removal verification failed guid={} spell={}",p->GetGUID().GetCounter(),spell);return false;}
++ if(snapshot.phase==2&&!VerifyHybridEquipment(p))return false;
+  // Resolve and verify ordinary grants before any paid native talent reset.
+  if(snapshot.phase==2&&!SyncTalents(p,talents))return false;
+  if(snapshot.phase==2)SyncSpellbookTrees(p,wanted,talents);
+@@ -521,7 +545,7 @@
+ 
+ class PathPlayer final:public PlayerScript {
+ public:
+-    PathPlayer():PlayerScript("HeroStartingPathTest",{PLAYERHOOK_ON_DELETE_FROM_DB,PLAYERHOOK_ON_CREATE,PLAYERHOOK_ON_LOGIN,PLAYERHOOK_CAN_LEARN_SPELL,PLAYERHOOK_ON_LEVEL_CHANGED,PLAYERHOOK_ON_UPDATE,PLAYERHOOK_ON_LOGOUT}){}
++    PathPlayer():PlayerScript("HeroStartingPathTest",{PLAYERHOOK_ON_LOAD_FROM_DB,PLAYERHOOK_ON_DELETE_FROM_DB,PLAYERHOOK_ON_CREATE,PLAYERHOOK_ON_LOGIN,PLAYERHOOK_CAN_LEARN_SPELL,PLAYERHOOK_ON_LEVEL_CHANGED,PLAYERHOOK_ON_UPDATE,PLAYERHOOK_ON_LOGOUT}){}
+     void OnPlayerDeleteFromDB(CharacterDatabaseTransaction trans,uint32 guid) override {
+         trans->Append("DELETE FROM hero_mode_upgrade_history WHERE guid={}",guid);
+         trans->Append("DELETE FROM hero_hybrid_choice WHERE guid={}",guid);
+@@ -584,6 +608,8 @@
+         else BuildError(p,"RECOVERY");
+     }
+     void OnPlayerLogout(Player* p) override { HeroDKStart::Forget(p); std::lock_guard<std::mutex> lock(stateMutex);auto guid=p->GetGUID().GetCounter();uploads.erase(guid);levelRefresh.erase(guid); }
++    // Publish validated class identity before _LoadSkills/_LoadSpells/_LoadInventory.
++    void OnPlayerLoadFromDB(Player* p) override {auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);}
+     void OnPlayerLogin(Player* p) override {
+ 
+         auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);if (snapshot.phase<0) { Reply(p,snapshot.phase==-1?"LEGACY_CLASSIC":"ERROR");return; }
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -16,6 +16,10 @@
+  */
+ 
+ #include "Player.h"
++extern unsigned HeroEquipmentClassMask(Player const*);
++extern unsigned HeroEquipmentSkillClass(Player const*,unsigned);
++extern unsigned HeroEquipmentSkillMask(Player const*,unsigned);
++
+ extern bool HeroResourcesNeedsRunes(Player const*);
+ extern unsigned HeroResourceManaClass(Player const*);
+ // HERO_DK_START_V1
+@@ -3229,7 +3233,7 @@
+         if (!pSkill)
+             continue;
+ 
+-        if (GetSkillRaceClassInfo(pSkill->id, getRace(), getClass()))
++        if (GetSkillRaceClassInfo(pSkill->id, getRace(), HeroEquipmentSkillClass(this,pSkill->id)))
+             return true;
+         else
+             errorSkill = pSkill->id;
+@@ -10925,7 +10929,7 @@
+         return false;
+     }
+ 
+-    if (!(pProto->AllowableClass & getClassMask()) && pProto->Bonding == BIND_WHEN_PICKED_UP && !IsGameMaster())
++    if (!(pProto->AllowableClass & ((pProto->Class==ITEM_CLASS_WEAPON||pProto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) && pProto->Bonding == BIND_WHEN_PICKED_UP && !IsGameMaster())
+     {
+         SendBuyError(BUY_ERR_CANT_FIND_ITEM, nullptr, item, 0);
+         return false;
+@@ -12133,7 +12137,7 @@
+ 
+ void Player::LearnDefaultSkill(uint32 skillId, uint16 rank)
+ {
+-    SkillRaceClassInfoEntry const* rcInfo = GetSkillRaceClassInfo(skillId, getRace(), getClass());
++    SkillRaceClassInfoEntry const* rcInfo = GetSkillRaceClassInfo(skillId, getRace(), HeroEquipmentSkillClass(this,skillId));
+     if (!rcInfo)
+         return;
+ 
+@@ -12252,7 +12256,6 @@
+ void Player::learnSkillRewardedSpells(uint32 skill_id, uint32 skill_value)
+ {
+     uint32 raceMask  = getRaceMask();
+-    uint32 classMask = getClassMask();
+ 
+     // Get all abilities for this skill and sort by MinSkillLineRank (lowest to highest)
+     auto abilities = GetSkillLineAbilitiesBySkillLine(skill_id);
+@@ -12283,7 +12286,7 @@
+         }
+ 
+         // Check class if set
+-        if (pAbility->ClassMask && !(pAbility->ClassMask & classMask))
++        if (pAbility->ClassMask && !(pAbility->ClassMask & HeroEquipmentSkillMask(this,pAbility->SkillLine)))
+         {
+             continue;
+         }
+@@ -12631,7 +12634,6 @@
+ bool Player::IsSpellFitByClassAndRace(uint32 spell_id) const
+ {
+     uint32 racemask  = getRaceMask();
+-    uint32 classmask = getClassMask();
+ 
+     SkillLineAbilityMapBounds bounds = sSpellMgr->GetSkillLineAbilityMapBounds(spell_id);
+     if (bounds.first == bounds.second)
+@@ -12644,11 +12646,11 @@
+             continue;
+ 
+         // skip wrong class skills
+-        if (_spell_idx->second->ClassMask && (_spell_idx->second->ClassMask & classmask) == 0)
++        if (_spell_idx->second->ClassMask && (_spell_idx->second->ClassMask & HeroEquipmentSkillMask(this,_spell_idx->second->SkillLine)) == 0)
+             continue;
+ 
+         // skip wrong class and race skill saved in SkillRaceClassInfo.dbc
+-        if (!GetSkillRaceClassInfo(_spell_idx->second->SkillLine, getRace(), getClass()))
++        if (!GetSkillRaceClassInfo(_spell_idx->second->SkillLine, getRace(), HeroEquipmentSkillClass(this,_spell_idx->second->SkillLine)))
+             continue;
+ 
+         return true;
+@@ -14016,7 +14018,7 @@
+             uint16 value    = fields[1].Get<uint16>();
+             uint16 max      = fields[2].Get<uint16>();
+ 
+-            SkillRaceClassInfoEntry const* rcEntry = GetSkillRaceClassInfo(skill, getRace(), getClass());
++            SkillRaceClassInfoEntry const* rcEntry = GetSkillRaceClassInfo(skill, getRace(), HeroEquipmentSkillClass(this,skill));
+             if (!rcEntry)
+             {
+                 LOG_ERROR("entities.player", "Player {} (GUID: {}), has skill ({}) that is invalid for the race/class combination (Race: {}, Class: {}). Will be deleted.",
+--- a/src/server/game/Entities/Player/PlayerStorage.cpp
++++ b/src/server/game/Entities/Player/PlayerStorage.cpp
+@@ -48,6 +48,10 @@
+ #include "OutdoorPvP.h"
+ #include "Pet.h"
+ #include "Player.h"
++extern unsigned HeroEquipmentClassMask(Player const*);
++extern unsigned HeroEquipmentSkillClass(Player const*,unsigned);
++extern unsigned HeroEquipmentSkillMask(Player const*,unsigned);
++
+ #include "QueryHolder.h"
+ #include "QuestDef.h"
+ #include "RBAC.h"
+@@ -2369,7 +2373,7 @@
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+     }
+ 
+-    if ((proto->AllowableClass & getClassMask()) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
++    if ((proto->AllowableClass & ((proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
+     {
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+     }
+@@ -2468,7 +2472,7 @@
+     if (proto->HasFlag2(ITEM_FLAG2_EVERYONE_CAN_ROLL_NEED))
+         return EQUIP_ERR_OK;
+ 
+-    if ((proto->AllowableClass & getClassMask()) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
++    if ((proto->AllowableClass & ((proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+ 
+     if (proto->RequiredSpell != 0 && !HasSpell(proto->RequiredSpell))
