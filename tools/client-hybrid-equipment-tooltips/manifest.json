@@ -1,0 +1,10 @@
+{
+  "HeroFreePick/HeroFreePick.toc": {
+    "before": "f66763a3f84ee65808a053e876d4fbd25feb7dad79dab294706e0cd8afe3dd57",
+    "after": "81e15b0c04949fa8dfb515015c8cc0d4d3714872958cca1a71521f968de91880"
+  },
+  "HeroFreePick/HybridEquipmentTooltips.lua": {
+    "before": null,
+    "after": "259edb7db9a1d90598b52ff96730cf977297a1cd645a434da54cb6789f51473a"
+  }
+}

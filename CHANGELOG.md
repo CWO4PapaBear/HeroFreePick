@@ -1,3 +1,7 @@
+## Staged Hybrid equipment tooltip correction
+
+Secondary-class equipment requirements now display as satisfied in native item tooltips using the server-confirmed class pair. Other restrictions remain red; Classic is unchanged. Lua 5.1 and installer checks passed. Local client installation, in-game visual acceptance and launcher publication pending.
+
 ## Staged Hybrid equipment union
 
 Hybrid characters gain the weapon and armor proficiencies of both selected classes, with level gates and weapon skill progress preserved. Secondary-class equipment and skill eligibility survive reconnects. Classic remains unchanged. Compiled policy/grant tests and full PTR build passed; source restoration was clean. Activation/rollback tooling is ready and source restoration regression checks pass. PTR activation and gameplay validation remain pending. See tools/hybrid-equipment/README.md.
