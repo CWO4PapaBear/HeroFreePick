@@ -1,3 +1,7 @@
+## Staged starter login reconciliation
+
+Check withheld starter ownership before loading saved spells, avoiding obsolete starter spells being loaded and then removed after login. Preserve purchased starters, Classic and uncertain ownership records. Compiled policy checks passed; full server build and activation pending. See tools/starter-login.
+
 ## Staged Hybrid equipment tooltip correction
 
 Secondary-class equipment requirements now display as satisfied in native item tooltips using the server-confirmed class pair. Other restrictions remain red; Classic is unchanged. Lua 5.1 and installer checks passed. Local client installation, in-game visual acceptance and launcher publication pending.

@@ -1,0 +1,40 @@
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -660,3 +660,17 @@
+ }
+ bool HeroSpellbookMetadataOnly(Player const* p){return p&&spellbookMetadataPlayer==p;}
+ bool HeroClassPlusOwnsSpell(Player* p,uint32 spell){return p&&Read(p).phase==2&&p->HasSpell(spell)&&ApprovedSpell(p,spell);}
++
++// Filter withheld starter rows before the initial spell list reaches the client.
++bool HeroShouldSkipSavedStarter(Player* p,uint32 spell){
++ if(!p||!HeroStartingPath::Gated(p->getClass(),spell))return false;
++ auto snapshot=Read(p);
++ if(snapshot.phase!=0&&snapshot.phase!=2)return false;
++ bool held=false;for(auto const& s:snapshot.spells)if(s.id==spell&&s.held)held=true;
++ if(!held)return false;
++ if(snapshot.phase==0)return true;
++ auto build=LoadBuild(p);HeroBuild::Build wanted;
++ // Do not delete saved rows when ownership cannot be verified or migration is pending.
++ if(!build.valid||build.rebuild||build.migrating||!Desired(p,build.roots,wanted))return false;
++ return !wanted.count(spell);
++}
+--- a/src/server/game/Entities/Player/PlayerStorage.cpp
++++ b/src/server/game/Entities/Player/PlayerStorage.cpp
+@@ -6633,6 +6633,7 @@
+ }
+ 
+ extern bool HeroAllowSavedBuildSpell(Player*, uint32);
++extern bool HeroShouldSkipSavedStarter(Player*, uint32);
+ 
+ void Player::_LoadSpells(PreparedQueryResult result)
+ {
+@@ -6646,7 +6647,8 @@
+             uint32 spellId = fields[0].Get<uint32>();
+             uint8 specMask = fields[1].Get<uint8>();
+ 
+-            if (HeroAllowSavedBuildSpell(this, spellId) || CheckSkillLearnedBySpell(spellId))
++            if (!HeroShouldSkipSavedStarter(this, spellId) &&
++                (HeroAllowSavedBuildSpell(this, spellId) || CheckSkillLearnedBySpell(spellId)))
+                 addSpell(spellId, specMask, true);
+             else
+             {
