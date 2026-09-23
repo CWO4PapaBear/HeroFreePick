@@ -1,3 +1,7 @@
+## 2026-09-23 — Martial Fluidity
+
+Custom-mode Vigor unlocks shared combo points. Correct native talent detection and target display after deselection. Reviewed integration and four-file client payload: tools/martial-fluidity.
+
 ## Experimental PTR shared Hero/Hybrid progression — rollback candidate
 
 Hero from level 1 and Hybrid from level 10 use a shared base stat curve: every attribute is 20 + level, retaining racial offsets and existing bonuses. Base health/mana reaches 115/190 at level 10 and 7350/4050 at level 80, with accelerated growth after level 50. Existing characters recalculate on login; resource refresh does not refill pools or restore old class mana. Classic and Class+ retain existing class allocation.

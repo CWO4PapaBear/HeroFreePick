@@ -1,0 +1,229 @@
+--- a/src/server/game/Entities/Unit/Unit.h
++++ b/src/server/game/Entities/Unit/Unit.h
+@@ -1017,11 +1017,17 @@
+     void AddExtraAttacks(uint32 count);
+ 
+     // Combot points system
+-    [[nodiscard]] uint8 GetComboPoints(Unit const* who = nullptr) const { return (who && m_comboTarget != who) ? 0 : m_comboPoints; }
+-    [[nodiscard]] uint8 GetComboPoints(ObjectGuid const& guid) const { return (m_comboTarget && m_comboTarget->GetGUID() == guid) ? m_comboPoints : 0; }
++    [[nodiscard]] bool HasMartialFluidity() const;
++    [[nodiscard]] uint8 GetMartialComboPoints() const { return m_martialComboPoints; }
++    void SetMartialComboPoints(uint8 points);
++    [[nodiscard]] uint8 GetTargetComboPoints(Unit const* who = nullptr) const { return (who && m_comboTarget != who) ? 0 : m_comboPoints; }
++    [[nodiscard]] uint8 GetComboPoints(Unit const* who = nullptr) const { return HasMartialFluidity() ? m_martialComboPoints : GetTargetComboPoints(who); }
++    [[nodiscard]] uint8 GetComboPoints(ObjectGuid const& guid) const { return HasMartialFluidity() ? m_martialComboPoints : (m_comboTarget && m_comboTarget->GetGUID() == guid) ? m_comboPoints : 0; }
+     [[nodiscard]] Unit* GetComboTarget() const { return m_comboTarget; }
+     [[nodiscard]] ObjectGuid const GetComboTargetGUID() const { return m_comboTarget ? m_comboTarget->GetGUID() : ObjectGuid::Empty; }
+ 
++    void AddTargetComboPoints(Unit* target, int8 count);
++    void ClearTargetComboPoints();
+     void AddComboPoints(Unit* target, int8 count);
+     void AddComboPoints(int8 count) { AddComboPoints(nullptr, count); }
+     void ClearComboPoints();
+@@ -2245,6 +2251,7 @@
+ 
+     Unit* m_comboTarget;
+     int8 m_comboPoints;
++    uint8 m_martialComboPoints = 0;
+     std::unordered_set<Unit*> m_ComboPointHolders;
+ 
+     bool m_cleanupDone; // lock made to not add stuff after cleanup before delete
+--- a/src/server/game/Entities/Unit/Unit.cpp
++++ b/src/server/game/Entities/Unit/Unit.cpp
+@@ -68,6 +68,9 @@
+ #include "PetAI.h"
+ #include "PetPackets.h"
+ #include "Player.h"
++// HERO_MARTIAL_FLUIDITY_V1
++extern bool HeroMartialFluidityEnabled(Unit const*);
++extern void HeroMartialFluiditySend(Unit*);
+ #include "ReputationMgr.h"
+ #include "ScriptMgr.h"
+ #include "SharedDefines.h"
+@@ -12202,7 +12205,7 @@
+         m_cleanupDone = true;
+ 
+     CombatStop();
+-    ClearComboPoints();
++    ClearTargetComboPoints();
+     ClearComboPointHolders();
+     GetMotionMaster()->Clear(false);                    // remove different non-standard movement generators.
+ }
+@@ -12416,7 +12419,7 @@
+                 {
+                     if (IsClass(CLASS_WARRIOR, CLASS_CONTEXT_ABILITY_REACTIVE))
+                     {
+-                        AddComboPoints(target, 1);
++                        AddTargetComboPoints(target, 1);
+                         StartReactiveTimer(REACTIVE_OVERPOWER);
+                     }
+                 }
+@@ -12814,7 +12817,17 @@
+     SetDisplayId(GetNativeDisplayId());
+ }
+ 
+-void Unit::AddComboPoints(Unit* target, int8 count)
++bool Unit::HasMartialFluidity() const { return HeroMartialFluidityEnabled(this); }
++void Unit::SetMartialComboPoints(uint8 points) {
++    m_martialComboPoints = std::min<uint8>(points, 5);
++    SendComboPoints();
++}
++void Unit::AddComboPoints(Unit* target, int8 count) {
++    if (!HasMartialFluidity()) { AddTargetComboPoints(target, count); return; }
++    if (!count) return;
++    SetMartialComboPoints(uint8(std::max(0, std::min(5, int(m_martialComboPoints) + int(count)))));
++}
++void Unit::AddTargetComboPoints(Unit* target, int8 count)
+ {
+     if (!count)
+     {
+@@ -12840,7 +12853,12 @@
+     SendComboPoints();
+ }
+ 
+-void Unit::ClearComboPoints()
++void Unit::ClearComboPoints() {
++    if (!HasMartialFluidity()) { ClearTargetComboPoints(); return; }
++    RemoveAurasByType(SPELL_AURA_RETAIN_COMBO_POINTS);
++    SetMartialComboPoints(0);
++}
++void Unit::ClearTargetComboPoints()
+ {
+     if (!m_comboTarget)
+     {
+@@ -12849,7 +12867,7 @@
+ 
+     // remove Premed-like effects
+     // (NB: this Aura retains the CP while it's active - now that CP have reset, it shouldn't be there anymore)
+-    RemoveAurasByType(SPELL_AURA_RETAIN_COMBO_POINTS);
++    if (!HasMartialFluidity()) RemoveAurasByType(SPELL_AURA_RETAIN_COMBO_POINTS);
+ 
+     m_comboPoints = 0;
+     SendComboPoints();
+@@ -12864,6 +12882,7 @@
+         return;
+     }
+ 
++    HeroMartialFluiditySend(this);
+     PackedGuid const packGUID = m_comboTarget ? m_comboTarget->GetPackGUID() : PackedGuid();
+     if (Player* playerMe = ToPlayer())
+     {
+@@ -12899,7 +12918,7 @@
+ {
+     while (!m_ComboPointHolders.empty())
+     {
+-        (*m_ComboPointHolders.begin())->ClearComboPoints(); // this also removes it from m_comboPointHolders
++        (*m_ComboPointHolders.begin())->ClearTargetComboPoints(); // this also removes it from m_comboPointHolders
+     }
+ }
+ 
+@@ -12913,7 +12932,7 @@
+     if (IsClass(CLASS_HUNTER, CLASS_CONTEXT_ABILITY_REACTIVE) && HasAuraState(AURA_STATE_HUNTER_PARRY))
+         ModifyAuraState(AURA_STATE_HUNTER_PARRY, false);
+     if (IsClass(CLASS_WARRIOR, CLASS_CONTEXT_ABILITY_REACTIVE) && IsPlayer())
+-        ClearComboPoints();
++        ClearTargetComboPoints();
+ }
+ 
+ void Unit::UpdateReactives(uint32 p_time)
+@@ -12942,7 +12961,7 @@
+                 case REACTIVE_OVERPOWER:
+                     if (IsClass(CLASS_WARRIOR, CLASS_CONTEXT_ABILITY_REACTIVE))
+                     {
+-                        ClearComboPoints();
++                        ClearTargetComboPoints();
+                     }
+                     break;
+                 case REACTIVE_WOLVERINE_BITE:
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -1776,7 +1776,7 @@
+         StopCastingCharm();
+         StopCastingBindSight();
+         UnsummonPetTemporaryIfAny();
+-        ClearComboPoints(); // pussywizard: crashfix
++        ClearTargetComboPoints(); // Target references only; shared points survive zoning/logout.
+         ClearComboPointHolders(); // pussywizard: crashfix
+         if (ObjectGuid lguid = GetLootGUID()) // pussywizard: crashfix
+             m_session->DoLootRelease(lguid);
+@@ -6733,20 +6733,20 @@
+     // cleanup combo points
+     if (GetComboTarget() == duel->Opponent)
+     {
+-        ClearComboPoints();
++        ClearTargetComboPoints();
+     }
+     else if (GetComboTargetGUID() == duel->Opponent->GetPetGUID())
+     {
+-        ClearComboPoints();
++        ClearTargetComboPoints();
+     }
+ 
+     if (duel->Opponent->GetComboTarget() == this)
+     {
+-        duel->Opponent->ClearComboPoints();
++        duel->Opponent->ClearTargetComboPoints();
+     }
+     else if (duel->Opponent->GetComboTargetGUID() == GetPetGUID())
+     {
+-        duel->Opponent->ClearComboPoints();
++        duel->Opponent->ClearTargetComboPoints();
+     }
+ 
+     //cleanups
+--- a/src/server/game/Spells/Spell.cpp
++++ b/src/server/game/Spells/Spell.cpp
+@@ -4430,7 +4430,8 @@
+     // Take for real after all targets are processed
+     if (m_needComboPoints)
+     {
+-        unitCaster->ClearComboPoints();
++        if (m_spellInfo->GetFirstRankSpell()->Id == 7384) unitCaster->ClearTargetComboPoints();
++        else unitCaster->ClearComboPoints();
+     }
+ 
+     // Real add combo points from effects
+@@ -7078,7 +7079,7 @@
+     {
+         if (m_spellInfo->NeedsExplicitUnitTarget())
+         {
+-            if (!unitCaster || !unitCaster->GetComboPoints(m_targets.GetUnitTarget()))
++            if (!unitCaster || !(m_spellInfo->GetFirstRankSpell()->Id == 7384 ? unitCaster->GetTargetComboPoints(m_targets.GetUnitTarget()) : unitCaster->GetComboPoints(m_targets.GetUnitTarget())))
+             {
+                 return SPELL_FAILED_NO_COMBO_POINTS;
+             }
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -23,6 +23,7 @@
+ #include "CommitRules.h"
+ #include "AdditionalResources.h"
+ #include "SharedProgression.h"
++#include "MartialFluidity.h"
+ #include "EquipmentPolicy.h"
+ #include "GrantRules.h"
+ #include "SpellMgr.h"
+@@ -615,6 +616,7 @@
+ 
+         auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);if (snapshot.phase<0) { Reply(p,snapshot.phase==-1?"LEGACY_CLASSIC":"ERROR");return; }
+         bool ok=HeroDKStart::Ensure(p)&&Sync(p,snapshot);
++        if(ok)HeroMartialFluidityLogin(p);
+         LOG_INFO("server.loading","HERO_STARTING_PATH stage=login guid={} phase={} baseline_verified={}",p->GetGUID().GetCounter(),snapshot.phase,ok);
+         Reply(p,ok?Label(snapshot.phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");
+     }
+@@ -633,6 +635,7 @@
+     PathWorld():WorldScript("HeroStartingPathWorld",{WORLDHOOK_ON_STARTUP}){}
+     void OnStartup() override {
+         HeroSharedProgressionLoad();
++        HeroMartialFluidityLoad();
+         HeroDKValidateScaling();
+         MoreMinionsSetAuthorization(HeroMinionAccess);
+         if(HeroDKStartCoreHookVersion()!=1||!CharacterDatabase.Query("SELECT COUNT(*) FROM hero_dk_start")){LOG_ERROR("server.loading","HERO_DK_START schema/core hook missing");return;}
+@@ -650,7 +653,7 @@
+     }
+ };
+ }
+-void Addmod_hero_starting_pathScripts() { new PathPlayer();new PathCommands();new PathWorld();new HeroTrainer::Gate();new HeroTrainer::Commands();AddHeroTalentEffectsScripts();AddHeroResourceScripts(); }
++void Addmod_hero_starting_pathScripts() { new PathPlayer();new PathCommands();new PathWorld();new HeroTrainer::Gate();new HeroTrainer::Commands();AddHeroTalentEffectsScripts();AddHeroResourceScripts();AddHeroMartialFluidityScripts(); }
+ 
+ // Shared authorization for the installed projectile module. Classic is unchanged.
+ // Load only spells authorized by the persisted build; no HasSpell dependency
