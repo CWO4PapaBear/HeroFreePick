@@ -52,6 +52,14 @@ function SpellBook_GetSpellID(button)
  local pos=button+SPELLS_PER_PAGE*((SPELLBOOK_PAGENUMBERS[index]or 1)-1)
  return t.slots[pos]or MAX_SPELLS+1,pos
 end
+-- Stock refreshes rewrite SpellBookSkillLineTab1..8. Keep our display on
+-- separate buttons so native update/event ordering cannot replace their data.
+local treeButtons={}
+for i=1,8 do
+ local b=CreateFrame('CheckButton','HeroSpellbookTreeTab'..i,SpellBookFrame,'SpellBookSkillLineTabTemplate')
+ b:SetPoint('TOPLEFT',_G['SpellBookSkillLineTab'..i],'TOPLEFT',0,0)
+ b:Hide();treeButtons[i]=b
+end
 local pager=CreateFrame('Frame','HeroSpellbookTabPager',SpellBookFrame)
 pager:SetSize(120,44);pager:SetPoint('TOPLEFT',SpellBookSkillLineTab8,'BOTTOMLEFT',0,-4);pager:Hide()
 local pageText=pager:CreateFontString(nil,'OVERLAY','GameFontNormalSmall')
@@ -61,28 +69,33 @@ prevTabs:SetSize(56,22);prevTabs:SetPoint('TOPLEFT',pager,'TOPLEFT',0,-17);prevT
 local nextTabs=CreateFrame('Button','HeroSpellbookNextTabs',pager,'UIPanelButtonTemplate')
 nextTabs:SetSize(56,22);nextTabs:SetPoint('LEFT',prevTabs,'RIGHT',4,0);nextTabs:SetText('Next >')
 local function buttons()
- if not custom()then pager:Hide();return end
+ if not custom()then
+  pager:Hide();for _,b in ipairs(treeButtons)do b:Hide()end;return
+ end
  for i=1,8 do
-  local button=_G['SpellBookSkillLineTab'..i];local index=tabPage*8+i;local t=tabs[index]
+  _G['SpellBookSkillLineTab'..i]:Hide()
+  local button=treeButtons[i];local index=tabPage*8+i;local t=tabs[index]
   if t then button:SetNormalTexture(t.icon);button.tooltip=t.name;button:SetChecked(SpellBookFrame.selectedSkillLine==index);button:Show()else button:Hide()end
  end
+ pager:Show();pageText:SetText('Trees '..(tabPage+1)..' / '..math.ceil(#tabs/8))
  if #tabs>8 then
-  pager:Show();pageText:SetText('Trees '..(tabPage+1)..' / '..math.ceil(#tabs/8))
+  prevTabs:Show();nextTabs:Show()
   if tabPage>0 then prevTabs:Enable()else prevTabs:Disable()end
   if (tabPage+1)*8<#tabs then nextTabs:Enable()else nextTabs:Disable()end
- else pager:Hide()end
+ else prevTabs:Hide();nextTabs:Hide()end
  ShowAllSpellRanksCheckBox:Show()
 end
 prevTabs:SetScript('OnClick',function()tabPage=math.max(0,tabPage-1);buttons()end)
 nextTabs:SetScript('OnClick',function()tabPage=math.min(math.ceil(#tabs/8)-1,tabPage+1);buttons()end)
 for i=1,8 do
- local button=_G['SpellBookSkillLineTab'..i];local original=button:GetScript('OnClick');local index=i
+ local button=treeButtons[i];local index=i
  button:SetScript('OnClick',function(self,...)
   if custom()then local id=tabPage*8+index;if tabs[id]then SpellBookSkillLineTab_OnClick(self,id);UpdateSpells()end
-  elseif original then original(self,...)end
+  end
  end)
 end
 hooksecurefunc('SpellBookFrame_Update',buttons)
+hooksecurefunc('SpellBookFrame_UpdatePages',buttons)
 local events=CreateFrame('Frame');events:RegisterEvent('SPELLS_CHANGED');events:RegisterEvent('PLAYER_ENTERING_WORLD');events:RegisterEvent('CVAR_UPDATE');events:RegisterEvent('CHAT_MSG_SYSTEM')
 events:SetScript('OnEvent',function(_,event,message)if event~='CHAT_MSG_SYSTEM'or type(message)=='string'and (message:match('^HF_BUILD END')or message:match('^HF_MODE STATE'))then dirty=true end end)
 SpellBookFrame:HookScript('OnShow',function()dirty=true end)
@@ -96,7 +109,16 @@ events:SetScript('OnUpdate',function(_,dt)
  if dirty and SpellBookFrame:IsShown()and SpellBookFrame.bookType==BOOKTYPE_SPELL then
   rebuild();SpellBookSkillLineTab_OnClick(nil,SpellBookFrame.selectedSkillLine);UpdateSpells();buttons()
  end
+ -- Reconcile only the visible controls after native event-driven refreshes.
+ -- Rebuilding the spell lists remains event driven.
+ if SpellBookFrame:IsShown()then buttons()end
 end)
+SLASH_HEROSPELLBOOK1='/hfspellbook'
+SlashCmdList.HEROSPELLBOOK=function()
+ local slots=0;for _,t in ipairs(tabs)do slots=slots+#t.slots end
+ DEFAULT_CHAT_FRAME:AddMessage('Hero spellbook v0.3: mode='..tostring(A.mode)..', active='..tostring(custom())..', native tabs='..GetNumSpellTabs()..', tree tabs='..#tabs..', shown spells='..slots..', page='..(tabPage+1))
+ for i,t in ipairs(tabs)do DEFAULT_CHAT_FRAME:AddMessage(i..'. '..t.name..' ('..#t.slots..')')end
+end
 -- Onboarding must wait for server-confirmed build state, not temporary mode previews.
 local prompt=A.PromptFirstAbilities
 local queued,lastPrompt=false,-100

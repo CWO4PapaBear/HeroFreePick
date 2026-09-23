@@ -6,7 +6,7 @@ from lupa.lua51 import LuaRuntime
 root = Path(__file__).resolve().parents[1] / 'profiles/HeroHybridSpellbook'
 lua = LuaRuntime()
 lua.execute('''
-frames={}; hooks={}; _G=_G or {}; local methods={}
+frames={}; hooks={}; SlashCmdList={}; _G=_G or {}; local methods={}
 function methods:SetScript(k,v)self.scripts[k]=v end
 function methods:GetScript(k)return self.scripts[k]end
 function methods:HookScript(k,v)self.scripts[k]=v end
@@ -17,6 +17,7 @@ function methods:Enable()self.enabled=true end
 function methods:Disable()self.enabled=false end
 function methods:SetText(t)self.text=t end
 function methods:SetChecked(v)self.checked=v end
+function methods:SetNormalTexture(v)self.texture=v end
 local function obj()return setmetatable({scripts={},shown=true},{__index=function(t,k)
  if methods[k]then return methods[k]end
  if k:match('^Set')or k:match('^Register')then return function()end end
@@ -37,7 +38,10 @@ function GetSpellTabInfo()return 'General','icon',0,#ids,0,#ids end
 function GetCVarBool()return allRanks end
 function GetKnownSlotFromHighestRankSlot(i)return i end
 function GetSpellLink(i)return '|Hspell:'..ids[i]..'|h'end
-function SpellBookFrame_Update()if hooks.SpellBookFrame_Update then hooks.SpellBookFrame_Update()end end
+function SpellBookFrame_Update()
+ for i=1,8 do local b=_G['SpellBookSkillLineTab'..i];b:SetNormalTexture('native');b.tooltip='native';b:Show()end
+ if hooks.SpellBookFrame_Update then hooks.SpellBookFrame_Update()end
+end
 function SpellBookSkillLineTab_OnClick(_,i)SpellBookFrame.selectedSkillLine=i;SpellBookFrame_Update()end
 function UpdateSpells()end
 ''')
@@ -61,7 +65,7 @@ assert(HeroSpellbookTabPager.shown and HeroSpellbookTabPager.label.text=='Trees 
 local seen={}
 for page=1,4 do
  for i=1,8 do
-  local button=_G['SpellBookSkillLineTab'..i]
+  local button=_G['HeroSpellbookTreeTab'..i]
   if button.shown then
    button.scripts.OnClick(button)
    local slot=SpellBook_GetSpellID(1)
@@ -73,15 +77,27 @@ for page=1,4 do
 end
 for i=1,31 do assert(seen[i],'Lost native slot '..i)end
 assert(not HeroSpellbookNextTabs.enabled)
+-- Stock refreshes must not overwrite custom button icons, selection or slots.
+local selected=SpellBookFrame.selectedSkillLine;local slot=SpellBook_GetSpellID(1)
+for n=1,3 do
+ SpellBookFrame_Update()
+ assert(SpellBookFrame.selectedSkillLine==selected and SpellBook_GetSpellID(1)==slot)
+ for i=1,8 do assert(not _G['SpellBookSkillLineTab'..i].shown)end
+ assert(HeroSpellbookTreeTab1.shown and HeroSpellbookTreeTab1.texture~='native')
+end
+-- A later native-only repaint is reconciled without rebuilding the tree page.
+SpellBookSkillLineTab1:Show();events.scripts.OnUpdate(events,.3)
+assert(not SpellBookSkillLineTab1.shown and HeroSpellbookTabPager.label.text=='Trees 4 / 4')
 refresh();assert(HeroSpellbookTabPager.label.text=='Trees 4 / 4')
 HeroSpellbookPreviousTabs.scripts.OnClick();assert(HeroSpellbookTabPager.label.text=='Trees 3 / 4')
 -- Hidden-rank mode still uses real native slots.
 allRanks=false;refresh();assert(HeroSpellbookTabPager.label.text=='Trees 3 / 4')
 -- Shrinking learned build clamps the page and selection safely.
-ids={999999};refresh();assert(not HeroSpellbookTabPager.shown and SpellBook_GetSpellID(1)==1)
+ids={999999};refresh();assert(HeroSpellbookTabPager.shown and not HeroSpellbookNextTabs.shown and SpellBook_GetSpellID(1)==1)
 SpellBookFrame.bookType='pet';SpellBookFrame_Update();assert(SpellBook_GetTabInfo(1)=='native')
 HeroFreePick.mode='Classic';SpellBookFrame.bookType='spell';SpellBookFrame_Update()
 assert(not HeroSpellbookTabPager.shown and SpellBook_GetTabInfo(1)=='native')
 ''')
-print('PASS: 31 tabs across four pages; every native slot reachable exactly once; page persistence, rank mode, shrink, pet and Classic fallback.')
+print('PASS: 31 tabs across four pages; native refresh isolation, every native slot reachable exactly once, page persistence, rank mode, shrink, pet and Classic fallback.')
+
 

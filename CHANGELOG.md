@@ -1,3 +1,9 @@
+## Development - spellbook refresh isolation
+
+- Use dedicated tree-tab buttons inside the normal spellbook so stock refreshes cannot replace their icons and tab identities. Reconcile visible controls after refreshes and retain the selected tree/page.
+- Always show the tree-page counter in custom mode. Add /hfspellbook for concise runtime mode, tab and spell counts when diagnosing client behavior.
+- Regression checks now simulate repeated native refreshes and delayed stock tab repainting. In-game confirmation pending.
+
 ## Development - PTR portrait repair
 
 - Restore portrait control loading, saved player/target locks and positions, pet right-click menus, narrower resource bars and stock DK rune hiding. Preserve pet happiness and keep spellbook changes separate.
