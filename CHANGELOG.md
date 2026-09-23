@@ -1,3 +1,8 @@
+## Development - tap Shift tooltip details
+
+- Hero Advancement expanded tooltips now toggle on a Shift press rather than requiring the key to remain held. Applies to ability/talent, Mastery and Primary Stat views; updated hints say Tap SHIFT. Other interfaces keep their normal Shift behavior.
+- Lua 5.1 regression checks pass. Client installer staged; in-game acceptance and launcher publication pending.
+
 ## Development - portrait menu and drag follow-up
 
 - Correct primary pet/player secure menu setup to the native 3.3.5 menu action. Add player portrait/resource drag surfaces and target/focus bar dragging with per-character lock and position persistence.
