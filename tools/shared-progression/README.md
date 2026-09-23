@@ -20,7 +20,7 @@ Retain the previous image, source hashes and compose configuration. Avoid rewrit
 
 ## Status
 
-Implementation staged against baseline-20260923-171827-442281. Production helper compiled against isolated core doubles and passed mode/level eligibility, racial offsets, exact curve, idempotent refresh, no-refill, clamp, dead-character, disabled-policy and missing-race checks. Full PTR compile passed (image sha256:5afd1070972d92e8e0ff1348787a3616dca8b8e8eec7c9281d3b308bf2d04eb3); source restored without errors. Activation requested; not yet verified. Actual activation source restoration passed forward/rollback, added-file removal, drift refusal and corrupt-backup refusal checks. These local checks do not replace a full core build or gameplay testing. No client update is required.
+Implementation staged against baseline-20260923-171827-442281. Production helper compiled against isolated core doubles and passed mode/level eligibility, racial offsets, exact curve, idempotent refresh, no-refill, clamp, dead-character, disabled-policy and missing-race checks. Full PTR compile passed (image sha256:5afd1070972d92e8e0ff1348787a3616dca8b8e8eec7c9281d3b308bf2d04eb3); source restored without errors. PTR activation verified September 23, 2026: activation.json records the reviewed image as active and startup.log contains the shared-progression readiness marker. Previous image retained. Gameplay/balance acceptance remains pending. Actual activation source restoration passed forward/rollback, added-file removal, drift refusal and corrupt-backup refusal checks. These local checks do not replace a full core build or gameplay testing. No client update is required.
 
 ## Activation and rollback (WSL)
 
