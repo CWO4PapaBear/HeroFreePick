@@ -1,3 +1,8 @@
+## 2026-09-23 — Starter spell supplies and healing tooltip review
+
+- Activate ability-based initial totems, ammunition and allowlisted reagents for custom modes; persistent no-refill ledger, inventory/bank checks and full-bag retry. Classic unchanged.
+- Stage/install twelve labelled base-value healing tooltip resolutions from fresh PTR definitions; unknown formulas remain yellow. Owner visual review pending; launcher remains 0.2.5-test.1.
+
 ## 2026-09-23 — Server tooltip review skill
 
 - Document current PTR databases, repositories, effective spell resolution, healing formulas, unresolved-value policy and safe client delivery. Healing tooltip audit is in progress; no new tooltip values are published by this documentation change.

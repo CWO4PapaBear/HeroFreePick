@@ -1,0 +1,27 @@
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -24,6 +24,8 @@
+ #include "AdditionalResources.h"
+ #include "SharedProgression.h"
+ #include "MartialFluidity.h"
++void HeroStarterSpellItemsLoad();
++void HeroStarterSpellItemsGrant(Player*);
+ #include "EquipmentPolicy.h"
+ #include "GrantRules.h"
+ #include "SpellMgr.h"
+@@ -373,6 +375,7 @@
+   save->Append("INSERT INTO hero_talent_reset_history (guid,revision,reset_at,paid,points,cost) VALUES ({},{},{},{},{},{})",p->GetGUID().GetCounter(),revision+1,uint64(std::time(nullptr)),fee.cost?1:0,fee.points,fee.cost);
+  }
+  if(ReadHybrid(p).pending)save->Append("UPDATE hero_hybrid_choice SET migration_pending=0 WHERE guid={}",p->GetGUID().GetCounter());
++ if(snapshot.phase==2)HeroStarterSpellItemsGrant(p);
+  p->SaveToDB(save,false,false);bool saved=Commit(save);if(!saved&&fee.cost)p->ModifyMoney(int32(fee.cost));if(saved){HeroTalentPublishPrimary(p,selectedPrimary);HeroPrimaryUpdate(p);}return saved;
+ }
+ bool BuildStatus(ChatHandler* h){
+@@ -636,6 +639,7 @@
+     void OnStartup() override {
+         HeroSharedProgressionLoad();
+         HeroMartialFluidityLoad();
++        HeroStarterSpellItemsLoad();
+         HeroDKValidateScaling();
+         MoreMinionsSetAuthorization(HeroMinionAccess);
+         if(HeroDKStartCoreHookVersion()!=1||!CharacterDatabase.Query("SELECT COUNT(*) FROM hero_dk_start")){LOG_ERROR("server.loading","HERO_DK_START schema/core hook missing");return;}
