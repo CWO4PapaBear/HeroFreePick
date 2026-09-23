@@ -1,3 +1,7 @@
+## Staged server spell tooltip resolution
+
+Audited 2,955 descriptions; resolved 110 of 175 affected spell/rank descriptions from exported PTR fields and supported formulas. Serpent Sting displays its 15-second total using current ranged attack power. The remaining 65 descriptions stay yellow. Existing implementation warnings and Classic behavior are preserved. Client-only installer and renderer checks passed; in-game review and launcher publication pending.
+
 ## Staged tooltip cleanup
 
 Hero Advancement now keeps IDs, Mastery inclusion and click controls in tap-Shift details. Removed stale blanket commit-unavailable text and internal browse provenance; genuine implementation warnings remain. Tooltip sentences have paragraph spacing. Lua 5.1 and renderer checks pass; in-game visual review and launcher publication pending.
