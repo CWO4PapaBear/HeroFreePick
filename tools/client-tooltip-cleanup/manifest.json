@@ -1,0 +1,22 @@
+{
+  "HeroClassPlusCommitTest/PrimaryStats.lua": {
+    "before": "19387f8060e06177d2d43eb95ca7b93835abc0888ce1d7d1fc3541b1efcb8658",
+    "after": "3b11b38b1a6907b43d4d90d6d4e600f7ae5c197db38458dab973b7008d2f9e69"
+  },
+  "HeroFreePick/HeroFreePick.lua": {
+    "before": "8e457547406aae8e18ca660b76d7124f46ca889095935b31e53c48f495fe3e2d",
+    "after": "7302d3ff06702d5b57bffb39ee7b92087df1890c4ffac0574428448e9e6cd748"
+  },
+  "HeroFreePick/HeroFreePick.toc": {
+    "before": "75e02c9d3d9515cd5d5360df7f886e2efab11771e218876dc044707c6e83f33f",
+    "after": "082480f3db92e4a591b4afb758d86cf73c12f289166d9d2dc8f1eb8eb71f12a1"
+  },
+  "HeroFreePick/TooltipPresentation.lua": {
+    "before": null,
+    "after": "be0f75a4703ae127921b3511b80e1ec6ce6ffa3f6c38e6a9df10f4d3198305a7"
+  },
+  "HeroFreePick/TooltipToggle.lua": {
+    "before": "80cd139db80b9eb7af9087227872d00d60e210693cab0adcc96e0df8da806bd8",
+    "after": "80cd139db80b9eb7af9087227872d00d60e210693cab0adcc96e0df8da806bd8"
+  }
+}

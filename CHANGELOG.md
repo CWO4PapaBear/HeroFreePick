@@ -1,3 +1,7 @@
+## Staged tooltip cleanup
+
+Hero Advancement now keeps IDs, Mastery inclusion and click controls in tap-Shift details. Removed stale blanket commit-unavailable text and internal browse provenance; genuine implementation warnings remain. Tooltip sentences have paragraph spacing. Lua 5.1 and renderer checks pass; in-game visual review and launcher publication pending.
+
 ## Development - tap Shift tooltip details
 
 - Hero Advancement expanded tooltips now toggle on a Shift press rather than requiring the key to remain held. Applies to ability/talent, Mastery and Primary Stat views; updated hints say Tap SHIFT. Other interfaces keep their normal Shift behavior.
