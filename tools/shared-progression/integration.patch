@@ -1,0 +1,64 @@
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -23,6 +23,8 @@
+ 
+ extern bool HeroResourcesNeedsRunes(Player const*);
+ extern unsigned HeroResourceManaClass(Player const*);
++// HERO_SHARED_PROGRESSION_V1
++extern bool HeroSharedProgressionApply(Player const*, unsigned, PlayerLevelInfo&, PlayerClassLevelInfo&);
+ // HERO_DK_START_V1
+ extern bool HeroDKUsesCustomStart(Player const*);
+ unsigned HeroDKStartCoreHookVersion(){return 1;}
+@@ -2506,6 +2508,8 @@
+     sObjectMgr->GetPlayerClassLevelInfo(getClass(), level, &classInfo);
+     if(HeroResourceManaClass(this)!=getClass()){PlayerClassLevelInfo manaInfo{};sObjectMgr->GetPlayerClassLevelInfo(HeroResourceManaClass(this), level, &manaInfo);classInfo.basemana=manaInfo.basemana;}
+ 
++    HeroSharedProgressionApply(this, level, info, classInfo);
++
+     WorldPackets::Misc::LevelUpInfo packet;
+     packet.Level = level;
+     packet.HealthDelta = int32(classInfo.basehealth) - int32(GetCreateHealth());
+@@ -2632,6 +2636,7 @@
+ 
+     PlayerLevelInfo info;
+     sObjectMgr->GetPlayerLevelInfo(getRace(true), getClass(), GetLevel(), &info);
++    HeroSharedProgressionApply(this, GetLevel(), info, classInfo);
+ 
+     uint32 maxPlayerLevel = sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL);
+     sScriptMgr->OnPlayerSetMaxLevel(this, maxPlayerLevel);
+--- a/modules/mod-hero-starting-path/src/AdditionalResources.cpp
++++ b/modules/mod-hero-starting-path/src/AdditionalResources.cpp
+@@ -1,4 +1,5 @@
+ #include "AdditionalResources.h"
++#include "SharedProgression.h"
+ #include "EquipmentPolicy.h"
+ #include "Player.h"
+ #include "PlayerScript.h"
+@@ -24,7 +25,8 @@
+ }
+ void HeroResourcesRefresh(Player* p){
+  auto s=Get(p);if(!s.mask)return;
+- if(s.mana){PlayerClassLevelInfo info{};sObjectMgr->GetPlayerClassLevelInfo(s.mana,p->GetLevel(),&info);p->SetCreateMana(info.basemana);p->UpdateMaxPower(POWER_MANA);p->UpdateManaRegen();}
++ bool shared = HeroSharedProgressionRefresh(p);
++ if(s.mana && !shared){PlayerClassLevelInfo info{};sObjectMgr->GetPlayerClassLevelInfo(s.mana,p->GetLevel(),&info);p->SetCreateMana(info.basemana);p->UpdateMaxPower(POWER_MANA);p->UpdateManaRegen();}
+  for(auto power:{POWER_RAGE,POWER_ENERGY,POWER_RUNIC_POWER})if(s.mask&(1u<<unsigned(power)))p->UpdateMaxPower(power);
+  if((s.mask&256)&&!p->HasHeroRuneData())p->InitRunes();
+ }
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -22,6 +22,7 @@
+ extern unsigned HeroDKStartCoreHookVersion();
+ #include "CommitRules.h"
+ #include "AdditionalResources.h"
++#include "SharedProgression.h"
+ #include "EquipmentPolicy.h"
+ #include "GrantRules.h"
+ #include "SpellMgr.h"
+@@ -631,6 +632,7 @@
+ public:
+     PathWorld():WorldScript("HeroStartingPathWorld",{WORLDHOOK_ON_STARTUP}){}
+     void OnStartup() override {
++        HeroSharedProgressionLoad();
+         HeroDKValidateScaling();
+         MoreMinionsSetAuthorization(HeroMinionAccess);
+         if(HeroDKStartCoreHookVersion()!=1||!CharacterDatabase.Query("SELECT COUNT(*) FROM hero_dk_start")){LOG_ERROR("server.loading","HERO_DK_START schema/core hook missing");return;}

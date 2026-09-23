@@ -1,0 +1,26 @@
+{
+  "modules/mod-hero-starting-path/src/SharedProgressionCurve.h": {
+    "before": null,
+    "after": "03e6bbdac89ed60e743d29a45f0d4570bf7c9426ae993256b325c303ec510d3b"
+  },
+  "modules/mod-hero-starting-path/src/SharedProgression.cpp": {
+    "before": null,
+    "after": "c4d6eff169d94239dc97d2f393a92d52c4623c4e898319d2f3020af4075f5352"
+  },
+  "modules/mod-hero-starting-path/src/SharedProgression.h": {
+    "before": null,
+    "after": "9541d2aa190754a4f460359f3f82cba5f4c1ccf822e52b03521b20ab1b0618b3"
+  },
+  "src/server/game/Entities/Player/Player.cpp": {
+    "before": "efeea0b301a8f8dede1fac46aa95014e5f83547d291ad0192b25755a9e382348",
+    "after": "649bf5ecd989c525f135e7b1856064e6aa4531962e807668aac4c4d7f4a4f767"
+  },
+  "modules/mod-hero-starting-path/src/AdditionalResources.cpp": {
+    "before": "2cc298448ca82ab05cbd8b7090dd1a67e940afaecb73325099e0761c4960abb1",
+    "after": "1656dcd1b9a4b634c5437d1fbc81f90209293f8f7a93d56ecc00da06a6ee658f"
+  },
+  "modules/mod-hero-starting-path/src/StartingPath.cpp": {
+    "before": "20780e270d06e5ef82cdb4ef5904adc8a4f066ba247ac0c23345e121407f8ed4",
+    "after": "987a6950eb1c352808f977889acdf4874237d7752e6563f6c7cf47b248f74882"
+  }
+}

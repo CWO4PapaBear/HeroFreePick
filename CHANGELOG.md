@@ -1,3 +1,9 @@
+## Experimental PTR shared Hero/Hybrid progression — rollback candidate
+
+Hero from level 1 and Hybrid from level 10 use a shared base stat curve: every attribute is 20 + level, retaining racial offsets and existing bonuses. Base health/mana reaches 115/190 at level 10 and 7350/4050 at level 80, with accelerated growth after level 50. Existing characters recalculate on login; resource refresh does not refill pools or restore old class mana. Classic and Class+ retain existing class allocation.
+
+This is a key balance experiment. Roll back if survivability, mana availability or percentage-of-base-mana spell costs test poorly. Prior image/source retained; no class-table migration, client patch or character-progress reset. Local compiled policy checks, full PTR compile and rollback source-restoration checks passed; activation and gameplay verification are pending. See tools/shared-progression.
+
 ## Staged Beast-only happiness UI
 
 Hide happiness/diet controls for non-Beast companions. Stable current-pet fallback uses the live portrait rather than a whistle. Display tests passed; stable transactions remain unresolved. Local installation and launcher publication pending.
