@@ -6,10 +6,14 @@ The patch checks held starter ownership during saved-spell loading. Confirmed un
 
 The export also reported a missing obsolete BuildCatalog.h; current generated catalog reference is available in the preceding equipment baseline. The two modified source files were freshly exported from the active equipment image.
 
-Compiled tests exercise the actual new policy function. Full PTR compilation and in-game validation are pending. Build-Test.py verifies baseline hashes, builds a separate image and restores source; it does not restart or modify the database. Activation will require a restart. No client update is required. During subsequent logins, the normal server cleanup removes obsolete saved starter rows; no bulk database migration is staged.
+Compiled tests exercise the actual new policy function. Full PTR compilation passed and original source restoration completed without errors. Activation and in-game validation are pending. Build-Test.py verifies baseline hashes, builds a separate image and restores source; it does not restart or modify the database. Activation will require a restart. No client update is required. During subsequent logins, the normal server cleanup removes obsolete saved starter rows; no bulk database migration is staged.
 
 The GitHub package contains the minimal source patch and test fixture, not exported core or private character records. Apply starter-login.patch only to the matching reviewed PTR source; source-manifest.json identifies the required file hashes.
 
 ## Patch notes
 
 Fixed a login path that could reload withheld original-class starter spells and immediately report them as unlearned. Approved purchased spells remain available. Please reconnect twice with a custom-mode character and confirm both the alerts and unwanted starters stay absent, then check that purchased starters and Classic characters remain unaffected.
+
+## Activation
+
+Activate-Test.py --activate --maintenance requires zero online characters, validates the pinned image/source and existing public ports, then checks private startup before restoring public access. Startup failure triggers image/source rollback. Manual rollback uses --rollback --maintenance. Existing player progression and previously reconciled spell rows are retained; this is not a character database restore. No client files change.

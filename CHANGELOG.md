@@ -1,6 +1,6 @@
 ## Staged starter login reconciliation
 
-Check withheld starter ownership before loading saved spells, avoiding obsolete starter spells being loaded and then removed after login. Preserve purchased starters, Classic and uncertain ownership records. Compiled policy checks passed; full server build and activation pending. See tools/starter-login.
+Check withheld starter ownership before loading saved spells, avoiding obsolete starter spells being loaded and then removed after login. Preserve purchased starters, Classic and uncertain ownership records. Compiled policy checks and full server build passed; source restoration was clean. Activation/rollback source checks passed. Activation and in-game validation pending. See tools/starter-login.
 
 ## Staged Hybrid equipment tooltip correction
 
