@@ -1,3 +1,80 @@
+## 2026-09-23 — Martial Fluidity
+
+Custom-mode Vigor unlocks shared combo points. Correct native talent detection and target display after deselection. Reviewed integration and four-file client payload: tools/martial-fluidity.
+
+## Experimental PTR shared Hero/Hybrid progression — rollback candidate
+
+Hero from level 1 and Hybrid from level 10 use a shared base stat curve: every attribute is 20 + level, retaining racial offsets and existing bonuses. Base health/mana reaches 115/190 at level 10 and 7350/4050 at level 80, with accelerated growth after level 50. Existing characters recalculate on login; resource refresh does not refill pools or restore old class mana. Classic and Class+ retain existing class allocation.
+
+This is a key balance experiment. Roll back if survivability, mana availability or percentage-of-base-mana spell costs test poorly. Prior image/source retained; no class-table migration, client patch or character-progress reset. Local compiled policy checks, full PTR compile and rollback source-restoration checks passed; PTR activation verified September 23, 2026 against the deployment record and startup readiness marker. Gameplay/balance verification remains pending. See tools/shared-progression.
+
+## Staged Beast-only happiness UI
+
+Hide happiness/diet controls for non-Beast companions. Stable current-pet fallback uses the live portrait rather than a whistle. Display tests passed; stable transactions remain unresolved. Local installation and launcher publication pending.
+
+## Staged temporary starter skill reward correction
+
+Follow-up to saved starter cleanup: default skill rewards also grant temporary starter spells before login. Check verified ownership before these grants so alerts do not recur on the second login. Compiled repeated-grant tests and full PTR build passed; source restored cleanly. Activation/rollback tooling checked; activation and repeated-login gameplay verification pending.
+
+## Staged starter login reconciliation
+
+Check withheld starter ownership before loading saved spells, avoiding obsolete starter spells being loaded and then removed after login. Preserve purchased starters, Classic and uncertain ownership records. Compiled policy checks and full server build passed; source restoration was clean. Activation/rollback source checks passed. Activation and in-game validation pending. See tools/starter-login.
+
+## Staged Hybrid equipment tooltip correction
+
+Secondary-class equipment requirements now display as satisfied in native item tooltips using the server-confirmed class pair. Other restrictions remain red; Classic is unchanged. Lua 5.1 and installer checks passed. Local client installation, in-game visual acceptance and launcher publication pending.
+
+## Staged Hybrid equipment union
+
+Hybrid characters gain the weapon and armor proficiencies of both selected classes, with level gates and weapon skill progress preserved. Secondary-class equipment and skill eligibility survive reconnects. Classic remains unchanged. Compiled policy/grant tests and full PTR build passed; source restoration was clean. Activation/rollback tooling is ready and source restoration regression checks pass. PTR activation and gameplay validation remain pending. See tools/hybrid-equipment/README.md.
+
+## Staged light-blue tooltip values
+
+Resolved numbers and percentages now use light blue in Hero Advancement. Yellow warnings remain distinct; Shift details and paragraph spacing are preserved. Client visual review and launcher publication pending.
+
+## Staged server spell tooltip resolution
+
+Audited 2,955 descriptions; resolved 110 of 175 affected spell/rank descriptions from exported PTR fields and supported formulas. Serpent Sting displays its 15-second total using current ranged attack power. The remaining 65 descriptions stay yellow. Existing implementation warnings and Classic behavior are preserved. Client-only installer and renderer checks passed; in-game review and launcher publication pending.
+
+## Staged tooltip cleanup
+
+Hero Advancement now keeps IDs, Mastery inclusion and click controls in tap-Shift details. Removed stale blanket commit-unavailable text and internal browse provenance; genuine implementation warnings remain. Tooltip sentences have paragraph spacing. Lua 5.1 and renderer checks pass; in-game visual review and launcher publication pending.
+
+## Development - tap Shift tooltip details
+
+- Hero Advancement expanded tooltips now toggle on a Shift press rather than requiring the key to remain held. Applies to ability/talent, Mastery and Primary Stat views; updated hints say Tap SHIFT. Other interfaces keep their normal Shift behavior.
+- Lua 5.1 regression checks pass. Client installer staged; in-game acceptance and launcher publication pending.
+
+## Development - portrait menu and drag follow-up
+
+- Correct primary pet/player secure menu setup to the native 3.3.5 menu action. Add player portrait/resource drag surfaces and target/focus bar dragging with per-character lock and position persistence.
+- Client-only patch staged and regression checked. In-game verification and launcher promotion pending.
+
+## Development - shared weapon proficiency
+
+- Display Dual Wield (674) under General in the Hybrid/Hero spellbook, regardless of its Warrior catalogue assignment. It no longer creates a Warrior tree tab by itself. No learned spells or server records change.
+
+## Development - spellbook refresh isolation
+
+- Use dedicated tree-tab buttons inside the normal spellbook so stock refreshes cannot replace their icons and tab identities. Reconcile visible controls after refreshes and retain the selected tree/page.
+- Always show the tree-page counter in custom mode. Add /hfspellbook for concise runtime mode, tab and spell counts when diagnosing client behavior.
+- Regression checks now simulate repeated native refreshes and delayed stock tab repainting. In-game confirmation pending.
+
+## Development - PTR portrait repair
+
+- Restore portrait control loading, saved player/target locks and positions, pet right-click menus, narrower resource bars and stock DK rune hiding. Preserve pet happiness and keep spellbook changes separate.
+- Reviewed client-only overlay includes hash guards, backups and rollback on installation failure. Lua 5.1 and installer regression checks pass; in-game visuals and launcher publication pending.
+
+## Development - expanded spellbook tree pages
+
+- Keep individual learned class/tree tabs in Hybrid and Hero, including builds with more than eight tabs. Add Previous/Next controls and a tree-page count, preserving native spell slots for casting, dragging and tooltips.
+- Preserve page navigation during spell refreshes; clamp pages when a build loses trees. Classic and pet spellbooks keep native behavior.
+- Lua 5.1 regression test covers all 30 trees plus General across four pages. In-game visual testing and launcher publication remain pending.
+
+## Development - client Spell.dbc staging
+
+- Add append-only client Spell.dbc staging for 266 filtered definitions, preserving baseline records and UTF-8 localized strings. Prepared an isolated test installation package; live SQL and startup validation run during deployment.
+
 ## Development - isolated icon and visual assets
 
 - Resolve and package 83 icons and 837 visual support assets; add isolated icon/visual DBC staging with cloned dependent IDs and rewritten asset paths. Preserve existing client records.

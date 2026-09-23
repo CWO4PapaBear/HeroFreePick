@@ -1,0 +1,6 @@
+{
+  "src/server/game/Entities/Player/Player.cpp": {
+    "before": "14276a8be9e219b7bc62c89d8a97eeb34a4bcad496055ac4df3ed1ae5c03d55b",
+    "after": "efeea0b301a8f8dede1fac46aa95014e5f83547d291ad0192b25755a9e382348"
+  }
+}

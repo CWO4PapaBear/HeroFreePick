@@ -1,0 +1,10 @@
+{
+  "modules/mod-hero-starting-path/src/StartingPath.cpp": {
+    "before": "7f6dba70977e78031381c56603602a00fbae13f8512b0677af01cbdaac178b90",
+    "after": "20780e270d06e5ef82cdb4ef5904adc8a4f066ba247ac0c23345e121407f8ed4"
+  },
+  "src/server/game/Entities/Player/PlayerStorage.cpp": {
+    "before": "5e33fe56b063d78153815fceb945b4182782ba3cdfe3d4e068f8529bf2d4587f",
+    "after": "a42b9c1a9b2715f945a37fa6f27f206d24a61e49ce90571c26654bbf45ab3a0c"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "HeroFreePick/AscensionTalentOverlay.lua": {
+    "before": "5ef48fd2435463f265704cadf35725227882b194b38d615d8a32a2c19be8e6cf",
+    "after": "a951a5a7fd3b2062e7286c4db5060575e0aad79c55601026fd713f26c7770e94"
+  },
+  "HeroFreePick/HeroFreePick.toc": {
+    "before": "082480f3db92e4a591b4afb758d86cf73c12f289166d9d2dc8f1eb8eb71f12a1",
+    "after": "f66763a3f84ee65808a053e876d4fbd25feb7dad79dab294706e0cd8afe3dd57"
+  },
+  "HeroFreePick/ResolvedServerTooltips.lua": {
+    "before": null,
+    "after": "272403d584f959d1cae3f50c4dbbba3523b4e78551c3e0d6c3562eb39e68a83b"
+  },
+  "HeroFreePick/ServerTooltipValues.lua": {
+    "before": null,
+    "after": "a4dd2efe4b35a99abeadb8258b7ec8caa0b14a45c379e5b71f55ebc071e2d8ae"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "AdditionalResources.lua": {
+    "before": "432f64d6fbc17cf9d308a2a646d4132cca09bba0d66081094a16186de893d486",
+    "after": "9ae0d8ccc23a822bf913e204872ba3a716140faf24e46d314f0dd447d7705930"
+  },
+  "HeroClassPlusCommitTest.toc": {
+    "before": "1c6182718d1bc26ebda98a5e8206f008589098919e79ab8475451d34efabde41",
+    "after": "1c6182718d1bc26ebda98a5e8206f008589098919e79ab8475451d34efabde41"
+  },
+  "PortraitControls.lua": {
+    "before": "77f43d3bf691854c0616cb379e2b7106528966080dfeb0e5a338bab8baa08840",
+    "after": "93c845df7127e2a8529fa6ece96364c991a1242dff83398f6c546a790953ce6c"
+  }
+}

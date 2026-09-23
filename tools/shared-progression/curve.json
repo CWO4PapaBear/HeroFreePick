@@ -1,0 +1,642 @@
+[
+  {
+    "level": 1,
+    "base_health": 35,
+    "base_mana": 75,
+    "base_each_attribute": 21,
+    "health_with_base_stamina": 65,
+    "mana_with_base_intellect": 110
+  },
+  {
+    "level": 2,
+    "base_health": 43,
+    "base_mana": 83,
+    "base_each_attribute": 22,
+    "health_with_base_stamina": 83,
+    "mana_with_base_intellect": 133
+  },
+  {
+    "level": 3,
+    "base_health": 52,
+    "base_mana": 92,
+    "base_each_attribute": 23,
+    "health_with_base_stamina": 102,
+    "mana_with_base_intellect": 157
+  },
+  {
+    "level": 4,
+    "base_health": 61,
+    "base_mana": 102,
+    "base_each_attribute": 24,
+    "health_with_base_stamina": 121,
+    "mana_with_base_intellect": 182
+  },
+  {
+    "level": 5,
+    "base_health": 71,
+    "base_mana": 113,
+    "base_each_attribute": 25,
+    "health_with_base_stamina": 141,
+    "mana_with_base_intellect": 208
+  },
+  {
+    "level": 6,
+    "base_health": 79,
+    "base_mana": 128,
+    "base_each_attribute": 26,
+    "health_with_base_stamina": 159,
+    "mana_with_base_intellect": 238
+  },
+  {
+    "level": 7,
+    "base_health": 89,
+    "base_mana": 141,
+    "base_each_attribute": 27,
+    "health_with_base_stamina": 179,
+    "mana_with_base_intellect": 266
+  },
+  {
+    "level": 8,
+    "base_health": 97,
+    "base_mana": 155,
+    "base_each_attribute": 28,
+    "health_with_base_stamina": 197,
+    "mana_with_base_intellect": 295
+  },
+  {
+    "level": 9,
+    "base_health": 106,
+    "base_mana": 174,
+    "base_each_attribute": 29,
+    "health_with_base_stamina": 216,
+    "mana_with_base_intellect": 329
+  },
+  {
+    "level": 10,
+    "base_health": 115,
+    "base_mana": 190,
+    "base_each_attribute": 30,
+    "health_with_base_stamina": 235,
+    "mana_with_base_intellect": 360
+  },
+  {
+    "level": 11,
+    "base_health": 124,
+    "base_mana": 204,
+    "base_each_attribute": 31,
+    "health_with_base_stamina": 254,
+    "mana_with_base_intellect": 389
+  },
+  {
+    "level": 12,
+    "base_health": 134,
+    "base_mana": 219,
+    "base_each_attribute": 32,
+    "health_with_base_stamina": 274,
+    "mana_with_base_intellect": 419
+  },
+  {
+    "level": 13,
+    "base_health": 144,
+    "base_mana": 239,
+    "base_each_attribute": 33,
+    "health_with_base_stamina": 294,
+    "mana_with_base_intellect": 454
+  },
+  {
+    "level": 14,
+    "base_health": 152,
+    "base_mana": 258,
+    "base_each_attribute": 34,
+    "health_with_base_stamina": 312,
+    "mana_with_base_intellect": 488
+  },
+  {
+    "level": 15,
+    "base_health": 162,
+    "base_mana": 276,
+    "base_each_attribute": 35,
+    "health_with_base_stamina": 332,
+    "mana_with_base_intellect": 521
+  },
+  {
+    "level": 16,
+    "base_health": 172,
+    "base_mana": 301,
+    "base_each_attribute": 36,
+    "health_with_base_stamina": 352,
+    "mana_with_base_intellect": 561
+  },
+  {
+    "level": 17,
+    "base_health": 181,
+    "base_mana": 319,
+    "base_each_attribute": 37,
+    "health_with_base_stamina": 371,
+    "mana_with_base_intellect": 594
+  },
+  {
+    "level": 18,
+    "base_health": 194,
+    "base_mana": 340,
+    "base_each_attribute": 38,
+    "health_with_base_stamina": 394,
+    "mana_with_base_intellect": 630
+  },
+  {
+    "level": 19,
+    "base_health": 206,
+    "base_mana": 366,
+    "base_each_attribute": 39,
+    "health_with_base_stamina": 416,
+    "mana_with_base_intellect": 671
+  },
+  {
+    "level": 20,
+    "base_health": 219,
+    "base_mana": 389,
+    "base_each_attribute": 40,
+    "health_with_base_stamina": 439,
+    "mana_with_base_intellect": 709
+  },
+  {
+    "level": 21,
+    "base_health": 231,
+    "base_mana": 410,
+    "base_each_attribute": 41,
+    "health_with_base_stamina": 461,
+    "mana_with_base_intellect": 745
+  },
+  {
+    "level": 22,
+    "base_health": 245,
+    "base_mana": 437,
+    "base_each_attribute": 42,
+    "health_with_base_stamina": 485,
+    "mana_with_base_intellect": 787
+  },
+  {
+    "level": 23,
+    "base_health": 261,
+    "base_mana": 463,
+    "base_each_attribute": 43,
+    "health_with_base_stamina": 511,
+    "mana_with_base_intellect": 828
+  },
+  {
+    "level": 24,
+    "base_health": 276,
+    "base_mana": 490,
+    "base_each_attribute": 44,
+    "health_with_base_stamina": 536,
+    "mana_with_base_intellect": 870
+  },
+  {
+    "level": 25,
+    "base_health": 292,
+    "base_mana": 518,
+    "base_each_attribute": 45,
+    "health_with_base_stamina": 562,
+    "mana_with_base_intellect": 913
+  },
+  {
+    "level": 26,
+    "base_health": 310,
+    "base_mana": 549,
+    "base_each_attribute": 46,
+    "health_with_base_stamina": 590,
+    "mana_with_base_intellect": 959
+  },
+  {
+    "level": 27,
+    "base_health": 330,
+    "base_mana": 574,
+    "base_each_attribute": 47,
+    "health_with_base_stamina": 620,
+    "mana_with_base_intellect": 999
+  },
+  {
+    "level": 28,
+    "base_health": 350,
+    "base_mana": 606,
+    "base_each_attribute": 48,
+    "health_with_base_stamina": 650,
+    "mana_with_base_intellect": 1046
+  },
+  {
+    "level": 29,
+    "base_health": 368,
+    "base_mana": 634,
+    "base_each_attribute": 49,
+    "health_with_base_stamina": 678,
+    "mana_with_base_intellect": 1089
+  },
+  {
+    "level": 30,
+    "base_health": 392,
+    "base_mana": 663,
+    "base_each_attribute": 50,
+    "health_with_base_stamina": 712,
+    "mana_with_base_intellect": 1133
+  },
+  {
+    "level": 31,
+    "base_health": 413,
+    "base_mana": 691,
+    "base_each_attribute": 51,
+    "health_with_base_stamina": 743,
+    "mana_with_base_intellect": 1176
+  },
+  {
+    "level": 32,
+    "base_health": 434,
+    "base_mana": 722,
+    "base_each_attribute": 52,
+    "health_with_base_stamina": 774,
+    "mana_with_base_intellect": 1222
+  },
+  {
+    "level": 33,
+    "base_health": 461,
+    "base_mana": 756,
+    "base_each_attribute": 53,
+    "health_with_base_stamina": 811,
+    "mana_with_base_intellect": 1271
+  },
+  {
+    "level": 34,
+    "base_health": 485,
+    "base_mana": 778,
+    "base_each_attribute": 54,
+    "health_with_base_stamina": 845,
+    "mana_with_base_intellect": 1308
+  },
+  {
+    "level": 35,
+    "base_health": 511,
+    "base_mana": 807,
+    "base_each_attribute": 55,
+    "health_with_base_stamina": 881,
+    "mana_with_base_intellect": 1352
+  },
+  {
+    "level": 36,
+    "base_health": 535,
+    "base_mana": 832,
+    "base_each_attribute": 56,
+    "health_with_base_stamina": 915,
+    "mana_with_base_intellect": 1392
+  },
+  {
+    "level": 37,
+    "base_health": 563,
+    "base_mana": 865,
+    "base_each_attribute": 57,
+    "health_with_base_stamina": 953,
+    "mana_with_base_intellect": 1440
+  },
+  {
+    "level": 38,
+    "base_health": 592,
+    "base_mana": 894,
+    "base_each_attribute": 58,
+    "health_with_base_stamina": 992,
+    "mana_with_base_intellect": 1484
+  },
+  {
+    "level": 39,
+    "base_health": 622,
+    "base_mana": 916,
+    "base_each_attribute": 59,
+    "health_with_base_stamina": 1032,
+    "mana_with_base_intellect": 1521
+  },
+  {
+    "level": 40,
+    "base_health": 653,
+    "base_mana": 945,
+    "base_each_attribute": 60,
+    "health_with_base_stamina": 1073,
+    "mana_with_base_intellect": 1565
+  },
+  {
+    "level": 41,
+    "base_health": 683,
+    "base_mana": 972,
+    "base_each_attribute": 61,
+    "health_with_base_stamina": 1113,
+    "mana_with_base_intellect": 1607
+  },
+  {
+    "level": 42,
+    "base_health": 716,
+    "base_mana": 998,
+    "base_each_attribute": 62,
+    "health_with_base_stamina": 1156,
+    "mana_with_base_intellect": 1648
+  },
+  {
+    "level": 43,
+    "base_health": 750,
+    "base_mana": 1025,
+    "base_each_attribute": 63,
+    "health_with_base_stamina": 1200,
+    "mana_with_base_intellect": 1690
+  },
+  {
+    "level": 44,
+    "base_health": 785,
+    "base_mana": 1054,
+    "base_each_attribute": 64,
+    "health_with_base_stamina": 1245,
+    "mana_with_base_intellect": 1734
+  },
+  {
+    "level": 45,
+    "base_health": 821,
+    "base_mana": 1077,
+    "base_each_attribute": 65,
+    "health_with_base_stamina": 1291,
+    "mana_with_base_intellect": 1772
+  },
+  {
+    "level": 46,
+    "base_health": 857,
+    "base_mana": 1103,
+    "base_each_attribute": 66,
+    "health_with_base_stamina": 1337,
+    "mana_with_base_intellect": 1813
+  },
+  {
+    "level": 47,
+    "base_health": 895,
+    "base_mana": 1128,
+    "base_each_attribute": 67,
+    "health_with_base_stamina": 1385,
+    "mana_with_base_intellect": 1853
+  },
+  {
+    "level": 48,
+    "base_health": 934,
+    "base_mana": 1150,
+    "base_each_attribute": 68,
+    "health_with_base_stamina": 1434,
+    "mana_with_base_intellect": 1890
+  },
+  {
+    "level": 49,
+    "base_health": 970,
+    "base_mana": 1177,
+    "base_each_attribute": 69,
+    "health_with_base_stamina": 1480,
+    "mana_with_base_intellect": 1932
+  },
+  {
+    "level": 50,
+    "base_health": 1015,
+    "base_mana": 1197,
+    "base_each_attribute": 70,
+    "health_with_base_stamina": 1535,
+    "mana_with_base_intellect": 1967
+  },
+  {
+    "level": 51,
+    "base_health": 1134,
+    "base_mana": 1292,
+    "base_each_attribute": 71,
+    "health_with_base_stamina": 1664,
+    "mana_with_base_intellect": 2077
+  },
+  {
+    "level": 52,
+    "base_health": 1260,
+    "base_mana": 1387,
+    "base_each_attribute": 72,
+    "health_with_base_stamina": 1800,
+    "mana_with_base_intellect": 2187
+  },
+  {
+    "level": 53,
+    "base_health": 1393,
+    "base_mana": 1483,
+    "base_each_attribute": 73,
+    "health_with_base_stamina": 1943,
+    "mana_with_base_intellect": 2298
+  },
+  {
+    "level": 54,
+    "base_health": 1530,
+    "base_mana": 1578,
+    "base_each_attribute": 74,
+    "health_with_base_stamina": 2090,
+    "mana_with_base_intellect": 2408
+  },
+  {
+    "level": 55,
+    "base_health": 1671,
+    "base_mana": 1673,
+    "base_each_attribute": 75,
+    "health_with_base_stamina": 2241,
+    "mana_with_base_intellect": 2518
+  },
+  {
+    "level": 56,
+    "base_health": 1816,
+    "base_mana": 1767,
+    "base_each_attribute": 76,
+    "health_with_base_stamina": 2396,
+    "mana_with_base_intellect": 2627
+  },
+  {
+    "level": 57,
+    "base_health": 1966,
+    "base_mana": 1863,
+    "base_each_attribute": 77,
+    "health_with_base_stamina": 2556,
+    "mana_with_base_intellect": 2738
+  },
+  {
+    "level": 58,
+    "base_health": 2120,
+    "base_mana": 1958,
+    "base_each_attribute": 78,
+    "health_with_base_stamina": 2720,
+    "mana_with_base_intellect": 2848
+  },
+  {
+    "level": 59,
+    "base_health": 2279,
+    "base_mana": 2053,
+    "base_each_attribute": 79,
+    "health_with_base_stamina": 2889,
+    "mana_with_base_intellect": 2958
+  },
+  {
+    "level": 60,
+    "base_health": 2446,
+    "base_mana": 2148,
+    "base_each_attribute": 80,
+    "health_with_base_stamina": 3066,
+    "mana_with_base_intellect": 3068
+  },
+  {
+    "level": 61,
+    "base_health": 2616,
+    "base_mana": 2243,
+    "base_each_attribute": 81,
+    "health_with_base_stamina": 3246,
+    "mana_with_base_intellect": 3178
+  },
+  {
+    "level": 62,
+    "base_health": 2791,
+    "base_mana": 2338,
+    "base_each_attribute": 82,
+    "health_with_base_stamina": 3431,
+    "mana_with_base_intellect": 3288
+  },
+  {
+    "level": 63,
+    "base_health": 2971,
+    "base_mana": 2433,
+    "base_each_attribute": 83,
+    "health_with_base_stamina": 3621,
+    "mana_with_base_intellect": 3398
+  },
+  {
+    "level": 64,
+    "base_health": 3156,
+    "base_mana": 2529,
+    "base_each_attribute": 84,
+    "health_with_base_stamina": 3816,
+    "mana_with_base_intellect": 3509
+  },
+  {
+    "level": 65,
+    "base_health": 3344,
+    "base_mana": 2624,
+    "base_each_attribute": 85,
+    "health_with_base_stamina": 4014,
+    "mana_with_base_intellect": 3619
+  },
+  {
+    "level": 66,
+    "base_health": 3535,
+    "base_mana": 2718,
+    "base_each_attribute": 86,
+    "health_with_base_stamina": 4215,
+    "mana_with_base_intellect": 3728
+  },
+  {
+    "level": 67,
+    "base_health": 3733,
+    "base_mana": 2814,
+    "base_each_attribute": 87,
+    "health_with_base_stamina": 4423,
+    "mana_with_base_intellect": 3839
+  },
+  {
+    "level": 68,
+    "base_health": 3936,
+    "base_mana": 2909,
+    "base_each_attribute": 88,
+    "health_with_base_stamina": 4636,
+    "mana_with_base_intellect": 3949
+  },
+  {
+    "level": 69,
+    "base_health": 4156,
+    "base_mana": 3004,
+    "base_each_attribute": 89,
+    "health_with_base_stamina": 4866,
+    "mana_with_base_intellect": 4059
+  },
+  {
+    "level": 70,
+    "base_health": 4384,
+    "base_mana": 3099,
+    "base_each_attribute": 90,
+    "health_with_base_stamina": 5104,
+    "mana_with_base_intellect": 4169
+  },
+  {
+    "level": 71,
+    "base_health": 4619,
+    "base_mana": 3194,
+    "base_each_attribute": 91,
+    "health_with_base_stamina": 5349,
+    "mana_with_base_intellect": 4279
+  },
+  {
+    "level": 72,
+    "base_health": 4872,
+    "base_mana": 3289,
+    "base_each_attribute": 92,
+    "health_with_base_stamina": 5612,
+    "mana_with_base_intellect": 4389
+  },
+  {
+    "level": 73,
+    "base_health": 5134,
+    "base_mana": 3385,
+    "base_each_attribute": 93,
+    "health_with_base_stamina": 5884,
+    "mana_with_base_intellect": 4500
+  },
+  {
+    "level": 74,
+    "base_health": 5406,
+    "base_mana": 3480,
+    "base_each_attribute": 94,
+    "health_with_base_stamina": 6166,
+    "mana_with_base_intellect": 4610
+  },
+  {
+    "level": 75,
+    "base_health": 5697,
+    "base_mana": 3575,
+    "base_each_attribute": 95,
+    "health_with_base_stamina": 6467,
+    "mana_with_base_intellect": 4720
+  },
+  {
+    "level": 76,
+    "base_health": 5999,
+    "base_mana": 3669,
+    "base_each_attribute": 96,
+    "health_with_base_stamina": 6779,
+    "mana_with_base_intellect": 4829
+  },
+  {
+    "level": 77,
+    "base_health": 6311,
+    "base_mana": 3764,
+    "base_each_attribute": 97,
+    "health_with_base_stamina": 7101,
+    "mana_with_base_intellect": 4939
+  },
+  {
+    "level": 78,
+    "base_health": 6646,
+    "base_mana": 3860,
+    "base_each_attribute": 98,
+    "health_with_base_stamina": 7446,
+    "mana_with_base_intellect": 5050
+  },
+  {
+    "level": 79,
+    "base_health": 6993,
+    "base_mana": 3955,
+    "base_each_attribute": 99,
+    "health_with_base_stamina": 7803,
+    "mana_with_base_intellect": 5160
+  },
+  {
+    "level": 80,
+    "base_health": 7350,
+    "base_mana": 4050,
+    "base_each_attribute": 100,
+    "health_with_base_stamina": 8170,
+    "mana_with_base_intellect": 5270
+  }
+]

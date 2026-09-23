@@ -1,0 +1,26 @@
+{
+  "modules/mod-hero-starting-path/src/AdditionalResources.cpp": {
+    "before": "214a36752781c612eb46d7f56f1002a9ccadc10a4b09dbef8b0ed82eb72f6ecf",
+    "after": "2cc298448ca82ab05cbd8b7090dd1a67e940afaecb73325099e0761c4960abb1"
+  },
+  "modules/mod-hero-starting-path/src/AdditionalResources.h": {
+    "before": "e32ec9d78a810703ace892aa0b23f519f7e683257a3edffdd4613210bb0a58fb",
+    "after": "d4cb2d9875ac17b747eb61133100c4ba0e7a115b797579065bb828febd4ae330"
+  },
+  "modules/mod-hero-starting-path/src/EquipmentPolicy.h": {
+    "before": null,
+    "after": "47f8720c6d9c99911c43cdf8ffe3789ac339cddde84eba02e46e9fc7f7ae2596"
+  },
+  "modules/mod-hero-starting-path/src/StartingPath.cpp": {
+    "before": "ef50e6667c7c89097a831f93a637ee8a57beed73af99e5042825341be746fc00",
+    "after": "7f6dba70977e78031381c56603602a00fbae13f8512b0677af01cbdaac178b90"
+  },
+  "src/server/game/Entities/Player/Player.cpp": {
+    "before": "9a9e294ad63ff0c8c612f729e5c31fd7cb6e5768bfa47af26a49aa5a8257d2d1",
+    "after": "14276a8be9e219b7bc62c89d8a97eeb34a4bcad496055ac4df3ed1ae5c03d55b"
+  },
+  "src/server/game/Entities/Player/PlayerStorage.cpp": {
+    "before": "8af1722ffc7b00ee796d1fa097e7f2ac311feb460be6f7bdea1e22f0eb8cbdad",
+    "after": "5e33fe56b063d78153815fceb945b4182782ba3cdfe3d4e068f8529bf2d4587f"
+  }
+}

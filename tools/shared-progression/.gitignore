@@ -1,0 +1,7 @@
+baseline*/
+overlay/
+local-tests/
+build-state.json
+latest-baseline.json
+activation.json
+*.log
