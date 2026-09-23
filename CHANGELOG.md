@@ -1,3 +1,7 @@
+## 2026-09-23 — Server tooltip review skill
+
+- Document current PTR databases, repositories, effective spell resolution, healing formulas, unresolved-value policy and safe client delivery. Healing tooltip audit is in progress; no new tooltip values are published by this documentation change.
+
 ## 2026-09-23 — Talent modification skill
 
 - Add a repository-local skill for talent creation and modification, covering mode policy, level gates, UI, server/data integration, testing, rollback and release delivery.
