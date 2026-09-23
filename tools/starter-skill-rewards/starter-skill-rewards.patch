@@ -1,0 +1,21 @@
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "Player.h"
++extern bool HeroShouldSkipSavedStarter(Player*, uint32);
+ extern unsigned HeroEquipmentClassMask(Player const*);
+ extern unsigned HeroEquipmentSkillClass(Player const*,unsigned);
+ extern unsigned HeroEquipmentSkillMask(Player const*,unsigned);
+@@ -12320,6 +12321,10 @@
+ 
+             if (!IsInWorld())
+             {
++                // Default skills can award temporary starters even without a saved spell row.
++                // Reuse verified starter ownership before the initial client spell list.
++                if (HeroShouldSkipSavedStarter(this, pAbility->Spell))
++                    continue;
+                 addSpell(pAbility->Spell, SPEC_MASK_ALL, true, true);
+             }
+             else

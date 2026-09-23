@@ -1,3 +1,7 @@
+## Staged temporary starter skill reward correction
+
+Follow-up to saved starter cleanup: default skill rewards also grant temporary starter spells before login. Check verified ownership before these grants so alerts do not recur on the second login. Compiled repeated-grant regression tests passed; full PTR build and activation pending.
+
 ## Staged starter login reconciliation
 
 Check withheld starter ownership before loading saved spells, avoiding obsolete starter spells being loaded and then removed after login. Preserve purchased starters, Classic and uncertain ownership records. Compiled policy checks and full server build passed; source restoration was clean. Activation/rollback source checks passed. Activation and in-game validation pending. See tools/starter-login.
