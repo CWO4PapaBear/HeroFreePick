@@ -1,0 +1,14 @@
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -1830,6 +1830,11 @@
+             if (int32 cd = GetRuneCooldown(i))
+             {
+                 SetRuneCooldown(i, (cd > m_regenTimer) ? cd - m_regenTimer : 0);
++                // Non-native DK clients may not advance native rune cooldowns.
++                // Notify readiness only after the authoritative cooldown expires;
++                // this packet does not grant a rune or alter its recovery rate.
++                if (cd <= m_regenTimer && getClass() != CLASS_DEATH_KNIGHT && HeroResourcesNeedsRunes(this))
++                    AddRunePower(i);
+                 // start grace counter, player must be in combat and rune has to go off cooldown
+                 if (IsInCombat() && cd <= m_regenTimer)
+                     SetGracePeriod(i, m_regenTimer - cd + 1); // added 1 because m_regenTimer-cd can be equal 0

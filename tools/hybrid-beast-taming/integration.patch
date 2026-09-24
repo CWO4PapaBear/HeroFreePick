@@ -1,0 +1,51 @@
+--- a/modules/mod-hero-starting-path/src/AdditionalResources.cpp
++++ b/modules/mod-hero-starting-path/src/AdditionalResources.cpp
+@@ -1,3 +1,4 @@
++#include "ClassTrainerGate.h"
+ #include "AdditionalResources.h"
+ #include "SharedProgression.h"
+ #include "EquipmentPolicy.h"
+@@ -51,3 +52,12 @@
+  }
+ };
+ void AddHeroResourceScripts(){new HeroAdditionalResources();}
++
++// Beast taming is authorized by mode, selected classes and learned control spell.
++bool HeroCanTameBeast(Player const* p) {
++ if (!p || !p->HasSpell(1515)) return false;
++ auto mode=HeroTrainer::Current(p);
++ if (mode==HeroTrainer::Mode::Hero) return true;
++ if (mode!=HeroTrainer::Mode::ClassPlus && mode!=HeroTrainer::Mode::Hybrid) return false;
++ return (HeroEquipmentClassMask(p)&HeroEquipment::Bit(CLASS_HUNTER))!=0;
++}
+--- a/src/server/game/Spells/SpellEffects.cpp
++++ b/src/server/game/Spells/SpellEffects.cpp
+@@ -42,6 +42,7 @@
+ #include "OutdoorPvPMgr.h"
+ #include "Pet.h"
+ #include "Player.h"
++extern bool HeroCanTameBeast(Player const*);
+ extern bool MoreMinionsHasAccess(Player const*);
+ extern bool MoreMinionsDemonSummon(Player*,unsigned);
+ #include "RBAC.h"
+@@ -3330,7 +3331,8 @@
+     if (creatureTarget->IsPet())
+         return;
+ 
+-    if (!unitCaster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
++    if (!unitCaster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET) &&
++        !(m_spellInfo->Id == 13481 && HeroCanTameBeast(unitCaster->ToPlayer())))
+         return;
+ 
+     // cast finish successfully
+--- a/src/server/game/Entities/Pet/Pet.cpp
++++ b/src/server/game/Entities/Pet/Pet.cpp
+@@ -246,7 +246,7 @@
+     bool forceLoadFromDB = false;
+     sScriptMgr->OnPlayerBeforeLoadPetFromDB(owner, petEntry, petnumber, current, forceLoadFromDB);
+ 
+-    if (!forceLoadFromDB && !MoreMinionsCanLoad(owner, petInfo->CreatureId, petInfo->CreatedBySpellId) && (owner->IsClass(CLASS_DEATH_KNIGHT, CLASS_CONTEXT_PET) && !owner->CanSeeDKPet())) // DK Pet exception
++    if (!forceLoadFromDB && petInfo->Type != HUNTER_PET && !MoreMinionsCanLoad(owner, petInfo->CreatureId, petInfo->CreatedBySpellId) && (owner->IsClass(CLASS_DEATH_KNIGHT, CLASS_CONTEXT_PET) && !owner->CanSeeDKPet())) // DK Pet exception
+         return false;
+ 
+     SpellInfo const* spellInfo = sSpellMgr->GetSpellInfo(petInfo->CreatedBySpellId);

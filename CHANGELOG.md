@@ -1,3 +1,42 @@
+## 2026-09-24 — DK fixes verified on PTR
+
+- Combined server build activated successfully. Owner confirmed Class+ selection on Runetest, working native-DK runes, and working Hybrid DK rune recovery on DKHtest with ability and rune cooldown swipes visible.
+- Server-only release; no client update or launcher promotion required. Previous server image retained for rollback.
+
+## 2026-09-24 — Initial DK mode selection and combined rune candidate
+
+- Permit XP during the first level-55 DK mode selection, fixing a zero-XP rejection before any quests or build selections. Retain all other transition checks and the Class+ level-one reset.
+- Compiled policy checks passed. Combined with the rune notification candidate for full build and live testing; neither change activated yet.
+
+## 2026-09-24 — Hybrid rune readiness candidate
+
+- Stage an explicit readiness notification when a non-native DK's authoritative rune cooldown expires. Preserve rune costs, cooldowns and native DK behavior.
+- Extracted-block compiled checks passed; full build and in-game verification pending. No activation or launcher publication yet. New-DK Class+ START_BLOCKED remains under investigation.
+
+## 2026-09-24 — Tame Beast completion trigger correction
+
+- Match completion spell 13481 instead of channel spell 1515. Keep learned-channel and selected-class authorization. Verified the trigger chain against exported PTR spell records; compiled and activated. Owner confirmed beast taming and follow-up pet persistence tests.
+
+## 2026-09-24 — Hybrid beast taming repair
+
+- Honor learned Tame Beast and selected Hunter access at tame completion without globally changing class identity.
+- Exclude Hunter-type pets from the Death Knight ghoul visibility loading exception.
+- Server build activated on PTR; client unchanged. In-game tame/persistence verification pending.
+
+## 2026-09-23 — Starter spell supplies and healing tooltip review
+
+- Activate ability-based initial totems, ammunition and allowlisted reagents for custom modes; persistent no-refill ledger, inventory/bank checks and full-bag retry. Classic unchanged.
+- Stage/install twelve labelled base-value healing tooltip resolutions from fresh PTR definitions; unknown formulas remain yellow. Owner visual review pending; launcher remains 0.2.5-test.1.
+
+## 2026-09-23 — Server tooltip review skill
+
+- Document current PTR databases, repositories, effective spell resolution, healing formulas, unresolved-value policy and safe client delivery. Healing tooltip audit is in progress; no new tooltip values are published by this documentation change.
+
+## 2026-09-23 — Talent modification skill
+
+- Add a repository-local skill for talent creation and modification, covering mode policy, level gates, UI, server/data integration, testing, rollback and release delivery.
+- Reference the skill from AGENTS.md for all talent modifications.
+
 ## 2026-09-23 — Martial Fluidity
 
 Custom-mode Vigor unlocks shared combo points. Correct native talent detection and target display after deselection. Reviewed integration and four-file client payload: tools/martial-fluidity.
