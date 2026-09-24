@@ -120,16 +120,17 @@ end
 local function showMasteryTooltip(owner)
  local e=owner.entry;masteryOwner=owner;masteryEntry=e;masteryAway=0
  if not e.isMastery and not e.isBundle then hideMasteryTooltip();return end
- masteryExpanded=IsShiftKeyDown and IsShiftKeyDown()or false
+ masteryExpanded=A.TooltipDetailsExpanded
  GameTooltip:Hide();masteryPreview:Hide()
- masteryTitle:SetText(e.name)
+ masteryTitle:SetText(A.DisplayTalentName(e))
  masteryDescription:SetText(e.isBundle and 'This companion bundle includes all listed abilities at level 1 for one purchase. Included abilities cost no additional points or rarity gems. Preview only: server learning and custom pets are not implemented.'or 'Learning this Mastery unlocks access to every connected ability when your character reaches its required level. Connected abilities are automatically included at their required levels, with no additional cost.')
  masteryCost:SetText((e.isBundle and 'Bundle cost: 'or 'Mastery cost: ')..rarityCost(e)..'  '..essenceCost(e.ae))
- masteryHint:SetText(masteryExpanded and 'Release SHIFT to hide. Hover an ability icon to preview.'or 'Hold SHIFT to show connected abilities.')
+ masteryHint:SetText(masteryExpanded and 'Tap SHIFT to hide. Hover an ability icon to preview.'or 'Tap SHIFT to show connected abilities.')
  for _,row in ipairs(masteryRows)do row:Hide()end
  local original=A.SummoningDescriptions and A.SummoningDescriptions[e.spells[1]]
  if original then masteryDescription:SetText(original..'\n\n'..(e.isBundle and 'Bundle: 4 Ability Points and 2 Epic gems; included skills have no additional cost. Server learning is not enabled.'or 'Our rules: purchase this Mastery first; its level-eligible members are automatically included at no additional cost.'))end
  if e.travelKind then masteryDescription:SetText('Unlocks '..(e.travelKind=='teleport'and 'teleports'or 'portals')..' to your racial capital at level 10, faction capitals at 15, Ratchet and Booty Bay at 25, Shattrath at 62, and Dalaran at 72. Connected abilities cost no additional points or gems. Portal and Teleport Masteries are purchased independently. Mage travel reagent generation requires the forthcoming server implementation.')end
+ masteryDescription:SetText(A.TooltipParagraphs(masteryDescription:GetText()))
  masteryDescription:SetHeight(0)
  local descriptionHeight=math.max(70,masteryDescription:GetStringHeight())
  masteryDescription:SetHeight(descriptionHeight)
@@ -149,8 +150,8 @@ local function showMasteryTooltip(owner)
      local description=A.SummoningDescriptions and A.SummoningDescriptions[m.spell]
      if description then masteryPreview:SetText(m.name);masteryPreview:AddLine(description,1,1,1,true)elseif GetSpellInfo(m.spell)then masteryPreview:SetHyperlink('spell:'..m.spell)else masteryPreview:SetText(m.name);masteryPreview:AddLine('Spell description is unavailable in this client.',1,.7,.3,true)end
      masteryPreview:AddLine(m.level and ('Requires Level '..m.level)or 'Required level unavailable',1,.82,.3)
-     masteryPreview:AddLine('Requires '..(masteryEntry.requiredBundle and A.byID[masteryEntry.requiredBundle].name or masteryEntry.name),1,.82,.3,true)
-     masteryPreview:AddLine('No additional points or rarity gems.',.7,.85,1,true);masteryPreview:Show()
+     if A.TooltipDetailsExpanded then masteryPreview:AddLine('Requires '..(masteryEntry.requiredBundle and A.byID[masteryEntry.requiredBundle].name or masteryEntry.name),1,.82,.3,true)
+     masteryPreview:AddLine('No additional points or rarity gems.',.7,.85,1,true)end;A.ShowAdvancementTooltip(masteryPreview)
     end)
     row:SetScript('OnLeave',function()masteryPreview:Hide()end)
     masteryRows[i]=row
@@ -169,7 +170,7 @@ function A.RefreshMasteryTooltip()
 end
 masteryTip:SetScript('OnUpdate',function(_,elapsed)
  if not masteryOwner or not masteryOwner:IsShown()or masteryOwner.entry~=masteryEntry or not f:IsShown()then hideMasteryTooltip();return end
- local expanded=IsShiftKeyDown and IsShiftKeyDown()or false
+ local expanded=A.TooltipDetailsExpanded
  if expanded~=masteryExpanded then showMasteryTooltip(masteryOwner)end
  if MouseIsOver(masteryOwner)or MouseIsOver(masteryTip)then masteryAway=0 else
   masteryAway=(masteryAway or 0)+elapsed;if masteryAway>.3 then hideMasteryTooltip()end
@@ -221,17 +222,17 @@ local function tooltip(self)
  hideMasteryTooltip()
  if A.IsTalent(e) and not A.TalentsUnlocked() then GameTooltip:Hide();return end
  GameTooltip:SetOwner(self,'ANCHOR_RIGHT')
- if e.spellbookKnown then GameTooltip:SetHyperlink('spell:'..e.spellbookSpell);GameTooltip:AddLine('Learned in your spellbook.',.1,1,.1);for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end;GameTooltip:Show();return end
+ if e.spellbookKnown then GameTooltip:SetHyperlink('spell:'..e.spellbookSpell);GameTooltip:AddLine('Learned in your spellbook.',.1,1,.1);for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end;A.ShowAdvancementTooltip(GameTooltip);return end
  local nativeTab,nativeIndex=A.NativeTalent(e)
- if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true);GameTooltip:Show();return end
+ if A.mode=='Classic'and nativeTab then GameTooltip:SetTalent(nativeTab,nativeIndex,false,false,GetActiveTalentGroup());classicPrerequisites(e);GameTooltip:AddLine('Pending rank: '..A.PendingRank(e)..'/'..A.MaxRank(e),1,.82,.3);if A.TooltipDetailsExpanded then GameTooltip:AddLine('Left-click adds a point. Right-click removes a point. Changes are pending until reviewed.',1,.82,.3,true)end;A.ShowAdvancementTooltip(GameTooltip);return end
  local rank=math.max(1,A.PendingRank(e));local id=e.spellbookSpell or e.spells[math.min(rank,#e.spells)]
  local description=A.mode~='Classic'and(e.referenceDescription or(A.SummoningDescriptions and A.SummoningDescriptions[id]))
  if A.AscensionTalentDescription then description=A.AscensionTalentDescription(e,rank)or description end
- if description then GameTooltip:SetText(e.name);GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(e.name);GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
+ if description then GameTooltip:SetText(A.DisplayTalentName(e));GameTooltip:AddLine(description,1,1,1,true)elseif GetSpellInfo(id)then GameTooltip:SetHyperlink('spell:'..id)else GameTooltip:SetText(A.DisplayTalentName(e));GameTooltip:AddLine('Spell data is absent from this client.',1,.35,.3,true)end
  if A.mode~='Classic'and e.serverPending then GameTooltip:AddLine('Plannable ability. Server implementation pending.',1,.65,.2,true)end
  if A.AddAscensionTalentNotes then A.AddAscensionTalentNotes(e,rank)end
  GameTooltip:AddLine(' ');GameTooltip:AddLine(e.class..' / '..e.spec..' / '..e.kind,1,.82,.3)
- local grouping=HeroBrowseAssignment[e.id];if grouping and not grouping.direct then GameTooltip:AddLine('Browse grouping: recovered tags (no direct A52 category).',1,.7,.3,true)end
+ -- Reference grouping provenance remains in the catalogue, not player tooltips.
  if e.customServerRequired then GameTooltip:AddLine('Preview uses a Rune spell reference. Independent Mage travel requires the forthcoming client/server travel package; this selection does not unlock Runes.',1,.6,.3,true)end
  local requiredLevel=A.IsTalent(e)and A.mode~='Classic'and A.TalentRequiredLevel(e)or(A.mode=='Classic'and A.AbilityDisplayLevel(e))or A.AbilityDisplayLevel(e)
  local locked=A.OtherClass(e.class)or UnitLevel('player')<requiredLevel
@@ -243,18 +244,17 @@ local function tooltip(self)
  if not A.IsTalent(e)then
   GameTooltip:AddLine(rarityCost(e)..'  '..essenceCost(e.ae),1,1,1)
  else GameTooltip:AddDoubleLine('Talent Point Cost',talentCost(e.te),1,.82,.3,1,1,1)end
- GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
- GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
- if e.isMastery then GameTooltip:AddLine('Mastery: 2 Ability Points. Member abilities cost no points or rarity gems.',.7,.85,1,true)end
- if A.mode=='Classic'and not A.IsTalent(e)then for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end;GameTooltip:Show();return end
- if e.requiredBundle then GameTooltip:AddLine('Included with '..A.byID[e.requiredBundle].name..'. Add or remove the bundle to change these abilities. No additional cost.',1,.82,.3,true)end
- if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. Automatically included at the required level; no additional cost.',1,.82,.3,true)end
- if IsShiftKeyDown and IsShiftKeyDown()then
-  GameTooltip:AddLine('Costs use the selected non-random client record. Ability Points are deducted from the local selection budget.',.7,.85,1,true)
- else GameTooltip:AddLine('Hold SHIFT for more information',.2,.85,1)end
- if self.learned then GameTooltip:AddLine('Left-click adds a pending rank; right-click removes one.',1,.82,.3);GameTooltip:Show();return end
- GameTooltip:AddLine('Left-click adds a pending rank. Right-click removes a pending rank.',.5,.9,.8,true)
- GameTooltip:AddLine('Pending preparation only. Closing opens a change review; server committing is unavailable.',1,.6,.3,true);GameTooltip:Show()
+ if A.TooltipDetailsExpanded then
+  GameTooltip:AddDoubleLine('Spell ID',tostring(id),.75,.75,.75,1,1,1)
+  GameTooltip:AddDoubleLine('Character Advancement ID',tostring(e.area52Entry or e.id),.75,.75,.75,1,1,1)
+  if e.requiredBundle then GameTooltip:AddLine('Included with '..A.byID[e.requiredBundle].name..'. Add or remove the bundle to change these abilities. No additional cost.',1,.82,.3,true)end
+  if e.requiredMastery then GameTooltip:AddLine('Requires '..A.byID[e.requiredMastery].name..' selected first. Automatically included at the required level; no additional cost.',1,.82,.3,true)end
+  GameTooltip:AddLine('Left-click adds a pending rank. Right-click removes a pending rank.',.5,.9,.8,true)
+  GameTooltip:AddLine('Tap SHIFT to hide details.',.2,.85,1)
+ else GameTooltip:AddLine('Tap SHIFT for more information.',.2,.85,1)end
+ if A.mode=='Classic'and not A.IsTalent(e)then for _,line in ipairs(A.LearningSourceLines(e))do GameTooltip:AddLine(line,1,.82,.3,true)end end
+ -- Entry-specific missing-definition/effect warnings above remain visible.
+ A.ShowAdvancementTooltip(GameTooltip)
 end
 
 -- Shared badge policy for every ability view; Classic never displays Mastery UI.
@@ -304,7 +304,7 @@ local function entryButton(parent,w,h)
  return b
 end
 local function fill(b,e,showClass)
- b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText('|cff'..(colors[e.quality]or'ffffff')..e.name..'|r')
+ b.entry=e;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText('|cff'..(colors[e.quality]or'ffffff')..A.DisplayTalentName(e)..'|r')
  local rank=HeroFreePickPlans.entries[e.id]or 0
  b.rank:SetText((showClass and e.class..'  -  ' or '')..rank..'/'..A.MaxRank(e)..' planned')
  if rank>0 then b.rank:SetTextColor(.3,1,.4)else b.rank:SetTextColor(.7,.7,.7)end
@@ -336,7 +336,7 @@ local function showModuleInfo(self)
  GameTooltip:AddLine('Installed version: '..installedVersion(),1,1,1)
  GameTooltip:AddLine('Hero class development and ability planning.',1,1,1,true)
  GameTooltip:AddLine(githubURL,1,.82,.3,true)
- GameTooltip:AddLine('Click to copy the GitHub address.',.7,.7,.7,true);GameTooltip:Show()
+ GameTooltip:AddLine('Click to copy the GitHub address.',.7,.7,.7,true);A.ShowAdvancementTooltip(GameTooltip)
 end
 local infoPopup=panel(f,0,0,480,118);infoPopup:ClearAllPoints();infoPopup:SetPoint('TOPRIGHT',infoBox,'BOTTOMRIGHT',0,-8);infoPopup:SetFrameLevel(f:GetFrameLevel()+30);infoPopup:EnableMouse(true)
 local infoHeading=txt(infoPopup,'Hero Advancement',14,-12,420,'GameFontNormalLarge')
@@ -369,7 +369,7 @@ local changeModeBox=panel(f,0,0,22,22);changeModeBox:ClearAllPoints();changeMode
 local changeMode=CreateFrame('Button','HeroChangeModeButton',changeModeBox);changeMode:SetAllPoints(changeModeBox)
 local pickIcon=changeMode:CreateTexture(nil,'ARTWORK');pickIcon:SetSize(16,16);pickIcon:SetPoint('CENTER');pickIcon:SetTexture('Interface\\Buttons\\UI-GroupLoot-Pass-Up')
 changeMode:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
-changeMode:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Pick Again');GameTooltip:AddLine('Reopens the starting selection screen so you can change your progression mode. Available only at level 1.',1,1,1,true);GameTooltip:Show()end)
+changeMode:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Pick Again');GameTooltip:AddLine('Reopens the starting selection screen so you can change your progression mode. Available only at level 1.',1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end)
 changeMode:SetScript('OnLeave',function()GameTooltip:Hide()end)
 A.ChangeModeButton=changeMode
 function A.RefreshModeChangeButton(level)
@@ -382,7 +382,7 @@ end)
 A.RefreshModeChangeButton()
 
 settingsButton:SetScript('OnClick',function()GameTooltip:Hide();closeInfo();if settingsMenu:IsShown()then settingsMenu:Hide()else A.RefreshModeChangeButton();alertCheck:SetChecked(A.AlertSoundsEnabled());settingsMenu:Show()end end)
-settingsButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Settings');GameTooltip:Show()end)
+settingsButton:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_BOTTOM');GameTooltip:SetText('Settings');A.ShowAdvancementTooltip(GameTooltip)end)
 settingsButton:SetScript('OnLeave',function()GameTooltip:Hide()end)
 A.SettingsMenu=settingsMenu;A.SettingsButton=settingsButton;A.AlertSoundsCheck=alertCheck
 settingsMenu:Hide()
@@ -396,7 +396,7 @@ for y=0,63 do
  if half>0 then local strip=well:CreateTexture(nil,'ARTWORK');strip:SetTexture('Interface\\Icons\\Ability_Paladin_BeaconOfLight');strip:SetPoint('TOPLEFT',left,-y);strip:SetSize(half*2,1);strip:SetTexCoord(.08+.84*left/64,.08+.84*(64-left)/64,.08+.84*y/64,.08+.84*(y+1)/64)end
 end
 local rim=well:CreateTexture(nil,'OVERLAY');rim:SetTexture('Interface\\AddOns\\HeroFreePick\\Art\\ClassRing');rim:SetSize(80,80);rim:SetPoint('CENTER',well,'CENTER',0,0)
-emblem:EnableMouse(true);emblem:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText('Hero Advancement');GameTooltip:AddLine('Atonement',1,.82,.3);GameTooltip:Show()end);emblem:SetScript('OnLeave',function()GameTooltip:Hide()end)
+emblem:EnableMouse(false)
 
 local mode=txt(f,'',700,-139,425,'GameFontNormalSmall');mode:Hide()
 A.isBrowse=true
@@ -492,7 +492,7 @@ for i=1,4 do
  b.bridge=b:CreateTexture(nil,'OVERLAY');b.bridge:SetTexture(.055,.049,.034,1);b.bridge:SetPoint('TOPLEFT',20,-30);b.bridge:SetPoint('TOPRIGHT',-20,-30);b.bridge:SetHeight(3);b.bridge:Hide()
 
  b:SetScript('OnShow',function()end)
- b:SetScript('OnClick',function()local names=A.Specs();A.summary=idx==4;if not A.summary then A.isBrowse=false;A.spec=names[idx+1]end;A.Refresh(true)end);b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Click Class Icon to Clear Filters');GameTooltip:Show()end);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b.spentBadge=badge(b);specs[i]=b
+ b:SetScript('OnClick',function()local names=A.Specs();A.summary=idx==4;if not A.summary then A.isBrowse=false;A.spec=names[idx+1]end;A.Refresh(true)end);b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Click Class Icon to Clear Filters');A.ShowAdvancementTooltip(GameTooltip)end);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b.spentBadge=badge(b);specs[i]=b
 end
 local spellsPanel=panel(f,25,-135,451,433);local talentsPanel=panel(f,483,-135,334,433);local side=panel(f,828,-106,326,462)
 local function parchment(p)
@@ -557,7 +557,7 @@ local function renderTrees()
  if A.mode~='Classic'then for _,e in ipairs(A.VisibleEntries('ability'))do if e.talentOrigin then allowed[e.id]=true end end end
  local used={};local groups={};local order={}
  for _,node in ipairs(HeroFreePickTrees)do
-  if node.class==A.class and activeSpec==node.spec then
+  if node.class==A.class and activeSpec==node.spec and (A.mode~='Classic'or not node.customOnly)then
    if not groups[node.spec]then groups[node.spec]={};order[#order+1]=node.spec end
    groups[node.spec][#groups[node.spec]+1]=node
   end
@@ -566,7 +566,7 @@ local function renderTrees()
  for gi,spec in ipairs(order)do
   y=8
   local positions={};local maxRow=0
-  for _,node in ipairs(groups[spec])do maxRow=math.max(maxRow,node.row)end
+  for _,node in ipairs(groups[spec])do maxRow=math.max(maxRow,node.displayRow or node.row)end
   local base=nativeBackgrounds[A.class..':'..spec]
   if base then
    local pieces=treeBackgrounds[gi]or {};treeBackgrounds[gi]=pieces
@@ -597,13 +597,14 @@ local function renderTrees()
    end
    if A.AbilityForTalent then e=A.AbilityForTalent(e)end
    b.entry=e;b.node=node;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);local planned=A.PendingRank(e);b.rank:SetText(planned..'/'..A.MaxRank(e));b.rank:SetTextColor(planned>0 and 0 or 1,1,0);b:SetBackdropBorderColor(planned>0 and .3 or .8,planned>0 and 1 or .65,.25,1)
-   local x=35+node.column*63;local ny=y+node.row*63;b:ClearAllPoints();b:SetPoint('TOPLEFT',x,-ny);b.icon:SetDesaturated(A.OtherClass(e.class));b:SetAlpha(not A.OtherClass(e.class)and allowed[e.id]and A.TalentsUnlocked()and 1 or .38);b:Show();positions[node.talent]={x=x+16,y=ny,rank=planned,button=b};A.talentPositions[e.id]=ny;maxRow=math.max(maxRow,node.row)
+   local x=35+node.column*63;local ny=y+(node.displayRow or node.row)*63;b:ClearAllPoints();b:SetPoint('TOPLEFT',x,-ny);b.icon:SetDesaturated(A.OtherClass(e.class));b:SetAlpha(not A.OtherClass(e.class)and allowed[e.id]and A.TalentsUnlocked()and not(e.importedTalent and not e.serverDefinitionAvailable)and 1 or .38);b:Show();positions[node.talent]={x=x+16,y=ny,rank=planned,button=b};A.talentPositions[e.id]=ny;maxRow=math.max(maxRow,node.displayRow or node.row)
   end
   local highest=talentContent:GetFrameLevel()
   for _,button in ipairs(treePools.buttons)do highest=math.max(highest,button:GetFrameLevel()+2)end
   talentArrowLayer:SetFrameLevel(highest+1)
   local routeTextures={}
-  A.NativeTalentRoutes(groups[spec],positions,function(arrow,uv,x,dy,target)
+  local routeNodes={};for _,node in ipairs(groups[spec])do if not node.customOnly then routeNodes[#routeNodes+1]=node end end
+  A.NativeTalentRoutes(routeNodes,positions,function(arrow,uv,x,dy,target)
    local pool,index,owner
    if arrow then
     arrowCount=arrowCount+1;pool=treePools.arrows;index=arrowCount
@@ -653,10 +654,11 @@ A.PrimaryStats={
 }},
 }
 function A.PrimaryStatTooltip(owner)
+ if A.ServerPrimaryStatTooltip and A.ServerPrimaryStatTooltip(owner)then return end
  local d=A.PrimaryStats[owner.primaryStatKey];if not d then return end
  GameTooltip:SetOwner(owner,'ANCHOR_LEFT');GameTooltip:SetText('Primary Stat: '..owner.primaryStatKey)
  GameTooltip:AddLine(d.summary,1,.82,0,true)
- if IsShiftKeyDown() then
+ if A.TooltipDetailsExpanded then
   GameTooltip:AddLine(' ')
   for _,effect in ipairs(d.bonuses)do
    GameTooltip:AddLine(effect.name,1,1,1,true)
@@ -664,9 +666,9 @@ function A.PrimaryStatTooltip(owner)
   end
   GameTooltip:AddLine('Source Spell ID: '..d.spell,.65,.65,.65)
   GameTooltip:AddLine('Character Advancement ID: '..d.advancement,.65,.65,.65)
- else GameTooltip:AddLine('Hold SHIFT for weapon bonuses.',0.2,.85,1,true)end
+ else GameTooltip:AddLine('Tap SHIFT for weapon bonuses.',0.2,.85,1,true)end
  GameTooltip:AddLine('Preview only: selection does not change character stats yet.',.65,.65,.65,true)
- GameTooltip:Show()
+ A.ShowAdvancementTooltip(GameTooltip)
 end
 
 local statButtons={}
@@ -674,10 +676,53 @@ local statIcons={Strength='Spell_Nature_Strength',Agility='Interface\\AddOns\\He
 for i,stat in ipairs({'Strength','Agility','Intellect','Spirit'})do
  local b=CreateFrame('Button',nil,side);b:SetSize(36,36);b:SetPoint('TOPLEFT',35+(i-1)*67,-60)
  b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetAllPoints(b);b.icon:SetTexture(statIcons[stat]:find('Interface',1,true)and statIcons[stat]or('Interface\\Icons\\'..statIcons[stat]));b:SetBackdrop({edgeFile='Interface\\Tooltips\\UI-Tooltip-Border',edgeSize=12});b:SetHighlightTexture('Interface\\Buttons\\ButtonHilight-Square')
- b:SetScript('OnClick',function()if A.mode=='Classic'then A.ShowPointWarning('Classic primary stats use normal class progression.');return end;A.BeginPreparation();HeroFreePickPlans.primaryStat=stat;A.RefreshDetails()end)
+ b:RegisterForClicks('LeftButtonUp','RightButtonUp')
+ b:SetScript('OnClick',function(_,button)if A.classicCommit then return end;if A.mode=='Classic'then A.ShowPointWarning('Classic primary stats use normal class progression.');return end;A.BeginPreparation();if button=='RightButton'then HeroFreePickPlans.primaryStat=nil else HeroFreePickPlans.primaryStat=stat end;A.RefreshDetails()end)
  b.glow=b:CreateTexture(nil,'OVERLAY');b.glow:SetTexture('Interface\\Buttons\\UI-ActionButton-Border');b.glow:SetBlendMode('ADD');b.glow:SetVertexColor(1,.85,.1,1);b.glow:SetSize(64,64);b.glow:SetPoint('CENTER',b,'CENTER',0,0);b.glow:Hide()
  b.primaryStatKey=stat;b:SetScript('OnEnter',A.PrimaryStatTooltip);b:SetScript('OnLeave',function()GameTooltip:Hide()end);statButtons[stat]=b
 end
+-- Primary-stat reminder follows the actual label/icon bounds after layout changes.
+local primaryReminder=CreateFrame('Frame',nil,side)
+primaryReminder:EnableMouse(false);primaryReminder:SetFrameLevel(side:GetFrameLevel()+5)
+local reminderEdges={}
+for _,edge in ipairs({'TOP','BOTTOM','LEFT','RIGHT'})do
+ local t=primaryReminder:CreateTexture(nil,'OVERLAY');t:SetTexture(1,1,0,1)
+ if edge=='TOP'or edge=='BOTTOM'then
+  t:SetHeight(2);t:SetPoint(edge..'LEFT',primaryReminder,edge..'LEFT');t:SetPoint(edge..'RIGHT',primaryReminder,edge..'RIGHT')
+ else
+  t:SetWidth(2);t:SetPoint('TOP'..edge,primaryReminder,'TOP'..edge);t:SetPoint('BOTTOM'..edge,primaryReminder,'BOTTOM'..edge)
+ end
+ reminderEdges[#reminderEdges+1]=t
+end
+local reminderTime,reminderBoundsTick=0,0
+local function updatePrimaryReminder(elapsed)
+ local custom=A.mode=='ClassPlus'or A.mode=='Class+'or A.mode=='Hybrid'or A.mode=='Hero'
+ local chosen=HeroFreePickPlans and A.PrimaryStats[HeroFreePickPlans.primaryStat or '']
+ if not custom or (chosen and not HeroFreePickPlans.hybridPrimaryReview) then primaryReminder:SetAlpha(0);reminderTime=0;reminderBoundsTick=0;return end
+ reminderBoundsTick=reminderBoundsTick-(elapsed or 0)
+ if reminderBoundsTick<=0 then
+  reminderBoundsTick=.1
+  local left,right,top,bottom
+  local widgets={statTitle,statButtons.Strength,statButtons.Agility,statButtons.Intellect,statButtons.Spirit}
+  local scale=side:GetEffectiveScale()
+  for _,widget in ipairs(widgets)do
+   local l,r,t,b=widget:GetLeft(),widget:GetRight(),widget:GetTop(),widget:GetBottom()
+   if not l or not r or not t or not b or not widget:IsShown()then reminderBoundsTick=0;primaryReminder:SetAlpha(0);return end
+   local ratio=(widget.GetEffectiveScale and widget:GetEffectiveScale()or scale)/scale
+   l,r,t,b=l*ratio,r*ratio,t*ratio,b*ratio
+   left=left and math.min(left,l)or l;right=right and math.max(right,r)or r
+   top=top and math.max(top,t)or t;bottom=bottom and math.min(bottom,b)or b
+  end
+  local x,y=side:GetLeft(),side:GetBottom();if not x or not y then reminderBoundsTick=0;primaryReminder:SetAlpha(0);return end
+  primaryReminder:ClearAllPoints();primaryReminder:SetPoint('BOTTOMLEFT',side,'BOTTOMLEFT',left-x-4,bottom-y-4)
+  primaryReminder:SetSize(right-left+8,top-bottom+8)
+ end
+ reminderTime=reminderTime+(elapsed or 0)
+ primaryReminder:SetAlpha(.6+.4*math.cos(reminderTime*math.pi))
+end
+primaryReminder:SetScript('OnUpdate',function(_,elapsed)updatePrimaryReminder(elapsed)end)
+primaryReminder:SetScript('OnShow',function()reminderBoundsTick=0;updatePrimaryReminder(0)end)
+primaryReminder:SetAlpha(0)
 local searchBox=panel(side,12,-100,192,25)
 local learnedSearch=CreateFrame('EditBox',nil,searchBox);learnedSearch:SetFontObject(GameFontHighlightSmall);learnedSearch:SetSize(159,20);learnedSearch:SetPoint('LEFT',27,0);learnedSearch:SetAutoFocus(false)
 local hint=txt(searchBox,'Search',27,-7,152,'GameFontDisableSmall')
@@ -716,7 +761,7 @@ local rarityRows={};A.RarityRows=rarityRows
 local rarityColors={Legendary={1,.5,0},Epic={.64,.21,.93},Rare={0,.44,.87},Uncommon={.12,1,0}}
 for i,q in ipairs({'Legendary','Epic','Rare','Uncommon'})do
  local row=panel(side,10,-329-(i-1)*29,302,28);row.label=txt(row,q,8,-7,88,'GameFontNormalSmall');row.label:SetTextColor(unpack(rarityColors[q]));row.count=txt(row,'0',266,-7,34);row.gems={};rarityRows[q]=row
- row:EnableMouse(true);row:SetScript('OnMouseUp',function(_,button)A.quality=button=='RightButton'and 'All'or q;A.page=1;A.Refresh()end);row:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_LEFT');GameTooltip:SetText(q..' slots used');GameTooltip:AddLine('Rarity slots used by local selections. Limits: 7 Legendary, 13 Epic, 16 Rare, 11 Uncommon. Left-click this bar to filter abilities by rarity. Right-click to clear the rarity filter.',1,1,1,true);GameTooltip:Show()end);row:SetScript('OnLeave',function()GameTooltip:Hide()end)
+ row:EnableMouse(true);row:SetScript('OnMouseUp',function(_,button)A.quality=button=='RightButton'and 'All'or q;A.page=1;A.Refresh()end);row:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_LEFT');GameTooltip:SetText(q..' slots used');GameTooltip:AddLine('Rarity slots used by local selections. Limits: 7 Legendary, 13 Epic, 16 Rare, 11 Uncommon. Left-click this bar to filter abilities by rarity. Right-click to clear the rarity filter.',1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end);row:SetScript('OnLeave',function()GameTooltip:Hide()end)
  for j=1,16 do
   local gem=CreateFrame('Frame',nil,row);gem:SetSize(12,18);gem:SetPoint('TOPLEFT',80+(j-1)*11,-5);gem.parts={}
   for y=0,15 do local width=math.max(1,10*(1-math.abs(y-7.5)/8));local t=gem:CreateTexture(nil,'ARTWORK');t:SetPoint('TOPLEFT',(12-width)/2,-y);t:SetSize(width,1);t:SetTexture(1,1,1,1);gem.parts[#gem.parts+1]=t end
@@ -783,7 +828,7 @@ function A.FindRelated(e)
 end
 local function showSpellMenu(e)
  local menu={
-  {text=e.name,isTitle=true,notCheckable=true},
+  {text=A.DisplayTalentName(e),isTitle=true,notCheckable=true},
   {text='Remove pending selection',notCheckable=true,func=function()A.SetLocalLearned(e.id,0);A.Refresh()end},
   {text='Locate',notCheckable=true,func=function()A.Locate(e)end},
   {text='Find Related',notCheckable=true,tooltipTitle='Related category',tooltipText='Show abilities from the same class and specialization. Effect relationships are not available yet.',tooltipOnButton=true,func=function()A.FindRelated(e)end},
@@ -792,6 +837,7 @@ local function showSpellMenu(e)
 end
 function A.RefreshDetails()
  refreshRarities()
+ updatePrimaryReminder(0)
  for _,b in ipairs(learnedPool)do b:Hide()end
  for stat,b in pairs(statButtons)do local selected=HeroFreePickPlans.primaryStat==stat;b.icon:SetDesaturated(not selected);if selected then b.glow:Show()else b.glow:Hide()end;b:SetBackdropBorderColor(selected and 1 or .4,selected and .82 or .4,selected and .1 or .4,1)end
  UIDropDownMenu_SetText(filterMenu,A.learnedFilter and A.learnedFilter~='All' and A.learnedFilter or 'Filter')
@@ -804,7 +850,7 @@ function A.RefreshDetails()
    b.icon=b:CreateTexture(nil,'ARTWORK');b.icon:SetSize(34*.75,34*.75);b.icon:SetPoint('LEFT',4,0);b.name=txt(b,'',48,-7,154,'GameFontNormalSmall');b.name:SetHeight(31);b.cost=txt(b,'',203,-6,64);b.rarityCost=txt(b,'',203,-25,64);b:SetScript('OnEnter',tooltip);b:SetScript('OnLeave',leaveEntryTooltip)
    b:SetScript('OnClick',function(self,mouse)A.SetLocalLearned(self.entry.id,((HeroFreePickPlans.previewLearned or {})[self.entry.id]or 0)+(mouse=='RightButton'and -1 or 1));A.Refresh()end);learnedPool[i]=b
   end
-  b.entry=e;b.groupedLearnedChild=item.child;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(e.name)
+  b.entry=e;b.groupedLearnedChild=item.child;b.icon:SetTexture(icon(e));updateMasteryBadge(b,e);b.name:SetText(A.DisplayTalentName(e))
   b.cost:SetText(e.spellbookKnown and ''or(rarityCost(e)..' '..(A.IsTalent(e)and talentCost(e.te)or essenceCost(e.ae))))
   b.rarityCost:Hide();b:ClearAllPoints()
   local indent=item.child and 18 or 0;local iconSize=34*.75*(item.child and .5 or 1)
@@ -819,9 +865,9 @@ function A.RefreshDetails()
  learnedContent:SetHeight(math.max(learnedScroll:GetHeight(),rowY))
 end
 local pointsBox=panel(f,25,-573,265,30);local pointText=txt(pointsBox,'',9,-9,249,'GameFontNormalSmall')
-pointsBox:EnableMouse(true);pointsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Available Ability Points');GameTooltip:AddLine('9 points at levels 1-9, then 1 per level starting at 10. Selected ability costs are subtracted; unlearning refunds them. Local prototype balance.',1,1,1,true);GameTooltip:Show()end);pointsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
+pointsBox:EnableMouse(true);pointsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Available Ability Points');GameTooltip:AddLine('9 points at levels 1-9, then 1 per level starting at 10. Selected ability costs are subtracted; unlearning refunds them. Local prototype balance.',1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end);pointsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local talentsBox=panel(f,640,-573,177,30);local pointsTalentText=txt(talentsBox,'',8,-9,163,'GameFontNormalSmall')
-talentsBox:EnableMouse(true);talentsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Pending Talent Points');GameTooltip:AddLine('Remaining / total for your level. One point per level starting at level 10. Pending talent ranks use this budget; removing a rank returns its points.',1,1,1,true);GameTooltip:Show()end);talentsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
+talentsBox:EnableMouse(true);talentsBox:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText('Pending Talent Points');GameTooltip:AddLine('Remaining / total for your level. One point per level starting at level 10. Pending talent ranks use this budget; removing a rank returns its points.',1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end);talentsBox:SetScript('OnLeave',function()GameTooltip:Hide()end)
 local actionMenus={}
 local function actionButton(label,action)
  local menu=CreateFrame('Frame','HeroAdvancement'..action..'ActionMenu',f,'UIDropDownMenuTemplate');actionMenus[action]=menu
@@ -833,13 +879,14 @@ local function actionButton(label,action)
  end,'MENU')
  local b=btn(f,label,0,-575,140,function(self)ToggleDropDownMenu(1,nil,menu,self,0,0)end)
  b:SetScript('OnEnter',function(self)
-  GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText(label)
-  local text=action=='Apply'and(A.mode=='Classic'and 'Review and apply pending talents. Learned talents still require a trainer reset.'or 'Review pending abilities and talents. Server application is not connected yet.')
+  self.resetHovered=true;GameTooltip:SetOwner(self,'ANCHOR_TOP');GameTooltip:SetText(label)
+  local text=action=='Apply'and(A.mode=='Classic'and 'Review and apply pending talents. Learned talents still require a trainer reset.'or(A.ServerPathEnrolled and A.mode=='ClassPlus'and 'Review and apply pending abilities and talents. Any talent refund charge is shown before accepting.'or 'Review pending abilities and talents. Server application is not connected yet.'))
    or action=='Pending'and 'Discard pending changes in the selected category and restore the build from when preparation began. Learned abilities and talents are preserved.'
-   or(A.mode=='Classic'and 'Classic learned talents must be reset at a trainer.'or 'Requires server reset support. Applied talent resets must use the current trainer price, quoted and charged by the server after confirmation. No reset or charge is available yet.')
-  GameTooltip:AddLine(text,1,1,1,true);GameTooltip:Show()
+   or(A.mode=='Classic'and 'Classic learned talents must be reset at a trainer.'or 'Prepare a reset of learned selections, then review and accept the pending changes.')
+  GameTooltip:AddLine(text,1,1,1,true);if action=='Learned'and A.AppendResetTooltip then A.AppendResetTooltip()end;A.ShowAdvancementTooltip(GameTooltip)
  end)
- b:SetScript('OnLeave',function()GameTooltip:Hide()end)
+ b:SetScript('OnUpdate',function(self,dt)if action=='Learned'and self.resetHovered and GameTooltip:IsOwned(self)then self.resetTick=(self.resetTick or 0)+dt;if self.resetTick>=1 then self.resetTick=0;self:GetScript('OnEnter')(self)end end end)
+ b:SetScript('OnLeave',function(self)self.resetHovered=false;GameTooltip:Hide()end)
  return b
 end
 local applyPendingButton=actionButton('Apply Pending','Apply')
@@ -864,8 +911,8 @@ local function layoutFooter()
   local enabled=false;for _,option in ipairs(A.FooterActions(item[2]))do if option.enabled then enabled=true end end
   if enabled then item[1]:Enable()else item[1]:Disable()end
  end
- -- No authoritative reset handler is installed in this build.
- resetLearnedButton:Disable()
+ local canReset=false;for _,option in ipairs(A.FooterActions('Learned'))do if option.enabled then canReset=true end end
+ if canReset then resetLearnedButton:Enable()else resetLearnedButton:Disable()end
 end
 local allPanel=panel(f,25,-135,792,433);parchment(allPanel)
 local allTitle=txt(allPanel,'Browse - All Abilities',14,-13,720,'GameFontNormalLarge')
@@ -908,7 +955,7 @@ local function renderBrowse()
  local grouped={};for _,c in ipairs(HeroBrowseCategories)do grouped[c.id]={}end
  for _,e in ipairs(HeroFreePickCatalog)do
   local planned=(HeroFreePickPlans.entries[e.id]or 0)>0
-  if A.EntryAvailableInMode(e) and e.kind=='Ability' and (A.quality=='All' or e.quality==A.quality) and string.find(string.lower(e.name),string.lower(A.query or''),1,true)
+  if A.EntryAvailableInMode(e) and e.kind=='Ability' and (A.quality=='All' or e.quality==A.quality) and string.find(string.lower(A.DisplayTalentName(e)),string.lower(A.query or''),1,true)
    and (A.ownership=='All' or A.ownership=='Planned'and planned or A.ownership=='Not planned'and not planned)then
    for _,id in ipairs((HeroBrowseAssignment[e.id]or {categories={6}}).categories)do table.insert(grouped[id]or grouped[6],e)end
   end
@@ -918,7 +965,7 @@ local function renderBrowse()
   local entries=grouped[c.id];table.sort(entries,function(a,b)local x=HeroBrowseAssignment[a.id];local y=HeroBrowseAssignment[b.id];if A.AbilityDisplayLevel(a)~=A.AbilityDisplayLevel(b)then return A.AbilityDisplayLevel(a)<A.AbilityDisplayLevel(b)end;if x.order~=y.order then return x.order<y.order end;if a.name==b.name then return a.id<b.id end;return a.name<b.name end)
   if #entries>0 then
   local h=allHeaders[i]
-  if not h then h=CreateFrame('Button',nil,allContent);h:SetSize(720,28);h.label=txt(h,'',4,-4,710,'GameFontNormal');allHeaders[i]=h;h:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(self.category.name);GameTooltip:AddLine(self.category.description,1,1,1,true);GameTooltip:AddLine('A52 category definitions and level order. Spell tooltips identify fallback assignments.',1,.8,.3,true);GameTooltip:Show()end);h:SetScript('OnLeave',function()GameTooltip:Hide()end)end
+  if not h then h=CreateFrame('Button',nil,allContent);h:SetSize(720,28);h.label=txt(h,'',4,-4,710,'GameFontNormal');allHeaders[i]=h;h:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(self.category.name);GameTooltip:AddLine(self.category.description,1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end);h:SetScript('OnLeave',function()GameTooltip:Hide()end)end
   h.category=c;h:ClearAllPoints();h:SetPoint('TOPLEFT',0,-y);h.label:SetText(c.name..' - Level '..c.referenceLevel..' ('..#entries..')');h.label:SetTextColor(.23,.12,.045);h:Show();y=y+32
   for j,e in ipairs(entries)do
    count=count+1;local b=allButtons[count]
@@ -938,13 +985,13 @@ local function renderBrowse()
  allContent:SetHeight(math.max(y,417))
 end
 function A.Refresh(resetScroll)
- title:SetText('Hero Advancement - '..A.Mode().name..(A.mode~='Classic'and ' (preview)'or ''))
+ title:SetText('Hero Advancement - '..A.Mode().name)
  L.Apply()
  A.Init();summarySort:Hide();for _,b in ipairs(summaryButtons)do b:Hide()end;for _,h in ipairs(summaryHeaders)do h:Hide()end;A.kind='All';allPanel:Hide();allTitle:SetText(A.summary and 'Summary' or 'Browse - All Abilities')
  for _,b in ipairs(allButtons)do b:Hide()end;for _,h in ipairs(allHeaders)do h:Hide()end
  local previous=pools[allContent];if previous then for _,b in ipairs(previous.buttons)do b:Hide()end;for _,h in ipairs(previous.headers)do h:Hide()end end
  for key,d in pairs(dropdowns)do UIDropDownMenu_SetText(d,A[key])end
- for c,b in pairs(classButtons)do b:Enable();local other=c~='Browse' and A.OtherClass(c);b.portrait:SetDesaturated(other);b.portrait:SetAlpha(other and .4 or 1);local _,own;if UnitClass then _,own=UnitClass('player')end;if (own and own~='HERO' and string.upper(c)==own)or((not own or own=='HERO')and ((A.isBrowse and c=='Browse')or(not A.isBrowse and c==A.class)))then for _,g in ipairs(b.glows)do g:Show()end;b.ring:SetVertexColor(1,.82,.25);b.label:SetTextColor(1,.9,.4)else for _,g in ipairs(b.glows)do g:Hide()end;b.ring:SetVertexColor(.7,.7,.67);b.label:SetTextColor(other and .4 or .8,other and .4 or .7,other and .4 or .42)end end
+ for c,b in pairs(classButtons)do b:Enable();local other=c~='Browse' and A.OtherClass(c);b.portrait:SetDesaturated(other);b.portrait:SetAlpha(other and .4 or 1);local _,own;if UnitClass then _,own=UnitClass('player')end;local hybridSecond=(A.ServerApprovedMode or A.mode)=='Hybrid' and A.secondClass and string.upper(c)==string.upper(A.secondClass);if hybridSecond or (own and own~='HERO' and string.upper(c)==own)or((not own or own=='HERO')and ((A.isBrowse and c=='Browse')or(not A.isBrowse and c==A.class)))then for _,g in ipairs(b.glows)do g:Show()end;b.ring:SetVertexColor(1,.82,.25);b.label:SetTextColor(1,.9,.4)else for _,g in ipairs(b.glows)do g:Hide()end;b.ring:SetVertexColor(.7,.7,.67);b.label:SetTextColor(other and .4 or .8,other and .4 or .7,other and .4 or .42)end end
  if A.TalentsUnlocked()then talentLock:Hide()else talentLock:Show()end
  local names=A.Specs();for i,b in ipairs(specs)do
  local name=i==4 and 'Summary' or names[i+1]
@@ -1043,9 +1090,9 @@ function A.FitWindow()
  f:SetClampedToScreen(true);f:SetClampRectInsets(0,0,0,-32)
 end
 f:RegisterEvent('PLAYER_REGEN_DISABLED');f:RegisterEvent('SPELLS_CHANGED');f:RegisterEvent('LEARNED_SPELL_IN_TAB');f:RegisterEvent('DISPLAY_SIZE_CHANGED');f:RegisterEvent('UI_SCALE_CHANGED');f:RegisterEvent('CHARACTER_POINTS_CHANGED');f:RegisterEvent('PLAYER_TALENT_UPDATE');f:RegisterEvent('PLAYER_LEVEL_UP');f:RegisterEvent('MODIFIER_STATE_CHANGED')
-f:SetScript('OnEvent',function(self,event)if event=='PLAYER_REGEN_DISABLED' then A.HidePreparationPreservingChanges();GameTooltip:Hide();return end;if event=='MODIFIER_STATE_CHANGED' then if A.RefreshMasteryTooltip()then return end;local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
+f:SetScript('OnEvent',function(self,event,key,state)if event=='PLAYER_REGEN_DISABLED'then A.SuspendPreparationForCombat();return end;if event=='MODIFIER_STATE_CHANGED' then if not A.HandleTooltipModifier(key,state,f:IsShown())then return end;if A.RefreshMasteryTooltip()then return end;local owner=GameTooltip:GetOwner();if owner and rawget(owner,'primaryStatKey') then A.PrimaryStatTooltip(owner)elseif owner and owner.entry then tooltip(owner)end;return end;if f:IsShown()then A.FitWindow();A.Refresh()end end)
 SLASH_HEROFREEPICK1='/heropick'
-function A.Toggle()if InCombatLockdown and InCombatLockdown()then A.HidePreparationPreservingChanges();return end;if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show();if A.ShowModeChoice then A.ShowModeChoice()end end end
+function A.Toggle()if InCombatLockdown and InCombatLockdown()then A.SuspendPreparationForCombat();return end;if f:IsShown()then A.RequestClose()else A.BeginPreparation();A.Refresh(true);A.FitWindow();f:Show();if A.ShowModeChoice then A.ShowModeChoice()end end end
 
 SlashCmdList.HEROFREEPICK=A.Toggle
 
@@ -1068,21 +1115,39 @@ local function button(text,x,fn)
  local b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(185,26);b:SetPoint('TOPLEFT',x,-66);b:SetText(text);b:SetScript('OnClick',fn);return b
 end
 local closing=false
+local function requirePrimaryBeforeClose()
+ local ok,why=A.ValidatePrimaryStatSelection()
+ if ok then return true end
+ dialog:Hide();window:Show();A.ShowPointWarning(why);return false
+end
+-- Combat must bypass required-stat/review prompts without changing the saved draft.
+function A.SuspendPreparationForCombat()
+ closing=true;dialog:Hide()
+ if HeroProgressionChoice then HeroProgressionChoice:Hide()end
+ window:Hide();GameTooltip:Hide();hideMasteryTooltip();closing=false
+end
 function A.HidePreparationPreservingChanges()
+ if not requirePrimaryBeforeClose()then return false end
  closing=true;dialog:Hide()
  if HeroProgressionChoice then HeroProgressionChoice:Hide()end
  window:Hide();closing=false
 end
 local dismiss=CreateFrame('Button',nil,box,'UIPanelCloseButton');dismiss:SetPoint('TOPRIGHT',-6,-6);dismiss:SetScript('OnClick',A.HidePreparationPreservingChanges)
 local function finish()
+ if not requirePrimaryBeforeClose()then return false end
  closing=true;dialog:Hide();window:Hide();closing=false
 end
+function A.UpdatePendingReviewText()
+ title:SetText((A.ResetReviewText and A.ResetReviewText())or 'You are about to confirm.\nChanging talents after this will cost Gold.')
+end
 function A.ShowPendingReview()
- if InCombatLockdown and InCombatLockdown()then A.HidePreparationPreservingChanges();return end
+ if InCombatLockdown and InCombatLockdown()then A.SuspendPreparationForCombat();return end
+ A.UpdatePendingReviewText()
  if not dialog:IsShown()and A.AlertSoundsEnabled()and PlaySound then PlaySound('RaidWarning')end
  dialog:Show()
 end
 function A.RequestClose()
+ if not requirePrimaryBeforeClose()then return false end
  if A.classicCommit then A.ShowPendingReview();return false end
  if A.HasPendingChanges()then A.ShowPendingReview();return false end
  if HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end
@@ -1101,6 +1166,8 @@ window:SetScript('OnHide',function()
  if A.SettingsMenu then A.SettingsMenu:Hide()end
  if A.InfoPopup then A.InfoPopup:Hide()end
  if closing then return end
+ if InCombatLockdown and InCombatLockdown()then A.SuspendPreparationForCombat();return end
+ if not requirePrimaryBeforeClose()then return end
  if A.HasPendingChanges()then window:Show();A.ShowPendingReview()
  elseif HeroFreePickPlans then HeroFreePickPlans.pendingBaseline=nil end
 end)
@@ -1124,7 +1191,7 @@ choiceStone:SetTexture('Interface\\PaperDollInfoFrame\\UI-Character-General-TopL
 local title=box:CreateFontString(nil,'OVERLAY','GameFontNormalLarge');title:SetPoint('TOP',0,-24)
 local note=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');note:SetPoint('TOPLEFT',24,-55);note:SetSize(542,65);note:SetJustifyH('LEFT')
 local closeChoice=CreateFrame('Button',nil,box,'UIPanelCloseButton');closeChoice:SetPoint('TOPRIGHT',-6,-6);closeChoice:SetScript('OnClick',A.HidePreparationPreservingChanges)
-local upgradeNote=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');upgradeNote:SetPoint('TOPLEFT',24,-218);upgradeNote:SetSize(542,70);upgradeNote:SetJustifyH('CENTER');upgradeNote:SetText('Update with the optional Class+, Hybrid, or Hero modules to access these features. Custom modes are currently development previews.');upgradeNote:Hide()
+local upgradeNote=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');upgradeNote:SetPoint('TOPLEFT',24,-218);upgradeNote:SetSize(542,70);upgradeNote:SetJustifyH('CENTER');upgradeNote:SetText('Update with the optional Class+, Hybrid, or Hero modules to access these features. Custom server support is in development and partially functional.');upgradeNote:Hide()
 A.ProgressionUpgradeNote=upgradeNote
 local buttons={};A.ProgressionChoiceButtons=buttons
 local function clear()upgradeNote:Hide();for _,b in ipairs(buttons)do b:Hide()end end
@@ -1132,14 +1199,15 @@ local function choice(label,index,description,fn)
  local b=buttons[index]
  if not b then b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(255,30);buttons[index]=b end
  b:SetFrameStrata('FULLSCREEN_DIALOG');b:SetFrameLevel(62);b:EnableMouse(true);b:Enable();b:ClearAllPoints();b:SetPoint('TOPLEFT',25+((index-1)%2)*280,-125-math.floor((index-1)/2)*40);b:SetText(label)
- b:SetScript('OnClick',fn);b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(label);GameTooltip:AddLine(description,1,1,1,true);GameTooltip:Show()end);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b:Show()
+ b:SetScript('OnClick',fn);b:SetScript('OnEnter',function(self)GameTooltip:SetOwner(self,'ANCHOR_RIGHT');GameTooltip:SetText(label);GameTooltip:AddLine(description,1,1,1,true);A.ShowAdvancementTooltip(GameTooltip)end);b:SetScript('OnLeave',function()GameTooltip:Hide()end);b:Show()
 end
 local function finish(ok,why)
  if not ok then note:SetText(why);return end
  shield:Hide();A.Refresh(true)
+ if A.RequiresPrimaryStat()and A.QueueAdvancementOpen then A.QueueAdvancementOpen("choice")end
 end
 local function secondClass()
- clear();title:SetText('Choose your second class');note:SetText('Your original class remains available. Choose one additional class for Hybrid. Custom modes are currently local previews.')
+ clear();title:SetText('Choose your second class');note:SetText('Your original class remains available. Choose one additional class for Hybrid. Custom server support is progressing; some features are not yet functional.')
  local _,own=UnitClass('player');local i=0
  for _,c in ipairs(A.classes)do if string.upper(c)~=own then local selected=c;i=i+1;choice(c,i,'Unlock abilities and talents from '..c..' alongside your original class.',function()finish(A.ChooseHybridPath(selected))end)end end
 end
@@ -1147,7 +1215,7 @@ function A.ShowModeChoice(level,reopen)
  local due=(reopen and UnitLevel('player')==1)and 'initial'or A.ModeChoiceDue(level);if not due then shield:Hide();return end
  clear();shield:Show()
  if due=='initial'then
-  title:SetText('Choose your progression');note:SetText('Choose how this character will progress. Classic uses the stock server. Installed custom modes are local previews until server integration is complete.')
+  title:SetText('Choose your progression');note:SetText('Choose how this character will progress. Classic uses the stock server. Custom server support is progressing and partially functional. Some features are still being implemented.')
   choice('Classic Character',1,'Learn abilities from trainers. Preview talents here; committed talents require a trainer reset.',function()finish(A.ChooseInitialMode('Classic'))end)
   if A.InstalledModes.ClassPlus or A.InstalledModes.Hybrid then choice('Class+',2,A.ClassPlusChoiceTooltip(),function()finish(A.ChooseInitialMode('ClassPlus'))end)end
   if A.InstalledModes.Hero then choice('Hero',3,'Full free-pick preparation across all classes within resource limits.',function()finish(A.ChooseInitialMode('Hero'))end)end
@@ -1160,8 +1228,8 @@ function A.ShowModeChoice(level,reopen)
    upgradeNote:Show()
   end
  else
-  title:SetText('Continue as Class+ or become Hybrid');note:SetText('You have reached level 10. Continue with your original class, or choose a second class. This one-time choice is saved locally until server integration is available.')
-  choice('Continue as Class+',1,'Keep your original class only.',function()finish(A.ChooseHybridPath(nil))end)
+  title:SetText('Continue as Class+ or become Hybrid');note:SetText('You have reached level 10. Continue as Class+ with your original class, or select one additional class and enter Hybrid. Your choice is saved by the server. Later upgrades are available in Settings.')
+  choice('Continue as Class+ ('..UnitClass('player')..')',1,'Keep your original class only.',function()finish(A.ChooseHybridPath(nil))end)
   choice('Become Hybrid',2,'Choose one additional class. Both classes share your point and rarity budgets.',secondClass)
  end
 end
@@ -1178,5 +1246,38 @@ events:SetScript('OnEvent',function(_,event,level)
  end
  A.RefreshModeChangeButton(event=='PLAYER_LEVEL_UP'and tonumber(level)or nil)
  A.ShowModeChoice(event=='PLAYER_LEVEL_UP'and tonumber(level)or nil)
+end)
+end
+
+-- Open once per login/confirmed mode choice, after combat and server sync.
+do
+local A=HeroFreePick
+local pendingLogin,pendingChoice,elapsed=false,false,0
+function A.QueueAdvancementOpen(reason)
+ if reason=='choice'then pendingChoice=true else pendingLogin=true end
+end
+function A.ProcessDeferredAdvancementOpen()
+ if not pendingLogin and not pendingChoice then return end
+ if (InCombatLockdown and InCombatLockdown())or(UnitAffectingCombat and UnitAffectingCombat('player'))then return end
+ if A.classicCommit or (HeroProgressionChoice and HeroProgressionChoice:IsShown())then return end
+ if A.ServerBuildSyncRequired and A.ServerPathEnrolled==nil then return end
+ if A.mode=='ClassPlus'and A.ServerBuildSyncRequired and not A.ServerBuildReady then return end
+ if not HeroFreePickPlans or not HeroFreePickPlans.progressionChoice then return end
+ local points
+ if A.mode=='Classic'then points=(A.AvailableTalentPoints('previewLearned')or 0)>0
+ else points=(A.AvailableAbilityPoints('previewLearned')or 0)>0 or (A.AvailableTalentPoints('previewLearned')or 0)>0 end
+ local open=(pendingChoice and A.RequiresPrimaryStat())or (pendingLogin and points)
+ pendingChoice=false;pendingLogin=false
+ if open and not HeroFreePickFrame:IsShown()then A.Toggle()end
+end
+local lifecycle=CreateFrame('Frame','HeroAdvancementLifecycle');A.AdvancementLifecycle=lifecycle
+lifecycle:RegisterEvent('PLAYER_LOGIN');lifecycle:RegisterEvent('PLAYER_REGEN_ENABLED')
+lifecycle:SetScript('OnEvent',function(_,event)
+ if event=='PLAYER_LOGIN'then A.QueueAdvancementOpen('login')end
+ A.ProcessDeferredAdvancementOpen()
+end)
+lifecycle:SetScript('OnUpdate',function(_,dt)
+ if not pendingLogin and not pendingChoice then return end
+ elapsed=elapsed+dt;if elapsed<.25 then return end;elapsed=0;A.ProcessDeferredAdvancementOpen()
 end)
 end

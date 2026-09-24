@@ -55,6 +55,22 @@ HeroFreePickFrame:Hide();assert(HeroFreePickFrame:IsShown()and A.PendingDialog:I
 A.PendingAcceptButton.scripts.OnClick();assert(A.HasPendingChanges()and A.PendingDialog:IsShown())
 local ok,reason=A.AcceptPreparation();assert(not ok and reason:lower():find('server'))
 A.PendingCancelButton.scripts.OnClick();assert(not A.HasPendingChanges()and A.PendingRank(e)==0 and not HeroFreePickFrame:IsShown())
+-- Combat interrupts all preparation UI without committing/discarding the saved draft.
+for _,mode in ipairs({'Classic','ClassPlus','Hybrid','Hero'})do
+ A.mode=mode;A.BeginPreparation();HeroFreePickPlans.previewLearned[e.id]=1;HeroFreePickPlans.primaryStat='Agility'
+ local baseline=HeroFreePickPlans.pendingBaseline
+ HeroFreePickFrame:Show();A.ShowPendingReview();HeroProgressionChoice:Show()
+ function InCombatLockdown()return true end
+ HeroFreePickFrame.scripts.OnEvent(HeroFreePickFrame,'PLAYER_REGEN_DISABLED')
+ assert(not HeroFreePickFrame:IsShown()and not A.PendingDialog:IsShown()and not HeroProgressionChoice:IsShown())
+ assert(A.PendingRank(e)==1 and HeroFreePickPlans.primaryStat=='Agility'and HeroFreePickPlans.pendingBaseline==baseline)
+ A.Toggle();A.ShowPendingReview();assert(not HeroFreePickFrame:IsShown()and not A.PendingDialog:IsShown())
+ InCombatLockdown=function()return false end
+ assert(not HeroFreePickFrame:IsShown(),'Combat end should not force a menu over gameplay')
+ A.Toggle();assert(HeroFreePickFrame:IsShown()and A.PendingRank(e)==1 and HeroFreePickPlans.pendingBaseline==baseline)
+ A.CancelPreparation();A.HidePreparationPreservingChanges()
+end
+A.mode='Hero'
 -- Net-zero edits should not prompt; X/N and Escape share the same close decision.
 A.Toggle();A.SetLocalLearned(e.id,1);A.SetLocalLearned(e.id,0);assert(not A.HasPendingChanges());A.Toggle();assert(not HeroFreePickFrame:IsShown())
 -- Pending drafts, primary-stat changes, reload restoration and independent resource deltas.

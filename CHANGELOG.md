@@ -1,3 +1,8 @@
+## Combat preparation preservation
+
+- Hero Advancement closes on entering combat, including review and mode-choice overlays. Pending selections and their baseline remain saved for reopening after combat; nothing is auto-applied or discarded. Opening/reviewing during combat is blocked.
+- Applies to Classic, Class+, Hybrid and Hero menu preparation; progression rules remain unchanged.
+
 ## 2026-09-24 — Main branch consolidation
 
 - Merge all remaining committed HeroFreePick work from the previous publication branch into the owner's consolidated main history. Future milestone publication targets main.
