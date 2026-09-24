@@ -34,7 +34,7 @@
  
 -    if (!unitCaster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET))
 +    if (!unitCaster->IsClass(CLASS_HUNTER, CLASS_CONTEXT_PET) &&
-+        !(m_spellInfo->Id == 1515 && HeroCanTameBeast(unitCaster->ToPlayer())))
++        !(m_spellInfo->Id == 13481 && HeroCanTameBeast(unitCaster->ToPlayer())))
          return;
  
      // cast finish successfully

@@ -1,3 +1,7 @@
+## 2026-09-24 — Tame Beast completion trigger correction
+
+- Match completion spell 13481 instead of channel spell 1515. Keep learned-channel and selected-class authorization. Verified the trigger chain against exported PTR spell records; compiled and activated. In-game retest pending.
+
 ## 2026-09-24 — Hybrid beast taming repair
 
 - Honor learned Tame Beast and selected Hunter access at tame completion without globally changing class identity.
