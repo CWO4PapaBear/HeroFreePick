@@ -1,3 +1,8 @@
+## 2026-09-24 — DK fixes verified on PTR
+
+- Combined server build activated successfully. Owner confirmed Class+ selection on Runetest, working native-DK runes, and working Hybrid DK rune recovery on DKHtest with ability and rune cooldown swipes visible.
+- Server-only release; no client update or launcher promotion required. Previous server image retained for rollback.
+
 ## 2026-09-24 — Initial DK mode selection and combined rune candidate
 
 - Permit XP during the first level-55 DK mode selection, fixing a zero-XP rejection before any quests or build selections. Retain all other transition checks and the Class+ level-one reset.
