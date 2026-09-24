@@ -1,3 +1,8 @@
+## 2026-09-24 — Main branch consolidation
+
+- Merge all remaining committed HeroFreePick work from the previous publication branch into the owner's consolidated main history. Future milestone publication targets main.
+- Preserve unrelated local changes in older checkouts. This source merge does not publish client assets or promote a launcher release.
+
 ## 2026-09-24 — DK fixes verified on PTR
 
 - Combined server build activated successfully. Owner confirmed Class+ selection on Runetest, working native-DK runes, and working Hybrid DK rune recovery on DKHtest with ability and rune cooldown swipes visible.

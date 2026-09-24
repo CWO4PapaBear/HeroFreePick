@@ -2,6 +2,8 @@
 
 This is the modular Hero Advancement private repository for CWO4PapaBear/HeroFreePick.
 
+- Publish completed milestones to remote `main`, as requested by the owner on 2026-09-24. Fetch and reconcile current `origin/main` before pushing. Do not publish to the old `fix/spellbook-tab-pages` branch unless explicitly requested. Never force-push.
+
 - Never add the external LayoutEditor, its importer, personal layout presets, backups, extracted client archives or extracted third-party server modules.
 - Optional original server packages are now authorized. Keep Classic client-only and document uncompiled/unfinished server integrations honestly.
 - The owner authorizes normal commits and pushes at completed development milestones. Run relevant tests and build.py, review the diff, and update the changelog first. Do not force-push.
