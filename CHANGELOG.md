@@ -1,3 +1,9 @@
+## 2026-09-24 — Hybrid beast taming repair
+
+- Honor learned Tame Beast and selected Hunter access at tame completion without globally changing class identity.
+- Exclude Hunter-type pets from the Death Knight ghoul visibility loading exception.
+- Server build activated on PTR; client unchanged. In-game tame/persistence verification pending.
+
 ## 2026-09-23 — Starter spell supplies and healing tooltip review
 
 - Activate ability-based initial totems, ammunition and allowlisted reagents for custom modes; persistent no-refill ledger, inventory/bank checks and full-bag retry. Classic unchanged.
