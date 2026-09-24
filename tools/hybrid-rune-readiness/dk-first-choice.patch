@@ -1,0 +1,26 @@
+--- a/modules/mod-hero-starting-path/src/DKStartPolicy.h
++++ b/modules/mod-hero-starting-path/src/DKStartPolicy.h
+@@ -3,8 +3,10 @@
+ enum class Mode { Pending,Classic,ClassPlus,Hybrid,Hero };
+ inline bool Custom(Mode mode){return mode==Mode::ClassPlus||mode==Mode::Hybrid||mode==Mode::Hero;}
+ inline unsigned Level(Mode mode){return Custom(mode)?1u:55u;}
+-inline bool CanChange(unsigned level,unsigned xp,bool hasQuests,bool hasBuild,bool busy){
+- return (level==1||level==55)&&xp==0&&!hasQuests&&!hasBuild&&!busy;
++// A fresh level-55 DK can gain exploration XP before choosing a mode.
++// Allow that first choice; later transitions still require zero XP.
++inline bool CanChange(unsigned level,unsigned xp,bool hasQuests,bool hasBuild,bool busy,bool firstChoice=false){
++ return (level==1||level==55)&&(xp==0||(firstChoice&&level==55))&&!hasQuests&&!hasBuild&&!busy;
+ }
+ inline bool NeedsTransition(bool tracked,unsigned target,unsigned applied){return tracked&&target!=0&&target!=applied;}
+ }
+--- a/modules/mod-hero-starting-path/src/DKStarting.h
++++ b/modules/mod-hero-starting-path/src/DKStarting.h
+@@ -87,7 +87,7 @@
+  auto b=CharacterDatabase.Query("SELECT selections FROM hero_build_test WHERE guid={}",p->GetGUID().GetCounter());
+  bool hasBuild=b&&b->Fetch()[0].Get<std::string>()!="-";
+  if(!CanChange(p->GetLevel(),p->GetUInt32Value(PLAYER_XP),!p->getQuestStatusMap().empty()||p->GetRewardedQuestCount()!=0,hasBuild,
+-     p->IsInCombat()||p->IsBeingTeleported()||p->GetTradeData()!=nullptr||!p->IsAlive()))return false;
++     p->IsInCombat()||p->IsBeingTeleported()||p->GetTradeData()!=nullptr||!p->IsAlive(),r.target==0&&r.applied==0))return false;
+  if(target==2){
+   std::vector<Move> moves;if(!BankPlan(p,moves,r.gear))return false;
+   auto outfit=RacialOutfit(p->getRace(),p->GetByteValue(PLAYER_BYTES_3,PLAYER_BYTES_3_OFFSET_GENDER));

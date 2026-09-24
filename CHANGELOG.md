@@ -1,3 +1,8 @@
+## 2026-09-24 — Initial DK mode selection and combined rune candidate
+
+- Permit XP during the first level-55 DK mode selection, fixing a zero-XP rejection before any quests or build selections. Retain all other transition checks and the Class+ level-one reset.
+- Compiled policy checks passed. Combined with the rune notification candidate for full build and live testing; neither change activated yet.
+
 ## 2026-09-24 — Hybrid rune readiness candidate
 
 - Stage an explicit readiness notification when a non-native DK's authoritative rune cooldown expires. Preserve rune costs, cooldowns and native DK behavior.

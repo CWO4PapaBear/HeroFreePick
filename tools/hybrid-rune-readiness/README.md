@@ -19,3 +19,9 @@ Build against the current PTR image and source. Preserve the previous image and 
 In-game checks: spend all available relevant rune types, let them recover without a refresh ability, and repeat several times in and out of combat. Verify death-rune conversions and explicit reset abilities still work. Compare a native DK. If failure persists, capture server cooldowns and rejected spell identity before changing rune costs or regenerating more often.
 
 Separate open issue: a newly created native DK received HF_PATH START_BLOCKED when selecting Class+. Its DK-start transition checks must be diagnosed separately; this patch does not bypass them.
+
+## Initial native-DK mode selection
+
+Read-only evidence identified level 55 with 560 XP, no quests, no build and an untouched mode journal. The zero-XP check rejected the first selection. The companion patch allows XP only when target_mode and applied_mode are both zero and level is 55. Quest, build, busy-state and inventory checks remain; later transitions still require zero XP. Class+ still resets to level 1 and zero XP. Source checked with compiled policy tests for the reported case and exclusions; full build and live test pending.
+
+The combined local build package is Hero_DK_Rune_And_Start. It supersedes the rune-only build for the next activation. No client update or SQL migration.
