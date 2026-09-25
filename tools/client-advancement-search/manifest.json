@@ -1,0 +1,32 @@
+[
+  {
+    "path": "HeroFreePick/Adapter.lua",
+    "before_sha256": "a0dac521a9d38be7ecbc9fd3143d2089e293f9e592437cad3ed6b968ba35bb09",
+    "after_sha256": "9087b063184f305f3065fcafc1f57d14a145559b349dc8acf60a4c63c3bb6af5"
+  },
+  {
+    "path": "HeroFreePick/Organization.lua",
+    "before_sha256": "991883bb597ba9a7f2a7b205d8dc2b86bfbbecfb84626c68b607f5fd1c859ff3",
+    "after_sha256": "e71017cd66aa19ec6e1742cc5819d15fe5026e2236fa76a5dfe26367f1c615f6"
+  },
+  {
+    "path": "HeroFreePick/HeroFreePick.lua",
+    "before_sha256": "11c5036ffcdaf183f4b529fb38f7dac92a6a2095bb152dc8663922f43ad0edea",
+    "after_sha256": "38ac1ccff888922e2b5e1f30efbe75a8b78e2b185b40e1246c1bbaa4d305b416"
+  },
+  {
+    "path": "HeroFreePick/AdvancementSearch.lua",
+    "before_sha256": null,
+    "after_sha256": "b663656a3ff08c139cefd79439c7ff64aa632b5ee5928e600effeb2842f2b27e"
+  },
+  {
+    "path": "HeroFreePick/HeroFreePick.toc",
+    "before_sha256": "6b97014be3b4e57495d140e3bcbe3da2df4d6cb9b96f715781a12a487d744020",
+    "after_sha256": "324e42310cc3bf4a33b710508e88be7f86646593b2525215dd0c398e7a911343"
+  },
+  {
+    "path": "HeroClassPlusCommitTest/GameModeUI.lua",
+    "before_sha256": "41b52fccb93a1f121d6ee773d8d0725295e0d780a8e89764435ba2962b942ee2",
+    "after_sha256": "3fba6711be686cfdf446b0a061b385875e5b9ec7a75bb2d3f35136074e848b20"
+  }
+]

@@ -147,6 +147,37 @@ For client installation, use the current installed client as the baseline, prese
 
 ## 9. Publish and report distinct outcomes
 
+## Copyable command examples from actual work
+
+These examples use this workstation's paths. Verify the referenced package exists and inspect its script before reuse. Historical build/activation packages are not a recipe to deploy a new feature. During a staged combined patch, run collectors and local validation only; do not install, activate, or promote a release.
+
+**WSL — read-only current poison Mastery evidence** (collector writes only exported files, not server/database state):
+
+```bash
+sudo python3 /mnt/c/Users/danie/Documents/Codex/2026-09-12/can/outputs/Hero_Mode_Entry_Stage/Collect-Poison-Mastery.py
+```
+
+This collector exports current poison item rows and vendor inventory, spell schemas/overrides/ranks/bindings, server DBCs, relevant item/cast handlers, and the current advancement module. Review `latest-poison-mastery.json` and the named export's `manifest.json`. This is required evidence for item restrictions, spell reagents, and direct-item-use bypasses; the earlier `Collect-Poison-Vendors.py` does not export full item requirements.
+
+**PowerShell — validate collector syntax without running it**, from the workspace root:
+
+```powershell
+& 'C:/Users/danie/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' -c "import ast,pathlib; ast.parse(pathlib.Path('outputs/Hero_Mode_Entry_Stage/Collect-Poison-Mastery.py').read_text()); print('Collector syntax passed')"
+```
+
+**PowerShell — targeted source discovery**, avoiding giant generated tooltip lines:
+
+```powershell
+rg -n --max-columns 240 --max-columns-preview 'requiredMastery|MasteryAllowed|ValidateMasterySelections' outputs/Hero_Mode_Entry_Stage/staged-client/HeroFreePick/Masteries.lua
+rg -n --max-columns 240 --max-columns-preview 'HasSpell|Reagent|m_CastItem' outputs/Hero_Mode_Entry_Stage/baseline-20260925-193640-754636/src/server/game/Spells/Spell.cpp
+```
+
+Replace the timestamped baseline with the latest export before implementation. Reusing an existing poison spell globally can change Classic; consuming both its reagent and the casting item can double-charge players. Test spell casts and item casts separately.
+
+Existing reusable mechanics tests live in `tools/martial-fluidity/Test-Module.py` and `Test-Client.py`; inspect their inputs before running. For a new feature, write its own focused tests rather than interpreting a historical test pass as validation of the new behavior. Run the repository's `build.py` from its root for package validation, after checking its current arguments and output paths.
+
+For a full server build, generate a feature-specific `Build-Test.py` against the new snapshot. Run it in WSL as `sudo python3 /mnt/c/.../<feature-package>/Build-Test.py` only after resolving the actual path. Do not substitute an old activation script. Build-only completion must confirm source restoration and no live restart or SQL changes.
+
 Follow existing authorization and repository policy for source commits/pushes. Keep HeroFreePick, More Minions and the launcher in their own repositories. Commit original code, maintained inputs/generators, narrow integration patches, tests and notes; exclude credentials, personal layouts, databases, proprietary baselines and generated binaries from source history.
 
 Do not assume a source push publishes a client update. When launcher publication is requested or already authorized:

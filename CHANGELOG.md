@@ -1,3 +1,10 @@
+## PTR client 0.2.10-test.1 — Advancement search and class selection
+
+- Added the versioned source overlay and baseline hashes under `tools/client-advancement-search` for the current cumulative PTR client.
+- Learned search includes talent names; tooltip search retains view/filter scope. Hybrid choices use class circles and descriptions; Hero class-choice glow is removed.
+- Expanded talent and server-tooltip review skills with concrete commands and data-source examples.
+- Lua 5.1/filter fixtures pass. In-game visual checks remain pending. No Hero enrollment, Poisons Mastery or Warrior stance server changes are included.
+
 ## Combat preparation preservation
 
 - Hero Advancement closes on entering combat, including review and mode-choice overlays. Pending selections and their baseline remain saved for reopening after combat; nothing is auto-applied or discarded. Opening/reviewing during combat is blocked.

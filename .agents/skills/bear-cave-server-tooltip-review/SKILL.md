@@ -61,6 +61,50 @@ Check all missing-file/query failures before drawing conclusions. Do not silentl
 
 ## 3. Reconstruct the effective spell
 
+### Exact command and parsing examples
+
+Run this existing collector **inside WSL**, not a Windows shell, for a fresh effective-spell snapshot. It performs read-only server queries and writes a local export:
+
+```bash
+sudo python3 /mnt/c/Users/danie/Documents/Codex/2026-09-12/can/outputs/Hero_Healing_Tooltip_Review/Collect-Server.py
+```
+
+For the poison Mastery task use the broader item/cast collector instead:
+
+```bash
+sudo python3 /mnt/c/Users/danie/Documents/Codex/2026-09-12/can/outputs/Hero_Mode_Entry_Stage/Collect-Poison-Mastery.py
+```
+
+Verify these local paths still exist; they are historical workstation examples, not repository-contained deployment scripts. Read `latest-baseline.json` (or `latest-poison-mastery.json`) and inspect the resulting `manifest.json`. Resolve all missing-data reports before declaring the audit complete.
+
+Example **read-only SQL** for inspecting current item requirements; use the collector's existing database connection, keeping credentials out of output:
+
+```sql
+SELECT entry, name, AllowableClass, RequiredLevel, requiredspell,
+       spellid_1, spelltrigger_1, spellcharges_1
+FROM item_template
+WHERE name REGEXP '^(Instant|Deadly|Crippling|Mind-numbing|Wound|Anesthetic) Poison';
+```
+
+Verify column names with `SHOW COLUMNS FROM item_template` first. This query inspects item requirements, not vendor access or proof that application effects work.
+
+For unquoted MySQL batch exports, use this **Python** structural check before decoding MySQL backslash escapes:
+
+```python
+from pathlib import Path
+lines = Path('spell_dbc-rows.tsv').read_bytes().decode('utf-8').split('\n')
+if lines[-1] == '':
+    lines.pop()
+header = lines[0].split('\t')
+rows = [line.split('\t') for line in lines[1:]]
+assert all(len(row) == len(header) for row in rows), 'Malformed batch export'
+records = [dict(zip(header, row)) for row in rows]
+```
+
+The server escapes embedded tabs/newlines in batch output; do not interpret quotation marks as CSV quoting. Split only on literal LF, not Python `splitlines()`: descriptions can contain Unicode separators that `splitlines()` incorrectly treats as additional records. Preserve and investigate invalid UTF-8 rather than silently discarding it.
+
+The actual prior resolver entry points are `tools/client-server-tooltip-resolution/Resolve.py` and `Test-Resolution.py` in HeroFreePick, and local `outputs/Hero_Healing_Tooltip_Review/Resolve-Healing.py` / `Test-Healing.py`. Inspect their baseline and output paths before running: resolvers write generated artifacts, tests validate those artifacts, and neither is an activation command. Adapt the inputs to the fresh snapshot; do not run an old resolver against a new feature and overwrite current resolved tooltips.
+
 Trace actual load/override order in the running core: client-compatible base spell records, server SQL overrides, SpellMgr corrections, script bindings and custom handlers. Do not assume `spell_dbc` is a sparse overlay—inspect loader semantics and the converter's field mapping.
 
 Validate record layout and field count. The prior WotLK reader expected 234 Spell fields; do not apply those offsets blindly to Ascension or another client build. Interpret signed integers, floats and string offsets correctly.
