@@ -1,0 +1,41 @@
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -1,4 +1,5 @@
+ #include "StockRankLevels.h"
++#include "WarriorStances.h"
+ #include "TalentEffects.h"
+ extern unsigned HeroTalentCoreHookVersion();
+ extern unsigned HeroPrimaryStatCoreHookVersion();
+@@ -84,6 +85,7 @@
+ 
+ void PublishTrainerMode(Player* p,int phase){
+  auto resources=ReadHybrid(p);HeroResourcesPublish(p,phase==2&&resources.valid?resources.mode:1,resources.second);
++ HeroWarriorStances::Publish(p,phase==2&&resources.valid&&resources.mode>=2&&resources.mode<=4);
+  if(phase==-1){HeroTrainer::Forget(p->GetGUID().GetCounter());return;}
+  HeroTrainer::PublishMode(p->GetGUID().GetCounter(),phase==1?HeroTrainer::Mode::Classic:phase==2?(ReadHybrid(p).mode==4?HeroTrainer::Mode::Hero:ReadHybrid(p).mode==3?HeroTrainer::Mode::Hybrid:HeroTrainer::Mode::ClassPlus):HeroTrainer::Mode::Pending);
+ }
+@@ -598,6 +600,7 @@
+         if(HeroTrainer::Current(p)==HeroTrainer::Mode::ClassPlus||HeroTrainer::Current(p)==HeroTrainer::Mode::Hybrid||HeroTrainer::Current(p)==HeroTrainer::Mode::Hero)levelRefresh[p->GetGUID().GetCounter()]=Clock::now()+std::chrono::seconds(1);
+     }
+     void OnPlayerUpdate(Player* p,uint32) override {
++        HeroWarriorStances::Sync(p);
+         if(HeroDKStart::Pending(p)){
+             if(HeroDKStart::Tick(p)&&HeroDKStart::Ensure(p)){auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);bool ok=Sync(p,snapshot);Reply(p,ok?Label(snapshot.phase):"ERROR");}
+             return;
+@@ -613,7 +616,7 @@
+         if(Sync(p,snapshot)){auto b=LoadBuild(p);BuildReply(p,b);LOG_INFO("server.loading","HERO_BUILD level-grants guid={} level={} verified=true",guid,p->GetLevel());}
+         else BuildError(p,"RECOVERY");
+     }
+-    void OnPlayerLogout(Player* p) override { HeroDKStart::Forget(p); std::lock_guard<std::mutex> lock(stateMutex);auto guid=p->GetGUID().GetCounter();uploads.erase(guid);levelRefresh.erase(guid); }
++    void OnPlayerLogout(Player* p) override { HeroWarriorStances::Forget(p); HeroDKStart::Forget(p); std::lock_guard<std::mutex> lock(stateMutex);auto guid=p->GetGUID().GetCounter();uploads.erase(guid);levelRefresh.erase(guid); }
+     // Publish validated class identity before _LoadSkills/_LoadSpells/_LoadInventory.
+     void OnPlayerLoadFromDB(Player* p) override {auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);}
+     void OnPlayerLogin(Player* p) override {
+@@ -639,6 +642,7 @@
+     PathWorld():WorldScript("HeroStartingPathWorld",{WORLDHOOK_ON_STARTUP}){}
+     void OnStartup() override {
+         HeroSharedProgressionLoad();
++        HeroWarriorStances::Load();
+         HeroMartialFluidityLoad();
+         HeroStarterSpellItemsLoad();
+         HeroDKValidateScaling();

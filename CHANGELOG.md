@@ -1,3 +1,8 @@
+## PTR 0.2.11-test.1 cumulative client
+
+- Reconciled circular/staggered class choices with the published advancement-search baseline under tools/client-ptr-0.2.11. Includes matching Warrior client data and restored trinket visual suppression in release assets.
+- Custom Login and Lua config registration repairs are active on PTR; Fabled Surge retest succeeded. Private reward spin and unfinished Poisons/Hero enrollment remain excluded.
+
 ## Class icon cropping and Hybrid row alignment — local test
 
 - Fill Hero Advancement and Hybrid class rings with circularly clipped icon artwork, trimming stock square borders using 3.3.5-compatible texture strips.
@@ -9,6 +14,12 @@
 - Reconciled circular class choices and stock class hover descriptions onto the installed PTR addon, covering both the level-10 and Settings routes.
 - Preserved eligibility and confirmation; Lua 5.1 checks pass. In-game review and launcher promotion remain pending.
 - Versioned overlay: tools/client-hybrid-class-circles; unrelated staged server work excluded.
+
+## Warrior stance exemption — active PTR
+
+- Charge and Thunder Clap use a mode-scoped native stance exemption for Class+, Hybrid and Hero; Classic and pending modes retain stock requirements.
+- Added original module header, narrow integration patch, data transformation, collision checks, build/activation/rollback tooling and focused tests under `tools/warrior-stance-exemption`.
+- Full server build and offline checks passed; matching local client files installed. Server activation completed; matching client data is included in PTR 0.2.11-test.1. Full in-game regression coverage remains pending.
 
 ## PTR client 0.2.10-test.1 — Advancement search and class selection
 

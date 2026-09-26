@@ -1,0 +1,12 @@
+baseline-*/
+latest-baseline.json
+candidate/
+client-candidate/
+client-backups/
+local-tests/
+*.log
+*-state.json
+*-manifest.json
+client-install.json
+activation*.json
+__pycache__/
