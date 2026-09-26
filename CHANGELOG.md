@@ -1,3 +1,7 @@
+## Compact search icons — local test
+
+- Display search results as a tight icon grid with bottom-right origin-class badges, preserving level order, filters, hover tooltips and click behavior. Installed locally; visual review and launcher publication pending.
+
 ## Menu asset preload — local test
 
 - Warm class icons and talent backgrounds incrementally after entering the world, including while choosing a play style; pause during combat and preserve drafts and filters.
