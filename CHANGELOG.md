@@ -1,3 +1,9 @@
+## Class icon cropping and Hybrid row alignment — local test
+
+- Fill Hero Advancement and Hybrid class rings with circularly clipped icon artwork, trimming stock square borders using 3.3.5-compatible texture strips.
+- Stagger the bottom four choices beneath the gaps in the top five in both Hybrid pickers.
+- Lua checks passed; local test installed with backups. Visual review and launcher publication pending.
+
 ## Hybrid second-class circles — local test
 
 - Reconciled circular class choices and stock class hover descriptions onto the installed PTR addon, covering both the level-10 and Settings routes.
