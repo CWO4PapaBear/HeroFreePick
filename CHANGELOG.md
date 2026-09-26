@@ -1,3 +1,9 @@
+## Menu asset preload — local test
+
+- Warm class icons and talent backgrounds incrementally after entering the world, including while choosing a play style; pause during combat and preserve drafts and filters.
+- Restore missing AdvancementSearch.lua and its TOC entry on the local client; installed-file search/filter tests pass.
+- Lua 5.1 checks pass; local client installed. In-game latency review and launcher publication pending.
+
 ## Hero entry — activated on PTR, client acceptance pending
 
 - Add server-acknowledged Hero entry and circular Classic/Class+/Hero choices, view-class glow, all-class item eligibility and spellbook tree synchronization.
