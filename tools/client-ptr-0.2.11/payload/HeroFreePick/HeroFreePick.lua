@@ -1300,7 +1300,7 @@ local upgradeNote=box:CreateFontString(nil,'OVERLAY','GameFontHighlight');upgrad
 A.ProgressionUpgradeNote=upgradeNote
 local classChoices={}
 local buttons={};A.ProgressionChoiceButtons=buttons
-local function clear()for _,b in ipairs(classChoices)do b:Hide()end;upgradeNote:Hide();for _,b in ipairs(buttons)do b:Hide()end end
+local function clear()for _,b in pairs(classChoices)do b:Hide()end;upgradeNote:Hide();for _,b in ipairs(buttons)do b:Hide()end end
 local function choice(label,index,description,fn)
  local b=buttons[index]
  if not b then b=CreateFrame('Button',nil,box,'UIPanelButtonTemplate');b:SetSize(255,30);buttons[index]=b end
