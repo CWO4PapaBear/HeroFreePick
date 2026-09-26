@@ -1,0 +1,143 @@
+--- a/modules/mod-hero-starting-path/src/EquipmentPolicy.h
++++ b/modules/mod-hero-starting-path/src/EquipmentPolicy.h
+@@ -13,7 +13,7 @@
+ inline bool Class(unsigned c){return c>=1&&c<=11&&c!=10;}
+ inline unsigned Bit(unsigned c){return Class(c)?1u<<(c-1):0;}
+ inline unsigned Mask(unsigned mode,unsigned own,unsigned second){
+- return Bit(own)|((mode>=3&&mode<=4&&Class(second)&&own!=second)?Bit(second):0);
++ return mode==4?1535u:Bit(own)|((mode>=3&&mode<=4&&Class(second)&&own!=second)?Bit(second):0);
+ }
+ inline unsigned RequiredLevel(Proficiency const& p,unsigned c){
+  if(p.skill==293)return 40; // custom level-one DK progression also withholds starter plate
+--- a/modules/mod-hero-starting-path/src/StartingPath.cpp
++++ b/modules/mod-hero-starting-path/src/StartingPath.cpp
+@@ -89,7 +89,7 @@
+  if(phase==-1){HeroTrainer::Forget(p->GetGUID().GetCounter());return;}
+  HeroTrainer::PublishMode(p->GetGUID().GetCounter(),phase==1?HeroTrainer::Mode::Classic:phase==2?(ReadHybrid(p).mode==4?HeroTrainer::Mode::Hero:ReadHybrid(p).mode==3?HeroTrainer::Mode::Hybrid:HeroTrainer::Mode::ClassPlus):HeroTrainer::Mode::Pending);
+ }
+-void Reply(Player* p,char const* text) { ChatHandler(p->GetSession()).SendSysMessage(std::string("HF_PATH ")+text);if(std::string(text)=="CLASSPLUS"||std::string(text)=="CLASSIC"||std::string(text)=="LEGACY_CLASSIC")HybridReply(p); }
++void Reply(Player* p,char const* text) { ChatHandler(p->GetSession()).SendSysMessage(std::string("HF_PATH ")+text);if(std::string(text)=="HERO"||std::string(text)=="CLASSPLUS"||std::string(text)=="CLASSIC"||std::string(text)=="LEGACY_CLASSIC")HybridReply(p); }
+ bool Commit(CharacterDatabaseTransaction t) { auto r=CharacterDatabase.AsyncCommitTransaction(t);return r.m_future.get(); }
+ 
+ using Clock=std::chrono::steady_clock;
+@@ -283,17 +283,17 @@
+ }
+ thread_local Player* spellbookMetadataPlayer=nullptr;
+ void SyncSpellbookTrees(Player* p,HeroBuild::Build const& wanted,HeroBuild::Build const& talents){
+- auto choice=ReadHybrid(p);if(!choice.valid||choice.mode!=3)return;
++ auto choice=ReadHybrid(p);if(!choice.valid||(choice.mode!=3&&choice.mode!=4))return;
+  std::set<unsigned> skills;auto collect=[&](unsigned spell){
+   auto bounds=sSpellMgr->GetSkillLineAbilityMapBounds(spell);
+   for(auto it=bounds.first;it!=bounds.second;++it){unsigned skill=it->second->SkillLine;
+-   if(SpellbookTreeOwner(skill)==choice.second)skills.insert(skill);
++   if(SpellbookTreeOwner(skill)==choice.second||(choice.mode==4&&SpellbookTreeOwner(skill)!=p->getClass()))skills.insert(skill);
+   }
+  };
+  for(auto spell:wanted)collect(spell);for(auto spell:talents)collect(spell);
+  struct Scope{Player* old;Scope(Player* p):old(spellbookMetadataPlayer){spellbookMetadataPlayer=p;}~Scope(){spellbookMetadataPlayer=old;}}scope(p);
+  for(unsigned skill:{26u,256u,257u,594u,267u,184u,50u,163u,51u,253u,38u,39u,613u,56u,78u,770u,771u,772u,375u,373u,374u,237u,8u,6u,355u,354u,593u,574u,134u,573u}){
+-  if(SpellbookTreeOwner(skill)!=choice.second)continue;
++  if(choice.mode==4?SpellbookTreeOwner(skill)==p->getClass():SpellbookTreeOwner(skill)!=choice.second)continue;
+   if(skills.count(skill)){if(!p->HasSkill(skill))p->SetSkill(skill,0,1,1);}
+   else if(p->HasSkill(skill))p->SetSkill(skill,0,0,0);
+  }
+@@ -442,17 +442,17 @@
+  LOG_INFO("server.loading","HERO_BUILD applied guid={} class={} level={} revision={} entries={}",guid,uint32(p->getClass()),p->GetLevel(),b.revision,HeroBuild::Encode(b.roots));
+  BuildReply(p,b,token);return true;
+ }
+-char const* Label(int phase) { return phase==0?"PENDING":phase==1?"CLASSIC":"CLASSPLUS"; }
++char const* Label(Player* p,int phase) { return phase==0?"PENDING":phase==1?"CLASSIC":ReadHybrid(p).mode==4?"HERO":"CLASSPLUS"; }
+ bool Status(ChatHandler* handler) {
+     auto p=handler->GetSession()->GetPlayer();
+     auto snapshot=Read(p);
+     if (snapshot.phase<0) { Reply(p,snapshot.phase==-1?"LEGACY_CLASSIC":"ERROR");return true; }
+-    Reply(p,Sync(p,snapshot)?Label(snapshot.phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");return true;
+-}
+-bool Choose(ChatHandler* handler,uint8 phase) {
++    Reply(p,Sync(p,snapshot)?Label(p,snapshot.phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");return true;
++}
++bool Choose(ChatHandler* handler,uint8 phase,bool hero=false) {
+     auto p=handler->GetSession()->GetPlayer();
+ 
+-    auto existing=Read(p);if(existing.phase>=1){unsigned rank=existing.phase==1?1:ReadHybrid(p).mode;if(uint32(phase)!=rank){Reply(p,"USE_MODE_SETTINGS");return true;}}
++    auto existing=Read(p);if(!ReadHybrid(p).valid){Reply(p,"ERROR");return true;}if(existing.phase>=1){unsigned rank=existing.phase==1?1:ReadHybrid(p).mode;if((hero?4u:uint32(phase))!=rank){Reply(p,"USE_MODE_SETTINGS");return true;}}
+     if (!HeroStartingPath::CanChoose(p->GetLevel(),phase,p->getClass()) || p->IsInCombat()) { Reply(p,"CHOICE_BLOCKED");return true; }
+     if (Read(p).phase<0) { Reply(p,"NOT_ENROLLED");return true; }
+     if(!HeroDKStart::CanRequest(p,phase)){Reply(p,"START_BLOCKED");return true;}
+@@ -463,16 +463,18 @@
+     // Commit authority first; login/status safely retries an interrupted grant.
+     auto t=CharacterDatabase.BeginTransaction();
+     HeroDKStart::Request(p,phase,t);
++    if(hero)t->Append("INSERT INTO hero_hybrid_choice (guid,account_id,original_class,second_class,mode,migration_pending,legacy_snapshot) VALUES ({},{},{},0,4,0,0) ON DUPLICATE KEY UPDATE mode=4,second_class=0,migration_pending=0",p->GetGUID().GetCounter(),p->GetSession()->GetAccountId(),uint32(p->getClass()));
+     if(phase==1)t->Append("DELETE FROM hero_primary_stat WHERE guid={}",p->GetGUID().GetCounter());
+     t->Append("UPDATE hero_starting_path_test SET phase={} WHERE guid={}",uint32(phase),p->GetGUID().GetCounter());
+     if (!Commit(t)) { Reply(p,"ERROR");return true; }
+     auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);
+     bool ok=snapshot.phase==phase && Sync(p,snapshot);
+     LOG_INFO("server.loading","HERO_STARTING_PATH stage=choice guid={} phase={} saved={}",p->GetGUID().GetCounter(),uint32(phase),ok);
+-    Reply(p,ok?Label(phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");return true;
++    Reply(p,ok?Label(p,phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");return true;
+ }
+ bool Classic(ChatHandler* h) { return Choose(h,1); }
+ bool ClassPlus(ChatHandler* h) { return Choose(h,2); }
++bool HeroInitial(ChatHandler* h) { return Choose(h,2,true); }
+ // Display-only lookup. Never changes the native class or grants any permissions.
+ bool ClassIdentity(ChatHandler* handler, std::string name)
+ {
+@@ -602,7 +604,7 @@
+     void OnPlayerUpdate(Player* p,uint32) override {
+         HeroWarriorStances::Sync(p);
+         if(HeroDKStart::Pending(p)){
+-            if(HeroDKStart::Tick(p)&&HeroDKStart::Ensure(p)){auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);bool ok=Sync(p,snapshot);Reply(p,ok?Label(snapshot.phase):"ERROR");}
++            if(HeroDKStart::Tick(p)&&HeroDKStart::Ensure(p)){auto snapshot=Read(p);PublishTrainerMode(p,snapshot.phase);bool ok=Sync(p,snapshot);Reply(p,ok?Label(p,snapshot.phase):"ERROR");}
+             return;
+         }
+ 
+@@ -625,14 +627,14 @@
+         bool ok=HeroDKStart::Ensure(p)&&Sync(p,snapshot);
+         if(ok)HeroMartialFluidityLogin(p);
+         LOG_INFO("server.loading","HERO_STARTING_PATH stage=login guid={} phase={} baseline_verified={}",p->GetGUID().GetCounter(),snapshot.phase,ok);
+-        Reply(p,ok?Label(snapshot.phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");
++        Reply(p,ok?Label(p,snapshot.phase):HeroDKStart::Pending(p)?"START_PENDING":"ERROR");
+     }
+ };
+ class PathCommands final:public CommandScript {
+ public:
+     PathCommands():CommandScript("HeroStartingPathCommands"){}
+     ChatCommandTable GetCommands() const override {
+-        static ChatCommandTable child={{"status",Status,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"classic",Classic,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"classplus",ClassPlus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"hybrid",HybridChoose,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"hybridstatus",HybridStatus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{ "identity",ClassIdentity,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"upgrade",UpgradeMode,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No}};
++        static ChatCommandTable child={{"status",Status,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"classic",Classic,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"classplus",ClassPlus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"hero",HeroInitial,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"hybrid",HybridChoose,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"hybridstatus",HybridStatus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{ "identity",ClassIdentity,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"upgrade",UpgradeMode,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No}};
+         static ChatCommandTable build={{"resetquote",ResetStatus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"status",BuildStatus,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"start",BuildStart,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"part",BuildPart,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No},{"apply",BuildApply,rbac::RBAC_PERM_COMMAND_ACCOUNT,Console::No}};
+         static ChatCommandTable root={{"hfpath",child},{"hfbuild",build}};return root;
+     }
+--- a/src/server/game/Entities/Player/Player.cpp
++++ b/src/server/game/Entities/Player/Player.cpp
+@@ -10940,7 +10940,7 @@
+         return false;
+     }
+ 
+-    if (!(pProto->AllowableClass & ((pProto->Class==ITEM_CLASS_WEAPON||pProto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) && pProto->Bonding == BIND_WHEN_PICKED_UP && !IsGameMaster())
++    if (!(pProto->AllowableClass & ((HeroEquipmentClassMask(this)==1535u||pProto->Class==ITEM_CLASS_WEAPON||pProto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) && pProto->Bonding == BIND_WHEN_PICKED_UP && !IsGameMaster())
+     {
+         SendBuyError(BUY_ERR_CANT_FIND_ITEM, nullptr, item, 0);
+         return false;
+--- a/src/server/game/Entities/Player/PlayerStorage.cpp
++++ b/src/server/game/Entities/Player/PlayerStorage.cpp
+@@ -2373,7 +2373,7 @@
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+     }
+ 
+-    if ((proto->AllowableClass & ((proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
++    if ((proto->AllowableClass & ((HeroEquipmentClassMask(this)==1535u||proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
+     {
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+     }
+@@ -2472,7 +2472,7 @@
+     if (proto->HasFlag2(ITEM_FLAG2_EVERYONE_CAN_ROLL_NEED))
+         return EQUIP_ERR_OK;
+ 
+-    if ((proto->AllowableClass & ((proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
++    if ((proto->AllowableClass & ((HeroEquipmentClassMask(this)==1535u||proto->Class==ITEM_CLASS_WEAPON||proto->Class==ITEM_CLASS_ARMOR)?HeroEquipmentClassMask(this):getClassMask())) == 0 || (proto->AllowableRace & getRaceMask()) == 0)
+         return EQUIP_ERR_YOU_CAN_NEVER_USE_THAT_ITEM;
+ 
+     if (proto->RequiredSpell != 0 && !HasSpell(proto->RequiredSpell))

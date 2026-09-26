@@ -1,3 +1,9 @@
+## Hero entry — activated on PTR, client acceptance pending
+
+- Add server-acknowledged Hero entry and circular Classic/Class+/Hero choices, view-class glow, all-class item eligibility and spellbook tree synchronization.
+- Preserve current PTR fixes; local client installed. Full build, transactional preflight and private/public startup passed. Launcher publication remains separate and pending.
+- During the same maintenance, separately managed Fabled Surge received the rolling four-minute kill-extension cap and mana argument repair.
+
 ## PTR 0.2.11-test.1 cumulative client
 
 - Reconciled circular/staggered class choices with the published advancement-search baseline under tools/client-ptr-0.2.11. Includes matching Warrior client data and restored trinket visual suppression in release assets.

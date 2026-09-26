@@ -1,0 +1,30 @@
+{
+  "modules/mod-hero-starting-path/src/EquipmentPolicy.h": {
+    "before": "47f8720c6d9c99911c43cdf8ffe3789ac339cddde84eba02e46e9fc7f7ae2596",
+    "after": "53c0c718a29b09f8b07ab8485221de382c4ec5f2cc7957ab197207fa01c4030c"
+  },
+  "modules/mod-hero-starting-path/src/StartingPath.cpp": {
+    "before": "a3fa1c0a06984043e01a1763420a0155441f5c19abce7906402e7c04c1a3542d",
+    "after": "a1cb447667985915f0ff4c4ebd2c12c87fa4eacb99714b1e977a8b61a2e901f8"
+  },
+  "src/server/game/Entities/Player/Player.cpp": {
+    "before": "70a37f16cf00277e03bfc21122d2fa50b0e70c540e84207478e6f2cdd795e811",
+    "after": "c0ba2cbcfd8078bcc803c960c8c29ddf6bf3c7117684963bc65fff11bce27a75"
+  },
+  "src/server/game/Entities/Player/PlayerStorage.cpp": {
+    "before": "a42b9c1a9b2715f945a37fa6f27f206d24a61e49ce90571c26654bbf45ab3a0c",
+    "after": "3e404aa015ae821bbf5cba9fc96270a56961ddafb36972ce8161c4b0b44f03d3"
+  },
+  "client/HeroStartingPathTest/PathTest.lua": {
+    "before": "e67f3fc13e7de3c64cbfe68a7ec03e6bc3592fcd8bf3a01efdfb09727c77a108",
+    "after": "b0ccbb51231b2f3eda694b9542a152762793de1418783477be4cf29c527ef740"
+  },
+  "client/HeroFreePick/HybridEquipmentTooltips.lua": {
+    "before": "259edb7db9a1d90598b52ff96730cf977297a1cd645a434da54cb6789f51473a",
+    "after": "f211edc88b3d9b7e79564a4825a6182c9b1f2154fced35757dd33bcaabe7d1ac"
+  },
+  "client/HeroFreePick/HeroFreePick.lua": {
+    "before": "40c2bb332d51014ac018c56452e931ca3065a7511addb4ca7664659b26724495",
+    "after": "aa9886dfef4cbd67ee20925522c39e697e90a0b8dace466cd26441cb8cdda346"
+  }
+}

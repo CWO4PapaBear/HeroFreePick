@@ -1,0 +1,11 @@
+# Hero entry — PTR activated September 26, 2026
+
+This incremental integration applies to the current PTR sources, not an unmodified AzerothCore checkout. Check every before hash in manifest.json before applying integration.patch from the AzerothCore root. The patch changes the original Hero starting-path module and three core item class checks. Payload holds the matching three client Lua files; client before hashes refer to the published PTR 0.2.11 baseline. Preserve personal layout overrides. Do not substitute the older root addon package for this cumulative overlay.
+
+Hero appears alongside Classic and Class+ in the initial circular play-style chooser, with explanatory hover text and progression information. Hero selection commits server mode 4 atomically with enrollment, uses existing DK reset handling, and is acknowledged before client mode changes. Hero has Hybrid's views/portraits; its selected-class glow follows the viewed class. All ten class masks apply to Hero item categories, with matching tooltip coloring. Non-class requirements, costs, level gates and prerequisites remain. Classic and Class+ retain their existing progression.
+
+Validation: Lua 5.1 syntax and acknowledgement tests; compiled ten-class equipment-policy tests; full PTR build; temporary-table transaction/repeat/rollback preflight; private and public startup validation. Activation record confirms image 6a81c8317c5ae96b4090e02afe776b25e89d6bdb0ee5190b243ec325fc915641. Three local client files installed with backups. In-game acceptance and launcher asset/channel publication remain pending.
+
+Test fresh Hero enrollment, relog persistence, class browsing/glow, abilities and talents with normal costs, and class-restricted items. Check Classic/Class+ and DK entry as controls. Vanity inheritance text is guidance requested by the owner; this patch does not implement or certify account-wide vanity enforcement.
+
+The same maintenance activated the separately managed CustomHeirloomSystem Lua repair: qualifying XP kills add ten seconds up to four minutes remaining, without shortening longer level-up timers; ModifyPower uses amount then power type. Its original third-party module source and private activation backups are deliberately excluded from this repository. Test after multiple level-ups and after the timer falls below four minutes.
