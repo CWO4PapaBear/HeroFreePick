@@ -1,0 +1,12 @@
+[
+  {
+    "path": "HeroFreePick/HeroFreePick.lua",
+    "before_sha256": "11c5036ffcdaf183f4b529fb38f7dac92a6a2095bb152dc8663922f43ad0edea",
+    "after_sha256": "2f92e0ac8381699e2770c2ce4746074316d5a985779182a64129daa7bce5fb50"
+  },
+  {
+    "path": "HeroClassPlusCommitTest/GameModeUI.lua",
+    "before_sha256": "41b52fccb93a1f121d6ee773d8d0725295e0d780a8e89764435ba2962b942ee2",
+    "after_sha256": "3fba6711be686cfdf446b0a061b385875e5b9ec7a75bb2d3f35136074e848b20"
+  }
+]

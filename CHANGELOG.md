@@ -1,3 +1,9 @@
+## Hybrid second-class circles — local test
+
+- Reconciled circular class choices and stock class hover descriptions onto the installed PTR addon, covering both the level-10 and Settings routes.
+- Preserved eligibility and confirmation; Lua 5.1 checks pass. In-game review and launcher promotion remain pending.
+- Versioned overlay: tools/client-hybrid-class-circles; unrelated staged server work excluded.
+
 ## PTR client 0.2.10-test.1 — Advancement search and class selection
 
 - Added the versioned source overlay and baseline hashes under `tools/client-advancement-search` for the current cumulative PTR client.
