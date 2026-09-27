@@ -1,3 +1,9 @@
+## Grappling Hook - implementation staged for PTR acceptance
+
+- Add level-28 Rogue Grappling Hook, authoritative custom-mode acquisition, validated movement and a temporary three-second follow-up with native action-button replacement.
+- Include scoped optional core hooks, additive catalog overlay, supported spell definitions, owned SQL rollback and preservation checks.
+- Full PTR build and activation preflight passed; matching client installed locally. Server activation, gameplay acceptance and launcher publication remain pending.
+
 ## Spell implementation workflow
 
 - Add a companion to server tooltip review for implementing missing/incomplete spells from client evidence, including dependency tracing, custom-mode authorization, supported core effects, matched client/server delivery and rollback.

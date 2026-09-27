@@ -97,3 +97,7 @@ Validate this skill locally:
 ```powershell
 & 'C:/Users/danie/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' 'C:/Users/danie/.codex/skills/.system/skill-creator/scripts/quick_validate.py' .agents/skills/bear-cave-spell-implementation
 ```
+
+## Implemented Grappling Hook staging workflow
+
+The reviewed source and exact build, preflight, maintenance activation and rollback commands are in [tools/grappling-hook/README.md](../../../../tools/grappling-hook/README.md). The package includes the original module, optional core hooks, additive client catalog, source integration diff, collision-checked DBC staging, isolated visual dependencies, backup client installer and offline regression checks. Read the status before use: compilation/preflight and local installation do not establish server activation or in-game acceptance. Do not import proprietary local archive outputs into Git.
