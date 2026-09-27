@@ -1,3 +1,8 @@
+## Grappling Hook tracking experiment - local only
+
+- The cast-kit endpoint test did not resolve trailing chains. Stage native beam chain parameters for another isolated test, preserving chain size and other effects.
+- Installed with verified backups; behavior remains unverified. No server changes or launcher publication.
+
 ## Grappling Hook chain endpoints - local visual test
 
 - Move the owned chain effect from target-side persistence to the caster's cast kit, following Abomination Hook's setup.
