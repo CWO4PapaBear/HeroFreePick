@@ -1,3 +1,8 @@
+## Grappling Hook ground-anchor height - build passed
+
+- Scale only the temporary ground-anchor helper to bring its model attachment nearer the selected ground point; enemy follow-up and chain parameters remain unchanged.
+- Full PTR build passed and source restoration verified. Activation and in-game height/appearance acceptance pending; hook tip alignment is not yet verified. No launcher publication.
+
 ## Grappling Hook aura-bound visual test - local only
 
 - Prior tracking settings produced a tether that survived target death. Move the tracking kit from CastKit to the existing one-second visual aura's PersistentKit.

@@ -1,0 +1,16 @@
+--- a/modules/mod-hero-starting-path/src/GrapplingHook.cpp
++++ b/modules/mod-hero-starting-path/src/GrapplingHook.cpp
+@@ -164,7 +164,13 @@
+         {
+             if (auto dest = GetExplTargetDest())
+                 if (auto anchor = player->SummonCreature(18721, *dest, TEMPSUMMON_TIMED_DESPAWN, 2000))
++                {
++                    // This helper exists only to anchor the ground-cast visual.
++                    // Reduce its model attachment height to near ground level,
++                    // without moving the cast point or changing enemy models.
++                    anchor->SetObjectScale(0.01f);
+                     player->CastSpell(anchor, Tether, true);
++                }
+             player->CastSpell(player, Window, true);
+         }
+         else
