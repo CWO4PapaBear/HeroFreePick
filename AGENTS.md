@@ -27,3 +27,7 @@ When implementing a new, missing, or incomplete spell from client/tooltip eviden
 ## CoA development reference
 
 For future world and system development, consult the owner-designated [CoA reference map](docs/COA-DEVELOPMENT-REFERENCE.md) and relevant code/data/tests from `jealous-sound/azerothcore-wotlk-coa`. Pin the revision and verify compatibility; this is a reference, not authorization to replace PTR with the fork or import its world database.
+
+## Ascension research scope
+
+Whenever the owner asks to review Ascension data, include both the local Ascension client resources and the owner-designated AzerothCore GitHub repository `https://github.com/jealous-sound/azerothcore-wotlk-coa`. Fetch and pin the reviewed revision. Distinguish client definitions, this independent reconstruction, and verified live behavior; do not imply the repository is Ascension's official backend.
