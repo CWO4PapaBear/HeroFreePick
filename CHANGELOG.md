@@ -1,3 +1,9 @@
+## Grappling Hook acceptance repair - local visuals installed, server build passed
+
+- Stage smaller Abomination-reference chain links and an isolated hook projectile for visual testing.
+- Repair targeted path point-budget rounding and creature-height tolerance while preserving obstacle and distance checks.
+- Full repair build passed; source restored. Visual files installed locally; server repair activation and launcher release pending.
+
 ## Grappling Hook - implementation staged for PTR acceptance
 
 - Add level-28 Rogue Grappling Hook, authoritative custom-mode acquisition, validated movement and a temporary three-second follow-up with native action-button replacement.

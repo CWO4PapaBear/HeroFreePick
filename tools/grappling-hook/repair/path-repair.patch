@@ -1,0 +1,56 @@
+--- a/modules/mod-hero-starting-path/src/GrapplingHook.cpp
++++ b/modules/mod-hero-starting-path/src/GrapplingHook.cpp
+@@ -77,7 +77,7 @@
+ }
+ 
+ SpellCastResult BuildPath(Player* player, Position const& dest, float range,
+-    std::unique_ptr<PathGenerator>& path)
++    std::unique_ptr<PathGenerator>& path, Unit const* target = nullptr)
+ {
+     auto result = MovementCheck(player);
+     if (result != SPELL_CAST_OK)
+@@ -90,13 +90,32 @@
+     if (!player->IsWithinLOS(x, y, z))
+         return SPELL_FAILED_LINE_OF_SIGHT;
+     path = std::make_unique<PathGenerator>(player);
+-    path->SetPathLengthLimit(range * 1.5f);
++    // The core converts this limit to floor(distance / 4) points. A 15-yard
++    // follow-up budget became only three points, rejecting ordinary short paths.
++    // Reserve endpoint/rounding slots, then enforce the geometric length below.
++    float maxLength = range * 1.5f + (target ? target->GetCombatReach() : 0.0f);
++    path->SetPathLengthLimit(maxLength + 2.0f * SMOOTH_PATH_STEP_SIZE);
+     if (!path->CalculatePath(x, y, z, false) || path->GetPath().size() < 2 ||
+         (path->GetPathType() & (PATHFIND_SHORTCUT | PATHFIND_INCOMPLETE | PATHFIND_NOPATH |
+-            PATHFIND_NOT_USING_PATH | PATHFIND_SHORT | PATHFIND_FARFROMPOLY)))
++            PATHFIND_NOT_USING_PATH | PATHFIND_SHORT)))
++        return SPELL_FAILED_NOPATH;
++    auto const& points = path->GetPath();
++    float length = 0.0f;
++    for (std::size_t i = 1; i < points.size(); ++i)
++        length += (points[i] - points[i - 1]).length();
++    if (length > maxLength)
+         return SPELL_FAILED_NOPATH;
+     auto end = path->GetActualEndPosition();
+-    if (std::fabs(end.z - z) > 1.0f || std::hypot(end.x - x, end.y - y) > 1.0f)
++    if (target)
++    {
++        // Creature origin height can differ from its walkable ground surface.
++        // Match the core charge height check, then require a reachable endpoint.
++        if (path->IsInvalidDestinationZ(target) || std::fabs(end.z - z) > 5.0f ||
++            std::hypot(end.x - x, end.y - y) > std::max(1.0f, target->GetCombatReach()))
++            return SPELL_FAILED_NOPATH;
++    }
++    else if ((path->GetPathType() & PATHFIND_FARFROMPOLY) ||
++        std::fabs(end.z - z) > 1.0f || std::hypot(end.x - x, end.y - y) > 1.0f)
+         return SPELL_FAILED_NOPATH;
+     return SPELL_CAST_OK;
+ }
+@@ -126,7 +145,7 @@
+             return SPELL_FAILED_BAD_TARGETS;
+         if (!player->IsWithinLOSInMap(target))
+             return SPELL_FAILED_LINE_OF_SIGHT;
+-        auto result = BuildPath(player, *target, 10.0f, path);
++        auto result = BuildPath(player, *target, 10.0f, path, target);
+         if (result == SPELL_CAST_OK)
+             path->ShortenPathUntilDist(G3D::Vector3(target->GetPositionX(),
+                 target->GetPositionY(), target->GetPositionZ()), std::max(1.0f, target->GetCombatReach()));
