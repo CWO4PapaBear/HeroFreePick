@@ -1,3 +1,8 @@
+## Grappling Hook aura-bound visual test - local only
+
+- Prior tracking settings produced a tether that survived target death. Move the tracking kit from CastKit to the existing one-second visual aura's PersistentKit.
+- Installed locally with verified backups; lifetime and endpoint behavior remain unverified. No server changes or launcher release.
+
 ## Grappling Hook tracking experiment - local only
 
 - The cast-kit endpoint test did not resolve trailing chains. Stage native beam chain parameters for another isolated test, preserving chain size and other effects.
