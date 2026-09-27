@@ -1,3 +1,8 @@
+## Grappling Hook one-yard ground-anchor offset - build passed
+
+- Lower only the initial temporary visual anchor one yard beneath the selected point, as requested; preserve actual landing position and enemy follow-up.
+- Full build and source restoration verified. Activation and visual acceptance pending; no client or launcher update.
+
 ## Grappling Hook ground-anchor height - build passed
 
 - Scale only the temporary ground-anchor helper to bring its model attachment nearer the selected ground point; enemy follow-up and chain parameters remain unchanged.

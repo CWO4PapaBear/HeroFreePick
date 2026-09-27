@@ -1,0 +1,24 @@
+--- a/modules/mod-hero-starting-path/src/GrapplingHook.cpp
++++ b/modules/mod-hero-starting-path/src/GrapplingHook.cpp
+@@ -163,7 +163,12 @@
+         if (GetSpellInfo()->Id == Main)
+         {
+             if (auto dest = GetExplTargetDest())
+-                if (auto anchor = player->SummonCreature(18721, *dest, TEMPSUMMON_TIMED_DESPAWN, 2000))
++            {
++                // Visual-only offset: validated movement still ends at *dest.
++                Position anchorPosition;
++                anchorPosition.Relocate(dest->GetPositionX(), dest->GetPositionY(),
++                    dest->GetPositionZ() - 1.0f, dest->GetOrientation());
++                if (auto anchor = player->SummonCreature(18721, anchorPosition, TEMPSUMMON_TIMED_DESPAWN, 2000))
+                 {
+                     // This helper exists only to anchor the ground-cast visual.
+                     // Reduce its model attachment height to near ground level,
+@@ -171,6 +176,7 @@
+                     anchor->SetObjectScale(0.01f);
+                     player->CastSpell(anchor, Tether, true);
+                 }
++            }
+             player->CastSpell(player, Window, true);
+         }
+         else
