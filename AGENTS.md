@@ -19,3 +19,11 @@ For any talent modification, including new talents, mechanics, tooltips, ranks, 
 ## Server tooltip checks
 
 Whenever a tooltip needs validation against server spell data, read and apply [the server tooltip review skill](.agents/skills/bear-cave-server-tooltip-review/SKILL.md). Distinguish unsupported description formulas from missing gameplay implementation.
+
+## Missing or incomplete server spells
+
+When implementing a new, missing, or incomplete spell from client/tooltip evidence, read and apply [the spell implementation skill](.agents/skills/bear-cave-spell-implementation/SKILL.md) alongside tooltip review. Trace hidden dependencies and unsupported effects, preserve mode eligibility, and distinguish imported definitions from verified gameplay.
+
+## CoA development reference
+
+For future world and system development, consult the owner-designated [CoA reference map](docs/COA-DEVELOPMENT-REFERENCE.md) and relevant code/data/tests from `jealous-sound/azerothcore-wotlk-coa`. Pin the revision and verify compatibility; this is a reference, not authorization to replace PTR with the fork or import its world database.

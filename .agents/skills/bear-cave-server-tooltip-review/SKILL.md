@@ -7,6 +7,8 @@ description: Use whenever a Bear Cave Hero Advancement tooltip needs checking ag
 
 Review presentation against effective server behavior. An unresolved tooltip formula is not evidence of an unimplemented spell. Conversely, a populated spell record or plausible number is not proof that the full mechanic works.
 
+When the requested fix requires implementing a missing or incomplete mechanic, use the companion [spell implementation skill](../bear-cave-spell-implementation/SKILL.md). Keep presentation repair and gameplay implementation separate, then reconcile the tooltip with verified behavior.
+
 ## Locate the current resources
 
 Read repository AGENTS.md instructions. Confirm current paths and branches; these are project discovery anchors, not immutable deployment facts.

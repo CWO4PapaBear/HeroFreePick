@@ -1,3 +1,9 @@
+## Spell implementation workflow
+
+- Add a companion to server tooltip review for implementing missing/incomplete spells from client evidence, including dependency tracing, custom-mode authorization, supported core effects, matched client/server delivery and rollback.
+- Include exact local collection/inspection commands and verified Ascension Grappling Hook reference values. Grappling Hook gameplay implementation remains pending; this documentation does not activate it.
+- Add the owner-designated CoA world/system reference map, pinned source revision and aura-337 findings, including a concrete temporary spell-replacement API reference.
+
 ## Compact search icons — local test
 
 - Display search results as a tight icon grid with bottom-right origin-class badges, preserving level order, filters, hover tooltips and click behavior. Installed locally; visual review and launcher publication pending.
