@@ -1,3 +1,10 @@
+## Hero ability levels match Hybrid - staged
+
+- Correct two client progression branches that excluded Hero from Hybrid's stock-level assignments and level-one access to abilities normally unlocked through level 10.
+- Audit found 135 mismatched ability entries. Regression checks now compare all 836 catalogue ability entries, including Mastery/bundle controllers and children, and pass 3,504 purchase/draft boundary checks.
+- Current PTR source export uses the same server entry/rank level rules for Hero and Hybrid; no server patch or restart is required. Classic progression and later-rank training remain unchanged.
+- Local installation/gameplay acceptance and combined launcher publication remain pending.
+
 ## Grappling Hook accepted for PTR 0.2.17-test.1
 
 - Owner confirmed the activated one-yard-below-ground visual anchor looks good and authorized client publication. This supersedes the pending acceptance statuses below.

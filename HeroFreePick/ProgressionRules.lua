@@ -79,16 +79,16 @@ function A.AbilityDisplayLevel(e)
   return minimum or originalLevel(e)
  end
  -- DK retains its level-one redesign in every custom mode.
- if (A.mode=='ClassPlus'or A.mode=='Hybrid')and e.class~='DeathKnight'then
+ if (A.mode=='ClassPlus'or A.mode=='Hybrid'or A.mode=='Hero')and e.class~='DeathKnight'then
   return stockLevel(e)or originalLevel(e)
  end
  return originalLevel(e)
 end
--- Early ability unlocks are available immediately in the class-limited custom modes.
+-- Early ability unlocks are available immediately in the custom modes.
 local progressionLevel=A.AbilityDisplayLevel
 function A.AbilityDisplayLevel(e)
  local level=progressionLevel(e)
- if (A.mode=='ClassPlus'or A.mode=='Hybrid')and not A.IsTalent(e)and level and level<=10 then return 1 end
+ if (A.mode=='ClassPlus'or A.mode=='Hybrid'or A.mode=='Hero')and not A.IsTalent(e)and level and level<=10 then return 1 end
  return level
 end
 -- Both entry points share one purchase; the tree retains its original geometry.

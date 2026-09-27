@@ -56,7 +56,7 @@ print('PASS: fresh production startup, all 30 trees, '..count..' mode/draft unlo
 
 lua.execute("""
 local A=HeroFreePick
-for _,mode in ipairs({'ClassPlus','Hybrid'})do
+for _,mode in ipairs({'ClassPlus','Hybrid','Hero'})do
  A.mode=mode
  assert(A.AbilityDisplayLevel(A.byID[184])==24)
  assert(A.AbilityDisplayLevel(A.byID[21092158])==1)
@@ -65,9 +65,9 @@ for _,mode in ipairs({'ClassPlus','Hybrid'})do
  end end
 end
 A.mode='Classic';assert(A.AbilityDisplayLevel(A.byID[19001494])==2)
-A.mode='Hero';assert(A.AbilityDisplayLevel(A.byID[1167])==10)
+A.mode='Hero';assert(A.AbilityDisplayLevel(A.byID[1167])==1)
 assert(HeroStockAbilityLevels[143]==6) -- later-rank training remains stock
-print('PASS: Class+/Hybrid early unlocks and group grants move to 1; Classic, Hero and later-rank schedules remain unchanged.')
+print('PASS: All custom modes share early unlocks; Classic and later-rank schedules remain unchanged.')
 """)
 
 lua.execute("""
@@ -88,4 +88,16 @@ end
 A.mode='Classic';assert(not A.EntryAvailableInMode(custom) and A.EntryAvailableInMode(classic))
 assert(classic.ae==0 and A.AbilityDisplayLevel(classic)==1)
 print('PASS: Auto Shot is a refundable level-one 2 AP custom purchase; Classic creation grant stays unchanged.')
+""")
+
+lua.execute("""
+local A=HeroFreePick;local compared=0
+for _,e in ipairs(HeroFreePickCatalog)do
+ if not A.IsTalent(e)then
+  A.mode='Hybrid';local expected=A.AbilityDisplayLevel(e)
+  A.mode='Hero';assert(A.AbilityDisplayLevel(e)==expected,'Hero/Hybrid level mismatch: '..e.id..' '..e.name)
+  compared=compared+1
+ end
+end
+print('PASS: Hero/Hybrid level parity for all '..compared..' catalogue ability entries, including controllers and children.')
 """)
