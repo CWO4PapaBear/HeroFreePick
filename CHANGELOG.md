@@ -1,3 +1,8 @@
+## Grappling Hook chain endpoints - local visual test
+
+- Move the owned chain effect from target-side persistence to the caster's cast kit, following Abomination Hook's setup.
+- Two cumulative client archives installed with verified backups; in-game endpoint acceptance pending. No server restart or launcher release.
+
 ## Grappling Hook acceptance repair - local visuals installed, server build passed
 
 - Stage smaller Abomination-reference chain links and an isolated hook projectile for visual testing.
