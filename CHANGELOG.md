@@ -1,3 +1,9 @@
+## Grappling Hook accepted for PTR 0.2.17-test.1
+
+- Owner confirmed the activated one-yard-below-ground visual anchor looks good and authorized client publication. This supersedes the pending acceptance statuses below.
+- Release uses the final aura-bound chain visuals, temporary follow-up action button, and active path/anchor repairs. Earlier visual experiments are retained as history, not release candidates.
+- Cumulative launcher package verified: four scoped file changes, no removals, repeat-update safety and preservation of personal settings.
+
 ## Grappling Hook one-yard ground-anchor offset - build passed
 
 - Lower only the initial temporary visual anchor one yard beneath the selected point, as requested; preserve actual landing position and enemy follow-up.
